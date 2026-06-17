@@ -2957,6 +2957,7 @@ details[open] > .header__submenu {
 
 .mega-menu__link > .h6 {
   font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-weight: 400;
   line-height: 1.25;
 }
 

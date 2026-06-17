@@ -24,74 +24,140 @@
                 class="mega-menu__content gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    
-                    <li {% if childlink.type != 'product_link' and childlink.type != 'collection_link' %}class="have-mid-line"{% else %}class="have-image"{% endif %}>
-                      {% if childlink.type == 'product_link' %}
-                        {%- liquid
-                            assign product = childlink.object
-                          -%}
-                        <img
-                          srcset="{{ product.metafields.custom.menu_image | image_url: width: 160,height:160 }} 160w"
-                          src="{{ product.metafields.custom.menu_image | image_url: width: 160,height:160 }}"
-                          alt="{{ product.title | escape }}"
-                          class="motion-reduce"
-                          loading="lazy"
-                          sizes="160px"
-                          width="160px"
-                          height="160px"
-                        >
-                      {% endif %}
-                      {% if childlink.type == 'collection_link' %}
-                        {%- liquid
-                            assign collection = childlink.object
-                          -%}
-                        <img
-                          srcset="{{ collection.image | image_url: width: 160,height:160 }} 165w"
-                          src="{{ collection.image | image_url: width: 160,height:160 }}"
-                          class="motion-reduce"
-                          loading="lazy"
-                          sizes="160px"
-                          width="160px"
-                          height="160px"
-                        >
-                      {% endif %}
-                      
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
+                {%- liquid
+                  assign has_banner_image = false
+                  if section.settings.mega_menu_banner_image != blank and section.settings.mega_menu_banner_title != blank
+                    assign menu_title_normalized = link.title | strip | upcase
+                    assign config_title_normalized = section.settings.mega_menu_banner_title | strip | upcase
+                    if menu_title_normalized == config_title_normalized
+                      assign has_banner_image = true
+                    endif
+                  endif
+                -%}
+
+                {%- if has_banner_image -%}
+                  {%- comment -%} 左右布局: 左边子菜单 + 右边图片 {%- endcomment -%}
+                  <div class="mega-menu__wrapper-with-banner page-width">
+                    <ul class="mega-menu__list-with-banner" role="list">
+                      {%- for childlink in link.links -%}
+                        <li>
+                          <a
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            href="{{ childlink.url }}"
+                            class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                            {% if childlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            <span class="h6">{{ childlink.title }}</span>
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul class="list-unstyled" role="list">
+                              {%- for grandchildlink in childlink.links -%}
+                                <li>
+                                  <a
+                                    id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                    href="{{ grandchildlink.url }}"
+                                    class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                    <div class="mega-menu__banner">
+                      {%- assign banner_image = section.settings.mega_menu_banner_image -%}
+                      {%- assign banner_alt = link.title | escape -%}
+                      <img
+                        srcset="{{ banner_image | image_url: width: 300 }} 300w,
+                                {{ banner_image | image_url: width: 600 }} 600w"
+                        src="{{ banner_image | image_url: width: 300 }}"
+                        alt="{{ banner_alt }}"
+                        class="mega-menu__banner-image"
+                        loading="lazy"
+                        width="300"
+                        height="360"
                       >
-                        <span class="h6">{{ childlink.title}}</span>
-                      </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
+                    </div>
+                  </div>
+                {%- else -%}
+                  {%- comment -%} 原有布局: 网格显示产品/集合 {%- endcomment -%}
+                  <ul
+                    class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                    role="list"
+                  >
+                    {%- for childlink in link.links -%}
+
+                      <li {% if childlink.type != 'product_link' and childlink.type != 'collection_link' %}class="have-mid-line"{% else %}class="have-image"{% endif %}>
+                        {% if childlink.type == 'product_link' %}
+                          {%- liquid
+                              assign product = childlink.object
+                            -%}
+                          <img
+                            srcset="{{ product.metafields.custom.menu_image | image_url: width: 160,height:160 }} 160w"
+                            src="{{ product.metafields.custom.menu_image | image_url: width: 160,height:160 }}"
+                            alt="{{ product.title | escape }}"
+                            class="motion-reduce"
+                            loading="lazy"
+                            sizes="160px"
+                            width="160px"
+                            height="160px"
+                          >
+                        {% endif %}
+                        {% if childlink.type == 'collection_link' %}
+                          {%- liquid
+                              assign collection = childlink.object
+                            -%}
+                          <img
+                            srcset="{{ collection.image | image_url: width: 160,height:160 }} 165w"
+                            src="{{ collection.image | image_url: width: 160,height:160 }}"
+                            class="motion-reduce"
+                            loading="lazy"
+                            sizes="160px"
+                            width="160px"
+                            height="160px"
+                          >
+                        {% endif %}
+
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ childlink.url }}"
+                          class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          <span class="h6">{{ childlink.title}}</span>
+                        </a>
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
               </div>
             </details>
           </header-menu-2>
