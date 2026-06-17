@@ -1,0 +1,106 @@
+{{ 'privacy-policy.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }} {
+      padding-bottom: 16rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }} {
+      padding-bottom: 8rem;
+    }
+  }
+{%- endstyle -%}
+<div class="section-{{ section.id }}">
+  {% comment %} <h1 class="privacy-policy-title">Privacy Policy</h1> {% endcomment %}
+  <div class="privacy-policy-section">
+    <div class="policy-container">
+      {% if section.settings.blog != blank %}
+        {% comment %}
+          <!-- 左侧导航 -->
+          <nav class="nav-sidebar">
+            <ul class="nav-list">
+              {% for article in section.settings.blog.articles %}
+                <li class="nav-item f-24">
+                  <a href="#{{ article.title | handle }}" class="nav-link">{{ article.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endcomment %}
+
+        <!-- 右侧内容 -->
+        <main class="content-main">
+          {% for article in section.settings.blog.articles %}
+            {% liquid
+              assign title = article.title | handle
+            %}
+            <section id="{{ article.title | handle }}" class="content-section">
+              <div class="policy-title h2">{{ article.title }}</div>
+              {% if title == 'contact-us' %}
+                {% content_for 'blocks' %}
+              {% endif %}
+              <div class="privacy-policy-content">{{ article.content }}</div>
+            </section>
+          {% endfor %}
+        </main>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+  // 导航交互逻辑
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // 移除所有active状态
+      document.querySelectorAll('.nav-link').forEach((el) => el.classList.remove('active'));
+      document.querySelectorAll('.content-section').forEach((el) => el.classList.remove('active'));
+
+      // 添加新的active状态
+      const targetId = link.getAttribute('href');
+      link.classList.add('active');
+      document.querySelector(targetId).classList.add('active');
+    });
+  });
+
+  // 获取整个查询字符串（?之后的部分）
+  const queryString = window.location.search;
+
+  // 解析参数
+  const urlParams = new URLSearchParams(queryString);
+
+  // 获取单个参数
+  const type = urlParams.get('type');
+
+  // 默认显示第一个内容区块
+  document.querySelector('#' + type).classList.add('active');
+  document.querySelector('a[href="#' + type + '"]').classList.add('active');
+</script>
+{% schema %}
+{
+  "name": "政策页",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "contact-form"
+    }
+  ],
+  "presets": [
+    {
+      "name": "政策页"
+    }
+  ]
+}
+{% endschema %}

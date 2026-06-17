@@ -1,0 +1,122 @@
+{{ 'custom-product-detail.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script src="{{ 'custom-product-detail.js' | asset_url }}" defer></script>
+<div class="mainBox">
+  <div class="tabContainer">
+    <ul class="tabList clearfix">
+      <li class="active">OVERVIEW</li>
+      <li>SPECS</li>
+      <li>IN THE BOX</li>
+    </ul>
+  </div>
+  <div class="contentList">
+    <div id="smallOverviewBtn" class="smallTabBtn active"><span>OVERVIEW</span><span class="displayBtn"></span></div>
+    <div class="overviewDiv active">
+      {% content_for 'block', type: 'product-overview', id: 'product-overview-group' %}
+    </div>
+    <div id="smallSpecsBtn" class="smallTabBtn"><span>SPECS</span><span class="displayBtn"></span></div>
+    <div class="specsDiv" >
+      {% if section.settings.specs_mobile_img != blank %}
+        <img
+            src="{{ section.settings.specs_mobile_img | image_url: width: section.settings.specs_mobile_img.width }}"
+            class="mobile_img"
+            loading="lazy"
+            width="{{ section.settings.specs_mobile_img.width }}"
+            height="{{ section.settings.specs_mobile_img.height }}"
+          >
+      {% endif %}
+      <div class="overview-page-width">
+        {% if section.settings.specs_pc_img != blank %}
+          <img
+              src="{{ section.settings.specs_pc_img | image_url: width: section.settings.specs_pc_img.width }}"
+              class="{% if section.settings.specs_mobile_img != blank %}pc_img{% endif %}"
+              loading="lazy"
+              width="{{ section.settings.specs_pc_img.width }}"
+              height="{{ section.settings.specs_pc_img.height }}"
+            >
+        {% endif %}
+        {% for metaobject in product.metafields.custom.specs.value %}
+          <h4>{{ metaobject.title }}1111</h4>
+          <ul class="specs-list" data-filed-obj='{{ metaobject | json}}'></ul>
+        {% endfor %}
+      </div>
+    </div>
+    <div id="smallInTheBoxBtn" class="smallTabBtn"><span>IN THE BOX</span><span class="displayBtn"></span></div>
+    <div class="inTheBoxDiv">
+      {% if section.settings.box_mobile_img != blank %}
+        <img
+            src="{{ section.settings.box_mobile_img | image_url: width: section.settings.box_mobile_img.width }}"
+            class="mobile_img"
+            loading="lazy"
+            width="{{ section.settings.box_mobile_img.width }}"
+            height="{{ section.settings.box_mobile_img.height }}"
+          >
+      {% endif %}
+      <div class="overview-page-width">
+        {% if section.settings.box_pc_img != blank %}
+          <img
+              src="{{ section.settings.box_pc_img | image_url: width: section.settings.box_pc_img.width }}"
+              class="{% if section.settings.box_mobile_img != blank %}pc_img{% endif %}"
+              loading="lazy"
+              width="{{ section.settings.box_pc_img.width }}"
+              height="{{ section.settings.box_pc_img.height }}"
+            >
+        {% endif %}
+        <ul>
+          {% if section.settings.box_text_group != blank %}
+            {% assign text_group = metaobjects['text_group'][section.settings.box_text_group].test_list.value %}
+            {% for text in text_group %}
+              <li class="f-24">{{ text }}</li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "产品详情模版1",
+    "blocks": [{"type": "@theme"}],
+    "settings": [
+      {
+        "type": "header",
+        "content": "SPECS"
+      },
+      {
+        "type": "image_picker",
+        "id": "specs_pc_img",
+        "label": "Specs_PC端图片"
+      },
+      {
+        "type": "image_picker",
+        "id": "specs_mobile_img",
+        "label": "Specs_手机端图片"
+      },
+      {
+        "type": "header",
+        "content": "IN_THE_BOX"
+      },
+      {
+        "type": "image_picker",
+        "id": "box_pc_img",
+        "label": "box_PC端图片"
+      },
+      {
+        "type": "image_picker",
+        "id": "box_mobile_img",
+        "label": "box_手机端图片"
+      },
+      {
+        "type": "metaobject",
+        "id": "box_text_group",
+        "label": "box文字组",
+        "metaobject_type": "text_group"
+      }
+    ],
+    "presets": [{
+      "name": "产品详情模版1"
+    }]
+  }
+{% endschema %}

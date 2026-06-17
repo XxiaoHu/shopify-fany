@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_BJ4ntC": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_GUdr8i": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: Save $10 & More",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_RkCjc7": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $10 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-24"
+          }
+        },
+        "email_form_76LbA3": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_GUdr8i",
+        "paragraph_RkCjc7",
+        "email_form_76LbA3"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_BpRNHp": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_kTeDXg": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_BpRNHp",
+        "link_list_kTeDXg"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_follow_on_shop": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "newsletter_BJ4ntC",
+    "footer"
+  ]
+}

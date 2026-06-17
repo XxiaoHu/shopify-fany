@@ -1,0 +1,88 @@
+.user-manual-file-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-manual-file-box .files-box {
+  max-width: 980px;
+}
+
+.user-manual-file-box .files-box p.f-30 {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.user-manual-file-box .files-box ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 2rem;
+}
+.user-manual-file-box .files-box ul li {
+  border: 1px solid #e5e5e5;
+  width: 390px;
+  padding: 2rem 5rem 2rem 2rem;
+  position: relative;
+}
+
+.user-manual-file-box .files-box ul li a {
+  color: rgba(var(--color-foreground));
+  text-decoration: none;
+  font-size: 26px;
+  line-height: 33px;
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-manual-file-box .files-box ul li a .svg-wrapper {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 2.5rem;
+}
+
+.user-manual-file-box .files-box ul li a:after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.user-manual-file-box .files-box ul li a:hover {
+  color: #9e7163;
+}
+.user-manual-file-box .files-box ul li a:hover .icon path:nth-child(2) {
+  fill: #9e7163;
+}
+
+@media screen and (max-width: 768px) {
+  .user-manual-file-box {
+    flex-wrap: wrap;
+    gap: 6rem;
+  }
+
+  .user-manual-file-box .files-box {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .user-manual-file-box .files-box ul li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .user-manual-file-box .img-box img {
+    width: 100%;
+    height: auto;
+  }
+}

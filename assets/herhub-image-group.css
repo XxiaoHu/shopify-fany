@@ -1,0 +1,34 @@
+.herhub-image-group-col{
+  text-align: center;
+  display: grid;
+}
+.herhub-image-group-col .herhub-big-image img{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.herhub-image-group-col .herhub-small-image{
+  position: relative;
+  display: flex;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+}
+.herhub-image-group-col .herhub-small-image img{
+  position: absolute;
+  max-height: 90%;
+  max-width: 100%;
+  object-fit: contain;
+}
+@media screen and (min-width: 769px) {
+  .herhub-image-group-col{
+    gap: var(--grid-col-gap);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .herhub-image-group-col{
+    grid-template-columns: calc(100%);
+  }
+}

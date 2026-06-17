@@ -1,0 +1,413 @@
+{{ 'product-overview-image-text.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  @media screen and (max-width: 768px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.mobile_padding_top }}px;
+      padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+      {% if block.settings.mobile_back_color != blank %}
+      background-color: {{ block.settings.mobile_back_color }};
+      {% endif %}
+    }
+
+    .block-{{ block.id }}-padding .product-overview-image-text {
+      {% unless block.settings.mobile_img_first %}
+      flex-direction: column-reverse;
+      {% endunless %}
+      row-gap: {{ block.settings.mobile_img_text_margin }}px;
+      {% if block.settings.mobile_font_color != blank %}
+      --color-foreground: {{ block.settings.mobile_font_color.red }},{{ block.settings.mobile_font_color.green }},{{ block.settings.mobile_font_color.blue }};
+      color: {{ block.settings.mobile_font_color }} !important;
+      {% endif %}
+    }
+
+    {% if block.settings.mobile_img_has_back %}
+    .product-overview-image-text .img-block {
+      background: linear-gradient(90deg, #f5e1d4, #f4dbde, #e7dae6);
+      border-radius: 30px;
+      width: 100%;
+      width: 100%;
+      padding: 20px;
+    }
+    {% endif %}
+
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block {
+      text-align: {{ block.settings.mobile_text_alignment }};
+    }
+
+    {% if block.settings.mobile_text_alignment == 'center' %}
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block .block_title,
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block .block_des {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    {% endif %}
+
+    .block-{{ block.id }}-padding .product-overview-image-text .block_title {
+      font-size: {{ block.settings.mobile_title_font_size }}px;
+      {% if block.settings.mobile_header_width != blank and block.settings.mobile_header_width > 0 %}
+      max-width: {{ block.settings.mobile_header_width }}px;
+      {% endif %}
+    }
+
+    .block-{{ block.id }}-padding .product-overview-image-text .block_des {
+      font-size: {{ block.settings.mobile_text_font_size }}px;
+      {% if block.settings.mobile_text_width != blank and block.settings.mobile_text_width > 0 %}
+      max-width: {{ block.settings.mobile_text_width }}px;
+      {% endif %}
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+      {% if block.settings.back_color != blank %}
+      background-color: {{ block.settings.back_color }};
+      {% endif %}
+    }
+
+    .block-{{ block.id }}-padding .product-overview-image-text {
+      {% unless block.settings.img_first %}
+      flex-direction: column-reverse;
+      {% endunless %}
+      row-gap: {{ block.settings.img_text_margin }}px;
+      {% if block.settings.font_color != blank %}
+      --color-foreground: {{ block.settings.font_color.red }},{{ block.settings.font_color.green }},{{ block.settings.font_color.blue }};
+      color: {{ block.settings.font_color }} !important;
+      {% endif %}
+    }
+
+    {% if block.settings.img_has_back %}
+    .product-overview-image-text .img-block {
+      background: linear-gradient(90deg, #f5e1d4, #f4dbde, #e7dae6);
+      border-radius: 30px;
+      width: 100%;
+      width: 100%;
+      padding: 140px 110px;
+    }
+    {% endif %}
+
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block {
+      text-align: {{ block.settings.text_alignment }};
+    }
+
+    {% if block.settings.text_alignment == 'center' %}
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block .block_title,
+    .block-{{ block.id }}-padding .product-overview-image-text .text-block .block_des {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    {% endif %}
+
+    .block-{{ block.id }}-padding .product-overview-image-text .block_title {
+      font-size: {{ block.settings.title_font_size }}px;
+      {% if block.settings.header_width != blank and block.settings.header_width > 0 %}
+      max-width: {{ block.settings.header_width }}px;
+      {% endif %}
+    }
+
+    .block-{{ block.id }}-padding .product-overview-image-text .block_des {
+      font-size: {{ block.settings.text_font_size }}px;
+      {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+      max-width: {{ block.settings.text_width }}px;
+      {% endif %}
+    }
+  }
+{%- endstyle -%}
+<div
+  class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+>
+  <div
+    class="product-overview-image-text overview-page-width"
+  >
+    <div class="img-block">
+      {% if block.settings.pc_img != blank %}
+        <img
+          src="{{ block.settings.pc_img | image_url: width: block.settings.pc_img.width }}"
+          class="{% if block.settings.mobile_img != blank %}pc_img{% endif %}"
+          loading="lazy"
+          width="{{ block.settings.pc_img.width }}"
+          height="{{ block.settings.pc_img.height }}"
+        >
+      {% endif %}
+      {% if block.settings.mobile_img != blank %}
+        <img
+          src="{{ block.settings.mobile_img | image_url: width: block.settings.mobile_img.width }}"
+          class="mobile_img"
+          loading="lazy"
+          width="{{ block.settings.mobile_img.width }}"
+          height="{{ block.settings.mobile_img.height }}"
+        >
+      {% endif %}
+    </div>
+    {% if block.settings.header != blank
+      or block.settings.mobile_header != blank
+      or block.settings['text-24'] != blank
+      or block.settings.mobile_text != blank
+    %}
+      <div class="text-block">
+        <h2 class="block_title">
+          <div class="desktop_text">
+            {{- block.settings.header -}}
+          </div>
+          <div class="mobile_text">
+            {{- block.settings.mobile_header -}}
+          </div>
+        </h2>
+        <div class="block_des">
+          <div class="desktop_text">
+            {{- block.settings['text-24'] -}}
+          </div>
+          <div class="mobile_text">
+            {{- block.settings.mobile_text -}}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "上下结构图文",
+  "settings": [
+    {
+      "type": "header",
+      "content": "图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_img",
+      "label": "PC端图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_img",
+      "label": "手机端图片"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "richtext",
+      "id": "header",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "text-24",
+      "label": "描述"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_first",
+      "label": "优先显示图片",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "img_has_back",
+      "label": "存在背景",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "文字对齐方式",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "back_color",
+      "label": "背景色"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "文字",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 24
+    },
+    {
+      "type": "number",
+      "id": "header_width",
+      "label": "标题宽度"
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "number",
+      "id": "img_text_margin",
+      "label": "图文间距",
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+
+    {
+      "type": "header",
+      "content": "移动设备布局"
+    },
+    {
+      "type": "richtext",
+      "id": "mobile_header",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "mobile_text",
+      "label": "描述"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_img_first",
+      "label": "优先显示图片",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_img_has_back",
+      "label": "存在背景",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "文字对齐方式",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "mobile_back_color",
+      "label": "背景色"
+    },
+    {
+      "type": "color",
+      "id": "mobile_font_color",
+      "label": "文字",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 24
+    },
+    {
+      "type": "number",
+      "id": "mobile_header_width",
+      "label": "标题宽度"
+    },
+    {
+      "type": "number",
+      "id": "mobile_text_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "number",
+      "id": "mobile_img_text_margin",
+      "label": "图文间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "上下结构图文"
+    }
+  ]
+}
+{% endschema %}

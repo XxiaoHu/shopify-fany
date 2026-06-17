@@ -1,0 +1,63 @@
+{%- style -%}
+  .section-{{ section.id }}{
+    height: 54px;
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .section-{{ section.id }} p{
+    margin: 0;
+    line-height: 54px;
+  }
+  .section-{{ section.id }} p a{
+    text-decoration: none;
+    color: currentColor;
+  }
+  .section-{{ section.id }} p span{
+    margin: 0 10px;
+  }
+  @media screen and (max-width: 768px){
+    .section-{{ section.id }} p a{
+      display: none;
+    }
+    .section-{{ section.id }} p span{
+      display: none;
+    }
+  }
+{%- endstyle -%}
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div class="header page-width section-{{ section.id }}">
+    <p class="f-20"><a href="{{ shop.url }}">Home</a><span>/</span>{{ section.settings.heading }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "面包屑",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Fany Privacy Policy",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "面包屑"
+    }
+  ]
+}
+{% endschema %}

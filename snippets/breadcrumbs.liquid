@@ -1,0 +1,88 @@
+{%- liquid
+  assign separator = '<span aria-hidden="true"> / </span>'
+-%}
+
+{%- style -%}
+  .breadcrumb {
+    padding: 0.5rem 0;
+    font-size: 28px;
+    line-height: 1.5;
+  }
+  .breadcrumb a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .breadcrumb a:hover {
+    color: #b18d82;
+    text-decoration: underline;
+  }
+  .breadcrumb span[aria-hidden="true"] {
+    margin: 0 0.5rem;
+    color: #999;
+  }
+  .breadcrumb span:not([aria-hidden]) {
+    color: #666;
+    font-weight: 500;
+  }
+  @media screen and (max-width: 768px) {
+    .breadcrumb {
+      font-size: 28px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .breadcrumb::-webkit-scrollbar {
+      display: none;
+    }
+    .breadcrumb span[aria-hidden="true"] {
+      margin: 0 0.375rem;
+    }
+  }
+{%- endstyle -%}
+
+<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+  <a href="{{ routes.root_url }}" title="Home">Home</a>
+
+  {% if template contains 'page' %}
+    {{ separator }}
+    <span>{{ page.title }}</span>
+
+  {% elsif template contains 'product' %}
+    {%- if collection.url != blank -%}
+      {{ separator }}
+      <a href="{{ collection.url }}">{{ collection.title }}</a>
+    {%- else -%}
+      {%- assign product_collections = product.collections | sort: 'position' -%}
+      {%- for col in product_collections -%}
+        {{ separator }}
+        <a href="{{ col.url }}">{{ col.title }}</a>
+      {%- endfor -%}
+    {%- endif -%}
+    {{ separator }}
+    <span>{{ product.title }}</span>
+
+  {% elsif template contains 'collection' and collection.handle %}
+    {{ separator }}
+    <span>{{ collection.title }}</span>
+    {% if current_tags %}
+      {{ separator }}
+      <span>{{ current_tags | join: " + " }}</span>
+    {% endif %}
+
+  {% elsif template == 'blog' %}
+    {{ separator }}
+    <span>{{ blog.title }}</span>
+
+  {% elsif template == 'article' %}
+    {{ separator }}
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+    {{ separator }}
+    <span>{{ article.title }}</span>
+
+  {% else %}
+    {{ separator }}
+    <span>{{ page_title }}</span>
+  {% endif %}
+</nav>

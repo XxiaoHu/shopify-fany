@@ -1,0 +1,105 @@
+{%- style -%}
+  .overviewDiv {
+      padding: 30px 0px;
+      min-height: 500px;
+      justify-content: center;
+  }
+
+  .mainBox .contentList>.overviewDiv.active{
+      display: flex;
+  }
+
+  .grid--center {
+      justify-content: center;
+  }
+
+  .devicesDiv {
+      padding: 50px 0px;
+  }
+{%- endstyle -%}
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+<div class="mainBox">
+  <div class="tabContainer">
+    <div class="overview-page-width pc-box">
+      <div class="product-title">
+        <h2 class="h5">
+          {% if product.selected_or_first_available_variant.metafields.custom.title != blank %}
+            {{ product.selected_or_first_available_variant.metafields.custom.title | escape }}
+          {% else %}
+            {{ product.title | escape }}
+          {% endif %}
+        </h2>
+      </div>
+      <ul class="tabList pc-tabList clearfix">
+        <li class="active">OVERVIEW</li>
+        <li class="review">REVIEW</li>
+        <li>COMPATIBLE</li>
+      </ul>
+      <div class="buy-button-div">
+        {%- render 'product-buy-buttons', product: product, product_form_id: product_form_id, section_id: section.id -%}
+      </div>
+    </div>
+  </div>
+  <div class="contentList">
+    <div class="overviewDiv active">
+      <div class="rich-text__text page-width rte f-18">
+        {{ product.description }}
+      </div>
+    </div>
+    <div></div>
+    <div class="devicesDiv">
+      <div class="collection page-width">
+        <ul
+          id="product-grid"
+          data-id="{{ section.id }}"
+          class="grid product-grid grid--2-col-tablet-down grid--center grid--4-col-desktop"
+          style="--product-card-text-alignment: center;"
+        >
+          {% for recommend in product.metafields.custom.recommend.value %}
+            <li
+              class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% render 'card-product',
+                card_product: recommend,
+                media_aspect_ratio: 'square',
+                image_shape: 'default',
+                show_secondary_image: false,
+                show_vendor: false,
+                show_rating: false,
+                show_price: false,
+                lazy_load: false,
+                skip_styles: false,
+                quick_add: false,
+                section_id: section.id
+              %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "配件 overview group",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "配件 overview group"
+    }
+  ]
+}
+{% endschema %}

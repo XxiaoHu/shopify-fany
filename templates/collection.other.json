@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "image_banner_zPR6f6": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_PiHfDU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Complement Your Every Look",
+            "heading_size": "h1"
+          }
+        },
+        "text_mJXygP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "text_style": "f-18"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PiHfDU",
+        "text_mJXygP"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/3840x1200.webp",
+        "mobile_image": "shopify://shop_images/banner_m.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "top-center",
+        "desktop_content_alignment": "center",
+        "text_width": 500,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_p3rThm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f9pRMJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY Stylish Smartwatch",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_hVqAkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>One color, one mood, one way to express your style. Elegance, passion, serenity, vitality... <br/>Classic leather or modern silicone—the clash of timeless and contemporary styles is a celebration of life’s energy. There’s always one that understands you.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_f9pRMJ",
+        "text_hVqAkD"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "image_banner_zPR6f6",
+    "rich_text_p3rThm",
+    "product-grid"
+  ]
+}

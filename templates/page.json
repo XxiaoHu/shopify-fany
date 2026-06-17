@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_section_D3eqwm": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "newsletter_KhQRTE": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_eMK4nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "You Deserve to Feel Your Best.",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_ehqryt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Join FANY for relaxation tips, style inspiration, sleep & workout guides, and co-create a warm community. Enjoy exclusive perks as a welcome gift! </p>",
+            "text_style": "f-24"
+          }
+        },
+        "email_form_xKVtTk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_eMK4nj",
+        "paragraph_ehqryt",
+        "email_form_xKVtTk"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_section_D3eqwm",
+    "main",
+    "newsletter_KhQRTE"
+  ]
+}

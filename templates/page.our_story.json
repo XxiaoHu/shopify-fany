@@ -1,0 +1,391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "breadcrumbs_section_xCTxCr": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "image_banner_A4ELCm": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_a9ykGR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_a9ykGR"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2.png",
+        "mobile_image": "shopify://shop_images/1296x1080.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "text_width": 240,
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false,
+        "mobile_font_size": 32
+      }
+    },
+    "rich_text_AVwaad": {
+      "type": "rich-text",
+      "blocks": {
+        "text_qC89iG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Life flows through every moment —leading at work, laughing at home, or savoring a quiet pause, FANY stands with you.<br/><br/>Created for women, FANY is more than a smartwatch; it’s a companion that truly understands you, staying in tune with your body’s rhythm. A gentle reminder to breathe, a steady pulse to guide, a silent bond to console—always syncs with you.<br/><br/>We walk together, We lift each other. We shine as one.<br/>Every rhythm, every spark—we share, fuel, and glow.<br/></p>",
+            "font_size": "f-18",
+            "text_width": 990
+          }
+        },
+        "heading_w3eDga": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY, see the vibe.",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        }
+      },
+      "block_order": [
+        "text_qC89iG",
+        "heading_w3eDga"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 84,
+        "padding_bottom": 94,
+        "block_width": 990
+      }
+    },
+    "multirow_xeEAdB": {
+      "type": "multirow",
+      "blocks": {
+        "row_LJLxbm": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/260326-1.webp",
+            "caption": "Mission",
+            "hr": true,
+            "heading": "Intelligent companion,  Effortless Living",
+            "text": "<p>You embrace every moment of life, savoring the warmth in the details. FANY seamlessly integrates smart technology into your daily rhythm, sensing the shifts in your pace, your mood, and your energy.<br/> <br/>Designed for women like you—who move through life with strength, softness, and soul. FANY is a companion that gently tunes in, uplifts you, and flows with you.With FANY, every woman moves with ease, effortlessly supported by intuitive design that brings balance, clarity, and her inner glow.<br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_m6zbN9": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/260326-2.webp",
+            "caption": "Vision",
+            "hr": true,
+            "heading": "Fuel Your Passion, Illuminate Every Moment",
+            "text": "<p>In a fast-paced world, FANY aims to be your most intimate companion, gently guiding you to tune into the rhythm of your body and mind, bringing energy and passion into every day.<br/><br/>Whether at work or in life, FANY doesn’t just track life signals. </p><p>It witnesses your growth and emotions. Together with you, we illuminate every moment, making life warmer and more meaningful.<br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_LJLxbm",
+        "row_m6zbN9"
+      ],
+      "custom_css": [
+        ".image-with-text__text--caption {font-size: 38px; color: #b18d82; line-height: 44px; text-transform: none;}"
+      ],
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "multicolumn_UqrMhk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_grrPxU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_4t-2.png",
+            "title": "Authentic",
+            "subtitle": "Understand Yourself, Find Balance",
+            "hr": true,
+            "text": "<p>FANY helps you truly understand their body and mind. By tracking sleep and emotions with accurate data, it helps you see beyond the surface and recognize their real needs. Only by knowing yourself can you find balance and harmony in life.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dVG9bJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_4tu-02.webp",
+            "title": "Smart",
+            "subtitle": "Personalized Insights for a Better Life",
+            "hr": true,
+            "text": "<p>FANY is more than a smartwatch—it’s a daily companion. With advanced sleep and emotion tracking, it gives personalized advice to help you make smarter choices. Whether adjusting routines or improving mood, FANY makes life easier and more efficient.<br/><br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wzxdar": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_4tu-003.png",
+            "title": "Innovation",
+            "subtitle": "Creating New Experiences Through Design",
+            "hr": true,
+            "text": "<p>FANY focuses on people, always finding new ways to improve your experience.<br/>From precise health tracking to thoughtful emotion reminders, FANY opens up new possibilities.Innovation isn’t just about technology—it’s about truly understanding and meeting your needs.<br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dVWmMF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_4t-4.png",
+            "title": "Reliable",
+            "subtitle": "Accurate and Trustworthy, Every Day",
+            "hr": true,
+            "text": "<p>With reliable data and stable performance, FANY become a reliable partner. With precise sleep tracking and real-time emotion monitoring, it helps you understand your true state and make better decisions. FANY isn’t just a device—it’s a part of your daily life.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_grrPxU",
+        "column_dVG9bJ",
+        "column_wzxdar",
+        "column_dVWmMF"
+      ],
+      "custom_css": [
+        ".multicolumn-card__text {color: #686766;}"
+      ],
+      "settings": {
+        "only_image": false,
+        "title": "Brand Value",
+        "heading_size": "h2",
+        "text": "",
+        "text_font_size": 20,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "title_alignment": "center",
+        "column_alignment": "center",
+        "background_style": "none",
+        "hover_background_style": "none",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "column_title_size": 36,
+        "column_subtitle_size": 20,
+        "column_text_size": 18,
+        "padding_top": 36,
+        "padding_bottom": 100,
+        "columns_mobile": "1",
+        "mobile_title_alignment": "left",
+        "mobile_column_title_size": 24,
+        "mobile_column_subtitle_size": 18,
+        "mobile_column_text_size": 18,
+        "swipe_on_mobile": false,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
+      }
+    },
+    "image_banner_kjV9Tz": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_9Ac663": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designed for Women",
+            "heading_size": "h2"
+          }
+        },
+        "text_f8napP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Women move through life with a natural rhythm, shifting between different roles and experiences. Many smartwatches provide basic tracking, but FANY goes further— it’s tailored for every moment, adapts to your energy shifts, and seamlessly integrates into every facet of your lifestyle.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9Ac663",
+        "text_f8napP"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/about-di-01.png",
+        "mobile_image": "shopify://shop_images/1296x1080-_-_-2.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "text_width": 460,
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_KQqk7X": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fUxHRc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover Your Space to Connect & Be Inspired",
+            "heading_size": "h2",
+            "heading_width": 542
+          }
+        },
+        "text_jQM3qH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Here’s a community of women just like you, sharing practical advice they \"wish someone had told them sooner\"—7-day fashion looks, office stress relief, emotional self-awareness guides, <a href=\"https://fany.us/blogs/wellness-fitness/3-ways-fany-smartwatches-helped-me-reclaim-sleep\" title=\"https://fany.us/blogs/wellness-fitness/why-do-women-suffer-more-from-insomnia\">2-month sleep improvement tips</a>, 4 methods of menstrual self-care, health & fitness, gift-giving ideas, and more real-life stories.<br/>Follow us on <a href=\"https://www.instagram.com/fany_smartwatch/\" title=\"https://www.instagram.com/fany_smartwatch/\">Instagram</a>, <a href=\"https://www.facebook.com/profile.php?id=61576440855579\" title=\"https://www.facebook.com/profile.php?id=61576440855579\">Facebook</a>, <a href=\"https://www.facebook.com/groups/1027201679148074\" title=\"https://www.facebook.com/groups/1027201679148074\">Facebook Group</a>, <a href=\"https://www.youtube.com/@fanyglobal\" title=\"https://www.youtube.com/@fanyglobal\">YouTube</a>, and <a href=\"https://www.tiktok.com/@fany_global\" title=\"https://www.tiktok.com/@fany_global\">TikTok</a>… Unlock more 'invisible self-care' hacks. Join thousands of women turning everyday moments into <br/>#FANYVibes elegance.\" </p>",
+            "font_size": "f-18",
+            "text_width": 1088
+          }
+        }
+      },
+      "block_order": [
+        "heading_fUxHRc",
+        "text_jQM3qH"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "padding_top": 110,
+        "padding_bottom": 40,
+        "block_width": 1088
+      }
+    },
+    "recommend_blog_HQKP6h": {
+      "type": "recommend-blog",
+      "custom_css": [
+        ".blog__posts .article-card .card__information {padding-left: 0rem; padding-right: 0rem;}"
+      ],
+      "settings": {
+        "blog_metafield": "_our_story_",
+        "blog_link": "",
+        "post_limit": 3,
+        "heading": "",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 36,
+        "padding_bottom": 31
+      }
+    },
+    "newsletter_KhQRTE": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_eMK4nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_ehqryt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-20"
+          }
+        },
+        "email_form_xKVtTk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_eMK4nj",
+        "paragraph_ehqryt",
+        "email_form_xKVtTk"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 120,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_section_xCTxCr",
+    "image_banner_A4ELCm",
+    "rich_text_AVwaad",
+    "multirow_xeEAdB",
+    "multicolumn_UqrMhk",
+    "image_banner_kjV9Tz",
+    "rich_text_KQqk7X",
+    "recommend_blog_HQKP6h",
+    "newsletter_KhQRTE"
+  ]
+}

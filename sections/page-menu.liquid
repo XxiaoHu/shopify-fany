@@ -1,0 +1,128 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .page-menu{
+    display: inline-flex;
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    border-top: 1px solid #D2D2D2;
+    border-bottom: 1px #D2D2D2 solid;
+    column-gap: 1px;
+    padding: 1.2rem 0;
+  }
+  .page-menu li{
+    flex: 1;
+  }
+  .page__active-menu-item{
+    color: #A57865 !important;
+  }
+  .page-menu li a{
+    color: currentColor;
+    line-height: 2.2rem;
+    text-decoration: none;
+    &:hover{
+      color: #A57865 !important;
+    }
+  }
+  .page-menu li{
+    position: relative;
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -1px;
+      transform: translateY(-50%);
+      height: 80%;
+      width: 1px;
+      background-color: #D2D2D2;
+    }
+}
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding  color-{{ section.settings.color_scheme }}">
+  <nav class="page-width">
+    <ul class="page-menu h6" role="list">
+      {%- for link in section.settings.menu.links -%}
+        <li>
+            <a
+              id="HeaderMenu-{{ link.handle }}"
+              href="{{ link.url }}"
+              class="{% if link.current %} page__active-menu-item{% endif %}"
+              {% if link.current %}
+                aria-current="page"
+              {% endif %}
+            >
+              <span>
+                {{- link.title | escape -}}
+              </span>
+            </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page_menu.name",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.page_menu.settings.menu.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.page_menu.presets.name",
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,239 @@
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: {{ block.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ block.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .block-{{ block.id }}-padding .desktop-video-section {
+    display: none;
+  }
+  .block-{{ block.id }}-padding .mobile-video-section {
+    display: block;
+  }
+
+  @media screen and (min-width: 750px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+    .block-{{ block.id }}-padding .desktop-video-section {
+      display: block;
+    }
+    .block-{{ block.id }}-padding .mobile-video-section {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign control = true
+  if block.settings.autoplay
+    assign control = false
+  endif
+-%}
+
+{%- capture sizes -%}
+  {% if block.settings.full_width -%}
+    100vw
+  {%- else -%}
+    (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px)
+    calc(100vw - 10rem), 100vw
+  {%- endif %}
+{%- endcapture -%}
+
+<div class="color-{{ block.settings.color_scheme }} gradient">
+  <div class="video-block isolate{% unless block.settings.full_width %} page-width{% endunless %} block-{{ block.id }}-padding">
+    {% if block.settings.video != null %}
+      {%- liquid
+        assign video_id = block.settings.video.id | default: block.settings.video_url.id
+        assign video_alt = block.settings.video.alt | default: block.settings.description
+        assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+        assign poster = block.settings.video.preview_image
+
+        if block.settings.video != null
+          assign ratio_diff = block.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+          if ratio_diff < 0.01 and ratio_diff > 0
+            assign fix_ratio = true
+          endif
+        endif
+      -%}
+      <deferred-media
+        class="desktop-video-section video-section__media deferred-media gradient global-media-settings{% if block.settings.full_width %} global-media-settings--full-width{% endif %}{% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        data-media-id="{{ video_id }}"
+        data-autoplay="{{ block.settings.autoplay }}"
+        {% if poster != null %}
+          style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+        {% endif %}
+      >
+        <button
+          id="Deferred-Poster-Modal-{{ video_id }}"
+          class="video-section__poster media deferred-media__poster media--landscape"
+          type="button"
+          aria-label="{{ alt }}"
+        >
+          {{
+            poster
+            | image_url: width: 3840
+            | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+          }}
+          <span class="deferred-media__poster-button motion-reduce">
+            <span class="svg-wrapper">
+              {{- 'icon-play.svg' | inline_asset_content -}}
+            </span>
+          </span>
+        </button>
+        <template>
+          {{
+            block.settings.video
+            | video_tag:
+              image_size: '1100x',
+              noPause: block.settings.autoplay,
+              class: 'desktop-video no-background-color',
+              autoplay: true,
+              loop: block.settings.enable_video_looping,
+              controls: control,
+              muted: block.settings.autoplay
+          }}
+        </template>
+      </deferred-media>
+    {% endif %}
+
+    {% if block.settings.mobile_video != null %}
+      {%- liquid
+        assign video_id = block.settings.mobile_video.id
+        assign video_alt = block.settings.mobile_video.alt | default: block.settings.description
+        assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+        assign poster = block.settings.mobile_video.preview_image
+
+        if block.settings.mobile_video != null
+          assign ratio_diff = block.settings.mobile_video.aspect_ratio | minus: poster.aspect_ratio | abs
+          if ratio_diff < 0.01 and ratio_diff > 0
+            assign fix_ratio = true
+          endif
+        endif
+      -%}
+      <deferred-media
+        class="mobile-video-section video-section__media deferred-media gradient global-media-settings{% if block.settings.full_width %} global-media-settings--full-width{% endif %}{% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        data-media-id="{{ video_id }}"
+        data-autoplay="{{ block.settings.autoplay }}"
+        {% if poster != null %}
+          style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+        {% endif %}
+      >
+        <button
+          id="Deferred-Poster-Modal-{{ video_id }}"
+          class="video-section__poster media deferred-media__poster media--landscape"
+          type="button"
+          aria-label="{{ alt }}"
+        >
+          {{
+            poster
+            | image_url: width: 3840
+            | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+          }}
+          <span class="deferred-media__poster-button motion-reduce">
+            <span class="svg-wrapper">
+              {{- 'icon-play.svg' | inline_asset_content -}}
+            </span>
+          </span>
+        </button>
+        <template>
+          {{
+            block.settings.mobile_video
+            | video_tag:
+              image_size: '1100x',
+              class: 'no-background-color',
+              noPause: block.settings.autoplay,
+              autoplay: true,
+              loop: block.settings.enable_video_looping,
+              controls: control,
+              muted: block.settings.autoplay
+          }}
+        </template>
+      </deferred-media>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.video.name",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:sections.video.settings.video.label"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "移动端视频"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "t:sections.video.settings.description.label",
+      "info": "t:sections.video.settings.description.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.video.settings.header__3.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.video.settings.full_width.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "t:sections.video.settings.enable_video_looping.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "自动播放",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.video.presets.name"
+    }
+  ]
+}
+{% endschema %}

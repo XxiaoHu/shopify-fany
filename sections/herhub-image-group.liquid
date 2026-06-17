@@ -1,0 +1,178 @@
+{{ 'herhub-image-group.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign image-radio = 1
+  if section.settings.big_image
+    assign image-radio = section.settings.big_image.aspect_ratio
+  endif
+%}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.6 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round: 0 }}px;
+  }
+
+  {% if section.settings.small_image_top != blank %}
+    .herhub-small-image-{{ section.id }}-order img{
+      top: -{{ section.settings.small_image_top }}px;
+    }
+  {% endif %}
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .herhub-image-group-col{
+      --grid-col-gap: 26px;
+    }
+    .herhub-big-image-{{ section.id }}-order{
+      order: {% if section.settings.big_image_order == 'first' %} 1 {% else %} 2 {% endif %};
+    }
+    .herhub-small-image-{{ section.id }}-order{
+      order: {% if section.settings.big_image_order == 'first' %} 2 {% else %} 1 {% endif %};
+    }
+    .herhub-{{ section.id }}-width{
+      grid-template-columns:  calc({{ section.settings.big_width }}% - var(--grid-col-gap) * {{ section.settings.big_width }} / 100) auto;;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .herhub-{{ section.id }}-width{
+      {% if section.settings.small_image_top != blank %}
+        gap: calc(10px + {{section.settings.small_image_top}}px);
+      {% else %}
+        gap: 10px;
+      {% endif %}
+    }
+    {% if section.settings.small_image_top != blank %}
+      .herhub-small-image-{{ section.id }}-order img{
+        top: -{{ section.settings.small_image_top | times: 0.45 | round: 0  }}px;
+      }
+    {% endif %}
+    .herhub-small-image-{{ section.id }}-order{
+      width: 100%;
+      height: auto;
+      aspect-ratio: {{image-radio}};
+    }
+   .herhub-small-image-{{ section.id }}-order img{
+      height: 100%;
+      width: auto;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.section_color_scheme }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width">
+    {%- if section.settings.big_image != blank -%}
+      <div class="herhub-image-group-col herhub-{{ section.id }}-width">
+        <div class="herhub-big-image herhub-big-image-{{ section.id }}-order">
+          {{ section.settings.big_image | image_url: width: section.settings.big_image.width | image_tag }}
+        </div>
+        <div
+          class="herhub-small-image herhub-small-image-{{ section.id }}-order color-{{ section.settings.color_scheme }}"
+          style="border-radius: {{ section.settings.border-radius }}px;"
+        >
+          {%- if section.settings.small_image != blank -%}
+            {{ section.settings.small_image | image_url: width: section.settings.small_image.width | image_tag }}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "herhub图片组",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "big_width",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "大图宽占比",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "border-radius",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "圆角边",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "big_image_order",
+      "label": "大图位置",
+      "options": [
+          {
+            "value": "first",
+            "label": "优先"
+          },
+          {
+            "value": "second",
+            "label": "置后"
+          },
+      ],
+      "default": "first"
+    },
+    {
+      "type": "image_picker",
+      "id": "big_image",
+      "label": "大图"
+    },
+    {
+      "type": "image_picker",
+      "id": "small_image",
+      "label": "小图"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "小图背景",
+      "default": "scheme-1"
+    },
+    {
+      "type": "number",
+      "id": "small_image_top",
+      "label": "小图顶部上移"
+    },
+  ],
+  "presets": [
+    {
+      "name": "herhub图片组",
+    }
+  ]
+}
+{% endschema %}

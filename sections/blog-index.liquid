@@ -1,0 +1,376 @@
+{{ 'blog-index.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding: 0;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+{%- liquid
+  assign blogs_handles = section.settings.blogsHandles | split: ','
+  assign small_ratio = 1
+  assign small_article_handles = '' | split: ''
+  for blogHandle in blogs_handles
+    assign blog = blogs[blogHandle]
+    for article in blog.articles limit: 1000
+      if article.metafields.custom.push_blog_index
+        if article.metafields.custom.blog_index_image
+          assign big_article = article
+        else
+          assign handle = article.handle | split: ','
+          assign small_article_handles = small_article_handles | concat: handle
+        endif
+      endif
+    endfor
+  endfor
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="blog-index-grid">
+      <div class="big-blog-grid" id="dynamicBox" style="--ratio-percent: 50%;">
+        <img
+          src="{{ big_article.metafields.custom.blog_index_image | image_url: width: 1620 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+          class="motion-reduce"
+          loading="lazy"
+          width="{{ big_article.metafields.custom.blog_index_image.width }}"
+          height="{{ big_article.metafields.custom.blog_index_image.height }}"
+        >
+        <div class="big-blog-text">
+          <div class="caption-with-letter-spacing h5">
+            <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+          </div>
+          <h3 class="big-blog-title {{ section.settings.heading_size }}">
+            <a href="{{ big_article.url }}" class="full-unstyled-link">
+              {{ big_article.title | escape }}
+              <div class="post-featured-read">Read On</div>
+            </a>
+          </h3>
+          <p class="big-blog-excerpt">
+            {{ big_article.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+        </div>
+      </div>
+      <div class="big-blog-text m-big-blo-tex">
+        <div class="caption-with-letter-spacing h5">
+          <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+        </div>
+        <h3 class="big-blog-title {{ section.settings.heading_size }}">
+          <a href="{{ big_article.url }}" class="full-unstyled-link">
+            {{ big_article.title | truncate: 50 | escape }}
+            <div class="post-featured-read">Read On</div>
+          </a>
+        </h3>
+        <p class="big-blog-excerpt">
+          {{ big_article.excerpt | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+      <div class="small-blog-grid">
+        <h2 class="{{ section.settings.small_heading_size }}">Most Popular</h2>
+        <ul class="small-blog-box">
+          {%- for handle in small_article_handles limit: 3 -%}
+            {%- liquid
+              assign article = articles[handle]
+            -%}
+            <li>
+              <div class="small-image-box" style="--ratio-percent: {{ 1 | divided_by: small_ratio | times: 100 }}%; ">
+                <img
+                  srcset="
+                    {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                  "
+                  src="{{ article.image.src | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                  alt="{{ article.image.alt | escape }}"
+                  class="motion-reduce"
+                  loading="lazy"
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
+                >
+              </div>
+              <div class="small-text-box">
+                {% if section.settings.show_title %}
+                <div class="big-blog-title f-w-normal {{ section.settings.title_heading_size }}">
+                  <a href="{{ article.url }}" class="full-unstyled-link">
+                    {{ article.title | escape }}
+                  </a>
+                </div>
+                {% endif %}
+                {% if section.settings.show_date %}
+                <div class="caption-with-letter-spacing">
+                  <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
+                </div>
+                {% endif %}
+                {% if section.settings.show_excerpt %}
+                <p class="big-blog-excerpt">
+                  {{ article.excerpt | strip_html }}
+                </p>
+                {% endif %}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.blog-index.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "blogsHandles",
+      "label": "t:sections.featured-blog-2.settings.text.label",
+      "info": "t:sections.featured-blog-2.settings.text.info"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.blog-index.settings.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "Most Popular"
+    },   
+    {
+      "type": "select",
+      "id": "small_heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h1",
+      "label": "字体大小"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "default": true,
+      "label": "标题"
+    },
+    {
+      "type": "select",
+      "id": "title_heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h1",
+      "label": "标题字体大小"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "日期"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "default": false,
+      "label": "摘要"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog-index.presets.name"
+    }
+  ]
+}
+{% endschema %}

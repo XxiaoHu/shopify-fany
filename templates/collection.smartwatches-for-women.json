@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "rich_text_p3rThm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f9pRMJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "💝Mother’s Day Sale 💝",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_hVqAkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>🏷️Save Up to $59 | April 29 – May 10</strong><br/>🎁Give her something more than just a gift—<br/>a perfect blend of style, and health that fits into her daily life.<br/>😴Sleep Optimization ❤️heart rate & blood oxygen monitoring🔥plus calorie tracking 🏃‍♀️step trackingand 110 sports modes  ✨ Light, stylish & made for everyday life</p>",
+            "font_size": "f-20",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_f9pRMJ",
+        "text_hVqAkD"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 30,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "image_banner_UHEpKX": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_gpUE9R": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_iEWyhH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "text_style": "f-18"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gpUE9R",
+        "text_iEWyhH"
+      ],
+      "name": "图片横幅2",
+      "settings": {
+        "image": "shopify://shop_images/PC_9d3ca559-1541-4f29-9f7f-b7dd1456cda8.webp",
+        "mobile_image": "shopify://shop_images/M_f6d3595c-fd58-43f8-a3ec-1dcee8f10cae.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "top-center",
+        "desktop_content_alignment": "center",
+        "text_width": 500,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_eqARiE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nfY74Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "💝Mother’s Day Sale 💝",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_DHgWB4": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>🏷️Save Up to $50 | April 29 – May 10</strong><br/>🎁Give her something more than just a gift—<br/>a perfect blend of style, and health that fits into her daily life.<br/>😴Sleep Optimization ❤️heart rate & blood oxygen monitoring🔥plus calorie tracking 🏃‍♀️step trackingand 110 sports modes  ✨ Light, stylish & made for everyday life</p>",
+            "font_size": "f-20",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_nfY74Y",
+        "text_DHgWB4"
+      ],
+      "name": "富文本2",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 30,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "rich_text_p3rThm",
+    "image_banner_UHEpKX",
+    "rich_text_eqARiE",
+    "product-grid"
+  ]
+}

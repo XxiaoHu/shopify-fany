@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_section_bG3CxL": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 12,
+        "mobile_font_size": 12
+      }
+    },
+    "main": {
+      "type": "main-product-wrist_watch",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_VCBdi6": {
+          "type": "text",
+          "settings": {
+            "text": "🔥<strong>Buy Any 2 Get $15 OFF, Buy Any 3 Get $25 OFF</strong>",
+            "text_style": "body"
+          }
+        },
+        "excerpt_QrfUYA": {
+          "type": "excerpt",
+          "settings": {}
+        },
+        "selling_point_qVYdbb": {
+          "type": "selling_point",
+          "settings": {}
+        },
+        "virtual_wear_6NtG3k": {
+          "type": "virtual_wear",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_img_m4j3e4": {
+          "type": "variant_img",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "klarna_on_site_messaging_app_block_mABaCr": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text_VCBdi6",
+        "excerpt_QrfUYA",
+        "selling_point_qVYdbb",
+        "virtual_wear_6NtG3k",
+        "price",
+        "variant_img_m4j3e4",
+        "buy_buttons",
+        "klarna_on_site_messaging_app_block_mABaCr"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "accessory_overview_WCHKbM": {
+      "type": "accessory-overview",
+      "blocks": {
+        "judge_me_reviews_review_widget_ADe6er": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_ADe6er"
+      ],
+      "name": "配件 overview group",
+      "settings": {}
+    },
+    "175859207490bf6eac": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_epdgTJ": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_epdgTJ"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "newsletter_QLP44D": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_nGrxmz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_XddrD3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members:  SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-24"
+          }
+        },
+        "email_form_eiUKbK": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_nGrxmz",
+        "paragraph_XddrD3",
+        "email_form_eiUKbK"
+      ],
+      "disabled": true,
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_section_bG3CxL",
+    "main",
+    "accessory_overview_WCHKbM",
+    "175859207490bf6eac",
+    "newsletter_QLP44D"
+  ]
+}

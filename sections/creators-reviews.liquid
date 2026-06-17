@@ -1,0 +1,313 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .\!flex {
+    display: flex !important;
+  }
+
+  .review-swiper .swiper-slide {
+    height: unset !important;
+  }
+
+  .review-section-title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .review-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .review-img__item {
+      width: 100%;
+      background-color: #d5c7c2;
+      height: 90px;
+
+      .review-avatar {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    .review-text__item {
+      background-color: #f0eae8;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1;
+      gap: 6rem;
+      min-height: 200px;
+      padding: 9rem 2.5rem 2.5rem 2.5rem;
+
+      .review-text__content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .review-text__auth {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .review-text__summary {
+        height: 50px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .review-text__description {
+        margin: 0px;
+      }
+    }
+  }
+{% endstyle %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'creators-reviews.js' | asset_url }}" defer="defer"></script>
+
+<div class="color-{{ section.settings.section_color_scheme }} isolate">
+  <div class="page-width section-{{ section.id }}-padding">
+    <h2 class="review-section-title {{ section.settings.alignment}}">{{ section.settings.title }}</h2>
+    <div class="swiper review-swiper{% if settings.animations_reveal_on_scroll %} color-{{ section.settings.color_scheme }} scroll-trigger animate--slide-in{% endif %}">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div
+            class="swiper-slide !flex"
+            {{ block.shopify_attributes }}
+          >
+            <div class="review-card">
+              <div class="review-img__item">
+                {%- if block.settings.cover_image != blank -%}
+                  <img
+                    class="review-avatar"
+                    src="{{ block.settings.cover_image | image_url: width: 144 }}"
+                    alt="{{ block.settings.cover_image.alt | escape }}"
+                    width="144"
+                    height="{{ 144 | divided_by: block.settings.cover_image.aspect_ratio | ceil }}"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
+
+              <div class="review-text__item">
+                <div class="review-text__content">
+                  <h3 class="review-text__auth center">
+                    {% if block.settings.url != blank %}
+                      <a href="{{ block.settings.url }}">
+                        {{ block.settings.auth | escape }}
+                      </a>
+                    {% else %}
+                      {{ block.settings.auth | escape }}
+                    {% endif %}
+                  </h3>
+                  <span class="review-text__summary center f-20">
+                    {{ block.settings.summary }}
+                  </span>
+                </div>
+                <p class="review-text__description f-22">
+                  {{ block.settings.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "红人评价",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Creators Reviews"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "分区配色方案",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "容器配色方案",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "列",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "头像"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "info": "t:sections.all.colors.has_cards_info",
+          "default": "scheme-1"
+        },
+        {
+          "type": "text",
+          "id": "auth",
+          "label": "作者"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "链接"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "summary",
+          "label": "简介"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "描述"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "红人评价"
+    }
+  ]
+}
+{% endschema %}

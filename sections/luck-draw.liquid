@@ -1,0 +1,294 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .desktop-image { display: none; }
+    .mobile-image { display: flex; }
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .desktop-image { display: flex; }
+    .mobile-image { display: none; }
+  }
+
+  .luck-draw-wrapper-title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .luck-draw-wrapper-title .wrapper-title {
+    color: #f2d0ad;
+  }
+
+  .luck-draw-wrapper-title .wrapper-sub_title {
+    margin-top: 1.5rem;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+  <div class="page-width section-{{ section.id }}-padding {{ section.settings.alignment}}">
+    {%- if section.settings.heading != blank or section.settings.text != blank -%}
+      <div class="luck-draw-wrapper-title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="wrapper-title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="wrapper-sub_title inline-richtext {{ section.settings.text_size }}">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="img">
+      <div
+        class="img__item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      >
+        <div class="global-media-settings">
+          <a href="javascript:void(0)" id="woohoo-trigger-spinthewheel" class="full-link woohoo-72960"></a>
+          {%- if section.settings.image != blank -%}
+            <div
+              class="desktop-image media media--transparent ratio"
+              style="--ratio-percent: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%"
+            >
+              {%- capture sizes -%}
+                      (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px),
+                      (min-width: 750px) calc(100vw - 100px),
+                      calc(100vw - 30px)
+                      {%- endcapture -%}
+              {{
+                section.settings.image
+                | image_url: width: 3200
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+              }}
+            </div>
+            {%- if section.settings.mobile_image != blank -%}
+              <div
+                class="mobile-image media media--transparent ratio"
+                style="--ratio-percent: {{ 1 | divided_by: section.settings.mobile_image.aspect_ratio | times: 100 }}%"
+              >
+                {%- capture sizes -%}
+                      (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px),
+                      (min-width: 750px) calc(100vw - 100px),
+                      calc(100vw - 30px)
+                      {%- endcapture -%}
+                {{
+                  section.settings.mobile_image
+                  | image_url: width: 750
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: sizes,
+                    widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                }}
+              </div>
+            {%- endif -%}
+          {%- else -%}
+            <div class="media media--transparent ratio" style="--ratio-percent: 100%">
+              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "抽奖",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.collage-2.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "副标题"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "f-18",
+      "label": "副标题大小"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.collage-2.blocks.image.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.collage-2.blocks.image.settings.mobile_image.label"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "抽奖"
+    }
+  ]
+}
+{% endschema %}

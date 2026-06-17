@@ -1,0 +1,430 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'main-image-carousel.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .section-{{ section.id }}-padding .image-carousel-title {
+    text-align: {{ section.settings.title_alignment }};
+    font-size: {{ section.settings.title_size }}px;
+  }
+
+  .section-{{ section.id }}-padding .image-carousel-desc {
+    font-size: {{ section.settings.desc_size }}px;
+    {% if section.settings.block_width != blank and section.settings.block_width > 0 %}
+    max-width: 100%;
+    width: {{ section.settings.block_width }}px;
+    {% endif %}
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    .section-{{ section.id }}-padding .image-carousel-title {
+      text-align: {{ section.settings.mobile_title_alignment }};
+      font-size: {{ section.settings.mobile_title_size }}px;
+    }
+
+    .section-{{ section.id }}-padding .image-carousel-desc {
+      font-size: {{ section.settings.mobile_desc_size }}px;
+      {% if section.settings.mobile_block_width != blank and section.settings.mobile_block_width > 0 %}
+      max-width: 100%;
+      width: {{ section.settings.mobile_block_width }}px;
+      {% endif %}
+    }
+  }
+{% endstyle %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'main-image-carousel.js' | asset_url }}" defer="defer"></script>
+
+<div class="image-carousel color-{{ section.settings.section_color_scheme }} gradient">
+  <div
+    class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper">
+        <h1 class="image-carousel-title">{{ section.settings.title }}</h1>
+        {%- unless section.settings.title == blank -%}
+          <div class="image-carousel-desc">{{ section.settings.desc }}</div>
+        {%- endunless -%}
+      </div>
+    {%- endunless -%}
+
+    <div class="swiper image-carousel-swiper">
+      {%- liquid
+        assign highest_ratio = 0
+        for block in section.blocks
+          if block.settings.image.aspect_ratio > highest_ratio
+            assign highest_ratio = block.settings.image.aspect_ratio
+          endif
+        endfor
+      -%}
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="swiper-slide image-carousel-card" data-id="modal-overlay-{{ section.id }}-{{ block.id }}">
+            <div class="image-carousel-wrapper">
+              <div
+                class="image-carousel-card-features__image"
+                style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+              >
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: block.settings.image.width
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: '(max-width: 1008px) 80vw, 25vw',
+                      widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                  }}
+                {% endif %}
+              </div>
+              <div class="card-item__contents">
+                <div class="contents-top">
+                  {% comment %} <div class="contents-top-title">{{ block.settings.title }}</div> {% endcomment %}
+                </div>
+                <div class="image-over-btn">
+                  <button class="plus-btn">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      role="presentation"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12 18.2617L12 6" stroke="#000000ff" stroke-width="1.5"></path><path d="M18.1309 12.1309L5.86914 12.1309" stroke="#000000ff" stroke-width="1.5"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- 左右箭头 -->
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{%- for block in section.blocks -%}
+  <!-- 模态框 -->
+  <div class="modal-overlay" id="modal-overlay-{{ section.id }}-{{ block.id }}">
+    <div class="modal-content">
+      <!-- 关闭按钮 -->
+      <button class="modal-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+          <path d="M7.11095 7.1084L14.2221 14.2195L21.3332 7.1084M7.11098 21.3359L14.2221 14.2247L21.3332 21.3359" stroke="white" stroke-width="2.37037" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="modal-wrapper">
+        <!-- 左侧图片区域 -->
+        <div class="modal-img-wrapper">
+          {%- if block.settings.modal_image != blank -%}
+            <picture>
+              <source
+                media="(max-width: 1260px)"
+                srcset="{{ block.settings.mobile_modal_image | image_url: width: 1260 }}"
+              >
+              {{
+                block.settings.modal_image
+                | image_url: width: block.settings.modal_image.width
+                | image_tag: loading: 'lazy'
+              }}
+            </picture>
+          {% endif %}
+        </div>
+        <!-- 右侧文本区域 -->
+        <div class="modal-text-wrapper">
+          <div class="modal-eyebrow-section">
+            <div class="eye-brow-label">{{ block.settings.eye_brow_label }}</div>
+            <div class="eye-brow-value">{{ block.settings.eye_brow_value }}</div>
+          </div>
+          <h2 class="modal-title">{{ block.settings.title }}</h2>
+          <div class="modal-desc">{{ block.settings.des1 }}</div>
+          <div class="modal-testimonial">
+            <div class="quote-eyebrow">{{ block.settings.eyebrow }}</div>
+            <div class="testimonial-text">
+              {{ block.settings.comment }}
+            </div>
+            <div class="testimonial-author">{{ block.settings.author }}</div>
+          </div>
+          <div class="modal-other-desc">{{ block.settings.des2 }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "核心功能",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "desc",
+      "label": "描述"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.multicolumn.settings.header_layout.content"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+        }
+      ],
+      "default": "center",
+      "label": "标题对齐方式"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "配色方案",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "number",
+      "id": "block_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "t:sections.multicolumn.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "mobile_title_alignment",
+      "label": "标题对齐方式",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题大小",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_desc_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "mobile_block_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "列",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image",
+          "label": "弹框图片-PC"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_modal_image",
+          "label": "弹框图片-移动端"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "标题"
+        },
+        {
+          "type": "richtext",
+          "id": "eye_brow_label",
+          "label": "眉眼-标签"
+        },
+        {
+          "type": "richtext",
+          "id": "eye_brow_value",
+          "label": "眉眼-值"
+        },
+        {
+          "type": "richtext",
+          "id": "des1",
+          "label": "描述1"
+        },
+        {
+          "type": "richtext",
+          "id": "eyebrow",
+          "label": "眉眼"
+        },
+        {
+          "type": "richtext",
+          "id": "comment",
+          "label": "评论"
+        },
+        {
+          "type": "richtext",
+          "id": "author",
+          "label": "作者"
+        },
+        {
+          "type": "richtext",
+          "id": "des2",
+          "label": "描述2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "核心功能",
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

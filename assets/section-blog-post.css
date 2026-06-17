@@ -1,0 +1,373 @@
+/**
+* 评论区样式
+**/
+.article-template__comment-wrapper {
+  margin-top: 5rem;
+  padding: 2.7rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template__comment-wrapper {
+    margin-top: 6rem;
+    padding: 3.6rem 0;
+  }
+}
+
+.article-template__comment-wrapper h2 {
+  margin-top: 0;
+}
+
+.article-template__comments {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template__comments {
+    margin-bottom: 7rem;
+  }
+}
+
+.article-template__comments-fields {
+  margin-bottom: 4rem;
+}
+
+.article-template__comments-comment {
+  color: rgba(var(--color-foreground), 0.75);
+  background-color: rgb(var(--color-background));
+  margin-bottom: 1.5rem;
+  padding: 2rem 2rem 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template__comments-comment {
+    padding: 2rem 2.5rem;
+  }
+}
+
+.article-template__comments-comment p {
+  margin: 0 0 1rem;
+}
+
+.article-template__comment-fields > * {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template__comment-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4rem;
+  }
+}
+
+.article-template__comment-warning {
+  margin: 2rem 0 2.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .article-template__comments .pagination-wrapper {
+    margin: 5rem 0 8rem;
+  }
+}
+
+.article-template__back:last-child {
+  margin-bottom: 3.2rem;
+}
+
+/*
+*  自定义css
+*/
+.Avada-Tool__CustomHtml {
+  flex-wrap: wrap;
+}
+
+.article-template__box {
+  display: flex;
+  gap: 95px;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 49px;
+}
+
+.article-template__line {
+  border-top: 1px solid #d2d2d2;
+  width: 80%;
+  margin: 96px auto 0px;
+}
+
+.article-template__blog {
+  width: 80%;
+  padding-top: 139px;
+  padding-bottom: 120px;
+  margin: 0 auto;
+}
+
+.article-template__blog .blog__title {
+  font-size: 30px;
+  color: #1e0e06;
+  line-height: 36px;
+}
+
+.blog-articles .article-card .card__information,
+.blog__posts .article-card .card__information {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.article-template__blog .title-wrapper-with-link {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #cfcdcc;
+  margin-bottom: 4.8rem;
+}
+
+.article-template__blog .page-width-desktop {
+  padding: 0px;
+}
+
+.article-template__img img {
+  height: auto;
+  border-top-right-radius: 80px;
+}
+
+.article-template__img,
+.article-template__content {
+  width: 50%;
+}
+
+.article-template__blog-title {
+  font-size: 22px;
+  color: #b18d82;
+  line-height: 30px;
+  margin-top: 51px;
+}
+
+.article-template__title {
+  font-size: 54px;
+  color: #1e0e06;
+  line-height: 58px;
+  margin-top: 14px;
+}
+
+.article-template__excerpt {
+  font-size: 24px;
+  color: #b4b1b0;
+  line-height: 32px;
+  margin-top: 25px;
+}
+
+.article-template__author {
+  font-size: 24px;
+  color: #1e0e06;
+  line-height: 32px;
+  margin-top: 16px;
+}
+
+.article-template__content .article-template__social.list-social {
+  margin-top: 3.6rem;
+  justify-content: flex-start;
+  column-gap: 0rem;
+}
+
+.article-template__social .list-social__link {
+  padding: 0 2.0rem 0 0;
+}
+
+.article-template__main_box {
+  margin: 96px auto 60px auto;
+  max-width: 79rem;
+}
+
+.article-template__main_box img {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .article-template__main_box img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.Avada-Tool__Image:has(div, p, h1, h2, h3, h4, h5, h6, span) {
+  margin-bottom: 83px;
+}
+
+@media screen and (max-width: 1800px) {
+  .article-template__img img {
+    width: 100%;
+  }
+
+  .article-template__title {
+    font-size: 50px;
+    line-height: 58px;
+  }
+}
+
+@media screen and (min-width: 1344px) and (max-width: 1760px) {
+  .article-template__blog-title {
+    margin-top: 30px;
+  }
+
+  .article-template__title {
+    font-size: 44px;
+    line-height: 48px;
+  }
+
+  .article-template__excerpt {
+    margin-top: 18px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1344px) {
+  .article-template__title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .article-template__main_box {
+    margin: 86px auto 0px;
+  }
+
+  .article-template__line {
+    margin: 86px auto 0px;
+  }
+
+  .Avada-Tool__Image:has(div, p, h1, h2, h3, h4, h5, h6, span) {
+    margin-bottom: 73px;
+  }
+
+  .article-template__excerpt,
+  .article-template__author {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .article-template__blog-title {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .article-template__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .article-template__excerpt,
+  .article-template__author {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .article-template__main_box {
+    margin: 76px auto 0px;
+  }
+
+  .article-template__line {
+    margin: 76px auto 0px;
+  }
+
+  .Avada-Tool__Image:has(div, p, h1, h2, h3, h4, h5, h6, span) {
+    margin-bottom: 63px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .article-template__blog-title {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .article-template__title {
+    font-size: 22px !important;
+    line-height: 30px;
+  }
+
+  .article-template__excerpt,
+  .article-template__author {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .article-template__main_box {
+    margin: 56px auto 0px;
+  }
+
+  .article-template__line {
+    margin: 56px auto 0px;
+  }
+
+  .Avada-Tool__Image:has(div, p, h1, h2, h3, h4, h5, h6, span) {
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-template__box {
+    width: 100%;
+    flex-direction: column;
+    padding-top: 36px;
+    gap: 0px;
+  }
+
+  .article-template__main_box {
+    max-width: 100%;
+  }
+
+  .article-template__line {
+    width: 100%;
+  }
+
+  .article-template__blog {
+    width: 100%;
+  }
+
+  .article-template__img,
+  .article-template__content {
+    width: 100%;
+  }
+
+  .article-template__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .article-template__excerpt,
+  .article-template__author {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .article-template__main_box {
+    margin: 36px auto 0px;
+  }
+
+  .article-template__line {
+    margin: 36px auto 0px;
+  }
+
+  .Avada-Tool__Image:has(div, p, h1, h2, h3, h4, h5, h6, span) {
+    margin-bottom: 36px;
+  }
+}
+
+.article-template__media {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.article-template__media--adapt {
+  height: 20rem;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template__media--adapt {
+    height: 30rem;
+  }
+}

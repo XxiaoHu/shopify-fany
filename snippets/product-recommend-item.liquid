@@ -1,0 +1,44 @@
+{% comment %}
+
+  Usage:
+  {% render 'product-recommend-item',
+    product: product,
+    variant: variant
+    title: title
+  %}
+{% endcomment %}
+{%- liquid
+  assign target = product
+  assign featured_image = null
+  if variant != null
+    assign target = variant
+    assign featured_image = variant.featured_image
+  endif
+  if featured_image == null
+    assign featured_image = product.featured_image
+  endif
+%}
+<li class="product-item{% unless target.available %} outOfStock{% endunless %}" data-variant-id="{{ variant.id }}">
+  <img
+    src="{{ featured_image | image_url: width: 71 }}"
+    alt="{{ featured_image.alt | escape }}"
+    class="item-thumbnail"
+    loading="lazy"
+    width="71px"
+    height="71px"
+  >
+  <span class="item-title">
+    <em class="itemTitle">{{ title }}</em>
+    {% unless target.available %}
+    <em class="outOfStockTip">(Out Of Stork)</em>
+    {% endunless %}
+  </span>
+  <span class="item-select"></span>
+  <span class="item-price">
+    {% if settings.currency_code_enabled %}
+      {{ target.price | money_with_currency }}
+    {% else %}
+      {{ target.price | money }}
+    {% endif %}
+  </span>
+</li>

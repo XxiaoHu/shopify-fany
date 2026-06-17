@@ -1,0 +1,222 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "breadcrumbs_section_AnHxz3": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "image_banner_HFwDzQ": {
+      "type": "image-banner",
+      "blocks": {
+        "text_24_pggDTm": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p>Downloads</p>",
+            "text_style": "body"
+          }
+        },
+        "heading_QJJP7C": {
+          "type": "heading",
+          "settings": {
+            "heading": "Manuals & Software",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "text_24_pggDTm",
+        "heading_QJJP7C"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Support-um-top.png",
+        "mobile_image": "shopify://shop_images/1296x1080-_-_-3.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "text_width": 640,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false,
+        "mobile_font_size": 32
+      }
+    },
+    "herhub_image_with_text_r7VweT": {
+      "type": "herhub-image-with-text",
+      "blocks": {
+        "heading_QqXr6f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pair Your FANY Smartwatch Immediately!",
+            "heading_size": "h1",
+            "heading_width": 670
+          }
+        },
+        "text_wcGABh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Scan the QR Code to Download the \"FANY fit\" APP<br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QqXr6f",
+        "text_wcGABh"
+      ],
+      "name": "herhub带文本的图片",
+      "settings": {
+        "image": "shopify://shop_images/app.jpg",
+        "mobile_image": "shopify://shop_images/FANY-fit-APP.jpg",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "mobile_layout": "text_first",
+        "herhub-text-width": 670,
+        "border-radius": 0,
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "mobile_full_width": true,
+        "section_color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "user_manual_files_e8eGKa": {
+      "type": "user-manual-files",
+      "name": "user manual files",
+      "settings": {
+        "image": "shopify://shop_images/support_shuomingshu.png",
+        "header": "Find Your Product(s) and Manual(s) Here",
+        "text": "<p>If you can't find the operation manual on our website or have other needs, please contact our service email at support@fany.us. When sending an email, please be sure to provide your product model  and the order number.</p>",
+        "files": "download-file-7ciiibhy",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "support_menu_banner_9c6tgD": {
+      "type": "support-menu-banner",
+      "blocks": {
+        "icon_text_group_W7hm64": {
+          "type": "icon-text-group",
+          "disabled": true,
+          "settings": {
+            "img": "shopify://shop_images/How-to-Videos.png",
+            "header": "How-to-Videos",
+            "text": "Learn More >",
+            "url": "shopify://pages/how-to-videos"
+          }
+        },
+        "icon_text_group_CCyeFt": {
+          "type": "icon-text-group",
+          "settings": {
+            "img": "shopify://shop_images/Warranty.png",
+            "header": "Warranty",
+            "text": "Learn More >",
+            "url": "/pages/privacy-policy?type=warranty-policy"
+          }
+        },
+        "icon_text_group_NErYRx": {
+          "type": "icon-text-group",
+          "settings": {
+            "img": "shopify://shop_images/erweima.png",
+            "header": "WhatsApp Chat",
+            "text": "Scan to learn",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_group_W7hm64",
+        "icon_text_group_CCyeFt",
+        "icon_text_group_NErYRx"
+      ],
+      "disabled": true,
+      "name": "support菜单图标",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_KhQRTE": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_eMK4nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 Off & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_ehqryt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-20"
+          }
+        },
+        "email_form_xKVtTk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_eMK4nj",
+        "paragraph_ehqryt",
+        "email_form_xKVtTk"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_section_AnHxz3",
+    "image_banner_HFwDzQ",
+    "herhub_image_with_text_r7VweT",
+    "user_manual_files_e8eGKa",
+    "support_menu_banner_9c6tgD",
+    "newsletter_KhQRTE"
+  ]
+}

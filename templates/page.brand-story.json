@@ -1,0 +1,799 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_9PN63B": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_JYTEet": {
+          "type": "heading",
+          "settings": {
+            "heading": "Technology Meets Style, Her Intelligence Companion",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JYTEet"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/herhub-toutu_2.webp",
+        "mobile_image": "shopify://shop_images/herhub_toutu.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "text_width": 600,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false,
+        "mobile_font_size": 32
+      }
+    },
+    "rich_text_Rzpn8W": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hg4meM": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY, See the Vibe.",
+            "heading_size": "h2",
+            "heading_width": 800
+          }
+        },
+        "text_F4yKCA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Life flows through every moment—leading at work, laughing at home, or savoring a quiet pause, FANY stands with you.</p><p> Created for women, FANY is more than a smartwatch; it’s a companion that truly understands you, staying in tune with your body’s rhythm. A gentle reminder to breathe, a steady pulse to guide, a silent bond to console—always syncs with you. </p><p>We walk together, we lift each other. We shine as one. Every rhythm, every spark—we share, fuel, and glow.<br/><br/></p>",
+            "font_size": "f-24",
+            "text_width": 940
+          }
+        },
+        "button_CVU8GQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "DISCOVER FANY LUNA",
+            "button_link": "shopify://products/luna",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hg4meM",
+        "text_F4yKCA",
+        "button_CVU8GQ"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "block_width": 940
+      }
+    },
+    "herhub_special_backgroup_EDc4aD": {
+      "type": "herhub-special-backgroup",
+      "blocks": {
+        "text_TTzbwR": {
+          "type": "text",
+          "settings": {
+            "heading": "<h1>Self-Awareness: <br/>The Foundation of Emotional Wellbeing</h1>",
+            "heading_width": 495,
+            "text_width": 490,
+            "text": "<p>Women are more sensitive to stress than men. It often builds quietly, surfacing as poor sleep, anxiety, mood swings, weight changes, elevated heart rate, or irregular menstrual cycles—your body’s early warning signs. </p><p><a href=\"/products/luna\" title=\"FANY Luna Classic Smartwatch\">FANY Luna</a>'s advanced biosensors monitor key indicators like HRV and EDA, transforming subtle shifts into meaningful insights about stress and emotional balance. More than data, it’s 24/7 feedback—helping you understand your body and nurture your wellbeing.</p>"
+          }
+        },
+        "image_FY9rYx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/herhub-qingxu-001.webp",
+            "image_position": "flex-end"
+          }
+        }
+      },
+      "block_order": [
+        "text_TTzbwR",
+        "image_FY9rYx"
+      ],
+      "name": "herhub特殊背景",
+      "settings": {
+        "padding_top": 96,
+        "padding_bottom": 0,
+        "left-radio": 45,
+        "back_image": "shopify://shop_images/Self-AwarenessTheFoundationofEmotionalWellbeing-bg.webp",
+        "back_image_from": "left"
+      }
+    },
+    "herhub_special_backgroup_jhRYNp": {
+      "type": "herhub-special-backgroup",
+      "blocks": {
+        "image_tNXiL8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Herhub-jingqi-02.webp",
+            "image_position": "center"
+          }
+        },
+        "text_P7ta9T": {
+          "type": "text",
+          "settings": {
+            "heading": "<h1>Track Your  Cycle, <br/>Manage Your Health <br/>& Schedule </h1>",
+            "heading_width": 600,
+            "text_width": 700,
+            "text": "<p><a href=\"https://womenshealth.gov/menstrual-cycle/your-menstrual-cycle-and-your-health\" title=\"https://womenshealth.gov/menstrual-cycle/your-menstrual-cycle-and-your-health\">U.S. Department of Health and Human Services </a>research confirms women’s menstrual cycles are closely tied to health: Cycle-regulating hormones affect emotions and physical condition; menstrual issues may signal health risks and impact pregnancy. <br/><a href=\"/products/luna\" title=\"FANY Luna Classic Smartwatch\">FANY Luna</a> tracks your cycle, ovulation, and emotional and physical changes, turning data into insights. Plan work, family, and workouts more effectively, while staying aware of period-related mood shifts for timely self-care.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_tNXiL8",
+        "text_P7ta9T"
+      ],
+      "name": "herhub特殊背景",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "left-radio": 45,
+        "back_image": "shopify://shop_images/TrackYourCycle_ManageYourHealth_Schedule-bg.webp",
+        "back_image_from": "right"
+      }
+    },
+    "multicolumn_pp4ikY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_LNEC39": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/herhub_4_-1_d7879fc8-370a-4d17-8459-1ee253f99297.png",
+            "title": "Emotion Tracking & Relaxation",
+            "subtitle": "",
+            "hr": false,
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DgqPdP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/herhub_4_-2-2.png",
+            "title": "Menstrual Cycle Tracking",
+            "subtitle": "",
+            "hr": false,
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6ADQqn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/herhub_4_-03.png",
+            "title": "Sleep Optimization",
+            "subtitle": "",
+            "hr": false,
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xU3AjN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/herhub_4_-4.png",
+            "title": "Fitness Tracking",
+            "subtitle": "",
+            "hr": false,
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_LNEC39",
+        "column_DgqPdP",
+        "column_6ADQqn",
+        "column_xU3AjN"
+      ],
+      "settings": {
+        "only_image": true,
+        "title": "",
+        "heading_size": "h1",
+        "text": "",
+        "text_font_size": 20,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "title_alignment": "center",
+        "column_alignment": "center",
+        "background_style": "none",
+        "hover_background_style": "none",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "column_title_size": 36,
+        "column_subtitle_size": 20,
+        "column_text_size": 18,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "columns_mobile": "2",
+        "mobile_title_alignment": "left",
+        "mobile_column_title_size": 24,
+        "mobile_column_subtitle_size": 18,
+        "mobile_column_text_size": 18,
+        "swipe_on_mobile": false,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
+      }
+    },
+    "rich_text_KcinMj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_G4Gx4e": {
+          "type": "heading",
+          "settings": {
+            "heading": "3-Minute Emotion Balance Guide",
+            "heading_size": "h1",
+            "heading_width": 778
+          }
+        },
+        "text_24_HUiinV": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p>When FANY alerts you to stress or low mood, pause and tap the screen to start a 3-minute deep breathing session. It helps calm your mind, ease stress, and restore emotional balance. You can also use it anytime you have trouble sleeping, bringing your body and mind back into harmony.</p>",
+            "text_width": 1150
+          }
+        }
+      },
+      "block_order": [
+        "heading_G4Gx4e",
+        "text_24_HUiinV"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 96,
+        "padding_bottom": 52,
+        "block_width": 1150
+      }
+    },
+    "herhub_image_group_czeeKF": {
+      "type": "herhub-image-group",
+      "name": "herhub图片组",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "big_width": 50,
+        "border-radius": 30,
+        "big_image_order": "second",
+        "big_image": "shopify://shop_images/herhub-huxi-R2.webp",
+        "small_image": "shopify://shop_images/herhub-huxi-02.webp",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "small_image_top": 36
+      }
+    },
+    "image_banner_fNWMtJ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_MbKCte": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Women Suffer More in Sleep?",
+            "heading_size": "h1"
+          }
+        },
+        "text_24_NMCVjT": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p><a href=\"https://www.sleepfoundation.org/women-sleep/healthy-sleep-tips-women\" title=\"https://www.sleepfoundation.org/women-sleep/healthy-sleep-tips-women\">The Sleep Foundation</a> notes women are about 40% more likely to experience insomnia than men. Women’s sleep is often affected by relationships, work, social expectations, and family care. Hormonal changes—especially during pregnancy or menopause—can also make sleep trickier.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MbKCte",
+        "text_24_NMCVjT"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/herhub-1920_shuimian.png",
+        "mobile_image": "shopify://shop_images/M-herhub_sleep.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "text_width": 543,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "left",
+        "show_text_below": true
+      }
+    },
+    "rich_text_yGfzkW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mUEpKq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Better Sleep-Your Secret to Recharged Mornings",
+            "heading_size": "h1",
+            "heading_width": 647
+          }
+        },
+        "text_W7WGdW": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/products/luna\" title=\"FANY Luna Classic Smartwatch\">FANY smartwatch</a> tracks key sleep metrics—heart rate, HRV, breathing, blood oxygen, movements—to build your personalized report. Each morning, instantly check your sleep rating, stages (deep/light/REM), timing (falling asleep/wake time), plus tailored insights and improvement tips. </p>",
+            "font_size": "f-24",
+            "text_width": 1260
+          }
+        }
+      },
+      "block_order": [
+        "heading_mUEpKq",
+        "text_W7WGdW"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 96,
+        "padding_bottom": 64,
+        "block_width": 1260
+      }
+    },
+    "herhub_image_group_TxNbQg": {
+      "type": "herhub-image-group",
+      "name": "herhub图片组",
+      "settings": {
+        "padding_top": 4,
+        "padding_bottom": 24,
+        "big_width": 60,
+        "border-radius": 30,
+        "big_image_order": "first",
+        "big_image": "shopify://shop_images/shuimian-1050x660_f9e8c150-843f-4925-83be-9fcf209247af.png",
+        "small_image": "shopify://shop_images/Herhub-shuimian-02.webp",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421"
+      }
+    },
+    "herhub_image_with_text_KLgFm3": {
+      "type": "herhub-image-with-text",
+      "blocks": {
+        "heading_9HgrWU": {
+          "type": "heading",
+          "settings": {
+            "heading": "110 Fitness Tracking Modes:",
+            "heading_size": "h1",
+            "heading_width": 670
+          }
+        },
+        "heading_J68rpM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fuel Your Fitness Goals",
+            "heading_size": "h1",
+            "heading_width": 670
+          }
+        },
+        "text_24_3JTkQf": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p>Moderate exercise is key for health, weight management, stress relief, and inner joy. FANY smartwatch supports 110 workout modes—running, yoga, pilates, dancing, step counting, cycling, etc. It delivers precise exercise data, calories, heart rate monitoring, and abnormal heart rate alerts. 7-day* battery life for peace of mind—your ideal fitness and health companion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9HgrWU",
+        "heading_J68rpM",
+        "text_24_3JTkQf"
+      ],
+      "name": "herhub带文本的图片",
+      "settings": {
+        "image": "shopify://shop_images/110FitnessTrackingModes_FuelYourFitnessGoals.webp",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "herhub-text-width": 800,
+        "border-radius": 0,
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_full_width": false,
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 96,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_LEwAm9": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/110yundongliebiao-720.webp",
+        "mobile_image": "shopify://shop_images/110yundongliebiao-920_5b78b75b-fb5b-415f-85cb-6aee8a787154.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "text_width": 200,
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_x3JQ6M": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_42_fzeDiV": {
+          "type": "heading-42",
+          "settings": {
+            "heading": "FANY Luna"
+          }
+        },
+        "heading_9kdTxf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Own 24/7 Style + Health",
+            "heading_size": "h1",
+            "heading_width": 820
+          }
+        },
+        "button_PT7Fc6": {
+          "type": "button",
+          "settings": {
+            "button_label": "VISIT FANY LUNA",
+            "button_link": "shopify://products/luna",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_42_fzeDiV",
+        "heading_9kdTxf",
+        "button_PT7Fc6"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "block_width": 820
+      }
+    },
+    "one_image_word_3mjxGy": {
+      "type": "one-image-word",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "text": "",
+        "text_style": "f-18",
+        "image": "shopify://shop_images/HerHub-Product_b1dab2ed-25ca-4796-8225-67cde70f801d.png",
+        "mobile_image": "shopify://shop_images/HerHub-Product_b1dab2ed-25ca-4796-8225-67cde70f801d.png",
+        "button_label": "",
+        "link": "",
+        "alignment": "center",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "herhub_icon_group_VtDqRD": {
+      "type": "herhub-icon-group",
+      "blocks": {
+        "image_XdqWY7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ElegantDesign.png",
+            "text": "Elegant Design"
+          }
+        },
+        "image_4jjPyL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/EmotionalMonitoring-02.png",
+            "text": "Emotion and Stress Tracking"
+          }
+        },
+        "image_HNKyPa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DeepBreath.png",
+            "text": "Breathing Meditation for Relaxation"
+          }
+        },
+        "image_3Re4aq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CycleSync.png",
+            "text": "Menstrual Cycle Tracking"
+          }
+        },
+        "image_gH8NzQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SleepOptimization.png",
+            "text": "Sleep Optimization"
+          }
+        },
+        "image_JnTapQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/110FitnessTrackingModes.png",
+            "text": "110 Fitness Tracking Modes"
+          }
+        },
+        "image_3FRBqk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HeartRateMonitoring.png",
+            "text": "Heart Rate Monitoring"
+          }
+        },
+        "image_hriETw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7-dayBatteryLife.png",
+            "text": "7-day Battery* Life"
+          }
+        },
+        "image_K8j74Y": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Notifications.png",
+            "text": "Notifications"
+          }
+        },
+        "image_GMDkTV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ScheduleManagement.png",
+            "text": "Schedule Management"
+          }
+        },
+        "image_rRJkMm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Light_Moments_Pomodoro_Clock.png",
+            "text": "Light Moments Pomodoro Clock"
+          }
+        },
+        "image_YcAAfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AlarmClockc_Weather.png",
+            "text": "Alarm Clockc & Weather"
+          }
+        },
+        "image_b77kEY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Multiple_Strap_Options.png",
+            "text": "Multiple Strap Options"
+          }
+        },
+        "image_cydz4D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IP68WaterproofRating.png",
+            "text": "1 ATM Waterproof Rating"
+          }
+        }
+      },
+      "block_order": [
+        "image_XdqWY7",
+        "image_4jjPyL",
+        "image_HNKyPa",
+        "image_3Re4aq",
+        "image_gH8NzQ",
+        "image_JnTapQ",
+        "image_3FRBqk",
+        "image_hriETw",
+        "image_K8j74Y",
+        "image_GMDkTV",
+        "image_rRJkMm",
+        "image_YcAAfU",
+        "image_b77kEY",
+        "image_cydz4D"
+      ],
+      "name": "herhub图标组",
+      "settings": {
+        "section_color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 100,
+        "border-radius": 30
+      }
+    },
+    "rich_text_6yPD99": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MxPDyf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Created for Women",
+            "heading_size": "h1",
+            "heading_width": 600
+          }
+        },
+        "text_24_BEkMNY": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p>FANY is more than a smartwatch, it’s a companion that truly understands you.</p>",
+            "text_width": 612
+          }
+        }
+      },
+      "block_order": [
+        "heading_MxPDyf",
+        "text_24_BEkMNY"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 120,
+        "padding_bottom": 40,
+        "block_width": 612
+      }
+    },
+    "herhub_image_with_text_BqqkJe": {
+      "type": "herhub-image-with-text",
+      "blocks": {
+        "heading_ybka7E": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY Luna Classic Smartwatch",
+            "heading_size": "h1",
+            "heading_width": 440
+          }
+        },
+        "text_24_iX38nU": {
+          "type": "text-24",
+          "settings": {
+            "text": "<p>Designed for Women's  Stylish& Wellness Life</p>"
+          }
+        },
+        "price_9xG9Tx": {
+          "type": "price",
+          "settings": {
+            "new-price": "<strong>$129.99</strong>",
+            "old-price": ""
+          }
+        },
+        "button_qLibak": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/luna",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_ybka7E",
+        "text_24_iX38nU",
+        "price_9xG9Tx",
+        "button_qLibak"
+      ],
+      "name": "herhub带文本的图片",
+      "settings": {
+        "image": "shopify://shop_images/herhub-P-1080x1000-01.webp",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "herhub-text-width": 650,
+        "border-radius": 30,
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_full_width": false,
+        "section_color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "newsletter_KhQRTE": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_eMK4nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_ehqryt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-20"
+          }
+        },
+        "email_form_xKVtTk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_eMK4nj",
+        "paragraph_ehqryt",
+        "email_form_xKVtTk"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_9PN63B",
+    "rich_text_Rzpn8W",
+    "herhub_special_backgroup_EDc4aD",
+    "herhub_special_backgroup_jhRYNp",
+    "multicolumn_pp4ikY",
+    "rich_text_KcinMj",
+    "herhub_image_group_czeeKF",
+    "image_banner_fNWMtJ",
+    "rich_text_yGfzkW",
+    "herhub_image_group_TxNbQg",
+    "herhub_image_with_text_KLgFm3",
+    "image_banner_LEwAm9",
+    "rich_text_x3JQ6M",
+    "one_image_word_3mjxGy",
+    "herhub_icon_group_VtDqRD",
+    "rich_text_6yPD99",
+    "herhub_image_with_text_BqqkJe",
+    "newsletter_KhQRTE"
+  ]
+}

@@ -1,0 +1,99 @@
+.product-overview-text-on-image{
+  width: 100%;
+  position: relative;
+}
+.product-overview-text-on-image img{
+  width: 100%;
+  height: auto;
+}
+.product-overview-text-on-image .text-block{
+  width: 100%;
+  display: grid;
+  position: absolute; 
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.product-overview-text-on-image .text-block-center{
+  grid-template-columns: 1fr;
+  text-align: center;
+  height: 100%;
+  top: 0px;
+  align-content: center;
+}
+.product-overview-text-on-image .text-block-center h2{
+  margin-bottom: 30px;
+}
+.product-overview-text-on-image .text-block-center .header-item,.text-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-overview-text-on-image .text-block-separate{
+  color: #fff;
+  grid-template-columns: 1fr 1fr;
+  top: 9%;
+}
+.product-overview-text-on-image .text-block-separate .header-item{
+  justify-self: left;
+}
+.product-overview-text-on-image .text-block-separate .header-item h2{
+  color: #fff;
+}
+.product-overview-text-on-image .text-block-separate .text-item{
+  justify-self: right;
+  padding-right: 8rem; 
+}
+.product-overview-text-on-image .text-block-separate .text-item a{
+  text-decoration: underline;
+  color: #FFAE89;
+}
+.product-overview-text-on-image .mobile-text-item{
+  display: none;
+}
+.product-overview-text-on-image .f-18-block{
+  position: absolute;
+  padding-left: 5rem;
+  color: #C7B3B3;
+  bottom: 5%;
+  font-weight: 300;
+}
+@media screen and (max-width: 1500px){
+  .text-item{
+    padding-right: 0 !important; 
+  }
+}
+
+@media screen and (max-width: 768px){
+  .product-overview-text-on-image .text-block{
+    color: rgba(var(--color-foreground));
+    align-content: start !important;
+    top: 7% !important;
+  }
+  .product-overview-text-on-image .text-block-center{
+    h2{
+      margin-bottom: 10px;
+    }
+  }
+  .product-overview-text-on-image .text-block-separate{
+    grid-template-columns: 1fr;
+    .text-item{
+      display: none;
+    }
+  }
+  .product-overview-text-on-image .mobile-text-item{
+    margin-top: 20px;
+    padding: 0 20px;
+    display: block !important;
+    .text-description{
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .product-overview-text-on-image .f-18-block{
+    position: unset;
+    margin-top: 2rem;
+    padding: 0 20px;
+    font-size: 1.5rem !important;
+    color: #000;
+    max-width: 100%;
+  }
+}

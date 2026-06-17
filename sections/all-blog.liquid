@@ -1,0 +1,270 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .all-blog-box{
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 100px !important;
+    }
+  @media screen and (min-width: 1199px) {
+    .all-blog-box{
+      padding-left: 20rem;
+      padding-right: 20rem;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .blog-articles {
+      grid-template-columns: repeat({{ section.settings.column_num }}, 1fr);
+      column-gap: 3rem;
+      row-gap: var(--grid-desktop-vertical-spacing);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .all-blog-box{
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      padding-top: 6rem !important;
+      background-color: #FAF6F6;
+    }
+    .all-blog-box .blog-articles{
+      row-gap: 3rem !important;
+    }
+    .all-blog-box .blog-articles .blog-articles__article{
+      background-color: #fff;
+    }
+    .card__content{
+      padding: 0 1.5rem !important;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign blogs_handles = section.settings.blogsHandles |  split: ',' 
+  assign article_data = ''
+  assign ratio = nil
+  for blogHandle in blogs_handles 
+    assign blog = blogs[blogHandle]
+    for article in blog.articles limit: 1000
+      unless article.metafields.custom.push_blog_index
+        if ratio == blank
+          assign ratio = article.image.aspect_ratio
+        endif
+        assign excerpt = article.excerpt | strip_html | truncatewords: 30
+        assign date_time = article.published_at | date: '%Y-%m-%d' | escape
+        assign show_time = article.published_at | date: '%B %d, %Y' | escape
+      
+        assign article_data = article | json | remove_last: '}' | append: ',date_time: "' | append: date_time | append: '"' | append: ',show_time: "' | append: show_time | append: '"' | append: ',excerpt:"' | append: excerpt | append: '"' | append: ',image_height:' | append: article.image.height | append: ',url:"' | append: article.url | append: '"'  | append: ',category_handle: "' | append: handle | append: '"' | append: ',category: "' | append: blog.title | append: '"' | append: '}' | append: ',' | append: article_data
+      endunless
+    endfor
+  endfor
+-%}
+
+
+<div class="main-blog page-width section-{{ section.id }}-padding all-blog-box">
+  <div class="blog-articles">
+    
+  </div>
+  <div class="pagination-container"></div>
+</div>
+<script src="{{ 'pagination.js' | asset_url }}" defer="defer"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // article data
+    const articlesData = [{{article_data | remove_last: ',' }}];
+    const pageSize = {{section.settings.page_size}};
+    const totalCount = articlesData.length;
+
+    // sort posts by published date
+    articlesData.sort((a,b) => new Date(a.published_at).getTime() - new Date(b.published_at).getTime());
+    
+    articlesData.reverse();
+
+    const pageChangeHandler = function(page) {
+      currentPage = page;
+      // article wrapper
+      const articleWrapper = document.querySelector('.blog-articles');
+      const startIndex = pageSize*(currentPage-1);
+        let endIndex = pageSize*currentPage;
+        if(totalCount < endIndex){
+          endIndex = totalCount
+        }
+
+        const showData = articlesData.slice(startIndex, endIndex);
+
+        let articleHTML = '';
+        let i = 1;
+        showData.forEach((article) => {
+          articleHTML += articleTemplate(article, i);
+          i++;
+        });
+        // render articles
+        articleWrapper.innerHTML = articleHTML;
+        
+        // 分页
+        const paginationWrapper = document.querySelector('.pagination-container');
+        
+        const pageHTML = getPaginationHtml(currentPage, totalCount, pageSize,`{{- 'icon-caret.svg' | inline_asset_content -}}`, `{{- 'icon-caret.svg' | inline_asset_content -}}`, true);
+        paginationWrapper.innerHTML = pageHTML
+    };
+    
+    const articleTemplate = (article, i) => {
+      
+      return `<div
+        class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: ${i};"
+        {% endif %}
+      >
+        <div class="article-card-wrapper card-wrapper underline-links-hover">
+          <div class=" card article-card card--standard article-card__image--adapt card--media " style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+            <div class="card__inner {% if settings.blog_card_style == 'standard' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %} ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+              <div class="article-card__image-wrapper card__media">
+                <div class="article-card__image media media--hover-effect" style="padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">
+                  <img
+                    srcset="
+                      ${ article.image.width >= 165 ? article.image.src+'&width=165 165w,' : ''}
+                      ${ article.image.width >= 360 ? article.image.src+'&width=360 360w,' : ''}
+                      ${ article.image.width >= 533 ? article.image.src+'&width=533 533w,' : ''}
+                      ${ article.image.width >= 720 ? article.image.src+'&width=720 720w,' : ''}
+                      ${ article.image.src} ${article.image.width}w
+                    "
+                    src="${ article.image.src}&width=533 533w"
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                    alt="${ article.image.src.alt}"
+                    class="motion-reduce"
+                    loading="lazy"
+                    width="${ article.image.width }"
+                    height="${article.image_height}">
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__information">
+                <h4 class="card__heading"><a href="${ article.url }" class="full-unstyled-link">${ article.title}</a></h3>
+                <div class="article-card__info caption-with-letter-spacing"> <span class="circle-divider">
+                  <time datetime="${ article.date_time }">${ article.show_time}</time>
+                </span></div>
+                <p class="article-card__excerpt limited-lines rte-width">${ article.excerpt}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card__content">
+            <div class="card__information">
+              <h4 class="card__heading"><a href="${ article.url }" class="full-unstyled-link">${ article.title}</a></h3>
+              <div class="article-card__info caption-with-letter-spacing"> <span class="circle-divider"><time datetime="${ article.date_time }">${ article.show_time}</time></span></div>
+              <p class="article-card__excerpt limited-lines rte-width">${ article.excerpt}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    };
+
+    // 监听分页点击（全局唯一，只绑定一次）
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('.pagination__item[data-page]');
+      if (!target) return;
+
+      e.preventDefault();
+      const page = target.dataset.page;
+      
+      // 直接调用你的钩子！
+      pageChangeHandler(page);
+    });
+
+    pageChangeHandler(1);
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.all-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "blogsHandles",
+      "label": "t:sections.featured-blog-2.settings.text.label",
+      "info": "t:sections.featured-blog-2.settings.text.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "page_size",
+      "label": "t:sections.main-blog.settings.page_size.label",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_num",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.main-blog.settings.column_num.label",
+      "default": 3
+    },
+  ],
+  "presets": [
+    {
+      "name": "t:sections.all-blog.presets.name"
+    }
+  ]
+}
+{% endschema %}

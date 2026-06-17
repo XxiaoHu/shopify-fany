@@ -1,0 +1,265 @@
+
+:root {
+    --ae-button-bg: #93726C; 
+}
+/* 顶部菜单样式 */
+.product-category-top-menu {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.product-category-top-menu .menu-item {
+    cursor: pointer;
+    padding: 8px 0;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+    font-weight: var(--font-body-weight);
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    line-height: 1.25;
+}
+.product-category-top-menu .menu-item.active {
+    border-bottom: 1px solid var(--sc-text-color);
+}
+.product-category-home-swiper .product-category-slider-button{
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    color: var(--sc-text-color);
+    border-radius: 50% !important;
+    display: none;
+}
+.product-category-home-swiper .product-category-slider-button:after{
+    font-size: 20px;
+}
+.product-category-home-swiper .product-category-slider-button:hover:after{
+    font-size: 22px;
+}
+.product-category-home-swiper:hover .product-category-slider-button{
+    display: flex;
+}
+.product-category-home-swiper:hover .product-category-slider-button.swiper-button-lock{
+    display: none;
+}
+.product-category-home-swiper .swiper-button-prev, .product-category-home-swiper .swiper-button-next {
+    margin-top: 0; /* 清除Swiper默认的垂直居中偏移 */
+    top: 0; /* 先重置到顶部，后续用JS动态计算 */
+}
+/* 产品卡片样式修改 - 新增图片容器和过渡效果 */
+.product-category-product-card {
+    width: 100%;
+    position: relative;
+    color: inherit;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.product-category-product-card .card-a {
+    display: contents; /* 让链接铺满卡片 */
+    outline: none;
+    text-decoration: none;
+  }
+/* 图片容器 - 用于包裹两张图片 */
+.product-category-product-card .product-img-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 124.3243%; /*宽370，高460*/
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #F7F7F7;
+    /* 新增：触摸样式提示 */
+    touch-action: pan-x;
+}
+/* 基础图片样式 */
+.product-category-product-card .product-img, .product-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 保持图片比例 */
+    transition: opacity 0.2s ease-in-out; /* 淡入淡出动画 */
+}
+/* 默认显示的主图 */
+.product-category-product-card .product-img {
+    z-index: 1;
+    opacity: 1;
+}
+/* 悬停显示的图片 - 默认隐藏在右侧 */
+.product-category-product-card .product-img-hover {
+    z-index: 2;
+    opacity: 0;
+}
+
+/* 指示器容器 - 固定在图片容器底部 */
+.product-img-container .image-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+  z-index: 3; /* 确保在图片上层 */
+}
+
+/* 单个指示器样式 */
+.product-img-container .indicator {
+  width: 20px;
+  height: 2px;
+  background-color: #DDD0CC; 
+  transition: background-color 0.2s ease;
+  display: none;
+}
+
+/* 激活态样式（深棕色，与示例图一致） */
+.product-img-container .indicator.active {
+  background-color: #9E7163; 
+}
+
+/* 大屏悬停切换（保留原有效果） */
+@media (min-width: 1024px) {
+    .product-category-product-card:hover .product-img {
+        opacity: 0;
+    }
+    .product-category-product-card:hover .product-img-hover {
+        opacity: 1;
+    }
+}
+/* 小屏触摸激活状态 */
+.product-category-product-card.touched .product-img {
+    opacity: 0;
+}
+.product-category-product-card.touched .product-img-hover {
+    opacity: 1;
+}
+/* 小屏触摸激活时同步切换指示器 */
+.product-category-product-card.touched .indicator:first-child {
+  background-color: #e0e0e0;
+}
+.product-category-product-card.touched .indicator:last-child {
+  background-color:#9E7163;
+}
+
+
+.product-category-product-card .card-a p {
+    color: var(--ae-button-bg);
+    font-family: Merriweather;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+}
+.product-category-product-card .card-a p .shop-btn{
+    display: none;
+    border-bottom: 2px solid var(--ae-button-bg);
+}
+.product-category-product-card .card-a p.has-dis-price .price-s{
+    text-decoration: line-through;
+    color: #686766;
+}
+.product-category-product-card .card-a p .dis-price{
+    background: var(--ae-button-bg);
+    color: white;
+    padding: 5px 12px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* .product-category-product-card :hover p .shop-btn{
+    display: inline-block;
+}
+.product-category-product-card :hover p .price-s{
+    display: none;
+}
+.product-category-product-card :hover p .dis-price{
+    display: none;
+} */
+.product-category-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #C5AAA1;
+    color: white;
+    padding: 6px 12px;
+    z-index: 10;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .product-category-top-menu{
+        gap: 24px;
+    }
+    .product-category-top-menu .menu-item, .product-category-product-card .f-20 {
+        font-size: calc(var(--font-heading-scale) * 1.4rem) !important;
+    }
+    .product-category-badge {
+        padding: 4px 5px;
+        font-size: 12px;
+    }
+    .product-category-product-card  .card-a p{
+        font-size: 16px;
+    }
+}
+
+/* 新增：小屏样式 - 移除轮播、显示所有卡片 */
+@media (max-width: 1023px) {
+    .product-category-product-card {
+        cursor: default !important;
+    }
+    /* 手机端：文字区域恢复点击 */
+    .product-category-product-card .card-a {
+        pointer-events: auto !important;
+        cursor: pointer !important;
+        display: block;
+    }
+
+    /* 手指按住卡片时 = 模拟 hover */
+    .product-category-product-card .card-a:active p .shop-btn,
+    .product-category-product-card.touched .card-a p .shop-btn {
+        display: inline-block !important;
+    }
+
+    .product-category-product-card .card-a:active p .price-s,
+    .product-category-product-card.touched .card-a p .price-s,
+    .product-category-product-card .card-a:active p .dis-price,
+    .product-category-product-card.touched .card-a p .dis-price {
+        display: none !important;
+    }
+
+    /* 图片可点击、可触摸（滑动/点击切换图片） */
+    .product-img-container {
+        pointer-events: auto !important;
+        touch-action: pan-y !important;
+    }
+    /* 隐藏Swiper导航按钮 */
+    .product-category-home-swiper:hover .product-category-slider-button {
+        display: none !important;
+    }
+    /* 取消轮播滑动容器的溢出隐藏，显示所有内容 */
+    .product-category-home-swiper {
+        overflow: visible !important;
+    }
+    /* 让轮播项容器变成流式布局，显示所有卡片 */
+    .product-category-home-swiper .swiper-wrapper {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        transform: none !important; /* 取消Swiper的位移 */
+        column-gap: 10px;
+        row-gap: 30px;
+    }
+    /* 小屏下单列显示卡片，宽度100% */
+    .product-category-home-swiper .swiper-wrapper .swiper-slide {
+        width: calc(50% - 5px) !important;
+        flex-shrink: 0;
+        margin-bottom: 20px !important;
+    }
+    .product-img-container .indicator {
+        display: block;
+    }
+}

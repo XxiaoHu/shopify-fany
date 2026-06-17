@@ -1,0 +1,380 @@
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.mobile_padding_top }}px;
+      padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .block-{{ block.id }}-padding {
+      --rpx: calc(1vw*100/1052)
+    }
+  }
+
+  /* 容器样式 - 居中展示 */
+  .fitness-watch-container {
+    width: 100%;
+    height: calc(var(--rpx, 1px) * 1252);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .fitness-watch-wrapper {
+    position: absolute;
+    width: calc(var(--rpx, 1px) * 1152);
+    height: calc(var(--rpx, 1px) * 1152);
+    top: calc(var(--rpx, 1px) * 50);
+    left: 50%;
+    transform: translate(-50%);
+    --circle-color: 0, 0, 0;
+  }
+
+  .fitness-watch-wrapper .bg-img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: rotate 20s linear infinite;
+  }
+
+  /* 环形轨道基础样式 */
+  .fitness-watch-wrapper .bg-img .circle-item {
+    position: absolute;
+    {% if block.settings.circle_color != blank %}
+    --circle-color: {{ block.settings.circle_color.red }},{{ block.settings.circle_color.green }},{{ block.settings.circle_color.blue }};
+    {% endif %}
+    border: 1px solid rgba(var(--circle-color), 0.1);
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  .fitness-watch-wrapper .bg-img .circle-1 {
+    left: 0px;
+    top: 0px;
+    width: calc(var(--rpx, 1px) * 1152);
+    height: calc(var(--rpx, 1px) * 1152);
+  }
+
+  .fitness-watch-wrapper .bg-img .circle-2 {
+    left: calc(var(--rpx, 1px) * 163);
+    top: calc(var(--rpx, 1px) * 163);
+    width: calc(var(--rpx, 1px) * 826);
+    height: calc(var(--rpx, 1px) * 826);
+  }
+
+  .fitness-watch-wrapper .bg-img .circle-3 {
+    left: calc(var(--rpx, 1px) * 299);
+    top: calc(var(--rpx, 1px) * 299);
+    width: calc(var(--rpx, 1px) * 554);
+    height: calc(var(--rpx, 1px) * 554);
+  }
+
+  .fitness-watch-img {
+    position: absolute;
+    width: calc(var(--rpx, 1px) * 364);
+    height: calc(var(--rpx, 1px) * 666);
+    top: calc(var(--rpx, 1px) * 296);
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  /* 中心手表图片 */
+  .fitness-watch-img .watch-img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* 旋转动画核心 */
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotateReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+  }
+
+  /* 运动图标基础样式 */
+  .fitness-icon {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+  }
+
+  .rotate-icon {
+    animation: rotateReverse 20s linear infinite;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+  }
+
+  .circle-1-icon {
+    width: calc(var(--rpx, 1px) * 72);
+    height: calc(var(--rpx, 1px) * 72);
+  }
+
+  .circle-1-icon.icon-1 {
+    top: 72%;
+    left: 5%;
+  }
+
+  .circle-1-icon.icon-2 {
+    top: 12%;
+    left: 17%;
+  }
+  
+  .circle-1-icon.icon-3 {
+    top: 50%;
+    left: 100%;
+  }
+
+  .circle-1-icon.icon-4 {
+    top: 90%;
+    left: 80%;
+  }
+
+  .circle-1-icon.icon-5 {
+    top: 90%;
+    left: 80%;
+  }
+
+  .circle-1-icon.icon-6 {
+    top: 12%;
+    left: 82%;
+  }
+
+  .circle-2-icon {
+    width: calc(var(--rpx, 1px) * 50);
+    height: calc(var(--rpx, 1px) * 50);
+  }
+
+  .circle-2-icon.icon-1 {
+    left: 20%;
+    top: 30%;
+  }
+
+  .circle-2-icon.icon-2 {
+    top: 80%;
+    left: 30%;
+  }
+
+  .circle-2-icon.icon-3 {
+    top: 20%;
+    left: 69%;
+  }
+
+  .circle-2-icon.icon-4 {
+    top: 69%;
+    left: 80.5%;
+  }
+
+  .circle-2-icon.icon-5 {
+    top: 57%;
+    left: 15%;
+  }
+
+  .circle-2-icon.icon-6 {
+    top: 42%;
+    left: 85%;
+  }
+
+  .circle-3-icon {
+    width: calc(var(--rpx, 1px) * 42);
+    height: calc(var(--rpx, 1px) * 42);
+  }
+
+  .circle-3-icon.icon-1 {
+    top: 30%;
+    left: 37%;
+  }
+
+  .circle-3-icon.icon-2 {
+    top: 68%;
+    left: 65.5%;
+  }
+
+  .circle-3-icon.icon-3 {
+    top: 66%;
+    left: 32%;
+  }
+
+  .circle-3-icon.icon-4 {
+    top: 37%;
+    left: 70%;
+  }
+
+  .circle-3-icon.icon-5 {
+    top: 49%;
+    left: 26%;
+  }
+
+  .circle-3-icon.icon-6 {
+    top: 53%;
+    left: 73.5%;
+  }
+{%- endstyle -%}
+<div class="block-{{ block.id }}-padding">
+  <div class="fitness-watch-container">
+    {% assign circle_1_group = metaobjects.fitness_circle_gallery[block.settings.circle_1].images.value %}
+    {% assign circle_2_group = metaobjects.fitness_circle_gallery[block.settings.circle_2].images.value %}
+    {% assign circle_3_group = metaobjects.fitness_circle_gallery[block.settings.circle_3].images.value %}
+    <div class="fitness-watch-wrapper">
+      <div class="bg-img">
+        <div class="circle-item circle-1"></div>
+        <div class="circle-item circle-2"></div>
+        <div class="circle-item circle-3"></div>
+        {% for item in circle_1_group %}
+        <div class="fitness-icon circle-1-icon icon-{{ forloop.index }}">
+          {{
+            item
+            | image_url: width: item.value.width, height: item.value.height
+            | image_tag: class: 'rotate-icon',loading: 'lazy'
+          }}
+        </div>
+        {% endfor %}
+        {% for item in circle_2_group %}
+        <div class="fitness-icon circle-2-icon icon-{{ forloop.index }}">
+          {{
+            item
+            | image_url: width: item.value.width, height: item.value.height
+            | image_tag: class: 'rotate-icon',loading: 'lazy'
+          }}
+        </div>
+        {% endfor %}
+        {% for item in circle_3_group %}
+        <div class="fitness-icon circle-3-icon icon-{{ forloop.index }}">
+          {{
+            item
+            | image_url: width: item.value.width, height: item.value.height
+            | image_tag: class: 'rotate-icon',loading: 'lazy'
+          }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="fitness-watch-img">
+      {{
+        block.settings.watch_image
+        | image_url: width: block.settings.watch_image.width, height: block.settings.watch_image.height
+        | image_tag: class: 'watch-img', loading: 'lazy'
+      }}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "运动健身",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "watch_image",
+      "label": "手表图片"
+    },
+    {
+      "type": "metaobject",
+      "id": "circle_1",
+      "label": "外圈图标",
+      "metaobject_type": "fitness_circle_gallery"
+    },
+    {
+      "type": "metaobject",
+      "id": "circle_2",
+      "label": "中圈图标",
+      "metaobject_type": "fitness_circle_gallery"
+    },
+    {
+      "type": "metaobject",
+      "id": "circle_3",
+      "label": "内圈图标",
+      "metaobject_type": "fitness_circle_gallery"
+    },
+    {
+      "type": "color",
+      "id": "circle_color",
+      "label": "线圈颜色",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "移动端布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "运动健身"
+    }
+  ]
+}
+{% endschema %}

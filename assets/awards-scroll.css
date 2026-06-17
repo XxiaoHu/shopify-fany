@@ -1,0 +1,59 @@
+awards-scroll {
+    --item-count: 4;
+    --award-aspect_ratio: 1;
+    display: flex;
+}
+
+/* 滚动容器样式 */
+.awards-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(90deg, #EBD3AF -7.13%, #FFF4E9 53.72%, #E7C9B1 116.96%);
+}
+
+/* 滚动内容容器 */
+.awards-scroll-wrapper {
+    display: flex;
+    position: relative;
+    will-change: transform;
+    column-gap: 40px;
+}
+
+/* 单个奖项卡片样式 */
+.award-item {
+    min-width: calc((100% - (min(4, var(--item-count)) - 1) * 40px) / min(4, var(--item-count)));
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.award-text * {
+    word-break:break-all;
+    padding: 0px;
+    margin: 0px;
+}
+
+.award-text .metafield-rich_text_field * {
+    word-break:break-all;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.award-item img {
+    width: calc(56px * var(--award-aspect_ratio));
+    height: 56px;
+    margin-right: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .award-item img {
+        width: calc(44px * var(--award-aspect_ratio));
+        height: 44px;
+        margin-right: 0.8rem;
+    }
+}

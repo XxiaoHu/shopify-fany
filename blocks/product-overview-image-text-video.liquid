@@ -1,0 +1,252 @@
+{{ 'product-overview-image-text-video.css' | asset_url | stylesheet_tag }}
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding: 2rem 0 8rem 0;
+    background: #FAF6F6;
+  }
+
+  .block-{{ block.id }}-padding .product-overview-image-text-video{
+    row-gap: 20px;
+  }
+  
+  .text-item-{{ block.id }} .text-description{
+    {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+    max-width: {{ block.settings.text_width }}px;
+    {% endif %}  
+    margin: 0 auto;
+  }
+  .img-block{
+    --column-gap: 30px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+    .block-{{ block.id }}-padding .product-overview-image-text-video{
+      row-gap: {{ block.settings.img_text_margin }}px;
+    }
+  }
+{%- endstyle -%}
+{%- liquid
+  assign video_id = block.settings.video.id | default: block.settings.video_url.id
+  assign video_alt = block.settings.video.alt | default: block.settings.description
+  assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+  assign poster = block.settings.video.preview_image | default: block.settings.cover_image
+
+  if block.settings.video != null
+    assign ratio_diff = block.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+      assign fix_ratio = true
+    endif
+  endif
+-%}
+<div class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="product-overview-image-text-video overview-page-width"> 
+    <div class="text-block">
+      <h2 {% if block.settings.header_width != blank and block.settings.header_width > 0 %}style="max-width: {{ block.settings.header_width }}px;"{% endif %}>{{ block.settings.header}}</h2>
+      <div class="text-item text-item-{{ block.id }}">
+        {{ block.settings.text-24 | replace: '<p', '<p class="f-24 text-description"' }}
+      </div>
+    </div>
+    <div class="img-block img-block-{{ block.id }}">
+      <div class="vedio isolate">
+        <deferred-media
+          class="video-section__media deferred-media gradient global-media-settings{% if block.settings.full_width %} global-media-settings--full-width{% endif %}{% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          data-media-id="{{ video_id }}"
+          {% if poster != null %}
+            style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+          {% endif %}
+        >
+          <button
+            id="Deferred-Poster-Modal-{{ video_id }}"
+            class="video-section__poster media deferred-media__poster media--landscape"
+            type="button"
+            {%- if block.settings.video == null and block.settings.video_url == null -%}disabled{% endif %}
+            aria-label="{{ alt }}"
+          >
+            {%- if poster != null -%}
+              {{
+                poster
+                | image_url: width: 3840
+                | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+              }}
+            {%- else -%}
+              {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+            {%- endif -%}
+            {%- if block.settings.video != null or block.settings.video_url != null -%}
+            <span class="deferred-media__poster-button motion-reduce">
+              <span class="svg-wrapper">
+                {{- 'icon-play.svg' | inline_asset_content -}}
+              </span>
+            </span>
+            {%- endif -%}
+          </button>
+          <template>
+            {%- if block.settings.video == null and block.settings.video_url != null -%}
+              {%- liquid
+                assign loop = ''
+                if block.settings.enable_video_looping
+                  assign loop = '&loop=1&playlist=' | append: video_id
+                endif
+              -%}
+              {%- if block.settings.video_url.type == 'youtube' -%}
+                <iframe
+                  src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
+                  class="js-youtube"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  title="{{ block.settings.description | escape }}"
+                ></iframe>
+              {%- else -%}
+                <iframe
+                  src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
+                  class="js-vimeo"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  title="{{ block.settings.description | escape }}"
+                ></iframe>
+              {%- endif -%}
+            {%- else -%}
+              {{
+                block.settings.video
+                | video_tag:
+                  image_size: '1100x',
+                  autoplay: true,
+                  loop: block.settings.enable_video_looping,
+                  controls: true,
+                  muted: false
+              }}
+            {%- endif -%}
+          </template>
+        </deferred-media>
+      </div>
+      <div class="img-box">
+        {% if block.settings.img != blank %}
+          <img
+              src="{{ block.settings.img | image_url: width: block.settings.img.width }}"
+              loading="lazy"
+              width="{{ block.settings.img.width }}"
+              height="{{ block.settings.img.height }}"
+            >
+        {% endif %}
+      </div>
+  </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "上下结构图文+视频",
+    "settings": [
+      {
+      "type": "image_picker",
+      "id": "img",
+      "label": "图片"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": "t:sections.video.settings.enable_video_looping.label",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:sections.video.settings.header__1.content"
+      },
+      {
+        "type": "video",
+        "id": "video",
+        "label": "t:sections.video.settings.video.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.video.settings.header__2.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:sections.video.settings.paragraph.content"
+      },
+      {
+        "type": "video_url",
+        "id": "video_url",
+        "accept": ["youtube", "vimeo"],
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "label": "t:sections.video.settings.video_url.label",
+        "info": "t:sections.video.settings.video_url.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "cover_image",
+        "label": "t:sections.video.settings.cover_image.label"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "t:sections.video.settings.description.label",
+        "info": "t:sections.video.settings.description.info"
+      },
+      {
+        "type": "header",
+        "content": "文字"
+      },
+      {
+        "type": "number",
+        "id": "header_width",
+        "label": "标题宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "标题"
+      },
+      {
+        "type": "richtext",
+        "id": "text-24",
+        "label": "描述"
+      },
+      {
+        "type": "number",
+        "id": "text_width",
+        "label": "描述宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "header",
+        "content": "布局"
+      },
+      {
+        "type": "number",
+        "id": "img_text_margin",
+        "label": "图文间距",
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+    ],
+    "presets": [{
+      "name": "上下结构图文+视频"
+    }]
+  }
+{% endschema %}

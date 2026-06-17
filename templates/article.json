@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blogs_rich_text_9tEWGb": {
+      "type": "blogs-rich-text",
+      "blocks": {
+        "heading_XGFfHa": {
+          "type": "heading",
+          "settings": {
+            "heading": "See the Vibe",
+            "heading_size": "h1"
+          }
+        },
+        "text_EVpYr9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>See the Rhythm of Your Elegance</p>",
+            "font_size": "f-18"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XGFfHa",
+        "text_EVpYr9"
+      ],
+      "custom_css": [],
+      "name": "t:sections.blogs-rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 0
+      }
+    },
+    "page_menu_HaRtFN": {
+      "type": "page-menu",
+      "name": "t:sections.page_menu.presets.name",
+      "settings": {
+        "menu": "blogs",
+        "color_scheme": "",
+        "padding_top": 38,
+        "padding_bottom": 36
+      }
+    },
+    "breadcrumbs_section_wewQVb": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "columns_desktop": 3,
+        "post_limit": 3
+      }
+    },
+    "newsletter_ByxW3V": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_mEzQ7L": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_9N4Ba8": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-24"
+          }
+        },
+        "email_form_m6Cj6E": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_mEzQ7L",
+        "paragraph_9N4Ba8",
+        "email_form_m6Cj6E"
+      ],
+      "disabled": true,
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 112,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "blogs_rich_text_9tEWGb",
+    "page_menu_HaRtFN",
+    "breadcrumbs_section_wewQVb",
+    "main",
+    "newsletter_ByxW3V"
+  ]
+}

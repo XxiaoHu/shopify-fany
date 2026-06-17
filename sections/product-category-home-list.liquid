@@ -1,0 +1,121 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'product-category-home-list.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-category-home-list.js' | asset_url }}" defer="defer"></script>
+
+
+<div class="isolate">
+  <div class="page-width section-{{ section.id }}-padding">
+    
+    <!-- 顶部菜单 -->
+    <div class="product-category-top-menu">
+      {% for block in section.blocks %}
+        {% if block.type == 'product_group' %}
+          {% assign group_data = block.settings.group_data %}
+          {%- if group_data != blank -%}
+            <div class="menu-item {% if forloop.first %}active{% endif %}" data-group="{{group_data.key}}">{{ group_data.menu }}</div>
+          {%- endif -%}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Swiper 容器 -->
+    <div class="swiper product-category-home-swiper">
+        <div class="swiper-wrapper"></div>
+        <!-- 左右箭头 -->
+        <div class="swiper-button-prev product-category-slider-button"></div>
+        <div class="swiper-button-next product-category-slider-button"></div>
+    </div>
+  </div>
+</div>
+<script>
+const slideGroups = {
+  {% for block in section.blocks %}
+    {% if block.type == 'product_group' %}
+      {% assign group_data = block.settings.group_data %}
+      {%- if group_data != blank -%}
+        {{group_data.key}}:[
+        {% for item in group_data.productdata.value %}
+        {
+          title: "{{ item.title }}",
+          badgeText: "{{ item.badgetext }}",
+          imgUrl: "{{ item.imageurl | image_url}}",
+          imgHoverUrl: "{{ item.imageurlhover | image_url }}",
+          price: "{{ item.price.value | money_without_trailing_zeros}}",
+          disPrice: "{{ item.disprice.value | money_without_trailing_zeros }}",
+          url: "{{ item.url.value.url }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]{% unless forloop.last %},{% endunless %}
+      {%- endif -%}
+    {% endif %}
+  {% endfor %}
+};
+
+console.log(slideGroups);
+</script>
+{% schema %}
+{
+  "name": "首页产品系统",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_group",
+      "name": "产品系列",
+      "settings": [
+        {
+          "type": "metaobject",
+          "id": "group_data",
+          "label": "选择产品系统",
+          "metaobject_type": "home_product_group"
+        }
+      ],
+    }
+  ],
+  "presets": [
+    {
+      "name": "首页产品系统"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,224 @@
+{{ 'product-overview-two-image-text.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign img_total_width = 0
+  if block.settings.pc_img_1 != blank and block.settings.pc_img_2 != blank
+    assign img_total_width = img_total_width | plus: block.settings.pc_img_1.width | plus: block.settings.pc_img_2.width
+    assign img_radio_1 = block.settings.pc_img_1.width | times: 1.0 | divided_by: img_total_width | round: 4
+    assign img_radio_2 = block.settings.pc_img_2.width | times: 1.0 | divided_by: img_total_width | round: 4
+  endif
+%}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+  .block-{{ block.id }}-padding .product-overview-two-image-text{
+    row-gap: 20px;
+  }
+  
+  .text-item-{{ block.id }} .text-description{
+    {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+    max-width: {{ block.settings.text_width }}px;
+    {% endif %}  
+  }
+  .img-block{
+    --column-gap: 26px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .img-block{
+      --column-gap: 10px;
+    }
+  }
+  
+  .img-block-{{ block.id }} .img-box-1{
+    {% if img_total_width != 0 %}
+      width: calc({{img_radio_1 | times: 100 }}% - var(--column-gap) * {{img_radio_1}});
+    {% endif %}
+  }
+  
+  .img-block-{{ block.id }} .img-box-2{
+    {% if img_total_width != 0 %}
+      width: calc({{img_radio_2 | times: 100 }}% - var(--column-gap) * {{img_radio_2}});
+    {% endif %}
+  }
+    
+
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+    .block-{{ block.id }}-padding .product-overview-two-image-text{
+      row-gap: {{ block.settings.img_text_margin }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="product-overview-two-image-text overview-page-width">
+    <div>
+        <div class="header-item">
+            <h2 class="header-item--title">
+                {{ block.settings.header}}
+            </h2>
+            {% if block.settings.text1 != blank %}
+            <div class="header-item--text1">
+                {{ block.settings.text1 }}
+            </div>
+            {% endif %}
+            {% if block.settings.text2 != blank %}
+            <div class="header-item--text2">
+                {{ block.settings.text2 }}
+            </div>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+    <div class="img-block img-block-{{ block.id }}">
+      <div class="img-box-1">
+        {% if block.settings.pc_img_1 != blank %}
+          <img
+              src="{{ block.settings.pc_img_1 | image_url: width: block.settings.pc_img_1.width }}"
+              class="{% if block.settings.mobile_img_1 != blank %}pc_img{% endif %}"
+              loading="lazy"
+              width="{{ block.settings.pc_img_1.width }}"
+              height="{{ block.settings.pc_img_1.height }}"
+            >
+        {% endif %}
+        {% if block.settings.mobile_img_1 != blank %}
+          <img
+              src="{{ block.settings.mobile_img_1 | image_url: width: block.settings.mobile_img_1.width }}"
+              class="mobile_img"
+              loading="lazy"
+              width="{{ block.settings.mobile_img_1.width }}"
+              height="{{ block.settings.mobile_img_1.height }}"
+            >
+        {% endif %}
+      </div>
+      <div class="img-box-2">
+        {% if block.settings.pc_img_2 != blank %}
+          <img
+              src="{{ block.settings.pc_img_2 | image_url: width: block.settings.pc_img_2.width }}"
+              class="{% if block.settings.mobile_img_2 != blank %}pc_img{% endif %}"
+              loading="lazy"
+              width="{{ block.settings.pc_img_2.width }}"
+              height="{{ block.settings.pc_img_2.height }}"
+            >
+        {% endif %}
+        {% if block.settings.mobile_img_2 != blank %}
+          <img
+              src="{{ block.settings.mobile_img_2 | image_url: width: block.settings.mobile_img_2.width }}"
+              class="mobile_img"
+              loading="lazy"
+              width="{{ block.settings.mobile_img_2.width }}"
+              height="{{ block.settings.mobile_img_2.height }}"
+            >
+        {% endif %}
+      </div>
+  </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "上下结构图文-两图2",
+    "settings": [
+      {
+        "type": "header",
+        "content": "内容"
+      },
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "标题"
+      },
+      {
+        "type": "richtext",
+        "id": "text1",
+        "label": "描述1"
+      },
+      {
+        "type": "richtext",
+        "id": "text2",
+        "label": "描述2"
+      },
+      {
+        "type": "header",
+        "content": "pc端图片"
+      },
+      {
+      "type": "image_picker",
+      "id": "pc_img_1",
+      "label": "图片1"
+      },
+    {
+      "type": "image_picker",
+      "id": "pc_img_2",
+      "label": "图片2"
+      },
+      {
+        "type": "header",
+        "content": "移动端图片"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_img_1",
+        "label": "图片1"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_img_2",
+        "label": "图片2"
+      },
+
+      
+      {
+        "type": "header",
+        "content": "布局"
+      },
+
+      {
+        "type": "number",
+        "id": "header_width",
+        "label": "标题宽度",
+        "info": "默认为设置宽度"
+      },
+      
+      {
+        "type": "number",
+        "id": "text_width",
+        "label": "描述宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "number",
+        "id": "img_text_margin",
+        "label": "图文间距",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+    ],
+    "presets": [{
+      "name": "上下结构图文-两图2"
+    }]
+  }
+{% endschema %}

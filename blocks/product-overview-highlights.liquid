@@ -1,0 +1,749 @@
+{% if block.settings.image_group != blank %}
+  {% assign image_group = metaobjects.media_gallery[block.settings.image_group].value.value %}
+
+  {% style %}
+    .highlight-title {
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: 0 4rem !important;
+    }
+
+    #{{ block.id }} {
+      position: relative;
+      padding-bottom: 116px;
+    }
+
+    .product-overview-highlights .text-block-center {
+      text-align: center;
+    }
+
+    .product-overview-highlights .text-block-left {
+      text-align: left;
+    }
+
+    .slide-container {
+      overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .slide-track-wrapper {
+      width: var(--page-width);
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: visible;
+      position: relative;
+      touch-action: pan-y;
+    }
+    .slide-track {
+      display: flex;
+      width: 100%;
+      padding: 0 4rem !important;
+      transition: transform 0.5s ease-in-out;
+      gap: 2rem;
+    }
+    .slide-item {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .all-access-pass__container {
+      height: 95%;
+      top: auto;
+      bottom: 0;
+      align-items: flex-end;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      margin: 0;
+      overflow: clip;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      will-change: transform;
+      z-index: 9995;
+    }
+
+    .slide-button-container {
+      align-items: center;
+      bottom: 120px;
+      display: flex;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      pointer-events: auto;
+      position: sticky;
+      will-change: transform;
+      gap: 16px;
+      height: 56px;
+      box-sizing: border-box;
+    }
+
+    .control-wrap {
+      border-radius: 999px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+    .slide-button-bg {
+      background-color: rgba(232, 232, 237, 0.8);
+      backdrop-filter: blur(7px);
+    }
+    .slide-dot { padding: 8px; list-style: none; }
+    .slide-dot a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      --anim-play-state: paused;
+      cursor: pointer;
+    }
+    .slide-dot a::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #86868b;
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+      display: block;
+    }
+    .slide-dot.current a::before {
+      width: 48px;
+      height: 8px;
+      background: #86868b;
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+    }
+    .slide-dot.current a::after {
+      content: "";
+      width: 0;
+      height: 100%;
+      min-width: 15%;
+      margin-inline-start: -15%;
+      border-radius: 10px;
+      background-color: #1d1d1f;
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      animation: aap-animate-progress 6.15s linear forwards;
+      animation-play-state: var(--anim-play-state);
+    }
+    @keyframes aap-animate-progress { from { width: 0; } to { width: 115%; } }
+    .play-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #f5f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s ease;
+    }
+    .restart-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s ease;
+    }
+
+    .overflow .slide-track-wrapper {
+      overflow: hidden
+    }
+    .overflow .slide-track {
+      gap: 4rem;
+    }
+
+    @media screen and (min-width: 769px) {
+      .block-{{ block.id }}-padding {
+        padding-top: {{ block.settings.padding_top }}px;
+        padding-bottom: {{ block.settings.padding_bottom }}px;
+        {% if block.settings.back_color != blank %}
+        background-color: {{ block.settings.back_color }};
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .highlight-title h2 {
+        {% if block.settings.header_width != blank and block.settings.header_width > 0 %}
+        max-width: {{ block.settings.header_width }}px;
+        {% endif %}
+        padding-bottom: {{ block.settings.title_padding_bottom }}px;
+      }
+
+      .block-{{ block.id }}-padding .banner__box {
+        padding-top: {{ block.settings.block_padding_top }}px;
+        padding-bottom: {{ block.settings.block_padding_bottom }}px;
+        {% if block.settings.font_color != blank %}
+        --color-foreground: {{ block.settings.font_color.red }},{{ block.settings.font_color.green }},{{ block.settings.font_color.blue }};
+        color: {{ block.settings.font_color }} !important;
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .banner__content .block_title {
+        font-size: {{ block.settings.title_font_size }}px;
+        {% if block.settings.title_width != blank and block.settings.header_width > 0 %}
+        max-width: {{ block.settings.title_width }}px;
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .banner__content .block_des {
+        font-size: {{ block.settings.text_font_size }}px;
+        {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+        max-width: {{ block.settings.text_width }}px;
+        {% endif %}
+      }
+    }
+
+    @media screen and (max-width: 769px) {
+      .block-{{ block.id }}-padding {
+        padding-top: {{ block.settings.mobile_padding_top }}px;
+        padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+        {% if block.settings.mobile_back_color != blank %}
+        background-color: {{ block.settings.mobile_back_color }};
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .highlight-title h2 {
+        {% if block.settings.header_width != blank and block.settings.header_width > 0 %}
+        max-width: {{ block.settings.header_width }}px;
+        {% endif %}
+        padding-bottom: {{ block.settings.mobile_title_padding_bottom }}px;
+      }
+
+      .highlight-title {
+        padding: 0rem 1.5rem !important;
+      }
+
+      .slide-track {
+        gap: 1.5rem;
+        padding: 0rem 1.5rem !important;
+      }
+
+      .overflow .slide-track {
+        gap: 1.5rem;
+      }
+      
+
+      .block-{{ block.id }}-padding .banner__box {
+        padding-top: {{ block.settings.mobile_block_padding_top }}px;
+        padding-bottom: {{ block.settings.mobile_block_padding_bottom }}px;
+        {% if block.settings.mobile_font_color != blank %}
+        --color-foreground: {{ block.settings.mobile_font_color.red }},{{ block.settings.mobile_font_color.green }},{{ block.settings.mobile_font_color.blue }};
+        color: {{ block.settings.mobile_font_color }} !important;
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .banner__content .block_title {
+        font-size: {{ block.settings.mobile_title_font_size }}px;
+        {% if block.settings.mobile_title_width != blank and block.settings.mobile_header_width > 0 %}
+        max-width: {{ block.settings.mobile_title_width }}px;
+        {% endif %}
+      }
+
+      .block-{{ block.id }}-padding .banner__content .block_des {
+        font-size: {{ block.settings.mobile_text_font_size }}px;
+        {% if block.settings.mobile_text_width != blank and block.settings.mobile_text_width > 0 %}
+        max-width: {{ block.settings.mobile_text_width }}px;
+        {% endif %}
+      }
+    }
+  {% endstyle %}
+
+  <!-- 引入自定义幻灯片插件 -->
+  <script src="{{ 'slider-plugin.js' | asset_url }}" defer></script>
+
+  <div class="block-{{ block.id }}-padding product-overview-highlights {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {% if block.settings.header != blank %}
+      <div class="highlight-title text-block-{{ block.settings.text_alignment }}">
+        <h2>
+          {{ block.settings.header }}
+        </h2>
+      </div>
+    {% endif %}
+
+    <!-- 幻灯片容器 -->
+    <div id="{{ block.id }}">
+      <div class="slide-container{% if block.settings.overflow %} overflow{% endif %}">
+        <div class="slide-track-wrapper">
+          <div class="slide-track" id="{{ block.id }}-slideTrack">
+            {% for item in image_group %}
+              {%- liquid
+                if forloop.index0 == 0
+                  assign aspect_ratio = item.image.value.aspect_ratio
+                  if item.mobile_image != blank
+                    assign mobile_aspect_ratio = item.mobile_image.value.aspect_ratio
+                  else
+                    assign mobile_aspect_ratio = aspect_ratio
+                  endif
+                endif
+              -%}
+              <div
+                class="slide-item banner banner--desktop-transparent banner--content-align-{{ block.settings.desktop_content_alignment }} banner--content-align-mobile-{{ block.settings.mobile_content_alignment }}"
+                data-aspect_ratio="{{ aspect_ratio }}"
+                data-mobile_aspect_ratio="{{ mobile_aspect_ratio }}"
+              >
+                <picture class="banner__media media">
+                  {% if item.mobile_image != blank %}
+                    <source media="(max-width: 768px)" srcset="{{ item.mobile_image | image_url: width: 768 }}">
+                  {% endif %}
+                  {{
+                    item.image
+                    | image_url: width: item.image.value.width, height: item.image.value.height
+                    | image_tag: class: 'slide-item-image'
+                  }}
+                </picture>
+
+                <div
+                  class="banner__content banner__content--{{ block.settings.desktop_content_position }} banner__content_mobile--{{ block.settings.mobile_desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                >
+                  <div class="banner__box content-container content-container--full-width-mobile gradient">
+                    <div
+                      class="banner__heading block_title inline-richtext"
+                    >
+                      {{ item.title }}
+                    </div>
+
+                    <div class="banner__text block_des rte">
+                      <p>{{ item.text }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!-- 控制按钮部分不变 -->
+      <div class="all-access-pass__container">
+        <div class="slide-button-container">
+          <ul class="control-wrap slide-button-bg" id="{{ block.id }}-controlContainer">
+            {% for item in image_group %}
+              <li class="slide-dot" data-index="{{ forloop.index0 }}">
+                <a
+                  href="javascript:void(0)"
+                  onclick="window.sliderInstances['{{ block.id }}'].toSlide({{ forloop.index0 }})"
+                ></a>
+              </li>
+            {% endfor %}
+          </ul>
+          <button id="{{ block.id }}-playPauseBtn" class="play-btn slide-button-bg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 22"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="5" y="3" width="5" height="16"></rect>
+              <rect x="14" y="3" width="5" height="16"></rect>
+            </svg>
+          </button>
+          <button id="{{ block.id }}-restartBtn" class="restart-btn slide-button-bg">
+            <svg
+              class="icon-control icon-control-replay-super svg-icon replay-icon"
+              width="40"
+              height="40"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 56 56"
+              fill="currentColor"
+              stroke="currentColor"
+            >
+              <path d="m36.2448 26.6447c-1.1073 0-2.0052.8978-2.0052 2.0052 0 3.4405-2.7992 6.2397-6.2397 6.2397s-6.2397-2.7992-6.2397-6.2397 2.7992-6.2397 6.2397-6.2397c.0283 0 .0546-.0072.0825-.0083l-1.2839 1.2841c-.7833.7828-.7833 2.0526 0 2.8354.3911.3916.9047.5874 1.4177.5874s1.0266-.1958 1.4177-.5874l4.4406-4.4406c.7833-.7828.7833-2.0526 0-2.8354l-4.657-4.657c-.7823-.7833-2.0531-.7833-2.8354 0-.7833.7828-.7833 2.0526 0 2.8354l.9973.9974c-5.4561.223-9.8295 4.7189-9.8295 10.2287 0 5.6517 4.5983 10.25 10.25 10.25s10.25-4.5983 10.25-10.25c0-1.1073-.8978-2.0052-2.0052-2.0052z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let uniqueId = '{{ block.id }}';
+      // 初始化幻灯片
+      const slider = new CenterPreviewSlider(uniqueId);
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "图片亮点轮播",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "overflow",
+      "label": "超出部分隐藏"
+    },
+    {
+      "type": "header",
+      "content": "标题"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "标题对齐方式",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "number",
+      "id": "header_width",
+      "label": "标题宽度"
+    },
+    {
+      "type": "richtext",
+      "id": "header",
+      "label": "标题"
+    },
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "metaobject",
+      "id": "image_group",
+      "label": "表带图片组",
+      "metaobject_type": "media_gallery"
+    },
+    {
+      "type": "number",
+      "id": "title_padding_bottom",
+      "label": "标题与内容间距",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+        }
+      ],
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
+    },
+    {
+      "type": "number",
+      "id": "title_width",
+      "label": "标题宽度"
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "range",
+      "id": "block_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文本容器顶部",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "block_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文本容器底部",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "文字",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "back_color",
+      "label": "背景色"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.mobile.content"
+    },
+    {
+      "type": "number",
+      "id": "mobile_title_padding_bottom",
+      "label": "标题与内容间距",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "mobile_desktop_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+        }
+      ],
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
+    },
+    {
+      "type": "number",
+      "id": "mobile_title_width",
+      "label": "标题宽度"
+    },
+    {
+      "type": "number",
+      "id": "mobile_text_width",
+      "label": "描述宽度"
+    },
+    {
+      "type": "range",
+      "id": "mobile_block_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文本容器顶部",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_block_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文本容器底部",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "mobile_font_color",
+      "label": "文字",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "mobile_back_color",
+      "label": "背景色"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "图片亮点轮播"
+    }
+  ]
+}
+{% endschema %}

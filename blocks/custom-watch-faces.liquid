@@ -1,0 +1,447 @@
+{{ 'custom-watch-faces.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+  }
+
+  .watch-face__title {
+    color: #1E0E06;
+    font-size: {{ block.settings.title_font_size }}px;
+    margin-bottom: 1.2rem;
+  }
+
+  .watch-face__desc {
+      color: #686766;
+      margin: 0 auto;
+      font-size: {{ block.settings.text_font_size }}px;
+      line-height: 1.6;
+      {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+      width: {{ block.settings.text_width }}px;
+      max-width: 100%;
+      {% endif %}
+  }
+  
+  @media screen and (max-width: 749px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.mobile_padding_top }}px;
+      padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+    }
+
+    .watch-face__title {
+      font-size: {{ block.settings.mobile_title_font_size }}px;
+    }
+
+    .watch-face__desc {
+      font-size: {{ block.settings.mobile_text_font_size }}px;
+      {% if block.settings.mobile_text_width != blank and block.settings.mobile_text_width > 0 %}
+      width: {{ block.settings.mobile_text_width }}px;
+      max-width: 100%;
+      {% endif %}
+    }
+  }
+{%- endstyle -%}
+<div class="watch-face-wrapper block-{{ block.id }}-padding">
+  <div class="watch-face-section">
+    <div class="watch-face__content">
+      <div class="watch-face__title-container">
+        <h2 class="watch-face__title">{{ block.settings.header }}</h2>
+        <div class="watch-face__desc">{{  block.settings.text }}</div>
+      </div>
+      {% assign image_group = metaobjects.watch_faces_gallery[block.settings.image_group].images.value %}
+      <div class="watch-face__icon-wrap">
+        <div class="watch-face__icon-circle" id="block-{{ block.id }}-wrap">
+          <!-- 环形图标模板 -->
+          {% for item in image_group %}
+          <div class="watch-face__icon-item" data-icon="{{ forloop.index0 }}">
+            <div class="watch-face__icon-img-wrapper">
+              {{
+                item
+                | image_url: width: item.value.width, height: item.value.height
+                | image_tag: class: 'watch-face__icon-img',loading: 'lazy'
+              }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {{
+          block.settings.watch_image
+          | image_url: width: block.settings.watch_image.width, height: block.settings.watch_image.height
+          | image_tag: class: 'watch-face__watch-img',loading: 'lazy'
+        }}
+      </div>
+
+      <div class="watch-face__icon-bar">
+        {% for item in image_group %}
+        <div class="watch-face__icon-button" data-icon="{{ forloop.index0 }}">
+          <div class="watch-face__button-border">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="watch-face__circle-path" />
+            </svg>
+          </div>
+          {{
+            item
+            | image_url: width: item.value.width, height: item.value.height
+            | image_tag: class: 'watch-face__button-img',loading: 'lazy'
+          }}
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="watch-face__side-mask watch-face__side-mask-left">
+        <div class="watch-face__gradient-left"></div>
+      </div>
+      <div class="watch-face__side-mask watch-face__side-mask-right">
+        <div class="watch-face__gradient-right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 封装为独立模块，避免全局变量污染
+  const WatchFaceCarousel = (function () {
+    // 配置常量抽离，便于维护
+    const CONFIG = {
+      intervalTime: 4000, // 自动切换间隔
+      baseAngle: 8, // 图标角度间隔
+      circleDashTotal: 93, // 进度条总长度
+      progressStepInterval: 100, // 进度条步长间隔(ms)
+    };
+
+    // 状态管理
+    let state = {
+      iconCount: null, // 原始图标总数
+      totalIconCount: null, // 圆环总图标数
+      centerIndex: null, // 中间高亮图标基准索引
+      currentIndex: 0,
+      timer: null,
+      progressTimer: null,
+      iconWrap: null,
+      iconButtons: [],
+    };
+
+    // 工具函数：DOM选择器（简化操作）
+    const $ = (selector, parent = document) => parent.querySelector(selector);
+    const $$ = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
+
+    /**
+     * 初始化DOM引用
+     */
+    const initDOM = () => {
+      state.iconWrap = $('#block-{{ block.id }}-wrap');
+      state.iconButtons = $$('.watch-face__icon-button');
+
+      // 绑定底部按钮点击事件
+      state.iconButtons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => handleBarButtonClick(idx));
+      });
+    };
+
+    /**
+     * 初始化圆环图标（复制+分配索引）
+     */
+    const initIconCircle = () => {
+      const originalIcons = $$('.watch-face__icon-item', state.iconWrap);
+      state.iconCount = originalIcons.length; 
+      const originalIconList = originalIcons.map((icon) => icon.cloneNode(true));
+      state.iconWrap.innerHTML = '';
+      let num = parseInt(24 / state.iconCount);
+      if(num % 2 !== 0){
+        num = num + 1;
+      }
+      state.totalIconCount = num * state.iconCount;
+      state.centerIndex = state.totalIconCount / 2;
+      // 生成环形图标
+      for (let i = 0; i < state.totalIconCount; i++) {
+        const iconIdx = i % state.iconCount;
+        const cloneIcon = originalIconList[iconIdx].cloneNode(true);
+        cloneIcon.setAttribute('data-index', i);
+        cloneIcon.setAttribute('data-icon', iconIdx);
+        state.iconWrap.appendChild(cloneIcon);
+      }
+
+      // 绑定环形图标点击事件
+      $$('.watch-face__icon-item', state.iconWrap).forEach((icon) => {
+        icon.addEventListener('click', handleIconClick);
+      });
+
+      // 初始渲染
+      updateIconContainer(0);
+    };
+
+    /**
+     * 环形图标点击事件处理
+     * @param {Event} e 点击事件
+     */
+    const handleIconClick = (e) => {
+      const targetIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+      const newIndex = targetIndex + state.currentIndex - state.centerIndex;
+      stopAllTimers();
+      switchToIndex(newIndex);
+      autoPlay();
+    };
+
+    /**
+     * 底部按钮点击事件处理
+     * @param {number} idx 按钮索引
+     */
+    const handleBarButtonClick = (idx) => {
+      const curIconIdx = state.currentIndex % state.iconCount;
+      if (curIconIdx !== idx) {
+        const newIndex = parseInt(state.currentIndex / state.iconCount) * state.iconCount + idx;
+        stopAllTimers();
+        switchToIndex(newIndex);
+        autoPlay();
+      }
+    };
+
+    /**
+     * 停止所有定时器
+     */
+    const stopAllTimers = () => {
+      clearInterval(state.timer);
+      stopProgressTimer();
+    };
+
+    /**
+     * 停止进度条定时器
+     */
+    const stopProgressTimer = () => {
+      clearInterval(state.progressTimer);
+      state.progressTimer = null;
+    };
+
+    /**
+     * 自动轮播
+     */
+    const autoPlay = () => {
+      state.timer = setInterval(() => {
+        switchToIndex(state.currentIndex + 1);
+      }, CONFIG.intervalTime);
+    };
+
+    /**
+     * 切换到指定索引
+     * @param {number} index 目标索引
+     */
+    const switchToIndex = (index) => {
+      const step = index - state.currentIndex;
+      // 边界处理
+      state.currentIndex = (index + state.totalIconCount) % state.totalIconCount;
+      stopProgressTimer(); // 停止现有进度条
+      updateIconContainer(step); // 更新环形图标
+      updateIconBar(); // 重置进度条样式
+      startCircleProgress(); // 启动新进度条
+    };
+
+    /**
+     * 更新环形图标容器（核心：旋转+缩放）
+     * @param {number} step 偏移量
+     */
+    const updateIconContainer = (step) => {
+      const iconContainers = $$('.watch-face__icon-item', state.iconWrap);
+      iconContainers.forEach((container) => {
+        let dataIndex = parseInt(container.getAttribute('data-index'));
+        // 位移计算
+        dataIndex = (dataIndex - step + state.totalIconCount) % state.totalIconCount;
+        container.setAttribute('data-index', dataIndex);
+
+        // 旋转角度计算
+        const rotateAngle = (dataIndex - state.centerIndex) * CONFIG.baseAngle;
+
+        // 过渡样式
+        container.classList.toggle('edge', dataIndex === state.totalIconCount - 1 || dataIndex === 0);
+        container.style.transform = `rotate(${rotateAngle}deg)`;
+
+        // 高亮图标缩放
+        const imgWrapper = container.querySelector('.watch-face__icon-img-wrapper');
+        imgWrapper.classList.toggle('highlight', rotateAngle === 0);
+      });
+    };
+
+    /**
+     * 更新底部图标栏进度条
+     */
+    const updateIconBar = () => {
+      state.iconButtons.forEach((btn) => {
+        const circle = btn.querySelector('.watch-face__circle-path');
+        circle.style.strokeDashoffset = CONFIG.circleDashTotal;
+      });
+    };
+
+    /**
+     * 启动进度条动画
+     * @param {number} index 当前索引
+     */
+    const startCircleProgress = () => {
+      const targetBtn = state.iconButtons[state.currentIndex % state.iconCount];
+      const circle = targetBtn.querySelector('.watch-face__circle-path');
+      let currentOffset = CONFIG.circleDashTotal;
+      const step = CONFIG.circleDashTotal / (CONFIG.intervalTime / CONFIG.progressStepInterval);
+
+      state.progressTimer = setInterval(() => {
+        currentOffset -= step;
+        if (currentOffset <= 0) {
+          currentOffset = 0;
+          clearInterval(state.progressTimer);
+        }
+        circle.style.strokeDashoffset = currentOffset;
+      }, CONFIG.progressStepInterval);
+    };
+
+    /**
+     * 初始化入口
+     */
+    const init = () => {
+      initDOM();
+      initIconCircle();
+      // 启动初始动画
+      startCircleProgress(state.currentIndex);
+      autoPlay();
+    };
+
+    // 暴露公共方法
+    return {
+      init,
+    };
+  })();
+
+  // 页面加载完成后初始化
+  document.addEventListener('DOMContentLoaded', () => {
+    WatchFaceCarousel.init();
+  });
+</script>
+{% schema %}
+{
+  "name": "自定义表盘",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "header",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "描述"
+    },
+    {
+      "type": "image_picker",
+      "id": "watch_image",
+      "label": "手表图片"
+    },
+    {
+      "type": "metaobject",
+      "id": "image_group",
+      "label": "背景图片组",
+      "metaobject_type": "watch_faces_gallery"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "label": "描述宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "移动端布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "number",
+      "id": "mobile_text_width",
+      "label": "描述宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "自定义表盘"
+    }
+  ]
+}
+{% endschema %}

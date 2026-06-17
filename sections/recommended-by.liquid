@@ -1,0 +1,442 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .\!flex {
+    display: flex !important;
+  }
+
+  .video-card .deferred-media__poster-button {
+    --color-background: 0, 0, 0, 0.3;
+    --color-foreground: 255, 255, 255;
+    height: 3.2rem;
+    width: 3.2rem;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    transform: translate(0, 0) scale(1);
+    left: unset;
+    top: unset;
+  }
+
+  .video-card .deferred-media__poster-button:hover {
+    transform: translate(0, 0) scale(1.1);
+  }
+
+  .video-swiper .swiper-slide {
+    height: unset !important;
+  }
+
+  .video-swiper .swiper-slide {
+    width: 432px;
+    max-width: 100%;
+    margin-right: 20px;
+  }
+
+  .video-section-title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .video-card {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .video__item {
+      width: 100%;
+      height: auto;
+
+      .ratio {
+        --ratio-percent: 50%;
+      }
+    }
+
+    .video-text__item {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1;
+      gap: 1.6rem;
+      min-height: 200px;
+      padding: 1.5rem;
+
+      .video-text__content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video-text__auth {
+        margin-bottom: 10px;
+      }
+
+      .video-text__description {
+        margin: 0px;
+        min-height: 110px;
+        max-height: 165px;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .video-swiper .swiper-slide {
+      width: 884px;
+    }
+
+    .video-card .deferred-media__poster-button {
+      height: 5.6rem;
+      width: 5.6rem;
+      right: 2.4rem;
+      bottom: 2.4rem;
+    }
+
+    .video-card {
+      height: 432px;
+      flex-direction: row;
+
+      .video__item {
+        width: 48.8687%;
+
+        .ratio {
+          --ratio-percent: 100%;
+        }
+      }
+
+      .video-text__item {
+        padding: 3rem;
+        gap: 7rem;
+      }
+    }
+  }
+{% endstyle %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+
+<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+  <div class="page-width section-{{ section.id }}-padding">
+    <h2 class="video-section-title {{ section.settings.alignment}}">{{ section.settings.title }}</h2>
+    <div class="swiper video-swiper">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div
+            class="swiper-slide !flex isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="video-card">
+              <div class="video__item">
+                <modal-opener data-modal="#PopupModal-{{ block.id }}">
+                  <div class="deferred-media">
+                    <button
+                      class="deferred-media__poster full-unstyled-link"
+                      type="button"
+                      aria-label="{{ 'sections.video.load_video' | t: description: block.settings.description | escape }}"
+                      aria-haspopup="dialog"
+                      data-media-id="{{ block.settings.video_url.id }}"
+                    >
+                      <div class="media media--transparent ratio">
+                        <span class="deferred-media__poster-button motion-reduce">
+                          <span class="svg-wrapper">
+                            {{- 'icon-play.svg' | inline_asset_content -}}
+                          </span>
+                        </span>
+
+                        {%- if block.settings.cover_image != blank -%}
+                          {%- capture sizes -%}
+                          (min-width: {{ settings.page_width }}px)
+                          {% if section.blocks.size == 1 -%}
+                            calc({{ settings.page_width }}px - 100px)
+                          {%- else -%}
+                            {{- settings.page_width | minus: 100 | times: 0.67 | round }}px
+                          {%- endif -%}
+                          , (min-width: 750px)
+                          {%- if section.blocks.size == 1 %} calc(100vw - 100px){% else %} 500px{% endif -%}
+                          , calc(100vw - 30px)
+                        {%- endcapture -%}
+                          {{
+                            block.settings.cover_image
+                            | image_url: width: 3000
+                            | image_tag: sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+                          }}
+                        {%- else -%}
+                          {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                        {%- endif -%}
+                      </div>
+                    </button>
+                  </div>
+                </modal-opener>
+                <modal-dialog
+                  id="PopupModal-{{ block.id }}"
+                  class="modal-video media-modal color-{{ settings.color_schemes | first }}"
+                >
+                  <div
+                    class="modal-video__content"
+                    role="dialog"
+                    aria-label="{{ block.settings.description | escape }}"
+                    aria-modal="true"
+                    tabindex="-1"
+                  >
+                    <button
+                      id="ModalClose-{{ block.id }}"
+                      type="button"
+                      class="modal-video__toggle"
+                      aria-label="{{ 'accessibility.close' | t }}"
+                    >
+                      <span class="svg-wrapper">
+                        {{- 'icon-close.svg' | inline_asset_content -}}
+                      </span>
+                    </button>
+                    <div class="modal-video__content-info">
+                      <deferred-media class="modal-video__video template-popup">
+                        <template>
+                          {% case block.settings.video_type %}
+                            {% when 'youtube' %}
+                              <iframe
+                                class="video-iframe"
+
+                                src="https://www.youtube.com/embed/{{ block.settings.video_url }}?autoplay=1&mute=1&loop=1&playlist={{ block.settings.video_url }}"
+
+                                allow="autoplay; encrypted-media"
+
+                                allowfullscreen
+                              ></iframe>
+
+                            {% when 'vimeo' %}
+                              <iframe
+                                class="video-iframe"
+
+                                src="https://player.vimeo.com/video/{{ block.settings.video_url }}?autoplay=1&muted=1&loop=1&background=1"
+
+                                allow="autoplay; encrypted-media"
+
+                                allowfullscreen
+                              ></iframe>
+
+                            {% when 'mp4' %}
+                              <video
+                                class="video-iframe"
+
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                              >
+                                <source src="{{ block.settings.video_url }}" type="video/mp4">
+                              </video>
+                          {% endcase %}
+                        </template>
+                      </deferred-media>
+                    </div>
+                  </div>
+                </modal-dialog>
+              </div>
+
+              <div class="video-text__item color-{{ block.settings.color_scheme }}">
+                <div class="video-text__content">
+                  <h3 class="video-text__auth h6">
+                    {{ block.settings.auth | escape }}
+                  </h3>
+                  <span class="video-text__summary f-18">
+                    {{ block.settings.summary }}
+                  </span>
+                </div>
+                <p class="video-text__description f-22">
+                  {{ block.settings.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    new Swiper(".video-swiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 20
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "视频文字组合",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Recommended by"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "图片"
+        },
+        {
+          "type": "select",
+          "id": "video_type",
+          "label": "Video Source",
+          "options": [
+            { "value": "youtube", "label": "YouTube" },
+            { "value": "vimeo", "label": "Vimeo" },
+            { "value": "mp4", "label": "MP4" }
+          ],
+          "default": "youtube"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL/ID",
+          "info": "For YouTube/Vimeo: Enter video ID only"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "info": "t:sections.all.colors.has_cards_info",
+          "default": "scheme-1"
+        },
+        {
+          "type": "text",
+          "id": "auth",
+          "label": "标题"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "summary",
+          "label": "副标题"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "描述"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "视频文字组合"
+    }
+  ]
+}
+{% endschema %}

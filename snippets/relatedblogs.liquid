@@ -1,0 +1,714 @@
+        {%- assign timestamp = 'now' | date : "%s" -%}
+                {%- assign timestamp = 'now' | date : "%s" -%}
+        {%- assign currentarticle = article.handle -%}
+{% assign currentblog = blog.handle %}
+{%- assign related_settings = shop.metafields.related_settings.my_items.value -%}
+{%- assign html_settings = shop.metafields.html_settings.my_html_settings.value -%}
+{%- assign article_list = shop.metafields.article_list.my_article_list.value -%}
+{%- assign no_post_display = related_settings.no_post_display | plus: 0 -%}
+{%- assign readmore_text = html_settings.read_more_theme_2 -%}
+
+{%- assign ex_tags = related_settings.ex_tags | split: ", " -%}
+{% assign expool_tags = related_settings.ex_frmpool_tags | split: ", " %}
+{%- assign ex_post_ids = related_settings.ex_ids -%}
+{%- assign expoolpost_ids = related_settings.ex_frmpool_id -%}
+
+{%- assign handle_no_related_posts = related_settings.handle_rel_post -%}
+
+{%assign thisblogid = article.id %}
+
+{% assign hide_all = false %}
+{% for extags in ex_tags %}
+    {% if article.tags contains extags %}
+      {% assign hide_all = true %}
+      {% break %}
+    {% endif %}
+{% endfor %}
+
+ {% if ex_post_ids contains thisblogid %}
+    {% assign hide_all = true %}
+ {%endif%}
+
+
+{% if hide_all %}
+
+{% else %}
+
+<div class="related_blog_posts_pro"> 
+{{ html_settings.top_text }}
+{%- if html_settings.select_theme == 'theme_1' -%}
+{%- assign artblg = article.handle -%}
+{%- assign ath = article.author -%}
+{%- assign tagg = article.tags -%}
+{%- assign tag_arr = tagg | split: "," -%}
+  <ul id="postlists" post-limit="{{ no_post_display }}" related-to="{{ related_settings.related_to }}">
+    {%- assign blog_handles = related_settings.blog_handle | split: "," -%}
+    {%- if article.handle.size > 0 -%}
+{%- comment -%} count no. of post {%- endcomment -%} 
+{%- if related_settings.related_to == '0' -%}
+{%- elsif related_settings.related_to == '1' -%}
+    {%- assign counter = 0 -%}
+       {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%} 
+             {%- if currentarticle != article.handle -%}
+                 {%- assign count = counter | plus: 1 -%}
+                  {%- assign counter = counter | plus: 1 -%}
+             {%- endif -%} 
+          {%- endfor -%} 
+       {%- endfor -%}
+{%- elsif related_settings.related_to == '2' -%}
+  {% assign all_tags = "" %}
+    {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%}
+      {% for tag in article.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | append: tag | append: ", " %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    {% assign all_tags = all_tags | slice: 0, all_tags.size | strip_last: ", " %}
+    {% assign tags = all_tags | split: ", " %}
+    
+     {%- assign counter = 0 -%}
+       {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%} 
+           {%- if tags != blank and artblg !=  article.handle -%}
+             {%- if currentarticle != article.handle -%}
+                {%- assign count = counter | plus: 1 -%}
+                {%- assign counter = counter | plus: 1 -%} 
+             {%- endif -%} 
+             {% elsif tags == blank and handle_no_related_posts == '1' %}
+             {%- if currentarticle != article.handle -%}
+                {%- assign count = counter | plus: 1 -%}
+                {%- assign counter = counter | plus: 1 -%} 
+             {%- endif -%} 
+           {%- endif -%}    
+          {%- endfor -%} 
+       {%- endfor -%} 
+{%- elsif related_settings.related_to == '3' -%} 
+         {%- assign counter = 0 -%}
+         {%- for blog_val in blog_handles -%} 
+           {%- for article in blogs[blog_val].articles -%} 
+               {%- if currentarticle != article.handle -%}
+                 {%- if ath == article.author -%} 
+                   {%- assign count = counter | plus: 1 -%}
+                    {%- assign counter = counter | plus: 1 -%}
+                  {%- endif -%}
+               {%- endif -%} 
+            {%- endfor -%} 
+         {%- endfor -%}  
+{%- endif -%}   
+   {%- assign keyed_articles = '' -%} 
+      {%- for article in (1..count) -%}
+        {%- assign random_key = 'now' | date: '%N' | plus: forloop.index | modulo: 100000 -%}
+        {%- capture keyed_article -%} {{ random_key }}_{{ article }} {%- endcapture -%}
+        {%- assign keyed_articles = keyed_articles | append: keyed_article | append: ',' -%}
+      {%- endfor -%}
+      {%- assign keyed_articles = keyed_articles | split: ',' | sort -%}  
+      {%- assign shuffled_articles = '' -%}
+      {%- for keyed_article in keyed_articles -%}
+        {%- assign article = keyed_article | split: '_' | last -%}
+        {%- unless article == "" -%}
+          {%- assign shuffled_articles = shuffled_articles | append: article | append: ',' -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      {%- assign shuffled_articles = shuffled_articles | split: ',' -%}
+{%- comment -%} count no. of post end {%- endcomment -%} 
+    {%- assign article_count = 0 -%}  
+    {%- for blog_val in blog_handles -%}
+    {%- for article in blogs[blog_val].articles -%}
+    {%- assign random_article1 = shuffled_articles[article_count]  -%} 
+      {%- assign random_article1 = random_article1 | plus: 0  -%} 
+      {%- assign no_post_display = no_post_display -%} 
+
+    {% assign hide_post = false %}
+
+    {% for expooltags in expool_tags %}
+        {% if article.tags contains expooltags %}
+          {% assign hide_post = true %}
+          {% break %}
+        {% endif %}
+    {% endfor %}
+     {% if expoolpost_ids contains blogId %}
+        {% assign hide_post = true %}
+     {%endif%}
+
+
+    {%- if related_settings.related_to == '0' -%}
+      {%- unless hide_post -%} 
+        {%- if article_count < no_post_display -%}
+      <li class="rb_list">
+      <a href="{{ article.url }}" class="main_row">
+        {%- if related_settings.enable_bimage == '1' -%} 
+         <p class="left_img">{%- if article.image -%}{{ article | image_url: width: 170 | image_tag }}{%- endif -%}</p> 
+      {%- elsif related_settings.enable_bimage == '0' -%}
+      {%- endif-%}
+        <div class="right_content">
+         <h4>{{ article.title }}</h4>
+        {%- if section.settings.blog_show_author -%}
+          <span>By {{ article.author }}</span>
+        {%- endif -%}
+        {%- if section.settings.blog_show_date -%}
+          <span>{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+        {%- endif -%} 
+        <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+        </div>
+          </a>
+      </li>
+       {%- assign article_count = article_count | plus:1 -%} 
+        {%endif%}
+        {%- endunless -%} 
+      {%- elsif related_settings.related_to == '1' -%}
+          {%- if currentarticle != article.handle -%}
+           
+            {% assign random_article1 = random_article1 %} 
+              {%comment%}{%- if random_article1 <= no_post_display -%}  {%endcomment%}
+                {%- unless hide_post -%} 
+        {%- if article_count < no_post_display -%}
+            <li class="rb_list" random-no="{{ random_article1 }}">
+             <a href="{{ article.url }}" class="main_row">
+             {% if related_settings.enable_bimage == '1' %}<p class="left_img">{%- if article.image -%}{{ article | image_url: width: 170 | image_tag }}{% endif %}</p>
+                 {%- elsif related_settings.enable_bimage == '0' -%}
+             {% endif %}<div class="right_content">
+                 <h4>{{ article.title }}</h4>
+                 <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+               </div>
+            </a>
+            </li>
+             {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%}      
+         {%comment%} {% endif %}  {%endcomment%}
+         {%- endif -%}
+      {%- elsif related_settings.related_to == '2' -%}
+        {%- if tags != blank and artblg !=  article.handle -%}
+        {% assign article_tags = article.tags %} 
+        {%- if currentarticle != article.handle -%}
+            
+          {% assign random_article1 = random_article1 %} 
+          {% comment %}{%- if random_article1 <= no_post_display -%}{% endcomment %}
+            {% for tag in tags %}
+           {% if article_tags contains tag %}
+              {%- unless hide_post -%} 
+                {%- if article_count < no_post_display -%}
+              <li ture class="rb_list" random-no="{{ random_article1 }}">
+               <a href="{{ article.url }}" class="main_row">{% if related_settings.enable_bimage == '1' %} 
+                  <p  class="left_img">{%- if article.image -%}{{ article | image_url: width: 170 | image_tag }}{% endif %}</p> 
+                {%- elsif related_settings.enable_bimage == '0' -%}
+                 {% endif %}<div class="right_content">
+                  <h4>{{ article.title }}</h4>
+                  <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+                 </div>
+               </a>
+              </li>
+           {%- assign article_count = article_count | plus:1 -%} 
+              {%endif%}
+              {%- endunless -%} 
+            {% endif %}
+            {% endfor %}
+        {% comment %} {% endif %}{% endcomment %}
+            {%- endif -%}
+        {% elsif tags == blank and handle_no_related_posts == '1' %}
+        {%- if currentarticle != article.handle -%}
+            
+          {% assign random_article1 = random_article1 %} 
+         {% comment %} {%- if random_article1 <= no_post_display -%}{% endcomment %}
+             {%- unless hide_post -%} 
+                {%- if article_count < no_post_display -%}
+                <li false class="rb_list" random-no="{{ random_article1 }}">
+                 <a href="{{ article.url }}" class="main_row">{% if related_settings.enable_bimage == '1' %} 
+                  <p  class="left_img">{%- if article.image -%}{{ article | image_url: width: 170 | image_tag }}{% endif %}</p> 
+                  {%- elsif related_settings.enable_bimage == '0' -%}
+                   {% endif %}<div class="right_content">
+                    <h4>{{ article.title }}</h4>
+                    <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+                   </div>
+                 </a>
+                </li>
+                   {%- assign article_count = article_count | plus:1 -%} 
+                      {%endif%}
+                      {%- endunless -%} 
+                 {% comment %} {% endif %}{% endcomment %}
+            {%- endif -%}
+      {%- endif -%}
+      {%- elsif related_settings.related_to == '3' -%}
+      {%- if ath == article.author -%}
+        {%- if currentarticle != article.handle -%}
+           
+          {% assign random_article1 = random_article1 %}  
+     {% comment %} {%- if random_article1 <= no_post_display -%}{% endcomment %}
+              {%- unless hide_post -%} 
+                    {%- if article_count < no_post_display -%}
+                    <li class="rb_list hh" data-name="{{article.author}}" random-no="{{ random_article1 }}">
+                     <a href="{{ article.url }}" class="main_row">{% if related_settings.enable_bimage == '1' %} 
+                        <p class="left_img">{%- if article.image -%}{{ article | image_url: width: 170 | image_tag }}{% endif %}</p> 
+                    {%- elsif related_settings.enable_bimage == '0' -%}
+                      {% endif %}<div class="right_content">
+                        <h4>{{ article.title }}</h4> 
+                        <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+                      </div>
+                      </a>
+                  </li>
+             {%- assign article_count = article_count | plus:1 -%} 
+                {%endif%}
+                {%- endunless -%} 
+       {% comment %} {% endif %}{% endcomment %}
+              {%- endif -%}
+      {%- endif -%}
+      {%- endif -%}
+   
+      {%- endfor -%}
+      {%- endfor -%}
+    {%- else -%}
+     <p>Sorry, there are currently no related posts that we can find...</p>
+     {%- endif -%}
+  </ul>
+  <style>
+  .related_blog_posts_pro {
+        max-width: 90ch;
+        margin-inline: auto;
+        padding-inline: 24px;
+    }
+    .related_blog_posts_pro li {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+    li.rb_list p:first-child {
+        height: 200px;
+        display: block;
+    }
+    .related_blog_posts_pro li a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    .related_blog_posts_pro ul {
+        display: grid;
+        width: 100%;
+        gap: 10px;
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+   .related_blog_posts_pro ul a.main_row {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 20px;
+    }
+    .related_blog_posts_pro ul .left_img {
+        width: 130px;
+        height: auto !important;
+    }
+    .related_blog_posts_pro img {
+        object-fit: cover;
+        max-width: -webkit-fill-available;
+        height: auto;
+        width: 100%;
+    }
+    .related_blog_posts_pro a {
+        font-size: 16px;
+        color: #252525bf;
+        list-style: none;
+    }
+    .related_blog_posts_pro h3 {
+        display: block;
+    }
+    
+   .related_blog_posts_pro ul .right_content {
+        flex: 1;
+    }
+    .related_blog_posts_pro a.dy_butn {
+        padding: 8px 20px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+    }
+   @media screen and (max-width: 768px) {
+    .related_blog_posts_pro {
+        max-width: 100%;
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+   } 
+  {{ html_settings.custom_style }}
+  </style>
+{%- else -%}
+{%- assign ath = article.author -%}
+{%- assign tagg = article.tags -%}
+ <ul id="postlists" post-limit="{{ no_post_display }}">
+    {%- assign blog_handles = related_settings.blog_handle | split: "," -%}
+    {%- if article.handle.size > 0 -%}
+{%- comment -%} count no. of post {%- endcomment -%} 
+{%- if related_settings.related_to == '0' -%}  
+{%- elsif related_settings.related_to == '1' -%}
+    {%- assign counter = 0 -%}
+       {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%} 
+             {%- if currentarticle != article.handle -%}
+                 {%- assign count = counter | plus: 1 -%}
+                  {%- assign counter = counter | plus: 1 -%}
+             {%- endif -%} 
+          {%- endfor -%} 
+       {%- endfor -%}  
+{%- elsif related_settings.related_to == '2' -%}
+    {% assign all_tags = "" %}
+    {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%}
+      {% for tag in article.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | append: tag | append: ", " %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    {% assign all_tags = all_tags | slice: 0, all_tags.size | strip_last: ", " %}
+    {% assign tags = all_tags | split: ", " %}
+    
+     {%- assign counter = 0 -%}
+       {%- for blog_val in blog_handles -%} 
+         {%- for article in blogs[blog_val].articles -%} 
+           {%- if tags != blank and artblg !=  article.handle -%}
+             {%- if currentarticle != article.handle -%}
+                {%- assign count = counter | plus: 1 -%}
+                {%- assign counter = counter | plus: 1 -%} 
+             {%- endif -%} 
+             {% elsif tags == blank and handle_no_related_posts == '1' %}
+             {%- if currentarticle != article.handle -%}
+                {%- assign count = counter | plus: 1 -%}
+                {%- assign counter = counter | plus: 1 -%} 
+             {%- endif -%} 
+           {%- endif -%}    
+          {%- endfor -%} 
+       {%- endfor -%}
+{%- elsif related_settings.related_to == '3' -%} 
+    {%- assign counter = 0 -%}
+         {%- for blog_val in blog_handles -%} 
+           {%- for article in blogs[blog_val].articles -%} 
+               {%- if currentarticle != article.handle -%}
+                 {%- if ath == article.author -%} 
+                   {%- assign count = counter | plus: 1 -%}
+                    {%- assign counter = counter | plus: 1 -%}
+                  {%- endif -%}
+               {%- endif -%} 
+            {%- endfor -%} 
+         {%- endfor -%}  
+{%- endif -%}   
+      {%- assign keyed_articles = '' -%}
+      {%- for article in (1..count) -%}
+        {%- assign random_key = 'now' | date: '%N' | plus: forloop.index | modulo: 100000 -%}
+        {%- capture keyed_article -%}
+          {{ random_key }}_{{ article }}
+        {%- endcapture -%}
+        {%- assign keyed_articles = keyed_articles | append: keyed_article | append: ',' -%}
+      {%- endfor -%}
+      {%- assign keyed_articles = keyed_articles | split: ',' | sort -%}
+      {%- assign shuffled_articles = '' -%}
+      {%- for keyed_article in keyed_articles -%}
+        {%- assign article = keyed_article | split: '_' | last -%}
+        {%- unless article == "" -%}
+          {%- assign shuffled_articles = shuffled_articles | append: article | append: ',' -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      {%- assign shuffled_articles = shuffled_articles | split: ',' -%}  
+{%- comment -%} count no. of post end {%- endcomment -%}  
+    {%- assign article_count = 0 -%}   
+    {%- for blog_val in blog_handles -%}
+    {%- for article in blogs[blog_val].articles -%}
+       {%- assign random_article1 = shuffled_articles[article_count] -%}
+    {%- assign random_article1 = random_article1 | plus: 0 -%}      
+      {%- assign no_post_display = no_post_display -%} 
+      {% assign hide_post = false %}
+
+      {% for expooltags in expool_tags %}
+          {% if article.tags contains expooltags %}
+            {% assign hide_post = true %}
+            {% break %}
+          {% endif %}
+      {% endfor %}
+       {% if expoolpost_ids contains blogId %}
+          {% assign hide_post = true %}
+       {%endif%}
+
+
+
+    {%- if related_settings.related_to == '0' -%}
+      
+       {%- unless hide_post -%} 
+                    {%- if article_count < no_post_display -%}
+      <li class="rb_list" random-no="{{ random_article1 }}" {% if currentarticle == article.handle %} data-post="current" {% endif %} {% if currentarticle == article.handle or random_article1 > no_post_display %} style="display: none;"{% endif %}>
+        {%- if related_settings.enable_bimage == '1' -%}
+        <a href="{{ article.url }}">
+            <p>{%- if article.image -%}{{ article | image_url: width: 500 | image_tag }}{%- endif -%}</p>
+            <h4>{{ article.title }}</h4>
+        </a>
+        {%- elsif related_settings.enable_bimage == '0' -%}
+        {%- endif-%}
+          {%- if section.settings.blog_show_author -%}
+            <span> By {{ article.author }}</span>
+          {%- endif -%}
+          {%- if section.settings.blog_show_date -%}
+            <span>{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+          {%- endif -%}
+          <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+          {%- if readmore_text != blank -%}
+          <ul class="content_article">
+            <li>
+              <a class="dy_butn" href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
+                {{ html_settings.read_more_theme_2 }}
+              </a>
+            </li>
+          </ul>
+         {%- endif -%}
+      </li>
+          {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%}
+      {%- elsif related_settings.related_to == '1' -%}
+          {%- if currentarticle != article.handle -%}
+           
+            {% assign random_article1 = random_article1 %} 
+             {% comment %}{%- if random_article1 <= no_post_display -%} {% endcomment %}
+               {%- unless hide_post -%} 
+                    {%- if article_count < no_post_display -%}
+                    <li class="rb_list" random-no="{{ random_article1 }}">{% if related_settings.enable_bimage == '1' %}
+                      <a href="{{ article.url }}">
+                          <p>{%- if article.image -%}{{ article | image_url: width: 500 | image_tag }}{% endif %}</p>
+                          <h4>{{ article.title }}</h4>
+                      </a>
+                      {%- elsif related_settings.enable_bimage == '0' -%}
+                      {% endif %}
+                        <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>
+                      {% if readmore_text != blank %}<ul class="content_article">
+                          <li>
+                            <a class="dy_butn" href="{{ article.url }}" aria-label="Read more: {{ article.title }}">{{ html_settings.read_more_theme_2 }}</a>
+                          </li>
+                        </ul>{% endif %}
+                    </li>
+            {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%} 
+         {% comment %}{%- endif -%} {% endcomment %}
+        {% endif %}
+      {%- elsif related_settings.related_to == '2' -%} 
+ 
+          
+      {%- if tags != blank and artblg !=  article.handle -%}
+        {% assign article_tags = article.tags %}
+        {%- if currentarticle != article.handle -%}
+            
+          {% assign random_article1 = random_article1 %}  
+      {% comment %} {%- if random_article1 <= no_post_display -%} {% endcomment %}
+        
+        {% for tag in tags %}
+           {% if article_tags contains tag %}
+              {%- unless hide_post -%} 
+                    {%- if article_count < no_post_display -%}
+          <li true1 class="rb_list" random-no="{{ random_article1 }}">{% if related_settings.enable_bimage == '1' %}
+                <a href="{{ article.url }}">
+                    <p>{%- if article.image -%}{{ article | image_url: width: 500 | image_tag }}{% endif %}</p>
+                    <h4>{{ article.title }}</h4>
+                </a>
+            {%- elsif related_settings.enable_bimage == '0' -%}
+            {% endif%}
+                <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>          
+               {% if readmore_text != blank %}<ul class="content_article">
+                    <li>
+                      <a class="dy_butn" href="{{ article.url }}" aria-label="Read more: {{ article.title }}">{{ html_settings.read_more_theme_2 }}</a>
+                    </li>
+                </ul>{% endif %}
+           </li>
+             {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%}
+             {% break %} 
+                 
+    {% endif %} 
+  {% endfor %}
+        
+         {% comment %}{%- endif -%} {% endcomment %}
+          {% endif %}
+          {% elsif tags == blank and handle_no_related_posts == '1' %}
+         {%- if currentarticle != article.handle -%}
+            
+          {% assign random_article1 = random_article1 %}  
+       {% comment %}{%- if random_article1 <= no_post_display -%} {% endcomment %}
+         {%- unless hide_post -%} 
+                    {%- if article_count < no_post_display -%}
+      <li false class="rb_list" random-no="{{ random_article1 }}">{% if related_settings.enable_bimage == '1' %}
+            <a href="{{ article.url }}">
+                <p>{%- if article.image -%}{{ article | image_url: width: 500 | image_tag }}{% endif %}</p>
+                <h4>{{ article.title }}</h4>
+            </a>
+        {%- elsif related_settings.enable_bimage == '0' -%}
+        {% endif%}
+            <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>          
+           {% if readmore_text != blank %}<ul class="content_article">
+                <li>
+                  <a class="dy_butn" href="{{ article.url }}" aria-label="Read more: {{ article.title }}">{{ html_settings.read_more_theme_2 }}</a>
+                </li>
+            </ul>{% endif %}
+       </li>
+          {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%} 
+        {% comment %} {%- endif -%} {% endcomment %}
+          {% endif %}
+     {%- endif -%}
+      {%- elsif related_settings.related_to == '3' -%}
+      {%- if ath == article.author -%}
+        {%- if currentarticle != article.handle -%}
+            
+          {%- assign random_article1 = random_article1 -%} 
+     {% comment %} {% if random_article1 <= no_post_display %}{% endcomment %}
+             {%- unless hide_post -%} 
+              {%- if article_count < no_post_display -%}
+            <li class="rb_list" random-no="{{ random_article1 }}">{% if related_settings.enable_bimage == '1' %}
+                <a href="{{ article.url }}">
+                    <p>{%- if article.image -%}{{ article | image_url: width: 500 | image_tag }}{%- endif -%}</p>
+                    <h4>{{ article.title }}</h4>
+                </a>
+            {%- elsif related_settings.enable_bimage == '0' -%}
+            {% endif %}
+                <p>{%- if related_settings.display_desc == 'Excerpt' -%}{{ article.excerpt }}{%- else -%}{{ article.content | strip_html | truncate: html_settings.no_char_post }}{%- endif -%}</p>    
+                {% if readmore_text != blank %}<ul class="content_article">
+                <li>
+                  <a class="dy_butn" href="{{ article.url }}" aria-label="Read more: {{ article.title }}">{{ html_settings.read_more_theme_2 }}</a>
+                </li>
+              </ul>{% endif %}
+          </li>
+            {%- assign article_count = article_count | plus:1 -%} 
+            {%endif%}
+            {%- endunless -%} 
+        {% comment %} {% endif %} {% endcomment %}
+      {%- endif -%}
+    {%- endif -%}
+    {%- endif -%} 
+
+    {%- endfor -%}
+    {%- endfor -%}
+     {%- else -%}
+     <p>Sorry, there are currently no related posts that we can find...</p>
+     {%- endif -%}
+  </ul>
+
+ 
+
+  <style>
+    .related_blog_posts_pro {
+        max-width: 90ch;
+        margin-inline: auto;
+        padding-inline: 24px; 
+    }
+    .related_blog_posts_pro li {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .related_blog_posts_pro li a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    .related_blog_posts_pro ul {
+        display: grid;
+        width: 100%;
+        gap: 10px;
+        padding: 0;
+        grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+        margin-top: auto;
+    }
+    .related_blog_posts_pro img {
+        object-fit: cover;
+        max-width: -webkit-fill-available;
+        height: 200px;
+        width: 100%;
+    }
+    .related_blog_posts_pro a {
+        font-size: 16px;
+        list-style: none;
+    }
+    .related_blog_posts_pro ul.content_article h3 {
+        display: block;
+        font-size: 16px;
+        padding: 10px;
+        color: #252525bf;
+        text-align: center;
+        border: 1px solid #252525bf;
+        text-decoration: none;
+    }
+    .related_blog_posts_pro ul.content_article h3:hover {
+        display: block;
+        font-size: 16px;
+        padding: 10px;
+        color: white;
+        background: #252525bf;
+        text-align: center;
+        transition: all ease-in-out 0.5s;
+    }
+    li.rb_list p:first-child {
+        height: 200px;
+        display: block;
+    }
+    .related_blog_posts_pro a.dy_butn {
+        border: 1px solid #252525bf;
+        padding: 8px 20px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+        width: 100%;
+    } 
+    @media screen and (max-width: 768px) {
+        .related_blog_posts_pro ul {
+            grid-template-columns: 1fr !important;
+        } 
+        .related_blog_posts_pro {
+            padding-inline: 0;
+        }
+
+    } 
+    {{ html_settings.custom_style }}
+  </style> 
+{%- endif -%}
+  
+</div>
+ <script>
+    /*shuffe posts*/
+     document.addEventListener("DOMContentLoaded", function() {
+      const postList = document.getElementById("postlists");
+      const postLimit = parseInt(postList.getAttribute("post-limit")) || 1;
+      const listItems = Array.from(postList.querySelectorAll(".rb_list"));
+      listItems.sort(() => Math.random() - 0.5);
+      listItems.forEach(item => item.style.display = "none");
+      listItems.slice(0, postLimit).forEach(item => item.style.display = "flex");
+    });
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     let ul = document.getElementById("postList");
+    //     let message = document.querySelector("#message");
+
+    //     if (!ul.hasChildNodes() || ul.children.length === 0) {
+    //         message.textContent = "Sorry, there are currently no related posts that we can find...";
+    //         message.style.display = "block";
+    //     } else {
+    //         message.style.display = "none";
+    //     }
+    // });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let ul = document.getElementById("postlists");
+        let items = Array.from(ul.children);
+
+        items.sort(() => Math.random() - 0.5);
+
+        ul.innerHTML = "";
+        items.forEach(item => ul.appendChild(item));
+    });
+ </script>
+
+{% endif %}

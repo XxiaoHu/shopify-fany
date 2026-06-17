@@ -1,0 +1,110 @@
+{{ 'support-menu-banner.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.padding_top }}px;
+      margin-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-margin {
+      margin-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      margin-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="support-menu-section section-{{ section.id }}-margin gradient isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width ">
+    <ul class="support-menu-ul">
+      {% for block in section.blocks %}
+      <li>
+        {% if block.settings.img != blank %}
+          <div class="img-div">{{ block.settings.img | image_url: width: block.settings.img.width | image_tag }}</div>
+        {% endif %}
+        <div class="text-div">
+          <h4>{{ block.settings.header }}</h4>
+          {% if block.settings.url != blank %}
+            <a class="f-22{% if block.settings.url == request.path%} active{% endif %}" href="{{ block.settings.url }}">{{ block.settings.text }}</a>
+          {% else %}
+            <p class="f-22">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "support菜单图标",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon-text-group",
+      "name": "图标-文字组",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "图标或二维码"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "header",
+          "label": "主文字",
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "副文字",
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "链接",
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "support菜单图标"
+    }
+  ]
+}
+{% endschema %}

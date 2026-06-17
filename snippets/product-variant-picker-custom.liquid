@@ -1,0 +1,75 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      <p class="productColor latoBold">Option/{{ option.name }}</p>
+      <ul class="js product-form__input product-form__input--swatch clearfix">
+        {%- for value in option.values -%}
+          {%- liquid
+            if value.swatch.image
+              assign image_url = value.swatch.image | image_url: width: 50
+              assign swatch_value = 'url(' | append: image_url | append: ')'
+            elsif value.swatch.color
+              assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+            else
+              assign swatch_value = null
+            endif
+
+            assign option_disabled = true
+            if value.available
+              assign option_disabled = false
+            endif
+          -%}
+
+          {%- capture input_id -%}
+            {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+          {%- endcapture -%}
+
+          {%- capture input_name -%}
+            {{ option.name }}-{{ option.position }}
+          {%- endcapture -%}
+
+          {%- capture input_dataset -%}
+            data-product-url="{{ value.product_url }}"
+            data-option-value-id="{{ value.id }}"
+          {%- endcapture -%}
+          <li>
+            {%
+              render 'swatch-input',
+              id: input_id,
+              name: input_name,
+              value: value | escape,
+              swatch: value.swatch,
+              product_form_id: product_form_id,
+              checked: value.selected,
+              disabled: option_disabled,
+              visually_disabled: option_disabled,
+              shape: block.settings.swatch_shape,
+              help_text: value | escape,
+              additional_props: input_dataset
+            %}
+            {% if option_disabled %}
+              <span class="bntHoverTips">Out Of Stock <i></i></span>
+            {% endif %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endfor -%}
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}

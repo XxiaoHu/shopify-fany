@@ -1,0 +1,197 @@
+.privacy-policy-title{
+  margin: 85px 0 ;
+  text-align: center;
+}
+.privacy-policy-section{
+  width: 1242px;
+  margin: 0 auto;
+  border-top: 1px solid #CFCDCC;
+  box-sizing: border-box;
+  padding-top: 8rem;
+}
+/* 容器样式 */
+.privacy-policy-section .policy-container {
+  display: grid;
+  /* column-gap: 65px;
+  grid-template-columns: 300px auto; */
+}
+/* 左侧导航 */
+.privacy-policy-section .policy-container .nav-sidebar {
+  width: 100%;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 4px;
+  background-color: #cfcdcc;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item {
+  height: 65px;
+  line-height: 65px;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: #686766;
+  transition: all 0.3s;
+  padding-left: 1.7rem;
+  position: relative;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link::after{
+  content: " ";
+  display: block;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 2rem;
+  border-color: #686766;
+  border-style: solid solid none none;
+  border-width: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link:hover,
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link.active {
+  background: #CFCDCC;
+  color: #1e0e06;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link:hover::before,
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link.active::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 4px;
+  background-color: #B18D82;
+}
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link:hover::after,
+.privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link.active::after{
+  border-color: #1e0e06;
+}
+/* 内容区块 */
+.privacy-policy-section .policy-container .content-main .content-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.privacy-policy-section .policy-container .content-main .content-section .policy-title {
+  margin-bottom: 5rem;
+}
+
+/* .privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h3{
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  margin: 80px 0 28px 0;
+} */
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h3:nth-child(1){
+  margin-top: 0;
+}
+/* .privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p{
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0;
+} */
+
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p {
+  margin: 0;
+}
+
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content div + div,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + div,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content div + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + p{
+  margin-top: 12px;
+}
+
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h1 + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h2 + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h3 + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h4 + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h5 + p,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content h6 + p {
+  margin-top: 15px;
+}
+
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h1,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h2,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h3,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h4,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h5,
+.privacy-policy-section .policy-container .content-main .content-section .privacy-policy-content p + h6 {
+  margin-top: 30px;
+}
+
+.privacy-policy-section .policy-container .content-main .content-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (max-width: 1400px) {
+  .privacy-policy-section{
+    width: calc(100vw - 10rem);
+  }
+}
+@media screen and  (max-width: 768px) {
+  .privacy-policy-title{
+    margin: 6rem 3rem 3rem 3rem;
+    text-align: left;
+  }
+  .privacy-policy-section{
+    width: calc(100vw - 3rem);
+    border: none;
+    padding-top: 0;
+  }
+  .privacy-policy-section .policy-container {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list::before{
+    display: none;
+    content: none;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item{
+    background-color: #f6f7f7;
+    height: 40px;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link {
+    line-height: 40px;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link::after{
+    margin-right: 4rem;
+  }
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link:hover,
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link.active {
+    background: #B18D82;
+  }
+ .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link:hover::before,
+  .privacy-policy-section .policy-container .nav-sidebar .nav-list .nav-item .nav-link.active::before{
+    content: none;
+    display: none;
+  }
+  .privacy-policy-section .policy-container .content-main{
+    padding: 1.5rem;
+  }
+}

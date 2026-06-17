@@ -1,0 +1,218 @@
+
+{%- style -%}
+    .aesthetics-container {
+        height: 100%;
+    }
+    
+    .aesthetics .sticky-viewport {
+        overflow: hidden;
+        position: sticky;
+        height: 100vh;
+        top: 0;
+    }
+    
+    .aesthetics .aesthetics-background {
+        height: 100%;
+    }
+    
+    .aesthetics .hidden-web {
+        display: none;
+    }
+    
+    .aesthetics .sequence-animation canvas {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .aesthetics .space-100vh {
+        height: 100vh;
+    }
+
+    .aesthetics .space-50vh {
+        height: 50vh;
+    }
+    
+    .aesthetics .common-wrap-pagination {
+        position: absolute;
+        bottom: 5vw;
+        display: flex;
+        justify-content: center;
+        z-index: 5;
+    }
+
+     .aesthetics .common-wrap-pagination .swiper-pagination-bullet{
+        background-color: #FFFFFF;
+        border-radius: 2.778vw;
+        width: 2.22vw;
+        height: 2.22vw;
+        opacity: .3s;
+        transition: all .3s ease;
+    }
+
+    .aesthetics .common-wrap-pagination .swiper-pagination-bullet-active{
+        background-color: #D6D6D6;
+        width: 4.444vw;
+        opacity: 1;
+    }
+    
+    .aesthetics .common-wrap-pagination .swiper-pagination-bullet{
+        background-color: #ABABAB;
+        opacity: 1;
+    }
+    
+    .aesthetics .common-wrap-pagination .swiper-pagination-bullet-active{
+        background-color: #000000;
+    }
+    
+    img {
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+        vertical-align: middle;
+    }
+    
+    @media screen and (max-width: 749px) {
+        .aesthetics .aesthetics-background {
+            height: auto;
+        }
+        
+        .aesthetics .hidden-mob {
+            display: none;
+        }
+        
+        .aesthetics .hidden-web {
+            display: block;
+        }
+        
+        .aesthetics .aesthetics-img-wrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden !important;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        
+        .aesthetics .aesthetics-container .aesthetics-img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s linear;
+        }
+        
+        .aesthetics .aesthetics-container .aesthetics-img img {
+            width: 100%;
+            height: auto; /* 保持图片宽高比 */
+            max-height: 100vh; /* 避免图片超出视口 */
+            margin-left: 0;
+            object-fit: cover;
+        }
+    }
+
+    .block-{{ block.id }}-padding {
+        padding-top: {{ block.settings.padding_top }}px;
+        padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 749px) {
+        .block-{{ block.id }}-padding {
+            padding-top: {{ block.settings.mobile_padding_top }}px;
+            padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+        }
+    }
+{%- endstyle -%}
+<div class="aesthetics block-{{ block.id }}-padding">
+  <div class="aesthetics-container page-width">
+    <div class="sticky-viewport">
+      <div class="aesthetics-background sequence-animation hidden-mob" data-trigger=".aesthetics-container">
+        {% assign asset_base = '01.webp' | asset_url | split: '01.webp' | first %}
+        <canvas class="hidden-mob" data-url="{{ asset_base }}" data-frames="71" data-duration="68"></canvas>
+      </div>
+      <div class="aesthetics-img-wrap hidden-web swiper">
+        <div class="swiper-wrapper">
+            {% assign mob_group = metaobjects.aesthetics_gallery[block.settings.mob].images.value %}
+            {% for item in mob_group %}
+            <div class="aesthetics-img swiper-slide">
+            {{
+                item
+                | image_url: width: item.value.width, height: item.value.height
+                | image_tag: loading: 'lazy'
+            }}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="aesthetics-img-wrap-pagination common-wrap-pagination"></div>
+      </div>
+    </div>
+    <div class="space-100vh hidden-mob"></div>
+    <div class="space-50vh hidden-mob"></div>
+  </div>
+</div>
+
+<script src="{{ 'ScrollMagic.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-overview-aesthetics.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "图片动画",
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "mob",
+      "label": "移动端图片组",
+      "metaobject_type": "aesthetics_gallery"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "移动端布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "图片动画"
+    }
+  ]
+}
+{% endschema %}

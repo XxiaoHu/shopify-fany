@@ -1,0 +1,270 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.6 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .icon-group-title {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    padding: 1.8rem 0rem 0rem 0rem;
+  }
+
+  .icon-group-list {
+    padding: 0rem 1.5rem 1rem 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .icon-group-list {
+      padding: 0rem 3rem 2rem 3rem;
+    }
+    .icon-group-title {
+      padding: 3rem 1rem 1.2rem 1rem;
+    }
+  }
+
+  .icon-group-list__item {
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    text-align: center;
+    flex-direction: column;
+    padding: 2rem 0rem;
+    justify-content: space-between;
+  }
+
+  .icon-group-list__item img{
+    width: 120px;
+    height: 120px;
+  }
+
+  .icon-group-list__item_content {
+    width: 171px;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .icon-group-list__item {
+      font-size: 14px;
+      padding: 20px 0px;
+    }
+    .icon-group-list__item img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+    <div class="color-{{ section.settings.color_scheme }}">
+      {%- unless section.settings.title == blank -%}
+        <h2 class="icon-group-title {{ section.settings.alignment}} {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      {%- endunless -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="icon-group-list grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop">
+          {% for block in section.blocks %}
+            <li class="icon-group-list__item grid__item">
+              <div class="icon-group-list__item_content">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag }}
+                  <div>{{ block.settings.text }}</div>
+                {%- else -%}
+                  {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "图标组",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "标题"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5,
+      "label": "列"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 3,
+      "label": "移动-列"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "border-radius",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "圆角边",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.collage.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.collage.blocks.image.settings.image.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "说明"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "图标组",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

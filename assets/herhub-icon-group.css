@@ -1,0 +1,70 @@
+@media screen and (min-width: 769px) {
+  .herhub-grid-col{
+    --grid-row-gap: 10px;
+    --grid-col-gap: 20px;
+    padding: 40px;
+    row-gap: var(--grid-row-gap);
+  }
+  .herhub-grid-col li{
+    width: calc(25% - var(--grid-col-gap) * 3 / 4);
+    max-width: calc(25% - var(--grid-row-gap) * 3 / 4);
+    text-align: center;
+    position: relative;
+  }
+  .herhub-grid-col li:not(:nth-child(4n))::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 1px;
+    background-color: #DCDCDC;
+  }
+  .herhub-grid-col li:nth-child(n+5)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -1rem;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: #DCDCDC;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .herhub-grid-col{
+    --grid-row-gap-m: 10px;
+    --grid-col-gap-m: 10px;
+    padding: 20px 0;
+    row-gap: var(--grid-row-gap-m);
+    column-gap: var(--grid-col-gap-m);
+  }
+  .herhub-grid-col li{
+    width: calc(50% - var(--grid-col-gap-m) * 2 / 3);
+    max-width: calc(50% - var(--grid-row-gap-m) * 2 / 3);
+    text-align: center;
+    position: relative;
+  }
+  .herhub-grid-col li:not(:nth-child(2n))::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 1px;
+    background-color: #DCDCDC;
+  }
+  .herhub-grid-col li:nth-child(n+3)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -1rem;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: #DCDCDC;
+  }
+}

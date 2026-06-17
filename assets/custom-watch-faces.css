@@ -1,0 +1,189 @@
+/* 基础变量定义 - 语义化命名 */
+:root {
+  --watch-face-icon-transition: transform 0.3s linear;
+  --watch-face-icon-edge-transition: transform linear;
+  --watch-face-icon-highlight-scale: 1.175;
+  --watch-face-circle-stroke-total: 93;
+}
+
+@media (max-width: 749px) {
+  .watch-face__side-mask {
+    display: none;
+  }
+}
+
+/* 核心容器样式 */
+.watch-face-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.watch-face__content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 标题区域样式 */
+.watch-face__title-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* 手表图标容器 */
+.watch-face__icon-wrap {
+  position: relative;
+  width: calc(var(--rpx, 1px) * 321);
+  height: calc(var(--rpx, 1px) * 527.4);
+  transform-origin: top;
+  margin: 1rem 0;
+}
+
+.watch-face__icon-circle {
+  position: absolute;
+  width: 0;
+  height: calc(var(--rpx, 1px) * 1740.5);
+  left: calc(var(--rpx, 1px) * 160.5);
+  top: calc(var(--rpx, 1px) * 263.5);
+}
+
+/* 环形图标样式 */
+.watch-face__icon-item {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform-origin: bottom;
+  transition: var(--watch-face-icon-transition);
+}
+
+.watch-face__icon-item.edge {
+  transition: var(--watch-face-icon-edge-transition);
+}
+
+.watch-face__icon-img-wrapper {
+  position: absolute;
+  width: calc(var(--rpx, 1px) * 174);
+  height: calc(var(--rpx, 1px) * 174);
+  left: calc(var(--rpx, 1px) * -87);
+  top: calc(var(--rpx, 1px) * -87);
+}
+
+.watch-face__icon-img-wrapper.highlight {
+  transform: scale(var(--watch-face-icon-highlight-scale));
+}
+
+.watch-face__icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.watch-face__watch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+/* 底部图标栏 */
+.watch-face__icon-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 40px;
+  padding: 12px;
+  margin-top: 1rem;
+}
+
+.watch-face__icon-button {
+  position: relative;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  margin-left: 6px;
+}
+
+.watch-face__icon-button:first-child {
+  margin-left: 0;
+}
+
+.watch-face__button-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.watch-face__button-border svg {
+  width: 100%;
+  height: 100%;
+}
+
+.watch-face__circle-path {
+  cx: 15;
+  cy: 15;
+  r: 14.75;
+  stroke: black;
+  stroke-opacity: 0.2;
+  stroke-width: 0.5;
+  stroke-dasharray: var(--watch-face-circle-stroke-total);
+  stroke-dashoffset: var(--watch-face-circle-stroke-total);
+}
+
+.watch-face__button-img {
+  position: absolute;
+  object-fit: contain;
+  width: 36px;
+  height: 36px;
+  left: 4px;
+  top: 4px;
+}
+
+/* 侧边渐变遮罩 */
+.watch-face__side-mask {
+  position: absolute;
+  width: calc(1vw * 50 - 720px);
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+  background-color: #FFF;
+  z-index: 3;
+}
+
+.watch-face__side-mask-left {
+  left: 0;
+}
+
+.watch-face__side-mask-right {
+  right: 0;
+}
+
+.watch-face__gradient-left {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 100%;
+  width: 120px;
+  background: linear-gradient(270deg, hsla(0, 0%, 100%, 0) .97%, #fff 90.97%);
+}
+
+.watch-face__gradient-right {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 100%;
+  width: 120px;
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) .97%, #fff 90.97%);
+}

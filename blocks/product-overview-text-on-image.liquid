@@ -1,0 +1,157 @@
+{{ 'product-overview-text-on-image.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+
+  .text-item-{{ block.id }} .text-description{
+    {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+    max-width: {{ block.settings.text_width }}px;
+    {% endif %}  
+  }
+
+  .f-18-block-{{ block.id }} .text-description{
+    {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+    max-width: {{ block.settings.text_18_width }}px;
+    {% endif %}  
+  }
+
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="product-overview-text-on-image">
+    {% if block.settings.pc_img != blank %}
+        <img
+            src="{{ block.settings.pc_img | image_url: width: block.settings.pc_img.width }}"
+            class="{% if block.settings.mobile_img != blank %}pc_img{% endif %}"
+            loading="lazy"
+            width="{{ block.settings.pc_img.width }}"
+            height="{{ block.settings.pc_img.height }}"
+          >
+      {% endif %}
+      {% if block.settings.mobile_img != blank %}
+        <img
+            src="{{ block.settings.mobile_img | image_url: width: block.settings.mobile_img.width }}"
+            class="mobile_img"
+            loading="lazy"
+            width="{{ block.settings.mobile_img.width }}"
+            height="{{ block.settings.mobile_img.height }}"
+          >
+      {% endif %}
+    <div class="text-block overview-page-width{% if block.settings.text_center %} text-block-center {% else %} text-block-separate{% endif %}">
+      <div class="header-item">
+        <h2 {% if block.settings.header_width != blank and block.settings.header_width > 0 %}style="max-width: {{ block.settings.header_width }}px;"{% endif %}>{{ block.settings.header}}</h2>
+      </div>
+      <div class="text-item text-item-{{ block.id }}">
+        {{ block.settings.text-24 | replace: '<p', '<p class="f-24 text-description"' }}
+      </div>
+    </div>
+    {% unless block.settings.text_center %}
+      <div class="mobile-text-item text-item-{{ block.id }}">
+        {{ block.settings.text-24 | replace: '<p', '<p class="f-24 text-description"' }}
+      </div>
+    {% endunless %}
+    {% if block.settings.text-18 != blank %}
+      <div class="f-18-block f-18-block-{{ block.id }}">
+        {{ block.settings.text-18 | replace: '<p', '<p class="f-18 text-description"' }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "文字在图片上",
+    "settings": [
+      {
+        "type": "header",
+        "content": "图片"
+      },
+      {
+      "type": "image_picker",
+      "id": "pc_img",
+      "label": "PC端图片"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_img",
+        "label": "手机端图片"
+      },
+      {
+        "type": "header",
+        "content": "文字"
+      },
+      {
+        "type": "checkbox",
+        "id": "text_center",
+        "label": "文字居中",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "header_width",
+        "label": "标题宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "标题"
+      },
+      {
+        "type": "richtext",
+        "id": "text-24",
+        "label": "描述"
+      },
+      {
+        "type": "number",
+        "id": "text_width",
+        "label": "描述宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "richtext",
+        "id": "text-18",
+        "label": "描述2"
+      },
+      {
+        "type": "number",
+        "id": "text_18_width",
+        "label": "描述2宽度",
+        "info": "默认为设置宽度"
+      },
+      {
+        "type": "header",
+        "content": "布局"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+    ],
+    "presets": [{
+      "name": "文字在图片上"
+    }]
+  }
+{% endschema %}

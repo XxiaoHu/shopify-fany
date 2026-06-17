@@ -1,0 +1,148 @@
+{{ 'product-overview-image-swiper.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding: 2rem 0;
+    background: #FAF6F6;
+  }
+  .block-{{ block.id }}-padding .product-overview-image-swiper{
+    row-gap: 20px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      margin-top: {{ block.settings.padding_top }}px;
+      margin-bottom: {{ block.settings.padding_bottom }}px;
+    }
+
+    .block-{{ block.id }}-padding .product-overview-image-swiper{
+      row-gap: {{ block.settings.img_text_margin }}px;
+    }
+
+    {% if block.settings.header_width != blank and block.settings.header_width > 0 %}
+    .header-width {
+      max-width: {{ block.settings.header_width }}px;
+    }
+    {% endif %}
+
+    {% if block.settings.text_width != blank and block.settings.text_width > 0 %}
+    .text-item-{{ block.id }} .text-description{
+      max-width: {{ block.settings.text_width }}px;
+    }
+    {% endif %}
+  }
+{%- endstyle -%}
+<div class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="product-overview-image-swiper overview-page-width">
+    <div class="text-block">
+      <div class="header-item">
+        <h2 class="header-width">
+          {{ block.settings.header }}
+        </h2>
+      </div>
+      <div class="text-item text-item-{{ block.id }}">
+        {{ block.settings['text-24'] | replace: '<p', '<p class="f-24 text-description"' }}
+      </div>
+    </div>
+    <div class="swiper product-overview-image-swiper-box">
+      <div class="swiper-wrapper">
+        {% if block.settings.image_group != blank %}
+          {% assign image_group = metaobjects.image_group[block.settings.image_group].img.value %}
+          {% for img_url in image_group %}
+            <div class="swiper-slide">
+              <img src="https://{{ shop.domain }}/cdn/shop/{{ img_url }}" alt="" loading="lazy">
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="swiper-nav-buttons">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <ul class="imageGroupUrl">
+      {% if block.settings.image_group != blank %}
+        {% for img_url in image_group %}
+          <li><img src="https://{{ shop.domain }}/cdn/shop/{{ img_url }}" alt=""></li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "图片组切换-8",
+  "settings": [
+    {
+      "type": "header",
+      "content": "图片"
+    },
+    {
+      "type": "metaobject",
+      "id": "image_group",
+      "label": "图片组",
+      "metaobject_type": "image_group"
+    },
+    {
+      "type": "header",
+      "content": "文字"
+    },
+    {
+      "type": "number",
+      "id": "header_width",
+      "label": "标题宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "header",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "text-24",
+      "label": "描述"
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "label": "描述宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "number",
+      "id": "img_text_margin",
+      "label": "图文间距",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+  ],
+  "presets": [{
+    "name": "图片组切换-8"
+  }]
+}
+{% endschema %}

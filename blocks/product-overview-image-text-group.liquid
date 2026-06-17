@@ -1,0 +1,138 @@
+{{ 'product-overview-image-text-group.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+  
+  @media screen and (min-width: 769px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="block-{{ block.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="product-overview-image-text-group overview-page-width">
+    <div class="img-text-group">
+      {% if block.settings.img_1 != blank %}
+        <a {% if block.settings.link_1 %}
+            href="{{ block.settings.link_1 }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+        class="full-unstyled-link">
+          <div class="img-box">
+            <img
+                src="{{ block.settings.img_1 | image_url: width: block.settings.img_1.width }}"
+                loading="lazy"
+                width="{{ block.settings.img_1.width }}"
+                height="{{ block.settings.img_1.height }}"
+              >
+            <p class="f-40">{{ block.settings.header_1}}</p>
+          </div>
+          {{ block.settings.text-24_1 | replace: '<p', '<p class="f-24"' }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="img-text-group">
+      {% if block.settings.img_2 != blank %}
+        <a {% if block.settings.link_2 %}
+            href="{{ block.settings.link_2 }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+        class="full-unstyled-link">
+          <div class="img-box">
+            <img
+                src="{{ block.settings.img_2 | image_url: width: block.settings.img_2.width }}"
+                loading="lazy"
+                width="{{ block.settings.img_2.width }}"
+                height="{{ block.settings.img_2.height }}"
+              >
+            <p class="f-40">{{ block.settings.header_2}}</p>
+          </div>
+          {{ block.settings.text-24_2 | replace: '<p', '<p class="f-24"' }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "图文组-两组",
+    "settings": [
+      {
+        "type": "header",
+        "content": "图片"
+      },
+      {
+      "type": "image_picker",
+      "id": "img_1",
+      "label": "第一张图片"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "header_1",
+        "label": "第一张图片标题"
+      },
+      {
+        "type": "richtext",
+        "id": "text-24_1",
+        "label": "第一张图片描述"
+      },
+      {
+        "type": "url",
+        "id": "link_1",
+        "label": "第一张图片链接"
+      },
+      {
+      "type": "image_picker",
+      "id": "img_2",
+      "label": "第二张图片"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "header_2",
+        "label": "第二张图片标题"
+      },
+      {
+        "type": "richtext",
+        "id": "text-24_2",
+        "label": "第二张图片描述"
+      },
+      {
+        "type": "url",
+        "id": "link_2",
+        "label": "第二张图片链接"
+      },
+      {
+        "type": "header",
+        "content": "布局"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+    ],
+    "presets": [{
+      "name": "图文组-两组"
+    }]
+  }
+{% endschema %}
