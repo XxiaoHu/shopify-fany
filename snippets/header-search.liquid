@@ -788,12 +788,19 @@
         const res = await fetch('/cart/add.js', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: variantId, quantity: 1 }),
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1,
+            sections: ['cart-icon-bubble'],
+            sections_url: window.location.pathname,
+          }),
         });
 
         const data = await res.json();
 
         if (!res.ok) throw new Error(data.description || 'Failed to add');
+
+        await this.updateCartIcon(data);
 
         btn.textContent = 'Added ✓';
         setTimeout(() => {
@@ -803,6 +810,32 @@
       } catch (e) {
         btn.textContent = originalText;
         btn.disabled = false;
+      }
+    }
+
+    async updateCartIcon(cartData) {
+      const cartIcon = document.getElementById('cart-icon-bubble');
+      if (!cartIcon) return;
+
+      const updateFromSection = (html) => {
+        const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+        const section = parsedHTML.querySelector('.shopify-section');
+        cartIcon.innerHTML = section ? section.innerHTML : parsedHTML.body.innerHTML;
+      };
+
+      try {
+        if (cartData?.sections?.['cart-icon-bubble']) {
+          updateFromSection(cartData.sections['cart-icon-bubble']);
+          return;
+        }
+
+        const sectionResponse = await fetch(`${window.location.pathname}?sections=cart-icon-bubble`);
+        if (!sectionResponse.ok) return;
+
+        const sections = await sectionResponse.json();
+        if (sections?.['cart-icon-bubble']) updateFromSection(sections['cart-icon-bubble']);
+      } catch (e) {
+        // Keep the add-to-cart flow successful even if the header refresh fails.
       }
     }
 
