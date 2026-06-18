@@ -20,8 +20,7 @@
   }
 
   .template-search__search {
-    margin: 0 auto 3.5rem;
-    max-width: 74.1rem;
+    max-width: 48rem;
   }
 
   .template-search__search .search {
@@ -40,6 +39,88 @@
 
   .search__button .icon {
     height: 1.8rem;
+  }
+
+  /* ===== 搜索框自定义样式 ===== */
+  .template-search__search .field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+  }
+
+  .template-search__search .field::before,
+  .template-search__search .field::after {
+    display: none;
+  }
+
+  .template-search__search .field__input {
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1E0E06;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .template-search__search .field__input::placeholder {
+    color: #686766;
+  }
+
+  .template-search__search .field__label {
+    display: none;
+  }
+
+  .template-search__search .field__button {
+    position: static;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #1E0E06;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .template-search__search .field__button .svg-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  .template-search__search .predictive-search {
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+  }
+
+  .results{
+color: var(--2, #5F5D5D);
+/* 正文/文案4 */
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+  }
+
+  @media screen and (max-width: 749px) {
+    .template-search__search {
+      max-width: 100%;
+    }
   }
 </style>
 
@@ -80,6 +161,11 @@
         <main-search>
           <form action="{{ routes.search_url }}" method="get" role="search" class="search">
             <div class="field">
+              <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <span class="svg-wrapper">
+                  {{- 'icon-search.svg' | inline_asset_content -}}
+                </span>
+              </button>
               <input
                 class="search__input field__input"
                 id="Search-In-Template"
@@ -100,7 +186,7 @@
                   spellcheck="false"
                 {%- endif -%}
               >
-              <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+              {% comment %} <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label> {% endcomment %}
               <input name="options[prefix]" type="hidden" value="last">
 
               {%- if settings.predictive_search_enabled -%}
@@ -117,12 +203,7 @@
                 aria-label="{{ 'general.search.reset' | t }}"
               >
                 <span class="svg-wrapper">
-                  {{- 'icon-reset.svg' | inline_asset_content -}}
-                </span>
-              </button>
-              <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                <span class="svg-wrapper">
-                  {{- 'icon-search.svg' | inline_asset_content -}}
+                  {{- 'searchClosed.svg' | inline_asset_content -}}
                 </span>
               </button>
             </div>
@@ -135,13 +216,13 @@
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
           {%- if search.results_count > 0 -%}
-            <p role="status">
+            <p role="status" class="results">
               {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
             </p>
           {%- endif -%}
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
-          <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <p role="status" class="results">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
         {%- endif -%}
       {%- endif -%}
     </div>

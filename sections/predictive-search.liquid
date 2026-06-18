@@ -96,9 +96,19 @@
               class="predictive-search__list-item"
               role="option"
               aria-selected="false"
+              data-type="article"
             >
-              <a href="{{ article.url }}" class="predictive-search__item link link--text" tabindex="-1">
-                <div class="predictive-search__item-content predictive-search__item-content--centered">
+              <a href="{{ article.url }}" class="predictive-search__item predictive-search__item--link-with-thumbnail link link--text" tabindex="-1">
+                {%- if article.image != blank -%}
+                  <img
+                    class="predictive-search__image"
+                    src="{{ article.image | image_url: width: 100 }}"
+                    alt="{{ article.image.alt | escape }}"
+                    width="50"
+                    height="{{ 50 | divided_by: article.image.aspect_ratio }}"
+                  >
+                {%- endif -%}
+                <div class="predictive-search__item-content{% unless article.image %} predictive-search__item-content--centered{% endunless %}">
                   <p class="predictive-search__item-heading h5">{{ article.title | escape }}</p>
                 </div>
               </a>
@@ -135,6 +145,10 @@
                   class="predictive-search__list-item"
                   role="option"
                   aria-selected="false"
+                  data-type="product"
+                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                  data-available="{{ product.available }}"
+                  data-price="{{ product.price | money_without_trailing_zeros }}"
                 >
                   <a
                     href="{{ product.url }}"
@@ -158,6 +172,7 @@
                         </div>
                       {%- endif -%}
                       <p class="predictive-search__item-heading h5">{{ product.title | escape }}</p>
+                      <span class="predictive-search__item-price">{{ product.price | money }}</span>
                       {%- if settings.predictive_search_show_price -%}
                         {% render 'price', product: product, use_variant: true, show_badges: false %}
                       {%- endif -%}
@@ -202,9 +217,19 @@
                   class="predictive-search__list-item"
                   role="option"
                   aria-selected="false"
+                  data-type="article"
                 >
-                  <a href="{{ article.url }}" class="predictive-search__item link link--text" tabindex="-1">
-                    <div class="predictive-search__item-content predictive-search__item-content--centered">
+                  <a href="{{ article.url }}" class="predictive-search__item predictive-search__item--link-with-thumbnail link link--text" tabindex="-1">
+                    {%- if article.image != blank -%}
+                      <img
+                        class="predictive-search__image"
+                        src="{{ article.image | image_url: width: 100 }}"
+                        alt="{{ article.image.alt | escape }}"
+                        width="50"
+                        height="{{ 50 | divided_by: article.image.aspect_ratio }}"
+                      >
+                    {%- endif -%}
+                    <div class="predictive-search__item-content{% unless article.image %} predictive-search__item-content--centered{% endunless %}">
                       <p class="predictive-search__item-heading h5">{{ article.title | escape }}</p>
                     </div>
                   </a>
