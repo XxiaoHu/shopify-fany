@@ -101,12 +101,6 @@
     height: 24px;
   }
 
-  .template-search__search .predictive-search {
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-  }
-
   .results{
 color: var(--2, #5F5D5D);
 /* 正文/文案4 */
@@ -127,7 +121,7 @@ line-height: 150%; /* 21px */
 {%- liquid
   assign sort_by = search.sort_by | default: search.default_sort_by
   assign terms = search.terms | escape
-  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&type=product&sort_by=' | append: sort_by
 -%}
 
 {%- style -%}
@@ -155,10 +149,7 @@ line-height: 150%; /* 21px */
         {%- endif -%}
       </h1>
       <div class="template-search__search">
-        {%- if settings.predictive_search_enabled -%}
-          <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
-        {%- endif -%}
-        <main-search>
+        <main-search data-section-id="{{ section.id }}">
           <form action="{{ routes.search_url }}" method="get" role="search" class="search">
             <div class="field">
               <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
@@ -173,29 +164,14 @@ line-height: 150%; /* 21px */
                 name="q"
                 value="{{ search.terms | escape }}"
                 placeholder="{{ 'general.search.search' | t }}"
-                {%- if settings.predictive_search_enabled -%}
-                  role="combobox"
-                  aria-expanded="false"
-                  aria-owns="predictive-search-results"
-                  aria-controls="predictive-search-results"
-                  aria-haspopup="listbox"
-                  aria-autocomplete="list"
-                  autocorrect="off"
-                  autocomplete="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                {%- endif -%}
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
               >
               {% comment %} <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label> {% endcomment %}
               <input name="options[prefix]" type="hidden" value="last">
-
-              {%- if settings.predictive_search_enabled -%}
-                <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
-                  {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
-                </div>
-
-                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
-              {%- endif -%}
+              <input name="type" type="hidden" value="product">
 
               <button
                 type="reset"
@@ -209,22 +185,21 @@ line-height: 150%; /* 21px */
             </div>
           </form>
         </main-search>
-        {%- if settings.predictive_search_enabled -%}
-          </predictive-search>
+      </div>
+      <div class="template-search__status" id="SearchStatus">
+        {%- if search.performed -%}
+          {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
+            {%- if search.results_count > 0 -%}
+              <p role="status" class="results">
+                {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
+              </p>
+            {%- endif -%}
+          {%- endunless -%}
+          {%- if search.results_count == 0 and search.filters == empty -%}
+            <p role="status" class="results">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          {%- endif -%}
         {%- endif -%}
       </div>
-      {%- if search.performed -%}
-        {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
-          {%- if search.results_count > 0 -%}
-            <p role="status" class="results">
-              {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
-            </p>
-          {%- endif -%}
-        {%- endunless -%}
-        {%- if search.results_count == 0 and search.filters == empty -%}
-          <p role="status" class="results">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
-        {%- endif -%}
-      {%- endif -%}
     </div>
     {%- if search.performed -%}
       {%- if section.settings.enable_sorting
@@ -352,7 +327,6 @@ line-height: 150%; /* 21px */
                   >
                     {%- case item.object_type -%}
                       {%- when 'product' -%}
-                        {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
                         {% render 'card-product',
                           card_product: item,
                           media_aspect_ratio: section.settings.image_ratio,
