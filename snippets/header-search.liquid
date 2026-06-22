@@ -181,10 +181,14 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 5;
+    z-index: 99998;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  body.search-drawer-open .section-header {
+    z-index: 100000;
   }
 
   .search-drawer__overlay.is-active {
@@ -720,6 +724,7 @@
       this.drawer.classList.add('is-active');
       this.overlay.classList.add('is-active');
       document.body.classList.add('overflow-hidden');
+      document.body.classList.add('search-drawer-open');
       setTimeout(() => this.input.focus(), 300);
 
       // If input already has value, restore search state
@@ -732,6 +737,7 @@
       this.drawer.classList.remove('is-active');
       this.overlay.classList.remove('is-active');
       document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('search-drawer-open');
     }
 
     onInput() {
