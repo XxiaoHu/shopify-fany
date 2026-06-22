@@ -486,8 +486,12 @@
                   {%- endif -%}
                 </h2>
                 <h2 class="mobile-facets__heading small-hide">
-                  {%- if enable_filtering -%}
+                  {%- if enable_filtering and enable_sorting -%}
+                    {{ 'products.facets.filter_and_sort' | t }}
+                  {%- elsif enable_filtering -%}
                     {{ 'products.facets.filter_button' | t }}
+                  {%- elsif enable_sorting -%}
+                    {{ 'products.facets.sort_button' | t }}
                   {%- endif -%}
                 </h2>
                 <p class="mobile-facets__count">
@@ -502,6 +506,17 @@
                     }}
                   {%- endif -%}
                 </p>
+                <button
+                  type="button"
+                  class="mobile-facets__drawer-close"
+                  aria-label="{{ 'accessibility.close' | t }}"
+                  onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5.8252 5.8252L18.1747 18.1747" stroke="#1E0E06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5.8252 18.1747L18.1747 5.8252" stroke="#1E0E06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </button>
               </div>
             </div>
             <div
@@ -525,12 +540,19 @@
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
                         data-index="mobile-{{ forloop.index }}"
+                        {% if filter_type == 'drawer' %}
+                          open
+                        {% endif %}
                       >
                         <summary class="mobile-facets__summary focus-inset">
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {%- if filter_type == 'drawer' -%}
+                                {{- 'icon-caret.svg' | inline_asset_content -}}
+                              {%- else -%}
+                                {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {%- endif -%}
                             </span>
                           </div>
                         </summary>
@@ -667,12 +689,19 @@
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
                         data-index="mobile-{{ forloop.index }}"
+                        {% if filter_type == 'drawer' %}
+                          open
+                        {% endif %}
                       >
                         <summary class="mobile-facets__summary focus-inset">
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {%- if filter_type == 'drawer' -%}
+                                {{- 'icon-caret.svg' | inline_asset_content -}}
+                              {%- else -%}
+                                {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {%- endif -%}
                             </span>
                           </div>
                         </summary>

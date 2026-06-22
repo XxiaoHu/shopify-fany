@@ -488,6 +488,12 @@ class MenuDrawer extends HTMLElement {
     setTimeout(() => {
       this.mainDetailsToggle.classList.add("menu-opening");
     });
+    if (this.closest(".facets-container-drawer")) {
+      this.querySelectorAll("#FacetsWrapperMobile .mobile-facets__details").forEach((details) => {
+        details.setAttribute("open", "");
+        details.querySelector("summary")?.setAttribute("aria-expanded", true);
+      });
+    }
     summaryElement.setAttribute("aria-expanded", true);
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
