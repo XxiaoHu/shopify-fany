@@ -1,0 +1,569 @@
+{{ 'use-cases.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    --uc-padding-top: {{ section.settings.padding_top }}px;
+    --uc-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --uc-safe-margin: {{ section.settings.text_safe_margin }}px;
+    --uc-safe-margin-mobile: {{ section.settings.mobile_text_safe_margin }}px;
+    --uc-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+    --uc-image-gap: {{ section.settings.image_gap }}px;
+    --uc-mobile-image-gap: {{ section.settings.mobile_image_gap }}px;
+    --uc-card-radius: {{ section.settings.card_border_radius }}px;
+  }
+
+  /* ---- Header: Title ---- */
+  .section-{{ section.id }}-padding .use-cases__title {
+    font-weight: {{ section.settings.title_font_weight }};
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: {{ section.settings.title_line_height }};
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    text-align: {{ section.settings.title_alignment }};
+    color: {{ section.settings.title_color }};
+  }
+
+  /* ---- Header: Description ---- */
+  .section-{{ section.id }}-padding .use-cases__description {
+    font-weight: {{ section.settings.desc_font_weight }};
+    font-size: {{ section.settings.desc_font_size }}px;
+    line-height: {{ section.settings.desc_line_height }};
+    letter-spacing: {{ section.settings.desc_letter_spacing }}px;
+    text-align: {{ section.settings.desc_alignment }};
+    color: {{ section.settings.desc_color }};
+    {% if section.settings.desc_width != blank and section.settings.desc_width > 0 %}
+    max-width: {{ section.settings.desc_width }}px;
+    {% endif %}
+  }
+
+  /* ---- Header gap ---- */
+  .section-{{ section.id }}-padding .use-cases__header {
+    --uc-header-gap: {{ section.settings.header_gap }}px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .use-cases__header {
+      --uc-mobile-header-gap: {{ section.settings.mobile_header_gap }}px;
+    }
+
+    .section-{{ section.id }}-padding .use-cases__title {
+      font-size: {{ section.settings.mobile_title_font_size }}px;
+    }
+
+    .section-{{ section.id }}-padding .use-cases__description {
+      font-size: {{ section.settings.mobile_desc_font_size }}px;
+    }
+  }
+
+  /* ---- Per-card styles ---- */
+  {%- for block in section.blocks -%}
+    #UseCaseCard-{{ section.id }}-{{ forloop.index }} {
+      --uc-overlay-opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    }
+
+    #UseCaseCard-{{ section.id }}-{{ forloop.index }} .use-cases__card-text {
+      font-weight: {{ block.settings.card_text_font_weight }};
+      font-size: {{ block.settings.card_text_font_size }}px;
+      line-height: {{ block.settings.card_text_line_height }};
+      letter-spacing: {{ block.settings.card_text_letter_spacing }}px;
+      color: {{ block.settings.card_text_color }};
+    }
+
+    @media screen and (max-width: 768px) {
+      #UseCaseCard-{{ section.id }}-{{ forloop.index }} .use-cases__card-text {
+        font-size: {{ block.settings.mobile_card_text_font_size }}px;
+      }
+    }
+  {%- endfor -%}
+{% endstyle %}
+
+<div class="use-cases section-{{ section.id }}-padding">
+  {%- if section.settings.title != blank or section.settings.description != blank -%}
+    <div class="use-cases__header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="use-cases__title inline-richtext">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="use-cases__description rte">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="use-cases__grid">
+    {%- liquid
+      assign card_index = 0
+    -%}
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign mod = forloop.index0 | modulo: 2
+        assign card_index = forloop.index
+      -%}
+      {%- if mod == 0 -%}
+        <div class="use-cases__row">
+      {%- endif -%}
+
+      <div
+        class="use-cases__card"
+        id="UseCaseCard-{{ section.id }}-{{ card_index }}"
+        {{ block.shopify_attributes }}
+      >
+        {%- if block.settings.link != blank -%}
+          <a
+            href="{{ block.settings.link }}"
+            class="use-cases__card-link"
+          >
+            <span class="visually-hidden">{{ block.settings.card_text | default: block.settings.image.alt | escape }}</span>
+          </a>
+        {%- endif -%}
+
+        {%- if block.settings.image != blank -%}
+          {{
+            block.settings.image
+            | image_url: width: 1504
+            | image_tag:
+              class: 'use-cases__card-image',
+              loading: 'lazy',
+              sizes: '(max-width: 768px) 100vw, 50vw',
+              widths: '375, 550, 752, 1100, 1504'
+          }}
+        {%- else -%}
+          <div class="use-cases__card-image" style="background: #f7f7f7;">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.card_text != blank -%}
+          <p class="use-cases__card-text">{{ block.settings.card_text | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if mod == 1 or forloop.last -%}
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      {%- comment -%}Empty state placeholder{%- endcomment -%}
+      <div class="use-cases__row">
+        {%- for i in (1..2) -%}
+          <div class="use-cases__card">
+            <div class="use-cases__card-image" style="background: #f7f7f7;">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="use-cases__row">
+        {%- for i in (1..2) -%}
+          <div class="use-cases__card">
+            <div class="use-cases__card-image" style="background: #f7f7f7;">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if request.design_mode -%}
+  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "使用场景",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "标题与描述"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Get a complete picture of your health",
+      "label": "标题文本"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 14,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号-桌面端",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号-移动端",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra Bold (800)" }
+      ],
+      "default": "700",
+      "label": "标题字重"
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "标题字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "left",
+      "label": "标题对齐"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>With 24/7 monitoring across sleep, strain, stress, and heart health, FANY gives you a complete view of your health - so you can make smarter decisions every day.</p>",
+      "label": "描述文本"
+    },
+    {
+      "type": "range",
+      "id": "desc_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_desc_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "desc_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400",
+      "label": "描述字重"
+    },
+    {
+      "type": "range",
+      "id": "desc_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "描述行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "desc_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "描述字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "desc_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "left",
+      "label": "描述对齐"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "number",
+      "id": "desc_width",
+      "label": "描述最大宽度（px，为空则自适应）"
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "标题与描述间距",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "图片布局"
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "图片间距-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_gap",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "图片间距-移动端",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "图片圆角",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "布局设置"
+    },
+    {
+      "type": "range",
+      "id": "text_safe_margin",
+      "min": 0,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "安全边距-桌面端",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_safe_margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "安全边距-移动端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "移动端设置"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上下边距-移动端",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "标题与描述间距-移动端",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "图片卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "跳转链接"
+        },
+        {
+          "type": "header",
+          "content": "悬停遮罩"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "黑色遮罩透明度",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "悬停文字"
+        },
+        {
+          "type": "text",
+          "id": "card_text",
+          "default": "Elegance Forward",
+          "label": "悬停显示文字"
+        },
+        {
+          "type": "range",
+          "id": "card_text_font_size",
+          "min": 14,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "字号-桌面端",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "mobile_card_text_font_size",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "label": "字号-移动端",
+          "default": 24
+        },
+        {
+          "type": "select",
+          "id": "card_text_font_weight",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Regular (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi Bold (600)" },
+            { "value": "700", "label": "Bold (700)" },
+            { "value": "800", "label": "Extra Bold (800)" }
+          ],
+          "default": "700",
+          "label": "字重"
+        },
+        {
+          "type": "range",
+          "id": "card_text_line_height",
+          "min": 0.8,
+          "max": 2.5,
+          "step": 0.1,
+          "label": "行高",
+          "default": 1.2
+        },
+        {
+          "type": "range",
+          "id": "card_text_letter_spacing",
+          "min": -5,
+          "max": 20,
+          "step": 0.5,
+          "unit": "px",
+          "label": "字距",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "card_text_color",
+          "label": "文字颜色",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "使用场景",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
