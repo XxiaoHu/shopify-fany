@@ -1,0 +1,542 @@
+{{ 'gift-sets.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    --gs-padding-top: {{ section.settings.padding_top }}px;
+    --gs-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --gs-safe-margin: {{ section.settings.text_safe_margin }}px;
+    --gs-safe-margin-mobile: {{ section.settings.mobile_text_safe_margin }}px;
+    --gs-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+    --gs-image-gap: {{ section.settings.image_gap }}px;
+    --gs-image-gap-mobile: {{ section.settings.mobile_image_gap }}px;
+    --gs-card-radius: {{ section.settings.card_border_radius }}px;
+    --gs-view-more-color: {{ section.settings.view_more_color }};
+    --gs-view-more-hover-color: {{ section.settings.view_more_hover_color }};
+    --gs-view-more-size: {{ section.settings.view_more_font_size }}px;
+    --gs-header-gap: {{ section.settings.header_gap }}px;
+  }
+
+  /* ---- Title ---- */
+  .section-{{ section.id }}-padding .gift-sets__title {
+    font-weight: {{ section.settings.title_font_weight }};
+    line-height: {{ section.settings.title_line_height }};
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    text-align: {{ section.settings.title_alignment }};
+    color: {{ section.settings.title_color }};
+    {% if section.settings.title_width != blank and section.settings.title_width > 0 %}
+    max-width: {{ section.settings.title_width }}px;
+    {% endif %}
+  }
+
+  /* ---- Description ---- */
+  .section-{{ section.id }}-padding .gift-sets__description {
+    font-weight: {{ section.settings.desc_font_weight }};
+    line-height: {{ section.settings.desc_line_height }};
+    letter-spacing: {{ section.settings.desc_letter_spacing }}px;
+    text-align: {{ section.settings.desc_alignment }};
+    color: {{ section.settings.desc_color }};
+    {% if section.settings.desc_width != blank and section.settings.desc_width > 0 %}
+    max-width: {{ section.settings.desc_width }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding .gift-sets__title {
+      font-size: {{ section.settings.title_font_size }}px;
+    }
+    .section-{{ section.id }}-padding .gift-sets__description {
+      font-size: {{ section.settings.desc_font_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .gift-sets__title {
+      max-width: 267px;
+      font-family: Lato, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-align: center;
+      color: #1e0e06;
+    }
+    .section-{{ section.id }}-padding .gift-sets__description {
+      width: 100%;
+      font-family: Lato, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      text-align: center;
+      color: #686766;
+    }
+    .section-{{ section.id }}-padding .gift-sets__header {
+      --gs-header-gap: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="gift-sets section-{{ section.id }}-padding">
+  {%- if section.settings.title != blank or section.settings.description != blank -%}
+    <div class="gift-sets__header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="gift-sets__title inline-richtext">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="gift-sets__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="gift-sets__slider">
+    <div class="gift-sets__grid" id="GiftSetsSlider-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="gift-sets__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="gift-sets__card-link">
+              <span class="visually-hidden">{{ block.settings.image.alt | escape }}</span>
+            </a>
+          {%- endif -%}
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 1000
+              | image_tag:
+                class: 'gift-sets__card-image',
+                loading: 'lazy',
+                sizes: '(max-width: 768px) 300px, 33vw',
+                widths: '300, 375, 496, 750, 1000'
+            }}
+          {%- else -%}
+            <div class="gift-sets__card-image" style="background: #f6f6f6;">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- for i in (1..3) -%}
+          <div class="gift-sets__card">
+            <div class="gift-sets__card-image" style="background: #f6f6f6;">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+
+    <button
+      type="button"
+      class="gift-sets__nav gift-sets__nav--prev"
+      aria-label="Previous"
+      aria-controls="GiftSetsSlider-{{ section.id }}"
+    >
+      <span aria-hidden="true"></span>
+    </button>
+    <button
+      type="button"
+      class="gift-sets__nav gift-sets__nav--next"
+      aria-label="Next"
+      aria-controls="GiftSetsSlider-{{ section.id }}"
+    >
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+
+  {%- if section.settings.view_more_text != blank and section.settings.view_more_link != blank -%}
+    <div class="gift-sets__view-more">
+      <a href="{{ section.settings.view_more_link }}">{{ section.settings.view_more_text }}</a>
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  (() => {
+    const initGiftSets = () => {
+      const section = document.querySelector('.section-{{ section.id }}-padding');
+      if (!section) return;
+
+      const slider = section.querySelector('#GiftSetsSlider-{{ section.id }}');
+      const prevButton = section.querySelector('.gift-sets__nav--prev');
+      const nextButton = section.querySelector('.gift-sets__nav--next');
+      if (!slider || !prevButton || !nextButton) return;
+
+      const scrollByCard = (direction) => {
+        const firstCard = slider.querySelector('.gift-sets__card');
+        const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap) || 10;
+        const distance = firstCard ? firstCard.getBoundingClientRect().width + gap : 310;
+        slider.scrollBy({ left: direction * distance, behavior: 'smooth' });
+      };
+
+      prevButton.addEventListener('click', () => scrollByCard(-1));
+      nextButton.addEventListener('click', () => scrollByCard(1));
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGiftSets);
+    } else {
+      initGiftSets();
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.detail.sectionId === '{{ section.id }}') initGiftSets();
+    });
+  })();
+</script>
+
+{%- if request.design_mode -%}
+  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "礼物套装展示",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "标题"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Timeless gifts that stand out 20% OFF GIFT SETS",
+      "label": "标题文本"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 14,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "700",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "center",
+      "label": "对齐"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "number",
+      "id": "title_width",
+      "label": "最大宽度（px，为空则自适应）"
+    },
+    {
+      "type": "header",
+      "content": "描述文案"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "default": "Discover gifts that make every moment extraordinary.",
+      "label": "描述文本"
+    },
+    {
+      "type": "range",
+      "id": "desc_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_desc_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "desc_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "desc_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "desc_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "desc_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "center",
+      "label": "对齐"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "number",
+      "id": "desc_width",
+      "label": "最大宽度（px，为空则自适应）"
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "标题与描述间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "标题与描述间距-移动端",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "View More"
+    },
+    {
+      "type": "text",
+      "id": "view_more_text",
+      "default": "View more",
+      "label": "按钮文字"
+    },
+    {
+      "type": "url",
+      "id": "view_more_link",
+      "label": "跳转链接"
+    },
+    {
+      "type": "range",
+      "id": "view_more_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "字号",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "view_more_color",
+      "label": "颜色",
+      "default": "#9E7163"
+    },
+    {
+      "type": "color",
+      "id": "view_more_hover_color",
+      "label": "悬停颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "text_safe_margin",
+      "min": 0,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "安全边距-桌面端",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_safe_margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "安全边距-移动端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "图片间距-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_gap",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "图片间距-移动端",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "图片圆角",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "移动端"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上下边距",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "图片卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "跳转链接"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "礼物套装展示",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
