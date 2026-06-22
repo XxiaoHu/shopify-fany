@@ -1,0 +1,830 @@
+{{ 'main-banner.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    --banner-safe-margin: {{ section.settings.text_safe_margin }}px;
+    --banner-safe-margin-mobile: {{ section.settings.mobile_text_safe_margin }}px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+
+  /* Slide height overrides */
+  {%- if section.settings.slide_height == 'small' -%}
+    .section-{{ section.id }}-padding .main-banner__media { height: 560px; }
+  {%- elsif section.settings.slide_height == 'medium' -%}
+    .section-{{ section.id }}-padding .main-banner__media { height: 720px; }
+  {%- elsif section.settings.slide_height == 'large' -%}
+    .section-{{ section.id }}-padding .main-banner__media { height: 1000px; }
+  {%- endif -%}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .main-banner__media,
+    .section-{{ section.id }}-padding .main-banner__slide { height: calc(100vh - 39px); }
+  }
+
+  /* Per-slide custom styles */
+  {%- for block in section.blocks -%}
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media::after {
+      opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
+    }
+
+    /* ---- Title ---- */
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
+      font-weight: {{ block.settings.title_font_weight }};
+      line-height: {{ block.settings.title_line_height }};
+      letter-spacing: {{ block.settings.title_letter_spacing }}px;
+      text-align: {{ block.settings.title_alignment }};
+      {% if block.settings.title_width != blank and block.settings.title_width > 0 %}
+      width: {{ block.settings.title_width }}px;
+      max-width: 100%;
+      {% endif %}
+    }
+
+    /* ---- Description ---- */
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
+      font-weight: {{ block.settings.desc_font_weight }};
+      line-height: {{ block.settings.desc_line_height }};
+      letter-spacing: {{ block.settings.desc_letter_spacing }}px;
+      text-align: {{ block.settings.desc_alignment }};
+    }
+
+    /* Title–Description gap */
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__content-inner {
+      gap: {{ block.settings.title_desc_gap }}px;
+    }
+
+    /* ---- Button ---- */
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__button {
+      --banner-btn-bg: {{ block.settings.btn_bg_color }};
+      --banner-btn-bg-hover: {{ block.settings.btn_bg_hover_color }};
+      --banner-btn-bg-active: {{ block.settings.btn_bg_active_color }};
+      --banner-btn-color: {{ block.settings.btn_text_color }};
+      --banner-btn-color-hover: {{ block.settings.btn_text_hover_color }};
+      --banner-btn-color-active: {{ block.settings.btn_text_active_color }};
+      --banner-btn-radius: {{ block.settings.btn_border_radius }}px;
+      --banner-btn-padding-y: {{ block.settings.btn_padding_y }}px;
+      --banner-btn-padding-x: {{ block.settings.btn_padding_x }}px;
+      {% if block.settings.btn_width != blank and block.settings.btn_width > 0 %}
+      width: {{ block.settings.btn_width }}px;
+      {% endif %}
+      font-size: {{ block.settings.btn_font_size }}px;
+    }
+
+    @media screen and (max-width: 768px) {
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
+        font-size: {{ block.settings.mobile_title_font_size }}px;
+        color: {{ block.settings.mobile_title_color }};
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
+        font-size: {{ block.settings.mobile_desc_font_size }}px;
+        color: {{ block.settings.mobile_desc_color }};
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__content-inner {
+        gap: {{ block.settings.mobile_title_desc_gap }}px;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
+        font-size: {{ block.settings.title_font_size }}px;
+        color: {{ block.settings.title_color }};
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
+        font-size: {{ block.settings.desc_font_size }}px;
+        color: {{ block.settings.desc_color }};
+      }
+    }
+  {%- endfor -%}
+{% endstyle %}
+
+<script src="{{ 'main-banner.js' | asset_url }}" defer="defer"></script>
+
+<main-banner-component
+  class="section-{{ section.id }}-padding"
+  role="region"
+  aria-label="{{ section.settings.accessibility_info | escape }}"
+  aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+  data-autoplay="{{ section.settings.auto_rotate }}"
+  data-speed="{{ section.settings.change_slides_speed }}"
+>
+  <div
+    class="main-banner__slider{% if section.blocks.size == 0 %} main-banner--placeholder{% endif %}"
+    id="MainBannerSlider-{{ section.id }}"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    {%- for block in section.blocks -%}
+      <div
+        class="main-banner__slide"
+        id="Slide-{{ section.id }}-{{ forloop.index }}"
+        {{ block.shopify_attributes }}
+        role="group"
+        aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+        aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+        tabindex="-1"
+      >
+        {%- if block.settings.link != blank -%}
+          <a
+            href="{{ block.settings.link }}"
+            class="main-banner__link"
+            {% if block.settings.link_target_blank %}target="_blank" rel="noopener noreferrer"{% endif %}
+          >
+            <span class="visually-hidden">{{ block.settings.link_text | default: block.settings.title | strip_html }}</span>
+          </a>
+        {%- endif -%}
+
+        {%- if block.settings.image != blank -%}
+          <div class="main-banner__media{% if section.settings.slide_height == 'adapt_image' %} main-banner__media--adapt{% endif %}">
+            {%- liquid
+              assign fetch_priority = 'auto'
+              if section.index == 1 and forloop.first
+                assign fetch_priority = 'high'
+              endif
+              assign heights = '(max-width: 768px) 100vw, 100vw'
+            -%}
+            {%- if block.settings.mobile_image != blank -%}
+              <picture>
+                <source media="(max-width: 768px)" srcset="{{ block.settings.mobile_image | image_url: width: 768 }}">
+                {{
+                  block.settings.image
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    fetchpriority: fetch_priority,
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                }}
+              </picture>
+            {%- else -%}
+              {{
+                block.settings.image
+                | image_url: width: 3840
+                | image_tag:
+                  loading: 'lazy',
+                  fetchpriority: fetch_priority,
+                  sizes: '100vw',
+                  widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+              }}
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          <div class="main-banner__media">
+            {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.title != blank
+          or block.settings.description != blank
+          or block.settings.button_label != blank
+        -%}
+          <div class="
+            main-banner__content
+            main-banner__content--{{ block.settings.content_horizontal }}
+            main-banner__content--{{ block.settings.content_vertical }}
+            main-banner__content-mobile--{{ block.settings.mobile_content_horizontal }}
+            main-banner__content-mobile--{{ block.settings.mobile_content_vertical }}
+          ">
+            <div class="main-banner__content-inner">
+              {%- if block.settings.title != blank -%}
+                <h2 class="main-banner__title inline-richtext">
+                  {{ block.settings.title }}
+                </h2>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <div class="main-banner__description rte">
+                  {{ block.settings.description }}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.button_label != blank -%}
+                <a
+                  {% if block.settings.button_link != blank %}
+                    href="{{ block.settings.button_link }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  class="main-banner__button main-banner__button--{{ block.settings.button_style }}"
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      {%- comment -%}Empty state placeholder{%- endcomment -%}
+      {%- for i in (1..2) -%}
+        <div class="main-banner__slide" role="group">
+          <div class="main-banner__media">
+            {{ 'hero-apparel-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    {%- comment -%}Arrow Navigation{%- endcomment -%}
+    <div class="main-banner__arrows">
+      <button
+        type="button"
+        class="main-banner__arrow main-banner__arrow--prev"
+        name="previous"
+        aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+        aria-controls="MainBannerSlider-{{ section.id }}"
+      >
+        <img src="{{ '1.svg' | asset_url }}" class="main-banner__arrow-img main-banner__arrow-img--default" alt="">
+        <img src="{{ '2.svg' | asset_url }}" class="main-banner__arrow-img main-banner__arrow-img--hover" alt="">
+      </button>
+      <button
+        type="button"
+        class="main-banner__arrow main-banner__arrow--next"
+        name="next"
+        aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+        aria-controls="MainBannerSlider-{{ section.id }}"
+      >
+        <img src="{{ '1.svg' | asset_url }}" class="main-banner__arrow-img main-banner__arrow-img--default" alt="">
+        <img src="{{ '2.svg' | asset_url }}" class="main-banner__arrow-img main-banner__arrow-img--hover" alt="">
+      </button>
+    </div>
+
+    {%- comment -%}Bottom Dot / Pill Indicators{%- endcomment -%}
+    <div class="main-banner__indicators">
+      {%- for block in section.blocks -%}
+        <button
+          class="main-banner__indicator{% if forloop.first %} main-banner__indicator--active{% endif %}"
+          aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+          aria-controls="MainBannerSlider-{{ section.id }}"
+          {% if forloop.first %}aria-current="true"{% endif %}
+        ></button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</main-banner-component>
+
+{%- if request.design_mode -%}
+  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "主页 Banner 轮播",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "slide_height",
+      "options": [
+        {
+          "value": "adapt_image",
+          "label": "适配图片高度"
+        },
+        {
+          "value": "small",
+          "label": "小（560px）"
+        },
+        {
+          "value": "medium",
+          "label": "中（720px）"
+        },
+        {
+          "value": "large",
+          "label": "大（1000px）"
+        }
+      ],
+      "default": "large",
+      "label": "幻灯片高度"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "自动轮播",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "label": "自动切换间隔",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "text_safe_margin",
+      "min": 0,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "文字安全边距（桌面端）",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "移动端设置"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_safe_margin",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "文字安全边距（移动端）",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "辅助功能"
+    },
+    {
+      "type": "text",
+      "id": "accessibility_info",
+      "label": "轮播描述（供屏幕阅读器使用）",
+      "default": "首页横幅轮播"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "幻灯片",
+      "settings": [
+        {
+          "type": "header",
+          "content": "图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "桌面端图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片（可选）"
+        },
+        {
+          "type": "range",
+          "id": "image_overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "%",
+          "label": "图片遮罩透明度",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "链接"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "整页跳转链接（点击整个横幅区域）"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "链接描述（用于无障碍访问）"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_target_blank",
+          "label": "在新标签页打开",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "内容位置"
+        },
+        {
+          "type": "select",
+          "id": "content_horizontal",
+          "options": [
+            { "value": "left", "label": "左" },
+            { "value": "center", "label": "中" },
+            { "value": "right", "label": "右" }
+          ],
+          "default": "left",
+          "label": "桌面端水平位置"
+        },
+        {
+          "type": "select",
+          "id": "content_vertical",
+          "options": [
+            { "value": "top", "label": "上" },
+            { "value": "middle", "label": "中" },
+            { "value": "bottom", "label": "下" }
+          ],
+          "default": "middle",
+          "label": "桌面端垂直位置"
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_horizontal",
+          "options": [
+            { "value": "left", "label": "左" },
+            { "value": "center", "label": "中" },
+            { "value": "right", "label": "右" }
+          ],
+          "default": "center",
+          "label": "移动端水平位置"
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_vertical",
+          "options": [
+            { "value": "top", "label": "上" },
+            { "value": "middle", "label": "中" },
+            { "value": "bottom", "label": "下" }
+          ],
+          "default": "bottom",
+          "label": "移动端垂直位置"
+        },
+        {
+          "type": "header",
+          "content": "标题"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "Elegance Forward Wellness Within",
+          "label": "标题文本"
+        },
+        {
+          "type": "range",
+          "id": "title_font_size",
+          "min": 14,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "桌面端字号",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "mobile_title_font_size",
+          "min": 12,
+          "max": 56,
+          "step": 1,
+          "unit": "px",
+          "label": "移动端字号",
+          "default": 28
+        },
+        {
+          "type": "select",
+          "id": "title_font_weight",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Regular (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi Bold (600)" },
+            { "value": "700", "label": "Bold (700)" },
+            { "value": "800", "label": "Extra Bold (800)" },
+            { "value": "900", "label": "Black (900)" }
+          ],
+          "default": "700",
+          "label": "字重"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "文字颜色-桌面端",
+          "default": "#1e0e06"
+        },
+        {
+          "type": "color",
+          "id": "mobile_title_color",
+          "label": "文字颜色-移动端",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "title_line_height",
+          "min": 0.8,
+          "max": 2.5,
+          "step": 0.1,
+          "label": "行高",
+          "default": 1.2
+        },
+        {
+          "type": "range",
+          "id": "title_letter_spacing",
+          "min": -5,
+          "max": 20,
+          "step": 0.5,
+          "unit": "px",
+          "label": "字距",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "title_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式"
+        },
+        {
+          "type": "number",
+          "id": "title_width",
+          "label": "标题最大宽度（px，为空则自适应）"
+        },
+        {
+          "type": "header",
+          "content": " 描述文案"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Wear the intention you want to step into and save up to 40% OFF SITEWIDE</p>",
+          "label": "描述文本"
+        },
+        {
+          "type": "range",
+          "id": "desc_font_size",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "label": "桌面端字号",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "mobile_desc_font_size",
+          "min": 10,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "移动端字号",
+          "default": 16
+        },
+        {
+          "type": "select",
+          "id": "desc_font_weight",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Regular (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi Bold (600)" },
+            { "value": "700", "label": "Bold (700)" }
+          ],
+          "default": "400",
+          "label": "字重"
+        },
+        {
+          "type": "color",
+          "id": "desc_color",
+          "label": "文字颜色-桌面端",
+          "default": "#686766"
+        },
+        {
+          "type": "color",
+          "id": "mobile_desc_color",
+          "label": "文字颜色-移动端",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "desc_line_height",
+          "min": 0.8,
+          "max": 2.5,
+          "step": 0.1,
+          "label": "行高",
+          "default": 1.5
+        },
+        {
+          "type": "range",
+          "id": "desc_letter_spacing",
+          "min": -5,
+          "max": 20,
+          "step": 0.5,
+          "unit": "px",
+          "label": "字距",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "desc_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式"
+        },
+        {
+          "type": "range",
+          "id": "title_desc_gap",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "标题与描述的间距",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "mobile_title_desc_gap",
+          "min": 0,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "label": "移动端标题与描述的间距",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": " 按钮"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "SHOP NOW",
+          "label": "按钮文字"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "按钮链接"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            { "value": "primary", "label": "实心按钮" },
+            { "value": "secondary", "label": "描边按钮" }
+          ],
+          "default": "primary",
+          "label": "按钮样式"
+        },
+        {
+          "type": "range",
+          "id": "btn_font_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "按钮字号",
+          "default": 16
+        },
+        {
+          "type": "number",
+          "id": "btn_width",
+          "label": "按钮宽度（px，为空则自适应）"
+        },
+        {
+          "type": "range",
+          "id": "btn_border_radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "按钮圆角",
+          "default": 6
+        },
+        {
+          "type": "range",
+          "id": "btn_padding_y",
+          "min": 4,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "按钮上下内边距",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "btn_padding_x",
+          "min": 8,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "label": "按钮左右内边距",
+          "default": 24
+        },
+        {
+          "type": "header",
+          "content": " 按钮颜色  默认"
+        },
+        {
+          "type": "color",
+          "id": "btn_bg_color",
+          "label": "背景色",
+          "default": "#794538"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_color",
+          "label": "文字色",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": " 按钮颜色  鼠标悬停"
+        },
+        {
+          "type": "color",
+          "id": "btn_bg_hover_color",
+          "label": "背景色（悬停）",
+          "default": "#5c342b"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_hover_color",
+          "label": "文字色（悬停）",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": " 按钮颜色  点击/选中"
+        },
+        {
+          "type": "color",
+          "id": "btn_bg_active_color",
+          "label": "背景色（点击）",
+          "default": "#4a2a22"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_active_color",
+          "label": "文字色（点击）",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "主页 Banner 轮播",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
