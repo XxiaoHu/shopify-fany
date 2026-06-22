@@ -15,44 +15,7 @@
     });
 
     if (window.innerWidth > 1023) {
-      document.querySelectorAll('.product-category-product-card').forEach(card => {
-        const imgArea = card.querySelector('.product-img-container');
-        const link = card.nextElementSibling?.href || card.querySelector('a')?.href;
-
-        if (imgArea && link) {
-          imgArea.style.cursor = 'pointer';
-          // 点击图片 → 跳转到商品链接（真正实现跳转）
-          imgArea.addEventListener('click', () => {
-            window.location.href = link;
-          });
-        }
-
-            // 鼠标进入 → 显示 Shop now，隐藏价格
-        card.addEventListener('mouseenter', (e) => {
-          if (e.pointerType === 'touch') return;
-          if (window.innerWidth > 1023) { // 只在大屏生效
-            const shopBtn = card.querySelector('.shop-btn');
-            const priceS = card.querySelector('.price-s');
-            const disPrice = card.querySelector('.dis-price');
-            if (shopBtn) shopBtn.style.display = 'inline-block';
-            if (priceS) priceS.style.display = 'none';
-            if (disPrice) disPrice.style.display = 'none';
-          }
-        });
-
-        // 鼠标离开 → 恢复原价
-        card.addEventListener('mouseleave', (e) => {
-          if (e.pointerType === 'touch') return;
-          if (window.innerWidth > 1023) {
-            const shopBtn = card.querySelector('.shop-btn');
-            const priceS = card.querySelector('.price-s');
-            const disPrice = card.querySelector('.dis-price');
-            if (shopBtn) shopBtn.style.display = 'none';
-            if (priceS) priceS.style.display = 'initial';
-            if (disPrice) disPrice.style.display = 'initial';
-          }
-        });
-      });
+      // Desktop: CSS handles hover swap, no extra JS needed
       return;
     }
 
@@ -120,25 +83,29 @@
   // 初始化轮播图（核心函数）
   function initSwiper(groupKey) {
     // 获取轮播图容器
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    const swiperWrapper = document.querySelector('.product-category-home-swiper .swiper-wrapper');
+    if (!swiperWrapper) return;
+
     // 清空原有内容
     swiperWrapper.innerHTML = '';
 
     // 获取当前组的轮播数据
-    const slides = slideGroups[groupKey];
+    const slides = (window.slideGroups && window.slideGroups[groupKey]) || [];
+    if (!slides.length) return;
 
     // 生成轮播项HTML
     slides.forEach(item => {
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
 
-      // 拼接轮播项内容（修改图片部分，新增悬停图片）
+      // 拼接轮播项内容（标题和价格分开为两个模块）
       let slideContent = '';
       if(item.badgeText){
         slideContent += `<div class="product-category-badge">${item.badgeText}</div>`;
       }
       slideContent += `
         <div class="product-category-product-card">
+          <a href="${item.url}" class="card-a">
           <div class="product-img-container">
             <img src="${item.imgUrl}" alt="${item.title}" class="product-img">
             <img src="${item.imgHoverUrl}" alt="${item.title} - hover" class="product-img-hover">
@@ -147,18 +114,16 @@
               <span class="indicator"></span>
             </div>
           </div>
-          <a href="${item.url}" class="card-a">
-          <h3 class="f-20">${item.title}</h3>
+          <h3 class="card-title">${item.title}</h3>
       `;
       if(item.price) {
-        slideContent += `<p class="${item.disPrice ? 'has-dis-price' : '' }"><span class="shop-btn">Shop now</span><span class="price-s">${item.price}</span>`;
+        slideContent += `<p class="card-price"><span class="shop-btn">Shop now</span><span class="price-s">${item.price}</span>`;
         if(item.disPrice) {
           slideContent += `<span class="dis-price">${item.disPrice}</span>`;
         }
-        slideContent += `</p></a>`;
+        slideContent += `</p>`;
       }
-
-      slideContent += `</div>`;
+      slideContent += `</a></div>`;
 
       slide.innerHTML = slideContent;
       swiperWrapper.appendChild(slide);
@@ -223,9 +188,12 @@
 
     // 菜单点击事件
     const menuItems = document.querySelectorAll('.menu-item');
+    if (!menuItems.length) return;
 
     // 初始化默认组
-    initSwiper(menuItems[0].dataset.group);
+    if (menuItems[0].dataset.group) {
+      initSwiper(menuItems[0].dataset.group);
+    }
 
     menuItems.forEach(item => {
       item.addEventListener('click', () => {
@@ -255,7 +223,8 @@
     // 监听窗口大小变化，重新初始化
     window.addEventListener('resize', function() {
       // 获取当前激活的菜单组
-      const activeGroup = document.querySelector('.menu-item.active').dataset.group;
-      initSwiper(activeGroup);
+      const activeMenuItem = document.querySelector('.menu-item.active');
+      if (!activeMenuItem || !activeMenuItem.dataset.group) return;
+      initSwiper(activeMenuItem.dataset.group);
     });
   });
