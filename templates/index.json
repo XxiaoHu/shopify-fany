@@ -380,6 +380,106 @@
         "mobile_padding_bottom": 0
       }
     },
+    "use_cases_7Mqyjy": {
+      "type": "use-cases",
+      "blocks": {
+        "card_E8GRTV": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13.png",
+            "link": "shopify://pages/all-blogs",
+            "overlay_opacity": 30,
+            "card_text": "Elegance Forward",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700",
+            "card_text_line_height": 1.2,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        },
+        "card_6MQ69W": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13.png",
+            "link": "",
+            "overlay_opacity": 30,
+            "card_text": "Elegance Forward",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700",
+            "card_text_line_height": 1.2,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        },
+        "card_RPyawz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13.png",
+            "link": "",
+            "overlay_opacity": 30,
+            "card_text": "Elegance Forward",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700",
+            "card_text_line_height": 1.2,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        },
+        "card_VeegYm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13.png",
+            "link": "",
+            "overlay_opacity": 30,
+            "card_text": "Elegance Forward",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700",
+            "card_text_line_height": 1.2,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_E8GRTV",
+        "card_6MQ69W",
+        "card_RPyawz",
+        "card_VeegYm"
+      ],
+      "name": "使用场景",
+      "settings": {
+        "title": "Get a complete picture of your health",
+        "title_font_size": 28,
+        "mobile_title_font_size": 24,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "left",
+        "title_color": "#1e0e06",
+        "description": "<p>With 24/7 monitoring across sleep, strain, stress, and heart health, FANY gives you a complete view of your health - so you can make smarter decisions every day.</p>",
+        "desc_font_size": 16,
+        "mobile_desc_font_size": 16,
+        "desc_font_weight": "400",
+        "desc_line_height": 1.5,
+        "desc_letter_spacing": 0,
+        "desc_alignment": "left",
+        "desc_color": "#686766",
+        "header_gap": 20,
+        "image_gap": 16,
+        "mobile_image_gap": 10,
+        "card_border_radius": 4,
+        "text_safe_margin": 200,
+        "mobile_text_safe_margin": 16,
+        "padding_top": 80,
+        "padding_bottom": 60,
+        "mobile_padding_y": 40,
+        "mobile_header_gap": 20
+      }
+    },
     "product_category_home_list_88gpqD": {
       "type": "product-category-home-list",
       "blocks": {
@@ -1191,6 +1291,7 @@
   "order": [
     "slideshow_BEJXCK",
     "awards_scroll_xzi4mF",
+    "use_cases_7Mqyjy",
     "product_category_home_list_88gpqD",
     "main_image_carousel_KA8Ddg",
     "slideshow_zBtPCU",
