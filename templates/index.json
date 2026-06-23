@@ -610,6 +610,76 @@
         "mobile_padding_y": 40
       }
     },
+    "customer_reviews_MwicHg": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_9e6BeA": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        },
+        "review_yLbPFY": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "It took more than a week to arrive, but that was not a problem for me. The quality is absolutely beautiful, shiny, elegant and timeless. Thank you.",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        },
+        "review_FL6UKK": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "It took more than a week to arrive, but that was not a problem for me.",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        },
+        "review_Hzzt9a": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "It took more than a week to arrive, but that was not a problem for me.",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        }
+      },
+      "block_order": [
+        "review_9e6BeA",
+        "review_yLbPFY",
+        "review_FL6UKK",
+        "review_Hzzt9a"
+      ],
+      "name": "用户评论",
+      "settings": {
+        "summary_title": "Excellent",
+        "summary_rating": "4_half",
+        "summary_rating_label": "4.5 out of 5 stars",
+        "average_text": "4.67 average",
+        "reviews_text": "23,973 reviews",
+        "safe_margin": 20,
+        "card_gap": 16,
+        "card_radius": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_safe_margin": 0,
+        "mobile_padding_y": 40
+      }
+    },
     "main_image_carousel_KA8Ddg": {
       "type": "main-image-carousel",
       "blocks": {
@@ -1392,6 +1462,7 @@
     "use_cases_7Mqyjy",
     "product_category_home_list_88gpqD",
     "gift_sets_qbx3NW",
+    "customer_reviews_MwicHg",
     "main_image_carousel_KA8Ddg",
     "slideshow_zBtPCU",
     "slideshow_8fTXfG",
