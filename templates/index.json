@@ -509,8 +509,105 @@
       ],
       "name": "首页产品系统",
       "settings": {
+        "section_title": "Find Your Perfect Match",
+        "section_title_font_size": 40,
+        "mobile_section_title_font_size": 28,
+        "section_title_font_weight": "700",
+        "section_title_line_height": 1.2,
+        "section_title_letter_spacing": 0,
+        "section_title_margin_top": 0,
+        "section_title_margin_bottom": 20,
+        "tab_color": "#686766",
+        "tab_hover_color": "#93726c",
+        "tab_active_color": "#9e7163",
+        "tab_active_hover_color": "#93726c",
+        "title_font_size": 26,
+        "mobile_title_font_size": 16,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "left",
+        "title_color": "#1e0e06",
+        "price_font_size": 26,
+        "mobile_price_font_size": 16,
+        "price_font_weight": "700",
+        "price_line_height": 1.2,
+        "price_letter_spacing": 0,
+        "price_alignment": "left",
+        "price_color": "#93726c",
+        "price_inner_gap": 10,
+        "title_price_gap": 4,
+        "text_safe_margin": 200,
+        "image_gap": 16,
+        "mobile_image_gap": 11,
+        "mobile_gap": 20,
+        "card_border_radius": 4,
+        "image_text_gap": 16,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "gift_sets_qbx3NW": {
+      "type": "gift-sets",
+      "blocks": {
+        "card_Y3Wc3b": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        },
+        "card_3Hggcf": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        },
+        "card_4QkUwr": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_Y3Wc3b",
+        "card_3Hggcf",
+        "card_4QkUwr"
+      ],
+      "name": "礼物套装展示",
+      "settings": {
+        "title": "Timeless gifts that stand out 20% OFF GIFT SETS",
+        "title_font_size": 28,
+        "mobile_title_font_size": 24,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "center",
+        "title_color": "#1e0e06",
+        "title_width": 320,
+        "description": "Discover gifts that make every moment extraordinary.",
+        "desc_font_size": 16,
+        "mobile_desc_font_size": 16,
+        "desc_font_weight": "400",
+        "desc_line_height": 1.5,
+        "desc_letter_spacing": 0,
+        "desc_alignment": "center",
+        "desc_color": "#686766",
+        "header_gap": 20,
+        "mobile_header_gap": 20,
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "view_more_font_size": 16,
+        "view_more_color": "#9E7163",
+        "view_more_hover_color": "#794538",
+        "text_safe_margin": 200,
+        "mobile_text_safe_margin": 16,
+        "image_gap": 16,
+        "mobile_image_gap": 12,
+        "card_border_radius": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_y": 40
       }
     },
     "main_image_carousel_KA8Ddg": {
@@ -604,6 +701,7 @@
         "card_yxnw8G",
         "card_J6QcGz"
       ],
+      "disabled": true,
       "name": "核心功能",
       "settings": {
         "title": "<p>24/7 Health Companion <br/>for Women</p>",
@@ -1293,6 +1391,7 @@
     "awards_scroll_xzi4mF",
     "use_cases_7Mqyjy",
     "product_category_home_list_88gpqD",
+    "gift_sets_qbx3NW",
     "main_image_carousel_KA8Ddg",
     "slideshow_zBtPCU",
     "slideshow_8fTXfG",
