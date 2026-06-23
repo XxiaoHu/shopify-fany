@@ -118,7 +118,7 @@
 
   <div class="blog-cards__grid">
     {%- for block in section.blocks -%}
-      <div class="blog-cards__card" {{ block.shopify_attributes }}>
+      <div class="blog-cards__card{% if forloop.index > 2 %} blog-cards__card--hide-mobile{% endif %}" {{ block.shopify_attributes }}>
         {%- if block.settings.link != blank -%}
           <a href="{{ block.settings.link }}" class="blog-cards__card-image-wrap">
         {%- else -%}

@@ -134,6 +134,9 @@
 
 /* ---------- Responsive: Mobile ---------- */
 @media (max-width: 768px) {
+  .blog-cards__card--hide-mobile {
+    display: none;
+  }
   .blog-cards {
     padding: var(--bc-mobile-padding-y, 40px) var(--bc-safe-margin-mobile, 16px);
     gap: 20px;
