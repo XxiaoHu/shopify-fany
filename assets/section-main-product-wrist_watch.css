@@ -1811,6 +1811,19 @@ a.product__text {
   width: calc(40% - var(--grid-desktop-horizontal-spacing) / 2);
 }
 
+@media screen and (min-width: 1241px) {
+  .product:not(.product--no-media) {
+    align-items: flex-start;
+  }
+
+  .product:not(.product--no-media) .product__media-wrapper {
+    position: sticky;
+    top: calc(var(--header-height, 0px) + 24px);
+    align-self: flex-start;
+    z-index: 1;
+  }
+}
+
 /* 轮播图片放大弹框 */
 .product-modal {
   position: fixed;
