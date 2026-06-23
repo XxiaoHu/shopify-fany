@@ -598,7 +598,7 @@
         "view_more_text": "View more",
         "view_more_link": "",
         "view_more_font_size": 16,
-        "view_more_color": "#9E7163",
+        "view_more_color": "#9e7163",
         "view_more_hover_color": "#794538",
         "text_safe_margin": 200,
         "mobile_text_safe_margin": 16,
@@ -677,6 +677,90 @@
         "padding_top": 80,
         "padding_bottom": 80,
         "mobile_safe_margin": 0,
+        "mobile_padding_y": 40
+      }
+    },
+    "blog_cards_JQBAK9": {
+      "type": "blog-cards",
+      "blocks": {
+        "card_h9Dz3g": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "card_title": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
+            "card_date": "04/30/2026",
+            "card_read_time": "5 min read"
+          }
+        },
+        "card_A6enbR": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "card_title": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
+            "card_date": "04/30/2026",
+            "card_read_time": "5 min read"
+          }
+        },
+        "card_8FdGxD": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "card_title": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
+            "card_date": "04/30/2026",
+            "card_read_time": "5 min read"
+          }
+        },
+        "card_gTe3ac": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "card_title": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
+            "card_date": "04/30/2026",
+            "card_read_time": "5 min read"
+          }
+        }
+      },
+      "block_order": [
+        "card_h9Dz3g",
+        "card_A6enbR",
+        "card_8FdGxD",
+        "card_gTe3ac"
+      ],
+      "name": "博客卡片",
+      "settings": {
+        "title": "FANY Blog",
+        "title_font_size": 28,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "left",
+        "title_color": "#1e0e06",
+        "view_all_text": "View All Blogs",
+        "view_all_link": "",
+        "view_all_font_size": 16,
+        "view_all_color": "#1e0e06",
+        "view_all_hover_color": "#9E7163",
+        "card_title_font_size": 18,
+        "mobile_card_title_font_size": 16,
+        "card_title_font_weight": "400",
+        "card_title_line_height": 1.5,
+        "card_title_letter_spacing": 0,
+        "card_title_color": "#1e0e06",
+        "card_meta_font_size": 14,
+        "mobile_card_meta_font_size": 14,
+        "card_meta_font_weight": "400",
+        "card_meta_line_height": 1.5,
+        "card_meta_letter_spacing": 0,
+        "card_meta_color": "#686766",
+        "text_safe_margin": 200,
+        "tablet_text_safe_margin": 40,
+        "mobile_text_safe_margin": 16,
+        "image_gap": 16,
+        "mobile_image_gap": 16,
+        "card_border_radius": 4,
+        "card_text_bg": "#FAF6F6",
+        "padding_top": 80,
+        "padding_bottom": 80,
         "mobile_padding_y": 40
       }
     },
@@ -1463,6 +1547,7 @@
     "product_category_home_list_88gpqD",
     "gift_sets_qbx3NW",
     "customer_reviews_MwicHg",
+    "blog_cards_JQBAK9",
     "main_image_carousel_KA8Ddg",
     "slideshow_zBtPCU",
     "slideshow_8fTXfG",
