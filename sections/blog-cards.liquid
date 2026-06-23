@@ -1,0 +1,565 @@
+{{ 'blog-cards.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    --bc-padding-top: {{ section.settings.padding_top }}px;
+    --bc-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --bc-safe-margin: {{ section.settings.text_safe_margin }}px;
+    --bc-safe-margin-mobile: {{ section.settings.mobile_text_safe_margin }}px;
+    --bc-safe-margin-tablet: {{ section.settings.tablet_text_safe_margin }}px;
+    --bc-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+    --bc-image-gap: {{ section.settings.image_gap }}px;
+    --bc-mobile-image-gap: {{ section.settings.mobile_image_gap }}px;
+    --bc-card-radius: {{ section.settings.card_border_radius }}px;
+    --bc-card-text-bg: {{ section.settings.card_text_bg }};
+  }
+
+  /* ---- Title ---- */
+  .section-{{ section.id }}-padding .blog-cards__title {
+    font-weight: {{ section.settings.title_font_weight }};
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: {{ section.settings.title_line_height }};
+    letter-spacing: {{ section.settings.title_letter_spacing }}px;
+    text-align: {{ section.settings.title_alignment }};
+    color: {{ section.settings.title_color }};
+  }
+
+  /* ---- View All ---- */
+  .section-{{ section.id }}-padding .blog-cards__view-all {
+    font-size: {{ section.settings.view_all_font_size }}px;
+    color: {{ section.settings.view_all_color }};
+  }
+
+  .section-{{ section.id }}-padding .blog-cards__view-all:hover {
+    color: {{ section.settings.view_all_hover_color }};
+  }
+
+  /* ---- Card Title ---- */
+  .section-{{ section.id }}-padding .blog-cards__card-title {
+    font-weight: {{ section.settings.card_title_font_weight }};
+    line-height: {{ section.settings.card_title_line_height }};
+    letter-spacing: {{ section.settings.card_title_letter_spacing }}px;
+    color: {{ section.settings.card_title_color }};
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  /* ---- Card Meta ---- */
+  .section-{{ section.id }}-padding .blog-cards__card-date {
+    font-weight: {{ section.settings.card_meta_font_weight }};
+    line-height: {{ section.settings.card_meta_line_height }};
+    letter-spacing: {{ section.settings.card_meta_letter_spacing }}px;
+    color: {{ section.settings.card_meta_color }};
+  }
+
+  .section-{{ section.id }}-padding .blog-cards__card-read-time {
+    font-weight: {{ section.settings.card_meta_font_weight }};
+    line-height: {{ section.settings.card_meta_line_height }};
+    letter-spacing: {{ section.settings.card_meta_letter_spacing }}px;
+    color: {{ section.settings.card_meta_color }};
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding .blog-cards__card-title {
+      font-size: {{ section.settings.card_title_font_size }}px;
+    }
+    .section-{{ section.id }}-padding .blog-cards__card-date,
+    .section-{{ section.id }}-padding .blog-cards__card-read-time {
+      font-size: {{ section.settings.card_meta_font_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .blog-cards__title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: #1e0e06;
+      text-align: left;
+    }
+    .section-{{ section.id }}-padding .blog-cards__view-all {
+      font-size: 14px;
+      color: #1e0e06;
+    }
+    .section-{{ section.id }}-padding .blog-cards__card-title {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #1e0e06;
+    }
+    .section-{{ section.id }}-padding .blog-cards__card-date,
+    .section-{{ section.id }}-padding .blog-cards__card-read-time {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #1e0e06;
+    }
+  }
+{% endstyle %}
+
+<div class="blog-cards section-{{ section.id }}-padding">
+  <div class="blog-cards__header">
+    {%- if section.settings.title != blank -%}
+      <h2 class="blog-cards__title inline-richtext">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.view_all_text != blank and section.settings.view_all_link != blank -%}
+      <a href="{{ section.settings.view_all_link }}" class="blog-cards__view-all">
+        <span class="blog-cards__view-all-text">{{ section.settings.view_all_text }}</span>
+        <svg class="blog-cards__view-all-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="blog-cards__grid">
+    {%- for block in section.blocks -%}
+      <div class="blog-cards__card" {{ block.shopify_attributes }}>
+        {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}" class="blog-cards__card-image-wrap">
+        {%- else -%}
+          <div class="blog-cards__card-image-wrap">
+        {%- endif -%}
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 740
+              | image_tag:
+                class: 'blog-cards__card-image',
+                loading: 'lazy',
+                sizes: '(max-width: 768px) calc((100vw - 43px) / 2), (max-width: 1200px) calc((100vw - 96px) / 2), 368px',
+                widths: '180, 368, 552, 740'
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg blog-cards__card-image' }}
+          {%- endif -%}
+        {%- if block.settings.link != blank -%}
+          </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+
+        <div class="blog-cards__card-text">
+          {%- if block.settings.card_title != blank -%}
+            <p class="blog-cards__card-title">{{ block.settings.card_title | escape }}</p>
+          {%- endif -%}
+          <div class="blog-cards__card-meta">
+            {%- if block.settings.card_date != blank -%}
+              <p class="blog-cards__card-date">{{ block.settings.card_date | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.card_read_time != blank -%}
+              <p class="blog-cards__card-read-time">{{ block.settings.card_read_time | escape }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- else -%}
+      {%- for i in (1..4) -%}
+        <div class="blog-cards__card">
+          <div class="blog-cards__card-image-wrap" style="background: #f7f7f7;">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg blog-cards__card-image' }}
+          </div>
+          <div class="blog-cards__card-text">
+            <p class="blog-cards__card-title">How to Build a Running Routine on Global Running Day 2026 with FANY Luna</p>
+            <div class="blog-cards__card-meta">
+              <p class="blog-cards__card-date">04/30/2026</p>
+              <p class="blog-cards__card-read-time">5 min read</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if request.design_mode -%}
+  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "博客卡片",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "标题"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "FANY Blog",
+      "label": "标题文本"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 14,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "字号",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "options": [
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "700",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" }
+      ],
+      "default": "left",
+      "label": "对齐"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "header",
+      "content": "View All"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "default": "View All Blogs",
+      "label": "按钮文字"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "跳转链接"
+    },
+    {
+      "type": "range",
+      "id": "view_all_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "字号",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "view_all_color",
+      "label": "颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "view_all_hover_color",
+      "label": "悬停颜色",
+      "default": "#9E7163"
+    },
+    {
+      "type": "header",
+      "content": "卡片标题"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "card_title_font_weight",
+      "options": [
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "card_title_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "card_title_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "header",
+      "content": "卡片日期/阅读时间"
+    },
+    {
+      "type": "range",
+      "id": "card_meta_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_meta_font_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "card_meta_font_weight",
+      "options": [
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "card_meta_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "card_meta_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_meta_color",
+      "label": "颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "text_safe_margin",
+      "min": 0,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "安全边距-桌面端",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "tablet_text_safe_margin",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "安全边距-平板",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_safe_margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "安全边距-移动端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "图片间距-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_gap",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "图片间距-移动端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片圆角",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "card_text_bg",
+      "label": "文字区域背景色",
+      "default": "#FAF6F6"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "移动端"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上下边距",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "博客卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "跳转链接"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "default": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
+          "label": "标题"
+        },
+        {
+          "type": "text",
+          "id": "card_date",
+          "default": "04/30/2026",
+          "label": "日期"
+        },
+        {
+          "type": "text",
+          "id": "card_read_time",
+          "default": "5 min read",
+          "label": "阅读时间"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "博客卡片",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
