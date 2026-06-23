@@ -1,0 +1,367 @@
+{{ 'customer-reviews.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    --cr-padding-top: {{ section.settings.padding_top }}px;
+    --cr-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --cr-safe-margin: {{ section.settings.safe_margin }}px;
+    --cr-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+    --cr-mobile-safe-margin: {{ section.settings.mobile_safe_margin }}px;
+    --cr-card-gap: {{ section.settings.card_gap }}px;
+    --cr-card-radius: {{ section.settings.card_radius }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding .customer-reviews__card-text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
+{% endstyle %}
+
+<div class="customer-reviews section-{{ section.id }}-padding">
+  <div class="customer-reviews__body">
+    <div class="customer-reviews__summary">
+      <h3 class="customer-reviews__summary-title">{{ section.settings.summary_title }}</h3>
+      <div class="customer-reviews__stars" aria-label="{{ section.settings.summary_rating_label | escape }}">
+        {%- assign summary_rating_value = section.settings.summary_rating | split: '_' | first | plus: 0 -%}
+        {%- assign summary_half_index = summary_rating_value | plus: 1 -%}
+        {%- assign summary_has_half = false -%}
+        {%- if section.settings.summary_rating contains 'half' -%}
+          {%- assign summary_has_half = true -%}
+        {%- endif -%}
+        {%- for i in (1..5) -%}
+          {%- if i <= summary_rating_value -%}
+            <span class="customer-reviews__star" aria-hidden="true">★</span>
+          {%- elsif summary_has_half and i == summary_half_index -%}
+            <span class="customer-reviews__star customer-reviews__star--half" aria-hidden="true">★</span>
+          {%- else -%}
+            <span class="customer-reviews__star customer-reviews__star--empty" aria-hidden="true">★</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="customer-reviews__summary-text">
+        <p>{{ section.settings.average_text }}</p>
+        <p>{{ section.settings.reviews_text }}</p>
+      </div>
+    </div>
+
+    <div class="customer-reviews__carousel">
+      <button
+        type="button"
+        class="customer-reviews__nav customer-reviews__nav--prev"
+        aria-label="Previous review"
+        aria-controls="CustomerReviewsTrack-{{ section.id }}"
+      >
+        <img src="{{ '1.svg' | asset_url }}" class="cr-nav-img cr-nav-img--default" alt="">
+        <img src="{{ '2.svg' | asset_url }}" class="cr-nav-img cr-nav-img--hover" alt="">
+      </button>
+
+      <div class="customer-reviews__track" id="CustomerReviewsTrack-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- assign rating_value = block.settings.rating | split: '_' | first | plus: 0 -%}
+          {%- assign half_index = rating_value | plus: 1 -%}
+          {%- assign has_half = false -%}
+          {%- if block.settings.rating contains 'half' -%}
+            {%- assign has_half = true -%}
+          {%- endif -%}
+          <article class="customer-reviews__card" {{ block.shopify_attributes }}>
+            <div class="customer-reviews__card-main">
+              <div class="customer-reviews__card-head">
+                {%- if block.settings.author != blank -%}
+                  <h3 class="customer-reviews__card-author">{{ block.settings.author | escape }}</h3>
+                {%- endif -%}
+                <div class="customer-reviews__stars" aria-label="{{ block.settings.rating_label | escape }}">
+                  {%- for i in (1..5) -%}
+                    {%- if i <= rating_value -%}
+                      <span class="customer-reviews__star" aria-hidden="true">★</span>
+                    {%- elsif has_half and i == half_index -%}
+                      <span class="customer-reviews__star customer-reviews__star--half" aria-hidden="true">★</span>
+                    {%- else -%}
+                      <span class="customer-reviews__star customer-reviews__star--empty" aria-hidden="true">★</span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+                {%- if block.settings.product_title != blank -%}
+                  <p class="customer-reviews__card-product">{{ block.settings.product_title | escape }}</p>
+                {%- endif -%}
+              </div>
+              {%- if block.settings.review_text != blank -%}
+                <p class="customer-reviews__card-text">{{ block.settings.review_text }}</p>
+              {%- endif -%}
+            </div>
+            {%- if block.settings.meta != blank -%}
+              <p class="customer-reviews__card-meta">{{ block.settings.meta | escape }}</p>
+            {%- endif -%}
+          </article>
+        {%- endfor -%}
+      </div>
+
+      <button
+        type="button"
+        class="customer-reviews__nav customer-reviews__nav--next"
+        aria-label="Next review"
+        aria-controls="CustomerReviewsTrack-{{ section.id }}"
+      >
+        <img src="{{ '1.svg' | asset_url }}" class="cr-nav-img cr-nav-img--default" alt="">
+        <img src="{{ '2.svg' | asset_url }}" class="cr-nav-img cr-nav-img--hover" alt="">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const initCustomerReviews = () => {
+      const section = document.querySelector('.section-{{ section.id }}-padding');
+      if (!section) return;
+
+      const track = section.querySelector('#CustomerReviewsTrack-{{ section.id }}');
+      const prevButton = section.querySelector('.customer-reviews__nav--prev');
+      const nextButton = section.querySelector('.customer-reviews__nav--next');
+      if (!track || !prevButton || !nextButton) return;
+
+      const getStep = () => {
+        const firstCard = track.querySelector('.customer-reviews__card');
+        const styles = window.getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap) || 16;
+        return firstCard ? firstCard.getBoundingClientRect().width + gap : 320;
+      };
+
+      prevButton.addEventListener('click', () => {
+        if (track.scrollLeft <= 1) {
+          track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+        }
+      });
+
+      nextButton.addEventListener('click', () => {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 1) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: getStep(), behavior: 'smooth' });
+        }
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCustomerReviews);
+    } else {
+      initCustomerReviews();
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.detail.sectionId === '{{ section.id }}') initCustomerReviews();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "用户评论",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "评分汇总"
+    },
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "评分标题",
+      "default": "Excellent"
+    },
+    {
+      "type": "select",
+      "id": "summary_rating",
+      "label": "评分星级",
+      "options": [
+        { "value": "5", "label": "5" },
+        { "value": "4_half", "label": "4.5" },
+        { "value": "4", "label": "4" },
+        { "value": "3_half", "label": "3.5" },
+        { "value": "3", "label": "3" }
+      ],
+      "default": "4_half"
+    },
+    {
+      "type": "text",
+      "id": "summary_rating_label",
+      "label": "评分无障碍描述",
+      "default": "4.5 out of 5 stars"
+    },
+    {
+      "type": "text",
+      "id": "average_text",
+      "label": "平均分文案",
+      "default": "4.67 average"
+    },
+    {
+      "type": "text",
+      "id": "reviews_text",
+      "label": "评论数量文案",
+      "default": "23,973 reviews"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "safe_margin",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "安全边距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "图片/卡片间距",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "图片/卡片圆角",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_safe_margin",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "安全边距-移动端",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上下边距-移动端",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "评论",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "用户名称",
+          "default": "Burge"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "评分星级",
+          "options": [
+            { "value": "5", "label": "5" },
+            { "value": "4_half", "label": "4.5" },
+            { "value": "4", "label": "4" },
+            { "value": "3_half", "label": "3.5" },
+            { "value": "3", "label": "3" }
+          ],
+          "default": "4_half"
+        },
+        {
+          "type": "text",
+          "id": "rating_label",
+          "label": "评分无障碍描述",
+          "default": "4.5 out of 5 stars"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "产品名称",
+          "default": "Classic Tennis Necklace Silver"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "评论内容",
+          "default": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "地点/时间",
+          "default": "Dublin, IE, 12 hours ago"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "用户评论",
+      "blocks": [
+        { "type": "review" },
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "It took more than a week to arrive, but that was not a problem for me. The quality is absolutely beautiful, shiny, elegant and timeless. Thank you."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "It took more than a week to arrive, but that was not a problem for me."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "It took more than a week to arrive, but that was not a problem for me."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
