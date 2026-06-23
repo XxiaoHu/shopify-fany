@@ -18,16 +18,84 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+    .newsletter__wrapper {
+      height: 400px;
+      text-align:center;
+    }
     .newsletter-form {
         max-width: 57.4rem;
     }
   }
-  .newsletter-form__button:not(:focus-visible):not(.focused){
-    background-color: rgb(var(--color-button));
-    color: rgb(var(--color-button-text));
+  .newsletter__wrapper .newsletter-form__button:not(:hover):not(:focus-visible):not(.focused){
+    background-color: #794538;
+    color: #ffffff;
   }
   .newsletter__wrapper .newsletter-form__field-wrapper {
     max-width: 57.4rem;
+  }
+  .newsletter__wrapper .field {
+    height: 55px;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid #794538;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+  .newsletter__wrapper .field__input {
+    height: 100%;
+    margin: 0;
+    padding: 0 17rem 0 2rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .newsletter__wrapper .field__input:focus,
+  .newsletter__wrapper .field__input:not(:placeholder-shown),
+  .newsletter__wrapper .field__input:-webkit-autofill {
+    margin: 0;
+    padding: 0 17rem 0 2rem;
+  }
+  .newsletter__wrapper .field::before,
+  .newsletter__wrapper .field::after,
+  .newsletter__wrapper .field:hover::after {
+    box-shadow: none;
+    border: 0;
+  }
+  .newsletter__wrapper .field__input:focus,
+  .newsletter__wrapper .field__input:focus-visible {
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+  }
+  .newsletter__wrapper .field__label {
+    display: none;
+  }
+  .newsletter__wrapper .field__input::placeholder {
+    opacity: 1;
+    color: #d0cecc;
+  }
+  .newsletter__wrapper .newsletter-form__button {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    background-color: #794538;
+    color: #ffffff;
+    box-shadow: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .newsletter__wrapper .newsletter-form__button:hover,
+  .newsletter__wrapper .newsletter-form__button:focus,
+  .newsletter__wrapper .newsletter-form__button:focus-visible {
+    background-color: #8a5448;
+    border-color: #8a5448;
+    color: #ffffff;
+    box-shadow: none;
+    outline: 0;
   }
 {%- endstyle -%}
 
