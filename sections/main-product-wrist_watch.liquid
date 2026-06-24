@@ -807,12 +807,27 @@
                     <p class="productColor">Model</p>
                     <ul class="productModelList clearfix">
                       {%- for value in model_option.values -%}
+                        {%- liquid
+                          assign model_value = value | append: ''
+                          assign model_variant = null
+                          for variant in product.variants
+                            if variant.option1 == model_value
+                              if model_variant == null
+                                assign model_variant = variant
+                              endif
+                              if product.options.size > 1 and variant.option2 == selected_variant.option2
+                                assign model_variant = variant
+                                break
+                              endif
+                            endif
+                          endfor
+                        -%}
                         <li
                           id="{{ section.id }}-model-{{ forloop.index0 -}}"
                           class="{% if value.selected %} active{% endif %}{% unless value.available or product.metafields.custom.presale == true %} outOfStock{% endunless %}"
-                          data-picker-type="option"
-                          data-product-url="{{ value.product_url }}"
-                          data-option-value-id="{{ value.id }}"
+                          data-picker-type="variant"
+                          data-product-url="{{ model_variant.product_url | default: value.product_url }}"
+                          data-option-value-id="{{ model_variant.id }}"
                         >
                           {{ value | escape }}
                         </li>
