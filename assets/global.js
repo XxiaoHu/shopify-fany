@@ -1249,20 +1249,25 @@ class VariantImgSelects extends HTMLElement {
     super();
   }
   connectedCallback() {
-    const lis = this.querySelectorAll('li');
-    lis.forEach(li => {
+    const lis = this.querySelectorAll("li");
+    lis.forEach((li) => {
       li.addEventListener("click", (event) => {
-        const target = event.target.parentNode;
-        if (!target.className || (target.className.indexOf("active") < 0 && target.className.indexOf("outOfStock") < 0 && target.className.indexOf("disabled") < 0)) {
-          const optionValueId = [target.dataset.optionValueId];
-          publish(PUB_SUB_EVENTS.variantSelectionChange, {
-            data: {
-              event,
-              target,
-              selectedOptionValues: optionValueId,
-            },
-          });
-        }
+        const target = event.target.closest("li");
+        if (!target || target.classList.contains("active") || target.classList.contains("outOfStock") || target.classList.contains("disabled")) return;
+
+        const selectedOptionValues = [target.dataset.optionValueId];
+        const eventName =
+          target.dataset.pickerType === "option"
+            ? PUB_SUB_EVENTS.optionValueSelectionChange
+            : PUB_SUB_EVENTS.variantSelectionChange;
+
+        publish(eventName, {
+          data: {
+            event,
+            target,
+            selectedOptionValues,
+          },
+        });
       });
     });
   }
