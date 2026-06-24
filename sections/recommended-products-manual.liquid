@@ -1,0 +1,212 @@
+{{ 'recommended-products-manual.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }} {
+    --rpm-padding-top: {{ section.settings.padding_top }}px;
+    --rpm-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --rpm-safe-margin: {{ section.settings.safe_margin }}px;
+    --rpm-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+    --rpm-mobile-safe-margin: {{ section.settings.mobile_safe_margin }}px;
+  }
+{%- endstyle -%}
+
+<div class="recommended-products-manual section-{{ section.id }}">
+  <div class="recommended-products-manual__inner">
+    {%- if section.settings.title != blank -%}
+      <h2 class="recommended-products-manual__heading">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+
+    <div class="recommended-products-manual__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign recommended_product = block.settings.product
+        -%}
+        <div class="recommended-products-manual__card" {{ block.shopify_attributes }}>
+          {%- if recommended_product != blank -%}
+            {%- liquid
+              assign recommended_variant = recommended_product.selected_or_first_available_variant
+              assign recommended_image = recommended_product.featured_image
+              assign recommended_hover_image = recommended_product.images[1]
+            -%}
+            <a href="{{ recommended_product.url }}" class="recommended-products-manual__image-link" aria-label="{{ recommended_product.title | escape }}">
+              {%- if recommended_image != blank -%}
+                {{
+                  recommended_image
+                  | image_url: width: 900
+                  | image_tag:
+                    class: 'recommended-products-manual__image',
+                    loading: 'lazy',
+                    sizes: '(max-width: 768px) 50vw, 25vw',
+                    widths: '320, 480, 740, 900'
+                }}
+                {%- if recommended_hover_image != blank -%}
+                  {{
+                    recommended_hover_image
+                    | image_url: width: 900
+                    | image_tag:
+                      class: 'recommended-products-manual__image recommended-products-manual__image--hover',
+                      loading: 'lazy',
+                      sizes: '(max-width: 768px) 50vw, 25vw',
+                      widths: '320, 480, 740, 900'
+                  }}
+                {%- endif -%}
+              {%- else -%}
+                {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg recommended-products-manual__image' }}
+              {%- endif -%}
+
+              {%- if block.settings.badge_text != blank -%}
+                <span class="recommended-products-manual__badge">{{ block.settings.badge_text | escape }}</span>
+              {%- endif -%}
+            </a>
+
+            <div class="recommended-products-manual__content">
+              <a href="{{ recommended_product.url }}" class="recommended-products-manual__title">
+                {{ recommended_product.title | escape }}
+              </a>
+              <div class="recommended-products-manual__price">
+                {%- if recommended_variant.compare_at_price > recommended_variant.price -%}
+                  <span>{{ recommended_variant.price | money }}</span>
+                  <s class="recommended-products-manual__price-compare">{{ recommended_variant.compare_at_price | money }}</s>
+                {%- else -%}
+                  <span>{{ recommended_variant.price | money }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="recommended-products-manual__image-link">
+              {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg recommended-products-manual__image' }}
+            </div>
+            <div class="recommended-products-manual__content">
+              <p class="recommended-products-manual__title">FANY Luna Classic Smart Watch</p>
+              <div class="recommended-products-manual__price">$129.99</div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.view_more_text != blank and section.settings.view_more_link != blank -%}
+      <a href="{{ section.settings.view_more_link }}" class="recommended-products-manual__view-more">
+        {{ section.settings.view_more_text | escape }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "推荐产品",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "You May also like"
+    },
+    {
+      "type": "text",
+      "id": "view_more_text",
+      "label": "View more 文案",
+      "default": "View more"
+    },
+    {
+      "type": "url",
+      "id": "view_more_link",
+      "label": "View more 链接"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "safe_margin",
+      "min": 0,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "安全边距-桌面端",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "移动端"
+    },
+    {
+      "type": "range",
+      "id": "mobile_safe_margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "安全边距-移动端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上下边距-移动端",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "推荐产品",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "选择产品"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "角标文字",
+          "default": "Best Seller"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "推荐产品",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}
