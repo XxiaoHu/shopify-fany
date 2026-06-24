@@ -1315,10 +1315,6 @@ deferred-media {
   --alpha-button-background: 0;
   --alpha-button-border: 0.2;
 }
-/* 动态结账按钮圆角 */
-.shopify-payment-button__button {
-  border-radius: 8px !important;
-}
 
 
 .button,
