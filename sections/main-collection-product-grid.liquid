@@ -476,8 +476,16 @@
                   {% assign skip_card_product_styles = false %}
                   {%- for product in collection.products -%}
                     {% assign lazy_load = false %}
+                    {% assign show_best_seller_badge = false %}
                     {%- if forloop.index > 2 -%}
                       {%- assign lazy_load = true -%}
+                    {%- endif -%}
+                    {%- if product.tags contains 'Best Seller'
+                      or product.tags contains 'best-seller'
+                      or product.tags contains 'best seller'
+                      or product.metafields.custom.best_seller.value == true
+                    -%}
+                      {% assign show_best_seller_badge = true %}
                     {%- endif -%}
                     <li
                       class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -494,7 +502,7 @@
                         show_vendor: section.settings.show_vendor,
                         show_rating: section.settings.show_rating,
                         show_price: true,
-                        show_best_seller_badge: true,
+                        show_best_seller_badge: show_best_seller_badge,
                         show_shop_now_hover: true,
                         lazy_load: lazy_load,
                         skip_styles: skip_card_product_styles,
