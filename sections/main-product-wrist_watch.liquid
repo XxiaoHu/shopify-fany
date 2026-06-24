@@ -68,8 +68,17 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-  {% assign title = product.selected_or_first_available_variant.title | replace: ' ', '_' %}
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+  {% assign selected_variant = product.selected_or_first_available_variant %}
+  {% assign selected_variant_featured_src = selected_variant.featured_image.src %}
+  {% assign variant_title_slug = selected_variant.title | replace: ' / ', '_' | replace: '/', '_' | replace: ' ', '_' %}
+  {% assign option1_slug = selected_variant.option1 | default: '' | replace: ' ', '_' %}
+  {% assign option2_slug = selected_variant.option2 | default: '' | replace: ' ', '_' %}
+  {% assign option3_slug = selected_variant.option3 | default: '' | replace: ' ', '_' %}
+  {% assign variant_specific_slug = option1_slug %}
+  {% if option2_slug != blank %}
+    {% assign variant_specific_slug = option2_slug %}
+  {% endif %}
 
   <div class="product-modal" id="ProductModal-{{ section.id }}" style="--color-background: none;display: none;">
     <div class="modal-content">
@@ -77,11 +86,13 @@
       <div class="swiper product-zoom-swiper">
         <div class="swiper-wrapper">
           {%- for media in product.media -%}
-            {% unless variant_images contains media.src %}
+            {% unless variant_images contains media.src and selected_variant_featured_src != media.src %}
               {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-              {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                or title == 'Default_Title'
-                or filename contains title
+              {% if selected_variant.title == 'Default Title'
+                or selected_variant_featured_src == media.src
+                or filename contains variant_title_slug
+                or filename contains variant_specific_slug
+                or option3_slug != blank and filename contains option3_slug
               %}
                 <div class="swiper-slide">
                   {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -112,11 +123,13 @@
           <div class="swiper product-thumbnail-swiper small-img">
             <ul class="gallery-thumbnail swiper-wrapper">
               {%- for media in product.media -%}
-                {% unless variant_images contains media.src %}
+                {% unless variant_images contains media.src and selected_variant_featured_src != media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-                  {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                    or title == 'Default_Title'
-                    or filename contains title
+                  {% if selected_variant.title == 'Default Title'
+                    or selected_variant_featured_src == media.src
+                    or filename contains variant_title_slug
+                    or filename contains variant_specific_slug
+                    or option3_slug != blank and filename contains option3_slug
                   %}
                     <li class="swiper-slide" data-media-id="{{ section.id }}-{{ media.id }}">
                       {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -129,11 +142,13 @@
           <div class="swiper product-main-swiper product-image">
             <ul class="gallery-viewer swiper-wrapper">
               {%- for media in product.media -%}
-                {% unless variant_images contains media.src %}
+                {% unless variant_images contains media.src and selected_variant_featured_src != media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-                  {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                    or title == 'Default_Title'
-                    or filename contains title
+                  {% if selected_variant.title == 'Default Title'
+                    or selected_variant_featured_src == media.src
+                    or filename contains variant_title_slug
+                    or filename contains variant_specific_slug
+                    or option3_slug != blank and filename contains option3_slug
                   %}
                     <li
                       class="swiper-slide"
@@ -1063,6 +1078,104 @@
       </li>
     </ul>
   </div>
+  {% comment %}------ 调试：打印所有图片信息到控制台 ------{% endcomment %}
+  <script>
+    (function() {
+      var variantTitle = {{ product.selected_or_first_available_variant.title | json }};
+      var variantOptions = {{ product.selected_or_first_available_variant.options | json }};
+      var variantImages = {{ variant_images | json }};
+      var currentVariant = {{ product.selected_or_first_available_variant | json }};
+      var featuredSrc = {{ product.selected_or_first_available_variant.featured_image.src | json }};
+
+      var allMedia = [
+        {%- for media in product.media -%}
+          {%- assign m_filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first -%}
+          {
+            id: {{ media.id | json }},
+            src: {{ media.src | json }},
+            alt: {{ media.alt | json }},
+            type: {{ media.media_type | json }},
+            position: {{ media.position | json }},
+            width: {{ media.width | json }},
+            height: {{ media.height | json }},
+            filename: {{ m_filename | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ];
+
+      var variantTitleSlug = variantTitle.replace(/ \/ /g, '_').replace(/\//g, '_').replace(/ /g, '_');
+      var optionSlugs = variantOptions.filter(Boolean).map(function(opt) {
+        return opt.replace(/ /g, '_');
+      });
+      var variantSpecificSlug = optionSlugs[1] || optionSlugs[0] || '';
+      var variantExtraSlug = optionSlugs[2] || '';
+
+      // 用 JS 计算过滤结果（与 Liquid 模板逻辑完全一致）
+      allMedia.forEach(function(m) {
+        var isAttached = variantImages.indexOf(m.src) !== -1;
+        m.isAttachedToVariant = isAttached;
+        var isFeatured = m.src === featuredSrc;
+        var isDefaultTitle = variantTitle === 'Default Title';
+        var titleMatched = variantTitleSlug && m.filename.indexOf(variantTitleSlug) !== -1;
+        var specificOptionMatched = variantSpecificSlug && m.filename.indexOf(variantSpecificSlug) !== -1;
+        var extraOptionMatched = variantExtraSlug && m.filename.indexOf(variantExtraSlug) !== -1;
+        var blockedByVariantAttachment = isAttached && !isFeatured;
+        m.willRender = !blockedByVariantAttachment && (isFeatured || isDefaultTitle || titleMatched || specificOptionMatched || extraOptionMatched);
+        if (blockedByVariantAttachment) {
+          m.filterReason = '已挂载到其他变体(attached_to_variant)';
+        } else if (!isFeatured && !isDefaultTitle && !titleMatched && !specificOptionMatched && !extraOptionMatched) {
+          m.filterReason = '文件名不匹配 title(' + variantTitleSlug + ') 或当前细分 option(' + variantSpecificSlug + (variantExtraSlug ? ', ' + variantExtraSlug : '') + ') & 不是精选图 & 非Default Title';
+        } else {
+          m.filterReason = '';
+        }
+      });
+
+      var renderedMedia = allMedia.filter(function(m) { return m.willRender; });
+      var excludedMedia = allMedia.filter(function(m) { return !m.willRender; });
+
+      console.group('🖼️ 产品图片调试 - {{ product.title | escape }}');
+      console.log('📌 当前变体标题:', variantTitle);
+      console.log('📌 当前变体标题 slug:', variantTitleSlug);
+      console.log('📌 option slugs 匹配列表:', optionSlugs);
+      console.log('📌 当前细分 option slug:', variantSpecificSlug);
+      console.log('📌 额外 option slug:', variantExtraSlug);
+      console.log('📌 featured_image src:', featuredSrc);
+      console.log('📌 当前选中变体:', currentVariant);
+      console.log('📌 已挂载到变体的图片 (variant_images):', variantImages);
+      console.log('📌 所有 media 总数:', allMedia.length);
+      console.log('📌 会渲染的图片数:', renderedMedia.length);
+      console.log('📌 被过滤掉的图片数:', excludedMedia.length);
+
+      console.groupCollapsed('📋 全部图片一览 (' + allMedia.length + ' 张)');
+      console.table(allMedia.map(function(m) {
+        return {
+          id: m.id,
+          filename: m.filename,
+          type: m.type,
+          attached: m.isAttachedToVariant,
+          render: m.willRender,
+          reason: m.filterReason || '✅'
+        };
+      }));
+      console.groupEnd();
+
+      console.groupCollapsed('✅ 会渲染的图片 (' + renderedMedia.length + ' 张)');
+      console.table(renderedMedia.map(function(m) {
+        return { id: m.id, filename: m.filename, type: m.type, src: m.src };
+      }));
+      console.groupEnd();
+
+      console.groupCollapsed('❌ 被过滤掉的图片 (' + excludedMedia.length + ' 张)');
+      console.table(excludedMedia.map(function(m) {
+        return { id: m.id, filename: m.filename, type: m.type, reason: m.filterReason };
+      }));
+      console.groupEnd();
+
+      console.groupEnd();
+    })();
+  </script>
+  {% comment %}------ 调试结束 ------{% endcomment %}
+
 </product-info>
 
 {% schema %}
