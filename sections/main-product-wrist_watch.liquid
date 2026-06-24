@@ -802,23 +802,50 @@
                   data-section="{{ section.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <p class="productColor">Model/Color</p>
+                  {%- assign model_option = product.options_with_values[0] -%}
+                  {%- if model_option != blank and model_option.values.size > 1 -%}
+                    <p class="productColor">Model</p>
+                    <ul class="productModelList clearfix">
+                      {%- for value in model_option.values -%}
+                        <li
+                          id="{{ section.id }}-model-{{ forloop.index0 -}}"
+                          class="{% if value.selected %} active{% endif %}{% unless value.available or product.metafields.custom.presale == true %} outOfStock{% endunless %}"
+                          data-picker-type="option"
+                          data-product-url="{{ value.product_url }}"
+                          data-option-value-id="{{ value.id }}"
+                        >
+                          {{ value | escape }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+
+                  <p class="productColor productColor--sub">
+                    {%- if product.options.size > 1 -%}
+                      {{ product.options[1] | escape }}
+                    {%- else -%}
+                      Color
+                    {%- endif -%}
+                  </p>
                   <ul class="productColorList clearfix">
                     {% for variant in product.variants %}
-                      {%- liquid
-                        assign featured_image = variant.featured_image
-                        if featured_image == null
-                          assign featured_image = product.featured_image
-                        endif
-                      %}
-                      <li
-                        id="{{ section.id }}-variant-{{ forloop.index0 -}}"
-                        class="{% if product.selected_or_first_available_variant.id == variant.id %} active{% endif %}{% unless variant.available or product.metafields.custom.presale == true%} outOfStock{% endunless %}"
-                        data-product-url="{{ variant.product_url }}"
-                        data-option-value-id="{{ variant.id }}"
-                      >
-                        {{ featured_image | image_url: width: 132 | image_tag: loading: 'lazy' }}
-                      </li>
+                      {% if variant.option1 == selected_variant.option1 %}
+                        {%- liquid
+                          assign featured_image = variant.featured_image
+                          if featured_image == null
+                            assign featured_image = product.featured_image
+                          endif
+                        %}
+                        <li
+                          id="{{ section.id }}-variant-{{ forloop.index0 -}}"
+                          class="{% if selected_variant.id == variant.id %} active{% endif %}{% unless variant.available or product.metafields.custom.presale == true%} outOfStock{% endunless %}"
+                          data-picker-type="variant"
+                          data-product-url="{{ variant.product_url }}"
+                          data-option-value-id="{{ variant.id }}"
+                        >
+                          {{ featured_image | image_url: width: 132 | image_tag: loading: 'lazy' }}
+                        </li>
+                      {% endif %}
                     {% endfor %}
                   </ul>
                   <script type="application/json" data-selected-variant>
