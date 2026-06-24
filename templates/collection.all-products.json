@@ -112,6 +112,44 @@
         "mobile_font_size": 16
       }
     },
+    "collection_tabs_JLj3Ve": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_tab_BdgExJ": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "all-products",
+            "link": ""
+          }
+        },
+        "collection_tab_e3i6iU": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "bands",
+            "link": ""
+          }
+        },
+        "collection_tab_6tQdc6": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "chargers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_BdgExJ",
+        "collection_tab_e3i6iU",
+        "collection_tab_6tQdc6"
+      ],
+      "name": "系列集合切换按钮",
+      "settings": {
+        "aria_label": "系列集合导航",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -138,6 +176,7 @@
     "image_banner_zPR6f6",
     "rich_text_p3rThm",
     "breadcrumbs_section_LWT8b6",
+    "collection_tabs_JLj3Ve",
     "product-grid"
   ]
 }
