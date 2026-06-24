@@ -68,8 +68,16 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-  {% assign title = product.selected_or_first_available_variant.title | replace: ' ', '_' %}
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+  {% assign selected_variant = product.selected_or_first_available_variant %}
+  {% assign variant_title_slug = selected_variant.title | replace: ' / ', '_' | replace: '/', '_' | replace: ' ', '_' %}
+  {% assign option1_slug = selected_variant.option1 | default: '' | replace: ' ', '_' %}
+  {% assign option2_slug = selected_variant.option2 | default: '' | replace: ' ', '_' %}
+  {% assign option3_slug = selected_variant.option3 | default: '' | replace: ' ', '_' %}
+  {% assign variant_specific_slug = option1_slug %}
+  {% if option2_slug != blank %}
+    {% assign variant_specific_slug = option2_slug %}
+  {% endif %}
 
   <div class="product-modal" id="ProductModal-{{ section.id }}" style="--color-background: none;display: none;">
     <div class="modal-content">
@@ -79,9 +87,10 @@
           {%- for media in product.media -%}
             {% unless variant_images contains media.src %}
               {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-              {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                or title == 'Default_Title'
-                or filename contains title
+              {% if selected_variant.title == 'Default Title'
+                or filename contains variant_title_slug
+                or filename contains variant_specific_slug
+                or option3_slug != blank and filename contains option3_slug
               %}
                 <div class="swiper-slide">
                   {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -114,9 +123,10 @@
               {%- for media in product.media -%}
                 {% unless variant_images contains media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-                  {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                    or title == 'Default_Title'
-                    or filename contains title
+                  {% if selected_variant.title == 'Default Title'
+                    or filename contains variant_title_slug
+                    or filename contains variant_specific_slug
+                    or option3_slug != blank and filename contains option3_slug
                   %}
                     <li class="swiper-slide" data-media-id="{{ section.id }}-{{ media.id }}">
                       {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -131,9 +141,10 @@
               {%- for media in product.media -%}
                 {% unless variant_images contains media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
-                  {% if product.selected_or_first_available_variant.featured_image.scr == media.src
-                    or title == 'Default_Title'
-                    or filename contains title
+                  {% if selected_variant.title == 'Default Title'
+                    or filename contains variant_title_slug
+                    or filename contains variant_specific_slug
+                    or option3_slug != blank and filename contains option3_slug
                   %}
                     <li
                       class="swiper-slide"
@@ -791,23 +802,65 @@
                   data-section="{{ section.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <p class="productColor">Model/Color</p>
+                  {%- assign model_option = product.options_with_values[0] -%}
+                  {%- if model_option != blank and model_option.values.size > 1 -%}
+                    <p class="productColor">Model</p>
+                    <ul class="productModelList clearfix">
+                      {%- for value in model_option.values -%}
+                        {%- liquid
+                          assign model_value = value | append: ''
+                          assign model_variant = null
+                          for variant in product.variants
+                            if variant.option1 == model_value
+                              if model_variant == null
+                                assign model_variant = variant
+                              endif
+                              if product.options.size > 1 and variant.option2 == selected_variant.option2
+                                assign model_variant = variant
+                                break
+                              endif
+                            endif
+                          endfor
+                        -%}
+                        <li
+                          id="{{ section.id }}-model-{{ forloop.index0 -}}"
+                          class="{% if value.selected %} active{% endif %}{% unless value.available or product.metafields.custom.presale == true %} outOfStock{% endunless %}"
+                          data-picker-type="variant"
+                          data-product-url="{{ model_variant.product_url | default: value.product_url }}"
+                          data-option-value-id="{{ model_variant.id }}"
+                        >
+                          {{ value | escape }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+
+                  <p class="productColor productColor--sub">
+                    {%- if product.options.size > 1 -%}
+                      {{ product.options[1] | escape }}
+                    {%- else -%}
+                      Color
+                    {%- endif -%}
+                  </p>
                   <ul class="productColorList clearfix">
                     {% for variant in product.variants %}
-                      {%- liquid
-                        assign featured_image = variant.featured_image
-                        if featured_image == null
-                          assign featured_image = product.featured_image
-                        endif
-                      %}
-                      <li
-                        id="{{ section.id }}-variant-{{ forloop.index0 -}}"
-                        class="{% if product.selected_or_first_available_variant.id == variant.id %} active{% endif %}{% unless variant.available or product.metafields.custom.presale == true%} outOfStock{% endunless %}"
-                        data-product-url="{{ variant.product_url }}"
-                        data-option-value-id="{{ variant.id }}"
-                      >
-                        {{ featured_image | image_url: width: 132 | image_tag: loading: 'lazy' }}
-                      </li>
+                      {% if variant.option1 == selected_variant.option1 %}
+                        {%- liquid
+                          assign featured_image = variant.featured_image
+                          if featured_image == null
+                            assign featured_image = product.featured_image
+                          endif
+                        %}
+                        <li
+                          id="{{ section.id }}-variant-{{ forloop.index0 -}}"
+                          class="{% if selected_variant.id == variant.id %} active{% endif %}{% unless variant.available or product.metafields.custom.presale == true%} outOfStock{% endunless %}"
+                          data-picker-type="variant"
+                          data-product-url="{{ variant.product_url }}"
+                          data-option-value-id="{{ variant.id }}"
+                        >
+                          {{ featured_image | image_url: width: 132 | image_tag: loading: 'lazy' }}
+                        </li>
+                      {% endif %}
                     {% endfor %}
                   </ul>
                   <script type="application/json" data-selected-variant>
