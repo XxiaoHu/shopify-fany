@@ -1,0 +1,299 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .collection-tabs-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .collection-tabs-{{ section.id }}-controls {
+    display: none;
+  }
+
+  .collection-tabs-{{ section.id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collection-tabs-{{ section.id }}__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid #E4E4E4;
+    border-radius: 100px;
+    background: #FFFFFF;
+    color: #1E0E06;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color var(--duration-short) ease, border-color var(--duration-short) ease, color var(--duration-short) ease;
+  }
+
+  .collection-tabs-{{ section.id }}__item:hover {
+    border-color: #9E7163;
+    color: #9E7163;
+    text-decoration: none;
+  }
+
+  .collection-tabs-{{ section.id }}__item.is-active {
+    border-color: #794538;
+    background: #794538;
+    color: #FFFFFF;
+  }
+
+  .collection-tabs-{{ section.id }}__item.is-active:hover {
+    border-color: #9E7163;
+    background: #9E7163;
+    color: #FFFFFF;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .collection-tabs-{{ section.id }}-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .collection-tabs-{{ section.id }}-controls {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-left: 4px;
+    }
+
+    .collection-tabs-{{ section.id }}__arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #1E0E06;
+      cursor: pointer;
+    }
+
+    .collection-tabs-{{ section.id }}__arrow[disabled] {
+      color: #B4B1B0;
+      cursor: default;
+    }
+
+    .collection-tabs-{{ section.id }}__arrow svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .collection-tabs-{{ section.id }} {
+      gap: 10px;
+      margin-right: calc(var(--page-width-margin, 0px) * -1);
+      padding-right: var(--page-width-margin, 0px);
+      scroll-behavior: smooth;
+    }
+
+    .collection-tabs-{{ section.id }}__item {
+      padding: 10px 20px;
+      border-radius: 49px;
+      font-size: 14px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding collection-tabs-{{ section.id }}-wrapper">
+    <div class="collection-tabs-{{ section.id }}-controls" aria-hidden="true">
+      <button
+        type="button"
+        class="collection-tabs-{{ section.id }}__arrow collection-tabs-{{ section.id }}__arrow--prev"
+        aria-label="上一组系列集合"
+        disabled
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9.25 15.02C8.95 14.38 8.66 13.82 8.38 13.34C8.08 12.86 7.79 12.46 7.51 12.14H21V10.88H7.51C7.79 10.54 8.08 10.13 8.38 9.65C8.66 9.17 8.95 8.62 9.25 8H8.2C6.94 9.46 5.62 10.54 4.24 11.24V11.78C5.62 12.46 6.94 13.54 8.2 15.02H9.25Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="collection-tabs-{{ section.id }}__arrow collection-tabs-{{ section.id }}__arrow--next"
+        aria-label="下一组系列集合"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15.75 15.02C16.05 14.38 16.34 13.82 16.62 13.34C16.92 12.86 17.21 12.46 17.49 12.14H4V10.88H17.49C17.21 10.54 16.92 10.13 16.62 9.65C16.34 9.17 16.05 8.62 15.75 8H16.8C18.06 9.46 19.38 10.54 20.76 11.24V11.78C19.38 12.46 18.06 13.54 16.8 15.02H15.75Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="collection-tabs-{{ section.id }}" aria-label="{{ section.settings.aria_label | escape }}" data-collection-tabs>
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign tab_collection = block.settings.collection
+          assign tab_url = block.settings.link
+          assign tab_title = tab_collection.title
+
+          if tab_url == blank and tab_collection != blank
+            assign tab_url = tab_collection.url
+          endif
+
+          if tab_title == blank
+            assign tab_title = '系列集合'
+          endif
+
+          assign tab_path = tab_url | split: '?' | first | split: '#' | first | remove: request.origin | remove: shop.url
+          assign is_active = false
+
+          if tab_path != blank and tab_path == request.path
+            assign is_active = true
+          elsif tab_collection != blank and tab_collection.url == request.path
+            assign is_active = true
+          endif
+        -%}
+
+        <a
+          class="collection-tabs-{{ section.id }}__item{% if is_active %} is-active{% endif %}"
+          href="{{ tab_url | default: '#' }}"
+          {% if is_active %}
+            aria-current="page"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {{ tab_title | escape }}
+        </a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const tabs = document.querySelector('[data-collection-tabs].collection-tabs-{{ section.id }}');
+    const previousButton = document.querySelector('.collection-tabs-{{ section.id }}__arrow--prev');
+    const nextButton = document.querySelector('.collection-tabs-{{ section.id }}__arrow--next');
+
+    if (!tabs || !previousButton || !nextButton) return;
+
+    const updateButtons = () => {
+      const maxScrollLeft = tabs.scrollWidth - tabs.clientWidth;
+      previousButton.disabled = tabs.scrollLeft <= 1;
+      nextButton.disabled = tabs.scrollLeft >= maxScrollLeft - 1;
+    };
+
+    const scrollTabs = (direction) => {
+      const firstTab = tabs.querySelector('.collection-tabs-{{ section.id }}__item');
+      const distance = firstTab ? firstTab.getBoundingClientRect().width + 10 : tabs.clientWidth * 0.7;
+      tabs.scrollBy({ left: direction * distance, behavior: 'smooth' });
+    };
+
+    previousButton.addEventListener('click', () => scrollTabs(-1));
+    nextButton.addEventListener('click', () => scrollTabs(1));
+    tabs.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    updateButtons();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "系列集合切换按钮",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 12,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "导航辅助名称",
+      "default": "系列集合导航"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "配色方案",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "模块间距"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "顶部间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "底部间距",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_tab",
+      "name": "系列集合按钮",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "系列集合"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "自定义跳转链接",
+          "info": "不填写时默认使用所选系列集合的链接。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "系列集合切换按钮",
+      "blocks": [
+        {
+          "type": "collection_tab"
+        },
+        {
+          "type": "collection_tab"
+        },
+        {
+          "type": "collection_tab"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
