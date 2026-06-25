@@ -8,31 +8,384 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .main-blog--design {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .main-blog--design .title--primary {
+    margin: 0;
+  }
+
+  .main-blog--design .blog-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .main-blog--design .blog-articles__article.article {
+    display: block;
+    align-items: stretch;
+  }
+
+  .main-blog--design .article-card-wrapper,
+  .main-blog--design .article-card {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-blog--design .article-card {
+    overflow: hidden;
+    border-radius: 4px;
+    background: transparent;
+    text-align: left;
+  }
+
+  .main-blog--design .card--standard > .card__inner,
+  .main-blog--design .card--card > .card__inner {
+    overflow: hidden;
+    aspect-ratio: 370 / 410;
+    border-radius: 4px 4px 0 0;
+    background: #f5f5f5;
+  }
+
+  .main-blog--design .card--standard > .card__inner.ratio:before,
+  .main-blog--design .card--card > .card__inner.ratio:before {
+    padding-bottom: 110.8108%;
+  }
+
+  .main-blog--design .card--standard > .card__inner:after,
+  .main-blog--design .card--card:after,
+  .main-blog--design .card--standard > .card__inner .card__content {
+    display: none;
+  }
+
+  .main-blog--design .card .card__inner .card__media,
+  .main-blog--design .article-card__image-wrapper,
+  .main-blog--design .article-card__image {
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    background: #f5f5f5;
+  }
+
+  .main-blog--design .article-card__image img {
+    object-fit: cover;
+  }
+
+  .main-blog--design .card--standard > .card__content,
+  .main-blog--design .card--card > .card__content {
+    padding: 0;
+    border-radius: 0 0 4px 4px;
+    background: #faf6f6;
+  }
+
+  .main-blog--design .card--standard > .card__content .card__information,
+  .main-blog--design .card--card > .card__content .card__information {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 20px;
+  }
+
+  .main-blog--design .card__heading {
+    min-height: 54px;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #1e0e06;
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  .main-blog--design .article-card__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding-top: 0;
+    color: #686766;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .main-blog--design .article-card__reading-time {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .main-blog--design .circle-divider:after,
+  .main-blog--design .article-card__excerpt,
+  .main-blog--design .article-card__footer {
+    display: none;
+  }
+
+  .main-blog--design .underline-links-hover:hover a {
+    text-decoration: none;
+  }
+
+  .main-blog--design .pagination-wrapper {
+    margin-top: 0;
+  }
+
+  .main-blog--design .pagination__list {
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .main-blog--design .pagination__list > li {
+    flex: 0 0 41px;
+    max-width: 41px;
+    margin-right: 0;
+  }
+
+  .main-blog--design .pagination__item {
+    width: 41px;
+    height: 41px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #f5f5f5;
+    color: #1e0e06;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    text-decoration: none;
+    text-underline-offset: 0;
+  }
+
+  .main-blog--design .pagination__item--current {
+    border: 1px solid #9e7163;
+    background: #ffffff;
+    color: #1e0e06;
+  }
+
+  .main-blog--design .pagination__item:hover {
+    color: #9e7163;
+    text-decoration: none;
+  }
+
+  .main-blog--design .pagination__item:hover:after,
+  .main-blog--design .pagination__item--current:after {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .main-blog--design {
+      width: 100%;
+      max-width: none;
+      gap: 20px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .main-blog--design .blog-articles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 11px;
+      width: 100%;
+    }
+
+    .main-blog--design .card--standard > .card__inner,
+    .main-blog--design .card--card > .card__inner {
+      aspect-ratio: 368 / 412;
+      border-radius: 0;
+    }
+
+    .main-blog--design .card--standard > .card__inner.ratio:before,
+    .main-blog--design .card--card > .card__inner.ratio:before {
+      padding-bottom: 111.9565%;
+    }
+
+    .main-blog--design .card .card__inner .card__media,
+    .main-blog--design .article-card__image-wrapper,
+    .main-blog--design .article-card__image {
+      border-radius: 0;
+    }
+
+    .main-blog--design .article-card {
+      border-radius: 0;
+    }
+
+    .main-blog--design .card--standard > .card__content,
+    .main-blog--design .card--card > .card__content {
+      border-radius: 0;
+    }
+
+    .main-blog--design .card--standard > .card__content .card__information,
+    .main-blog--design .card--card > .card__content .card__information {
+      gap: 10px;
+      padding: 4px 10px;
+    }
+
+    .main-blog--design .card__heading {
+      min-height: auto;
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #1e0e06;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .main-blog--design .article-card__info {
+      gap: 6px;
+      color: #1e0e06;
+      font-size: 12px;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+
+    .main-blog--design .pagination-wrapper {
+      width: 100%;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination {
+      --blog-mobile-pagination-size: clamp(32px, calc((100vw - 72px) / 7), 40px);
+      --blog-mobile-pagination-arrow-size: clamp(33px, calc((100vw - 65px) / 7), 41px);
+      width: 100%;
+      padding: 20px 0;
+      overflow: visible;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__list {
+      display: grid;
+      grid-template-columns: var(--blog-mobile-pagination-arrow-size) minmax(0, max-content) var(--blog-mobile-pagination-arrow-size);
+      align-items: center;
+      justify-content: center;
+      column-gap: 20px;
+      width: 100%;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__list > li {
+      flex: 0 0 auto;
+      max-width: none;
+      margin-right: 0;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__arrow-item--prev {
+      grid-column: 1;
+      width: var(--blog-mobile-pagination-arrow-size);
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__pages-item {
+      grid-column: 2;
+      min-width: 0;
+      max-width: calc(100vw - 154px);
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__arrow-item--next {
+      grid-column: 3;
+      width: var(--blog-mobile-pagination-arrow-size);
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__pages-item {
+      overflow: hidden;
+      border-radius: 4px;
+      background: #f0f0f0;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__pages-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__item {
+      width: var(--blog-mobile-pagination-size);
+      height: var(--blog-mobile-pagination-size);
+      min-width: var(--blog-mobile-pagination-size);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__item-arrow {
+      width: var(--blog-mobile-pagination-arrow-size);
+      height: var(--blog-mobile-pagination-arrow-size);
+      font-size: 14px;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper .pagination__item[aria-disabled='true'] {
+      pointer-events: none;
+    }
+
+    .main-blog--design .pagination-wrapper {
+      display: none;
+    }
+
+    .main-blog--design .blog-mobile-pagination-wrapper {
+      display: block;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 
-    .blog-articles {
-      grid-template-columns: repeat({{ section.settings.column_num }}, 1fr);
-      column-gap: 3rem;
-      row-gap: var(--grid-desktop-vertical-spacing);
+    .main-blog--design .blog-articles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 13.33px;
+      row-gap: 40px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .main-blog--design {
+      max-width: 1520px;
+      width: calc(100% - 40px);
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .main-blog--design .blog-articles {
+      grid-template-columns: repeat({{ section.settings.column_num }}, minmax(0, 1fr));
+      row-gap: 64px;
     }
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by section.settings.page_size -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
+{%- paginate blog.articles by 8 -%}
+  <div
+    class="main-blog main-blog--design page-width section-{{ section.id }}-padding"
+    data-blog-total-articles="{{ paginate.items }}"
+    data-blog-current-page="{{ paginate.current_page }}"
+  >
     {% if section.settings.show_title %}
       <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
         {{ blog.title | escape }}
       </h1>
     {% endif %}
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div class="blog-articles">
       {%- for article in blog.articles -%}
         <div
           class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          data-blog-article-index="{{ paginate.current_offset | plus: forloop.index0 }}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
             style="--animation-order: {{ forloop.index }};"
@@ -40,12 +393,14 @@
         >
           {%- render 'article-card',
             article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: 1.5,
+            media_height: '',
+            media_aspect_ratio: 0.9024,
             show_image: section.settings.show_image,
             show_date: section.settings.show_date,
             show_author: section.settings.show_author,
-            show_excerpt: true
+            show_excerpt: false,
+            show_reading_time: true,
+            date_format: 'numeric'
           -%}
         </div>
       {%- endfor -%}
@@ -54,8 +409,137 @@
     {%- if paginate.pages > 1 -%}
       {%- render 'pagination', paginate: paginate -%}
     {%- endif -%}
+    <div class="blog-mobile-pagination-wrapper" hidden></div>
   </div>
 {%- endpaginate -%}
+
+<script>
+  (() => {
+    const root = document.querySelector('.section-{{ section.id }}-padding.main-blog--design');
+    if (!root) return;
+
+    const mediaQuery = window.matchMedia('(max-width: 749px)');
+    const items = Array.from(root.querySelectorAll('[data-blog-article-index]'));
+    const mobilePaginationWrapper = root.querySelector('.blog-mobile-pagination-wrapper');
+    const pageSize = 8;
+    const mobilePageSize = 4;
+    const totalArticles = Number(root.dataset.blogTotalArticles) || items.length;
+    const currentServerPage = Number(root.dataset.blogCurrentPage) || 1;
+    const totalMobilePages = Math.max(1, Math.ceil(totalArticles / mobilePageSize));
+
+    const getMobilePageFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const requestedPage = Number(params.get('mobile_page'));
+      if (requestedPage > 0) return Math.min(requestedPage, totalMobilePages);
+
+      const firstItemIndex = Number(items[0]?.dataset.blogArticleIndex) || 0;
+      return Math.floor(firstItemIndex / mobilePageSize) + 1;
+    };
+
+    const getServerPageForMobilePage = (mobilePage) => {
+      const firstArticleIndex = (mobilePage - 1) * mobilePageSize;
+      return Math.floor(firstArticleIndex / pageSize) + 1;
+    };
+
+    const getUrlForMobilePage = (mobilePage) => {
+      const url = new URL(window.location.href);
+      url.searchParams.set('page', getServerPageForMobilePage(mobilePage));
+      url.searchParams.set('mobile_page', mobilePage);
+      return `${url.pathname}${url.search}${url.hash}`;
+    };
+
+    const getPaginationParts = (currentPage) => {
+      if (totalMobilePages <= 5) {
+        return Array.from({ length: totalMobilePages }, (_, index) => index + 1);
+      }
+
+      if (currentPage <= 3) {
+        return [1, 2, 3, 'ellipsis-end', totalMobilePages];
+      }
+
+      if (currentPage >= totalMobilePages - 2) {
+        return [1, 'ellipsis-start', totalMobilePages - 2, totalMobilePages - 1, totalMobilePages];
+      }
+
+      return [1, 'ellipsis-start', currentPage, 'ellipsis-end', totalMobilePages];
+    };
+
+    const arrowSvg = (isNext) => `
+      <span class="svg-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"${isNext ? ' style="transform: rotate(180deg);"' : ''}>
+          <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    `;
+
+    const renderMobilePagination = (currentPage) => {
+      if (!mobilePaginationWrapper || totalMobilePages <= 1) return;
+
+      const parts = getPaginationParts(currentPage);
+      const previous = currentPage > 1
+        ? `<li class="pagination__arrow-item pagination__arrow-item--prev"><a href="${getUrlForMobilePage(currentPage - 1)}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="Previous">${arrowSvg(false)}</a></li>`
+        : `<li class="pagination__arrow-item pagination__arrow-item--prev"><span class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-disabled="true" aria-label="Previous">${arrowSvg(false)}</span></li>`;
+      const next = currentPage < totalMobilePages
+        ? `<li class="pagination__arrow-item pagination__arrow-item--next"><a href="${getUrlForMobilePage(currentPage + 1)}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="Next">${arrowSvg(true)}</a></li>`
+        : `<li class="pagination__arrow-item pagination__arrow-item--next"><span class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-disabled="true" aria-label="Next">${arrowSvg(true)}</span></li>`;
+      const pages = parts.map((part) => {
+        if (typeof part !== 'number') {
+          return '<span class="pagination__item">...</span>';
+        }
+
+        if (part === currentPage) {
+          return `<a role="link" aria-disabled="true" class="pagination__item pagination__item--current light" aria-current="page" aria-label="Page ${part}">${part}</a>`;
+        }
+
+        return `<a href="${getUrlForMobilePage(part)}" class="pagination__item link" aria-label="Page ${part}">${part}</a>`;
+      }).join('');
+      const pagesGroup = `<li class="pagination__pages-item"><div class="pagination__pages-group">${pages}</div></li>`;
+
+      mobilePaginationWrapper.hidden = false;
+      mobilePaginationWrapper.innerHTML = `
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul class="pagination__list list-unstyled" role="list">${previous}${pagesGroup}${next}</ul>
+        </nav>
+      `;
+    };
+
+    const applyMobilePageSize = () => {
+      if (!mediaQuery.matches) {
+        items.forEach((item) => {
+          item.hidden = false;
+          item.style.display = '';
+        });
+        if (mobilePaginationWrapper) {
+          mobilePaginationWrapper.hidden = true;
+          mobilePaginationWrapper.innerHTML = '';
+        }
+        return;
+      }
+
+      const mobilePage = getMobilePageFromUrl();
+      const expectedServerPage = getServerPageForMobilePage(mobilePage);
+      if (expectedServerPage !== currentServerPage) {
+        window.location.replace(getUrlForMobilePage(mobilePage));
+        return;
+      }
+
+      const startIndex = (mobilePage - 1) * mobilePageSize;
+      const endIndex = startIndex + mobilePageSize;
+
+      items.forEach((item) => {
+        const articleIndex = Number(item.dataset.blogArticleIndex);
+        const shouldShow = articleIndex >= startIndex && articleIndex < endIndex;
+        item.hidden = !shouldShow;
+        item.style.display = shouldShow ? '' : 'none';
+      });
+
+      renderMobilePagination(mobilePage);
+    };
+
+    applyMobilePageSize();
+    mediaQuery.addEventListener('change', applyMobilePageSize);
+  })();
+</script>
 
 {% schema %}
 {
@@ -76,7 +560,7 @@
           "label": "t:sections.main-blog.settings.layout.options__2.label"
         }
       ],
-      "default": "collage",
+      "default": "grid",
       "label": "t:sections.main-blog.settings.layout.label"
     },
     {
@@ -106,7 +590,7 @@
           "label": "t:sections.main-blog.settings.image_height.options__4.label"
         }
       ],
-      "default": "medium",
+      "default": "adapt",
       "label": "t:sections.main-blog.settings.image_height.label"
     },
     {
@@ -133,7 +617,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 40
     },
     {
       "type": "range",
@@ -143,13 +627,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    },
-    {
-      "type": "number",
-      "id": "page_size",
-      "label": "t:sections.main-blog.settings.page_size.label",
-      "default": 2
+      "default": 80
     },
     {
       "type": "checkbox",
@@ -160,13 +638,12 @@
     {
       "type": "range",
       "id": "column_num",
-      "min": 0,
+      "min": 1,
       "max": 10,
       "step": 1,
-      "unit": "px",
-      "label": "t:sections.main-blog.settings.column_num.label",
-      "default": 3
-    },
+      "label": "PC端每行展示数量",
+      "default": 4
+    }
   ]
 }
 {% endschema %}
