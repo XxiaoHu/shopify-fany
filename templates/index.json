@@ -154,6 +154,7 @@
         "slide_QGhKR4": {
           "type": "slide",
           "name": "World Cup Deals",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/World_Cup_Deals_3.webp",
             "mobile_image": "shopify://shop_images/World_Cup_Deals_4.webp",
@@ -182,7 +183,6 @@
         "slide_J7XcNx": {
           "type": "slide",
           "name": "01",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/banner-PC_a91bfcac-fe0d-4d9f-adf9-2cc6dfc5b91a.webp",
             "mobile_image": "shopify://shop_images/banner-M_a5f14f2e-75f3-4f63-aa0d-4907477c1240.webp",
