@@ -4,14 +4,13 @@
 
   @media screen and (min-width: 769px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: 40px;
+      padding-bottom: 80px;
     }
   }
   @media screen and (max-width: 768px) {
     .section-{{ section.id }}-padding {
       padding: 0;
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     }
   }
 {%- endstyle -%}
@@ -35,7 +34,7 @@
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="page-width section-{{ section.id }}-padding">
+  <div class="page-width blog-index-page section-{{ section.id }}-padding">
     <div class="blog-index-grid">
       <div class="big-blog-grid" id="dynamicBox" style="--ratio-percent: 50%;">
         <img
@@ -48,7 +47,7 @@
         >
         <div class="big-blog-text">
           <div class="caption-with-letter-spacing h5">
-            <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+            <span class="circle-divider">{{ big_article.published_at | date: '%B %-d, %Y' }}</span>
           </div>
           <h3 class="big-blog-title {{ section.settings.heading_size }}">
             <a href="{{ big_article.url }}" class="full-unstyled-link">
@@ -63,7 +62,7 @@
       </div>
       <div class="big-blog-text m-big-blo-tex">
         <div class="caption-with-letter-spacing h5">
-          <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+          <span class="circle-divider">{{ big_article.published_at | date: '%B %-d, %Y' }}</span>
         </div>
         <h3 class="big-blog-title {{ section.settings.heading_size }}">
           <a href="{{ big_article.url }}" class="full-unstyled-link">
@@ -83,44 +82,46 @@
               assign article = articles[handle]
             -%}
             <li>
-              <div class="small-image-box" style="--ratio-percent: {{ 1 | divided_by: small_ratio | times: 100 }}%; ">
-                <img
-                  srcset="
-                    {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
-                    {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
-                    {{ article.image.src | image_url }} {{ article.image.src.width }}w
-                  "
-                  src="{{ article.image.src | image_url: width: 533 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                  alt="{{ article.image.alt | escape }}"
-                  class="motion-reduce"
-                  loading="lazy"
-                  width="{{ article.image.width }}"
-                  height="{{ article.image.height }}"
-                >
-              </div>
-              <div class="small-text-box">
-                {% if section.settings.show_title %}
-                <div class="big-blog-title f-w-normal {{ section.settings.title_heading_size }}">
-                  <a href="{{ article.url }}" class="full-unstyled-link">
-                    {{ article.title | escape }}
-                  </a>
+              <div class="small-blog-item-content">
+                <div class="small-image-box" style="--ratio-percent: {{ 1 | divided_by: small_ratio | times: 100 }}%; ">
+                  <img
+                    srcset="
+                      {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                      {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                    "
+                    src="{{ article.image.src | image_url: width: 533 }}"
+                    sizes="(min-width: 769px) 140px, 100px"
+                    alt="{{ article.image.alt | escape }}"
+                    class="motion-reduce"
+                    loading="lazy"
+                    width="{{ article.image.width }}"
+                    height="{{ article.image.height }}"
+                  >
                 </div>
-                {% endif %}
-                {% if section.settings.show_date %}
-                <div class="caption-with-letter-spacing">
-                  <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
+                <div class="small-text-box">
+                  {% if section.settings.show_title %}
+                  <div class="big-blog-title f-w-normal {{ section.settings.title_heading_size }}">
+                    <a href="{{ article.url }}" class="full-unstyled-link">
+                      {{ article.title | escape }}
+                    </a>
+                  </div>
+                  {% endif %}
+                  {% if section.settings.show_date %}
+                  <div class="caption-with-letter-spacing">
+                    <span class="circle-divider">{{ article.published_at | date: '%B %-d, %Y' }}</span>
+                  </div>
+                  {% endif %}
+                  {% if section.settings.show_excerpt %}
+                  <p class="big-blog-excerpt">
+                    {{ article.excerpt | strip_html }}
+                  </p>
+                  {% endif %}
                 </div>
-                {% endif %}
-                {% if section.settings.show_excerpt %}
-                <p class="big-blog-excerpt">
-                  {{ article.excerpt | strip_html }}
-                </p>
-                {% endif %}
               </div>
             </li>
           {%- endfor -%}
