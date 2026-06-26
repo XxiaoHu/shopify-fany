@@ -193,7 +193,7 @@
             <div class="main-banner__content-inner">
               {%- if block.settings.title != blank -%}
                 <h2 class="main-banner__title inline-richtext">
-                  {{ block.settings.title }}
+                  {{ block.settings.title | newline_to_br }}
                 </h2>
               {%- endif -%}
 
@@ -500,7 +500,7 @@
           "content": "标题"
         },
         {
-          "type": "inline_richtext",
+          "type": "textarea",
           "id": "title",
           "default": "Elegance Forward Wellness Within",
           "label": "标题文本"
