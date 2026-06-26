@@ -330,6 +330,7 @@
       "blocks": {
         "slide_L63WgC": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PC_4ccb3414-95c6-4bed-9bd6-83a1118e3331.webp",
             "mobile_image": "shopify://shop_images/M_7877ef0f-7189-4481-b08c-b023d2073c28.webp",
@@ -389,7 +390,7 @@
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
-            "title": "Elegance Forward Wellness Within",
+            "title": "Elegance Forward \nWellness Within",
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
@@ -398,13 +399,13 @@
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
             "title_alignment": "left",
-            "description": "<p>Wear the intention you want</p><p> to step into and save up to 40% OFF SITEWIDE</p>",
+            "description": "<p>Wear the intention you want</p><p>to step into and save up to 40% OFF SITEWIDE</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
             "desc_color": "#686766",
             "mobile_desc_color": "#ffffff",
-            "desc_line_height": 1.1,
+            "desc_line_height": 0.8,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
             "title_desc_gap": 20,
