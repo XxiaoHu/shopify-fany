@@ -801,6 +801,21 @@
         "mobile_padding_y": 40
       }
     },
+    "1770782750dc605136": {
+      "type": "apps",
+      "blocks": {
+        "mp_instagram_feed_mp_instagram_block_Kcd8Yq": {
+          "type": "shopify://apps/mp-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "mp_instagram_feed_mp_instagram_block_Kcd8Yq"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "blog_cards_JQBAK9": {
       "type": "blog-cards",
       "blocks": {
@@ -1147,21 +1162,6 @@
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0,
         "accessibility_info": "A smartwatch that moves with your rhythm"
-      }
-    },
-    "1770782750dc605136": {
-      "type": "apps",
-      "blocks": {
-        "mp_instagram_feed_mp_instagram_block_Kcd8Yq": {
-          "type": "shopify://apps/mp-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "mp_instagram_feed_mp_instagram_block_Kcd8Yq"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "multicolumn_78jfqD": {
@@ -1669,12 +1669,12 @@
     "product_category_home_list_88gpqD",
     "gift_sets_qbx3NW",
     "customer_reviews_MwicHg",
+    "1770782750dc605136",
     "blog_cards_JQBAK9",
     "main_image_carousel_KA8Ddg",
     "slideshow_zBtPCU",
     "slideshow_8fTXfG",
     "slideshow_Mg4HdL",
-    "1770782750dc605136",
     "multicolumn_78jfqD",
     "one_image_word_Ug4yPw",
     "creators_reviews_YR3Dek",
