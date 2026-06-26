@@ -40,6 +40,7 @@
       line-height: {{ block.settings.title_line_height }};
       letter-spacing: {{ block.settings.title_letter_spacing }}px;
       text-align: {{ block.settings.title_alignment }};
+      white-space: pre-line;
       {% if block.settings.title_width != blank and block.settings.title_width > 0 %}
       width: {{ block.settings.title_width }}px;
       max-width: 100%;
@@ -52,6 +53,15 @@
       line-height: {{ block.settings.desc_line_height }};
       letter-spacing: {{ block.settings.desc_letter_spacing }}px;
       text-align: {{ block.settings.desc_alignment }};
+    }
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description p,
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description span,
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description strong,
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description em {
+      line-height: inherit;
+    }
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description p {
+      margin: 0;
     }
 
     /* Title–Description gap */
@@ -193,7 +203,7 @@
             <div class="main-banner__content-inner">
               {%- if block.settings.title != blank -%}
                 <h2 class="main-banner__title inline-richtext">
-                  {{ block.settings.title | newline_to_br }}
+                  {{ block.settings.title | escape }}
                 </h2>
               {%- endif -%}
 
