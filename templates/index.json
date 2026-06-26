@@ -330,7 +330,10 @@
       "blocks": {
         "slide_L63WgC": {
           "type": "slide",
+          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/PC_4ccb3414-95c6-4bed-9bd6-83a1118e3331.webp",
+            "mobile_image": "shopify://shop_images/M_7877ef0f-7189-4481-b08c-b023d2073c28.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
@@ -377,6 +380,8 @@
         "slide_QJ7WkG": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/banner-PC_a91bfcac-fe0d-4d9f-adf9-2cc6dfc5b91a.webp",
+            "mobile_image": "shopify://shop_images/banner-M_a5f14f2e-75f3-4f63-aa0d-4907477c1240.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
@@ -394,13 +399,13 @@
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
             "title_alignment": "left",
-            "description": "<p>Wear the intention you want to step into and save up to 40% OFF SITEWIDE</p>",
+            "description": "<p>Wear the intention you want</p><p> to step into and save up to 40% OFF SITEWIDE</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
             "desc_color": "#686766",
             "mobile_desc_color": "#ffffff",
-            "desc_line_height": 1.5,
+            "desc_line_height": 1.1,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
             "title_desc_gap": 20,
@@ -487,6 +492,7 @@
         "slide_HDCgP6",
         "slide_rci8dr"
       ],
+      "disabled": true,
       "name": "获奖栏目",
       "settings": {
         "padding_top": 0,
