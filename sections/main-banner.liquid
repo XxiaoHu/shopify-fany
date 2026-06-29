@@ -47,6 +47,25 @@
       {% endif %}
     }
 
+    /* ---- Subtitle ---- */
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle {
+      font-weight: {{ block.settings.subtitle_font_weight }};
+      line-height: {{ block.settings.subtitle_line_height }};
+      letter-spacing: {{ block.settings.subtitle_letter_spacing }}px;
+      text-align: {{ block.settings.subtitle_alignment }};
+      white-space: pre-line;
+      {% if block.settings.subtitle_width != blank and block.settings.subtitle_width > 0 %}
+      width: {{ block.settings.subtitle_width }}px;
+      max-width: 100%;
+      {% endif %}
+    }
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title + .main-banner__subtitle {
+      margin-top: calc({{ block.settings.title_subtitle_gap }}px - {{ block.settings.title_desc_gap }}px);
+    }
+    #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle + .main-banner__description {
+      margin-top: calc({{ block.settings.subtitle_desc_gap }}px - {{ block.settings.title_desc_gap }}px);
+    }
+
     /* ---- Description ---- */
     #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
       font-weight: {{ block.settings.desc_font_weight }};
@@ -91,6 +110,10 @@
         font-size: {{ block.settings.mobile_title_font_size }}px;
         color: {{ block.settings.mobile_title_color }};
       }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle {
+        font-size: {{ block.settings.mobile_subtitle_font_size }}px;
+        color: {{ block.settings.mobile_subtitle_color }};
+      }
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
         font-size: {{ block.settings.mobile_desc_font_size }}px;
         color: {{ block.settings.mobile_desc_color }};
@@ -98,12 +121,22 @@
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__content-inner {
         gap: {{ block.settings.mobile_title_desc_gap }}px;
       }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title + .main-banner__subtitle {
+        margin-top: calc({{ block.settings.mobile_title_subtitle_gap }}px - {{ block.settings.mobile_title_desc_gap }}px);
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle + .main-banner__description {
+        margin-top: calc({{ block.settings.mobile_subtitle_desc_gap }}px - {{ block.settings.mobile_title_desc_gap }}px);
+      }
     }
 
     @media screen and (min-width: 769px) {
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
         font-size: {{ block.settings.title_font_size }}px;
         color: {{ block.settings.title_color }};
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle {
+        font-size: {{ block.settings.subtitle_font_size }}px;
+        color: {{ block.settings.subtitle_color }};
       }
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
         font-size: {{ block.settings.desc_font_size }}px;
@@ -190,6 +223,7 @@
         {%- endif -%}
 
         {%- if block.settings.title != blank
+          or block.settings.subtitle != blank
           or block.settings.description != blank
           or block.settings.button_label != blank
         -%}
@@ -205,6 +239,10 @@
                 <h2 class="main-banner__title inline-richtext">
                   {{ block.settings.title | escape }}
                 </h2>
+              {%- endif -%}
+
+              {%- if block.settings.subtitle != blank -%}
+                <div class="main-banner__subtitle">{{- block.settings.subtitle | strip | escape -}}</div>
               {%- endif -%}
 
               {%- if block.settings.description != blank -%}
@@ -596,6 +634,136 @@
           "type": "number",
           "id": "title_width",
           "label": "标题最大宽度（px，为空则自适应）"
+        },
+        {
+          "type": "header",
+          "content": "副标题"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "副标题文本"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_font_size",
+          "min": 12,
+          "max": 64,
+          "step": 1,
+          "unit": "px",
+          "label": "桌面端字号",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "mobile_subtitle_font_size",
+          "min": 10,
+          "max": 42,
+          "step": 1,
+          "unit": "px",
+          "label": "移动端字号",
+          "default": 14
+        },
+        {
+          "type": "select",
+          "id": "subtitle_font_weight",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Regular (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi Bold (600)" },
+            { "value": "700", "label": "Bold (700)" },
+            { "value": "800", "label": "Extra Bold (800)" }
+          ],
+          "default": "400",
+          "label": "字重"
+        },
+        {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "文字颜色-桌面端",
+          "default": "#686766"
+        },
+        {
+          "type": "color",
+          "id": "mobile_subtitle_color",
+          "label": "文字颜色-移动端",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_line_height",
+          "min": 0.8,
+          "max": 2.5,
+          "step": 0.1,
+          "label": "行高",
+          "default": 1.3
+        },
+        {
+          "type": "range",
+          "id": "subtitle_letter_spacing",
+          "min": -5,
+          "max": 20,
+          "step": 0.5,
+          "unit": "px",
+          "label": "字距",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "subtitle_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式"
+        },
+        {
+          "type": "number",
+          "id": "subtitle_width",
+          "label": "副标题最大宽度（px，为空则自适应）"
+        },
+        {
+          "type": "range",
+          "id": "title_subtitle_gap",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "标题与副标题的间距",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "subtitle_desc_gap",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "副标题与描述文案的间距",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "mobile_title_subtitle_gap",
+          "min": 0,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "label": "移动端标题与副标题的间距",
+          "default": 6
+        },
+        {
+          "type": "range",
+          "id": "mobile_subtitle_desc_gap",
+          "min": 0,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "label": "移动端副标题与描述文案的间距",
+          "default": 10
         },
         {
           "type": "header",

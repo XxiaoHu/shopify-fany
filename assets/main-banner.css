@@ -142,6 +142,18 @@ main-banner-component {
   word-break: break-word;
 }
 
+/* ---------- Subtitle ---------- */
+.main-banner__subtitle {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  height: auto;
+  word-break: break-word;
+}
+
 /* ---------- Description ---------- */
 .main-banner__description {
   margin: 0;
@@ -335,6 +347,10 @@ main-banner-component:hover .main-banner__arrows {
   .main-banner__content-inner .main-banner__description {
     text-align: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .main-banner__content-inner .main-banner__subtitle {
     max-width: 100% !important;
   }
 
