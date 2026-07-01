@@ -1,6 +1,10 @@
 /* ========== Main Banner Section ========== */
 main-banner-component {
   position: relative;
+  z-index: 0;
+  isolation: isolate;
+  --main-banner-link-z-index: 1;
+  --main-banner-overlay-z-index: 2;
   display: block;
   overflow: hidden;
 }
@@ -34,7 +38,7 @@ main-banner-component {
 .main-banner__slide .main-banner__link {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: var(--main-banner-link-z-index);
   display: block;
   /* Sits below the text content layer so buttons remain clickable */
 }
@@ -89,7 +93,7 @@ main-banner-component {
   inset: 0;
   display: flex;
   align-items: center;
-  z-index: 3;
+  z-index: var(--main-banner-overlay-z-index);
   pointer-events: none;
 }
 
@@ -224,7 +228,7 @@ main-banner-component {
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: var(--main-banner-overlay-z-index);
   pointer-events: none;
   display: flex;
   justify-content: space-between;
@@ -284,7 +288,7 @@ main-banner-component:hover .main-banner__arrows {
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: var(--main-banner-overlay-z-index);
   display: flex;
   align-items: center;
   gap: 6px;
