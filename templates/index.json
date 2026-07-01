@@ -803,13 +803,37 @@
             "review_text": "It took more than a week to arrive, but that was not a problem for me.",
             "meta": "Dublin, IE, 12 hours ago"
           }
+        },
+        "review_rr9UJX": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        },
+        "review_j4U973": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
         }
       },
       "block_order": [
         "review_9e6BeA",
         "review_yLbPFY",
         "review_FL6UKK",
-        "review_Hzzt9a"
+        "review_Hzzt9a",
+        "review_rr9UJX",
+        "review_j4U973"
       ],
       "name": "用户评论",
       "settings": {
@@ -1071,6 +1095,7 @@
       "block_order": [
         "slide_x7Rn9P"
       ],
+      "disabled": true,
       "name": "临时促销类banner",
       "settings": {
         "layout": "full_bleed",
@@ -1123,6 +1148,7 @@
       "block_order": [
         "slide_w8LgTe"
       ],
+      "disabled": true,
       "name": "品牌简介",
       "settings": {
         "layout": "full_bleed",
@@ -1174,6 +1200,7 @@
       "block_order": [
         "slide_JjFRTD"
       ],
+      "disabled": true,
       "name": "社会责任banner",
       "settings": {
         "layout": "full_bleed",
