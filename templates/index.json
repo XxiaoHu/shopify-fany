@@ -893,6 +893,16 @@
     "blog_cards_JQBAK9": {
       "type": "blog-cards",
       "blocks": {
+        "card_gTe3ac": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/HOMEPAGE-banner-PC.webp",
+            "link": "https://fany.us/blogs/wellness-fitness/global-running-day-2026-with-fany-luna",
+            "card_title": "Build a Global Running Day 2026 Routine with FANY Luna",
+            "card_date": "05/28/2026",
+            "card_read_time": "541 min read"
+          }
+        },
         "card_h9Dz3g": {
           "type": "card",
           "settings": {
@@ -922,23 +932,13 @@
             "card_date": "04/30/2026",
             "card_read_time": "5 min read"
           }
-        },
-        "card_gTe3ac": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/HOMEPAGE-banner-PC.webp",
-            "link": "https://fany.us/blogs/wellness-fitness/global-running-day-2026-with-fany-luna",
-            "card_title": "Build a Global Running Day 2026 Routine with FANY Luna",
-            "card_date": "05/28/2026",
-            "card_read_time": "541 min read"
-          }
         }
       },
       "block_order": [
+        "card_gTe3ac",
         "card_h9Dz3g",
         "card_A6enbR",
-        "card_8FdGxD",
-        "card_gTe3ac"
+        "card_8FdGxD"
       ],
       "name": "博客卡片",
       "settings": {
