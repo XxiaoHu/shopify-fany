@@ -771,17 +771,6 @@
             "meta": "3 months ago"
           }
         },
-        "review_yLbPFY": {
-          "type": "review",
-          "settings": {
-            "author": "Christie Kulesza",
-            "rating": "4_half",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "I just love the watch",
-            "review_text": "I just love the watch. I’m having fun with keeping track of my workouts. Really I just now have kind of got a handle on it and so far it’s great.",
-            "meta": "18 days ago"
-          }
-        },
         "review_rr9UJX": {
           "type": "review",
           "settings": {
@@ -802,6 +791,17 @@
             "product_title": "It's a good watch",
             "review_text": "It's a good watch. I've enjoyed its so far. Works great for what I wanted it for.",
             "meta": "1 month ago"
+          }
+        },
+        "review_yLbPFY": {
+          "type": "review",
+          "settings": {
+            "author": "Christie Kulesza",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "I just love the watch",
+            "review_text": "I just love the watch. I’m having fun with keeping track of my workouts. Really I just now have kind of got a handle on it and so far it’s great.",
+            "meta": "18 days ago"
           }
         },
         "review_9e6BeA": {
@@ -851,9 +851,9 @@
       },
       "block_order": [
         "review_j4U973",
-        "review_yLbPFY",
         "review_rr9UJX",
         "review_9TQzcf",
+        "review_yLbPFY",
         "review_9e6BeA",
         "review_Hzzt9a",
         "review_FL6UKK",
