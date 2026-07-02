@@ -825,6 +825,28 @@
             "review_text": "I love this smart watch because it keeps track of my day especially my sleep pretty accurately",
             "meta": "Dublin, IE, 12 hours ago"
           }
+        },
+        "review_9TQzcf": {
+          "type": "review",
+          "settings": {
+            "author": "Chentel Baker",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "It's a good watch",
+            "review_text": "It's a good watch. I've enjoyed its so far. Works great for what I wanted it for.",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
+        },
+        "review_fj8Lff": {
+          "type": "review",
+          "settings": {
+            "author": "Burge",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Classic Tennis Necklace Silver",
+            "review_text": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend",
+            "meta": "Dublin, IE, 12 hours ago"
+          }
         }
       },
       "block_order": [
@@ -833,7 +855,9 @@
         "review_9e6BeA",
         "review_Hzzt9a",
         "review_rr9UJX",
-        "review_j4U973"
+        "review_j4U973",
+        "review_9TQzcf",
+        "review_fj8Lff"
       ],
       "name": "用户评论",
       "settings": {
