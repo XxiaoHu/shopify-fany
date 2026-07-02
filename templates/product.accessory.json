@@ -31,10 +31,14 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "heading_tag": "h1",
+            "title_font_size": 40
+          }
         },
         "text_VCBdi6": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "🔥<strong>Buy Any 2 Get $15 OFF, Buy Any 3 Get $25 OFF</strong>",
             "text_style": "body"
