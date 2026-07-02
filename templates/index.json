@@ -760,15 +760,15 @@
     "customer_reviews_MwicHg": {
       "type": "customer-reviews",
       "blocks": {
-        "review_FL6UKK": {
+        "review_j4U973": {
           "type": "review",
           "settings": {
-            "author": "Tanya Colligan",
-            "rating": "5",
+            "author": "Janice Daugherty",
+            "rating": "4_half",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "This watch is as good as a Garmin basic watch",
-            "review_text": "This watch is as good as a Garmin basic watch. I do like that it can detect when you\\re watching for activity. The timed Always on Display if used 7 hours a day, still has good battery life. It's heart rate is pretty accurate during activity like cycling. The HR is the same as the YMCA equipment. I very satisficed bought this watch. It one of a kind in size.",
-            "meta": "24 days ago"
+            "product_title": "I love this smart watch because it keeps track of my day especially my sleep pretty accurately",
+            "review_text": "I love this smart watch because it keeps track of my day especially my sleep pretty accurately",
+            "meta": "3 months ago"
           }
         },
         "review_yLbPFY": {
@@ -780,6 +780,28 @@
             "product_title": "I just love the watch",
             "review_text": "I just love the watch. I’m having fun with keeping track of my workouts. Really I just now have kind of got a handle on it and so far it’s great.",
             "meta": "18 days ago"
+          }
+        },
+        "review_rr9UJX": {
+          "type": "review",
+          "settings": {
+            "author": "Teresa Kowal",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "I love this new smart watch",
+            "review_text": "I love this new smart watch. All the same options of an apple watch but looks like a garmin. Super happy with it",
+            "meta": "1 month ago"
+          }
+        },
+        "review_9TQzcf": {
+          "type": "review",
+          "settings": {
+            "author": "Chentel Baker",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "It's a good watch",
+            "review_text": "It's a good watch. I've enjoyed its so far. Works great for what I wanted it for.",
+            "meta": "1 month ago"
           }
         },
         "review_9e6BeA": {
@@ -804,37 +826,15 @@
             "meta": "1 month ago"
           }
         },
-        "review_rr9UJX": {
+        "review_FL6UKK": {
           "type": "review",
           "settings": {
-            "author": "Teresa Kowal",
-            "rating": "4_half",
+            "author": "Tanya Colligan",
+            "rating": "5",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "I love this new smart watch",
-            "review_text": "I love this new smart watch. All the same options of an apple watch but looks like a garmin. Super happy with it",
-            "meta": "1 month ago"
-          }
-        },
-        "review_j4U973": {
-          "type": "review",
-          "settings": {
-            "author": "Janice Daugherty",
-            "rating": "4_half",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "I love this smart watch because it keeps track of my day especially my sleep pretty accurately",
-            "review_text": "I love this smart watch because it keeps track of my day especially my sleep pretty accurately",
-            "meta": "3 months ago"
-          }
-        },
-        "review_9TQzcf": {
-          "type": "review",
-          "settings": {
-            "author": "Chentel Baker",
-            "rating": "4_half",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "It's a good watch",
-            "review_text": "It's a good watch. I've enjoyed its so far. Works great for what I wanted it for.",
-            "meta": "1 month ago"
+            "product_title": "This watch is as good as a Garmin basic watch",
+            "review_text": "This watch is as good as a Garmin basic watch. I do like that it can detect when you\\re watching for activity. The timed Always on Display if used 7 hours a day, still has good battery life. It's heart rate is pretty accurate during activity like cycling. The HR is the same as the YMCA equipment. I very satisficed bought this watch. It one of a kind in size.",
+            "meta": "24 days ago"
           }
         },
         "review_fj8Lff": {
@@ -850,13 +850,13 @@
         }
       },
       "block_order": [
-        "review_FL6UKK",
+        "review_j4U973",
         "review_yLbPFY",
+        "review_rr9UJX",
+        "review_9TQzcf",
         "review_9e6BeA",
         "review_Hzzt9a",
-        "review_rr9UJX",
-        "review_j4U973",
-        "review_9TQzcf",
+        "review_FL6UKK",
         "review_fj8Lff"
       ],
       "name": "用户评论",
