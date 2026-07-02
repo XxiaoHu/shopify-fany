@@ -1,0 +1,694 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    {% if section.settings.background != blank %}
+      background-color: {{ section.settings.background }};
+    {% endif %}
+  }
+
+  .image-content-split-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__media {
+    border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__media img,
+  .image-content-split-{{ section.id }} .image-content-split__placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 361 / 229;
+    object-fit: cover;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__placeholder {
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__content {
+    color: {{ section.settings.text_color }};
+    text-align: left;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__eyebrow {
+    margin: 0 0 10px;
+    color: {{ section.settings.eyebrow_color }};
+    font-size: 16px;
+    font-weight: {{ section.settings.eyebrow_font_weight }};
+    line-height: 24px;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__heading {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    color: {{ section.settings.heading_color }};
+    font-size: 34px;
+    font-weight: {{ section.settings.heading_font_weight }};
+    line-height: 34px;
+    letter-spacing: 0;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__heading-text {
+    display: inline;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__heading p,
+  .image-content-split-{{ section.id }} .image-content-split__text p {
+    margin-top: 0;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__heading p:last-child,
+  .image-content-split-{{ section.id }} .image-content-split__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__underline {
+    display: {% if section.settings.show_underline %}block{% else %}none{% endif %};
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 11px;
+    color: #F1EAE8;
+    pointer-events: none;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__underline svg {
+    display: block;
+    width: 100%;
+    height: 11px;
+    overflow: visible;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__text {
+    color: {{ section.settings.mobile_content_color | default: section.settings.content_color }};
+    font-size: {{ section.settings.mobile_content_font_size | default: 16 }}px;
+    font-weight: {{ section.settings.mobile_content_font_weight | default: section.settings.content_font_weight }};
+    line-height: {{ section.settings.mobile_content_line_height | default: 24 }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      {% if section.settings.background != blank %}
+        background-color: {{ section.settings.background }};
+      {% endif %}
+    }
+
+    .image-content-split-{{ section.id }} {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: {{ section.settings.desktop_gap }}px;
+      align-items: center;
+      width: calc(100% - 400px);
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .image-content-split-{{ section.id }}.image-content-split--text-first .image-content-split__media {
+      order: 2;
+    }
+
+    .image-content-split-{{ section.id }}.image-content-split--text-first .image-content-split__content {
+      order: 1;
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__media {
+      border-radius: {{ section.settings.image_radius }}px;
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__media img,
+    .image-content-split-{{ section.id }} .image-content-split__placeholder {
+      aspect-ratio: 720 / 457;
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__content {
+      color: {{ section.settings.text_color }};
+      text-align: {{ section.settings.text_alignment }};
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__eyebrow {
+      margin-bottom: {{ section.settings.eyebrow_margin_bottom }}px;
+      color: {{ section.settings.eyebrow_color }};
+      font-size: {{ section.settings.eyebrow_font_size }}px;
+      font-weight: {{ section.settings.eyebrow_font_weight }};
+      line-height: {{ section.settings.eyebrow_line_height }}px;
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__heading {
+      margin-bottom: {{ section.settings.heading_margin_bottom }}px;
+      padding-bottom: 8px;
+      color: {{ section.settings.heading_color }};
+      font-size: {{ section.settings.heading_font_size }}px;
+      font-weight: {{ section.settings.heading_font_weight }};
+      line-height: {{ section.settings.heading_line_height }}px;
+    }
+
+    {% if section.settings.text_alignment == 'center' %}
+      .image-content-split-{{ section.id }} .image-content-split__heading {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    {% elsif section.settings.text_alignment == 'right' %}
+      .image-content-split-{{ section.id }} .image-content-split__heading {
+        left: 100%;
+        transform: translateX(-100%);
+      }
+    {% endif %}
+
+    .image-content-split-{{ section.id }} .image-content-split__underline {
+      width: 100%;
+    }
+
+    .image-content-split-{{ section.id }} .image-content-split__text {
+      color: {{ section.settings.content_color }};
+      font-size: {{ section.settings.content_font_size }}px;
+      font-weight: {{ section.settings.content_font_weight }};
+      line-height: {{ section.settings.content_line_height }}px;
+    }
+
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1199px) {
+    .image-content-split-{{ section.id }} {
+      width: calc(100% - 80px);
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="image-content-split-{{ section.id }} image-content-split{% if section.settings.desktop_layout == 'text_first' %} image-content-split--text-first{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="image-content-split__media">
+      {%- liquid
+        assign desktop_image = section.settings.image
+        assign mobile_image = section.settings.mobile_image | default: desktop_image
+      -%}
+      {%- if desktop_image != blank -%}
+        <picture>
+          {%- if mobile_image != blank -%}
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ mobile_image | image_url: width: 750 }}"
+            >
+          {%- endif -%}
+          {{
+            desktop_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '360, 533, 720, 900, 1080, 1440, 1600',
+              sizes: '(min-width: 1530px) 720px, (min-width: 769px) calc((100vw - 80px) / 2), calc(100vw - 32px)'
+          }}
+        </picture>
+      {%- else -%}
+        <div class="image-content-split__placeholder">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="image-content-split__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="image-content-split__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="image-content-split__heading">
+          <span class="image-content-split__heading-text">{{ section.settings.heading | escape | newline_to_br }}</span>
+          <span class="image-content-split__underline" aria-hidden="true">
+            <svg viewBox="0 0 260 15" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <path d="M2 6.42829C75.151 4.82114 229.218 -0.116644 255.958 2.67829C275.281 4.69798 113.107 8.03538 75.151 13.3927" stroke="#F1EAE8" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+          </span>
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.content != blank -%}
+        <div class="image-content-split__text">{{ section.settings.content | escape | newline_to_br }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const section = document.querySelector('.image-content-split-{{ section.id }}');
+    if (!section) return;
+
+    const updateUnderline = () => {
+      section.querySelectorAll('.image-content-split__heading').forEach((heading) => {
+        const text = heading.querySelector('.image-content-split__heading-text');
+        const underline = heading.querySelector('.image-content-split__underline');
+        if (!text || !underline) return;
+
+        const rects = Array.from(text.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
+        const lastLine = rects[rects.length - 1];
+        if (!lastLine) return;
+
+        const headingRect = heading.getBoundingClientRect();
+        underline.style.left = `${lastLine.left - headingRect.left}px`;
+        underline.style.width = `${lastLine.width}px`;
+      });
+    };
+
+    let frameId = null;
+    const requestUpdate = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateUnderline);
+    };
+
+    requestUpdate();
+    window.addEventListener('resize', requestUpdate);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(requestUpdate);
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.target.contains(section)) requestUpdate();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "左右图文介绍",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "PC端图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "移动端图片"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "eyebrow",
+      "label": "小标题",
+      "default": "Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "标题",
+      "default": "Nikki Gewirtz, MBE"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "内容",
+      "default": "Since its inception in London in 2000, Lola Rose has been rooted in thoughtful design, expressive color, and everyday wearability.\n\nFast-forward to today, we continue this legacy as a modern accessories brand built around self-expression and considered details."
+    },
+    {
+      "type": "header",
+      "content": "PC端布局"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "PC端排列",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "图片左，内容右"
+        },
+        {
+          "value": "text_first",
+          "label": "内容左，图片右"
+        }
+      ],
+      "default": "image_first"
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "图文间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "图片圆角",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "文字对齐",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "背景色"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文字整体颜色",
+      "default": "#231815"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "PC端小标题"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "小标题颜色",
+      "default": "#231815"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "小标题字号",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_font_weight",
+      "label": "小标题字重",
+      "options": [
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_line_height",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "小标题行高",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "小标题下间距",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "PC端标题"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#231815"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 16,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "标题字重",
+      "options": [
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "min": 18,
+      "max": 110,
+      "step": 1,
+      "unit": "px",
+      "label": "标题行高",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "show_underline",
+      "label": "显示标题下划线",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "PC端内容"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "内容颜色",
+      "default": "#231815"
+    },
+    {
+      "type": "range",
+      "id": "content_font_size",
+      "min": 10,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "内容字号",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "content_font_weight",
+      "label": "内容字重",
+      "options": [
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "content_line_height",
+      "min": 12,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "内容行高",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "移动端固定样式"
+    },
+    {
+      "type": "paragraph",
+      "content": "移动端固定为图片在上、内容在下，左右留白 16px，并按 Figma 使用 34px 标题、16px 内容和 20px 图文间距。"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "移动端内容"
+    },
+    {
+      "type": "color",
+      "id": "mobile_content_color",
+      "label": "内容颜色",
+      "default": "#231815"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_font_size",
+      "min": 10,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "内容字号",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_font_weight",
+      "label": "内容字重",
+      "options": [
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_line_height",
+      "min": 12,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "内容行高",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "左右图文介绍"
+    }
+  ]
+}
+{% endschema %}

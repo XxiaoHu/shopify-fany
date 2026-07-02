@@ -1,0 +1,428 @@
+{{ 'topic-faq.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign initial_limit = section.settings.initial_limit
+  assign categories = ''
+  for block in section.blocks
+    assign block_category = block.settings.category | strip
+    if block_category != blank
+      assign category_token = block_category | append: '||'
+      unless categories contains category_token
+        assign categories = categories | append: category_token
+      endunless
+    endif
+  endfor
+  assign category_options = categories | split: '||'
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .topic-faq__inner {
+    --topic-faq-page-width: {{ section.settings.page_width }}px;
+    --topic-faq-padding-top: {{ section.settings.padding_top }}px;
+    --topic-faq-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<div class="topic-faq" data-topic-faq data-section-id="{{ section.id }}" data-initial-limit="{{ initial_limit }}">
+  <div class="topic-faq__inner">
+    <div class="topic-faq__panel">
+      {%- if section.settings.show_topic_selector and category_options.size > 0 -%}
+        <div class="topic-faq__selector">
+          <label class="topic-faq__label" for="TopicFaqSelect-{{ section.id }}">
+            {{ section.settings.selector_label | escape }}
+          </label>
+          <div class="topic-faq__select-wrap">
+            <select id="TopicFaqSelect-{{ section.id }}" class="topic-faq__native-select" data-topic-faq-select tabindex="-1" aria-hidden="true">
+              <option value="">{{ section.settings.selector_placeholder | escape }}</option>
+              {%- for category in category_options -%}
+                {%- assign category_name = category | strip -%}
+                {%- if category_name != blank -%}
+                  <option value="{{ category_name | escape }}">{{ category_name }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+            <button
+              type="button"
+              class="topic-faq__select"
+              id="TopicFaqSelectButton-{{ section.id }}"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="TopicFaqOptions-{{ section.id }}"
+              data-topic-faq-select-button
+            >
+              <span class="topic-faq__select-text" data-topic-faq-select-text>{{ section.settings.selector_placeholder | escape }}</span>
+              <span class="topic-faq__select-icon" aria-hidden="true"></span>
+            </button>
+            <div
+              class="topic-faq__options"
+              id="TopicFaqOptions-{{ section.id }}"
+              role="listbox"
+              aria-labelledby="TopicFaqSelectButton-{{ section.id }}"
+              data-topic-faq-options
+              hidden
+            >
+              {%- for category in category_options -%}
+                {%- assign category_name = category | strip -%}
+                {%- if category_name != blank -%}
+                  <button
+                    type="button"
+                    class="topic-faq__option"
+                    role="option"
+                    aria-selected="false"
+                    data-topic-faq-option
+                    data-value="{{ category_name | escape }}"
+                  >
+                    {{ category_name }}
+                  </button>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      <div class="topic-faq__list" data-topic-faq-list>
+        {%- for block in section.blocks -%}
+          {%- assign answer_id = 'TopicFaqAnswer-' | append: block.id | append: '-' | append: section.id -%}
+          {%- assign question = block.settings.heading | default: block.settings.page.title -%}
+          <div
+            class="topic-faq__item"
+            data-topic-faq-item
+            data-category="{{ block.settings.category | strip | escape }}"
+            data-index="{{ forloop.index0 }}"
+            {% if forloop.index > initial_limit %}hidden{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <button
+              type="button"
+              class="topic-faq__summary"
+              aria-expanded="{% if section.settings.open_first_item and forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="{{ answer_id }}"
+              data-topic-faq-toggle
+            >
+              <span class="topic-faq__question">{{ question | escape }}</span>
+              <span class="topic-faq__toggle" aria-hidden="true"></span>
+            </button>
+            <div
+              id="{{ answer_id }}"
+              class="topic-faq__answer rte"
+              data-topic-faq-answer
+              {% unless section.settings.open_first_item and forloop.first %}hidden{% endunless %}
+            >
+              {{ block.settings.row_content }}
+              {{ block.settings.page.content }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <p class="topic-faq__empty" data-topic-faq-empty hidden>{{ section.settings.empty_text | escape }}</p>
+
+      {%- if section.blocks.size > initial_limit -%}
+        <div class="topic-faq__more-wrap" data-topic-faq-more-wrap>
+          <button type="button" class="topic-faq__more" data-topic-faq-more>
+            {{ section.settings.view_more_label | escape }}
+          </button>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const initTopicFaq = (root) => {
+      if (!root || root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+
+      const initialLimit = parseInt(root.dataset.initialLimit, 10) || 10;
+      const select = root.querySelector('[data-topic-faq-select]');
+      const selectButton = root.querySelector('[data-topic-faq-select-button]');
+      const selectText = root.querySelector('[data-topic-faq-select-text]');
+      const optionsPanel = root.querySelector('[data-topic-faq-options]');
+      const options = Array.from(root.querySelectorAll('[data-topic-faq-option]'));
+      const items = Array.from(root.querySelectorAll('[data-topic-faq-item]'));
+      const moreWrap = root.querySelector('[data-topic-faq-more-wrap]');
+      const moreButton = root.querySelector('[data-topic-faq-more]');
+      const empty = root.querySelector('[data-topic-faq-empty]');
+      let expandedList = false;
+
+      const setAnswer = (button, expanded) => {
+        const answer = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        if (answer) answer.hidden = !expanded;
+      };
+
+      const closeHiddenAnswers = () => {
+        items.forEach((item) => {
+          if (!item.hidden) return;
+          const button = item.querySelector('[data-topic-faq-toggle]');
+          if (button) setAnswer(button, false);
+        });
+      };
+
+      const applyFilter = () => {
+        const selectedCategory = select ? select.value : '';
+        const hasCategory = selectedCategory !== '';
+        let visibleCount = 0;
+        let matchedCount = 0;
+
+        items.forEach((item) => {
+          const matches = !hasCategory || item.dataset.category === selectedCategory;
+          matchedCount += matches ? 1 : 0;
+
+          const showItem = matches && (hasCategory || expandedList || visibleCount < initialLimit);
+          item.hidden = !showItem;
+          if (showItem) visibleCount += 1;
+        });
+
+        if (moreWrap) {
+          moreWrap.hidden = hasCategory || expandedList || matchedCount <= initialLimit;
+        }
+
+        if (empty) {
+          empty.hidden = matchedCount > 0;
+        }
+
+        closeHiddenAnswers();
+      };
+
+      const closeOptions = () => {
+        if (!selectButton || !optionsPanel) return;
+        selectButton.setAttribute('aria-expanded', 'false');
+        optionsPanel.hidden = true;
+      };
+
+      const openOptions = () => {
+        if (!selectButton || !optionsPanel) return;
+        selectButton.setAttribute('aria-expanded', 'true');
+        optionsPanel.hidden = false;
+      };
+
+      const chooseOption = (option) => {
+        if (!select || !option) return;
+        select.value = option.dataset.value || '';
+        if (selectText) selectText.textContent = option.textContent.trim();
+        if (selectButton) selectButton.dataset.hasValue = 'true';
+        options.forEach((item) => item.setAttribute('aria-selected', item === option ? 'true' : 'false'));
+        expandedList = false;
+        applyFilter();
+        closeOptions();
+      };
+
+      root.querySelectorAll('[data-topic-faq-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+          setAnswer(button, button.getAttribute('aria-expanded') !== 'true');
+        });
+      });
+
+      if (selectButton && optionsPanel) {
+        selectButton.addEventListener('click', () => {
+          if (optionsPanel.hidden) {
+            openOptions();
+          } else {
+            closeOptions();
+          }
+        });
+
+        selectButton.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openOptions();
+            options[0]?.focus();
+          }
+        });
+      }
+
+      options.forEach((option, index) => {
+        option.addEventListener('click', () => chooseOption(option));
+        option.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            options[index + 1]?.focus();
+          }
+          if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            (options[index - 1] || selectButton)?.focus();
+          }
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            chooseOption(option);
+          }
+          if (event.key === 'Escape') {
+            closeOptions();
+            selectButton?.focus();
+          }
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!root.contains(event.target)) closeOptions();
+      });
+
+      if (select && !selectButton) {
+        select.addEventListener('change', () => {
+          expandedList = false;
+          applyFilter();
+        });
+      }
+
+      if (moreButton) {
+        moreButton.addEventListener('click', () => {
+          expandedList = true;
+          applyFilter();
+        });
+      }
+
+      applyFilter();
+    };
+
+    const initAllTopicFaqs = () => {
+      document.querySelectorAll('[data-topic-faq]').forEach(initTopicFaq);
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAllTopicFaqs);
+    } else {
+      initAllTopicFaqs();
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      initTopicFaq(event.target.querySelector('[data-topic-faq]'));
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "主题 FAQ",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_topic_selector",
+      "label": "显示主题选择器",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "selector_label",
+      "label": "选择器标签",
+      "default": "选择主题"
+    },
+    {
+      "type": "text",
+      "id": "selector_placeholder",
+      "label": "选择器占位文案",
+      "default": "请选择主题"
+    },
+    {
+      "type": "text",
+      "id": "view_more_label",
+      "label": "查看更多按钮文案",
+      "default": "查看更多"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "空状态文案",
+      "default": "该主题暂无 FAQ。"
+    },
+    {
+      "type": "range",
+      "id": "initial_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "默认显示问题数量",
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_item",
+      "label": "默认展开第一个问题",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "page_width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "页面宽度",
+      "default": 1500
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "顶部间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "底部间距",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible_row",
+      "name": "FAQ 条目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category",
+          "label": "分类",
+          "default": "产品"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "问题",
+          "default": "问题"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "label": "答案"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "页面"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "主题 FAQ",
+      "blocks": [
+        {
+          "type": "collapsible_row"
+        },
+        {
+          "type": "collapsible_row"
+        },
+        {
+          "type": "collapsible_row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

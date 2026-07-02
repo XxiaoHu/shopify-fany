@@ -1,0 +1,452 @@
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .fany-action-{{ section.id }} {
+    position: relative;
+    min-height: 518px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #6b5c49;
+  }
+
+  .fany-action-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(86, 78, 63, 0.28), rgba(61, 43, 31, 0.58)),
+      radial-gradient(circle at 72% 10%, rgba(255, 255, 255, 0.28), transparent 34%),
+      linear-gradient(110deg, #8d806d 0%, #5f6a54 44%, #8a735e 100%);
+    z-index: 0;
+  }
+
+  {% if section.settings.background_image != blank %}
+    .fany-action-{{ section.id }}::before {
+      background:
+        linear-gradient(rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }}), rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }})),
+        url('{{ section.settings.background_image | image_url: width: 2400 }}') center / cover no-repeat;
+    }
+  {% endif %}
+
+  .fany-action-{{ section.id }} .fany-action__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 70px 0;
+    color: {{ section.settings.text_color }};
+    text-align: center;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__heading {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: inherit;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 60px;
+    align-items: start;
+    margin-top: 60px;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__icon {
+    width: 190px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__icon img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__fallback-icon {
+    width: 70px;
+    height: 70px;
+    color: currentColor;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__item-title {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: {{ section.settings.item_title_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    color: inherit;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__item-text {
+    width: 100%;
+    max-width: 438px;
+    margin: -4px auto 0;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.text_size }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: inherit;
+  }
+
+  .fany-action-{{ section.id }} .fany-action__item-text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .fany-action-{{ section.id }} .fany-action__inner {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__items {
+      gap: 36px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    .fany-action-{{ section.id }} {
+      min-height: auto;
+    }
+
+    {% if section.settings.mobile_background_image != blank %}
+      .fany-action-{{ section.id }}::before {
+        background:
+          linear-gradient(rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }}), rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }})),
+          url('{{ section.settings.mobile_background_image | image_url: width: 1000 }}') center / cover no-repeat;
+      }
+    {% endif %}
+
+    .fany-action-{{ section.id }} .fany-action__inner {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__items {
+      grid-template-columns: 1fr;
+      gap: 34px;
+      margin-top: 42px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__icon {
+      height: 60px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__icon img {
+      max-height: 60px;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__item-title {
+      font-size: {{ section.settings.mobile_item_title_size }}px;
+      line-height: 1.15;
+    }
+
+    .fany-action-{{ section.id }} .fany-action__item-text {
+      font-size: {{ section.settings.mobile_text_size }}px;
+      max-width: 460px;
+    }
+  }
+{% endstyle %}
+
+<section class="section-{{ section.id }}-padding">
+  <div class="fany-action-{{ section.id }}">
+    <div class="fany-action__inner">
+      {% if section.settings.heading != blank %}
+        <h2 class="fany-action__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      <div class="fany-action__items">
+        {% for index in (1..3) %}
+          {% liquid
+            assign icon_key = 'item_' | append: index | append: '_image'
+            assign title_key = 'item_' | append: index | append: '_title'
+            assign text_key = 'item_' | append: index | append: '_text'
+            assign icon = section.settings[icon_key]
+            assign title = section.settings[title_key]
+            assign text = section.settings[text_key]
+          %}
+
+          <div class="fany-action__item">
+            <div class="fany-action__icon">
+              {% if icon != blank %}
+                {{
+                  icon
+                  | image_url: width: 380
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '120, 190, 260, 380',
+                    alt: title
+                }}
+              {% else %}
+                <svg class="fany-action__fallback-icon" viewBox="0 0 70 70" aria-hidden="true" focusable="false">
+                  <circle cx="35" cy="35" r="31" fill="none" stroke="currentColor" stroke-width="3"/>
+                  <path d="M35 18v34M18 35h34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              {% endif %}
+            </div>
+
+            {% if title != blank %}
+              <h3 class="fany-action__item-title">{{ title }}</h3>
+            {% endif %}
+
+            {% if text != blank %}
+              <div class="fany-action__item-text">
+                {{ text | escape | newline_to_br }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "社会责任",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "FANY in Action"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "背景图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "移动端背景图片"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "背景遮罩透明度",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文字颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "标题大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题大小",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "模块标题大小",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_title_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端模块标题大小",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "描述大小",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端描述大小",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "模块 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_1_image",
+      "label": "图片"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "标题",
+      "default": "Sustainability Features"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_text",
+      "label": "描述",
+      "default": "From product to packaging, we hold trusted certifications for sustainable practices, contributing to a healthier planet."
+    },
+    {
+      "type": "header",
+      "content": "模块 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_2_image",
+      "label": "图片"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "标题",
+      "default": "Women Empowerment"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_text",
+      "label": "描述",
+      "default": "With over 65% women in our company, we support fair career opportunities and women's professional growth. Behind every FANY watch is the power of women."
+    },
+    {
+      "type": "header",
+      "content": "模块 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_3_image",
+      "label": "图片"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "标题",
+      "default": "Yoga & Wellness Support"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_text",
+      "label": "描述",
+      "default": "We consistently sponsor yoga events to nurture women's physical and mental health, and build a kind, supportive women's community."
+    },
+    {
+      "type": "header",
+      "content": "间距"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "上边距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "下边距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端上边距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端下边距",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "社会责任"
+    }
+  ]
+}
+{% endschema %}
