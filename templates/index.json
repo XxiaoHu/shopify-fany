@@ -933,6 +933,16 @@
             "card_read_time": "645 min read"
           }
         },
+        "card_8FdGxD": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/HOMEPAGE-banner-PC.webp",
+            "link": "https://fany.us/blogs/wellness-fitness/how-to-track-menstrual-cycle-with-a-smartwatch",
+            "card_title": "How to Track Menstrual Cycle with a Smartwatch: A Complete Women's Health Guide",
+            "card_date": "05/09/2026",
+            "card_read_time": "735 min read"
+          }
+        },
         "card_A6enbR": {
           "type": "card",
           "settings": {
@@ -942,23 +952,13 @@
             "card_date": "05/19/2026",
             "card_read_time": "339 min read"
           }
-        },
-        "card_8FdGxD": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/HOMEPAGE-banner-PC.webp",
-            "link": "",
-            "card_title": "How to Build a Running Routine on Global Running Day 2026 with FANY Luna",
-            "card_date": "04/30/2026",
-            "card_read_time": "5 min read"
-          }
         }
       },
       "block_order": [
         "card_gTe3ac",
         "card_h9Dz3g",
-        "card_A6enbR",
-        "card_8FdGxD"
+        "card_8FdGxD",
+        "card_A6enbR"
       ],
       "name": "博客卡片",
       "settings": {
