@@ -700,18 +700,21 @@
         "card_Y3Wc3b": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-Morning_Pink-women-smart-watch_12.webp",
             "link": ""
           }
         },
         "card_3Hggcf": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-Mocha_Brown-women-smart-watch_21.webp",
             "link": ""
           }
         },
         "card_4QkUwr": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-Morning_Pink-women-smart-watch_12.webp",
             "link": ""
           }
         }
