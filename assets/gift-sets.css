@@ -22,6 +22,12 @@
   word-break: break-word;
 }
 
+.gift-sets__subtitle {
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+}
+
 .gift-sets__description {
   margin: 0;
   padding: 0;

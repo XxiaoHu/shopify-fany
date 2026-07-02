@@ -28,6 +28,18 @@
     {% endif %}
   }
 
+  /* ---- Subtitle ---- */
+  .section-{{ section.id }}-padding .gift-sets__subtitle {
+    font-weight: {{ section.settings.subtitle_font_weight }};
+    line-height: {{ section.settings.subtitle_line_height }};
+    letter-spacing: {{ section.settings.subtitle_letter_spacing }}px;
+    text-align: {{ section.settings.subtitle_alignment }};
+    color: {{ section.settings.subtitle_color }};
+    {% if section.settings.subtitle_width != blank and section.settings.subtitle_width > 0 %}
+    max-width: {{ section.settings.subtitle_width }}px;
+    {% endif %}
+  }
+
   /* ---- Description ---- */
   .section-{{ section.id }}-padding .gift-sets__description {
     font-weight: {{ section.settings.desc_font_weight }};
@@ -44,6 +56,9 @@
     .section-{{ section.id }}-padding .gift-sets__title {
       font-size: {{ section.settings.title_font_size }}px;
     }
+    .section-{{ section.id }}-padding .gift-sets__subtitle {
+      font-size: {{ section.settings.subtitle_font_size }}px;
+    }
     .section-{{ section.id }}-padding .gift-sets__description {
       font-size: {{ section.settings.desc_font_size }}px;
     }
@@ -59,6 +74,14 @@
       letter-spacing: 0;
       text-align: center;
       color: #1e0e06;
+    }
+    .section-{{ section.id }}-padding .gift-sets__subtitle {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0;
+      text-align: center;
+      color: #3d3d3d;
     }
     .section-{{ section.id }}-padding .gift-sets__description {
       width: 100%;
@@ -77,13 +100,16 @@
 {% endstyle %}
 
 <div class="gift-sets section-{{ section.id }}-padding">
-  {%- if section.settings.title != blank or section.settings.description != blank -%}
+  {%- if section.settings.title != blank or section.settings.subtitle != blank or section.settings.description != blank -%}
     <div class="gift-sets__header">
       {%- if section.settings.title != blank -%}
-        <h2 class="gift-sets__title inline-richtext">{{ section.settings.title }}</h2>
+        <h2 class="gift-sets__title">{{ section.settings.title | escape | newline_to_br }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="gift-sets__subtitle">{{ section.settings.subtitle | escape | newline_to_br }}</p>
       {%- endif -%}
       {%- if section.settings.description != blank -%}
-        <p class="gift-sets__description">{{ section.settings.description }}</p>
+        <p class="gift-sets__description">{{ section.settings.description | escape | newline_to_br }}</p>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -201,9 +227,9 @@
       "content": "标题"
     },
     {
-      "type": "inline_richtext",
+      "type": "textarea",
       "id": "title",
-      "default": "Timeless gifts that stand out 20% OFF GIFT SETS",
+      "default": "Timeless gifts that stand out\n20% OFF GIFT SETS",
       "label": "标题文本"
     },
     {
@@ -282,10 +308,94 @@
     },
     {
       "type": "header",
+      "content": "副标题"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "default": "Handpicked for every special moment",
+      "label": "副标题文本"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "subtitle_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "500",
+      "label": "字重"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "行高",
+      "default": 1.4
+    },
+    {
+      "type": "range",
+      "id": "subtitle_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "字距",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "subtitle_alignment",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "center",
+      "label": "对齐"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "颜色",
+      "default": "#3d3d3d"
+    },
+    {
+      "type": "number",
+      "id": "subtitle_width",
+      "label": "最大宽度（px，为空则自适应）"
+    },
+    {
+      "type": "header",
       "content": "描述文案"
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "description",
       "default": "Discover gifts that make every moment extraordinary.",
       "label": "描述文本"
