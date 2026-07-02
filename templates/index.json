@@ -970,7 +970,7 @@
         "title_alignment": "left",
         "title_color": "#1e0e06",
         "view_all_text": "View All Blogs",
-        "view_all_link": "",
+        "view_all_link": "https://fany.us/pages/all-blogs",
         "view_all_font_size": 16,
         "view_all_color": "#1e0e06",
         "view_all_hover_color": "#9e7163",
