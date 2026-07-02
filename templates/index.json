@@ -692,7 +692,7 @@
         "price_alignment": "left",
         "price_color": "#93726c",
         "price_inner_gap": 10,
-        "title_price_gap": 4,
+        "title_price_gap": 10,
         "text_safe_margin": 200,
         "image_gap": 16,
         "mobile_image_gap": 11,
