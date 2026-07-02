@@ -17,6 +17,15 @@
   width: 100%;
 }
 
+/* ========== Section Subtitle ========== */
+.product-category-section-subtitle {
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+  text-align: center;
+  width: 100%;
+}
+
 /* ========== Top Menu Tabs ========== */
 .product-category-top-menu {
   display: flex;

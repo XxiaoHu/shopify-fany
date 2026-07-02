@@ -52,12 +52,29 @@
 
   /* Apply price styles via CSS variables */
   .section-{{ section.id }}-padding .card-price {
+    font-family: Merriweather, serif;
     font-weight: var(--pc-price-font-weight);
     font-size: var(--pc-price-font-size);
     line-height: var(--pc-price-line-height);
     letter-spacing: var(--pc-price-letter-spacing);
     text-align: var(--pc-price-align);
     color: var(--pc-price-color);
+  }
+
+  /* Apply section subtitle styles */
+  .section-{{ section.id }}-padding .product-category-section-subtitle {
+    font-weight: {{ section.settings.section_subtitle_font_weight }};
+    line-height: {{ section.settings.section_subtitle_line_height }};
+    letter-spacing: {{ section.settings.section_subtitle_letter_spacing }}px;
+    text-align: center;
+    color: {{ section.settings.section_subtitle_color }};
+    margin-top: {{ section.settings.section_subtitle_margin_top }}px;
+    margin-bottom: {{ section.settings.section_subtitle_margin_bottom }}px;
+    {% if section.settings.section_subtitle_width != blank and section.settings.section_subtitle_width > 0 %}
+    max-width: {{ section.settings.section_subtitle_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+    {% endif %}
   }
 
   /* Apply section title styles */
@@ -85,6 +102,9 @@
     .section-{{ section.id }}-padding .product-category-section-title {
       font-size: {{ section.settings.section_title_font_size }}px;
     }
+    .section-{{ section.id }}-padding .product-category-section-subtitle {
+      font-size: {{ section.settings.section_subtitle_font_size }}px;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -105,6 +125,14 @@
       letter-spacing: 0;
       color: #1E0E06;
       max-width: 268px;
+      margin: 0 auto 20px;
+    }
+    .section-{{ section.id }}-padding .product-category-section-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #686766;
       margin: 0 auto 20px;
     }
     .section-{{ section.id }}-padding .card-title {
@@ -136,7 +164,10 @@
   <div class="section-{{ section.id }}-padding" style="padding-left: var(--pc-safe-margin); padding-right: var(--pc-safe-margin);">
 
     {%- if section.settings.section_title != blank -%}
-      <h2 class="product-category-section-title">{{ section.settings.section_title }}</h2>
+      <h2 class="product-category-section-title">{{ section.settings.section_title | escape | newline_to_br }}</h2>
+    {%- endif -%}
+    {%- if section.settings.section_subtitle != blank -%}
+      <p class="product-category-section-subtitle">{{ section.settings.section_subtitle | escape | newline_to_br }}</p>
     {%- endif -%}
 
     <!-- 顶部菜单 -->
@@ -207,7 +238,7 @@ window.slideGroups = {
       "content": "区域标题"
     },
     {
-      "type": "inline_richtext",
+      "type": "textarea",
       "id": "section_title",
       "label": "标题文字",
       "default": "Find Your Perfect Match"
@@ -291,13 +322,106 @@ window.slideGroups = {
     },
     {
       "type": "header",
+      "content": "副标题"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtitle",
+      "label": "副标题文字",
+      "default": "Timeless gifts that stand out"
+    },
+    {
+      "type": "range",
+      "id": "section_subtitle_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "副标题字号-桌面端",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_subtitle_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "副标题字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "section_subtitle_font_weight",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400",
+      "label": "副标题字重"
+    },
+    {
+      "type": "range",
+      "id": "section_subtitle_line_height",
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "副标题行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "section_subtitle_letter_spacing",
+      "min": -5,
+      "max": 20,
+      "step": 0.5,
+      "unit": "px",
+      "label": "副标题字距",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "section_subtitle_color",
+      "label": "副标题颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "number",
+      "id": "section_subtitle_width",
+      "label": "副标题最大宽度（px，为空则自适应）"
+    },
+    {
+      "type": "range",
+      "id": "section_subtitle_margin_top",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "副标题上方间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_subtitle_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "副标题下方间距",
+      "default": 20
+    },
+    {
+      "type": "header",
       "content": "标签"
     },
     {
       "type": "color",
       "id": "tab_color",
       "label": "未选中标签颜色",
-      "default": "#686766"
+      "default": "#1E0E06"
     },
     {
       "type": "color",
@@ -402,7 +526,7 @@ window.slideGroups = {
       "step": 1,
       "unit": "px",
       "label": "价格字号-桌面端",
-      "default": 26
+      "default": 20
     },
     {
       "type": "range",

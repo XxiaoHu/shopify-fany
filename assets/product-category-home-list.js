@@ -146,8 +146,8 @@
         },
         // 响应式配置
         breakpoints: {
-          1024: { slidesPerView: 4, spaceBetween: 10 },
-          1440: { slidesPerView: 4, spaceBetween: 20 }
+          1024: { slidesPerView: 4, spaceBetween: 16 },
+          1440: { slidesPerView: 4, spaceBetween: 16 }
         },
         // Swiper初始化完成后调整箭头位置
         on: {
