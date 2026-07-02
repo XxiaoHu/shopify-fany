@@ -760,47 +760,47 @@
     "customer_reviews_MwicHg": {
       "type": "customer-reviews",
       "blocks": {
-        "review_9e6BeA": {
+        "review_FL6UKK": {
           "type": "review",
           "settings": {
-            "author": "Burge",
-            "rating": "4_half",
+            "author": "Tanya Colligan",
+            "rating": "5",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "Classic Tennis Necklace Silver",
-            "review_text": "The ring is perfect and of excellent quality. In addition, the return service for size changes was perfect and they were really kind to follow the order and satisfy every request. I highly recommend",
+            "product_title": "This watch is as good as a Garmin basic watch",
+            "review_text": "This watch is as good as a Garmin basic watch. I do like that it can detect when you\\re watching for activity. The timed Always on Display if used 7 hours a day, still has good battery life. It's heart rate is pretty accurate during activity like cycling. The HR is the same as the YMCA equipment. I very satisficed bought this watch. It one of a kind in size.",
             "meta": "Dublin, IE, 12 hours ago"
           }
         },
         "review_yLbPFY": {
           "type": "review",
           "settings": {
-            "author": "Burge",
+            "author": "Christie Kulesza",
             "rating": "4_half",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "Classic Tennis Necklace Silver",
-            "review_text": "It took more than a week to arrive, but that was not a problem for me. The quality is absolutely beautiful, shiny, elegant and timeless. Thank you.",
+            "product_title": "I just love the watch",
+            "review_text": "I just love the watch. I’m having fun with keeping track of my workouts. Really I just now have kind of got a handle on it and so far it’s great.",
             "meta": "Dublin, IE, 12 hours ago"
           }
         },
-        "review_FL6UKK": {
+        "review_9e6BeA": {
           "type": "review",
           "settings": {
-            "author": "Burge",
+            "author": "Jeanie Lynn",
             "rating": "4_half",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "Classic Tennis Necklace Silver",
-            "review_text": "It took more than a week to arrive, but that was not a problem for me.",
+            "product_title": "Really stylish and comfortable",
+            "review_text": "Really stylish and comfortable. So far all is going well.",
             "meta": "Dublin, IE, 12 hours ago"
           }
         },
         "review_Hzzt9a": {
           "type": "review",
           "settings": {
-            "author": "Burge",
+            "author": "Michelle Phillips",
             "rating": "4_half",
             "rating_label": "4.5 out of 5 stars",
-            "product_title": "Classic Tennis Necklace Silver",
-            "review_text": "It took more than a week to arrive, but that was not a problem for me.",
+            "product_title": "I was looking for a watch that was more dress the sport",
+            "review_text": "I was looking for a watch that was more dress the sport. I found FANY Luna and fell in love with it. It has a leather band and I a nice choice of faces to choose from.",
             "meta": "Dublin, IE, 12 hours ago"
           }
         },
@@ -828,9 +828,9 @@
         }
       },
       "block_order": [
-        "review_9e6BeA",
-        "review_yLbPFY",
         "review_FL6UKK",
+        "review_yLbPFY",
+        "review_9e6BeA",
         "review_Hzzt9a",
         "review_rr9UJX",
         "review_j4U973"
