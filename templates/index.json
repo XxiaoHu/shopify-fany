@@ -330,12 +330,11 @@
       "blocks": {
         "slide_L63WgC": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/PC_4ccb3414-95c6-4bed-9bd6-83a1118e3331.webp",
-            "mobile_image": "shopify://shop_images/M_7877ef0f-7189-4481-b08c-b023d2073c28.webp",
+            "image": "shopify://shop_images/PC-250.webp",
+            "mobile_image": "shopify://shop_images/M-250.webp",
             "image_overlay_opacity": 0,
-            "link": "",
+            "link": "https://fany.us/collections/all-products",
             "link_text": "",
             "link_target_blank": false,
             "content_horizontal": "left",
@@ -437,7 +436,7 @@
             "title_desc_gap": 20,
             "mobile_title_desc_gap": 16,
             "button_label": "SHOP NOW",
-            "button_link": "",
+            "button_link": "https://fany.us/products/luna",
             "button_style": "primary",
             "btn_font_size": 16,
             "btn_border_radius": 6,
