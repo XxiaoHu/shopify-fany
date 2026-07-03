@@ -124,6 +124,85 @@
         "payment_RJtWhH": {
           "type": "payment",
           "settings": {}
+        },
+        "icon_with_text_qEenDy": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/icon1_b73797db-6a41-49e3-baed-7832b356edf2.svg",
+            "heading_1": "U.S., EU & U.K. Free Shipping",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/icon2_444d3394-014d-4004-ba3c-dbe49299ee6c.svg",
+            "heading_2": "Ship in 1–2 Business Days",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/icon3_58db49fb-1b80-4a0a-96cf-6a13cab3d89f.svg",
+            "heading_3": "2-Year Warranty"
+          }
+        },
+        "collapsible_tab_BBFxmQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "content_color": "#1e0e06",
+            "content_font_size": 16,
+            "content_font_weight": "400",
+            "content_line_height": 1.5,
+            "content_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "content_padding_top": 12,
+            "content_padding_bottom": 12,
+            "caret_size": 24,
+            "show_icon": false,
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
+        "details_table_LQKfiY": {
+          "type": "details_table",
+          "settings": {
+            "heading": "Details",
+            "default_open": true,
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "row_height": 50,
+            "row_padding_y": 12,
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "caret_size": 24,
+            "label_color": "#1e0e06",
+            "label_font_size": 16,
+            "label_font_weight": "400",
+            "label_line_height": 1.5,
+            "value_color": "#1e0e06",
+            "value_font_size": 16,
+            "value_font_weight": "700",
+            "value_line_height": 1.2,
+            "label_1": "Case Size",
+            "value_1": "28mm",
+            "label_2": "Strap width",
+            "value_2": "12mm",
+            "label_3": "Strap connector",
+            "value_3": "Spring Bars",
+            "label_4": "Color",
+            "value_4": "Rose Gold",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
         }
       },
       "block_order": [
@@ -142,7 +221,10 @@
         "discount_FbgCrr",
         "buy_buttons",
         "klarna_on_site_messaging_app_block_HH4iJi",
-        "payment_RJtWhH"
+        "payment_RJtWhH",
+        "icon_with_text_qEenDy",
+        "collapsible_tab_BBFxmQ",
+        "details_table_LQKfiY"
       ],
       "settings": {
         "color_scheme": "scheme-1",
