@@ -768,7 +768,7 @@
         "desc_alignment": "center",
         "desc_color": "#686766",
         "header_gap": 10,
-        "mobile_header_gap": 20,
+        "mobile_header_gap": 10,
         "view_more_text": "View more",
         "view_more_link": "",
         "view_more_font_size": 16,
