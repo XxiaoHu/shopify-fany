@@ -532,7 +532,7 @@
         "card_E8GRTV": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_13.png",
+            "image": "shopify://shop_images/homepage_1.webp",
             "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
             "card_text": "Elegance Forward",
@@ -547,7 +547,7 @@
         "card_6MQ69W": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_13.png",
+            "image": "shopify://shop_images/homepage_2_80a4cf10-d519-4d7d-abe0-fcb2c48e7a74.webp",
             "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
             "card_text": "Live in Motion",
@@ -562,7 +562,7 @@
         "card_RPyawz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_13.png",
+            "image": "shopify://shop_images/homepage_3_2ac106da-0856-4610-a928-ec79ee86d81b.webp",
             "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
             "card_text": "Wellness Within",
@@ -577,7 +577,7 @@
         "card_VeegYm": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_13.png",
+            "image": "shopify://shop_images/homepage_4.webp",
             "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
             "card_text": "Thoughtfully Smart",
