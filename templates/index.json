@@ -623,7 +623,7 @@
         "text_safe_margin": 200,
         "mobile_text_safe_margin": 16,
         "padding_top": 80,
-        "padding_bottom": 60,
+        "padding_bottom": 80,
         "mobile_padding_y": 40,
         "mobile_header_gap": 20
       }
