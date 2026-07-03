@@ -64,7 +64,7 @@
         "heading_size": "h2",
         "small_heading_size": "h4",
         "show_title": true,
-        "title_heading_size": "h6",
+        "title_heading_size": "f-20",
         "show_date": true,
         "show_excerpt": false,
         "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
