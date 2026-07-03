@@ -533,7 +533,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_13.png",
-            "link": "shopify://pages/all-blogs",
+            "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
             "card_text": "Elegance Forward",
             "card_text_font_size": 40,
@@ -548,7 +548,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_13.png",
-            "link": "",
+            "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
             "card_text": "Live in Motion",
             "card_text_font_size": 40,
@@ -578,7 +578,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_13.png",
-            "link": "",
+            "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
             "card_text": "Thoughtfully Smart",
             "card_text_font_size": 40,
@@ -598,7 +598,7 @@
       ],
       "name": "使用场景",
       "settings": {
-        "title": "Get a complete picture of your health",
+        "title": "Designed Around You",
         "title_font_size": 28,
         "mobile_title_font_size": 24,
         "title_font_weight": "700",
@@ -606,7 +606,7 @@
         "title_letter_spacing": 0,
         "title_alignment": "left",
         "title_color": "#1e0e06",
-        "description": "<p>With 24/7 monitoring across sleep, strain, stress, and heart health, FANY gives you a complete view of your health - so you can make smarter decisions every day.</p>",
+        "description": "<p>From timeless elegance to everyday movement, from intelligent wellness to thoughtful innovation, every FANY smartwatch is designed to complement your style, support your wellbeing, and move beautifully with your life.</p>",
         "desc_font_size": 16,
         "mobile_desc_font_size": 16,
         "desc_font_weight": "400",
