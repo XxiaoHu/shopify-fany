@@ -961,7 +961,7 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "padding_top": 100,
-        "padding_bottom": 50,
+        "padding_bottom": 0,
         "show_text_below": true,
         "mobile_padding_top": 100,
         "mobile_padding_bottom": 0,
