@@ -2,12 +2,14 @@
 {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .newsletter__wrapper {
-    background-image: url('{{ 'newsletter-bg.png' | asset_url }}');
-    background-size: cover; /* 背景图片覆盖整个元素 */
-    background-position: center; /* 背景图片居中 */
-    background-attachment: local;
-  }
+  {%- if section.settings.background_image != blank -%}
+    .newsletter__wrapper {
+      background-image: url('{{ section.settings.background_image | image_url }}');
+      background-size: cover;
+      background-position: center;
+      background-attachment: local;
+    }
+  {%- endif -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -39,7 +41,7 @@
     overflow: hidden;
     border: 1px solid #794538;
     border-radius: 8px;
-    background: #ffffff;
+    background: transparent;
   }
   .newsletter__wrapper .field__input {
     height: 100%;
@@ -168,7 +170,7 @@
                   </label>
                   <button
                     type="submit"
-                    class="newsletter-form__button field__button f-22"
+                    class="newsletter-form__button field__button f-16"
                     name="commit"
                     id="Subscribe"
                     aria-label="{{ 'newsletter.button_label' | t }}"
@@ -225,6 +227,11 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "背景图片"
     },
     {
       "type": "checkbox",
@@ -304,6 +311,10 @@
               "label": "H6"
             },
             {
+              "value": "f-16",
+              "label": "大小16"
+            },
+            {
               "value": "f-18",
               "label": "大小18"
             },
@@ -328,7 +339,7 @@
               "label": "大小36"
             }
           ],
-          "default": "h1",
+          "default": "f-28",
           "label": "t:sections.all.heading_size.label"
         }
       ]
@@ -373,6 +384,10 @@
               "label": "H6"
             },
             {
+              "value": "f-16",
+              "label": "大小16"
+            },
+            {
               "value": "f-18",
               "label": "大小18"
             },
@@ -397,7 +412,7 @@
               "label": "大小36"
             }
           ],
-          "default": "f-24",
+          "default": "f-16",
           "label": "字体大小"
         }
       ]
