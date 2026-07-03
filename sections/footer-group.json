@@ -41,6 +41,7 @@
       "name": "t:sections.newsletter.presets.name",
       "settings": {
         "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "background_image": "shopify://shop_images/homepage.webp",
         "full_width": true,
         "placeholder": "luna@example.com",
         "padding_top": 116,
