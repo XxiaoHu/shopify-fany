@@ -917,6 +917,108 @@
         "include_margins": true
       }
     },
+    "slideshow_zBtPCU": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_x7Rn9P": {
+          "type": "slide",
+          "name": "01",
+          "settings": {
+            "image": "shopify://shop_images/PC_1.webp",
+            "mobile_image": "shopify://shop_images/M_1_ce813f6b-9f5f-4912-bdbb-01995ecaeaaa.webp",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
+            "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
+            "subheading": "",
+            "text_width": 420,
+            "button_label": "",
+            "link": "shopify://products/luna",
+            "btn_width": 0,
+            "button_style_secondary": true,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-c59b5f1b-e655-4c9a-903a-01f035b82171",
+            "mobile_box_align": "middle",
+            "mobile_color_scheme": "scheme-2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_x7Rn9P"
+      ],
+      "name": "FANY品牌含义",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "show_text_below": true,
+        "mobile_padding_top": 100,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": "A smartwatch that moves with your rhythm"
+      }
+    },
+    "slideshow_qbynCb": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_kXUdDE": {
+          "type": "slide",
+          "name": "01",
+          "settings": {
+            "image": "shopify://shop_images/PC_1.webp",
+            "mobile_image": "shopify://shop_images/M_1_ce813f6b-9f5f-4912-bdbb-01995ecaeaaa.webp",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
+            "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
+            "subheading": "",
+            "text_width": 420,
+            "button_label": "",
+            "link": "shopify://products/luna",
+            "btn_width": 0,
+            "button_style_secondary": true,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-c59b5f1b-e655-4c9a-903a-01f035b82171",
+            "mobile_box_align": "middle",
+            "mobile_color_scheme": "scheme-2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_kXUdDE"
+      ],
+      "name": "奖项",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "show_text_below": true,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": "A smartwatch that moves with your rhythm"
+      }
+    },
     "blog_cards_JQBAK9": {
       "type": "blog-cards",
       "blocks": {
@@ -1113,58 +1215,6 @@
         "mobile_desc_size": 16,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 70
-      }
-    },
-    "slideshow_zBtPCU": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_x7Rn9P": {
-          "type": "slide",
-          "name": "01",
-          "settings": {
-            "image": "shopify://shop_images/PC_1.webp",
-            "mobile_image": "shopify://shop_images/M_1_ce813f6b-9f5f-4912-bdbb-01995ecaeaaa.webp",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_font_size": 40,
-            "mobile_heading_font_size": 32,
-            "heading_2": "",
-            "heading2_font_size": 22,
-            "mobile_heading2_font_size": 20,
-            "subheading": "",
-            "text_width": 420,
-            "button_label": "",
-            "link": "shopify://products/luna",
-            "btn_width": 0,
-            "button_style_secondary": true,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-c59b5f1b-e655-4c9a-903a-01f035b82171",
-            "mobile_box_align": "middle",
-            "mobile_color_scheme": "scheme-2"
-          }
-        }
-      },
-      "block_order": [
-        "slide_x7Rn9P"
-      ],
-      "disabled": true,
-      "name": "临时促销类banner",
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "padding_top": 0,
-        "padding_bottom": 50,
-        "show_text_below": true,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 0,
-        "accessibility_info": "A smartwatch that moves with your rhythm"
       }
     },
     "slideshow_8fTXfG": {
@@ -1778,9 +1828,10 @@
     "gift_sets_qbx3NW",
     "customer_reviews_MwicHg",
     "1770782750dc605136",
+    "slideshow_zBtPCU",
+    "slideshow_qbynCb",
     "blog_cards_JQBAK9",
     "main_image_carousel_KA8Ddg",
-    "slideshow_zBtPCU",
     "slideshow_8fTXfG",
     "slideshow_Mg4HdL",
     "multicolumn_78jfqD",
