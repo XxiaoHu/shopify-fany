@@ -924,8 +924,8 @@
           "type": "slide",
           "name": "01",
           "settings": {
-            "image": "shopify://shop_images/PC_1.webp",
-            "mobile_image": "shopify://shop_images/M_1_ce813f6b-9f5f-4912-bdbb-01995ecaeaaa.webp",
+            "image": "shopify://shop_images/homepage_brand_story_-FANY-PC.webp",
+            "mobile_image": "shopify://shop_images/homepage_brand_story_-FANY-M.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
@@ -975,8 +975,8 @@
           "type": "slide",
           "name": "01",
           "settings": {
-            "image": "shopify://shop_images/PC_1.webp",
-            "mobile_image": "shopify://shop_images/M_1_ce813f6b-9f5f-4912-bdbb-01995ecaeaaa.webp",
+            "image": "shopify://shop_images/PC_13cf8135-834d-4c6a-86d0-3e50a88b6652.webp",
+            "mobile_image": "shopify://shop_images/M_130320b2-e883-4acd-abaf-d134bf039531.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
