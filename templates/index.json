@@ -563,7 +563,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_13.png",
-            "link": "",
+            "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
             "card_text": "Wellness Within",
             "card_text_font_size": 40,
