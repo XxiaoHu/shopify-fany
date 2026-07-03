@@ -1328,7 +1328,7 @@
         "column_RAcaqG": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/icon1.svg",
+            "image": "shopify://shop_images/icon1_984fafc2-7fa4-4312-91a2-497479b36c65.svg",
             "title": "U.S., EU & U.K. Free Shipping",
             "subtitle": "",
             "hr": false,
@@ -1340,7 +1340,7 @@
         "column_YBKGfD": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/icon2.svg",
+            "image": "shopify://shop_images/icon2_35866542-a334-457c-85ad-469564be9468.svg",
             "title": "Ship in 1–2 business days",
             "subtitle": "",
             "hr": false,
@@ -1352,7 +1352,7 @@
         "column_7DzAUx": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/icon3.svg",
+            "image": "shopify://shop_images/icon3_c31ca3b7-4450-4223-86c5-f57a6fe5befe.svg",
             "title": "2-year warranty",
             "subtitle": "",
             "hr": false,
@@ -1364,7 +1364,7 @@
         "column_iYyR6m": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/icon4.svg",
+            "image": "shopify://shop_images/icon4_1e5ca63f-af82-458c-b55d-fa4b6532457a.svg",
             "title": "30-day money back guarantee",
             "subtitle": "",
             "hr": false,
