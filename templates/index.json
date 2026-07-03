@@ -532,7 +532,7 @@
         "card_E8GRTV": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_1.webp",
+            "image": "shopify://shop_images/homepage_1_b9fa62cf-7119-4e6c-b15e-ecb0bb17f584.webp",
             "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
             "card_text": "Elegance Forward",
@@ -547,7 +547,7 @@
         "card_6MQ69W": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_2_80a4cf10-d519-4d7d-abe0-fcb2c48e7a74.webp",
+            "image": "shopify://shop_images/homepage_2_a7f1cd97-def3-4590-8a73-96bbbffae290.webp",
             "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
             "card_text": "Live in Motion",
@@ -562,10 +562,10 @@
         "card_RPyawz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_3_2ac106da-0856-4610-a928-ec79ee86d81b.webp",
+            "image": "shopify://shop_images/homepage_3_28f788d9-8e97-4f81-bd08-be31e725dc83.webp",
             "link": "https://fany.us/products/luna",
             "overlay_opacity": 30,
-            "card_text": "Wellness Within",
+            "card_text": "Thoughtfully Smart",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700",
@@ -577,10 +577,10 @@
         "card_VeegYm": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_4.webp",
+            "image": "shopify://shop_images/homepage_4_d0f50326-6fcc-4c4b-bc3f-6feeb5146687.webp",
             "link": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women",
             "overlay_opacity": 30,
-            "card_text": "Thoughtfully Smart",
+            "card_text": "Wellness Within",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700",
