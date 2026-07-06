@@ -32,7 +32,7 @@
 {%- assign parent_template_id = section.id | split: '__' | first -%}
 {%- assign faq_form_id = 'shopify-section-' | append: parent_template_id | append: '__faq' -%}
 <div class="mainBox">
-  <div class="tabContainer">
+  {% comment %} <div class="tabContainer">
     <div class="pc-box">
       <div class="product-title">
         <h2 class="h5">
@@ -53,7 +53,7 @@
         {%- render 'product-buy-buttons', product: product, product_form_id: product_form_id, section_id: section.id -%}
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
   <div class="contentList">
     <div class="overviewDiv active">
       {% content_for 'blocks' %}
