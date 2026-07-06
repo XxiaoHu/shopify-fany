@@ -175,7 +175,7 @@
           "type": "details_table",
           "settings": {
             "heading": "Details",
-            "default_open": true,
+            "default_open": false,
             "title_color": "#1e0e06",
             "title_font_size": 16,
             "title_font_weight": "700",
