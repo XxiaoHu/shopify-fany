@@ -57,10 +57,16 @@
   position: absolute;
   inset: 0;
   background: #000;
-  opacity: var(--uc-overlay-opacity, 0.3);
+  opacity: 0;
   z-index: 1;
   border-radius: var(--uc-card-radius, 4px);
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.use-cases__card:hover::before,
+.use-cases__card:focus-within::before {
+  opacity: var(--uc-overlay-opacity, 0.3);
 }
 
 .use-cases__card-link {
