@@ -328,6 +328,8 @@
         "slide_pcj9Fn": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/band_story-_-PC_8f54941d-6827-4021-aa0f-3be757b05559.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-M_e20122fc-7f16-4b9d-a158-d94021bad878.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
