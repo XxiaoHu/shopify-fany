@@ -498,6 +498,8 @@
         "slide_PcqYhz": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/band_story-_-PC_67840b1c-40e0-4cb7-8db1-c895e2ea60d1.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-M_50bd93ef-3ea5-416e-bc50-60c2e381ea7f.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
