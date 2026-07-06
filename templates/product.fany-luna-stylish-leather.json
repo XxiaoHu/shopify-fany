@@ -286,7 +286,7 @@
         "collapsible_tab_L34ycq": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Description",
+            "heading": "Shipping Info",
             "title_color": "#1e0e06",
             "title_font_size": 16,
             "title_font_weight": "700",
@@ -312,7 +312,7 @@
         "collapsible_tab_BELxCm": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Description",
+            "heading": "Returns & Exchanges",
             "title_color": "#1e0e06",
             "title_font_size": 16,
             "title_font_weight": "700",
