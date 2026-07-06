@@ -266,7 +266,7 @@
             "title_letter_spacing": 0,
             "title_alignment": "left",
             "subtitle": "",
-            "subtitle_font_size": 18,
+            "subtitle_font_size": 20,
             "mobile_subtitle_font_size": 14,
             "subtitle_font_weight": "400",
             "subtitle_color": "#686766",
