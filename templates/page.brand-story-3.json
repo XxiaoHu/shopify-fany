@@ -164,6 +164,8 @@
       "type": "image-content-split",
       "name": "左右图文介绍",
       "settings": {
+        "image": "shopify://shop_images/band_story-_-PC_M_51546628-e0f9-41dd-b501-f0779f779d36.webp",
+        "mobile_image": "shopify://shop_images/band_story-_-PC_M_51546628-e0f9-41dd-b501-f0779f779d36.webp",
         "eyebrow": "Mission",
         "heading": "Nikki Gewirtz, MBE",
         "content": "Since its inception in London in 2000, Lola Rose has been rooted in thoughtful design, expressive color, and everyday wearability.\n\nFast-forward to today, we continue this legacy as a modern accessories brand built around self-expression and considered details.",
@@ -202,10 +204,12 @@
       "type": "image-content-split",
       "name": "左右图文介绍",
       "settings": {
+        "image": "shopify://shop_images/band_story-_-PC_M.webp",
+        "mobile_image": "shopify://shop_images/band_story-_-PC_M.webp",
         "eyebrow": "Mission",
         "heading": "Nikki Gewirtz, MBE",
         "content": "Since its inception in London in 2000, Lola Rose has been rooted in thoughtful design, expressive color, and everyday wearability.\n\nFast-forward to today, we continue this legacy as a modern accessories brand built around self-expression and considered details.",
-        "desktop_layout": "image_first",
+        "desktop_layout": "text_first",
         "desktop_gap": 80,
         "image_radius": 0,
         "text_alignment": "left",
