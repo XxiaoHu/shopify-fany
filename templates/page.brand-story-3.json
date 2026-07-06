@@ -579,6 +579,8 @@
       "name": "社会责任",
       "settings": {
         "heading": "FANY in Action",
+        "background_image": "shopify://shop_images/band_story-_-PC_efe5fa1a-b3ce-4404-920c-6cc4498a370f.webp",
+        "mobile_background_image": "shopify://shop_images/band_story-_-M_0797cc35-70e4-4df5-9492-f94fbb8e7253.webp",
         "overlay_opacity": 20,
         "text_color": "#ffffff",
         "heading_size": 40,
