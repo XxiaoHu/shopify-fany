@@ -206,7 +206,7 @@
       "settings": {
         "image": "shopify://shop_images/band_story-_-PC_M_51546628-e0f9-41dd-b501-f0779f779d36.webp",
         "mobile_image": "shopify://shop_images/band_story-_-PC_M_51546628-e0f9-41dd-b501-f0779f779d36.webp",
-        "eyebrow": "Mission",
+        "eyebrow": "",
         "heading": "Intelligent companion, Effortless Living",
         "content": "You embrace every moment of life, savoring the warmth in the details. FANY seamlessly integrates smart technology into your daily rhythm, sensing the shifts in your pace, your mood, and your energy.\n \nDesigned for women like you—who move through life with strength, softness, and soul. FANY is a companion that gently tunes in, uplifts you, and flows with you.With FANY, every woman moves with ease, effortlessly supported by intuitive design that brings balance, clarity, and her inner glow.",
         "desktop_layout": "image_first",
@@ -693,7 +693,7 @@
         "view_more_text": "View more",
         "view_more_link": "",
         "view_more_font_size": 16,
-        "view_more_color": "#9E7163",
+        "view_more_color": "#9e7163",
         "view_more_hover_color": "#794538",
         "text_safe_margin": 200,
         "mobile_text_safe_margin": 16,
