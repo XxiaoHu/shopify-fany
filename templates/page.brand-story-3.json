@@ -175,7 +175,7 @@
       "name": "上下结构图文",
       "settings": {
         "header": "<p><strong>FANY, see the vibe.</strong></p>",
-        "text": "<p>Life flows through every moment —leading at work, laughing at home, or savoring a quiet pause, FANY stands with you.<br/><br/>Created for women, FANY is more than a smartwatch; it’s a companion that truly understands you, staying in tune with your body’s rhythm. A gentle reminder to breathe, a steady pulse to guide, a silent bond to console—always syncs with you.<br/><br/>We walk together, We lift each other. We shine as one.<br/>Every rhythm, every spark—we share, fuel, and glow.<br/><br/></p>",
+        "text": "<p>Life flows through every moment—leading at work, laughing at home, or savoring a quiet pause, FANY is always by your side.</p><p>Created for women, FANY is more than a smartwatch; it's a companion that truly understands you, staying in tune with your body's rhythm. A gentle reminder to breathe, a steady pulse to guide you, a silent companion to support you—always in sync with your life.</p><p>We grow together. We lift each other. We shine as one.</p><p>Every rhythm, every spark—we share, inspire, and shine.</p>",
         "img_first": true,
         "img_has_back": false,
         "text_alignment": "center",
@@ -183,7 +183,7 @@
         "font_color": "#1e0e06",
         "title_font_size": 40,
         "text_font_size": 20,
-        "text_width": 1050,
+        "text_width": 1100,
         "img_text_margin": 75,
         "padding_top": 0,
         "padding_bottom": 36,
