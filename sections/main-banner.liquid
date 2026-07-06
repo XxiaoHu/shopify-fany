@@ -124,20 +124,27 @@
       width: {{ block.settings.btn_width }}px;
       {% endif %}
       font-size: {{ block.settings.btn_font_size }}px;
+      align-self: {{ block.settings.button_alignment | default: 'flex-start' }};
     }
 
     @media screen and (max-width: 768px) {
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
         font-size: {{ block.settings.mobile_title_font_size }}px;
         color: {{ block.settings.mobile_title_color }};
+        text-align: {{ block.settings.mobile_title_alignment | default: block.settings.title_alignment }};
       }
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__subtitle {
         font-size: {{ block.settings.mobile_subtitle_font_size }}px;
         color: {{ block.settings.mobile_subtitle_color }};
+        text-align: {{ block.settings.mobile_subtitle_alignment | default: block.settings.subtitle_alignment }};
       }
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__description {
         font-size: {{ block.settings.mobile_desc_font_size }}px;
         color: {{ block.settings.mobile_desc_color }};
+        text-align: {{ block.settings.mobile_desc_alignment | default: block.settings.desc_alignment }};
+      }
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__button {
+        align-self: {{ block.settings.mobile_button_alignment | default: block.settings.button_alignment | default: 'flex-start' }};
       }
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__content-inner {
         gap: {{ block.settings.mobile_title_desc_gap }}px;
@@ -649,7 +656,18 @@
             { "value": "right", "label": "右对齐" }
           ],
           "default": "left",
-          "label": "对齐方式"
+          "label": "对齐方式-桌面端"
+        },
+        {
+          "type": "select",
+          "id": "mobile_title_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式-移动端"
         },
         {
           "type": "number",
@@ -739,7 +757,18 @@
             { "value": "right", "label": "右对齐" }
           ],
           "default": "left",
-          "label": "对齐方式"
+          "label": "对齐方式-桌面端"
+        },
+        {
+          "type": "select",
+          "id": "mobile_subtitle_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式-移动端"
         },
         {
           "type": "number",
@@ -869,7 +898,18 @@
             { "value": "right", "label": "右对齐" }
           ],
           "default": "left",
-          "label": "对齐方式"
+          "label": "对齐方式-桌面端"
+        },
+        {
+          "type": "select",
+          "id": "mobile_desc_alignment",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "right", "label": "右对齐" }
+          ],
+          "default": "left",
+          "label": "对齐方式-移动端"
         },
         {
           "type": "range",
@@ -915,6 +955,28 @@
           ],
           "default": "primary",
           "label": "按钮样式"
+        },
+        {
+          "type": "select",
+          "id": "button_alignment",
+          "options": [
+            { "value": "flex-start", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "flex-end", "label": "右对齐" }
+          ],
+          "default": "flex-start",
+          "label": "按钮对齐方式-桌面端"
+        },
+        {
+          "type": "select",
+          "id": "mobile_button_alignment",
+          "options": [
+            { "value": "flex-start", "label": "左对齐" },
+            { "value": "center", "label": "居中对齐" },
+            { "value": "flex-end", "label": "右对齐" }
+          ],
+          "default": "flex-start",
+          "label": "按钮对齐方式-移动端"
         },
         {
           "type": "range",

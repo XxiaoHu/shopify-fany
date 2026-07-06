@@ -344,21 +344,16 @@ main-banner-component:hover .main-banner__arrows {
     padding-bottom: 40px;
   }
 
-  /* Mobile: center all inner content */
+  /* Mobile: let per-slide text alignment settings control each text block */
   .main-banner__content-inner {
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
     max-width: 70%;
   }
 
   .main-banner__content-inner .main-banner__title,
+  .main-banner__content-inner .main-banner__subtitle,
   .main-banner__content-inner .main-banner__description {
-    text-align: center !important;
     width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .main-banner__content-inner .main-banner__subtitle {
     max-width: 100% !important;
   }
 
