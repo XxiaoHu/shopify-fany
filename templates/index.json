@@ -330,6 +330,7 @@
       "blocks": {
         "slide_L63WgC": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PC-250.webp",
             "mobile_image": "shopify://shop_images/M-250.webp",
