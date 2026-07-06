@@ -172,6 +172,9 @@
         "desktop_layout": "image_first",
         "desktop_gap": 80,
         "image_radius": 0,
+        "desktop_image_ratio": "landscape",
+        "mobile_image_ratio": "landscape",
+        "image_fit": "cover",
         "text_alignment": "left",
         "background": "",
         "text_color": "#231815",
@@ -212,6 +215,9 @@
         "desktop_layout": "text_first",
         "desktop_gap": 80,
         "image_radius": 0,
+        "desktop_image_ratio": "landscape",
+        "mobile_image_ratio": "landscape",
+        "image_fit": "cover",
         "text_alignment": "left",
         "background": "",
         "text_color": "#231815",
@@ -410,6 +416,8 @@
         "slide_kf7aEf": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/band_story-_-PC_4fedc56b-6700-4038-a0fe-f14f71c2da02.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-M_fe867527-97ec-46db-8b85-6c246c2a0bcb.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
