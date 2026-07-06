@@ -521,42 +521,20 @@
                       {{- 'icon-caret.svg' | inline_asset_content -}}
                     </summary>
                     <div class="product__details-table-content" id="ProductDetailsTable-{{ block.id }}-{{ section.id }}">
-                      {%- if block.settings.label_1 != blank or block.settings.value_1 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_1 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_1 | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      {%- if block.settings.label_2 != blank or block.settings.value_2 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_2 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_2 | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      {%- if block.settings.label_3 != blank or block.settings.value_3 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_3 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_3 | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      {%- if block.settings.label_4 != blank or block.settings.value_4 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_4 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_4 | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      {%- if block.settings.label_5 != blank or block.settings.value_5 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_5 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_5 | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      {%- if block.settings.label_6 != blank or block.settings.value_6 != blank -%}
-                        <div class="product__details-table-row">
-                          <span class="product__details-table-label">{{ block.settings.label_6 | escape }}</span>
-                          <span class="product__details-table-value">{{ block.settings.value_6 | escape }}</span>
-                        </div>
-                      {%- endif -%}
+                      {%- for row_index in (1..30) -%}
+                        {%- liquid
+                          assign label_key = 'label_' | append: row_index
+                          assign value_key = 'value_' | append: row_index
+                          assign row_label = block.settings[label_key]
+                          assign row_value = block.settings[value_key]
+                        -%}
+                        {%- if row_label != blank or row_value != blank -%}
+                          <div class="product__details-table-row">
+                            <span class="product__details-table-label">{{ row_label | escape }}</span>
+                            <span class="product__details-table-value">{{ row_value | escape }}</span>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
                     </div>
                   </details>
                 </div>
@@ -1359,33 +1337,6 @@
         {
           "type": "image_picker",
           "id": "icon_image_3",
-          "label": "自定义图标（可选）"
-        },
-        {
-          "type": "header",
-          "content": "第 4 条"
-        },
-        {
-          "type": "text",
-          "id": "text_4",
-          "label": "文字",
-          "default": "30-day Money Back Guarantee"
-        },
-        {
-          "type": "select",
-          "id": "icon_4",
-          "label": "默认图标",
-          "options": [
-            { "value": "shipping", "label": "免运费" },
-            { "value": "delivery", "label": "发货" },
-            { "value": "warranty", "label": "质保" },
-            { "value": "return", "label": "退款保证" }
-          ],
-          "default": "return"
-        },
-        {
-          "type": "image_picker",
-          "id": "icon_image_4",
           "label": "自定义图标（可选）"
         }
       ]
@@ -2194,7 +2145,55 @@
         { "type": "text", "id": "label_5", "label": "第 5 行左侧" },
         { "type": "text", "id": "value_5", "label": "第 5 行右侧" },
         { "type": "text", "id": "label_6", "label": "第 6 行左侧" },
-        { "type": "text", "id": "value_6", "label": "第 6 行右侧" }
+        { "type": "text", "id": "value_6", "label": "第 6 行右侧" },
+        { "type": "text", "id": "label_7", "label": "第 7 行左侧" },
+        { "type": "text", "id": "value_7", "label": "第 7 行右侧" },
+        { "type": "text", "id": "label_8", "label": "第 8 行左侧" },
+        { "type": "text", "id": "value_8", "label": "第 8 行右侧" },
+        { "type": "text", "id": "label_9", "label": "第 9 行左侧" },
+        { "type": "text", "id": "value_9", "label": "第 9 行右侧" },
+        { "type": "text", "id": "label_10", "label": "第 10 行左侧" },
+        { "type": "text", "id": "value_10", "label": "第 10 行右侧" },
+        { "type": "text", "id": "label_11", "label": "第 11 行左侧" },
+        { "type": "text", "id": "value_11", "label": "第 11 行右侧" },
+        { "type": "text", "id": "label_12", "label": "第 12 行左侧" },
+        { "type": "text", "id": "value_12", "label": "第 12 行右侧" },
+        { "type": "text", "id": "label_13", "label": "第 13 行左侧" },
+        { "type": "text", "id": "value_13", "label": "第 13 行右侧" },
+        { "type": "text", "id": "label_14", "label": "第 14 行左侧" },
+        { "type": "text", "id": "value_14", "label": "第 14 行右侧" },
+        { "type": "text", "id": "label_15", "label": "第 15 行左侧" },
+        { "type": "text", "id": "value_15", "label": "第 15 行右侧" },
+        { "type": "text", "id": "label_16", "label": "第 16 行左侧" },
+        { "type": "text", "id": "value_16", "label": "第 16 行右侧" },
+        { "type": "text", "id": "label_17", "label": "第 17 行左侧" },
+        { "type": "text", "id": "value_17", "label": "第 17 行右侧" },
+        { "type": "text", "id": "label_18", "label": "第 18 行左侧" },
+        { "type": "text", "id": "value_18", "label": "第 18 行右侧" },
+        { "type": "text", "id": "label_19", "label": "第 19 行左侧" },
+        { "type": "text", "id": "value_19", "label": "第 19 行右侧" },
+        { "type": "text", "id": "label_20", "label": "第 20 行左侧" },
+        { "type": "text", "id": "value_20", "label": "第 20 行右侧" },
+        { "type": "text", "id": "label_21", "label": "第 21 行左侧" },
+        { "type": "text", "id": "value_21", "label": "第 21 行右侧" },
+        { "type": "text", "id": "label_22", "label": "第 22 行左侧" },
+        { "type": "text", "id": "value_22", "label": "第 22 行右侧" },
+        { "type": "text", "id": "label_23", "label": "第 23 行左侧" },
+        { "type": "text", "id": "value_23", "label": "第 23 行右侧" },
+        { "type": "text", "id": "label_24", "label": "第 24 行左侧" },
+        { "type": "text", "id": "value_24", "label": "第 24 行右侧" },
+        { "type": "text", "id": "label_25", "label": "第 25 行左侧" },
+        { "type": "text", "id": "value_25", "label": "第 25 行右侧" },
+        { "type": "text", "id": "label_26", "label": "第 26 行左侧" },
+        { "type": "text", "id": "value_26", "label": "第 26 行右侧" },
+        { "type": "text", "id": "label_27", "label": "第 27 行左侧" },
+        { "type": "text", "id": "value_27", "label": "第 27 行右侧" },
+        { "type": "text", "id": "label_28", "label": "第 28 行左侧" },
+        { "type": "text", "id": "value_28", "label": "第 28 行右侧" },
+        { "type": "text", "id": "label_29", "label": "第 29 行左侧" },
+        { "type": "text", "id": "value_29", "label": "第 29 行右侧" },
+        { "type": "text", "id": "label_30", "label": "第 30 行左侧" },
+        { "type": "text", "id": "value_30", "label": "第 30 行右侧" }
       ]
     },
     {
