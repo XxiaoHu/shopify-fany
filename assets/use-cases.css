@@ -57,15 +57,10 @@
   position: absolute;
   inset: 0;
   background: #000;
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  opacity: var(--uc-overlay-opacity, 0.3);
   z-index: 1;
   border-radius: var(--uc-card-radius, 4px);
   pointer-events: none;
-}
-
-.use-cases__card:hover::before {
-  opacity: var(--uc-overlay-opacity, 0.3);
 }
 
 .use-cases__card-link {
@@ -92,18 +87,12 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   margin: 0;
-  padding: 0;
   word-break: break-word;
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  opacity: 1;
   pointer-events: none;
   text-align: center;
   width: 100%;
   padding: 0 20px;
-}
-
-.use-cases__card:hover .use-cases__card-text {
-  opacity: 1;
 }
 
 /* ---------- Responsive: Mobile ---------- */
@@ -127,7 +116,6 @@
     width: 100%;
   }
 
-  /* Mobile: always show text, no overlay (no hover on touch) */
   .use-cases__card-text {
     opacity: 1;
   }

@@ -61,11 +61,18 @@
     }
 
     #UseCaseCard-{{ section.id }}-{{ forloop.index }} .use-cases__card-text {
-      font-weight: {{ block.settings.card_text_font_weight }};
+      {%- if block.settings.card_text_font_weight == '700_italic' -%}
+        font-weight: 700;
+        font-style: italic;
+      {%- else -%}
+        font-weight: {{ block.settings.card_text_font_weight }};
+        font-style: normal;
+      {%- endif -%}
       font-size: {{ block.settings.card_text_font_size }}px;
       line-height: {{ block.settings.card_text_line_height }};
       letter-spacing: {{ block.settings.card_text_letter_spacing }}px;
       color: {{ block.settings.card_text_color }};
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     }
 
     @media screen and (max-width: 768px) {
@@ -521,6 +528,7 @@
             { "value": "500", "label": "Medium (500)" },
             { "value": "600", "label": "Semi Bold (600)" },
             { "value": "700", "label": "Bold (700)" },
+            { "value": "700_italic", "label": "Bold Italic" },
             { "value": "800", "label": "Extra Bold (800)" }
           ],
           "default": "700",
