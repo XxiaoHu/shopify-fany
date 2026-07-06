@@ -70,12 +70,16 @@ main-banner-component {
   height: 1000px;
 }
 
-.main-banner__slide--adapt .main-banner__media {
+.main-banner__media--adapt {
   height: auto;
+  aspect-ratio: var(--main-banner-adapt-ratio);
 }
 
-.main-banner__slide--adapt .main-banner__media img {
-  height: auto;
+.main-banner__media--adapt picture,
+.main-banner__media--adapt img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Overlay */

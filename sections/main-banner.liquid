@@ -23,16 +23,37 @@
   {%- elsif section.settings.slide_height == 'large' -%}
     .section-{{ section.id }}-padding .main-banner__media { height: 1000px; }
   {%- endif -%}
-  @media screen and (max-width: 768px) {
-    .section-{{ section.id }}-padding .main-banner__media,
-    .section-{{ section.id }}-padding .main-banner__slide { height: calc(100vh - 39px); }
-  }
+  {%- unless section.settings.slide_height == 'adapt_image' -%}
+    @media screen and (max-width: 768px) {
+      .section-{{ section.id }}-padding .main-banner__media,
+      .section-{{ section.id }}-padding .main-banner__slide { height: calc(100vh - 39px); }
+    }
+  {%- endunless -%}
 
   /* Per-slide custom styles */
   {%- for block in section.blocks -%}
+    {%- liquid
+      assign desktop_image_aspect_ratio = block.settings.image.aspect_ratio
+      assign mobile_image_aspect_ratio = desktop_image_aspect_ratio
+      if block.settings.mobile_image != blank
+        assign mobile_image_aspect_ratio = block.settings.mobile_image.aspect_ratio
+      endif
+    -%}
     #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media::after {
       opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
     }
+
+    {%- if section.settings.slide_height == 'adapt_image' and block.settings.image != blank -%}
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media--adapt {
+        --main-banner-adapt-ratio: {{ desktop_image_aspect_ratio }};
+      }
+
+      @media screen and (max-width: 768px) {
+        #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media--adapt {
+          --main-banner-adapt-ratio: {{ mobile_image_aspect_ratio }};
+        }
+      }
+    {%- endif -%}
 
     /* ---- Title ---- */
     #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__title {
