@@ -246,6 +246,8 @@
         "slide_xxbaCE": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/band_story-_-PC.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-M.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
