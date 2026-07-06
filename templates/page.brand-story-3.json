@@ -160,6 +160,31 @@
         "accessibility_info": "首页横幅轮播"
       }
     },
+    "fany_action_4wQHxC": {
+      "type": "fany-action",
+      "name": "社会责任",
+      "settings": {
+        "heading": "FANY in Action",
+        "overlay_opacity": 20,
+        "text_color": "#ffffff",
+        "heading_size": 40,
+        "mobile_heading_size": 30,
+        "item_title_size": 32,
+        "mobile_item_title_size": 24,
+        "text_size": 16,
+        "mobile_text_size": 14,
+        "item_1_title": "Sustainability Features",
+        "item_1_text": "From product to packaging, we hold trusted certifications for sustainable practices, contributing to a healthier planet.",
+        "item_2_title": "Women Empowerment",
+        "item_2_text": "With over 65% women in our company, we support fair career opportunities and women's professional growth. Behind every FANY watch is the power of women.",
+        "item_3_title": "Yoga & Wellness Support",
+        "item_3_text": "We consistently sponsor yoga events to nurture women's physical and mental health, and build a kind, supportive women's community.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
     "image_banner_A4ELCm": {
       "type": "image-banner",
       "blocks": {
@@ -696,6 +721,7 @@
   "order": [
     "main",
     "main_banner_V6GaNm",
+    "fany_action_4wQHxC",
     "image_banner_A4ELCm",
     "image_text_YeDiWq",
     "multirow2_fA8nHj",
