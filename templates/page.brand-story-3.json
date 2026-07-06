@@ -638,18 +638,21 @@
         "card_anw9wc": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/homepage_set-1000x1000-01.webp",
             "link": ""
           }
         },
         "card_gnBF7C": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/homepage_set-1000x1000-02.webp",
             "link": ""
           }
         },
         "card_8QNhXG": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/homepage_set-1000x1000-03.webp",
             "link": ""
           }
         }
@@ -661,7 +664,7 @@
       ],
       "name": "礼物套装展示",
       "settings": {
-        "title": "Timeless gifts that stand out\n20% OFF GIFT SETS",
+        "title": "Timeless Elegance, Perfectly Paired \n24% OFF GIFT SET",
         "title_font_size": 28,
         "mobile_title_font_size": 24,
         "title_font_weight": "700",
