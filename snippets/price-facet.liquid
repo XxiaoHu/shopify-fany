@@ -1,6 +1,11 @@
-<span class="field-currency">{{ cart.currency.symbol }}</span>
+{%- unless price_currency_inside_fields -%}
+  <span class="field-currency">{{ cart.currency.symbol }}</span>
+{%- endunless -%}
 
 <div class="field">
+  {%- if price_currency_inside_fields -%}
+    <span class="field-currency">{{ cart.currency.symbol }}</span>
+  {%- endif -%}
   <input
     class="field__input"
     name="{{ filter.min_value.param_name }}"
@@ -10,7 +15,7 @@
     {%- endif -%}
     type="text"
     inputmode="decimal"
-    placeholder="0"
+    placeholder="{% if price_currency_inside_fields %}0.00{% elsif hide_price_placeholders %}{% else %}0{% endif %}"
     data-pattern="\d| |,|\."
     data-min="0"
     data-max="{{ filter.range_max | money_without_currency }}"
@@ -20,11 +25,16 @@
   </label>
 </div>
 
-{%- if filter_type != 'vertical' -%}
+{%- if price_currency_inside_fields -%}
+  <span class="price-range-separator" aria-hidden="true"></span>
+{%- elsif filter_type != 'vertical' -%}
   <span class="field-currency">{{ cart.currency.symbol }}</span>
 {%- endif -%}
 
 <div class="field">
+  {%- if price_currency_inside_fields -%}
+    <span class="field-currency">{{ cart.currency.symbol }}</span>
+  {%- endif -%}
   <input
     class="field__input"
     name="{{ filter.max_value.param_name }}"
@@ -34,7 +44,7 @@
     {%- endif -%}
     type="text"
     inputmode="decimal"
-    placeholder="{{ filter.range_max | money_without_currency }}"
+    placeholder="{% unless hide_price_placeholders %}{{ filter.range_max | money_without_currency }}{% endunless %}"
     data-pattern="\d| |,|\."
     data-min="0"
     data-max="{{ filter.range_max | money_without_currency }}"
