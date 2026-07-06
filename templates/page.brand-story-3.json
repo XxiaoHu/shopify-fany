@@ -262,7 +262,7 @@
             "link": "",
             "link_text": "",
             "link_target_blank": false,
-            "content_horizontal": "left",
+            "content_horizontal": "right",
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
