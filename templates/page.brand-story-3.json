@@ -520,8 +520,8 @@
         "slide_HzKkwr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/band_story-_-PC_8f54941d-6827-4021-aa0f-3be757b05559.webp",
-            "mobile_image": "shopify://shop_images/2_1b729efc-fd63-4824-b369-6170244f74e7.webp",
+            "image": "shopify://shop_images/band_story-_-PC_67840b1c-40e0-4cb7-8db1-c895e2ea60d1.webp",
+            "mobile_image": "shopify://shop_images/4_b9caaa63-94f6-496a-8dd6-1409c85d67f7.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
@@ -530,7 +530,7 @@
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
-            "title": "Smart: Personalized Insights for a Better Life",
+            "title": "Reliable: Accurate and Trustworthy, Every Day",
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
@@ -555,7 +555,7 @@
             "subtitle_desc_gap": 12,
             "mobile_title_subtitle_gap": 6,
             "mobile_subtitle_desc_gap": 10,
-            "description": "<p>FANY is more than a smartwatch—it's your everyday wellness companion. Track your menstrual cycle, ovulation, mood, and physical changes with intelligent insights designed to help you better understand your body, plan your routine, and care for yourself with confidence.</p>",
+            "description": "<p>With reliable data and stable performance, FANY becomes a reliable partner. With precise real-time heart rate, blood oxygen, and calorie tracking during every workout, it helps you better understand your body's performance and train with confidence. FANY isn’t just a device—it’s a part of your daily life.</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
