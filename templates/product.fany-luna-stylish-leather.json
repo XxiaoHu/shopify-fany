@@ -334,32 +334,6 @@
             "content": "<p>Designed for women who appreciate timeless elegance and modern living, the FANY Luna Leather Smartwatch seamlessly blends refined craftsmanship with intelligent wellness. Its ultra-slim profile, premium leather strap, and lightweight design create a sophisticated look that feels as effortless as it appears.</p>",
             "page": ""
           }
-        },
-        "collapsible_tab_cc8GtD": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Description",
-            "title_color": "#1e0e06",
-            "title_font_size": 16,
-            "title_font_weight": "700",
-            "title_line_height": 1.2,
-            "title_letter_spacing": 0,
-            "content_color": "#1e0e06",
-            "content_font_size": 16,
-            "content_font_weight": "400",
-            "content_line_height": 1.5,
-            "content_letter_spacing": 0,
-            "border_color": "#e4e4e4",
-            "summary_padding_top": 13,
-            "summary_padding_bottom": 12,
-            "content_padding_top": 12,
-            "content_padding_bottom": 12,
-            "caret_size": 24,
-            "show_icon": false,
-            "icon": "check_mark",
-            "content": "<p>Designed for women who appreciate timeless elegance and modern living, the FANY Luna Leather Smartwatch seamlessly blends refined craftsmanship with intelligent wellness. Its ultra-slim profile, premium leather strap, and lightweight design create a sophisticated look that feels as effortless as it appears.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -384,8 +358,7 @@
         "details_table_LQKfiY",
         "collapsible_tab_Njz6Wt",
         "collapsible_tab_L34ycq",
-        "collapsible_tab_BELxCm",
-        "collapsible_tab_cc8GtD"
+        "collapsible_tab_BELxCm"
       ],
       "settings": {
         "color_scheme": "scheme-1",
