@@ -1,3 +1,30 @@
+{%- liquid
+  assign desktop_image = section.settings.image
+  assign mobile_image = section.settings.mobile_image | default: desktop_image
+  assign desktop_image_aspect_ratio = '720 / 457'
+  assign mobile_image_aspect_ratio = '361 / 229'
+
+  case section.settings.desktop_image_ratio
+    when 'square'
+      assign desktop_image_aspect_ratio = '1 / 1'
+    when 'adapt'
+      if desktop_image != blank
+        assign desktop_image_aspect_ratio = desktop_image.aspect_ratio
+      endif
+  endcase
+
+  case section.settings.mobile_image_ratio
+    when 'square'
+      assign mobile_image_aspect_ratio = '1 / 1'
+    when 'adapt'
+      if mobile_image != blank
+        assign mobile_image_aspect_ratio = mobile_image.aspect_ratio
+      endif
+    when 'desktop'
+      assign mobile_image_aspect_ratio = desktop_image_aspect_ratio
+  endcase
+-%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.mobile_padding_top }}px;
@@ -16,16 +43,24 @@
   }
 
   .image-content-split-{{ section.id }} .image-content-split__media {
+    aspect-ratio: {{ mobile_image_aspect_ratio }};
     border-radius: {{ section.settings.image_radius }}px;
     overflow: hidden;
+  }
+
+  .image-content-split-{{ section.id }} .image-content-split__media picture {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .image-content-split-{{ section.id }} .image-content-split__media img,
   .image-content-split-{{ section.id }} .image-content-split__placeholder {
     display: block;
     width: 100%;
-    aspect-ratio: 361 / 229;
-    object-fit: cover;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit | default: 'cover' }};
+    object-position: center;
   }
 
   .image-content-split-{{ section.id }} .image-content-split__placeholder {
@@ -126,12 +161,8 @@
     }
 
     .image-content-split-{{ section.id }} .image-content-split__media {
+      aspect-ratio: {{ desktop_image_aspect_ratio }};
       border-radius: {{ section.settings.image_radius }}px;
-    }
-
-    .image-content-split-{{ section.id }} .image-content-split__media img,
-    .image-content-split-{{ section.id }} .image-content-split__placeholder {
-      aspect-ratio: 720 / 457;
     }
 
     .image-content-split-{{ section.id }} .image-content-split__content {
@@ -191,10 +222,6 @@
 <div class="section-{{ section.id }}-padding">
   <div class="image-content-split-{{ section.id }} image-content-split{% if section.settings.desktop_layout == 'text_first' %} image-content-split--text-first{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="image-content-split__media">
-      {%- liquid
-        assign desktop_image = section.settings.image
-        assign mobile_image = section.settings.mobile_image | default: desktop_image
-      -%}
       {%- if desktop_image != blank -%}
         <picture>
           {%- if mobile_image != blank -%}
@@ -362,6 +389,66 @@
       "unit": "px",
       "label": "图片圆角",
       "default": 0
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_ratio",
+      "label": "PC端图片比例",
+      "options": [
+        {
+          "value": "landscape",
+          "label": "横图 720:457"
+        },
+        {
+          "value": "square",
+          "label": "方图 1:1"
+        },
+        {
+          "value": "adapt",
+          "label": "跟随图片原始比例"
+        }
+      ],
+      "default": "landscape"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_ratio",
+      "label": "移动端图片比例",
+      "options": [
+        {
+          "value": "landscape",
+          "label": "横图 361:229"
+        },
+        {
+          "value": "square",
+          "label": "方图 1:1"
+        },
+        {
+          "value": "desktop",
+          "label": "跟随 PC 端比例"
+        },
+        {
+          "value": "adapt",
+          "label": "跟随图片原始比例"
+        }
+      ],
+      "default": "landscape"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "图片填充方式",
+      "options": [
+        {
+          "value": "cover",
+          "label": "铺满裁切"
+        },
+        {
+          "value": "contain",
+          "label": "完整显示"
+        }
+      ],
+      "default": "cover"
     },
     {
       "type": "select",
