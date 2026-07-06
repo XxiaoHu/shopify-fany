@@ -432,8 +432,8 @@
         "slide_tVpN4D": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/band_story-_-PC.webp",
-            "mobile_image": "shopify://shop_images/1_2e6b5722-9a19-489c-ba36-8a03af73a5df.webp",
+            "image": "shopify://shop_images/band_story-_-PC_4fedc56b-6700-4038-a0fe-f14f71c2da02.webp",
+            "mobile_image": "shopify://shop_images/3_c7e3263f-a718-428e-8eb3-186d316b0057.webp",
             "image_overlay_opacity": 0,
             "link": "",
             "link_text": "",
@@ -442,7 +442,7 @@
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
-            "title": "Authentic: Understand Yourself, Find Balance",
+            "title": "Innovation: Creating New Experiences Through Design",
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
@@ -467,7 +467,7 @@
             "subtitle_desc_gap": 12,
             "mobile_title_subtitle_gap": 6,
             "mobile_subtitle_desc_gap": 10,
-            "description": "<p>FANY helps you truly understand your body and mind. Tracking sleep and emotions with accurate data helps you see beyond the surface and recognize their real needs. Only by knowing yourself can you find balance and harmony in life.</p>",
+            "description": "<p>FANY focuses on people, always finding new ways to improve your experience. From precise health tracking to thoughtful emotion reminders, FANY opens up new possibilities. Innovation isn’t just about technology—it’s about truly understanding and meeting your needs.</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
