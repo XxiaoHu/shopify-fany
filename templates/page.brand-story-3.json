@@ -170,6 +170,36 @@
         "accessibility_info": "首页横幅轮播"
       }
     },
+    "image_text_qprqQp": {
+      "type": "image-text",
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p><strong>FANY, see the vibe.</strong></p>",
+        "text": "<p>Life flows through every moment —leading at work, laughing at home, or savoring a quiet pause, FANY stands with you.<br/><br/>Created for women, FANY is more than a smartwatch; it’s a companion that truly understands you, staying in tune with your body’s rhythm. A gentle reminder to breathe, a steady pulse to guide, a silent bond to console—always syncs with you.<br/><br/>We walk together, We lift each other. We shine as one.<br/>Every rhythm, every spark—we share, fuel, and glow.<br/><br/></p>",
+        "img_first": true,
+        "img_has_back": false,
+        "text_alignment": "center",
+        "back_color": "",
+        "font_color": "#1E0E06",
+        "title_font_size": 40,
+        "text_font_size": 20,
+        "img_text_margin": 75,
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "mobile_header": "<p><strong>FANY, see the vibe.</strong></p>",
+        "mobile_text": "<p>Life flows through every moment —leading at work, laughing at home, or savoring a quiet pause, FANY stands with you.<br/><br/>Created for women, FANY is more than a smartwatch; it’s a companion that truly understands you, staying in tune with your body’s rhythm. A gentle reminder to breathe, a steady pulse to guide, a silent bond to console—always syncs with you.<br/><br/>We walk together, We lift each other. We shine as one.<br/>Every rhythm, every spark—we share, fuel, and glow.<br/><br/></p>",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "center",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1E0E06",
+        "mobile_title_font_size": 28,
+        "mobile_text_font_size": 16,
+        "mobile_img_text_margin": 20,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
+      }
+    },
     "image_content_split_CrTWJM": {
       "type": "image-content-split",
       "name": "左右图文介绍",
@@ -534,7 +564,7 @@
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
-            "title_color": "#1e0e06",
+            "title_color": "#FFFFFF",
             "mobile_title_color": "#1e0e06",
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
@@ -559,7 +589,7 @@
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#1e0e06",
+            "desc_color": "#FFFFFF",
             "mobile_desc_color": "#1e0e06",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
@@ -1169,6 +1199,7 @@
   "order": [
     "main",
     "main_banner_V6GaNm",
+    "image_text_qprqQp",
     "image_content_split_CrTWJM",
     "image_content_split_dQ7zin",
     "main_banner_yPw3BN",
