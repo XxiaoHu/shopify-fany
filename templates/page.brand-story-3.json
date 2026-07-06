@@ -180,7 +180,7 @@
         "img_has_back": false,
         "text_alignment": "center",
         "back_color": "",
-        "font_color": "#1E0E06",
+        "font_color": "#1e0e06",
         "title_font_size": 40,
         "text_font_size": 20,
         "img_text_margin": 75,
@@ -192,7 +192,7 @@
         "mobile_img_has_back": false,
         "mobile_text_alignment": "center",
         "mobile_back_color": "",
-        "mobile_font_color": "#1E0E06",
+        "mobile_font_color": "#1e0e06",
         "mobile_title_font_size": 28,
         "mobile_text_font_size": 16,
         "mobile_img_text_margin": 20,
@@ -476,7 +476,7 @@
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
-            "title_color": "#FFFFFF",
+            "title_color": "#ffffff",
             "mobile_title_color": "#1e0e06",
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
@@ -501,7 +501,7 @@
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#FFFFFF",
+            "desc_color": "#ffffff",
             "mobile_desc_color": "#1e0e06",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
@@ -564,7 +564,7 @@
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
-            "title_color": "#FFFFFF",
+            "title_color": "#ffffff",
             "mobile_title_color": "#1e0e06",
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
@@ -589,7 +589,7 @@
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#FFFFFF",
+            "desc_color": "#ffffff",
             "mobile_desc_color": "#1e0e06",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
@@ -630,6 +630,76 @@
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0,
         "accessibility_info": "首页横幅轮播"
+      }
+    },
+    "gift_sets_j6JtDL": {
+      "type": "gift-sets",
+      "blocks": {
+        "card_anw9wc": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        },
+        "card_gnBF7C": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        },
+        "card_8QNhXG": {
+          "type": "card",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_anw9wc",
+        "card_gnBF7C",
+        "card_8QNhXG"
+      ],
+      "name": "礼物套装展示",
+      "settings": {
+        "title": "Timeless gifts that stand out\n20% OFF GIFT SETS",
+        "title_font_size": 28,
+        "mobile_title_font_size": 24,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "center",
+        "title_color": "#1e0e06",
+        "subtitle": "Handpicked for every special moment",
+        "subtitle_font_size": 20,
+        "mobile_subtitle_font_size": 16,
+        "subtitle_font_weight": "500",
+        "subtitle_line_height": 1.4,
+        "subtitle_letter_spacing": 0,
+        "subtitle_alignment": "center",
+        "subtitle_color": "#3d3d3d",
+        "description": "Discover gifts that make every moment extraordinary.",
+        "desc_font_size": 16,
+        "mobile_desc_font_size": 16,
+        "desc_font_weight": "400",
+        "desc_line_height": 1.5,
+        "desc_letter_spacing": 0,
+        "desc_alignment": "center",
+        "desc_color": "#686766",
+        "header_gap": 20,
+        "mobile_header_gap": 20,
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "view_more_font_size": 16,
+        "view_more_color": "#9E7163",
+        "view_more_hover_color": "#794538",
+        "text_safe_margin": 200,
+        "mobile_text_safe_margin": 16,
+        "image_gap": 16,
+        "mobile_image_gap": 12,
+        "card_border_radius": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_y": 40
       }
     },
     "fany_action_4wQHxC": {
@@ -1206,6 +1276,7 @@
     "main_banner_UQdWLp",
     "main_banner_ekiEzB",
     "main_banner_HEnWVX",
+    "gift_sets_j6JtDL",
     "fany_action_4wQHxC",
     "image_banner_A4ELCm",
     "image_text_YeDiWq",
