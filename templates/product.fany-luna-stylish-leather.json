@@ -335,8 +335,8 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>P.O. Boxes, APO/FPO/DPO, Alaska, and island addresses are not supported. Orders associated with reshipment services, including third-party freight forwarders, are not supported.<br/>Tracking information will be emailed to you once the order is fulfilled.<br/>Orders can no longer be canceled after they are fulfilled.<br/>Funds will be held for your entire order and billed as each item is shipped. You may receive several shipments to complete the fulfillment of your order.<br/><br/>You will receive the goods within 3-7 business days after the express delivery is shipped. If you need any help with your order, please contact our customer service at support@fany.us<br/><br/>Website Orders – Consumer Support: support@fany.us<br/>Media Relations Email: marketing@fany.us<br/>Phone/WhatsApp: +1 (839) 268-8934</p>",
-            "page": ""
+            "content": "",
+            "page": "shipping-policy"
           }
         },
         "collapsible_tab_BELxCm": {
