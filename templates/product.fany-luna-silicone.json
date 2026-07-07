@@ -1201,12 +1201,12 @@
             "back_color": "",
             "font_color": "#1e0e06",
             "title_font_size": 40,
-            "text_font_size": 24,
+            "text_font_size": 20,
             "header_width": 700,
             "text_width": 1120,
             "img_text_margin": 40,
             "padding_top": 120,
-            "padding_bottom": 30,
+            "padding_bottom": 20,
             "mobile_header": "<p>Sync Phone Notifications</p>",
             "mobile_text": "<p>It delivers notifications for texts, apps, calendar events, and more. Whether you’re in a meeting, on a date, driving, or spending time with your kids, you’ll get timely alerts.</p>",
             "mobile_img_first": false,
@@ -1214,10 +1214,10 @@
             "mobile_text_alignment": "center",
             "mobile_back_color": "",
             "mobile_font_color": "#1e0e06",
-            "mobile_title_font_size": 25,
-            "mobile_text_font_size": 15,
-            "mobile_img_text_margin": 20,
-            "mobile_padding_top": 40,
+            "mobile_title_font_size": 28,
+            "mobile_text_font_size": 16,
+            "mobile_img_text_margin": 0,
+            "mobile_padding_top": 60,
             "mobile_padding_bottom": 0
           },
           "blocks": {}
@@ -1236,6 +1236,27 @@
             "img_text_margin": 0,
             "padding_top": 0,
             "padding_bottom": 20
+          },
+          "blocks": {}
+        },
+        "custom_watch_faces_pwJYNb": {
+          "type": "custom-watch-faces",
+          "name": "自定义表盘",
+          "settings": {
+            "header": "<p>Custom Watch Faces <br/>Happiness at Your Wrist</p>",
+            "text": "<p>Use phone photos of pets, kids, and loved ones. Glance, happiness shines clear!</p>",
+            "watch_image": "shopify://shop_images/Watch_Faces-1.webp",
+            "image_group": "watch-faces-gallery-acfy0hfy",
+            "title_font_size": 40,
+            "text_font_size": 20,
+            "text_width": 1000,
+            "padding_top": 90,
+            "padding_bottom": 40,
+            "mobile_title_font_size": 28,
+            "mobile_text_font_size": 16,
+            "mobile_text_width": 300,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 40
           },
           "blocks": {}
         },
@@ -1278,6 +1299,7 @@
         "product_overview_banner_zJNeUk": {
           "type": "product-overview-banner",
           "name": "自定义表盘",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Luna_52695e1e-1521-4cc8-953e-152d09803aa6.webp",
             "mobile_image": "shopify://shop_images/Luna_1_05df6a96-b6e0-4b41-8c45-e83defd3e854.webp",
@@ -1514,6 +1536,7 @@
         "product_overview_image_text_8AdJTd",
         "product_overview_image_text_p479qf",
         "product_overview_two_image_text_zwGAm7",
+        "custom_watch_faces_pwJYNb",
         "product_overview_image_text_L4JVGr",
         "product_overview_banner_zJNeUk",
         "product_overview_image_text_8bzVWm",
