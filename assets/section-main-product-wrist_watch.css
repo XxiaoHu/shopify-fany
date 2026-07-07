@@ -514,17 +514,22 @@ a.product__text {
 }
 
 .product__details-table-label {
+  flex: 0 1 auto;
+  max-width: 80%;
   color: var(--pdt-label-color, #1e0e06);
   font-size: var(--pdt-label-font-size, 16px);
   font-weight: var(--pdt-label-font-weight, 400);
   line-height: var(--pdt-label-line-height, 1.5);
+  overflow-wrap: anywhere;
 }
 
 .product__details-table-value {
+  flex: 1 1 0;
   color: var(--pdt-value-color, #1e0e06);
   font-size: var(--pdt-value-font-size, 16px);
   font-weight: var(--pdt-value-font-weight, 700);
   line-height: var(--pdt-value-line-height, 1.2);
+  overflow-wrap: anywhere;
   text-align: right;
 }
 
