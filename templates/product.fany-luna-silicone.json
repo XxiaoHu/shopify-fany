@@ -135,7 +135,7 @@
             "row_gap": 12,
             "item_gap": 10,
             "margin_top": 0,
-            "margin_bottom": 0,
+            "margin_bottom": 20,
             "text_1": "U.S., EU & U.K. Free Shipping",
             "icon_1": "shipping",
             "text_2": "Ship in 1–2 Business Days",
