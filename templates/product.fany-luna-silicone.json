@@ -492,8 +492,8 @@
           "type": "product-overview-banner",
           "name": "产品集合",
           "settings": {
-            "image": "shopify://shop_images/winner-of-the-American-good-design-gold-award.webp",
-            "mobile_image": "shopify://shop_images/winner-of-the-American-good-design-gold-award-mobile.webp",
+            "image": "shopify://shop_images/FANY_Luna_Silicone_1.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Silicone_1-M.webp",
             "image_overlay_opacity": 0,
             "image_height": "adapt",
             "image_behavior": "none",
@@ -619,8 +619,8 @@
           "type": "product-overview-banner",
           "name": "轻盈舒适设计 2",
           "settings": {
-            "image": "shopify://shop_images/one-of-the-lightest-womens-smartwatches-for-all-day-comfort.webp",
-            "mobile_image": "shopify://shop_images/one-of-the-lightest-womens-smartwatches-for-all-day-comfort-mobile.webp",
+            "image": "shopify://shop_images/FANY_Luna_Silicone_2.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Silicone_2-M.webp",
             "image_overlay_opacity": 0,
             "image_height": "adapt",
             "image_behavior": "none",
@@ -666,8 +666,8 @@
           "type": "product-overview-image-text",
           "name": "轻盈舒适设计 3",
           "settings": {
-            "pc_img": "shopify://shop_images/perfect-for-womens-slender-wrists.webp",
-            "mobile_img": "shopify://shop_images/perfect-for-womens-slender-wrists-mobile.webp",
+            "pc_img": "shopify://shop_images/FANY_Luna_Silicone_3.webp",
+            "mobile_img": "shopify://shop_images/FANY_Luna_Silicone_3-M.webp",
             "header": "<p>Perfect for Women’s Slender Wrists</p>",
             "text-24": "<p>The 37.5mm classic case size is neither too big nor too small. </p><p>Paired with an elegant dial and classic leather band, it works as both a fitness tracker </p><p>and a daily accessory, effortlessly complementing work, exercise, and casual fits.</p>",
             "img_first": false,
