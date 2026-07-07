@@ -56,6 +56,7 @@
         "custom_liquid_xAEewB": {
           "type": "custom_liquid",
           "name": "获奖信息",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{%- style -%}\n  .product__award {\n    margin: 1.6rem 0 1.2rem 0;\n    font-family: Lato;\n    font-weight: 700;\n    font-size: 16px;\n    color: #1e0e06;\n    line-height: 1.25;\n  }\n{%- endstyle -%}\n<div class=\"product__award\">\n  <p>FANY Luna — Winner of the American Good Design Gold Award</p>\n</div>"
           }
