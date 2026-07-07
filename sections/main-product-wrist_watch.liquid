@@ -200,7 +200,7 @@
               }
             }
           {%- endstyle -%}
-          <awards-scroll style="--item-count: {{ product.metafields.custom.awards.value.size }}">
+          {% comment %} <awards-scroll style="--item-count: {{ product.metafields.custom.awards.value.size }}">
             <div class="awards-scroll-container">
               <div class="awards-scroll-wrapper">
                 <!-- 奖项内容 -->
@@ -218,7 +218,7 @@
                 {% endfor %}
               </div>
             </div>
-          </awards-scroll>
+          </awards-scroll> {% endcomment %}
           <script src="{{ 'awards-scroll.js' | asset_url }}" defer="defer"></script>
         {% endif %}
       </div>
