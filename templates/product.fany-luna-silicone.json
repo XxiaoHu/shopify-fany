@@ -858,9 +858,27 @@
           },
           "blocks": {}
         },
+        "product_overview_two_image_text_pRTDi3": {
+          "type": "product-overview-two-image-text",
+          "name": "上下结构图文-两图",
+          "settings": {
+            "pc_img_1": "shopify://shop_images/FANY_Luna_Silicone_8.webp",
+            "mobile_img_1": "shopify://shop_images/FANY_Luna_Silicone_8-M.webp",
+            "pc_img_2": "shopify://shop_images/FANY_Luna_Silicone_9.webp",
+            "mobile_img_2": "shopify://shop_images/FANY_Luna_Silicone_9-M.webp",
+            "header_width": 1000,
+            "header": "<p>Menstrual Cycle Insights <br/>for Health and Balance</p>",
+            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
+            "img_text_margin": 70,
+            "padding_top": 100,
+            "padding_bottom": 30
+          },
+          "blocks": {}
+        },
         "product_overview_image_text_eJhN6A": {
           "type": "product-overview-image-text",
           "name": "经期 1",
+          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/Luna_-01.webp",
             "mobile_img": "shopify://shop_images/Luna_4.webp",
@@ -896,6 +914,7 @@
         "product_overview_image_text_VG6jbX": {
           "type": "product-overview-image-text",
           "name": "经期 2",
+          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/Luna_-02.webp",
             "mobile_img": "shopify://shop_images/Luna_2.webp",
@@ -997,24 +1016,6 @@
             "mobile_img_text_margin": 20,
             "mobile_padding_top": 40,
             "mobile_padding_bottom": 0
-          },
-          "blocks": {}
-        },
-        "product_overview_two_image_text_pRTDi3": {
-          "type": "product-overview-two-image-text",
-          "name": "上下结构图文-两图",
-          "disabled": true,
-          "settings": {
-            "pc_img_1": "shopify://shop_images/pc_0701d03a-4498-4b75-873b-4e341bb539e0.webp",
-            "mobile_img_1": "shopify://shop_images/app.webp",
-            "pc_img_2": "shopify://shop_images/pc_acc5855a-fed7-4474-ae0b-c6192b55b96d.webp",
-            "mobile_img_2": "shopify://shop_images/app_87784ba0-a278-4e30-8238-34325ddf4678.webp",
-            "header_width": 1000,
-            "header": "<p>Menstrual Cycle Insights for Health and Balance</p>",
-            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
-            "img_text_margin": 70,
-            "padding_top": 36,
-            "padding_bottom": 36
           },
           "blocks": {}
         },
@@ -1192,8 +1193,6 @@
           "type": "product-overview-image-text",
           "name": "消息提醒",
           "settings": {
-            "pc_img": "shopify://shop_images/Luna_511b6bcc-19ba-4bb0-a8dd-4a3e2bf2d679.webp",
-            "mobile_img": "shopify://shop_images/Luna_1.webp",
             "header": "<p>Sync Phone Notifications</p>",
             "text-24": "<p>It delivers notifications for texts, apps, calendar events, and more. Whether you’re in a meeting, on a date, driving, or spending time with your kids, you’ll get timely alerts.</p>",
             "img_first": false,
@@ -1206,7 +1205,7 @@
             "header_width": 700,
             "text_width": 1120,
             "img_text_margin": 40,
-            "padding_top": 90,
+            "padding_top": 120,
             "padding_bottom": 30,
             "mobile_header": "<p>Sync Phone Notifications</p>",
             "mobile_text": "<p>It delivers notifications for texts, apps, calendar events, and more. Whether you’re in a meeting, on a date, driving, or spending time with your kids, you’ll get timely alerts.</p>",
@@ -1220,6 +1219,23 @@
             "mobile_img_text_margin": 20,
             "mobile_padding_top": 40,
             "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_two_image_text_zwGAm7": {
+          "type": "product-overview-two-image-text",
+          "name": "上下结构图文-两图",
+          "settings": {
+            "pc_img_1": "shopify://shop_images/FANY_Luna_Silicone_15.webp",
+            "mobile_img_1": "shopify://shop_images/FANY_Luna_Silicone_15-M.webp",
+            "pc_img_2": "shopify://shop_images/FANY_Luna_Silicone_16.webp",
+            "mobile_img_2": "shopify://shop_images/FANY_Luna_Silicone_16-M.webp",
+            "header_width": 1000,
+            "header": "",
+            "text-24": "",
+            "img_text_margin": 0,
+            "padding_top": 0,
+            "padding_bottom": 20
           },
           "blocks": {}
         },
@@ -1486,17 +1502,18 @@
         "product_overview_banner_4UMQMt",
         "product_overview_highlights_DQK4yi",
         "product_overview_banner_pJM4En",
+        "product_overview_two_image_text_pRTDi3",
         "product_overview_image_text_eJhN6A",
         "product_overview_image_text_VG6jbX",
         "product_overview_image_text_c8MYCN",
         "product_overview_image_text_6nLWTm",
-        "product_overview_two_image_text_pRTDi3",
         "product_overview_image_text_video_jaAGVn",
         "product_overview_image_text_nFQFtH",
         "product_overview_image_text_9CBGxL",
         "product_overview_banner_UJAiQp",
         "product_overview_image_text_8AdJTd",
         "product_overview_image_text_p479qf",
+        "product_overview_two_image_text_zwGAm7",
         "product_overview_image_text_L4JVGr",
         "product_overview_banner_zJNeUk",
         "product_overview_image_text_8bzVWm",
