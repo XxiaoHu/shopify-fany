@@ -43,6 +43,13 @@
       opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
     }
 
+    {%- if block.settings.image != blank -%}
+      #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media {
+        --main-banner-desktop-ratio: {{ desktop_image_aspect_ratio }};
+        --main-banner-mobile-ratio: {{ mobile_image_aspect_ratio }};
+      }
+    {%- endif -%}
+
     {%- if section.settings.slide_height == 'adapt_image' and block.settings.image != blank -%}
       #Slide-{{ section.id }}-{{ forloop.index }} .main-banner__media--adapt {
         --main-banner-adapt-ratio: {{ desktop_image_aspect_ratio }};
@@ -192,7 +199,7 @@
   >
     {%- for block in section.blocks -%}
       <div
-        class="main-banner__slide"
+        class="main-banner__slide main-banner__slide--desktop-{{ block.settings.desktop_layout_mode | default: 'overlay' }} main-banner__slide--mobile-{{ block.settings.mobile_layout_mode | default: 'overlay' }}"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
         {{ block.shopify_attributes }}
         role="group"
@@ -526,6 +533,28 @@
         {
           "type": "header",
           "content": "内容位置"
+        },
+        {
+          "type": "select",
+          "id": "desktop_layout_mode",
+          "options": [
+            { "value": "overlay", "label": "当前效果" },
+            { "value": "image_text", "label": "上图下文" },
+            { "value": "text_image", "label": "上文下图" }
+          ],
+          "default": "overlay",
+          "label": "PC端布局方式"
+        },
+        {
+          "type": "select",
+          "id": "mobile_layout_mode",
+          "options": [
+            { "value": "overlay", "label": "当前效果" },
+            { "value": "image_text", "label": "上图下文" },
+            { "value": "text_image", "label": "上文下图" }
+          ],
+          "default": "overlay",
+          "label": "移动端布局方式"
         },
         {
           "type": "select",
