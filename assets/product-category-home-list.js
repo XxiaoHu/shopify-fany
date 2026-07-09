@@ -117,7 +117,8 @@
           <h3 class="card-title">${item.title}</h3>
       `;
       if(item.price || item.disPrice) {
-        slideContent += `<p class="card-price"><span class="shop-btn">Shop now</span>`;
+        const hasDiscountPrice = Boolean(item.price && item.disPrice);
+        slideContent += `<p class="card-price${hasDiscountPrice ? ' card-price--has-discount' : ''}"><span class="shop-btn">Shop now</span>`;
         if(item.price) {
           slideContent += `<span class="price-s">${item.price}</span>`;
         }
