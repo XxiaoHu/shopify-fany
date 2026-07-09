@@ -1,0 +1,295 @@
+{{ 'gift-feature.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-gift-feature {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    --gift-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --gift-eyebrow-font-size: {{ section.settings.eyebrow_font_size }}px;
+    --gift-eyebrow-font-weight: {{ section.settings.eyebrow_font_weight }};
+    --gift-title-color: {{ section.settings.title_color }};
+    --gift-title-font-size: {{ section.settings.title_font_size }}px;
+    --gift-title-font-weight: {{ section.settings.title_font_weight }};
+    --gift-text-color: {{ section.settings.text_color }};
+    --gift-text-font-size: {{ section.settings.text_font_size }}px;
+    --gift-text-font-weight: {{ section.settings.text_font_weight }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .section-{{ section.id }}-gift-feature {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      --gift-eyebrow-font-size: {{ section.settings.mobile_eyebrow_font_size }}px;
+      --gift-title-font-size: {{ section.settings.mobile_title_font_size }}px;
+      --gift-text-font-size: {{ section.settings.mobile_text_font_size }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="gift-feature gift-feature--{{ section.settings.desktop_image_position }} section-{{ section.id }}-gift-feature">
+  <div class="gift-feature__inner">
+    <div class="gift-feature__content">
+      <div class="gift-feature__heading-wrap">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="gift-feature__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="gift-feature__title">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.text != blank -%}
+        <div class="gift-feature__text rte">
+          {{ section.settings.text }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="gift-feature__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1800
+          | image_tag:
+            loading: 'lazy',
+            widths: '375, 550, 750, 900, 1100, 1400, 1800',
+            sizes: '(min-width: 1440px) 900px, (min-width: 990px) calc(100vw - 640px), calc(100vw - 32px)',
+            alt: ''
+        }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg gift-feature__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "礼物图文",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "红色标题",
+      "default": "Birthday Gift:"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Honor the Amazing Woman She’s Grown to Be"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "内容",
+      "default": "<p>Pair the stylish and intelligent FANY Luna smartwatch with our radiant 14K gold plated butterfly bracelet—a meaningful gift designed to make every birthday celebration even more unforgettable.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "图片"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "PC端图片位置",
+      "options": [
+        { "value": "image-right", "label": "图片在右" },
+        { "value": "image-left", "label": "图片在左" }
+      ],
+      "default": "image-right"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-桌面端",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-桌面端",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距-移动端",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距-移动端",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "红色标题样式"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_font_size",
+      "min": 12,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_font_weight",
+      "label": "字重",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra Bold (800)" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "header",
+      "content": "标题样式"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "字重",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra Bold (800)" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "header",
+      "content": "内容样式"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_font_weight",
+      "label": "字重",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400"
+    }
+  ],
+  "presets": [
+    {
+      "name": "礼物图文"
+    }
+  ]
+}
+{% endschema %}
