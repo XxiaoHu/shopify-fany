@@ -1,0 +1,269 @@
+{{ 'transformative-journey.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-transformative-journey {
+    --tj-title-font-size: {{ section.settings.title_font_size }}px;
+    --tj-title-font-weight: {{ section.settings.title_font_weight }};
+    --tj-text-font-size: {{ section.settings.text_font_size }}px;
+    --tj-text-font-weight: {{ section.settings.text_font_weight }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .section-{{ section.id }}-transformative-journey {
+      --tj-title-font-size: {{ section.settings.mobile_title_font_size }}px;
+      --tj-text-font-size: {{ section.settings.mobile_text_font_size }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="transformative-journey section-{{ section.id }}-transformative-journey">
+  <div class="transformative-journey__grid">
+    <div class="transformative-journey__hero">
+      {%- if section.settings.her_image != blank -%}
+        {{ section.settings.her_image | image_url: width: 1200 | image_tag: class: 'transformative-journey__hero-image', loading: 'lazy', alt: '' }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg transformative-journey__hero-image transformative-journey__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="transformative-journey__media transformative-journey__media--p2">
+      {%- if section.settings.image_2 != blank -%}
+        {{ section.settings.image_2 | image_url: width: 900 | image_tag: loading: 'lazy', alt: '' }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg transformative-journey__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="transformative-journey__panel transformative-journey__panel--p3">
+      <div class="transformative-journey__copy">
+        <h3 class="transformative-journey__title">{{ section.settings.title_3 | escape }}</h3>
+        <div class="transformative-journey__text">{{ section.settings.text_3 | escape | newline_to_br }}</div>
+      </div>
+    </div>
+
+    <div class="transformative-journey__panel transformative-journey__panel--p1">
+      <div class="transformative-journey__copy">
+        <h3 class="transformative-journey__title">{{ section.settings.title_1 | escape }}</h3>
+        <div class="transformative-journey__text">{{ section.settings.text_1 | escape | newline_to_br }}</div>
+      </div>
+      {%- if section.settings.button_label_1 != blank -%}
+        <a class="transformative-journey__button" href="{{ section.settings.button_link_1 | default: '#' }}">
+          <span>{{ section.settings.button_label_1 | escape }}</span>
+          <span class="transformative-journey__button-arrow" aria-hidden="true"></span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="transformative-journey__media transformative-journey__media--p1">
+      {%- if section.settings.image_1 != blank -%}
+        {{ section.settings.image_1 | image_url: width: 900 | image_tag: loading: 'lazy', alt: '' }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg transformative-journey__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="transformative-journey__panel transformative-journey__panel--p2">
+      <div class="transformative-journey__copy">
+        <h3 class="transformative-journey__title">{{ section.settings.title_2 | escape }}</h3>
+        <div class="transformative-journey__text">{{ section.settings.text_2 | escape | newline_to_br }}</div>
+      </div>
+      {%- if section.settings.button_label_2 != blank -%}
+        <a class="transformative-journey__button" href="{{ section.settings.button_link_2 | default: '#' }}">
+          <span>{{ section.settings.button_label_2 | escape }}</span>
+          <span class="transformative-journey__button-arrow" aria-hidden="true"></span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="transformative-journey__media transformative-journey__media--p3">
+      {%- if section.settings.image_3 != blank -%}
+        {{ section.settings.image_3 | image_url: width: 900 | image_tag: loading: 'lazy', alt: '' }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg transformative-journey__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "多图多文",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "标题"
+    },
+    {
+      "type": "image_picker",
+      "id": "her_image",
+      "label": "标题组合图片"
+    },
+    {
+      "type": "header",
+      "content": "文字样式"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号-桌面端",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号-移动端",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "标题字重",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra Bold (800)" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "内容字号-桌面端",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "内容字号-移动端",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_font_weight",
+      "label": "内容字重",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "第一块"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "第一块图片"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "第一块标题",
+      "default": "Transformation: Bloom From Within"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "第一块文案",
+      "default": "There comes a moment when we choose ourselves.\nA morning walk before the world wakes up.\nA night of deeper rest.\nA deeper understanding of our bodies, emotions, and natural rhythms.\nFANY Luna is with you through it all. Move your body. Restore your energy. Honor your rhythm. Make space for intentional self-care.\nBecause true transformation always blooms from within."
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "第一块按钮文字",
+      "default": "NEXT"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "第一块按钮链接"
+    },
+    {
+      "type": "header",
+      "content": "第二块"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "第二块图片"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "第二块标题",
+      "default": "Shine: Celebrate Every Step"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "第二块文案",
+      "default": "The most meaningful journeys are often the ones no one else can see.\nEvery workout.\nEvery moment of self-discovery.\nEvery small choice that brings you closer to the woman you want to become.\nThese moments deserve to be celebrated.\nAs a special gift with your watch, you'll receive our signature 14K Gold Butterfly Bracelet—a symbol of growth, elegance, and the confidence to shine.\nBecause every chapter of your journey matters."
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "第二块按钮文字",
+      "default": "NEXT"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "第二块按钮链接"
+    },
+    {
+      "type": "header",
+      "content": "第三块"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "第三块图片"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "第三块标题",
+      "default": "Freedom: Designed For The Life You Love"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "第三块文案",
+      "default": "Freedom isn't about doing more.\nIt's about moving through life effortlessly.\nFrom morning workouts to weekend escapes.\nFrom busy days to quiet moments by the sea.\nWith IP68 water resistance, up to 7 days of battery life, 110 workout modes, and 120+ watch faces, FANY Luna adapts beautifully to every part of your lifestyle.\nStay active. Stay connected. Express your style. Because the best technology should feel as natural as living."
+    }
+  ],
+  "presets": [
+    {
+      "name": "多图多文"
+    }
+  ]
+}
+{% endschema %}
