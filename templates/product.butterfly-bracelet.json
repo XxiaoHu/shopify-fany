@@ -1,0 +1,1862 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_section_9pyfRj": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 12,
+        "mobile_font_size": 12
+      }
+    },
+    "main": {
+      "type": "main-product-wrist_watch",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1",
+            "title_font_size": 40
+          }
+        },
+        "description_JgcB66": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "text_8Pieka": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "🔥<strong>Buy Any 2 Get $15 OFF, Buy Any 3 Get $25 OFF</strong>",
+            "text_style": "body"
+          }
+        },
+        "judge_me_reviews_preview_badge_33gYqn": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "custom_liquid_xAEewB": {
+          "type": "custom_liquid",
+          "name": "获奖信息",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{%- style -%}\n  .product__award {\n    margin: 1.6rem 0 1.2rem 0;\n    font-family: Lato;\n    font-weight: 700;\n    font-size: 16px;\n    color: #1e0e06;\n    line-height: 1.25;\n  }\n{%- endstyle -%}\n<div class=\"product__award\">\n  <p>FANY Luna — Winner of the American Good Design Gold Award</p>\n</div>"
+          }
+        },
+        "excerpt_QrfUYA": {
+          "type": "excerpt",
+          "settings": {}
+        },
+        "selling_point_qVYdbb": {
+          "type": "selling_point",
+          "settings": {}
+        },
+        "virtual_wear_6NtG3k": {
+          "type": "virtual_wear",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "klarna_on_site_messaging_app_block_gKEjj8": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "credit-promotion-auto-size",
+            "theme": "dark",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "variant_img_m4j3e4": {
+          "type": "variant_img",
+          "settings": {}
+        },
+        "complementary_XHQWby": {
+          "type": "complementary",
+          "settings": {}
+        },
+        "discount_FbgCrr": {
+          "type": "discount",
+          "disabled": true,
+          "settings": {
+            "discount_text": "SAVE $20",
+            "coupon_code": "FANYMOM20"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "klarna_on_site_messaging_app_block_HH4iJi": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "payment_RJtWhH": {
+          "type": "payment",
+          "settings": {}
+        },
+        "side_panel_links_qBVbeB": {
+          "type": "side_panel_links",
+          "settings": {
+            "text_color": "#1e0e06",
+            "font_size": 16,
+            "icon_size": 28,
+            "row_gap": 12,
+            "item_gap": 10,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "text_1": "U.S., EU & U.K. Free Shipping",
+            "icon_1": "shipping",
+            "text_2": "Ship in 1–2 Business Days",
+            "icon_2": "delivery",
+            "text_3": "2-Year Warranty",
+            "icon_3": "warranty",
+            "text_4": "30-Day Money Back Guarantee",
+            "icon_4": "return"
+          }
+        },
+        "collapsible_tab_BBFxmQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "content_color": "#1e0e06",
+            "content_font_size": 16,
+            "content_font_weight": "400",
+            "content_line_height": 1.5,
+            "content_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "content_padding_top": 12,
+            "content_padding_bottom": 12,
+            "caret_size": 24,
+            "show_icon": false,
+            "icon": "check_mark",
+            "content": "<p>Designed for women who appreciate timeless elegance and modern living, the FANY Luna Leather Smartwatch seamlessly blends refined craftsmanship with intelligent wellness. Its ultra-slim profile, premium leather strap, and lightweight design create a sophisticated look that feels as effortless as it appears.</p>",
+            "page": ""
+          }
+        },
+        "details_table_LQKfiY": {
+          "type": "details_table",
+          "settings": {
+            "heading": "Details",
+            "default_open": false,
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "row_height": 50,
+            "row_padding_y": 12,
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "caret_size": 24,
+            "label_color": "#1e0e06",
+            "label_font_size": 16,
+            "label_font_weight": "400",
+            "label_line_height": 1.5,
+            "value_color": "#1e0e06",
+            "value_font_size": 16,
+            "value_font_weight": "700",
+            "value_line_height": 1.2,
+            "label_1": "Display Size",
+            "value_1": "Φ28.48 mm",
+            "label_2": "Physical Size",
+            "value_2": "37.5 x 37.5 x 10.4 mm: Fits wrists with a circumference of 144-202 mm",
+            "label_3": "Display Resolution",
+            "value_3": "360*360",
+            "label_4": "Battery life",
+            "value_4": "Up to 7 days",
+            "label_5": "Full Charge",
+            "value_5": "2.5h",
+            "label_6": "Charging Method",
+            "value_6": "Magnetic charger",
+            "label_7": "Display type",
+            "value_7": "AMOLED",
+            "label_8": "Touchscreen",
+            "value_8": "✓",
+            "label_9": "Release Bands",
+            "value_9": "✓",
+            "label_10": "Water rating",
+            "value_10": "Swim, IP68",
+            "label_11": "Weight",
+            "value_11": "23.9g",
+            "label_12": "Emotion and Stress Tracking",
+            "value_12": "✓",
+            "label_13": "Breathing Meditation for Relaxation",
+            "value_13": "✓",
+            "label_14": "Menstrual Cycle Tracking",
+            "value_14": "✓",
+            "label_15": "Sleep Tracking and Recommendations",
+            "value_15": "✓",
+            "label_16": "heart rate",
+            "value_16": "yes (spot-check and automatic monitoring every 5 minutes)",
+            "label_17": "Step counter",
+            "value_17": "✓",
+            "label_18": "110 Workout Tracking Modes (running, yoga, Pilates, walking, cycling, and more)",
+            "value_18": "✓",
+            "label_19": "Focus & Relax with Light Moments Pomodoro Clock",
+            "value_19": "✓",
+            "label_20": "Pulse Ox Blood Oxygen",
+            "value_20": "✓",
+            "label_21": "Abnormal Heart Rate Alerts",
+            "value_21": "✓",
+            "label_22": "Reject Phone Call",
+            "value_22": "✓",
+            "label_23": "Sync Phone Notifications",
+            "value_23": "✓",
+            "label_24": "Calendar Schedule Management",
+            "value_24": "✓",
+            "label_25": "Pomodoro Clock",
+            "value_25": "✓",
+            "label_26": "Alarm clock/Timer/Stopwatch",
+            "value_26": "✓",
+            "label_27": "Weather forecasts",
+            "value_27": "✓",
+            "label_28": "Gym",
+            "value_28": "Strength, HIIT, Cardio, Elliptical Training, Stair Stepping, Indoor Rowing, Dance Fitness, Jump Roping",
+            "label_29": "Wellness",
+            "value_29": "Walking, Pilates, Yoga, Breathwork",
+            "label_30": "Indoor running",
+            "value_30": "Treadmill Running, Indoor Track Running",
+            "label_31": "Outdoor running",
+            "value_31": "Running",
+            "label_32": "Cycling",
+            "value_32": "Biking, Indoor Biking",
+            "label_33": "Swim",
+            "value_33": "Pool Swimming",
+            "label_34": "Racket sports",
+            "value_34": "Pickleball, Tennis, Padel",
+            "label_35": "Calories burned",
+            "value_35": "✓",
+            "label_36": "Running: GPS-based distance, time and pace",
+            "value_36": "Requires connection with mobile phone GPS",
+            "label_37": "Distance traveled",
+            "value_37": "✓",
+            "label_38": "Intensity minutes",
+            "value_38": "✓",
+            "label_39": "7 days of Activity Tracking Data",
+            "value_39": "✓",
+            "label_40": "Watch Faces",
+            "value_40": "100+ Free Watch Faces & Custom Photo Watch Faces",
+            "label_41": "",
+            "value_41": "",
+            "label_42": "",
+            "value_42": "",
+            "label_43": "",
+            "value_43": "",
+            "label_44": "",
+            "value_44": "",
+            "label_45": "",
+            "value_45": ""
+          }
+        },
+        "collapsible_tab_Njz6Wt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "In The Box",
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "content_color": "#1e0e06",
+            "content_font_size": 16,
+            "content_font_weight": "400",
+            "content_line_height": 1.5,
+            "content_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "content_padding_top": 12,
+            "content_padding_bottom": 12,
+            "caret_size": 24,
+            "show_icon": false,
+            "icon": "check_mark",
+            "content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Magnetic Charger(Full Charge in 2.5 Hours)<br/>* Instruction manual, Quick start guide</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_L34ycq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping Info",
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "content_color": "#1e0e06",
+            "content_font_size": 16,
+            "content_font_weight": "400",
+            "content_line_height": 1.5,
+            "content_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "content_padding_top": 12,
+            "content_padding_bottom": 12,
+            "caret_size": 24,
+            "show_icon": false,
+            "icon": "check_mark",
+            "content": "",
+            "page": "shipping-policy"
+          }
+        },
+        "collapsible_tab_BELxCm": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns & Exchanges",
+            "title_color": "#1e0e06",
+            "title_font_size": 16,
+            "title_font_weight": "700",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "content_color": "#1e0e06",
+            "content_font_size": 16,
+            "content_font_weight": "400",
+            "content_line_height": 1.5,
+            "content_letter_spacing": 0,
+            "border_color": "#e4e4e4",
+            "summary_padding_top": 13,
+            "summary_padding_bottom": 12,
+            "content_padding_top": 12,
+            "content_padding_bottom": 12,
+            "caret_size": 24,
+            "show_icon": false,
+            "icon": "check_mark",
+            "content": "<p>Returns & Exchanges<br/>Each smartwatches and accessory that contain batteries purchased from FANY's official website comes with a 24-month warranty, while accessories such as watch bands and charging cables are covered by a 6-month limited warranty. We also provide a lifetime customer support service. If you have any questions during use, please feel free to contact us through your order page or via our support team — we will respond within 24 hours.<br/><br/>Return Application Process<br/>Go to your order<br/>Find the order ID in the list<br/>Send your return request to support@fany.us with the order number, the product you are returning, and the reason for the return.<br/><br/>Returns<br/>We accept product returns. Customers have the right to apply for a return within 30 days after receiving the product. If the order is returned after the specified return window, we cannot offer you a refund or exchange. None of these rules affects your statutory rights.<br/>All products ordered from fany.us can be returned except for gift cards.<br/><br/>If the return is caused by the consumer, the consumer should be responsible for the shipping fee. The specific fee should be based on the express company you choose.<br/>If, due to our reasons, the goods received are damaged or not correct, the consumer is not required to bear the shipping fee for this reason. <br/>We do not accept returned items that have been sent back without proper return requests.<br/>We do not offer Freight To Collect (FTC) service for the packages returned to us. The returns will be made at your own cost. <br/><br/>Products must be returned in their original physical condition with all accessories, documentation, packaging, and promotional items.<br/><br/>Return Address: Please contact us; we will reply within 24 hours.<br/><br/>Refund Policy<br/>All products undergo strict quality checks. If you are dissatisfied with a product due to quality issues within 30 days of receipt, you may request a return and refund. Contact support@fany.us for the return address before shipping. Upon receiving and inspecting the returned item, we will process the refund and return the amount to your original payment method within 3 business days.<br/><br/>Refund Inquiry<br/>If you haven’t received the refund, first verify your bank account details or contact your card issuer to check the progress (refunds may be delayed). If it still hasn’t arrived as expected, email support@fany.us for assistance.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "description_JgcB66",
+        "text_8Pieka",
+        "judge_me_reviews_preview_badge_33gYqn",
+        "custom_liquid_xAEewB",
+        "excerpt_QrfUYA",
+        "selling_point_qVYdbb",
+        "virtual_wear_6NtG3k",
+        "price",
+        "klarna_on_site_messaging_app_block_gKEjj8",
+        "variant_img_m4j3e4",
+        "complementary_XHQWby",
+        "discount_FbgCrr",
+        "buy_buttons",
+        "klarna_on_site_messaging_app_block_HH4iJi",
+        "payment_RJtWhH",
+        "side_panel_links_qBVbeB",
+        "collapsible_tab_BBFxmQ",
+        "details_table_LQKfiY",
+        "collapsible_tab_Njz6Wt",
+        "collapsible_tab_L34ycq",
+        "collapsible_tab_BELxCm"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "product_overview_group_F9Xy6b": {
+      "type": "product-overview-group",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_playlist_yMNRfz": {
+          "type": "shopify://apps/reelup-shoppable-videos/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "playlist_id": ""
+          }
+        },
+        "product_overview_image_text_TRRfhc": {
+          "type": "product-overview-image-text",
+          "name": "人群共鸣",
+          "settings": {
+            "header": "<p>Designed for Women</p>",
+            "text-24": "<p>Women bring life, light and rhythm to the world. When they tune into their elegant attitude, emotions, sleep, heart rate, and fitness... Happiness comes unexpectedly.</p>",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 0,
+            "text_width": 928,
+            "img_text_margin": 75,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_header": "<p>Designed for Women</p>",
+            "mobile_text": "<p>Women bring life, light and rhythm to the world. When they tune into their elegant attitude, emotions, sleep, heart rate, and fitness... Happiness comes unexpectedly.</p>",
+            "mobile_img_first": true,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_wPkbQ7": {
+          "type": "product-overview-banner",
+          "name": "时尚搭配",
+          "settings": {
+            "image": "shopify://shop_images/FANY-smartwatch-designed-for-women.webp",
+            "mobile_image": "shopify://shop_images/FANY-smartwatch-designed-for-women-mobile.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "center",
+            "show_text_box": false,
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "block_width": 0,
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 480,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_heading": "",
+            "mobile_text": "",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": false,
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "text_first": false,
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 24,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 0,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_YPEXQH": {
+          "type": "product-overview-banner",
+          "name": "产品集合",
+          "settings": {
+            "image": "shopify://shop_images/winner-of-the-American-good-design-gold-award.webp",
+            "mobile_image": "shopify://shop_images/winner-of-the-American-good-design-gold-award-mobile.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "center",
+            "show_text_box": false,
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "block_width": 1210,
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 480,
+            "padding_top": 50,
+            "padding_bottom": 0,
+            "mobile_heading": "",
+            "mobile_text": "",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": false,
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "text_first": false,
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 0,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_aesthetics_FqynqL": {
+          "type": "product-overview-aesthetics",
+          "name": "图片动画",
+          "disabled": true,
+          "settings": {
+            "mob": "aesthetics-gallery-zhhe7cfj",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_video_yTrkqr": {
+          "type": "product-overview-video",
+          "name": "t:sections.video.presets.name",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/icon旋转动画_紫_PC端1200(2).mp4",
+            "mobile_video": "shopify://files/videos/icon旋转动画_紫_手机端(2).mp4",
+            "description": "",
+            "full_width": false,
+            "enable_video_looping": true,
+            "autoplay": true,
+            "color_scheme": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_fitness_MaYPkK": {
+          "type": "product-overview-fitness",
+          "name": "运动健身",
+          "disabled": true,
+          "settings": {
+            "watch_image": "shopify://shop_images/images-fitness-watch-before-1_png.webp",
+            "circle_1": "fitness-circle-gallery-uyebyd2e",
+            "circle_2": "fitness-circle-gallery-uyebyd2e",
+            "circle_3": "fitness-circle-gallery-uyebyd2e",
+            "circle_color": "#000000",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 40
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_bDVYqF": {
+          "type": "product-overview-image-text",
+          "name": "轻盈舒适设计 文案",
+          "settings": {
+            "header": "<p>One of the Lightest women Smartwatch </p><p>for All-Day Comfort</p>",
+            "text-24": "<p>Whether you’re running, hiking, doing yoga, strength training, holding your little one, or sleeping—its ultra-lightweight feel is practically invisible. All-day comfort, zero burden. Crafted with aerospace-grade aluminum, skin-friendly and hypoallergenic. </p>",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 0,
+            "text_width": 928,
+            "img_text_margin": 75,
+            "padding_top": 150,
+            "padding_bottom": 120,
+            "mobile_header": "<p>One of the Lightest women Smartwatch for All-Day Comfort</p>",
+            "mobile_text": "<p>Whether you’re running, hiking, doing yoga, strength training, holding your little one, or sleeping—its ultra-lightweight feel is practically invisible. All-day comfort, zero burden. Crafted with aerospace-grade aluminum, skin-friendly and hypoallergenic. </p>",
+            "mobile_img_first": true,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 20
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_iprVYE": {
+          "type": "product-overview-banner",
+          "name": "轻盈舒适设计 2",
+          "settings": {
+            "image": "shopify://shop_images/one-of-the-lightest-womens-smartwatches-for-all-day-comfort.webp",
+            "mobile_image": "shopify://shop_images/one-of-the-lightest-womens-smartwatches-for-all-day-comfort-mobile.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "center",
+            "show_text_box": false,
+            "back_color": "#ffffff",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "block_width": 1210,
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 480,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_heading": "",
+            "mobile_text": "",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": false,
+            "mobile_back_color": "#ffffff",
+            "mobile_font_color": "#1e0e06",
+            "text_first": false,
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 24,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 0,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_regdBL": {
+          "type": "product-overview-image-text",
+          "name": "轻盈舒适设计 3",
+          "settings": {
+            "pc_img": "shopify://shop_images/perfect-for-womens-slender-wrists.webp",
+            "mobile_img": "shopify://shop_images/perfect-for-womens-slender-wrists-mobile.webp",
+            "header": "<p>Perfect for Women’s Slender Wrists</p>",
+            "text-24": "<p>The 37.5mm classic case size is neither too big nor too small. </p><p>Paired with an elegant dial and classic leather band, it works as both a fitness tracker </p><p>and a daily accessory, effortlessly complementing work, exercise, and casual fits.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 25,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 10,
+            "padding_top": 90,
+            "padding_bottom": 60,
+            "mobile_header": "<p>Perfect for Women’s </p><p>Slender Wrists</p>",
+            "mobile_text": "<p>The 37.5mm classic case size is neither too big nor too small. Paired with an elegant dial and classic leather band, it works as both a fitness tracker and a daily accessory, effortlessly complementing work, exercise, and casual fits.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 10,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 40
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_T8rt3z": {
+          "type": "product-overview-image-text",
+          "name": "OLED触控显示屏 文案",
+          "settings": {
+            "header": "<p>1.1\" AMOLED Touch Display:  </p><p>Sharp Clarity Meets Feminine Fit</p>",
+            "text-24": "<p>This AMOLED touch display delivers vibrant, stylish colors and crystal-clear visibility in sunlight—with a 1.1\" size perfectly tailored for feminine wrists. Its low power consumption extends battery life, blending sharp clarity with a refined, petite fit.</p>",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 0,
+            "text_width": 928,
+            "img_text_margin": 75,
+            "padding_top": 80,
+            "padding_bottom": 40,
+            "mobile_header": "<p>1.1\" AMOLED Touch Display:  </p><p>Sharp Clarity Meets Feminine Fit</p>",
+            "mobile_text": "<p>This AMOLED touch display delivers vibrant, stylish colors and crystal-clear visibility in sunlight—with a 1.1\" size perfectly tailored for feminine wrists. Its low power consumption extends battery life, blending sharp clarity with a refined, petite fit.</p>",
+            "mobile_img_first": true,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 10
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_4UMQMt": {
+          "type": "product-overview-banner",
+          "name": "OLED触控显示屏",
+          "settings": {
+            "image": "shopify://shop_images/Luna_5.webp",
+            "mobile_image": "shopify://shop_images/Luna_5__-2.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "center",
+            "show_text_box": false,
+            "back_color": "#ffffff",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "block_width": 1210,
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 480,
+            "padding_top": 0,
+            "padding_bottom": 60,
+            "mobile_heading": "",
+            "mobile_text": "",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": false,
+            "mobile_back_color": "#ffffff",
+            "mobile_font_color": "#1e0e06",
+            "text_first": false,
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 24,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 0,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 60
+          },
+          "blocks": {}
+        },
+        "product_overview_highlights_DQK4yi": {
+          "type": "product-overview-highlights",
+          "name": "基础健康管理",
+          "settings": {
+            "overflow": false,
+            "text_alignment": "center",
+            "header": "<p>Get a Complete Picture of Your Health</p>",
+            "image_group": "media-gallery-kzbnsite",
+            "title_padding_bottom": 60,
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "left",
+            "text_width": 400,
+            "block_padding_top": 40,
+            "block_padding_bottom": 40,
+            "font_color": "#ffffff",
+            "back_color": "#faf6f5",
+            "title_font_size": 40,
+            "text_font_size": 22,
+            "padding_top": 120,
+            "padding_bottom": 10,
+            "mobile_title_padding_bottom": 30,
+            "mobile_desktop_content_position": "top-left",
+            "mobile_content_alignment": "left",
+            "mobile_block_padding_top": 80,
+            "mobile_block_padding_bottom": 40,
+            "mobile_font_color": "#ffffff",
+            "mobile_back_color": "",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 40
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_pJM4En": {
+          "type": "product-overview-banner",
+          "name": "睡眠",
+          "settings": {
+            "image": "shopify://shop_images/the-fany-smartwatch-tracks-key-sleep-metrics.webp",
+            "mobile_image": "shopify://shop_images/the-fany-smartwatch-tracks-key-sleep-metrics-mobile.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": false,
+            "heading": "<p>Better Sleep</p><p>Better You</p>",
+            "text": "<p>The FANY smartwatch tracks key sleep metrics including </p><p>heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips.</p>",
+            "desktop_content_position": "top-left",
+            "desktop_content_alignment": "left",
+            "show_text_box": true,
+            "back_color": "",
+            "font_color": "#ffffff",
+            "title_font_size": 40,
+            "text_font_size": 22,
+            "block_width": 0,
+            "block_padding_top": 60,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 600,
+            "padding_top": 60,
+            "padding_bottom": 0,
+            "mobile_heading": "<p>Better Sleep </p><p>Better You</p>",
+            "mobile_text": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips.</p>",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "left",
+            "show_text_below": true,
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "text_first": true,
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 0,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_eJhN6A": {
+          "type": "product-overview-image-text",
+          "name": "经期 1",
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_-01.webp",
+            "mobile_img": "shopify://shop_images/Luna_4.webp",
+            "header": "<p>Menstrual Cycle Insights for </p><p>Health and Balance </p>",
+            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, </p><p>menstrual health ties closely to women’s overall wellbeing. </p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 40,
+            "padding_top": 60,
+            "padding_bottom": 20,
+            "mobile_header": "<p>Menstrual Cycle Insights for </p><p>Health and Balance </p>",
+            "mobile_text": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_VG6jbX": {
+          "type": "product-overview-image-text",
+          "name": "经期 2",
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_-02.webp",
+            "mobile_img": "shopify://shop_images/Luna_2.webp",
+            "header": "",
+            "text-24": "",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 10,
+            "text_font_size": 10,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 40,
+            "padding_top": 0,
+            "padding_bottom": 40,
+            "mobile_header": "",
+            "mobile_text": "<p>FANY Luna tracks your cycle, ovulation, and emotional/physical changes to turn data into actionable insights. Plan work, family, and workouts more effectively, stay attuned to cycle-related mood shifts, and practice timely self-care. It’s more than tracking; it serves as reliable guidance for balanced, graceful living.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 5,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_c8MYCN": {
+          "type": "product-overview-image-text",
+          "name": "情绪 压力",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/monitors-emotions-stress-levels.webp",
+            "mobile_img": "shopify://shop_images/monitors-emotions-stress-levels-mobile.webp",
+            "header": "<p>Monitors Emotions & Stress Levels, </p><p>Guides Self-Care</p>",
+            "text-24": "<p>FANY Luna's advanced biosensors monitor key indicators like HRV and EDA, transforming subtle shifts into meaningful insights about stress and emotional balance. More than data, it’s a 24/7 companion, helping you understand your body and nurture your wellbeing.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 40,
+            "padding_top": 30,
+            "padding_bottom": 30,
+            "mobile_header": "<p>Monitors Emotions & Stress Levels, Guides Self-Care</p>",
+            "mobile_text": "<p>FANY Luna's advanced biosensors monitor key indicators like HRV and EDA, transforming subtle shifts into meaningful insights about stress and emotional balance. More than data, it’s a 24/7 companion, helping you understand your body and nurture your wellbeing.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 50,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_6nLWTm": {
+          "type": "product-overview-image-text",
+          "name": "呼吸 解压",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/deep-breathing_exercise.webp",
+            "mobile_img": "shopify://shop_images/deep-breathing_exercise-mobile.webp",
+            "header": "<p>Let's Start the Deep - </p><p>Breathing Exercise Now</p>",
+            "text-24": "<p>When stress builds, follow its 1-minute breathing guide—inhale, exhale—and feel yourself relax. At your desk, on the couch, or outdoors, calm is always within reach.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1210,
+            "img_text_margin": 40,
+            "padding_top": 60,
+            "padding_bottom": 30,
+            "mobile_header": "<p>Let's Start the Deep - </p><p>Breathing Exercise Now</p>",
+            "mobile_text": "<p>When stress builds, follow its 1-minute breathing guide—inhale, exhale—and feel yourself relax. At your desk, on the couch, or outdoors, calm is always within reach.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_two_image_text_pRTDi3": {
+          "type": "product-overview-two-image-text",
+          "name": "上下结构图文-两图",
+          "disabled": true,
+          "settings": {
+            "pc_img_1": "shopify://shop_images/pc_0701d03a-4498-4b75-873b-4e341bb539e0.webp",
+            "mobile_img_1": "shopify://shop_images/app.webp",
+            "pc_img_2": "shopify://shop_images/pc_acc5855a-fed7-4474-ae0b-c6192b55b96d.webp",
+            "mobile_img_2": "shopify://shop_images/app_87784ba0-a278-4e30-8238-34325ddf4678.webp",
+            "header_width": 1000,
+            "header": "<p>Menstrual Cycle Insights for Health and Balance</p>",
+            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
+            "img_text_margin": 70,
+            "padding_top": 36,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_video_jaAGVn": {
+          "type": "product-overview-image-text-video",
+          "name": "上下结构图文+视频",
+          "disabled": true,
+          "settings": {
+            "img": "shopify://shop_images/260326-2.webp",
+            "enable_video_looping": false,
+            "video": "shopify://files/videos/icon旋转动画_紫1200.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "header": "<p>Let's Start the Deep - </p><p>Breathing Exercise Now</p>",
+            "text-24": "<p>When stress builds, follow its 1-minute breathing guide—inhale, exhale—and feel yourself relax. At your desk, on the couch, or outdoors, calm is always within reach.</p>",
+            "img_text_margin": 70,
+            "padding_top": 36,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_nFQFtH": {
+          "type": "product-overview-image-text",
+          "name": "110 运动",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_be516d47-99cd-443c-a6f8-8a1d0778f5f1.webp",
+            "mobile_img": "shopify://shop_images/Luna_100_1.webp",
+            "header": "<p>110 Fitness Tracking Modes: Work Out</p><p>Anytime, Anywhere</p>",
+            "text-24": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "#faf6f6",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 24,
+            "padding_top": 90,
+            "padding_bottom": 80,
+            "mobile_header": "<p>110 Fitness Tracking Modes: Work OutAnytime, Anywhere</p>",
+            "mobile_text": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 70
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_9CBGxL": {
+          "type": "product-overview-image-text",
+          "name": "上下结构图文",
+          "disabled": true,
+          "settings": {
+            "header": "<p>110 Fitness Tracking Modes: Work Out</p><p>Anytime, Anywhere</p>",
+            "text-24": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "img_text_margin": 75,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_header": "<p>110 Fitness Tracking Modes: Work OutAnytime, Anywhere</p>",
+            "mobile_text": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 24,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 36,
+            "mobile_padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_UJAiQp": {
+          "type": "product-overview-banner",
+          "name": "防水",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Luna_b2619c86-1e43-454d-9a9d-5aff76170f13.webp",
+            "mobile_image": "shopify://shop_images/Luna_db7d18d6-a666-4273-9337-ad42ab435a49.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "top-right",
+            "desktop_content_alignment": "left",
+            "show_text_box": true,
+            "back_color": "",
+            "font_color": "",
+            "title_font_size": 40,
+            "text_font_size": 22,
+            "block_width": 1500,
+            "block_padding_top": 60,
+            "block_padding_bottom": 0,
+            "block_padding_left": 60,
+            "block_padding_right": 150,
+            "text_width": 600,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_heading": "<p>1 ATM Waterproof:  Effortlessly Master Life’s Damp Moments</p>",
+            "mobile_text": "<p>From kitchen splatters and everyday spills to workout sweat, rainy commutes and beach getaways FANY Luna’s dependable water resistance keeps you elegant and poised wherever your day takes you. </p>",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": true,
+            "mobile_back_color": "",
+            "mobile_font_color": "",
+            "text_first": true,
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 20,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_8AdJTd": {
+          "type": "product-overview-image-text",
+          "name": "续航",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_3ad104e8-e0dd-49ea-9af9-dae723c60df3.webp",
+            "mobile_img": "shopify://shop_images/Luna_367d4245-37a4-4903-9109-115c515a32c1.webp",
+            "header": "<p>7-day* Battery Life </p><p>From Work to Weekend</p>",
+            "text-24": "<p>No more daily charging hassle. FANY Luna keeps up with your busy life. Its magnetic connector snaps on effortlessly for frustration-free power-ups. Just 2.5 hours of fast charging delivers 7 days of reliable battery life. </p><p><br/>*Battery life may vary by usage.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "#faf6f6",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 32,
+            "padding_top": 90,
+            "padding_bottom": 80,
+            "mobile_header": "<p>7-day* Battery Life </p><p>From Work to Weekend</p>",
+            "mobile_text": "<p>No more daily charging hassle. FANY Luna keeps up with your busy life. Its magnetic connector snaps on effortlessly for frustration-free power-ups. Just 2 hours of fast charging delivers 7 days of reliable battery life. </p><p><br/>*Battery life may vary by usage.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_p479qf": {
+          "type": "product-overview-image-text",
+          "name": "消息提醒",
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_511b6bcc-19ba-4bb0-a8dd-4a3e2bf2d679.webp",
+            "mobile_img": "shopify://shop_images/Luna_1.webp",
+            "header": "<p>Sync Phone Notifications</p>",
+            "text-24": "<p>It delivers notifications for texts, apps, calendar events, and more. Whether you’re in a meeting, on a date, driving, or spending time with your kids, you’ll get timely alerts.</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 40,
+            "padding_top": 90,
+            "padding_bottom": 30,
+            "mobile_header": "<p>Sync Phone Notifications</p>",
+            "mobile_text": "<p>It delivers notifications for texts, apps, calendar events, and more. Whether you’re in a meeting, on a date, driving, or spending time with your kids, you’ll get timely alerts.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_L4JVGr": {
+          "type": "product-overview-image-text",
+          "name": "100+表盘",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_0468a732-18f8-42b9-9c66-30feed983f85.webp",
+            "mobile_img": "shopify://shop_images/Luna_b4e23063-a675-4834-a131-d761123aef9e.webp",
+            "header": "",
+            "text-24": "",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 0,
+            "text_width": 0,
+            "img_text_margin": 40,
+            "padding_top": 50,
+            "padding_bottom": 30,
+            "mobile_header": "",
+            "mobile_text": "",
+            "mobile_img_first": true,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_banner_zJNeUk": {
+          "type": "product-overview-banner",
+          "name": "自定义表盘",
+          "settings": {
+            "image": "shopify://shop_images/Luna_52695e1e-1521-4cc8-953e-152d09803aa6.webp",
+            "mobile_image": "shopify://shop_images/Luna_1_05df6a96-b6e0-4b41-8c45-e83defd3e854.webp",
+            "image_overlay_opacity": 0,
+            "image_height": "adapt",
+            "image_behavior": "none",
+            "full_width": true,
+            "heading": "",
+            "text": "",
+            "desktop_content_position": "middle-right",
+            "desktop_content_alignment": "center",
+            "show_text_box": true,
+            "back_color": "rgba(0,0,0,0)",
+            "font_color": "",
+            "title_font_size": 40,
+            "text_font_size": 22,
+            "block_width": 1500,
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "block_padding_left": 0,
+            "block_padding_right": 0,
+            "text_width": 600,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_heading": "<p>Custom Watch Faces<br/>Happiness at Your Wrist</p>",
+            "mobile_text": "<p>Use phone photos of pets, kids, loved ones. Glance, happiness shines clear!</p>",
+            "stack_images_on_mobile": true,
+            "mobile_desktop_content_position": "top-center",
+            "mobile_content_alignment": "center",
+            "show_text_below": true,
+            "mobile_back_color": "#ffffff",
+            "mobile_font_color": "",
+            "text_first": true,
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_block_padding_top": 0,
+            "mobile_block_padding_bottom": 20,
+            "mobile_block_padding_left": 0,
+            "mobile_block_padding_right": 0,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_8bzVWm": {
+          "type": "product-overview-image-text",
+          "name": "其他 功能",
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_0c675d6c-efc0-49d8-ad4f-8793397cdde5.webp",
+            "mobile_img": "shopify://shop_images/Luna_1_c226f5c9-dcff-4f1f-a43a-5b09a884b29c.webp",
+            "header": "<p>More Practical Features to </p><p>Unlock Versatile Experiences</p>",
+            "text-24": "<p>FANY Luna cares for every facet of your work and daily life with more practical features designed to simplify, support and elevate your days. Dive in and discover how these thoughtful tools seamlessly fit into your routine!</p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 40,
+            "padding_top": 50,
+            "padding_bottom": 30,
+            "mobile_header": "<p>More Practical Features to </p><p>Unlock Versatile Experiences</p>",
+            "mobile_text": "<p>FANY Luna cares for every facet of your work and daily life with more practical features designed to simplify, support and elevate your days. Dive in and discover how these thoughtful tools seamlessly fit into your routine!</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_peehF6": {
+          "type": "product-overview-image-text",
+          "name": "多色 可选",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_d483cd55-9113-439d-98f9-66afa35cf599.webp",
+            "mobile_img": "shopify://shop_images/Luna_22d6263c-6295-449f-83dd-0de7a9aed7bf.webp",
+            "header": "<p>Multiple Colors Available Each a Timeless Classic</p>",
+            "text-24": "",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 30,
+            "padding_top": 150,
+            "padding_bottom": 100,
+            "mobile_header": "<p>Multiple Colors Available Each a Timeless Classic</p>",
+            "mobile_text": "",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "custom_watch_faces_VcDmf9": {
+          "type": "custom-watch-faces",
+          "name": "自定义表盘",
+          "disabled": true,
+          "settings": {
+            "header": "<p>Custom Video Watch Faces</p>",
+            "text": "<p>Personalise your watch face just how you like it. Show off your unique personal style with video watch faces that match your outfit and your mood.</p>",
+            "watch_image": "shopify://shop_images/images-impression-icon-watch-1_png.webp",
+            "image_group": "watch-faces-gallery-acfy0hfy",
+            "title_font_size": 40,
+            "text_font_size": 20,
+            "text_width": 600,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "mobile_title_font_size": 28,
+            "mobile_text_font_size": 18,
+            "mobile_text_width": 300,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 40
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_TEet9F": {
+          "type": "product-overview-image-text",
+          "name": "送礼",
+          "disabled": true,
+          "settings": {
+            "pc_img": "shopify://shop_images/Luna_01aaaa39-6651-454f-b4db-1a995be1d993.webp",
+            "mobile_img": "shopify://shop_images/Luna_aa7368be-8158-41fa-a3f5-96760240b7ed.webp",
+            "header": "<p>The Perfect Gift: Health, Companion, </p><p>Elegance for Every Loved One</p>",
+            "text-24": "<p>Whether gifting for yourself, elders, spouses, best friends or special occasions FANY delivers more than a smartwatch. It’s a gift of health that cares daily, a companion that stays by their side and elegance that elevates every moment. </p>",
+            "img_first": false,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "#faf6f6",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "header_width": 700,
+            "text_width": 1120,
+            "img_text_margin": 24,
+            "padding_top": 90,
+            "padding_bottom": 60,
+            "mobile_header": "<p>The Perfect Gift: Health, Companion, Elegance for Every Loved One</p>",
+            "mobile_text": "<p>Whether gifting for yourself, elders, spouses, best friends or special occasions FANY delivers more than a smartwatch. It’s a gift of health that cares daily, a companion that stays by their side and elegance that elevates every moment. </p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 25,
+            "mobile_text_font_size": 15,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_highlights_bAWbKU": {
+          "type": "product-overview-highlights",
+          "name": "精选内测者评价图",
+          "disabled": true,
+          "settings": {
+            "overflow": true,
+            "text_alignment": "center",
+            "header": "",
+            "image_group": "media-gallery-k4rp5dj7",
+            "title_padding_bottom": 30,
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "left",
+            "text_width": 400,
+            "block_padding_top": 40,
+            "block_padding_bottom": 40,
+            "font_color": "#1e0e06",
+            "back_color": "",
+            "title_font_size": 40,
+            "text_font_size": 18,
+            "padding_top": 92,
+            "padding_bottom": 40,
+            "mobile_title_padding_bottom": 30,
+            "mobile_desktop_content_position": "top-left",
+            "mobile_content_alignment": "left",
+            "mobile_block_padding_top": 40,
+            "mobile_block_padding_bottom": 40,
+            "mobile_font_color": "#1e0e06",
+            "mobile_back_color": "",
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 18,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_playlist_yMNRfz",
+        "product_overview_image_text_TRRfhc",
+        "product_overview_banner_wPkbQ7",
+        "product_overview_banner_YPEXQH",
+        "product_overview_aesthetics_FqynqL",
+        "product_overview_video_yTrkqr",
+        "product_overview_fitness_MaYPkK",
+        "product_overview_image_text_bDVYqF",
+        "product_overview_banner_iprVYE",
+        "product_overview_image_text_regdBL",
+        "product_overview_image_text_T8rt3z",
+        "product_overview_banner_4UMQMt",
+        "product_overview_highlights_DQK4yi",
+        "product_overview_banner_pJM4En",
+        "product_overview_image_text_eJhN6A",
+        "product_overview_image_text_VG6jbX",
+        "product_overview_image_text_c8MYCN",
+        "product_overview_image_text_6nLWTm",
+        "product_overview_two_image_text_pRTDi3",
+        "product_overview_image_text_video_jaAGVn",
+        "product_overview_image_text_nFQFtH",
+        "product_overview_image_text_9CBGxL",
+        "product_overview_banner_UJAiQp",
+        "product_overview_image_text_8AdJTd",
+        "product_overview_image_text_p479qf",
+        "product_overview_image_text_L4JVGr",
+        "product_overview_banner_zJNeUk",
+        "product_overview_image_text_8bzVWm",
+        "product_overview_image_text_peehF6",
+        "custom_watch_faces_VcDmf9",
+        "product_overview_image_text_TEet9F",
+        "product_overview_highlights_bAWbKU"
+      ],
+      "name": "product overview group",
+      "settings": {
+        "overview_padding_top": 30,
+        "overview_padding_bottom": 40,
+        "specs_pc_img": "shopify://shop_images/Luna_d483cd55-9113-439d-98f9-66afa35cf599.webp",
+        "specs_mobile_img": "shopify://shop_images/Luna_22d6263c-6295-449f-83dd-0de7a9aed7bf.webp",
+        "box_pc_img": "shopify://shop_images/FANY_Luna-in_the_box-01.png",
+        "box_mobile_img": "shopify://shop_images/FANY_Luna-in_the_box-01.png",
+        "box_text_group": "product-in-the-box-text-group"
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_9Wp6DL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1. Who is FANY designed for, and why?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna is designed for women —Women move through life with a natural rhythm, shifting between different roles and experiences. Many smartwatches provide basic tracking, but FANY goes further— it’s tailored for every moment, adapts to your energy shifts, and seamlessly integrates into every facet of your lifestyle. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GBhf9M": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2. How does FANY Luna measure heart rate?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses a Professional-grade sensor optical sensor to detect tiny changes in blood flow beneath your skin — capturing your heartbeats and the subtle expansion and contraction of blood vessels to measure heart rate precisely.<br/><br/>It helps you see how your body responds through real moments of life:<br/>the pressure of back-to-back meetings, the calm after yoga, the rush of family routines, or the quiet pause before sleep, reminding you to care for your body the way you care for everything else.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WyzMqb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "3. How does the FANY Luna smartwatch measure blood oxygen？",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses a professional-grade sensor with red and infrared light technology to measure how much light your blood absorbs, accurately estimating your blood oxygen (SpO₂) level.<br/><br/>It helps you understand your breathing and energy in everyday life — when long meetings leave you drained, late nights bring fatigue, or you just need a deep breath after caring for everyone else.<br/>A quiet reminder that your body also needs its own space to recover and breathe.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nBLnWt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "4. How does the FANY Luna smartwatch measure steps?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.<br/>From walking the dog, commuting, or taking a mindful stroll after dinner, every step gently reminds you: staying active is also a form of self-care.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zcaimh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "5. How does FANY Luna track sleep?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses an advanced sleep algorithm combined with a Professional-grade sensor sensor and heart rate monitoring to analyze your sleep stages — light, deep, and REM.<br/>It turns sleep data into insights <br/><br/>FANY Luna understands that sleep can be easily disrupted — by work thoughts that won’t stop, a child’s call at night, or the quiet worries that come before rest.<br/>It helps you see your real sleep rhythm, reminding you that good rest starts with understanding yourself. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cxPQFx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "6. Does FANY Luna support menstrual cycle tracking?",
+            "icon": "none",
+            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7hieFk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "7. How does the FANY Luna smartwatch measure stress and mood?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses Professional-grade sensor multi-sensor technology to analyze — heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate — to evaluate your stress level. <br/><br/>It senses rising tension even before you overwhelming— from juggling work deadlines to caring for kids and keeping up with home life — reminding you to slow down, breathe, and find balance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CbXBqt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "8. Is FANY waterproof?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna is 1ATM waterproof, meaning it’s safe for everyday use and swimming in shallow water. However, please avoid hot water, saunas, or wearing it while showering to protect the sensors and coating.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_et434w": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "9. How long does the battery last on a single charge?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna lasts up to 7 days on a single charge keeping up with your week. Whether you’re working, family traveling, or simply enjoying “me time,” it stays by your side without constant recharging.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eyGne4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "10. Does it support message notifications (WhatsApp, Instagram, etc.)?",
+            "icon": "none",
+            "row_content": "<p>Yes — FANY Luna supports phone notifications including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. so your wrist only lights up for what truly matters to you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YpiDDn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "11. ls FANY Smartwatch compatible with my phone?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna is compatible with both Android and iOS devices.<br/>Android phones require Android 10 or later, while iPhones require iOS 13 or later (iPhone 6S or newer).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download). </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "12. How do l connect my FANY Luna Smartwatch to my phone?",
+            "icon": "none",
+            "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CEezCT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "13. Do I need my phone nearby?",
+            "icon": "none",
+            "row_content": "<p>you do need to have your phone nearby and Bluetooth turned on. If you step away for a bit, your health data stays stored on the watch and will sync automatically once reconnected. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7exWnC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "14. ls the watch safe for sensitive skin?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna uses a genuine cowhide leather strap that’s soft, breathable, and gentle on the skin.<br/>It’s carefully crafted to minimize irritation, making it comfortable and safe even for sensitive skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WbmKRp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "15. ls there a warranty on the watch?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna comes with a two-year warranty that covers manufacturing defects and quality issues. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_feJQFR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "16. What’s Included in the FANY Luna Box?",
+            "icon": "none",
+            "row_content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Charger<br/>* Instruction manual, Quick start guide</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NbBki4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "17. What's your return or refund policy?",
+            "icon": "none",
+            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 60 days of purchase. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gDyNT3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "18. How can I request a return or exchange?",
+            "icon": "none",
+            "row_content": "<p>Go to your orders, find the order ID, and send a return or exchange request to support@fany.us with the order number, product, and reason.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8qd37h": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "19. Does any product or accessory qualify for free shipping?",
+            "icon": "none",
+            "row_content": "<p>All items ship free with no minimum.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rLkFif": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "20. Do you ship internationally?",
+            "icon": "none",
+            "row_content": "<p>We primarily ship within the United States. International shipping is also available to Canada and 17 European countries, including the United Kingdom, Italy, Austria, Belgium, Czech Republic, Denmark, Finland, Ireland, Netherlands, Norway, Poland, Portugal, Sweden, Switzerland, Germany, Spain, and France.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tibxgL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "21. How soon will the order ship after placement?",
+            "icon": "none",
+            "row_content": "<p>US: Orders will ship within 1-2 business days of processing payment.Others: Orders will ship within 3-7 business days of processing payment.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cXhUfQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "22. When will my order arrive? ",
+            "icon": "none",
+            "row_content": "<p>3-7 business days.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qQfDUP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "23. Any discounts for new users?",
+            "icon": "none",
+            "row_content": "<p>Register your email to enjoy $10 off on your first order. Get style, stress relief, sleep & fitness tips. <br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bqz4g8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "24. Can I use multiple coupons?",
+            "icon": "none",
+            "row_content": "<p>Discounts cannot be stacked.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9wmwr3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "25. Can I apply for the product closed beta test?",
+            "icon": "none",
+            "row_content": "<p>If you align with our brand values and product vision, and actively share feedback on your experience, we’d be delighted to have you.<br/>If you’re interested in joining, please contact us via email at marketing@fany.us</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_9Wp6DL",
+        "collapsible_row_GBhf9M",
+        "collapsible_row_WyzMqb",
+        "collapsible_row_nBLnWt",
+        "collapsible_row_zcaimh",
+        "collapsible_row_cxPQFx",
+        "collapsible_row_7hieFk",
+        "collapsible_row_CbXBqt",
+        "collapsible_row_et434w",
+        "collapsible_row_eyGne4",
+        "collapsible_row_YpiDDn",
+        "collapsible_row_rdVrU8",
+        "collapsible_row_CEezCT",
+        "collapsible_row_7exWnC",
+        "collapsible_row_WbmKRp",
+        "collapsible_row_feJQFR",
+        "collapsible_row_NbBki4",
+        "collapsible_row_gDyNT3",
+        "collapsible_row_8qd37h",
+        "collapsible_row_rLkFif",
+        "collapsible_row_tibxgL",
+        "collapsible_row_cXhUfQ",
+        "collapsible_row_qQfDUP",
+        "collapsible_row_bqz4g8",
+        "collapsible_row_9wmwr3"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
+        ".collapsible-content__heading {color: #f2d0ad;}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "section",
+        "container_color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "1758592045c9c68565": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_33zBHA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_33zBHA"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "newsletter_QLP44D": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_nGrxmz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_XddrD3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-24"
+          }
+        },
+        "email_form_eiUKbK": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_nGrxmz",
+        "paragraph_XddrD3",
+        "email_form_eiUKbK"
+      ],
+      "disabled": true,
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_section_9pyfRj",
+    "main",
+    "product_overview_group_F9Xy6b",
+    "faq",
+    "1758592045c9c68565",
+    "newsletter_QLP44D"
+  ]
+}
