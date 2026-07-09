@@ -172,6 +172,7 @@
 
     <!-- 顶部菜单 -->
     <div class="product-category-top-menu">
+      {%- assign first_valid_group = true -%}
       {% for block in section.blocks %}
         {% if block.type == 'product_group' %}
           {% assign group_data = block.settings.group_data %}
@@ -180,7 +181,8 @@
               assign group_key = group_data.key.value | default: group_data.key
               assign group_menu = group_data.menu.value | default: group_data.menu
             -%}
-            <div class="menu-item {% if forloop.first %}active{% endif %}" data-group="{{ group_key | escape }}">{{ group_menu }}</div>
+            <div class="menu-item{% if first_valid_group %} active{% endif %}" data-group="{{ group_key | escape }}">{{ group_menu }}</div>
+            {%- assign first_valid_group = false -%}
           {%- endif -%}
         {% endif %}
       {% endfor %}
@@ -212,14 +214,16 @@ window.slideGroups = {
               assign item_image = item.imageurl.value | default: item.imageurl
               assign item_hover_image = item.imageurlhover.value | default: item.imageurlhover | default: item_image
               assign item_url = item.url.value.url | default: item.url.value | default: item.url
+              assign item_price = item.price.value | default: item.price
+              assign item_discount_price = item.disprice.value | default: item.disprice
             -%}
             {
               "title": {{ item_title | json }},
               "badgeText": {{ item_badge_text | json }},
               "imgUrl": {% if item_image != blank %}{{ item_image | image_url: width: 900 | json }}{% else %}""{% endif %},
               "imgHoverUrl": {% if item_hover_image != blank %}{{ item_hover_image | image_url: width: 900 | json }}{% else %}""{% endif %},
-              "price": {{ item.price.value | money_without_trailing_zeros | json }},
-              "disPrice": {{ item.disprice.value | money_without_trailing_zeros | json }},
+              "price": {% if item_price != blank %}{{ item_price | money_without_trailing_zeros | json }}{% else %}""{% endif %},
+              "disPrice": {% if item_discount_price != blank %}{{ item_discount_price | money_without_trailing_zeros | json }}{% else %}""{% endif %},
               "url": {{ item_url | json }}
             }{% unless forloop.last %},{% endunless %}
           {% endfor %}

@@ -116,8 +116,11 @@
           </div>
           <h3 class="card-title">${item.title}</h3>
       `;
-      if(item.price) {
-        slideContent += `<p class="card-price"><span class="shop-btn">Shop now</span><span class="price-s">${item.price}</span>`;
+      if(item.price || item.disPrice) {
+        slideContent += `<p class="card-price"><span class="shop-btn">Shop now</span>`;
+        if(item.price) {
+          slideContent += `<span class="price-s">${item.price}</span>`;
+        }
         if(item.disPrice) {
           slideContent += `<span class="dis-price">${item.disPrice}</span>`;
         }
