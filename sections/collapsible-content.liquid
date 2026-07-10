@@ -45,6 +45,27 @@
     padding-bottom: {{ section.settings.questions_padding_bottom }}px;
   }
 
+  @media screen and (min-width: 1024px) {
+    .section-{{ section.id }}-content-width {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding-right: 200px;
+      padding-left: 200px;
+    }
+
+    .section-{{ section.id }}-content-card {
+      padding: 30px;
+      background: #FCFAF9;
+      border-radius: 4px;
+    }
+
+    .section-{{ section.id }}-content-card.collapsible-content__grid--no-image > .grid__item {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .section-{{ section.id }}-mobile-heading {
       font-size: {{ section.settings.mobile_heading_size }}px;
@@ -90,14 +111,14 @@
   </div>
 {%- endif -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-spacing">
-  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout section-{{ section.id }}-accordion-typography{% if section.settings.heading_position == 'outside' %} collapsible-content--heading-outside{% endif %}{% if section.settings.hide_question_dividers %} collapsible-content--hide-dividers{% endif %} isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
-    <div class="collapsible-content__wrapper{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
-      <div class="page-width">
+<div class="section-{{ section.id }}-spacing">
+  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout section-{{ section.id }}-accordion-typography{% if section.settings.heading_position == 'outside' %} collapsible-content--heading-outside{% endif %}{% if section.settings.hide_question_dividers %} collapsible-content--hide-dividers{% endif %} isolate{% if section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
+    <div class="collapsible-content__wrapper">
+      <div class="page-width section-{{ section.id }}-content-width">
         {%- if section.settings.heading_position == 'inside' -%}
           {{ collapsible_header }}
         {%- endif -%}
-        <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid section-{{ section.id }}-content-card{% if section.settings.image == blank %} collapsible-content__grid--no-image{% endif %}{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
               <div
