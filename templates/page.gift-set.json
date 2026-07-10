@@ -515,6 +515,24 @@
             "page": ""
           }
         },
+        "collapsible_row_zzkb6r": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the warranty period for the butterfly bracelet?",
+            "icon": "none",
+            "row_content": "<p>The butterfly bracelet included in the FANY Luna Leather Smartwatch Gift Set comes with a 6-month warranty, the same as the watch band warranty. The warranty covers manufacturing defects under normal use conditions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NbBki4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your return or refund policy?",
+            "icon": "none",
+            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 30 days of purchase. </p>",
+            "page": ""
+          }
+        },
         "collapsible_row_zcaimh": {
           "type": "collapsible_row",
           "settings": {
@@ -587,15 +605,6 @@
             "page": ""
           }
         },
-        "collapsible_row_NbBki4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What's your return or refund policy?",
-            "icon": "none",
-            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 30 days of purchase. </p>",
-            "page": ""
-          }
-        },
         "collapsible_row_CEezCT": {
           "type": "collapsible_row",
           "settings": {
@@ -620,6 +629,8 @@
         "collapsible_row_7hieFk",
         "collapsible_row_cxPQFx",
         "collapsible_row_rdVrU8",
+        "collapsible_row_zzkb6r",
+        "collapsible_row_NbBki4",
         "collapsible_row_zcaimh",
         "collapsible_row_GBhf9M",
         "collapsible_row_WyzMqb",
@@ -628,7 +639,6 @@
         "collapsible_row_et434w",
         "collapsible_row_eyGne4",
         "collapsible_row_7exWnC",
-        "collapsible_row_NbBki4",
         "collapsible_row_CEezCT",
         "collapsible_row_CbXBqt"
       ],
