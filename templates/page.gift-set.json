@@ -409,19 +409,22 @@
         "card_BBBXYL": {
           "type": "card",
           "settings": {
-            "link": ""
+            "image": "shopify://shop_images/homepage_set-1000x1000-01.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363176090"
           }
         },
         "card_j66L3c": {
           "type": "card",
           "settings": {
-            "link": ""
+            "image": "shopify://shop_images/homepage_set-1000x1000-03.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363241626"
           }
         },
         "card_nGPPzd": {
           "type": "card",
           "settings": {
-            "link": ""
+            "image": "shopify://shop_images/homepage_set-1000x1000-02.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363208858"
           }
         }
       },
