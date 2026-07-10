@@ -84,7 +84,7 @@
       ],
       "name": "主页 Banner 轮播",
       "settings": {
-        "slide_height": "large",
+        "slide_height": "adapt_image",
         "auto_rotate": true,
         "change_slides_speed": 5,
         "text_safe_margin": 200,
@@ -281,7 +281,7 @@
       ],
       "name": "主页 Banner 轮播",
       "settings": {
-        "slide_height": "large",
+        "slide_height": "adapt_image",
         "auto_rotate": true,
         "change_slides_speed": 5,
         "text_safe_margin": 200,
