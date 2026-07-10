@@ -327,7 +327,7 @@
         "mobile_font_color": "#1e0e06",
         "mobile_title_font_size": 40,
         "mobile_text_font_size": 24,
-        "mobile_img_text_margin": 20,
+        "mobile_img_text_margin": 10,
         "mobile_padding_top": 36,
         "mobile_padding_bottom": 36
       }
