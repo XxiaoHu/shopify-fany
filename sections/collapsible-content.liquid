@@ -2,15 +2,15 @@
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  .section-{{ section.id }}-spacing {
+    margin-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+    .section-{{ section.id }}-spacing {
+      margin-top: {{ section.settings.padding_top }}px;
+      margin-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
 
@@ -19,8 +19,8 @@
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     }
 
-    .section-{{ section.id }}-padding {
-      padding-top: 0;
+    .section-{{ section.id }}-spacing {
+      margin-top: 0;
     }
 
     @media screen and (min-width: 750px) {
@@ -48,6 +48,16 @@
   @media screen and (max-width: 749px) {
     .section-{{ section.id }}-mobile-heading {
       font-size: {{ section.settings.mobile_heading_size }}px;
+    }
+
+    .section-{{ section.id }}-accordion-typography .accordion__title {
+      font-size: {{ section.settings.mobile_question_title_font_size }}px;
+      font-weight: {{ section.settings.mobile_question_title_font_weight }};
+    }
+
+    .section-{{ section.id }}-accordion-typography .accordion__content {
+      font-size: {{ section.settings.mobile_answer_font_size }}px;
+      font-weight: {{ section.settings.mobile_answer_font_weight }};
     }
   }
 {%- endstyle -%}
@@ -80,9 +90,9 @@
   </div>
 {%- endif -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-spacing">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout section-{{ section.id }}-accordion-typography{% if section.settings.heading_position == 'outside' %} collapsible-content--heading-outside{% endif %}{% if section.settings.hide_question_dividers %} collapsible-content--hide-dividers{% endif %} isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
-    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
+    <div class="collapsible-content__wrapper{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
       <div class="page-width">
         {%- if section.settings.heading_position == 'inside' -%}
           {{ collapsible_header }}
@@ -333,6 +343,30 @@
     },
     {
       "type": "header",
+      "content": "问答区域间距"
+    },
+    {
+      "type": "range",
+      "id": "questions_padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "label": "问答区域上内边距"
+    },
+    {
+      "type": "range",
+      "id": "questions_padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "label": "问答区域下内边距"
+    },
+    {
+      "type": "header",
       "content": "问答字体"
     },
     {
@@ -380,24 +414,52 @@
       "default": "400"
     },
     {
-      "type": "range",
-      "id": "questions_padding_top",
-      "min": 0,
-      "max": 80,
-      "step": 2,
-      "unit": "px",
-      "default": 0,
-      "label": "问答区域上内边距"
+      "type": "header",
+      "content": "移动端问答字体"
     },
     {
       "type": "range",
-      "id": "questions_padding_bottom",
-      "min": 0,
-      "max": 80,
-      "step": 2,
+      "id": "mobile_question_title_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
       "unit": "px",
-      "default": 0,
-      "label": "问答区域下内边距"
+      "default": 16,
+      "label": "问题标题字体大小-移动端"
+    },
+    {
+      "type": "select",
+      "id": "mobile_question_title_font_weight",
+      "label": "问题标题字重-移动端",
+      "options": [
+        { "value": "400", "label": "常规 400" },
+        { "value": "500", "label": "中等 500" },
+        { "value": "600", "label": "半粗 600" },
+        { "value": "700", "label": "粗体 700" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "mobile_answer_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14,
+      "label": "回答内容字体大小-移动端"
+    },
+    {
+      "type": "select",
+      "id": "mobile_answer_font_weight",
+      "label": "回答内容字重-移动端",
+      "options": [
+        { "value": "400", "label": "常规 400" },
+        { "value": "500", "label": "中等 500" },
+        { "value": "600", "label": "半粗 600" },
+        { "value": "700", "label": "粗体 700" }
+      ],
+      "default": "400"
     },
     {
       "type": "header",
