@@ -55,6 +55,14 @@
   word-break: break-word;
 }
 
+.collapsible-content__header-shell {
+  background: transparent;
+}
+
+.collapsible-content__header-outside {
+  padding-top: 3rem;
+}
+
 .collapsible-content__heading {
   margin-bottom: 2rem;
   margin-top: 0;

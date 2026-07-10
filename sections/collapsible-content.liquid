@@ -15,27 +15,41 @@
   }
 {%- endstyle -%}
 
+{%- capture collapsible_header -%}
+  <div
+    class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    style="text-align: {{ section.settings.heading_alignment }};"
+  >
+    {%- if section.settings.caption != blank -%}
+      <p class="caption-with-letter-spacing">
+        {{ section.settings.caption | escape }}
+      </p>
+    {% endif %}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
+    {% endif %}
+  </div>
+{%- endcapture -%}
+
+{%- if section.settings.heading_position == 'outside' -%}
+  <div class="collapsible-content__header-shell">
+    <div class="page-width collapsible-content__header-outside">
+      {{ collapsible_header }}
+    </div>
+  </div>
+{%- endif -%}
+
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
       <div class="page-width">
-        <div
-          class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          style="text-align: {{ section.settings.heading_alignment }};"
-        >
-          {%- if section.settings.caption != blank -%}
-            <p class="caption-with-letter-spacing">
-              {{ section.settings.caption | escape }}
-            </p>
-          {% endif %}
-          {%- if section.settings.heading != blank -%}
-            <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
-              {{ section.settings.heading }}
-            </h2>
-          {%- else -%}
-            <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
-          {% endif %}
-        </div>
+        {%- if section.settings.heading_position == 'inside' -%}
+          {{ collapsible_header }}
+        {%- endif -%}
         <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
@@ -201,6 +215,22 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "标题显示位置",
+      "options": [
+        {
+          "value": "inside",
+          "label": "内部（默认）"
+        },
+        {
+          "value": "outside",
+          "label": "外部"
+        }
+      ],
+      "default": "inside"
     },
     {
       "type": "header",
