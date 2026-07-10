@@ -220,6 +220,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Gift_Set_d70e2d3e-dfcd-47d3-9239-b5e5c5545229.webp",
+            "mobile_image": "shopify://shop_images/gift_set_-_-M.webp",
             "image_overlay_opacity": 0,
             "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
             "link_text": "",
