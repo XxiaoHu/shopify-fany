@@ -482,9 +482,36 @@
         "collapsible_row_9Wp6DL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Who is FANY designed for, and why?",
+            "heading": "What’s included in the Gift Set?",
             "icon": "none",
-            "row_content": "<p>FANY Luna is designed for women —Women move through life with a natural rhythm, shifting between different roles and experiences. Many smartwatches provide basic tracking, but FANY goes further— it’s tailored for every moment, adapts to your energy shifts, and seamlessly integrates into every facet of your lifestyle. </p>",
+            "row_content": "<p>The gift set includes:<br/>1 × FANY Luna Leather Smartwatch (with leather band included)<br/>1 × Magnetic Charger (Full charge in 2.5 hours)<br/>1 × Instruction Manual & Quick Start Guide<br/>1 × Mother of Pearl Butterfly Bracelet<br/>1 × Velvet Drawstring Bracelet Pouch</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7hieFk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does the gift set come with a gift box?",
+            "icon": "none",
+            "row_content": "<p>No. The gift set does not include a decorative gift box. The butterfly bracelet comes with a soft pouch for safe storage and gifting.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cxPQFx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I purchase the butterfly bracelet separately?",
+            "icon": "none",
+            "row_content": "<p>At this time, the Mother of Pearl Butterfly Bracelet is exclusively available as part of the FANY Luna Leather Smartwatch Gift Set and is not sold separately. This exclusive pairing was thoughtfully designed to create a meaningful gift for life's most special moments.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What material is the butterfly bracelet made of?",
+            "icon": "none",
+            "row_content": "<p>The butterfly bracelet features:<br/>14K gold PVD-plated copper<br/>Mother of Pearl<br/>Synthetic Cubic Zirconia<br/>The butterfly design symbolizes transformation, confidence, and endless possibilities.</p>",
             "page": ""
           }
         },
@@ -494,15 +521,6 @@
             "heading": "How does FANY Luna track sleep?",
             "icon": "none",
             "row_content": "<p>FANY Luna uses an advanced sleep algorithm combined with a Professional-grade sensor sensor and heart rate monitoring to analyze your sleep stages — light, deep, and REM.<br/>It turns sleep data into insights <br/><br/>FANY Luna understands that sleep can be easily disrupted — by work thoughts that won’t stop, a child’s call at night, or the quiet worries that come before rest.<br/>It helps you see your real sleep rhythm, reminding you that good rest starts with understanding yourself. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_7hieFk": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How does the FANY Luna smartwatch measure stress and mood?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses Professional-grade sensor multi-sensor technology to analyze — heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate — to evaluate your stress level. <br/><br/>It senses rising tension even before you overwhelming— from juggling work deadlines to caring for kids and keeping up with home life — reminding you to slow down, breathe, and find balance.</p>",
             "page": ""
           }
         },
@@ -533,15 +551,6 @@
             "page": ""
           }
         },
-        "collapsible_row_cxPQFx": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What about women-specific health features?",
-            "icon": "none",
-            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.</p>",
-            "page": ""
-          }
-        },
         "collapsible_row_YpiDDn": {
           "type": "collapsible_row",
           "settings": {
@@ -566,15 +575,6 @@
             "heading": "Does it support message notifications (WhatsApp, Instagram, etc.)?",
             "icon": "none",
             "row_content": "<p>Yes — FANY Luna supports phone notifications including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. so your wrist only lights up for what truly matters to you.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rdVrU8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How do l connect my FANY Luna Smartwatch to my phone?",
-            "icon": "none",
-            "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
             "page": ""
           }
         },
@@ -617,16 +617,16 @@
       },
       "block_order": [
         "collapsible_row_9Wp6DL",
-        "collapsible_row_zcaimh",
         "collapsible_row_7hieFk",
+        "collapsible_row_cxPQFx",
+        "collapsible_row_rdVrU8",
+        "collapsible_row_zcaimh",
         "collapsible_row_GBhf9M",
         "collapsible_row_WyzMqb",
         "collapsible_row_nBLnWt",
-        "collapsible_row_cxPQFx",
         "collapsible_row_YpiDDn",
         "collapsible_row_et434w",
         "collapsible_row_eyGne4",
-        "collapsible_row_rdVrU8",
         "collapsible_row_7exWnC",
         "collapsible_row_NbBki4",
         "collapsible_row_CEezCT",
