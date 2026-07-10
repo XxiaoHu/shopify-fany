@@ -174,11 +174,11 @@
               </h3>
             {% endif %}
           </div>
-          <div class="card__badge {{ settings.badge_position }}">
+          <div class="card__badge{% if show_best_seller_badge %} card__badge--best-seller{% endif %} {{ settings.badge_position }}">
             {%- if show_best_seller_badge -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left"
+                class="badge badge--bottom-left badge--best-seller"
               >
                 Best Seller
               </span>
@@ -655,11 +655,11 @@
             </div>
           {% endif %}
         {% endif %}
-        <div class="card__badge {{ settings.badge_position }}">
+        <div class="card__badge{% if show_best_seller_badge %} card__badge--best-seller{% endif %} {{ settings.badge_position }}">
           {%- if show_best_seller_badge -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left"
+              class="badge badge--bottom-left badge--best-seller"
             >
               Best Seller
             </span>
