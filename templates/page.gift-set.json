@@ -587,15 +587,6 @@
             "page": ""
           }
         },
-        "collapsible_row_WbmKRp": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "ls there a warranty on the watch?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna comes with a two-year warranty that covers manufacturing defects and quality issues. </p>",
-            "page": ""
-          }
-        },
         "collapsible_row_NbBki4": {
           "type": "collapsible_row",
           "settings": {
@@ -637,7 +628,6 @@
         "collapsible_row_eyGne4",
         "collapsible_row_rdVrU8",
         "collapsible_row_7exWnC",
-        "collapsible_row_WbmKRp",
         "collapsible_row_NbBki4",
         "collapsible_row_CEezCT",
         "collapsible_row_CbXBqt"
