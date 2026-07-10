@@ -19,7 +19,11 @@
             "mobile_image": "shopify://shop_images/1_a67f2689-a1c7-4ded-8b55-5bcdd7a62cb8.webp",
             "image_overlay_opacity": 0,
             "heading": "",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
             "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
             "subheading": "",
             "button_label": "",
             "link": "shopify://products/luna",
@@ -29,6 +33,7 @@
             "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": "",
+            "mobile_box_align": "middle",
             "mobile_color_scheme": ""
           }
         }
@@ -36,6 +41,7 @@
       "block_order": [
         "slide_aGzWGV"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
@@ -44,12 +50,17 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 0,
         "show_text_below": true,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
         "accessibility_info": ""
       }
     },
     "1763087890ff327669": {
       "type": "apps",
+      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -143,6 +154,7 @@
         "column_H6rFm4",
         "column_cNKd33"
       ],
+      "disabled": true,
       "custom_css": [
         ".multicolumn__title {justify-content: center;}",
         ".multicolumn__title .title {color: #f2d0ad;}",
@@ -154,19 +166,32 @@
         "only_image": true,
         "title": "",
         "heading_size": "h2",
+        "text": "Your satisfaction is our greatest honor.",
+        "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 5,
+        "title_alignment": "center",
         "column_alignment": "center",
         "background_style": "none",
+        "hover_background_style": "none",
         "section_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
         "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "column_title_size": 16,
+        "column_subtitle_size": 14,
+        "column_text_size": 14,
         "padding_top": 40,
         "padding_bottom": 40,
         "columns_mobile": "2",
-        "swipe_on_mobile": true
+        "mobile_title_alignment": "left",
+        "mobile_column_title_size": 16,
+        "mobile_column_subtitle_size": 14,
+        "mobile_column_text_size": 14,
+        "swipe_on_mobile": true,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
       }
     },
     "icon_group_C4fddH": {
@@ -236,6 +261,7 @@
     },
     "one_image_word_xrj8Va": {
       "type": "one-image-word",
+      "disabled": true,
       "custom_css": [
         ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
         ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
@@ -314,6 +340,7 @@
         "column_mEUPmJ",
         "column_76CgzT"
       ],
+      "disabled": true,
       "custom_css": [
         ".multicolumn__title {justify-content: center;}",
         ".multicolumn__title .title {color: #f2d0ad;}",
@@ -325,23 +352,37 @@
         "only_image": true,
         "title": "",
         "heading_size": "h2",
+        "text": "Your satisfaction is our greatest honor.",
+        "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 4,
+        "title_alignment": "center",
         "column_alignment": "center",
         "background_style": "none",
+        "hover_background_style": "none",
         "section_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
         "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "column_title_size": 16,
+        "column_subtitle_size": 14,
+        "column_text_size": 14,
         "padding_top": 0,
         "padding_bottom": 36,
         "columns_mobile": "1",
-        "swipe_on_mobile": false
+        "mobile_title_alignment": "left",
+        "mobile_column_title_size": 16,
+        "mobile_column_subtitle_size": 14,
+        "mobile_column_text_size": 14,
+        "swipe_on_mobile": false,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
       }
     },
     "one_image_word_DdnjGg": {
       "type": "one-image-word",
+      "disabled": true,
       "custom_css": [
         ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
         ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
@@ -828,10 +869,18 @@
         "heading": "FAQ",
         "heading_size": "h2",
         "heading_alignment": "center",
+        "heading_position": "inside",
         "layout": "none",
         "container_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
         "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
         "open_first_collapsible_row": true,
+        "hide_question_dividers": false,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
         "padding_top": 36,
