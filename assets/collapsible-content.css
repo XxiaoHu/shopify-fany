@@ -60,7 +60,23 @@
 }
 
 .collapsible-content__header-outside {
-  padding-top: 3rem;
+  padding-bottom: 2.4rem;
+}
+
+.collapsible-content__header-outside .collapsible-content__heading {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .collapsible-content__header-outside {
+    padding-bottom: 4rem;
+  }
+}
+
+/* The outside header already owns the space above the content. Avoid keeping
+   the section layout's original top gutter, which was intended for an inside header. */
+.collapsible-content--heading-outside.collapsible-section-layout {
+  padding-top: 0;
 }
 
 .collapsible-content__heading {
@@ -115,6 +131,17 @@
 .collapsible-content summary:hover .accordion__title {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
+}
+
+.collapsible-content--hide-dividers .accordion,
+.accordion.accordion--hide-dividers {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.collapsible-content--hide-dividers .accordion.content-container::after,
+.accordion.accordion--hide-dividers.content-container::after {
+  box-shadow: none !important;
 }
 
 /* check for flexbox gap in older Safari versions */

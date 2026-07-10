@@ -13,6 +13,22 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- if section.settings.heading_position == 'outside' -%}
+    .section-{{ section.id }}-header-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-header-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+      }
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 {%- capture collapsible_header -%}
@@ -37,14 +53,14 @@
 
 {%- if section.settings.heading_position == 'outside' -%}
   <div class="collapsible-content__header-shell">
-    <div class="page-width collapsible-content__header-outside">
+    <div class="page-width collapsible-content__header-outside section-{{ section.id }}-header-padding">
       {{ collapsible_header }}
     </div>
   </div>
 {%- endif -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
+  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout{% if section.settings.heading_position == 'outside' %} collapsible-content--heading-outside{% endif %}{% if section.settings.hide_question_dividers %} collapsible-content--hide-dividers{% endif %} isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
       <div class="page-width">
         {%- if section.settings.heading_position == 'inside' -%}
@@ -85,7 +101,7 @@
           <div class="grid__item">
             {%- for block in section.blocks -%}
               <div
-                class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+                class="accordion{% if section.settings.hide_question_dividers %} accordion--hide-dividers{% endif %}{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 <details
@@ -273,6 +289,12 @@
       "id": "open_first_collapsible_row",
       "default": false,
       "label": "t:sections.collapsible_content.settings.open_first_collapsible_row.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_question_dividers",
+      "default": false,
+      "label": "隐藏问题分割线"
     },
     {
       "type": "header",
