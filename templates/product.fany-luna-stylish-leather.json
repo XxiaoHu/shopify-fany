@@ -95,14 +95,6 @@
           "type": "complementary",
           "settings": {}
         },
-        "discount_FbgCrr": {
-          "type": "discount",
-          "disabled": true,
-          "settings": {
-            "discount_text": "SAVE $20",
-            "coupon_code": "FANYMOM20"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -125,6 +117,13 @@
           "type": "payment",
           "settings": {}
         },
+        "discount_FbgCrr": {
+          "type": "discount",
+          "settings": {
+            "discount_text": "SAVE $10",
+            "coupon_code": "FANY GIFT"
+          }
+        },
         "side_panel_links_qBVbeB": {
           "type": "side_panel_links",
           "settings": {
@@ -133,8 +132,8 @@
             "icon_size": 28,
             "row_gap": 12,
             "item_gap": 10,
-            "margin_top": 0,
-            "margin_bottom": 0,
+            "margin_top": 20,
+            "margin_bottom": 30,
             "text_1": "U.S., EU & U.K. Free Shipping",
             "icon_1": "shipping",
             "text_2": "Ship in 1–2 Business Days",
@@ -379,10 +378,10 @@
         "text_8Pieka",
         "variant_img_m4j3e4",
         "complementary_XHQWby",
-        "discount_FbgCrr",
         "buy_buttons",
         "klarna_on_site_messaging_app_block_HH4iJi",
         "payment_RJtWhH",
+        "discount_FbgCrr",
         "side_panel_links_qBVbeB",
         "collapsible_tab_BBFxmQ",
         "details_table_LQKfiY",
