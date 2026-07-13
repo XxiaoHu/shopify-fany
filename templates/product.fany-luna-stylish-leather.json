@@ -41,13 +41,6 @@
           "disabled": true,
           "settings": {}
         },
-        "text_8Pieka": {
-          "type": "text",
-          "settings": {
-            "text": "🔥Buy FANY Luna Leather Smartwatch, Get a <strong>FREE</strong> 14K Gold-Plated Butterfly Bracelet",
-            "text_style": "body"
-          }
-        },
         "judge_me_reviews_preview_badge_33gYqn": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -85,6 +78,13 @@
             "topPadding": "0",
             "bottomPadding": "0",
             "messagePrefix": ""
+          }
+        },
+        "text_8Pieka": {
+          "type": "text",
+          "settings": {
+            "text": "🔥Buy FANY Luna Leather Smartwatch, Get a <strong>FREE</strong> 14K Gold-Plated Butterfly Bracelet",
+            "text_style": "body"
           }
         },
         "variant_img_m4j3e4": {
@@ -369,7 +369,6 @@
       "block_order": [
         "title",
         "description_JgcB66",
-        "text_8Pieka",
         "judge_me_reviews_preview_badge_33gYqn",
         "custom_liquid_xAEewB",
         "excerpt_QrfUYA",
@@ -377,6 +376,7 @@
         "virtual_wear_6NtG3k",
         "price",
         "klarna_on_site_messaging_app_block_gKEjj8",
+        "text_8Pieka",
         "variant_img_m4j3e4",
         "complementary_XHQWby",
         "discount_FbgCrr",
