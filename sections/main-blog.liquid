@@ -356,16 +356,38 @@
   }
 
   @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
     .main-blog--design {
       max-width: 1520px;
       width: calc(100% - 40px);
+      gap: 40px;
       padding-left: 0;
       padding-right: 0;
     }
 
     .main-blog--design .blog-articles {
       grid-template-columns: repeat({{ section.settings.column_num }}, minmax(0, 1fr));
-      row-gap: 64px;
+      column-gap: 16px;
+      row-gap: 40px;
+    }
+
+    .main-blog--design .card--standard > .card__inner,
+    .main-blog--design .card--card > .card__inner {
+      aspect-ratio: 368 / 410;
+    }
+
+    .main-blog--design .card--standard > .card__inner.ratio:before,
+    .main-blog--design .card--card > .card__inner.ratio:before {
+      padding-bottom: 111.413%;
+    }
+
+    .main-blog--design .card__heading {
+      height: 58px;
+      min-height: 58px;
     }
   }
 {%- endstyle -%}

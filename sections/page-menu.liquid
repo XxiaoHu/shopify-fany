@@ -11,6 +11,15 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  @media screen and (min-width: 1024px) {
+    .section-{{ section.id }}-padding > .page-width {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding-right: 200px;
+      padding-left: 200px;
+    }
+  }
   .page-menu{
     display: inline-flex;
     list-style: none;
@@ -121,7 +130,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.page_menu.presets.name",
+      "name": "t:sections.page_menu.presets.name"
     }
   ]
 }

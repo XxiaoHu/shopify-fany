@@ -16,6 +16,16 @@
     margin-top: 0px;
     color: #A57865;
   }
+
+  @media screen and (min-width: 1024px) {
+    .section-{{ section.id }}-padding .rich-text__wrapper {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding-right: 200px;
+      padding-left: 200px;
+    }
+  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
