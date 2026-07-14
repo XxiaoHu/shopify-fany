@@ -35,11 +35,11 @@
         {%- endif -%}
         {%- for i in (1..5) -%}
           {%- if i <= summary_rating_value -%}
-            <span class="customer-reviews__star" aria-hidden="true">★</span>
+            {%- render 'customer-review-star', state: 'full' -%}
           {%- elsif summary_has_half and i == summary_half_index -%}
-            <span class="customer-reviews__star customer-reviews__star--half" aria-hidden="true">★</span>
+            {%- render 'customer-review-star', state: 'half' -%}
           {%- else -%}
-            <span class="customer-reviews__star customer-reviews__star--empty" aria-hidden="true">★</span>
+            {%- render 'customer-review-star', state: 'empty' -%}
           {%- endif -%}
         {%- endfor -%}
       </div>
@@ -77,11 +77,11 @@
                 <div class="customer-reviews__stars" aria-label="{{ block.settings.rating_label | escape }}">
                   {%- for i in (1..5) -%}
                     {%- if i <= rating_value -%}
-                      <span class="customer-reviews__star" aria-hidden="true">★</span>
+                      {%- render 'customer-review-star', state: 'full' -%}
                     {%- elsif has_half and i == half_index -%}
-                      <span class="customer-reviews__star customer-reviews__star--half" aria-hidden="true">★</span>
+                      {%- render 'customer-review-star', state: 'half' -%}
                     {%- else -%}
-                      <span class="customer-reviews__star customer-reviews__star--empty" aria-hidden="true">★</span>
+                      {%- render 'customer-review-star', state: 'empty' -%}
                     {%- endif -%}
                   {%- endfor -%}
                 </div>

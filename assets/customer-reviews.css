@@ -56,24 +56,44 @@
 }
 
 .customer-reviews__star {
-  display: block;
+  position: relative;
+  display: inline-block;
+  flex: 0 0 var(--cr-star-size, 24px);
   width: var(--cr-star-size, 24px);
   height: var(--cr-star-size, 24px);
   overflow: hidden;
-  font-size: var(--cr-star-size, 24px);
-  line-height: var(--cr-star-size, 24px);
+  line-height: 0;
+}
+
+.customer-reviews__star svg {
+  display: block;
+  width: var(--cr-star-size, 24px);
+  height: var(--cr-star-size, 24px);
+}
+
+.customer-reviews__star-base {
+  fill: #d9d9d9;
+}
+
+.customer-reviews__star-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100%;
+  overflow: hidden;
   color: #fcc12b;
 }
 
-.customer-reviews__star--empty {
-  color: #d9d9d9;
+.customer-reviews__star-fill svg {
+  max-width: none;
+  fill: currentColor;
 }
 
-.customer-reviews__star--half {
-  color: transparent;
-  background: linear-gradient(90deg, #fcc12b 0 55%, #d9d9d9 55% 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+.customer-reviews__star--half .customer-reviews__star-fill {
+  width: 50%;
+}
+
+.customer-reviews__star--empty .customer-reviews__star-fill {
+  width: 0;
 }
 
 .customer-reviews__summary .customer-reviews__star {
@@ -91,6 +111,11 @@
   letter-spacing: 0;
   color: #1e0e06;
   text-align: center;
+}
+
+.customer-reviews__summary-text p {
+  margin: 0;
+  padding: 0;
 }
 
 .customer-reviews__carousel {
