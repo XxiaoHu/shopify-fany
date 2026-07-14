@@ -60,7 +60,8 @@
     display: inline-block;
     max-width: 100%;
     margin: 0 0 14px;
-    padding-bottom: 8px;
+    /* 11px underline + 3px clearance for descenders such as g/y/p/q. */
+    padding-bottom: 16px;
     color: {{ section.settings.heading_color }};
     font-size: 34px;
     font-weight: {{ section.settings.heading_font_weight }};
@@ -158,7 +159,7 @@
 
     .image-content-split-{{ section.id }} .image-content-split__heading {
       margin-bottom: {{ section.settings.heading_margin_bottom }}px;
-      padding-bottom: 8px;
+      padding-bottom: 16px;
       color: {{ section.settings.heading_color }};
       font-size: {{ section.settings.heading_font_size }}px;
       font-weight: {{ section.settings.heading_font_weight }};
