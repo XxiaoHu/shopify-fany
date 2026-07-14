@@ -929,7 +929,6 @@
         "product_overview_image_text_c8MYCN": {
           "type": "product-overview-image-text",
           "name": "情绪 压力",
-          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/monitors-emotions-stress-levels.webp",
             "mobile_img": "shopify://shop_images/monitors-emotions-stress-levels-mobile.webp",
@@ -965,7 +964,6 @@
         "product_overview_image_text_6nLWTm": {
           "type": "product-overview-image-text",
           "name": "呼吸 解压",
-          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/deep-breathing_exercise.webp",
             "mobile_img": "shopify://shop_images/deep-breathing_exercise-mobile.webp",
@@ -1037,7 +1035,6 @@
         "product_overview_image_text_nFQFtH": {
           "type": "product-overview-image-text",
           "name": "110 运动",
-          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/Luna_be516d47-99cd-443c-a6f8-8a1d0778f5f1.webp",
             "mobile_img": "shopify://shop_images/Luna_100_1.webp",
@@ -1105,7 +1102,6 @@
         "product_overview_banner_UJAiQp": {
           "type": "product-overview-banner",
           "name": "防水",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Luna_b2619c86-1e43-454d-9a9d-5aff76170f13.webp",
             "mobile_image": "shopify://shop_images/Luna_db7d18d6-a666-4273-9337-ad42ab435a49.webp",
@@ -1153,7 +1149,6 @@
         "product_overview_image_text_8AdJTd": {
           "type": "product-overview-image-text",
           "name": "续航",
-          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/Luna_3ad104e8-e0dd-49ea-9af9-dae723c60df3.webp",
             "mobile_img": "shopify://shop_images/Luna_367d4245-37a4-4903-9109-115c515a32c1.webp",
@@ -1224,7 +1219,6 @@
         "product_overview_image_text_L4JVGr": {
           "type": "product-overview-image-text",
           "name": "100+表盘",
-          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/Luna_0468a732-18f8-42b9-9c66-30feed983f85.webp",
             "mobile_img": "shopify://shop_images/Luna_b4e23063-a675-4834-a131-d761123aef9e.webp",
@@ -1436,7 +1430,6 @@
         "product_overview_highlights_bAWbKU": {
           "type": "product-overview-highlights",
           "name": "精选内测者评价图",
-          "disabled": true,
           "settings": {
             "overflow": true,
             "text_alignment": "center",
