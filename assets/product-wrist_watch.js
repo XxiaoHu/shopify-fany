@@ -60,6 +60,42 @@ document.querySelector(".close-modal").addEventListener("click", function () {
 document.querySelector(".magnifier").addEventListener("click", function () {
   document.querySelector(".product-modal").style.display = "block";
 });
+
+function copyTextFallback(text) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text);
+  } else {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      console.log('复制成功:', text);
+    } catch (err) {
+      console.error('复制失败:', err);
+    }
+    document.body.removeChild(textArea);
+  }
+}
+// 折扣码
+let discount = document.querySelector(".product-discount-code .btn-copy-block");
+if(discount){
+  discount.addEventListener("click", function (e) {
+    let code = this.querySelector('.code').innerText;
+    copyTextFallback(code);
+    let ths = e.currentTarget;
+    ths.style.display = 'none';
+    let success = e.currentTarget.nextElementSibling;
+    success.classList.add('show');
+    setTimeout(function () {
+      success.classList.remove('show');
+      ths.style.display = 'block';
+    }, 3000);
+  });
+}
+
 var tabContainer = document.querySelector(".tabContainer");
 tabContainer.addEventListener("click", function (e) {
   const tabList = e.target.closest('.tabList'); 
@@ -123,37 +159,3 @@ window.addEventListener('scroll', function() {
     tabContainer.classList.remove('top');
   }
 });
-function copyTextFallback(text) {
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text);
-  } else {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed'; 
-    document.body.appendChild(textArea);
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      console.log('复制成功:', text);
-    } catch (err) {
-      console.error('复制失败:', err);
-    }
-    document.body.removeChild(textArea); 
-  }
-}
-// 折扣码
-let discount = document.querySelector(".product-discount-code .btn-copy-block");
-if(discount){
-  discount.addEventListener("click", function (e) {
-    let code = this.querySelector('.code').innerText;
-    copyTextFallback(code);
-    let ths = e.currentTarget;
-    ths.style.display = 'none';
-    let success = e.currentTarget.nextElementSibling;
-    success.classList.add('show');
-    setTimeout(function () {
-      success.classList.remove('show');
-      ths.style.display = 'block';
-    }, 3000);
-  });
-}
