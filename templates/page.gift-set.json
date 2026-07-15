@@ -438,7 +438,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/homepage_set-1000x1000-02.webp",
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363208858"
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363274394"
           }
         }
       },
@@ -847,6 +847,8 @@
         "title": "",
         "heading_size": "h2",
         "text": "Your satisfaction is our greatest honor.",
+        "heading_content_gap": 20,
+        "mobile_heading_content_gap": 20,
         "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
@@ -1033,6 +1035,8 @@
         "title": "",
         "heading_size": "h2",
         "text": "Your satisfaction is our greatest honor.",
+        "heading_content_gap": 20,
+        "mobile_heading_content_gap": 20,
         "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
