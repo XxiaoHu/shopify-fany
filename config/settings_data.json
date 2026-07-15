@@ -111,7 +111,7 @@
     "brand_description": "<p>Follow us on social media. Join thousands of women turning everyday moments into <br/>#FANYVibes serenity.</p>",
     "brand_image": "shopify://shop_images/fany-white.webp",
     "brand_image_width": 190,
-    "social_facebook_link": "https://www.facebook.com/profile.php?id=61576440855579",
+    "social_facebook_link": "https://www.facebook.com/FANY.global",
     "social_instagram_link": "https://www.instagram.com/fany_smartwatch/",
     "social_youtube_link": "https://www.youtube.com/@fanyglobal",
     "social_tiktok_link": "https://www.tiktok.com/@fany_global",
@@ -168,11 +168,6 @@
         "disabled": false,
         "settings": {}
       },
-      "12739210202647819536": {
-        "type": "shopify://apps/hotjar-install/blocks/global-api-events/2903e4ea-7615-463e-8b60-582f487dac4f",
-        "disabled": false,
-        "settings": {}
-      },
       "3838990611052461119": {
         "type": "shopify://apps/c-hub-customer-accounts/blocks/app-embed/0fb3ba0b-4c65-4919-a85a-48bc2d368e9c",
         "disabled": false,
@@ -194,14 +189,14 @@
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
+          "greeting_message": "",
           "button_color": "#9e7163",
           "secondary_color": "#ffffff",
           "ternary_color": "#9e7163",
           "button_icon": "chat_bubble",
           "button_text": "no_text",
           "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "highest",
-          "greeting_message": ""
+          "button_vertical_position": "highest"
         }
       },
       "4976129024724438625": {
