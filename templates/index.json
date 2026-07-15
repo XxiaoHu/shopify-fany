@@ -1017,6 +1017,7 @@
       "block_order": [
         "slide_kXUdDE"
       ],
+      "disabled": true,
       "name": "奖项",
       "settings": {
         "layout": "full_bleed",
