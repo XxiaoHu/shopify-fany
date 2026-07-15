@@ -187,7 +187,7 @@
         "padding_bottom_mobile": 20,
         "padding_left_mobile": 16,
         "padding_right_mobile": 0,
-        "desktop_font_size": 28,
+        "desktop_font_size": 14,
         "mobile_font_size": 14
       }
     },
