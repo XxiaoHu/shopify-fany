@@ -1109,7 +1109,7 @@
         "image": "shopify://shop_images/Gift_Set_56705d71-ef49-4efa-a276-7c07efb6a81c.webp",
         "desktop_image_position": "image-left",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 100,
         "mobile_padding_top": 40,
         "mobile_padding_bottom": 20,
         "eyebrow_color": "#600012",
@@ -1430,7 +1430,7 @@
         "mobile_answer_font_weight": "400",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
-        "padding_top": 36,
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
