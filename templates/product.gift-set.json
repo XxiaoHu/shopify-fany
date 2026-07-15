@@ -1126,6 +1126,314 @@
         "text_font_weight": "400"
       }
     },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_9Wp6DL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1. What’s included in the Gift Set?",
+            "icon": "none",
+            "row_content": "<p>The gift set includes:<br/>1 × FANY Luna Leather Smartwatch (with leather band included)<br/>1 × Magnetic Charger (Full charge in 2.5 hours)<br/>1 × Instruction Manual & Quick Start Guide<br/>1 × Mother of Pearl Butterfly Bracelet<br/>1 × Velvet Drawstring Bracelet Pouch</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GBhf9M": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2. Does the gift set come with a gift box?",
+            "icon": "none",
+            "row_content": "<p>No. The gift set does not include a decorative gift box. The butterfly bracelet comes with a soft pouch for safe storage and gifting.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WyzMqb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "3. Can I purchase the butterfly bracelet separately?",
+            "icon": "none",
+            "row_content": "<p>At this time, the Mother of Pearl Butterfly Bracelet is exclusively available as part of the FANY Luna Leather Smartwatch Gift Set and is not sold separately. This exclusive pairing was thoughtfully designed to create a meaningful gift for life's most special moments.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nBLnWt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "4. What material is the butterfly bracelet made of?",
+            "icon": "none",
+            "row_content": "<p>The butterfly bracelet features:<br/>14K gold PVD-plated copper<br/>Mother of Pearl<br/>Synthetic Cubic Zirconia<br/>The butterfly design symbolizes transformation, confidence, and endless possibilities.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zcaimh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "5. What is the warranty period for the butterfly bracelet?",
+            "icon": "none",
+            "row_content": "<p>The butterfly bracelet included in the FANY Luna Leather Smartwatch Gift Set comes with a 6-month warranty, the same as the watch band warranty. The warranty covers manufacturing defects under normal use conditions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cxPQFx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "6. What's your return or refund policy?",
+            "icon": "none",
+            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 30 days of purchase. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7hieFk": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "7. How does the FANY Luna smartwatch measure stress and mood?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna uses Professional-grade sensor multi-sensor technology to analyze — heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate — to evaluate your stress level. <br/><br/>It senses rising tension even before you overwhelming— from juggling work deadlines to caring for kids and keeping up with home life — reminding you to slow down, breathe, and find balance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CbXBqt": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "8. Is FANY waterproof?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna is 1ATM waterproof, meaning it’s safe for everyday use and swimming in shallow water. However, please avoid hot water, saunas, or wearing it while showering to protect the sensors and coating.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_et434w": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "9. How long does the battery last on a single charge?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna lasts up to 7 days on a single charge keeping up with your week. Whether you’re working, family traveling, or simply enjoying “me time,” it stays by your side without constant recharging.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eyGne4": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "10. Does it support message notifications (WhatsApp, Instagram, etc.)?",
+            "icon": "none",
+            "row_content": "<p>Yes — FANY Luna supports phone notifications including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. so your wrist only lights up for what truly matters to you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YpiDDn": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "11. ls FANY Smartwatch compatible with my phone?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna is compatible with both Android and iOS devices.<br/>Android phones require Android 10 or later, while iPhones require iOS 13 or later (iPhone 6S or newer).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download). </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "12. How do l connect my FANY Luna Smartwatch to my phone?",
+            "icon": "none",
+            "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CEezCT": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "13. Do I need my phone nearby?",
+            "icon": "none",
+            "row_content": "<p>you do need to have your phone nearby and Bluetooth turned on. If you step away for a bit, your health data stays stored on the watch and will sync automatically once reconnected. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7exWnC": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "14. ls the watch safe for sensitive skin?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna uses a genuine cowhide leather strap that’s soft, breathable, and gentle on the skin.<br/>It’s carefully crafted to minimize irritation, making it comfortable and safe even for sensitive skin.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WbmKRp": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "15. ls there a warranty on the watch?",
+            "icon": "none",
+            "row_content": "<p>Yes, FANY Luna comes with a two-year warranty that covers manufacturing defects and quality issues. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_feJQFR": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "16. What’s Included in the FANY Luna Box?",
+            "icon": "none",
+            "row_content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Charger<br/>* Instruction manual, Quick start guide</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NbBki4": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "17. What's your return or refund policy?",
+            "icon": "none",
+            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 60 days of purchase. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gDyNT3": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "18. How can I request a return or exchange?",
+            "icon": "none",
+            "row_content": "<p>Go to your orders, find the order ID, and send a return or exchange request to support@fany.us with the order number, product, and reason.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8qd37h": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "19. Does any product or accessory qualify for free shipping?",
+            "icon": "none",
+            "row_content": "<p>All items ship free with no minimum.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rLkFif": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "20. Do you ship internationally?",
+            "icon": "none",
+            "row_content": "<p>We primarily ship within the United States. International shipping is also available to Canada and 17 European countries, including the United Kingdom, Italy, Austria, Belgium, Czech Republic, Denmark, Finland, Ireland, Netherlands, Norway, Poland, Portugal, Sweden, Switzerland, Germany, Spain, and France.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tibxgL": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "21. How soon will the order ship after placement?",
+            "icon": "none",
+            "row_content": "<p>US: Orders will ship within 1-2 business days of processing payment.Others: Orders will ship within 3-7 business days of processing payment.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cXhUfQ": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "22. When will my order arrive? ",
+            "icon": "none",
+            "row_content": "<p>3-7 business days.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qQfDUP": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "23. Any discounts for new users?",
+            "icon": "none",
+            "row_content": "<p>Register your email to enjoy $10 off on your first order. Get style, stress relief, sleep & fitness tips. <br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bqz4g8": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "24. Can I use multiple coupons?",
+            "icon": "none",
+            "row_content": "<p>Discounts cannot be stacked.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9wmwr3": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "25. Can I apply for the product closed beta test?",
+            "icon": "none",
+            "row_content": "<p>If you align with our brand values and product vision, and actively share feedback on your experience, we’d be delighted to have you.<br/>If you’re interested in joining, please contact us via email at marketing@fany.us</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_9Wp6DL",
+        "collapsible_row_GBhf9M",
+        "collapsible_row_WyzMqb",
+        "collapsible_row_nBLnWt",
+        "collapsible_row_zcaimh",
+        "collapsible_row_cxPQFx",
+        "collapsible_row_7hieFk",
+        "collapsible_row_CbXBqt",
+        "collapsible_row_et434w",
+        "collapsible_row_eyGne4",
+        "collapsible_row_YpiDDn",
+        "collapsible_row_rdVrU8",
+        "collapsible_row_CEezCT",
+        "collapsible_row_7exWnC",
+        "collapsible_row_WbmKRp",
+        "collapsible_row_feJQFR",
+        "collapsible_row_NbBki4",
+        "collapsible_row_gDyNT3",
+        "collapsible_row_8qd37h",
+        "collapsible_row_rLkFif",
+        "collapsible_row_tibxgL",
+        "collapsible_row_cXhUfQ",
+        "collapsible_row_qQfDUP",
+        "collapsible_row_bqz4g8",
+        "collapsible_row_9wmwr3"
+      ],
+      "custom_css": [
+        ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
+        ".collapsible-content__heading {color: #f2d0ad;}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "caption": "",
+        "heading": "<strong>Frequently Asked Questions</strong>",
+        "heading_size": "f-28",
+        "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 26,
+        "layout": "none",
+        "container_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "open_first_collapsible_row": true,
+        "hide_question_dividers": false,
+        "questions_padding_top": 30,
+        "questions_padding_bottom": 30,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 18,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 16,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 40
+      }
+    },
     "product_overview_group_F9Xy6b": {
       "type": "product-overview-group",
       "blocks": {
@@ -2244,296 +2552,6 @@
         "box_text_group": "product-in-the-box-text-group"
       }
     },
-    "faq": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_9Wp6DL": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "1. Who is FANY designed for, and why?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna is designed for women —Women move through life with a natural rhythm, shifting between different roles and experiences. Many smartwatches provide basic tracking, but FANY goes further— it’s tailored for every moment, adapts to your energy shifts, and seamlessly integrates into every facet of your lifestyle. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_GBhf9M": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "2. How does FANY Luna measure heart rate?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a Professional-grade sensor optical sensor to detect tiny changes in blood flow beneath your skin — capturing your heartbeats and the subtle expansion and contraction of blood vessels to measure heart rate precisely.<br/><br/>It helps you see how your body responds through real moments of life:<br/>the pressure of back-to-back meetings, the calm after yoga, the rush of family routines, or the quiet pause before sleep, reminding you to care for your body the way you care for everything else.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_WyzMqb": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "3. How does the FANY Luna smartwatch measure blood oxygen？",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a professional-grade sensor with red and infrared light technology to measure how much light your blood absorbs, accurately estimating your blood oxygen (SpO₂) level.<br/><br/>It helps you understand your breathing and energy in everyday life — when long meetings leave you drained, late nights bring fatigue, or you just need a deep breath after caring for everyone else.<br/>A quiet reminder that your body also needs its own space to recover and breathe.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_nBLnWt": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "4. How does the FANY Luna smartwatch measure steps?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.<br/>From walking the dog, commuting, or taking a mindful stroll after dinner, every step gently reminds you: staying active is also a form of self-care.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_zcaimh": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "5. How does FANY Luna track sleep?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses an advanced sleep algorithm combined with a Professional-grade sensor sensor and heart rate monitoring to analyze your sleep stages — light, deep, and REM.<br/>It turns sleep data into insights <br/><br/>FANY Luna understands that sleep can be easily disrupted — by work thoughts that won’t stop, a child’s call at night, or the quiet worries that come before rest.<br/>It helps you see your real sleep rhythm, reminding you that good rest starts with understanding yourself. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_cxPQFx": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "6. Does FANY Luna support menstrual cycle tracking?",
-            "icon": "none",
-            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_7hieFk": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "7. How does the FANY Luna smartwatch measure stress and mood?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses Professional-grade sensor multi-sensor technology to analyze — heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate — to evaluate your stress level. <br/><br/>It senses rising tension even before you overwhelming— from juggling work deadlines to caring for kids and keeping up with home life — reminding you to slow down, breathe, and find balance.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_CbXBqt": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "8. Is FANY waterproof?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is 1ATM waterproof, meaning it’s safe for everyday use and swimming in shallow water. However, please avoid hot water, saunas, or wearing it while showering to protect the sensors and coating.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_et434w": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "9. How long does the battery last on a single charge?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna lasts up to 7 days on a single charge keeping up with your week. Whether you’re working, family traveling, or simply enjoying “me time,” it stays by your side without constant recharging.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_eyGne4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "10. Does it support message notifications (WhatsApp, Instagram, etc.)?",
-            "icon": "none",
-            "row_content": "<p>Yes — FANY Luna supports phone notifications including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. so your wrist only lights up for what truly matters to you.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_YpiDDn": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "11. ls FANY Smartwatch compatible with my phone?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is compatible with both Android and iOS devices.<br/>Android phones require Android 10 or later, while iPhones require iOS 13 or later (iPhone 6S or newer).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download). </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rdVrU8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "12. How do l connect my FANY Luna Smartwatch to my phone?",
-            "icon": "none",
-            "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_CEezCT": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "13. Do I need my phone nearby?",
-            "icon": "none",
-            "row_content": "<p>you do need to have your phone nearby and Bluetooth turned on. If you step away for a bit, your health data stays stored on the watch and will sync automatically once reconnected. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_7exWnC": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "14. ls the watch safe for sensitive skin?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna uses a genuine cowhide leather strap that’s soft, breathable, and gentle on the skin.<br/>It’s carefully crafted to minimize irritation, making it comfortable and safe even for sensitive skin.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_WbmKRp": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "15. ls there a warranty on the watch?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna comes with a two-year warranty that covers manufacturing defects and quality issues. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_feJQFR": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "16. What’s Included in the FANY Luna Box?",
-            "icon": "none",
-            "row_content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Charger<br/>* Instruction manual, Quick start guide</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_NbBki4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "17. What's your return or refund policy?",
-            "icon": "none",
-            "row_content": "<p>We offer a 30-day return and refund policy.<br/>If you’re not fully satisfied with your FANY Luna, you can return it within 60 days of purchase. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_gDyNT3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "18. How can I request a return or exchange?",
-            "icon": "none",
-            "row_content": "<p>Go to your orders, find the order ID, and send a return or exchange request to support@fany.us with the order number, product, and reason.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_8qd37h": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "19. Does any product or accessory qualify for free shipping?",
-            "icon": "none",
-            "row_content": "<p>All items ship free with no minimum.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rLkFif": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "20. Do you ship internationally?",
-            "icon": "none",
-            "row_content": "<p>We primarily ship within the United States. International shipping is also available to Canada and 17 European countries, including the United Kingdom, Italy, Austria, Belgium, Czech Republic, Denmark, Finland, Ireland, Netherlands, Norway, Poland, Portugal, Sweden, Switzerland, Germany, Spain, and France.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_tibxgL": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "21. How soon will the order ship after placement?",
-            "icon": "none",
-            "row_content": "<p>US: Orders will ship within 1-2 business days of processing payment.Others: Orders will ship within 3-7 business days of processing payment.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_cXhUfQ": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "22. When will my order arrive? ",
-            "icon": "none",
-            "row_content": "<p>3-7 business days.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_qQfDUP": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "23. Any discounts for new users?",
-            "icon": "none",
-            "row_content": "<p>Register your email to enjoy $10 off on your first order. Get style, stress relief, sleep & fitness tips. <br/></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_bqz4g8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "24. Can I use multiple coupons?",
-            "icon": "none",
-            "row_content": "<p>Discounts cannot be stacked.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_9wmwr3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "25. Can I apply for the product closed beta test?",
-            "icon": "none",
-            "row_content": "<p>If you align with our brand values and product vision, and actively share feedback on your experience, we’d be delighted to have you.<br/>If you’re interested in joining, please contact us via email at marketing@fany.us</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_9Wp6DL",
-        "collapsible_row_GBhf9M",
-        "collapsible_row_WyzMqb",
-        "collapsible_row_nBLnWt",
-        "collapsible_row_zcaimh",
-        "collapsible_row_cxPQFx",
-        "collapsible_row_7hieFk",
-        "collapsible_row_CbXBqt",
-        "collapsible_row_et434w",
-        "collapsible_row_eyGne4",
-        "collapsible_row_YpiDDn",
-        "collapsible_row_rdVrU8",
-        "collapsible_row_CEezCT",
-        "collapsible_row_7exWnC",
-        "collapsible_row_WbmKRp",
-        "collapsible_row_feJQFR",
-        "collapsible_row_NbBki4",
-        "collapsible_row_gDyNT3",
-        "collapsible_row_8qd37h",
-        "collapsible_row_rLkFif",
-        "collapsible_row_tibxgL",
-        "collapsible_row_cXhUfQ",
-        "collapsible_row_qQfDUP",
-        "collapsible_row_bqz4g8",
-        "collapsible_row_9wmwr3"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
-        ".collapsible-content__heading {color: #f2d0ad;}"
-      ],
-      "name": "FAQ",
-      "settings": {
-        "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h2",
-        "heading_alignment": "center",
-        "heading_position": "inside",
-        "mobile_heading_size": 28,
-        "layout": "section",
-        "container_color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
-        "color_scheme": "scheme-1",
-        "open_first_collapsible_row": true,
-        "hide_question_dividers": false,
-        "questions_padding_top": 0,
-        "questions_padding_bottom": 0,
-        "question_title_font_size": 18,
-        "question_title_font_weight": "700",
-        "answer_font_size": 16,
-        "answer_font_weight": "400",
-        "mobile_question_title_font_size": 16,
-        "mobile_question_title_font_weight": "700",
-        "mobile_answer_font_size": 14,
-        "mobile_answer_font_weight": "400",
-        "image_ratio": "adapt",
-        "desktop_layout": "image_first",
-        "padding_top": 20,
-        "padding_bottom": 36
-      }
-    },
     "1758592045c9c68565": {
       "type": "apps",
       "blocks": {
@@ -2602,8 +2620,8 @@
     "gift_feature_wQV474",
     "gift_feature_cybMJ6",
     "gift_feature_FdkPHx",
-    "product_overview_group_F9Xy6b",
     "faq",
+    "product_overview_group_F9Xy6b",
     "1758592045c9c68565",
     "newsletter_QLP44D"
   ]
