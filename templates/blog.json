@@ -35,14 +35,16 @@
           "type": "heading",
           "settings": {
             "heading": "See the Vibe",
-            "heading_size": "h0"
+            "heading_size": "h0",
+            "link": "https://fany.us/pages/all-blogs"
           }
         },
         "text_PaYNUJ": {
           "type": "text",
           "settings": {
             "text": "<p>See the Rhythm of Your Elegance</p>",
-            "font_size": "f-18"
+            "font_size": "f-18",
+            "link": "https://fany.us/pages/all-blogs"
           }
         }
       },
