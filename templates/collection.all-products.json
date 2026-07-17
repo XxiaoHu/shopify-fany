@@ -79,6 +79,36 @@
         "mobile_font_size": 16
       }
     },
+    "image_text_WqpxEH": {
+      "type": "image-text",
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p>All Products</p>",
+        "text": "<p>Discover FANY’s collection of elegant smartwatches and accessories, thoughtfully created to help you stay connected with your health, style, and everyday moments.</p>",
+        "img_first": true,
+        "img_has_back": false,
+        "text_alignment": "left",
+        "back_color": "",
+        "font_color": "#1E0E06",
+        "title_font_size": 28,
+        "text_font_size": 16,
+        "img_text_margin": 75,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "mobile_header": "<p>All Products</p>",
+        "mobile_text": "<p>Discover FANY’s collection of elegant smartwatches and accessories, thoughtfully created to help you stay connected with your health, style, and everyday moments.</p>",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "center",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1E0E06",
+        "mobile_title_font_size": 24,
+        "mobile_text_font_size": 14,
+        "mobile_img_text_margin": 20,
+        "mobile_padding_top": 10,
+        "mobile_padding_bottom": 20
+      }
+    },
     "rich_text_p3rThm": {
       "type": "rich-text",
       "blocks": {
@@ -178,6 +208,7 @@
     "banner",
     "image_banner_zPR6f6",
     "breadcrumbs_section_LWT8b6",
+    "image_text_WqpxEH",
     "rich_text_p3rThm",
     "collection_tabs_JLj3Ve",
     "product-grid"
