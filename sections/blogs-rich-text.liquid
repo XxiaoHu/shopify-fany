@@ -17,6 +17,25 @@
     color: #A57865;
   }
 
+  .section-{{ section.id }}-padding .rich-text__blocks.left {
+    text-align: left;
+  }
+
+  .section-{{ section.id }}-padding .rich-text__blocks.center {
+    text-align: center;
+  }
+
+  .section-{{ section.id }}-padding .rich-text__blocks.right {
+    text-align: right;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding .rich-text__blocks {
+      width: 100%;
+      max-width: 50rem;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     .section-{{ section.id }}-padding .rich-text__wrapper {
       width: 100%;
