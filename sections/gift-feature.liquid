@@ -50,11 +50,11 @@
       {%- if section.settings.image != blank -%}
         {{
           section.settings.image
-          | image_url: width: 1800
+          | image_url: width: 3200
           | image_tag:
             loading: 'lazy',
-            widths: '375, 550, 750, 900, 1100, 1400, 1800',
-            sizes: '(min-width: 1440px) 900px, (min-width: 990px) calc(100vw - 640px), calc(100vw - 32px)',
+            widths: '375, 550, 750, 900, 1100, 1400, 1800, 2200, 2600, 3200',
+            sizes: '(min-width: 1440px) calc((100vw - 480px) * 0.6081), (min-width: 990px) calc(60vw - 248px), 100vw',
             alt: ''
         }}
       {%- else -%}

@@ -94,7 +94,10 @@
       </p>
     {% endif %}
     {%- if section.settings.heading != blank -%}
-      <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }} section-{{ section.id }}-mobile-heading">
+      <h2
+        class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }} section-{{ section.id }}-mobile-heading"
+        style="color: {{ section.settings.heading_color }};"
+      >
         {{ section.settings.heading }}
       </h2>
     {%- else -%}
@@ -263,6 +266,12 @@
       ],
       "default": "h2",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#121212"
     },
     {
       "type": "select",
