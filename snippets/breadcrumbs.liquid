@@ -45,6 +45,15 @@
 <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
   <a href="{{ routes.root_url }}" title="Home">Home</a>
 
+  {%- if parent_label != blank -%}
+    {{ separator }}
+    {%- if parent_link != blank -%}
+      <a href="{{ parent_link }}">{{ parent_label | escape }}</a>
+    {%- else -%}
+      <span>{{ parent_label | escape }}</span>
+    {%- endif -%}
+  {%- endif -%}
+
   {% if template contains 'page' %}
     {{ separator }}
     <span>{{ page.title }}</span>

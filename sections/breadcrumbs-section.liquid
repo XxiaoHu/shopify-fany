@@ -36,7 +36,7 @@
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient section-{{ section.id }}-padding">
   <div class="page-width" style="padding: 0;">
-    {% render 'breadcrumbs' %}
+    {% render 'breadcrumbs', parent_label: section.settings.parent_label, parent_link: section.settings.parent_link %}
   </div>
 </div>
 
@@ -54,6 +54,21 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "上级页面"
+    },
+    {
+      "type": "text",
+      "id": "parent_label",
+      "label": "上级页面名称",
+      "info": "留空时不显示上级页面"
+    },
+    {
+      "type": "url",
+      "id": "parent_link",
+      "label": "上级页面链接"
     },
     {
       "type": "header",
