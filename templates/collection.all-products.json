@@ -60,6 +60,55 @@
         "mobile_text_width": 0
       }
     },
+    "breadcrumbs_section_LWT8b6": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 52,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "image_text_Ha9zNe": {
+      "type": "image-text",
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p>All Products</p>",
+        "text": "<p><br/>Discover FANY’s collection of elegant smartwatches and accessories, thoughtfully created to help you stay connected with your health, style, and everyday moments.<br/><br/></p>",
+        "img_first": true,
+        "img_has_back": true,
+        "text_alignment": "left",
+        "back_color": "",
+        "font_color": "#1E0E06",
+        "title_font_size": 40,
+        "text_font_size": 24,
+        "img_text_margin": 75,
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "mobile_header": "",
+        "mobile_text": "",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "center",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1E0E06",
+        "mobile_title_font_size": 40,
+        "mobile_text_font_size": 24,
+        "mobile_img_text_margin": 20,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
+      }
+    },
     "rich_text_p3rThm": {
       "type": "rich-text",
       "blocks": {
@@ -84,32 +133,16 @@
         "heading_f9pRMJ",
         "text_hVqAkD"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 30,
         "padding_bottom": 52,
         "block_width": 800
-      }
-    },
-    "breadcrumbs_section_LWT8b6": {
-      "type": "breadcrumbs-section",
-      "name": "面包屑导航",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_left_mobile": 0,
-        "padding_right_mobile": 0,
-        "desktop_font_size": 16,
-        "mobile_font_size": 16
       }
     },
     "collection_tabs_JLj3Ve": {
@@ -154,7 +187,7 @@
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 12,
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -174,8 +207,9 @@
   "order": [
     "banner",
     "image_banner_zPR6f6",
-    "rich_text_p3rThm",
     "breadcrumbs_section_LWT8b6",
+    "image_text_Ha9zNe",
+    "rich_text_p3rThm",
     "collection_tabs_JLj3Ve",
     "product-grid"
   ]
