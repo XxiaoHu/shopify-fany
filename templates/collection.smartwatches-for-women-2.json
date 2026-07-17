@@ -108,7 +108,7 @@
         "padding_right": 0,
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 20,
-        "padding_left_mobile": 0,
+        "padding_left_mobile": 16,
         "padding_right_mobile": 0,
         "desktop_font_size": 16,
         "mobile_font_size": 16
