@@ -83,6 +83,7 @@
         "heading_f9pRMJ",
         "text_hVqAkD"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -99,23 +100,55 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
+        "parent_label": "",
+        "parent_link": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 52,
         "padding_right": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_left_mobile": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 16,
         "padding_right_mobile": 0,
         "desktop_font_size": 16,
         "mobile_font_size": 16
+      }
+    },
+    "image_text_A7apGY": {
+      "type": "image-text",
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p>FANY Magnetic Fast Charger</p>",
+        "text": "<p>One snap, one charge, one constant companion. Reliability, convenience, grace, consistency...<br/>Powered by effortless magnetic attraction, it automatically aligns and charges in a second—no fumbling, no misalignment. Slim design or fast charging—the harmony of elegance and efficiency keeps your rhythm steady. There’s always power to support you.</p>",
+        "img_first": true,
+        "img_has_back": false,
+        "text_alignment": "left",
+        "back_color": "",
+        "font_color": "#1E0E06",
+        "title_font_size": 28,
+        "text_font_size": 16,
+        "img_text_margin": 75,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "mobile_header": "<p>FANY Magnetic Fast Charger</p>",
+        "mobile_text": "<p>One snap, one charge, one constant companion. Reliability, convenience, grace, consistency...<br/>Powered by effortless magnetic attraction, it automatically aligns and charges in a second—no fumbling, no misalignment. Slim design or fast charging—the harmony of elegance and efficiency keeps your rhythm steady. There’s always power to support you.</p>",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "left",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1E0E06",
+        "mobile_title_font_size": 24,
+        "mobile_text_font_size": 16,
+        "mobile_img_text_margin": 20,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 12,
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -137,6 +170,7 @@
     "image_banner_zPR6f6",
     "rich_text_p3rThm",
     "breadcrumbs_section_qnedPR",
+    "image_text_A7apGY",
     "product-grid"
   ]
 }
