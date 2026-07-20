@@ -549,16 +549,16 @@
             "group_data": ""
           }
         },
-        "product_group_L6BfcG": {
-          "type": "product_group",
-          "settings": {
-            "group_data": "luna-2"
-          }
-        },
         "product_group_HzXyA4": {
           "type": "product_group",
           "settings": {
             "group_data": "luna-1"
+          }
+        },
+        "product_group_L6BfcG": {
+          "type": "product_group",
+          "settings": {
+            "group_data": "luna-2"
           }
         },
         "product_group_P7xCLm": {
@@ -570,8 +570,8 @@
       },
       "block_order": [
         "product_group_DimgT8",
-        "product_group_L6BfcG",
         "product_group_HzXyA4",
+        "product_group_L6BfcG",
         "product_group_P7xCLm"
       ],
       "name": "首页产品系统",
