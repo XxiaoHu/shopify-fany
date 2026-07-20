@@ -14,6 +14,8 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
         "padding_top": 0,
         "padding_bottom": 12,
         "padding_left": 0,
@@ -94,6 +96,7 @@
         },
         "complementary_XHQWby": {
           "type": "complementary",
+          "disabled": true,
           "settings": {}
         },
         "discount_FbgCrr": {
@@ -549,7 +552,7 @@
       "type": "product-overview-group",
       "blocks": {
         "reelup_shoppable_videos_reels_reelup_playlist_yMNRfz": {
-          "type": "shopify://apps/reelup-shoppable-videos/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
           "settings": {
             "playlist_id": ""
           }
@@ -1929,11 +1932,25 @@
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
+        "heading_color": "#121212",
         "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
         "layout": "section",
         "container_color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
         "color_scheme": "scheme-1",
         "open_first_collapsible_row": true,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
         "padding_top": 20,
