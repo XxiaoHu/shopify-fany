@@ -801,6 +801,17 @@
     "customer_reviews_MwicHg": {
       "type": "customer-reviews",
       "blocks": {
+        "review_FL6UKK": {
+          "type": "review",
+          "settings": {
+            "author": "Tanya Colligan",
+            "rating": "5",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "This watch is as good as a basic Garmin watch",
+            "review_text": "I do like that it can detect when you're watching for activity. The timed Always-on Display, if used for 7 hours a day, still has good battery life. Its heart rate is pretty accurate during activity like cycling. The HR is the same as the YMCA equipment. I am very satisficed bought this watch. It is one of a kind in size.",
+            "meta": "24 days ago"
+          }
+        },
         "review_j4U973": {
           "type": "review",
           "settings": {
@@ -867,17 +878,6 @@
             "meta": "1 month ago"
           }
         },
-        "review_FL6UKK": {
-          "type": "review",
-          "settings": {
-            "author": "Tanya Colligan",
-            "rating": "5",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "This watch is as good as a basic Garmin watch",
-            "review_text": "I do like that it can detect when you're watching for activity. The timed Always-on Display, if used for 7 hours a day, still has good battery life. Its heart rate is pretty accurate during activity like cycling. The HR is the same as the YMCA equipment. I am very satisficed bought this watch. It is one of a kind in size.",
-            "meta": "24 days ago"
-          }
-        },
         "review_fj8Lff": {
           "type": "review",
           "settings": {
@@ -891,13 +891,13 @@
         }
       },
       "block_order": [
+        "review_FL6UKK",
         "review_j4U973",
         "review_rr9UJX",
         "review_9TQzcf",
         "review_yLbPFY",
         "review_9e6BeA",
         "review_Hzzt9a",
-        "review_FL6UKK",
         "review_fj8Lff"
       ],
       "name": "用户评论",
