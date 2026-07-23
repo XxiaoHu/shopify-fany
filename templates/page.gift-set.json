@@ -15,8 +15,8 @@
         "slide_hBLQG9": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Gift_Set-banner-PC.webp",
-            "mobile_image": "shopify://shop_images/Gift_Set-banner-M.webp",
+            "image": "shopify://shop_images/banner-_gift.webp",
+            "mobile_image": "shopify://shop_images/banner-_gift_2.webp",
             "image_overlay_opacity": 0,
             "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
             "link_text": "",
@@ -665,6 +665,7 @@
         "caption": "",
         "heading": "<strong>Frequently Asked Questions</strong>",
         "heading_size": "f-28",
+        "heading_color": "#121212",
         "heading_alignment": "center",
         "heading_position": "outside",
         "mobile_heading_size": 26,
