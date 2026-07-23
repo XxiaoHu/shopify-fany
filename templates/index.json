@@ -328,13 +328,13 @@
     "main_banner_BfXnqn": {
       "type": "main-banner",
       "blocks": {
-        "slide_L63WgC": {
+        "slide_q8zgnr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner-_gift.webp",
-            "mobile_image": "shopify://shop_images/banner-_gift_2.webp",
+            "image": "shopify://shop_images/summer_sale_Frame_1000003264.webp",
+            "mobile_image": "shopify://shop_images/summer_sale_Frame_1000003265.webp",
             "image_overlay_opacity": 0,
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
+            "link": "https://fany.us/collections/all-products",
             "link_text": "",
             "link_target_blank": false,
             "desktop_layout_mode": "overlay",
@@ -396,13 +396,13 @@
             "btn_text_active_color": "#ffffff"
           }
         },
-        "slide_q8zgnr": {
+        "slide_L63WgC": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/banner-_gift.webp",
             "mobile_image": "shopify://shop_images/banner-_gift_2.webp",
             "image_overlay_opacity": 0,
-            "link": "https://fany.us/collections/all-products",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
             "link_text": "",
             "link_target_blank": false,
             "desktop_layout_mode": "overlay",
@@ -535,8 +535,8 @@
         }
       },
       "block_order": [
-        "slide_L63WgC",
         "slide_q8zgnr",
+        "slide_L63WgC",
         "slide_QJ7WkG"
       ],
       "name": "主页 Banner 轮播",
