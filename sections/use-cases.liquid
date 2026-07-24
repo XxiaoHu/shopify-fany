@@ -1,4 +1,6 @@
 {{ 'use-cases.css' | asset_url | stylesheet_tag }}
+{{ 'main-image-carousel.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'use-cases.js' | asset_url }}" defer="defer"></script>
 
 {% style %}
   .section-{{ section.id }}-padding {
@@ -117,14 +119,17 @@
         id="UseCaseCard-{{ section.id }}-{{ card_index }}"
         {{ block.shopify_attributes }}
       >
-        {%- if block.settings.link != blank -%}
-          <a
-            href="{{ block.settings.link }}"
-            class="use-cases__card-link"
-          >
-            <span class="visually-hidden">{{ block.settings.card_text | default: block.settings.image.alt | escape }}</span>
-          </a>
-        {%- endif -%}
+        <button
+          type="button"
+          class="use-cases__card-trigger"
+          data-use-case-modal-id="UseCaseModal-{{ section.id }}-{{ block.id }}"
+          aria-haspopup="dialog"
+          aria-controls="UseCaseModal-{{ section.id }}-{{ block.id }}"
+        >
+          <span class="visually-hidden">
+            {{- block.settings.card_text | default: block.settings.title | default: block.settings.image.alt | escape -}}
+          </span>
+        </button>
 
         {%- if block.settings.image != blank -%}
           {{
@@ -173,6 +178,76 @@
     {%- endfor -%}
   </div>
 </div>
+
+{%- for block in section.blocks -%}
+  <div
+    class="modal-overlay use-cases__modal"
+    id="UseCaseModal-{{ section.id }}-{{ block.id }}"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    {% if block.settings.title != blank %}
+      aria-labelledby="UseCaseModalTitle-{{ section.id }}-{{ block.id }}"
+    {% else %}
+      aria-label="{{ block.settings.card_text | default: 'Use case details' | escape }}"
+    {% endif %}
+  >
+    <div class="modal-content">
+      <button type="button" class="modal-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none" aria-hidden="true">
+          <path d="M7.11095 7.1084L14.2221 14.2195L21.3332 7.1084M7.11098 21.3359L14.2221 14.2247L21.3332 21.3359" stroke="white" stroke-width="2.37037" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="modal-wrapper">
+        <div class="modal-img-wrapper">
+          {%- if block.settings.modal_image != blank -%}
+            <picture>
+              {%- if block.settings.mobile_modal_image != blank -%}
+                <source
+                  media="(max-width: 1260px)"
+                  srcset="{{ block.settings.mobile_modal_image | image_url: width: 1260 }}"
+                >
+              {%- endif -%}
+              {{
+                block.settings.modal_image
+                | image_url: width: 2400
+                | image_tag: loading: 'lazy', widths: '550, 750, 1100, 1500, 2000, 2400'
+              }}
+            </picture>
+          {%- endif -%}
+        </div>
+
+        <div class="modal-text-wrapper">
+          {%- if block.settings.eye_brow_label != blank or block.settings.eye_brow_value != blank -%}
+            <div class="modal-eyebrow-section">
+              <div class="eye-brow-label">{{ block.settings.eye_brow_label }}</div>
+              <div class="eye-brow-value">{{ block.settings.eye_brow_value }}</div>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h2 class="modal-title" id="UseCaseModalTitle-{{ section.id }}-{{ block.id }}">
+              {{ block.settings.title }}
+            </h2>
+          {%- endif -%}
+          {%- if block.settings.des1 != blank -%}
+            <div class="modal-desc">{{ block.settings.des1 }}</div>
+          {%- endif -%}
+          {%- if block.settings.eyebrow != blank or block.settings.comment != blank or block.settings.author != blank -%}
+            <div class="modal-testimonial">
+              <div class="quote-eyebrow">{{ block.settings.eyebrow }}</div>
+              <div class="testimonial-text">{{ block.settings.comment }}</div>
+              <div class="testimonial-author">{{ block.settings.author }}</div>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.des2 != blank -%}
+            <div class="modal-other-desc">{{ block.settings.des2 }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endfor -%}
 
 {%- if request.design_mode -%}
   <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
@@ -471,9 +546,58 @@
           "label": "图片"
         },
         {
-          "type": "url",
-          "id": "link",
-          "label": "跳转链接"
+          "type": "header",
+          "content": "弹框内容"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image",
+          "label": "弹框图片-PC"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_modal_image",
+          "label": "弹框图片-移动端"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "弹框标题"
+        },
+        {
+          "type": "richtext",
+          "id": "eye_brow_label",
+          "label": "眉眼-标签"
+        },
+        {
+          "type": "richtext",
+          "id": "eye_brow_value",
+          "label": "眉眼-值"
+        },
+        {
+          "type": "richtext",
+          "id": "des1",
+          "label": "描述1"
+        },
+        {
+          "type": "richtext",
+          "id": "eyebrow",
+          "label": "眉眼"
+        },
+        {
+          "type": "richtext",
+          "id": "comment",
+          "label": "评论"
+        },
+        {
+          "type": "richtext",
+          "id": "author",
+          "label": "作者"
+        },
+        {
+          "type": "richtext",
+          "id": "des2",
+          "label": "描述2"
         },
         {
           "type": "header",

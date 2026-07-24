@@ -65,15 +65,21 @@
 }
 
 .use-cases__card:hover::before,
-.use-cases__card:focus-within::before {
+.use-cases__card:has(.use-cases__card-trigger:focus-visible)::before {
   opacity: var(--uc-overlay-opacity, 0.3);
 }
 
-.use-cases__card-link {
+.use-cases__card-trigger {
   position: absolute;
   inset: 0;
   z-index: 3;
   display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .use-cases__card-image {
