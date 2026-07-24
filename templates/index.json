@@ -698,7 +698,7 @@
         "card_E8GRTV": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_-_4.webp",
+            "image": "shopify://shop_images/homepage_-_2.webp",
             "title": "",
             "eye_brow_label": "",
             "eye_brow_value": "",
@@ -720,7 +720,7 @@
         "card_6MQ69W": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_-_1_d21943a7-1b6a-4a8d-93c8-b711c2390f29.webp",
+            "image": "shopify://shop_images/homepage_-_1.webp",
             "title": "",
             "eye_brow_label": "",
             "eye_brow_value": "",
@@ -730,7 +730,7 @@
             "author": "",
             "des2": "",
             "overlay_opacity": 30,
-            "card_text": "",
+            "card_text": "Know Your Cycle",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700_italic",
@@ -742,7 +742,7 @@
         "card_RPyawz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_-_3_b30077d0-bede-4cdc-a04e-b2ca0c273125.webp",
+            "image": "shopify://shop_images/homepage_-_3.webp",
             "title": "",
             "eye_brow_label": "",
             "eye_brow_value": "",
@@ -752,7 +752,7 @@
             "author": "",
             "des2": "",
             "overlay_opacity": 30,
-            "card_text": "",
+            "card_text": "Track 110+ Sports",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700_italic",
@@ -764,7 +764,7 @@
         "card_VeegYm": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/homepage_-_2_8257e867-da64-48c4-85b4-d6175de05c76.webp",
+            "image": "shopify://shop_images/homepage_-_4_e7156595-196a-40b1-80b1-4a843994051c.webp",
             "title": "",
             "eye_brow_label": "",
             "eye_brow_value": "",
@@ -774,7 +774,7 @@
             "author": "",
             "des2": "",
             "overlay_opacity": 30,
-            "card_text": "",
+            "card_text": "Monitor Emotion",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700_italic",
