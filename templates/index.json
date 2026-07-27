@@ -719,30 +719,6 @@
             "card_text_color": "#ffffff"
           }
         },
-        "card_VeegYm": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/homepage_-_4_e7156595-196a-40b1-80b1-4a843994051c.webp",
-            "modal_image": "shopify://shop_images/600_660-2.webp",
-            "mobile_modal_image": "shopify://shop_images/M_3.webp",
-            "title": "<p>Monitor Emotion & Stress, Practice Self-Care</p>",
-            "eye_brow_label": "",
-            "eye_brow_value": "",
-            "des1": "<p>FANY monitors your emotion and stress in real time, and guides you through 1-minute breathing exercises to quickly relax, relieve pressure, and rebalance your mood.</p>",
-            "eyebrow": "<p>Member Spotlight</p>",
-            "comment": "<p>“This watch can track your stress and emotions very accurately. Most of the time I feel happy and calm, but one day I received some unexpected news. When I checked my watch, it showed that I was feeling upset.<br/>There’s a built-in feature that guides you through breathing exercises to help you calm down. I think everyone can benefit from this, because sometimes we don’t even realize we need to pause, take a moment, and breathe deeply to relax our body and mind.<br/>In that moment, I was really grateful for this watch. It helped me stop, take a breath, and calm myself down. This has been one of the most helpful features for me.”</p>",
-            "author": "<p>Avavlogs</p>",
-            "des2": "",
-            "overlay_opacity": 30,
-            "card_text": "Monitor Emotion",
-            "card_text_font_size": 40,
-            "mobile_card_text_font_size": 24,
-            "card_text_font_weight": "700_italic",
-            "card_text_line_height": 1,
-            "card_text_letter_spacing": 0,
-            "card_text_color": "#ffffff"
-          }
-        },
         "card_RPyawz": {
           "type": "card",
           "settings": {
@@ -759,6 +735,30 @@
             "des2": "",
             "overlay_opacity": 30,
             "card_text": "Track 110+ Sports",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700_italic",
+            "card_text_line_height": 1,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        },
+        "card_VeegYm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/homepage_-_4_e7156595-196a-40b1-80b1-4a843994051c.webp",
+            "modal_image": "shopify://shop_images/600_660-2.webp",
+            "mobile_modal_image": "shopify://shop_images/M_3.webp",
+            "title": "<p>Monitor Emotion & Stress, Practice Self-Care</p>",
+            "eye_brow_label": "",
+            "eye_brow_value": "",
+            "des1": "<p>FANY monitors your emotion and stress in real time, and guides you through 1-minute breathing exercises to quickly relax, relieve pressure, and rebalance your mood.</p>",
+            "eyebrow": "<p>Member Spotlight</p>",
+            "comment": "<p>“This watch can track your stress and emotions very accurately. Most of the time I feel happy and calm, but one day I received some unexpected news. When I checked my watch, it showed that I was feeling upset.<br/>There’s a built-in feature that guides you through breathing exercises to help you calm down. I think everyone can benefit from this, because sometimes we don’t even realize we need to pause, take a moment, and breathe deeply to relax our body and mind.<br/>In that moment, I was really grateful for this watch. It helped me stop, take a breath, and calm myself down. This has been one of the most helpful features for me.”</p>",
+            "author": "<p>Avavlogs</p>",
+            "des2": "",
+            "overlay_opacity": 30,
+            "card_text": "Monitor Emotion",
             "card_text_font_size": 40,
             "mobile_card_text_font_size": 24,
             "card_text_font_weight": "700_italic",
@@ -794,8 +794,8 @@
       },
       "block_order": [
         "card_E8GRTV",
-        "card_VeegYm",
         "card_RPyawz",
+        "card_VeegYm",
         "card_6MQ69W"
       ],
       "name": "使用场景",
