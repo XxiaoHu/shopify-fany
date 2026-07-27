@@ -719,6 +719,30 @@
             "card_text_color": "#ffffff"
           }
         },
+        "card_6MQ69W": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/homepage_-_1.webp",
+            "modal_image": "shopify://shop_images/600_660-1.webp",
+            "mobile_modal_image": "shopify://shop_images/M_2.webp",
+            "title": "<p>Know Your Cycle, Master Your Health</p>",
+            "eye_brow_label": "",
+            "eye_brow_value": "",
+            "des1": "<p>FANY helps you understand your true cycle, ovulation and emotions, predict your periods, and support your scheduling, family planning, health protection and cycle-friendly relaxation.</p>",
+            "eyebrow": "<p>Member Spotlight</p>",
+            "comment": "<p>\"During my luteal phase, I can feel super emotional, not want to talk to anyone, and even end up eating everything in the fridge. My luteal phase used to be my biggest 'opp,' but the FANY watch has been a total lifesaver. It tracks my cycle, lets me log symptoms, and helps me see patterns over time. It also tracks my stress levels and reminds me to breathe or drink water, which really helps me work with my body instead of against it.\"</p>",
+            "author": "<p>Marjonai Smith</p>",
+            "des2": "",
+            "overlay_opacity": 30,
+            "card_text": "Know Your Cycle",
+            "card_text_font_size": 40,
+            "mobile_card_text_font_size": 24,
+            "card_text_font_weight": "700_italic",
+            "card_text_line_height": 1,
+            "card_text_letter_spacing": 0,
+            "card_text_color": "#ffffff"
+          }
+        },
         "card_RPyawz": {
           "type": "card",
           "settings": {
@@ -766,37 +790,13 @@
             "card_text_letter_spacing": 0,
             "card_text_color": "#ffffff"
           }
-        },
-        "card_6MQ69W": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/homepage_-_1.webp",
-            "modal_image": "shopify://shop_images/600_660-1.webp",
-            "mobile_modal_image": "shopify://shop_images/M_2.webp",
-            "title": "<p>Know Your Cycle, Master Your Health</p>",
-            "eye_brow_label": "",
-            "eye_brow_value": "",
-            "des1": "<p>FANY helps you understand your true cycle, ovulation and emotions, predict your periods, and support your scheduling, family planning, health protection and cycle-friendly relaxation.</p>",
-            "eyebrow": "<p>Member Spotlight</p>",
-            "comment": "<p>\"During my luteal phase, I can feel super emotional, not want to talk to anyone, and even end up eating everything in the fridge. My luteal phase used to be my biggest 'opp,' but the FANY watch has been a total lifesaver. It tracks my cycle, lets me log symptoms, and helps me see patterns over time. It also tracks my stress levels and reminds me to breathe or drink water, which really helps me work with my body instead of against it.\"</p>",
-            "author": "<p>Marjonai Smith</p>",
-            "des2": "",
-            "overlay_opacity": 30,
-            "card_text": "Know Your Cycle",
-            "card_text_font_size": 40,
-            "mobile_card_text_font_size": 24,
-            "card_text_font_weight": "700_italic",
-            "card_text_line_height": 1,
-            "card_text_letter_spacing": 0,
-            "card_text_color": "#ffffff"
-          }
         }
       },
       "block_order": [
         "card_E8GRTV",
+        "card_6MQ69W",
         "card_RPyawz",
-        "card_VeegYm",
-        "card_6MQ69W"
+        "card_VeegYm"
       ],
       "name": "使用场景",
       "settings": {
