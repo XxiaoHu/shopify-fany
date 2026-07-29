@@ -176,39 +176,19 @@
             "page": ""
           }
         },
-        "collapsible_row_4fGPWE": {
+        "collapsible_row_bpEq4D": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_cWXGef": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_Ej8J6Q": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "2. How long does it take to fully charge the FANY Luna smartwatch?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 2 hours to fully charge. Once fully charged, it can provide up to 7 days of battery life, depending on usage.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
         "collapsible_row_trjpYA",
-        "collapsible_row_4fGPWE",
-        "collapsible_row_cWXGef",
-        "collapsible_row_Ej8J6Q"
+        "collapsible_row_bpEq4D"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
