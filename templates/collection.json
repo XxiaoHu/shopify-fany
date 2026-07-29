@@ -124,7 +124,7 @@
         "img_has_back": false,
         "text_alignment": "left",
         "back_color": "",
-        "font_color": "#1E0E06",
+        "font_color": "#1e0e06",
         "title_font_size": 28,
         "text_font_size": 16,
         "img_text_margin": 75,
@@ -136,7 +136,7 @@
         "mobile_img_has_back": false,
         "mobile_text_alignment": "left",
         "mobile_back_color": "",
-        "mobile_font_color": "#1E0E06",
+        "mobile_font_color": "#1e0e06",
         "mobile_title_font_size": 24,
         "mobile_text_font_size": 14,
         "mobile_img_text_margin": 20,
@@ -201,6 +201,82 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_xxzg7w": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_mxcQNb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1. What wrist sizes does the FANY Luna fit?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_njnGEa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_McRL4i": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_CXU4Bk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_mxcQNb",
+        "collapsible_row_njnGEa",
+        "collapsible_row_McRL4i",
+        "collapsible_row_CXU4Bk"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -210,6 +286,7 @@
     "breadcrumbs_section_ATNHrz",
     "image_text_qLjCR3",
     "collection_tabs_idD4pA",
-    "product-grid"
+    "product-grid",
+    "collapsible_content_xxzg7w"
   ]
 }
