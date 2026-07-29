@@ -231,22 +231,12 @@
             "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
             "page": ""
           }
-        },
-        "collapsible_row_CJpi6p": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "3. Is the FANY Luna comfortable for sensitive skin?",
-            "icon": "none",
-            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_mxcQNb",
         "collapsible_row_pkyDfW",
-        "collapsible_row_xVV4aP",
-        "collapsible_row_CJpi6p"
+        "collapsible_row_xVV4aP"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
