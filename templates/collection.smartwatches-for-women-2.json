@@ -170,36 +170,45 @@
         "collapsible_row_f4cQeF": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "1. Why Choose a FANY Smartwatch?",
+            "icon": "none",
+            "row_content": "<p>FANY smartwatches bring thoughtful wellness technology into an elegant, lightweight design made for women. Monitor your heart rate, sleep, blood oxygen, stress, mood, menstrual cycle, and daily activity, with 110+ fitness modes to support your active lifestyle. With up to 7 days of battery life, smart notifications, interchangeable bands, and IP68 water resistance, FANY keeps you connected and supported without compromising your personal style.</p>",
             "page": ""
           }
         },
         "collapsible_row_V4UKmN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "2. What wrist sizes does the FANY Luna fit?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
             "page": ""
           }
         },
-        "collapsible_row_x34cMc": {
+        "collapsible_row_bqwYY3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "3. Can I easily change the FANY Luna watch bands?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
             "page": ""
           }
         },
-        "collapsible_row_GL4h86": {
+        "collapsible_row_yAgNVc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "2. What wrist sizes does the FANY Luna fit?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ayz8B9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2. What wrist sizes does the FANY Luna fit?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
             "page": ""
           }
         }
@@ -207,13 +216,14 @@
       "block_order": [
         "collapsible_row_f4cQeF",
         "collapsible_row_V4UKmN",
-        "collapsible_row_x34cMc",
-        "collapsible_row_GL4h86"
+        "collapsible_row_bqwYY3",
+        "collapsible_row_yAgNVc",
+        "collapsible_row_Ayz8B9"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
+        "heading": "FAQ",
         "heading_size": "h2",
         "heading_color": "#121212",
         "heading_alignment": "center",
