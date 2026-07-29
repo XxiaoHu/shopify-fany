@@ -202,6 +202,92 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_XfqxBF": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_MHED6B": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1. Why Choose a FANY Smartwatch?",
+            "icon": "none",
+            "row_content": "<p>FANY smartwatches bring thoughtful wellness technology into an elegant, lightweight design made for women. Monitor your heart rate, sleep, blood oxygen, stress, mood, menstrual cycle, and daily activity, with 110+ fitness modes to support your active lifestyle. With up to 7 days of battery life, smart notifications, interchangeable bands, and IP68 water resistance, FANY keeps you connected and supported without compromising your personal style.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_G7YUWT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2. What wrist sizes does the FANY Luna fit?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RCBbk9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "3. Can I easily change the FANY Luna watch bands?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fCycMa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "4. Is the FANY Luna comfortable for sensitive skin?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4tAJcF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "5. Is the FANY Luna smartwatch waterproof?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna features IP68 water resistance and is suitable for everyday wear, including swimming. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_MHED6B",
+        "collapsible_row_G7YUWT",
+        "collapsible_row_RCBbk9",
+        "collapsible_row_fCycMa",
+        "collapsible_row_4tAJcF"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -211,6 +297,7 @@
     "image_text_WqpxEH",
     "rich_text_p3rThm",
     "collection_tabs_JLj3Ve",
-    "product-grid"
+    "product-grid",
+    "collapsible_content_XfqxBF"
   ]
 }
