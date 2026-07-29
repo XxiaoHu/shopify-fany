@@ -674,6 +674,15 @@
             "page": ""
           }
         },
+        "collapsible_row_4DxLEC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "8. Is the FANY Luna smartwatch waterproof?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna features IP68 water resistance and is suitable for everyday wear, including swimming. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_et434w": {
           "type": "collapsible_row",
           "settings": {
@@ -837,6 +846,7 @@
         "collapsible_row_cxPQFx",
         "collapsible_row_7hieFk",
         "collapsible_row_CbXBqt",
+        "collapsible_row_4DxLEC",
         "collapsible_row_et434w",
         "collapsible_row_eyGne4",
         "collapsible_row_YpiDDn",
