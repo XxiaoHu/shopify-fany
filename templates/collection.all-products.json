@@ -259,6 +259,15 @@
             "row_content": "<p>No. The <strong>600 mm Magnetic Fast Charger to USB-C Cable</strong> is designed specifically for charging the FANY Luna smartwatch and is <strong>not compatible with iPhones or other devices</strong>. Please use it only with your FANY Luna smartwatch.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_jVxLz3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "7. How long does it take to fully charge the FANY Luna smartwatch?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 2 hours to fully charge. Once fully charged, it can provide up to 7 days of battery life, depending on usage.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -267,7 +276,8 @@
         "collapsible_row_RCBbk9",
         "collapsible_row_fCycMa",
         "collapsible_row_4tAJcF",
-        "collapsible_row_nt7yRd"
+        "collapsible_row_nt7yRd",
+        "collapsible_row_jVxLz3"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
