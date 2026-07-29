@@ -208,9 +208,9 @@
         "collapsible_row_mxcQNb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. What wrist sizes does the FANY Luna fit?",
+            "heading": "1. What size wrist does the 16 mm leather band fit?",
             "icon": "none",
-            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
+            "row_content": "<p>The band fits wrists measuring approximately 144–202 mm (5.67–7.95 in), making it suitable for a wide range of wrist sizes.</p>",
             "page": ""
           }
         },
@@ -232,39 +232,12 @@
             "page": ""
           }
         },
-        "collapsible_row_7fz666": {
+        "collapsible_row_CJpi6p": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. What wrist sizes does the FANY Luna fit?",
+            "heading": "3. Is the FANY Luna comfortable for sensitive skin?",
             "icon": "none",
-            "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_njnGEa": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_McRL4i": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_CXU4Bk": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
             "page": ""
           }
         }
@@ -273,10 +246,7 @@
         "collapsible_row_mxcQNb",
         "collapsible_row_pkyDfW",
         "collapsible_row_xVV4aP",
-        "collapsible_row_7fz666",
-        "collapsible_row_njnGEa",
-        "collapsible_row_McRL4i",
-        "collapsible_row_CXU4Bk"
+        "collapsible_row_CJpi6p"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
