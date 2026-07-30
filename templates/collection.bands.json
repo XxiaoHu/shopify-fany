@@ -118,8 +118,8 @@
       "type": "image-text",
       "name": "上下结构图文",
       "settings": {
-        "header": "<p>FANY Smartwatch Accessories</p>",
-        "text": "<p>One color, one mood, one way to express your style. Elegance, passion, serenity, vitality... <br/>Classic leather or modern silicone—the clash of timeless and contemporary styles is a celebration of life’s energy. There’s always one that understands you.</p>",
+        "header": "<p>Bands</p>",
+        "text": "<p>Designed for Women. Made for Every Moment.<br/>At FANY, we believe a smartwatch should feel as good as it looks. That’s why every band is carefully selected and thoughtfully designed for women, using skin-friendly materials chosen with safety, comfort, and everyday wear in mind.<br/>From soft silicone for active days to genuine leather for timeless elegance, our collection offers versatile styles, comfortable fits, and colors made to complement her individuality. Whatever the day brings, there’s a FANY band made for her.</p>",
         "img_first": true,
         "img_has_back": false,
         "text_alignment": "left",
@@ -231,32 +231,12 @@
             "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
             "page": ""
           }
-        },
-        "collapsible_row_4mMRxf": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "4.  Is the magnetic charger compatible with iPhones or other devices?",
-            "icon": "none",
-            "row_content": "<p>No. The <strong>600 mm Magnetic Fast Charger to USB-C Cable</strong> is designed specifically for charging the FANY Luna smartwatch and is <strong>not compatible with iPhones or other devices</strong>. Please use it only with your FANY Luna smartwatch.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_TiP4Pa": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "5. How long does it take to fully charge the FANY Luna smartwatch?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 2 hours to fully charge. Once fully charged, it can provide up to 7 days of battery life, depending on usage.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_mxcQNb",
         "collapsible_row_pkyDfW",
-        "collapsible_row_xVV4aP",
-        "collapsible_row_4mMRxf",
-        "collapsible_row_TiP4Pa"
+        "collapsible_row_xVV4aP"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
