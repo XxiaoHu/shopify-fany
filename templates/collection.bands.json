@@ -1,0 +1,282 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "image_banner_zPR6f6": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_PiHfDU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Complement Your Every Look",
+            "heading_size": "h1"
+          }
+        },
+        "text_mJXygP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "text_style": "f-18"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PiHfDU",
+        "text_mJXygP"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/3840x1200.webp",
+        "mobile_image": "shopify://shop_images/banner_m.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "top-center",
+        "desktop_content_alignment": "center",
+        "text_width": 500,
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_desktop_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_p3rThm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f9pRMJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY Stylish Smartwatch Accessories",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_hVqAkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>One color, one mood, one way to express your style. Elegance, passion, serenity, vitality... <br/>Classic leather or modern silicone—the clash of timeless and contemporary styles is a celebration of life’s energy. There’s always one that understands you.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_f9pRMJ",
+        "text_hVqAkD"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "breadcrumbs_section_ATNHrz": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 52,
+        "padding_right": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "image_text_qLjCR3": {
+      "type": "image-text",
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p>FANY Smartwatch Accessories</p>",
+        "text": "<p>One color, one mood, one way to express your style. Elegance, passion, serenity, vitality... <br/>Classic leather or modern silicone—the clash of timeless and contemporary styles is a celebration of life’s energy. There’s always one that understands you.</p>",
+        "img_first": true,
+        "img_has_back": false,
+        "text_alignment": "left",
+        "back_color": "",
+        "font_color": "#1e0e06",
+        "title_font_size": 28,
+        "text_font_size": 16,
+        "img_text_margin": 75,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "mobile_header": "<p>FANY Smartwatch Accessories</p>",
+        "mobile_text": "<p>One color, one mood, one way to express your style. Elegance, passion, serenity, vitality... <br/>Classic leather or modern silicone—the clash of timeless and contemporary styles is a celebration of life’s energy. There’s always one that understands you.</p>",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "left",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1e0e06",
+        "mobile_title_font_size": 24,
+        "mobile_text_font_size": 14,
+        "mobile_img_text_margin": 20,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "collection_tabs_idD4pA": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_tab_7zE3xm": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "all-products",
+            "link": ""
+          }
+        },
+        "collection_tab_qM8Ak7": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "bands",
+            "link": ""
+          }
+        },
+        "collection_tab_dEFh6Y": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "chargers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_7zE3xm",
+        "collection_tab_qM8Ak7",
+        "collection_tab_dEFh6Y"
+      ],
+      "name": "系列集合切换按钮",
+      "settings": {
+        "aria_label": "系列集合导航",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_xxzg7w": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_mxcQNb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1. What size wrist does the 16 mm leather band fit?",
+            "icon": "none",
+            "row_content": "<p>The band fits wrists measuring approximately 144–202 mm (5.67–7.95 in), making it suitable for a wide range of wrist sizes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pkyDfW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2. Can I easily change the FANY Luna watch bands?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xVV4aP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "3. Is the FANY Luna comfortable for sensitive skin?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_mxcQNb",
+        "collapsible_row_pkyDfW",
+        "collapsible_row_xVV4aP"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "image_banner_zPR6f6",
+    "rich_text_p3rThm",
+    "breadcrumbs_section_ATNHrz",
+    "image_text_qLjCR3",
+    "collection_tabs_idD4pA",
+    "product-grid",
+    "collapsible_content_xxzg7w"
+  ]
+}
