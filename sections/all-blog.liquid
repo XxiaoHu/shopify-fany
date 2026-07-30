@@ -334,13 +334,14 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign blogs_handles = section.settings.blogsHandles |  split: ',' 
+  assign blogs_handles = section.settings.blogsHandles | split: ','
   assign article_data = ''
   assign ratio = nil
-  for blogHandle in blogs_handles 
-    assign blog = blogs[blogHandle]
-    for article in blog.articles limit: 1000
-      unless article.metafields.custom.push_blog_index
+  for blog_handle in blogs_handles
+    assign blog_handle = blog_handle | strip
+    assign blog = blogs[blog_handle]
+    for article in blog.articles
+      if article.metafields.custom.article_push_index.value == true
         if ratio == blank
           assign ratio = article.image.aspect_ratio
         endif
@@ -354,7 +355,7 @@
         endif
       
         assign article_data = article | json | remove_last: '}' | append: ',date_time: "' | append: date_time | append: '"' | append: ',show_time: "' | append: show_time | append: '"' | append: ',reading_minutes:' | append: reading_minutes | append: ',excerpt:"' | append: excerpt | append: '"' | append: ',image_height:' | append: article.image.height | append: ',url:"' | append: article.url | append: '"'  | append: ',category_handle: "' | append: handle | append: '"' | append: ',category: "' | append: blog.title | append: '"' | append: '}' | append: ',' | append: article_data
-      endunless
+      endif
     endfor
   endfor
 -%}

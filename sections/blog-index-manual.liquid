@@ -1,0 +1,431 @@
+{{ 'blog-index.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .section-{{ section.id }}-padding.page-width {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding-right: 200px;
+      padding-left: 200px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      box-sizing: border-box;
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+{%- liquid
+  assign big_article = section.settings.featured_article
+  assign big_image = section.settings.featured_image
+  if big_image == blank
+    assign big_image = big_article.image
+  endif
+  assign small_ratio = 1
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="blog-index-grid">
+      <div class="big-blog-grid" id="dynamicBox">
+        {%- if big_image != blank -%}
+          <img
+            src="{{ big_image | image_url: width: 1620 }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+            alt="{{ big_image.alt | default: big_article.title | escape }}"
+            class="motion-reduce"
+            loading="lazy"
+            width="{{ big_image.width }}"
+            height="{{ big_image.height }}"
+          >
+        {%- endif -%}
+        <div class="big-blog-text">
+          <div class="caption-with-letter-spacing h5">
+            <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+          </div>
+          <h3 class="big-blog-title {{ section.settings.featured_heading_size | default: 'h2' }}">
+            <a href="{{ big_article.url }}" class="full-unstyled-link">
+              {{ big_article.title | escape }}
+              <div class="post-featured-read">{{ section.settings.read_more_label | escape }}</div>
+            </a>
+          </h3>
+          <p class="big-blog-excerpt">
+            {{ big_article.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+        </div>
+      </div>
+      <div class="big-blog-text m-big-blo-tex">
+        <div class="caption-with-letter-spacing h5">
+          <span class="circle-divider">{{ big_article.published_at | time_tag: format: 'date' }}</span>
+        </div>
+        <h3 class="big-blog-title {{ section.settings.featured_heading_size | default: 'h2' }}">
+          <a href="{{ big_article.url }}" class="full-unstyled-link">
+            {{ big_article.title | escape }}
+            <div class="post-featured-read">{{ section.settings.read_more_label | escape }}</div>
+          </a>
+        </h3>
+        <p class="big-blog-excerpt">
+          {{ big_article.excerpt | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+      <div class="small-blog-grid">
+        <h2 class="{{ section.settings.popular_heading_size | default: 'f-28' }}">{{ section.settings.popular_heading | escape }}</h2>
+        <div class="small-blog-box">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign article = block.settings.article
+            -%}
+            <article class="small-blog-item" {{ block.shopify_attributes }}>
+              <span class="small-blog-index" aria-hidden="true">{{ forloop.index }}</span>
+              <div class="small-image-box" style="--ratio-percent: {{ 1 | divided_by: small_ratio | times: 100 }}%; ">
+                {%- if article.image != blank -%}
+                  <img
+                    srcset="
+                      {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                      {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                    "
+                    src="{{ article.image.src | image_url: width: 533 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                    alt="{{ article.image.alt | escape }}"
+                    class="motion-reduce"
+                    loading="lazy"
+                    width="{{ article.image.width }}"
+                    height="{{ article.image.height }}"
+                  >
+                {%- endif -%}
+              </div>
+              <div class="small-text-box">
+                {% if section.settings.show_title %}
+                <div class="big-blog-title f-w-normal {{ section.settings.popular_article_title_size | default: 'f-20' }}">
+                  <a href="{{ article.url }}" class="full-unstyled-link">
+                    {{ article.title | escape }}
+                  </a>
+                </div>
+                {% endif %}
+                {% if section.settings.show_date %}
+                <div class="caption-with-letter-spacing">
+                  <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
+                </div>
+                {% endif %}
+                {% if section.settings.show_excerpt %}
+                <p class="big-blog-excerpt">
+                  {{ article.excerpt | strip_html }}
+                </p>
+                {% endif %}
+              </div>
+            </article>
+            {%- unless forloop.last -%}
+              <div class="small-blog-separator" aria-hidden="true"></div>
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "手动博客推荐",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "主推文章"
+    },
+    {
+      "type": "article",
+      "id": "featured_article",
+      "label": "选择主推文章"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "主推荐位图片",
+      "info": "未设置时使用所选文章的封面图"
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "阅读链接文字",
+      "default": "Read On"
+    },
+    {
+      "type": "select",
+      "id": "featured_heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "h2",
+      "label": "大图标题大小"
+    },
+    {
+      "type": "header",
+      "content": "右侧文章列表"
+    },
+    {
+      "type": "text",
+      "id": "popular_heading",
+      "label": "列表标题",
+      "default": "Most Popular"
+    },
+    {
+      "type": "select",
+      "id": "popular_heading_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "f-28",
+      "label": "列表标题大小"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "default": true,
+      "label": "显示文章标题"
+    },
+    {
+      "type": "select",
+      "id": "popular_article_title_size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "f-18",
+          "label": "大小18"
+        },
+        {
+          "value": "f-20",
+          "label": "大小20"
+        },
+        {
+          "value": "f-22",
+          "label": "大小22"
+        },
+        {
+          "value": "f-24",
+          "label": "大小24"
+        },
+        {
+          "value": "f-28",
+          "label": "大小28"
+        },
+        {
+          "value": "f-36",
+          "label": "大小36"
+        }
+      ],
+      "default": "f-20",
+      "label": "文章标题大小"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "显示日期"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "default": false,
+      "label": "显示摘要"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "配色方案",
+      "default": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421"
+    },
+    {
+      "type": "header",
+      "content": "间距"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "下边距",
+      "default": 96
+    }
+  ],
+  "blocks": [
+    {
+      "type": "popular_article",
+      "name": "列表文章",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "选择文章"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "手动博客推荐",
+      "blocks": [
+        {
+          "type": "popular_article"
+        },
+        {
+          "type": "popular_article"
+        },
+        {
+          "type": "popular_article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
