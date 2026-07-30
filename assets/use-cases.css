@@ -94,17 +94,53 @@
 /* ---------- Card Text Overlay ---------- */
 .use-cases__card-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
   z-index: 2;
   margin: 0;
+  box-sizing: border-box;
   word-break: break-word;
   opacity: 1;
   pointer-events: none;
   text-align: center;
   width: 100%;
   padding: 0 20px;
+}
+
+.use-cases__card-text--top-left,
+.use-cases__card-text--top-center,
+.use-cases__card-text--top-right {
+  top: 20px;
+}
+
+.use-cases__card-text--middle-left,
+.use-cases__card-text--middle-center,
+.use-cases__card-text--middle-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.use-cases__card-text--bottom-left,
+.use-cases__card-text--bottom-center,
+.use-cases__card-text--bottom-right {
+  bottom: 20px;
+}
+
+.use-cases__card-text--top-left,
+.use-cases__card-text--middle-left,
+.use-cases__card-text--bottom-left {
+  text-align: left;
+}
+
+.use-cases__card-text--top-center,
+.use-cases__card-text--middle-center,
+.use-cases__card-text--bottom-center {
+  text-align: center;
+}
+
+.use-cases__card-text--top-right,
+.use-cases__card-text--middle-right,
+.use-cases__card-text--bottom-right {
+  text-align: right;
 }
 
 /* ---------- Responsive: Mobile ---------- */

@@ -148,7 +148,9 @@
         {%- endif -%}
 
         {%- if block.settings.card_text != blank -%}
-          <p class="use-cases__card-text">{{ block.settings.card_text | escape }}</p>
+          <p class="use-cases__card-text use-cases__card-text--{{ block.settings.card_text_position | default: 'middle-center' }}">
+            {{ block.settings.card_text | escape }}
+          </p>
         {%- endif -%}
       </div>
 
@@ -622,6 +624,23 @@
           "id": "card_text",
           "default": "Elegance Forward",
           "label": "悬停显示文字"
+        },
+        {
+          "type": "select",
+          "id": "card_text_position",
+          "label": "文字位置",
+          "options": [
+            { "value": "top-left", "label": "左上" },
+            { "value": "top-center", "label": "上中" },
+            { "value": "top-right", "label": "右上" },
+            { "value": "middle-left", "label": "左中" },
+            { "value": "middle-center", "label": "居中" },
+            { "value": "middle-right", "label": "右中" },
+            { "value": "bottom-left", "label": "左下" },
+            { "value": "bottom-center", "label": "下中" },
+            { "value": "bottom-right", "label": "右下" }
+          ],
+          "default": "middle-center"
         },
         {
           "type": "range",
