@@ -16,9 +16,15 @@ class MainBannerComponent extends HTMLElement {
     // Drag tracking
     this.isDragging = false;
     this.dragStartX = 0;
+    this.dragStartY = 0;
+    this.dragCurrentX = 0;
     this.dragScrollLeft = 0;
     this.dragDistance = 0;
+    this.dragAxis = null;
+    this.dragStartIndex = 0;
+    this.suppressClickUntil = 0;
     this.CLICK_THRESHOLD = 5;
+    this.SWIPE_THRESHOLD = 40;
 
     if (this.slideCount <= 1) return;
 
@@ -59,10 +65,12 @@ class MainBannerComponent extends HTMLElement {
     this.slider.addEventListener('mousedown', this.onDragStart.bind(this));
     this.slider.addEventListener('touchstart', this.onDragStart.bind(this), { passive: true });
     this.slider.addEventListener('mousemove', this.onDragMove.bind(this));
-    this.slider.addEventListener('touchmove', this.onDragMove.bind(this), { passive: true });
+    this.slider.addEventListener('touchmove', this.onDragMove.bind(this), { passive: false });
     this.slider.addEventListener('mouseup', this.onDragEnd.bind(this));
     this.slider.addEventListener('touchend', this.onDragEnd.bind(this));
+    this.slider.addEventListener('touchcancel', this.onDragEnd.bind(this));
     this.slider.addEventListener('mouseleave', this.onDragEnd.bind(this));
+    this.slider.addEventListener('click', this.onClickCapture.bind(this), true);
 
     // Pause autoplay on hover
     this.addEventListener('mouseenter', this.pauseAutoplay.bind(this));
@@ -81,41 +89,88 @@ class MainBannerComponent extends HTMLElement {
 
   /* ===== Drag/Swipe ===== */
   onDragStart(e) {
+    if (e.type === 'mousedown' && e.button !== 0) return;
+    if (e.type === 'touchstart' && e.touches.length !== 1) return;
+
+    const point = e.type.includes('mouse') ? e : e.touches[0];
     this.isDragging = true;
-    this.dragStartX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+    this.dragStartX = point.pageX;
+    this.dragStartY = point.pageY;
+    this.dragCurrentX = point.pageX;
     this.dragScrollLeft = this.slider.scrollLeft;
     this.dragDistance = 0;
-    this.slider.classList.add('dragging');
+    this.dragAxis = e.type.includes('mouse') ? 'horizontal' : null;
+    this.dragStartIndex = this.currentIndex;
+
+    if (this.dragAxis === 'horizontal') {
+      this.slider.classList.add('dragging');
+    }
+
+    this.pauseAutoplay();
   }
 
   onDragMove(e) {
     if (!this.isDragging) return;
-    const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-    this.dragDistance = Math.abs(x - this.dragStartX);
-    const walk = (this.dragStartX - x) * 1;
-    this.slider.scrollLeft = this.dragScrollLeft + walk;
+    if (e.type === 'touchmove' && e.touches.length !== 1) return;
+
+    const point = e.type.includes('mouse') ? e : e.touches[0];
+    const deltaX = point.pageX - this.dragStartX;
+    const deltaY = point.pageY - this.dragStartY;
+    const absDeltaX = Math.abs(deltaX);
+    const absDeltaY = Math.abs(deltaY);
+
+    this.dragCurrentX = point.pageX;
+
+    if (!this.dragAxis && (absDeltaX > this.CLICK_THRESHOLD || absDeltaY > this.CLICK_THRESHOLD)) {
+      this.dragAxis = absDeltaX > absDeltaY ? 'horizontal' : 'vertical';
+    }
+
+    if (this.dragAxis !== 'horizontal') return;
+
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+
+    this.dragDistance = absDeltaX;
+
+    // On touch devices, wait until release and use the same full-width
+    // smooth transition as the arrow buttons.
+    if (e.type === 'touchmove') return;
+
+    this.slider.classList.add('dragging');
+    this.slider.scrollLeft = this.dragScrollLeft - deltaX;
   }
 
-  onDragEnd() {
+  onDragEnd(e) {
     if (!this.isDragging) return;
+
+    const wasHorizontalDrag = this.dragAxis === 'horizontal';
+    const threshold = e.type.includes('touch') ? this.SWIPE_THRESHOLD : this.CLICK_THRESHOLD;
+
     this.isDragging = false;
     this.slider.classList.remove('dragging');
 
-    if (this.dragDistance > this.CLICK_THRESHOLD) {
-      // Determine direction and snap to nearest slide
-      const slideWidth = this.slides[0].offsetWidth;
-      const scrollLeft = this.slider.scrollLeft;
-      const newIndex = Math.round(scrollLeft / slideWidth);
-      this.goToSlide(Math.max(0, Math.min(newIndex, this.slideCount - 1)));
-    } else {
-      // Small movement — treat as click, snap back
-      this.goToSlide(this.currentIndex);
+    if (wasHorizontalDrag && this.dragDistance > threshold) {
+      const direction = this.dragCurrentX < this.dragStartX ? 1 : -1;
+      this.suppressClickUntil = Date.now() + 500;
+      this.goToSlide(this.dragStartIndex + direction);
+    } else if (wasHorizontalDrag) {
+      this.goToSlide(this.dragStartIndex);
     }
+
+    this.dragAxis = null;
+    this.resetAutoplay();
+  }
+
+  onClickCapture(e) {
+    if (Date.now() >= this.suppressClickUntil) return;
+
+    e.preventDefault();
+    e.stopPropagation();
   }
 
   /* ===== Navigation ===== */
   goToSlide(index) {
-    if (index === this.currentIndex) return;
     this.currentIndex = ((index % this.slideCount) + this.slideCount) % this.slideCount;
 
     const slideWidth = this.slides[0].offsetWidth;

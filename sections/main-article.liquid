@@ -1,138 +1,159 @@
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign read_on_items = article.metafields.custom.read_on.value
+  if read_on_items == blank
+    assign read_on_items = article.metafields.custom.read_on | replace: '[', '' | replace: ']', '' | replace: '"', '' | split: ','
+  endif
 
-<article class="article-template page-width">
-  <div class="article-template__box">
-    <div class="article-template__img">
-      <div
-        class="article-template__media article-template__media--adapt global-media-settings background-transparent media"
-        {% if article.image != blank %}
-          style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;border-top-right-radius: 85px;"
-        {% endif %}
-      >
-        {%- if article.image -%}
-          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
-          {%- capture sizes -%}
-                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-                  (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-                {%- endcapture -%}
-          {{ article.image | image_url: width: 1500 | image_tag: sizes: sizes, widths: widths, fetchpriority: 'auto' }}
-        {%- else -%}
-          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-        {%- endif -%}
-      </div>
-    </div>
-    <div class="article-template__content">
-      <p class="article-template__blog-title">{{ blog.title | escape }}</p>
-      <h1 class="article-template__title">{{ article.title | escape }}</h1>
-      <div class="article-template__excerpt">{{ article.excerpt }}</div>
-      {% if article.metafields.custom.author %}
-      <p class="article-template__author">By {{ article.metafields.custom.author }}</p>
-      {% endif %}
-      {%- render 'social-icons', class: 'article-template__social' -%}
-    </div>
-  </div>
-  <pre class="article-template__line"></pre>
-  <div class="article-template__main_box">
-    {{ article.content }}
-  </div>
-  {%- liquid
-    assign blog_urls = article.metafields.custom.read_on | replace: '[', '' | replace: ']', '' | replace: '"', '' | split: ','
-    assign push_articles = '' | split: ''
-    for item in blog_urls
-      assign path_url = item | split: '/blogs/' | last
-      assign handle_url = path_url | split: ','
-      assign push_articles = push_articles | concat: handle_url
-    endfor
-    assign posts_displayed = push_articles.size
-    if section.settings.post_limit <= posts_displayed or section.settings.post_limit <= 4
-      assign posts_exceed_limit = true
-      assign posts_displayed = section.settings.post_limit
+  assign related_article_handles = '' | split: ''
+  for item in read_on_items
+    assign item_url = item.url | default: item | strip
+    assign article_path = item_url | split: '/blogs/' | last
+    assign article_path = article_path | split: '?' | first | split: '#' | first
+    if article_path != blank
+      assign related_article = articles[article_path]
+      if related_article != blank
+        assign article_handle = article_path | split: ','
+        assign related_article_handles = related_article_handles | concat: article_handle
+      endif
     endif
-  -%}
-  {%- if push_articles.size > 0 -%}
-    <div class="blog article-template__blog color-scheme-1 gradient">
-      <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
-        <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-          <h2
-            id="SectionHeading-{{ section.id }}"
-            class="blog__title inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-            {% endif %}
-          >
-            Read On
-          </h2>
+  endfor
+
+  assign related_article_limit = section.settings.post_limit
+  assign recommended_products = article.metafields.custom.recommended_products.value
+  assign has_sidebar_content = false
+  if recommended_products != blank or related_article_handles.size > 0
+    assign has_sidebar_content = true
+  endif
+
+  assign article_image_render_width = 1720
+  assign article_image_widths = '550, 750, 1100, 1500, 1720'
+  assign article_image_sizes = '(min-width: 1320px) 860px, (min-width: 990px) calc(100vw - 460px), calc(100vw - 32px)'
+  unless has_sidebar_content
+    assign article_image_render_width = 2560
+    assign article_image_widths = '550, 750, 1100, 1500, 1720, 2200, 2560'
+    assign article_image_sizes = '(min-width: 1400px) 1280px, (min-width: 990px) calc(100vw - 64px), (min-width: 750px) calc(100vw - 40px), calc(100vw - 32px)'
+  endunless
+-%}
+
+<article class="article-template">
+  <div class="article-template__layout{% unless has_sidebar_content %} article-template__layout--single{% endunless %}">
+    <div class="article-template__primary">
+      <header class="article-template__header">
+        <div class="article-template__media">
+          {%- if article.image -%}
+            {{
+              article.image
+              | image_url: width: article_image_render_width
+              | image_tag:
+                class: 'article-template__featured-image',
+                fetchpriority: 'high',
+                sizes: article_image_sizes,
+                widths: article_image_widths
+            }}
+          {%- else -%}
+            {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg article-template__featured-image' }}
+          {%- endif -%}
         </div>
 
-        <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <ul
-            id="Slider-{{ section.id }}"
-            class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.blog_card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
-            role="list"
-          >
-            {%- for handle in push_articles limit: posts_displayed -%}
-              {%- liquid
-                assign push_article = articles[handle]
-              -%}
-              <li
-                id="Slide-{{ section.id }}-{{ forloop.index }}"
-                class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {% render 'article-card',
-                  blog: push_article.blog,
-                  article: push_article,
-                  media_aspect_ratio: 1.5,
-                  show_image: true,
-                  show_date: true,
-                  show_author: false,
-                  show_excerpt: true
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-          {%- if posts_exceed_limit -%}
-            <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
-              <button
-                type="button"
-                class="slider-button slider-button--prev"
-                name="previous"
-                aria-label="{{ 'general.slider.previous_slide' | t }}"
-              >
-                <span class="svg-wrapper">
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </span>
-              </button>
-              <div class="slider-counter caption">
-                <span class="slider-counter--current">1</span>
-                <span aria-hidden="true"> / </span>
-                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ posts_displayed }}</span>
-              </div>
-              <button
-                type="button"
-                class="slider-button slider-button--next"
-                name="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}"
-              >
-                <span class="svg-wrapper">
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </span>
-              </button>
-            </div>
+        <div class="article-template__intro">
+          <h1 class="article-template__title">{{ article.title | escape }}</h1>
+          {%- if article.excerpt != blank -%}
+            <div class="article-template__excerpt">{{ article.excerpt }}</div>
           {%- endif -%}
-        </slider-component>
+          {%- render 'social-icons', class: 'article-template__social' -%}
+        </div>
+      </header>
+
+      <div class="article-template__line" aria-hidden="true"></div>
+
+      <div class="article-template__main_box rte">
+        {{ article.content }}
       </div>
     </div>
-  {%- endif -%}
+
+    {%- if has_sidebar_content -%}
+      <aside class="article-template__sidebar" aria-label="Recommended products and related articles">
+        {%- if recommended_products != blank -%}
+          <div class="article-template__products" aria-label="Recommended products">
+            {%- for recommended_product in recommended_products -%}
+              {%- assign recommended_product_image_alt = recommended_product.featured_image.alt
+                | default: recommended_product.title
+              -%}
+              <a href="{{ recommended_product.url }}" class="article-template__product-card">
+                <div class="article-template__product-media">
+                  {%- if recommended_product.featured_image != blank -%}
+                    {{
+                      recommended_product.featured_image
+                      | image_url: width: 680
+                      | image_tag:
+                        class: 'article-template__product-image',
+                        loading: 'lazy',
+                        alt: recommended_product_image_alt,
+                        sizes: '340px',
+                        widths: '340, 510, 680'
+                    }}
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg article-template__product-image' }}
+                  {%- endif -%}
+                </div>
+                <div class="article-template__product-content">
+                  <span class="article-template__product-title">{{ recommended_product.title | escape }}</span>
+                  <span class="article-template__product-action">
+                    <span class="article-template__product-price">{{ recommended_product.price | money }}</span>
+                    <span class="article-template__product-cta" aria-hidden="true">Shop now</span>
+                  </span>
+                </div>
+              </a>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if related_article_handles.size > 0 -%}
+          <section class="article-template__related" aria-labelledby="RelatedHeading-{{ section.id }}">
+            <h2 id="RelatedHeading-{{ section.id }}" class="article-template__related-heading">RELATED</h2>
+            <div class="article-template__related-list">
+              {%- for handle in related_article_handles limit: related_article_limit -%}
+                {%- liquid
+                  assign clean_handle = handle | strip
+                  assign related_article = articles[clean_handle]
+                -%}
+                {%- if related_article != blank -%}
+                  <a href="{{ related_article.url }}" class="article-template__related-card">
+                    <div class="article-template__related-media">
+                      {%- if related_article.image != blank -%}
+                        {{
+                          related_article.image
+                          | image_url: width: 440
+                          | image_tag:
+                            class: 'article-template__related-image',
+                            loading: 'lazy',
+                            sizes: '110px',
+                            widths: '220, 330, 440'
+                        }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg article-template__related-image' }}
+                      {%- endif -%}
+                    </div>
+                    <span class="article-template__related-content">
+                      <span class="article-template__related-title">{{ related_article.title | escape }}</span>
+                      <time
+                        class="article-template__related-date"
+                        datetime="{{ related_article.published_at | date: '%Y-%m-%d' }}"
+                      >
+                        {{- related_article.published_at | date: '%m/%d/%Y' -}}
+                      </time>
+                    </span>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </section>
+        {%- endif -%}
+      </aside>
+    {%- endif -%}
+  </div>
 
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
@@ -347,21 +368,12 @@
   "settings": [
     {
       "type": "range",
-      "id": "columns_desktop",
+      "id": "post_limit",
       "min": 1,
       "max": 6,
       "step": 1,
       "default": 3,
-      "label": "t:sections.featured-blog.settings.columns_desktop.label"
-    },
-    {
-      "type": "range",
-      "id": "post_limit",
-      "min": 2,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.featured-blog.settings.post_limit.label"
+      "label": "RELATED 文章数量"
     }
   ]
 }

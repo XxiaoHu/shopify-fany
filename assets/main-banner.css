@@ -370,6 +370,11 @@ main-banner-component:hover .main-banner__arrows {
 
 /* ---------- Responsive: Mobile ---------- */
 @media screen and (max-width: 768px) {
+  .main-banner__slider {
+    touch-action: pan-y pinch-zoom;
+    overscroll-behavior-x: contain;
+  }
+
   /* Safe margin override */
   .main-banner__content--left {
     padding-left: var(--banner-safe-margin-mobile, 24px);
