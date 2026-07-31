@@ -371,7 +371,7 @@
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#FCC12A",
+            "desc_color": "#fcc12a",
             "mobile_desc_color": "#794438",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
@@ -388,7 +388,7 @@
             "btn_border_radius": 6,
             "btn_padding_y": 12,
             "btn_padding_x": 24,
-            "btn_bg_color": "#FCC12A",
+            "btn_bg_color": "#fcc12a",
             "btn_text_color": "#ffffff",
             "btn_bg_hover_color": "#5c342b",
             "btn_text_hover_color": "#ffffff",
@@ -467,7 +467,6 @@
         },
         "slide_L63WgC": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/banner-_gift_1.webp",
             "mobile_image": "shopify://shop_images/banner-_gift_2.webp",
