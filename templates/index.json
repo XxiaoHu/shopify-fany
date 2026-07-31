@@ -331,8 +331,8 @@
         "slide_q8zgnr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/summer_sale_Frame_1000003264.webp",
-            "mobile_image": "shopify://shop_images/summer_sale_Frame_1000003265.webp",
+            "image": "shopify://shop_images/summer_sale_banner.webp",
+            "mobile_image": "shopify://shop_images/summer_sale_banner_2.webp",
             "image_overlay_opacity": 0,
             "link": "https://fany.us/collections/all-products",
             "link_text": "",
