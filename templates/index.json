@@ -343,7 +343,7 @@
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
-            "title": "",
+            "title": "FANY Luna",
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
@@ -367,7 +367,7 @@
             "subtitle_desc_gap": 12,
             "mobile_title_subtitle_gap": 6,
             "mobile_subtitle_desc_gap": 10,
-            "description": "",
+            "description": "<p>A smartwatch designed for women with timeless style, </p><p>intelligent wellness, and effortless everyday living.</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
@@ -398,6 +398,7 @@
         },
         "slide_R6kLzz": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/summer_sale_Frame_1000003264.webp",
             "mobile_image": "shopify://shop_images/summer_sale_Frame_1000003265.webp",
@@ -466,6 +467,7 @@
         },
         "slide_L63WgC": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/banner-_gift_1.webp",
             "mobile_image": "shopify://shop_images/banner-_gift_2.webp",
