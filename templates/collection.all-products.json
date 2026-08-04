@@ -148,10 +148,17 @@
     "collection_tabs_JLj3Ve": {
       "type": "collection-tabs",
       "blocks": {
+        "collection_tab_6tQdc6": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "smartwatches-for-women",
+            "link": ""
+          }
+        },
         "collection_tab_BdgExJ": {
           "type": "collection_tab",
           "settings": {
-            "collection": "all-products",
+            "collection": "accessories",
             "link": ""
           }
         },
@@ -161,19 +168,12 @@
             "collection": "bands",
             "link": ""
           }
-        },
-        "collection_tab_6tQdc6": {
-          "type": "collection_tab",
-          "settings": {
-            "collection": "chargers",
-            "link": ""
-          }
         }
       },
       "block_order": [
+        "collection_tab_6tQdc6",
         "collection_tab_BdgExJ",
-        "collection_tab_e3i6iU",
-        "collection_tab_6tQdc6"
+        "collection_tab_e3i6iU"
       ],
       "name": "系列集合切换按钮",
       "settings": {

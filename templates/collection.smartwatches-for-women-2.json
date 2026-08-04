@@ -154,25 +154,25 @@
             "link": ""
           }
         },
-        "collection_tab_M9ykVN": {
-          "type": "collection_tab",
-          "settings": {
-            "collection": "bands",
-            "link": ""
-          }
-        },
         "collection_tab_XgcXET": {
           "type": "collection_tab",
           "settings": {
             "collection": "accessories",
             "link": ""
           }
+        },
+        "collection_tab_M9ykVN": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "bands",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "collection_tab_bjVDtj",
-        "collection_tab_M9ykVN",
-        "collection_tab_XgcXET"
+        "collection_tab_XgcXET",
+        "collection_tab_M9ykVN"
       ],
       "name": "系列集合切换按钮",
       "settings": {
