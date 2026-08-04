@@ -448,7 +448,7 @@
             "title_desc_gap": 20,
             "mobile_title_desc_gap": 16,
             "button_label": "SHOP NOW",
-            "button_link": "",
+            "button_link": "https://fany.us/collections/all-products",
             "button_style": "primary",
             "button_alignment": "flex-end",
             "mobile_button_alignment": "center",
