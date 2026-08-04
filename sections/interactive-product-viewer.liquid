@@ -1,0 +1,587 @@
+{{ 'interactive-product-viewer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'interactive-product-viewer.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign finish_blocks = section.blocks | where: 'type', 'finish'
+  assign feature_blocks = section.blocks | where: 'type', 'feature'
+  assign first_finish = finish_blocks.first
+
+  assign landing_image = section.settings.landing_image | default: section.settings.mobile_landing_image
+  assign mobile_landing_image = section.settings.mobile_landing_image | default: landing_image
+  assign landing_alt = section.settings.landing_alt | default: section.settings.heading | strip_html
+
+  assign first_swatch_url = blank
+  if first_finish != blank and first_finish.settings.swatch_image != blank
+    assign first_swatch_url = first_finish.settings.swatch_image | image_url: width: 104
+  elsif first_finish != blank
+    assign first_swatch_url = 'interactive-product-viewer-swatch.png' | asset_url
+  endif
+
+  assign first_finish_media_id = 'landing'
+  if first_finish != blank
+    assign first_finish_image = first_finish.settings.image | default: first_finish.settings.mobile_image
+    if first_finish_image != blank
+      assign first_finish_media_id = 'finish-' | append: first_finish.id
+    endif
+  endif
+-%}
+
+<interactive-product-viewer
+  class="interactive-product-viewer interactive-product-viewer--{{ section.id }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="interactive-product-viewer__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="interactive-product-viewer__heading inline-richtext">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    <div
+      class="interactive-product-viewer__viewer"
+      role="region"
+      aria-label="{{ section.settings.heading | strip_html | default: 'Product viewer' | escape }}"
+      data-viewer
+    >
+      <div class="interactive-product-viewer__media" aria-live="polite" aria-atomic="true">
+        <div class="interactive-product-viewer__media-layer is-active" data-media-id="landing">
+          <div class="interactive-product-viewer__media-box">
+            {%- if landing_image != blank -%}
+              <picture>
+                {%- if mobile_landing_image != blank -%}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="
+                      {{ mobile_landing_image | image_url: width: 550 }} 550w,
+                      {{ mobile_landing_image | image_url: width: 750 }} 750w,
+                      {{ mobile_landing_image | image_url: width: 1100 }} 1100w
+                    "
+                    sizes="100vw"
+                  >
+                {%- endif -%}
+                {{
+                  landing_image
+                  | image_url: width: 3200
+                  | image_tag:
+                    loading: 'eager',
+                    fetchpriority: 'high',
+                    class: 'interactive-product-viewer__image',
+                    widths: '750, 1100, 1500, 1920, 2560, 3200',
+                    sizes: '(max-width: 749px) 100vw, 1280px',
+                    alt: landing_alt
+                }}
+              </picture>
+            {%- else -%}
+              <img
+                src="{{ 'interactive-product-viewer-default.jpg' | asset_url }}"
+                class="interactive-product-viewer__image"
+                width="1728"
+                height="912"
+                loading="eager"
+                fetchpriority="high"
+                alt="{{ landing_alt | escape }}"
+              >
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- for block in finish_blocks -%}
+          {%- liquid
+            assign finish_image = block.settings.image | default: block.settings.mobile_image
+            assign finish_mobile_image = block.settings.mobile_image | default: finish_image
+            assign finish_alt = block.settings.image_alt | default: block.settings.label
+          -%}
+          {%- if finish_image != blank -%}
+            <div class="interactive-product-viewer__media-layer" data-media-id="finish-{{ block.id }}">
+              <div class="interactive-product-viewer__media-box">
+                <picture>
+                  {%- if finish_mobile_image != blank -%}
+                    <source
+                      media="(max-width: 749px)"
+                      srcset="
+                        {{ finish_mobile_image | image_url: width: 550 }} 550w,
+                        {{ finish_mobile_image | image_url: width: 750 }} 750w,
+                        {{ finish_mobile_image | image_url: width: 1100 }} 1100w
+                      "
+                      sizes="100vw"
+                    >
+                  {%- endif -%}
+                  {{
+                    finish_image
+                    | image_url: width: 3200
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'interactive-product-viewer__image',
+                      widths: '750, 1100, 1500, 1920, 2560, 3200',
+                      sizes: '(max-width: 749px) 100vw, 1280px',
+                      alt: finish_alt
+                  }}
+                </picture>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- for block in feature_blocks -%}
+          {%- liquid
+            assign feature_image = block.settings.image | default: block.settings.mobile_image
+            assign feature_mobile_image = block.settings.mobile_image | default: feature_image
+            assign feature_alt = block.settings.image_alt | default: block.settings.title
+          -%}
+          {%- if feature_image != blank -%}
+            <div class="interactive-product-viewer__media-layer" data-media-id="feature-{{ block.id }}">
+              <div class="interactive-product-viewer__media-box">
+                <picture>
+                  {%- if feature_mobile_image != blank -%}
+                    <source
+                      media="(max-width: 749px)"
+                      srcset="
+                        {{ feature_mobile_image | image_url: width: 550 }} 550w,
+                        {{ feature_mobile_image | image_url: width: 750 }} 750w,
+                        {{ feature_mobile_image | image_url: width: 1100 }} 1100w
+                      "
+                      sizes="100vw"
+                    >
+                  {%- endif -%}
+                  {{
+                    feature_image
+                    | image_url: width: 3200
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'interactive-product-viewer__image',
+                      widths: '750, 1100, 1500, 1920, 2560, 3200',
+                      sizes: '(max-width: 749px) 100vw, 1280px',
+                      alt: feature_alt
+                  }}
+                </picture>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="interactive-product-viewer__controls" data-controls>
+        <ul class="interactive-product-viewer__menu" role="list" data-menu>
+          {%- if finish_blocks.size > 0 -%}
+            <li class="interactive-product-viewer__menu-item">
+              <button
+                type="button"
+                class="interactive-product-viewer__menu-button"
+                aria-expanded="false"
+                aria-controls="ProductViewerPanel-finishes-{{ section.id }}"
+                data-viewer-open="finishes"
+                data-media-id="{{ first_finish_media_id }}"
+              >
+                <span
+                  class="interactive-product-viewer__finish-preview"
+                  data-finish-preview
+                  style="--apv-swatch-color: {{ first_finish.settings.swatch_color | default: '#e3ddd7' }}; --apv-swatch-image: url('{{ first_swatch_url }}');"
+                  aria-hidden="true"
+                ></span>
+                <span>{{ section.settings.finishes_label | escape }}</span>
+              </button>
+            </li>
+          {%- endif -%}
+
+          {%- for block in feature_blocks -%}
+            {%- liquid
+              assign feature_media_id = 'landing'
+              assign feature_image = block.settings.image | default: block.settings.mobile_image
+              if feature_image != blank
+                assign feature_media_id = 'feature-' | append: block.id
+              endif
+            -%}
+            <li class="interactive-product-viewer__menu-item" {{ block.shopify_attributes }}>
+              <button
+                type="button"
+                class="interactive-product-viewer__menu-button"
+                aria-expanded="false"
+                aria-controls="ProductViewerPanel-{{ block.id }}"
+                data-viewer-open="{{ block.id }}"
+                data-media-id="{{ feature_media_id }}"
+              >
+                <img
+                  src="{{ 'interactive-product-viewer-plus.svg' | asset_url }}"
+                  class="interactive-product-viewer__plus"
+                  width="24"
+                  height="24"
+                  loading="eager"
+                  alt=""
+                  aria-hidden="true"
+                >
+                <span>{{ block.settings.title | escape }}</span>
+              </button>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="interactive-product-viewer__details" data-details>
+        {%- if finish_blocks.size > 0 -%}
+          <div
+            id="ProductViewerPanel-finishes-{{ section.id }}"
+            class="interactive-product-viewer__detail"
+            data-panel-id="finishes"
+            data-media-id="{{ first_finish_media_id }}"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <div class="interactive-product-viewer__detail-content">
+              {%- if section.settings.finishes_heading != blank -%}
+                <h3 class="interactive-product-viewer__detail-title inline-richtext">
+                  {{ section.settings.finishes_heading }}
+                </h3>
+              {%- endif -%}
+              {%- if section.settings.finishes_description != blank -%}
+                <div class="interactive-product-viewer__detail-copy rte">
+                  {{ section.settings.finishes_description }}
+                </div>
+              {%- endif -%}
+              <p class="interactive-product-viewer__current-finish">
+                <span class="visually-hidden">Current finish:</span>
+                <span data-current-finish>{{ first_finish.settings.label | escape }}</span>
+              </p>
+
+              <fieldset class="interactive-product-viewer__finishes">
+                <legend class="visually-hidden">{{ section.settings.finishes_label | escape }}</legend>
+                <ul class="interactive-product-viewer__finish-list" role="list">
+                  {%- for block in finish_blocks -%}
+                    {%- liquid
+                      assign finish_media_id = 'landing'
+                      assign finish_image = block.settings.image | default: block.settings.mobile_image
+                      if finish_image != blank
+                        assign finish_media_id = 'finish-' | append: block.id
+                      endif
+
+                      assign swatch_url = blank
+                      if block.settings.swatch_image != blank
+                        assign swatch_url = block.settings.swatch_image | image_url: width: 104
+                      elsif forloop.first
+                        assign swatch_url = 'interactive-product-viewer-swatch.png' | asset_url
+                      endif
+                    -%}
+                    <li class="interactive-product-viewer__finish-item" data-finish-block {{ block.shopify_attributes }}>
+                      <input
+                        id="ProductViewerFinish-{{ section.id }}-{{ block.id }}"
+                        class="interactive-product-viewer__finish-input visually-hidden"
+                        type="radio"
+                        name="ProductViewerFinish-{{ section.id }}"
+                        value="{{ block.id }}"
+                        data-finish-id="{{ block.id }}"
+                        data-finish-label="{{ block.settings.label | escape }}"
+                        data-media-id="{{ finish_media_id }}"
+                        data-swatch-color="{{ block.settings.swatch_color }}"
+                        data-swatch-url="{{ swatch_url | escape }}"
+                        {% if forloop.first %}checked{% endif %}
+                      >
+                      <label
+                        class="interactive-product-viewer__swatch"
+                        for="ProductViewerFinish-{{ section.id }}-{{ block.id }}"
+                        style="--apv-swatch-color: {{ block.settings.swatch_color }};{% if swatch_url != blank %} --apv-swatch-image: url('{{ swatch_url }}');{% endif %}"
+                      >
+                        <span class="visually-hidden">{{ block.settings.label | escape }}</span>
+                      </label>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </fieldset>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- for block in feature_blocks -%}
+          {%- liquid
+            assign feature_media_id = 'landing'
+            assign feature_image = block.settings.image | default: block.settings.mobile_image
+            if feature_image != blank
+              assign feature_media_id = 'feature-' | append: block.id
+            endif
+          -%}
+          <div
+            id="ProductViewerPanel-{{ block.id }}"
+            class="interactive-product-viewer__detail"
+            data-panel-id="{{ block.id }}"
+            data-media-id="{{ feature_media_id }}"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <div class="interactive-product-viewer__detail-content">
+              {%- if block.settings.title != blank -%}
+                <h3 class="interactive-product-viewer__detail-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <div class="interactive-product-viewer__detail-copy rte">
+                  {{ block.settings.description }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="interactive-product-viewer__panel-nav" aria-hidden="true" data-panel-nav>
+        <button
+          type="button"
+          class="interactive-product-viewer__nav-button interactive-product-viewer__nav-button--previous"
+          aria-label="Previous item"
+          data-viewer-previous
+        >
+          <span class="interactive-product-viewer__arrow" aria-hidden="true"></span>
+        </button>
+        <button
+          type="button"
+          class="interactive-product-viewer__nav-button interactive-product-viewer__nav-button--next"
+          aria-label="Next item"
+          data-viewer-next
+        >
+          <span class="interactive-product-viewer__arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="interactive-product-viewer__close"
+        aria-label="Close"
+        data-viewer-close
+      >
+        <span class="interactive-product-viewer__close-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</interactive-product-viewer>
+
+{% schema %}
+{
+  "name": "Apple 风格产品查看器",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "Designed for Women"
+    },
+    {
+      "type": "image_picker",
+      "id": "landing_image",
+      "label": "默认图片（桌面端）",
+      "info": "未选择时使用 Figma 设计稿中的默认产品图。"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_landing_image",
+      "label": "默认图片（移动端）",
+      "info": "留空时使用桌面端图片。"
+    },
+    {
+      "type": "text",
+      "id": "landing_alt",
+      "label": "默认图片替代文本",
+      "default": "Product close-up"
+    },
+    {
+      "type": "header",
+      "content": "饰面选择"
+    },
+    {
+      "type": "text",
+      "id": "finishes_label",
+      "label": "入口文字",
+      "default": "Finishes"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "finishes_heading",
+      "label": "展开标题",
+      "default": "Finishes."
+    },
+    {
+      "type": "richtext",
+      "id": "finishes_description",
+      "label": "展开说明",
+      "default": "<p>Choose the finish that best matches your style.</p>"
+    }
+  ],
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "finish",
+      "name": "饰面颜色",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "名称",
+          "default": "Natural titanium"
+        },
+        {
+          "type": "color",
+          "id": "swatch_color",
+          "label": "色样颜色",
+          "default": "#e3ddd7"
+        },
+        {
+          "type": "image_picker",
+          "id": "swatch_image",
+          "label": "色样图片",
+          "info": "可选；优先于色样颜色。第一项留空时使用 Figma 色样。"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "产品图片（桌面端）"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "产品图片（移动端）",
+          "info": "留空时使用桌面端图片；两者都留空时使用默认产品图。"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文本"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "功能项目",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "说明",
+          "default": "<p>Add a short description for this feature.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片（桌面端）"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "图片（移动端）",
+          "info": "留空时使用桌面端图片；两者都留空时使用默认产品图。"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文本"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apple 风格产品查看器",
+      "blocks": [
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Natural titanium",
+            "swatch_color": "#e3ddd7"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Gold titanium",
+            "swatch_color": "#f4dec8"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Slate titanium",
+            "swatch_color": "#47423d"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Rose Gold aluminum",
+            "swatch_color": "#f6d9cd"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Silver aluminum",
+            "swatch_color": "#f0eff1"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Jet Black aluminum",
+            "swatch_color": "#010203"
+          }
+        },
+        {
+          "type": "finish",
+          "settings": {
+            "label": "Space Gray aluminum",
+            "swatch_color": "#979494"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Sleek design",
+            "description": "<p>A refined profile designed for comfortable, all-day wear.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Longer battery life",
+            "description": "<p>Reliable battery performance that keeps up with your day.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Advanced sensors",
+            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Durable Ion-X display",
+            "description": "<p>A durable display designed for everyday movement and activity.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Water and dust resistance",
+            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Personalization",
+            "description": "<p>Choose the look and details that make the product feel like your own.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
