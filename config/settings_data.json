@@ -647,6 +647,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".qsc2-drawer-opened shopify-chat {z-index: 9999}"
+    ]
   }
 }
