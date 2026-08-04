@@ -1,0 +1,234 @@
+.animated-floating-banner {
+  --afb-float-width: clamp(320px, 41.6667vw, 800px);
+  --afb-float-reserve: clamp(80px, 7.8125vw, 150px);
+  --afb-overlay-height: clamp(116px, 11.3542vw, 218px);
+
+  display: block;
+  overflow: clip;
+  background: var(--afb-background, #fff);
+}
+
+.animated-floating-banner__intro {
+  box-sizing: border-box;
+  width: min(100%, var(--afb-text-width, 840px));
+  margin: 0 auto;
+  padding: var(--afb-intro-padding-top, 48px) 20px var(--afb-intro-padding-bottom, 52px);
+  text-align: center;
+}
+
+.animated-floating-banner__heading {
+  margin: 0;
+  color: var(--afb-heading-color, #1d1d1f);
+  font-size: var(--afb-heading-size, 50px);
+  font-weight: var(--afb-heading-weight, 600);
+  line-height: var(--afb-heading-line-height, 1.1);
+  letter-spacing: var(--afb-heading-letter-spacing, 0);
+}
+
+.animated-floating-banner__content {
+  margin-top: var(--afb-text-gap, 14px);
+  color: var(--afb-content-color, #6e6e73);
+  font-size: var(--afb-content-size, 14px);
+  font-weight: var(--afb-content-weight, 400);
+  line-height: var(--afb-content-line-height, 1.5);
+  letter-spacing: var(--afb-content-letter-spacing, 0);
+}
+
+.animated-floating-banner__content > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.animated-floating-banner__content > * + * {
+  margin-top: 0.75em;
+}
+
+.animated-floating-banner__stage {
+  position: relative;
+  padding-bottom: var(--afb-float-reserve);
+}
+
+.animated-floating-banner__stage--no-floating {
+  padding-bottom: 0;
+}
+
+.animated-floating-banner__main-media {
+  position: relative;
+  width: 100%;
+  height: var(--afb-main-height, 700px);
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.animated-floating-banner__main-media picture,
+.animated-floating-banner__main-media img,
+.animated-floating-banner__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.animated-floating-banner__main-media img,
+.animated-floating-banner__placeholder svg {
+  object-fit: var(--afb-main-fit, cover);
+  object-position: var(--afb-main-position, center center);
+}
+
+.animated-floating-banner__placeholder {
+  color: rgba(18, 18, 18, 0.28);
+  background: #f3f3f3;
+}
+
+.animated-floating-banner__overlay {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: var(--afb-float-reserve);
+  left: 0;
+  height: var(--afb-overlay-height);
+  overflow: hidden;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 3.512%, rgba(102, 102, 102, 0) 100%);
+  pointer-events: none;
+}
+
+.animated-floating-banner__overlay::before {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.001);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  -webkit-mask-image: linear-gradient(to top, #000 3.512%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 3.512%, transparent 100%);
+  content: '';
+}
+
+.animated-floating-banner__floating-position {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 0;
+  width: min(var(--afb-float-width), calc(100% - 32px));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.animated-floating-banner__floating-motion {
+  opacity: 0;
+  transform: translate3d(0, 194px, 0);
+  transform-origin: center bottom;
+}
+
+.animated-floating-banner.is-revealed .animated-floating-banner__overlay {
+  animation: animated-floating-banner-overlay-opacity 2s linear both;
+  will-change: opacity;
+}
+
+.animated-floating-banner.is-revealed .animated-floating-banner__floating-motion {
+  animation:
+    animated-floating-banner-model-opacity 2s linear both,
+    animated-floating-banner-model-translate 2s linear both;
+  will-change: opacity, transform;
+}
+
+.animated-floating-banner__floating-card {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 800 / 380;
+  place-items: center;
+}
+
+.animated-floating-banner__floating-card picture,
+.animated-floating-banner__floating-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.animated-floating-banner__floating-image {
+  object-fit: contain;
+}
+
+@keyframes animated-floating-banner-overlay-opacity {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  }
+
+  60.05%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animated-floating-banner-model-opacity {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  }
+
+  60.05%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animated-floating-banner-model-translate {
+  0% {
+    transform: translate3d(0, 194px, 0);
+    animation-timing-function: cubic-bezier(0.7, -0.4, 0.249, 1.196);
+  }
+
+  60.05%,
+  100% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .animated-floating-banner__intro {
+    padding-top: var(--afb-mobile-intro-padding-top, 32px);
+    padding-right: 16px;
+    padding-bottom: var(--afb-mobile-intro-padding-bottom, 36px);
+    padding-left: 16px;
+  }
+
+  .animated-floating-banner__heading {
+    font-size: var(--afb-mobile-heading-size, 32px);
+  }
+
+  .animated-floating-banner__content {
+    margin-top: var(--afb-mobile-text-gap, 10px);
+    font-size: var(--afb-mobile-content-size, 13px);
+  }
+
+  .animated-floating-banner__stage--no-floating {
+    padding-bottom: 0;
+  }
+
+  .animated-floating-banner__main-media {
+    height: var(--afb-mobile-main-height, 360px);
+  }
+
+  .animated-floating-banner__floating-position {
+    width: min(88vw, calc(100% - 32px));
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-floating-banner.is-revealed .animated-floating-banner__overlay,
+  .animated-floating-banner.is-revealed .animated-floating-banner__floating-motion {
+    animation: none;
+  }
+
+  .animated-floating-banner.is-revealed .animated-floating-banner__overlay {
+    opacity: 1;
+  }
+
+  .animated-floating-banner.is-revealed .animated-floating-banner__floating-motion {
+    opacity: 1;
+    transform: translate3d(0, -6px, 0);
+  }
+}

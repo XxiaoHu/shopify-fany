@@ -1,0 +1,436 @@
+{{ 'animated-floating-banner.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'animated-floating-banner.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign main_image = section.settings.main_image
+  assign mobile_main_image = section.settings.mobile_main_image | default: main_image
+  assign floating_image = section.settings.floating_image
+  assign mobile_floating_image = section.settings.mobile_floating_image | default: floating_image
+-%}
+
+{%- style -%}
+  .animated-floating-banner--{{ section.id }} {
+    --afb-background: {{ section.settings.background_color }};
+    --afb-text-width: {{ section.settings.text_max_width }}px;
+    --afb-intro-padding-top: {{ section.settings.intro_padding_top }}px;
+    --afb-intro-padding-bottom: {{ section.settings.intro_padding_bottom }}px;
+    --afb-text-gap: {{ section.settings.text_gap }}px;
+    --afb-heading-color: {{ section.settings.heading_color }};
+    --afb-heading-size: {{ section.settings.heading_font_size }}px;
+    --afb-heading-weight: {{ section.settings.heading_font_weight }};
+    --afb-heading-line-height: {{ section.settings.heading_line_height }};
+    --afb-heading-letter-spacing: {{ section.settings.heading_letter_spacing }}px;
+    --afb-content-color: {{ section.settings.content_color }};
+    --afb-content-size: {{ section.settings.content_font_size }}px;
+    --afb-content-weight: {{ section.settings.content_font_weight }};
+    --afb-content-line-height: {{ section.settings.content_line_height }};
+    --afb-content-letter-spacing: {{ section.settings.content_letter_spacing }}px;
+    --afb-main-height: {{ section.settings.main_image_height }}px;
+    --afb-main-fit: {{ section.settings.main_image_fit }};
+    --afb-main-position: {{ section.settings.main_image_position }};
+    --afb-mobile-intro-padding-top: {{ section.settings.mobile_intro_padding_top }}px;
+    --afb-mobile-intro-padding-bottom: {{ section.settings.mobile_intro_padding_bottom }}px;
+    --afb-mobile-text-gap: {{ section.settings.mobile_text_gap }}px;
+    --afb-mobile-heading-size: {{ section.settings.mobile_heading_font_size }}px;
+    --afb-mobile-content-size: {{ section.settings.mobile_content_font_size }}px;
+    --afb-mobile-main-height: {{ section.settings.mobile_main_image_height }}px;
+  }
+{%- endstyle -%}
+
+<animated-floating-banner
+  class="animated-floating-banner animated-floating-banner--{{ section.id }} is-animation-ready"
+  data-scroll-trigger-distance="{{ section.settings.scroll_trigger_distance }}"
+>
+  {%- if section.settings.heading != blank or section.settings.content != blank -%}
+    <div class="animated-floating-banner__intro">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="animated-floating-banner__heading inline-richtext">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.content != blank -%}
+        <div class="animated-floating-banner__content rte">
+          {{ section.settings.content }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="animated-floating-banner__stage{% if floating_image == blank %} animated-floating-banner__stage--no-floating{% endif %}">
+    <div class="animated-floating-banner__main-media">
+      {%- if main_image != blank -%}
+        <picture>
+          {%- if mobile_main_image != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="{{ mobile_main_image | image_url: width: 1100 }}"
+            >
+          {%- endif -%}
+          {{
+            main_image
+            | image_url: width: 3840
+            | image_tag:
+              loading: 'lazy',
+              class: 'animated-floating-banner__main-image',
+              widths: '750, 1100, 1500, 1920, 2560, 3200, 3840',
+              sizes: '100vw'
+          }}
+        </picture>
+      {%- else -%}
+        <div class="animated-floating-banner__placeholder">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if floating_image != blank -%}
+      <div class="animated-floating-banner__overlay" aria-hidden="true"></div>
+      <div class="animated-floating-banner__floating-position">
+        <div class="animated-floating-banner__floating-motion">
+          <div class="animated-floating-banner__floating-card">
+            <picture>
+              {%- if mobile_floating_image != blank -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ mobile_floating_image | image_url: width: 1000 }}"
+                >
+              {%- endif -%}
+              {{
+                floating_image
+                | image_url: width: 2000
+                | image_tag:
+                  loading: 'eager',
+                  fetchpriority: 'high',
+                  class: 'animated-floating-banner__floating-image',
+                  widths: '400, 600, 800, 1000, 1200, 1600, 2000',
+                  sizes: '(max-width: 749px) 88vw, 800px'
+              }}
+            </picture>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</animated-floating-banner>
+
+{% schema %}
+{
+  "name": "浮层图片 Banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "标题与内容"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "Designed for Women"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "内容",
+      "default": "<p>添加一段简短的品牌或产品说明。</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "min": 400,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "label": "文字最大宽度",
+      "default": 840
+    },
+    {
+      "type": "range",
+      "id": "text_gap",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "标题与内容间距",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 20,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "标题字重",
+      "options": [
+        { "value": "300", "label": "细体 300" },
+        { "value": "400", "label": "常规 400" },
+        { "value": "500", "label": "中等 500" },
+        { "value": "600", "label": "半粗 600" },
+        { "value": "700", "label": "粗体 700" },
+        { "value": "800", "label": "特粗 800" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "min": -2,
+      "max": 8,
+      "step": 0.1,
+      "unit": "px",
+      "label": "标题字间距",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1D1D1F"
+    },
+    {
+      "type": "range",
+      "id": "content_font_size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "内容字号",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "content_font_weight",
+      "label": "内容字重",
+      "options": [
+        { "value": "300", "label": "细体 300" },
+        { "value": "400", "label": "常规 400" },
+        { "value": "500", "label": "中等 500" },
+        { "value": "600", "label": "半粗 600" },
+        { "value": "700", "label": "粗体 700" }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "content_line_height",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "label": "内容行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "content_letter_spacing",
+      "min": -2,
+      "max": 8,
+      "step": 0.1,
+      "unit": "px",
+      "label": "内容字间距",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "内容颜色",
+      "default": "#6E6E73"
+    },
+    {
+      "type": "header",
+      "content": "主图"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "桌面端主图"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_main_image",
+      "label": "移动端主图（可选）"
+    },
+    {
+      "type": "range",
+      "id": "main_image_height",
+      "min": 360,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "桌面端主图高度",
+      "default": 700
+    },
+    {
+      "type": "select",
+      "id": "main_image_fit",
+      "label": "主图显示方式",
+      "options": [
+        { "value": "cover", "label": "铺满并裁切" },
+        { "value": "contain", "label": "完整显示" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "main_image_position",
+      "label": "主图焦点位置",
+      "options": [
+        { "value": "center top", "label": "上方" },
+        { "value": "center center", "label": "居中" },
+        { "value": "center bottom", "label": "下方" },
+        { "value": "left center", "label": "左侧" },
+        { "value": "right center", "label": "右侧" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "header",
+      "content": "悬浮图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "floating_image",
+      "label": "桌面端悬浮图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_floating_image",
+      "label": "移动端悬浮图片（可选）"
+    },
+    {
+      "type": "header",
+      "content": "显示时机"
+    },
+    {
+      "type": "range",
+      "id": "scroll_trigger_distance",
+      "min": 2,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "触发显示的滚动距离",
+      "info": "页面向下滚动超过该距离后，悬浮图片才会显示。",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "桌面端间距"
+    },
+    {
+      "type": "range",
+      "id": "intro_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文字区域上间距",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "intro_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "文字区域下间距",
+      "default": 52
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "模块背景颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "移动端"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_font_size",
+      "min": 18,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题字号",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_font_size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端内容字号",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题与内容间距",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端文字区域上间距",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端文字区域下间距",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_main_image_height",
+      "min": 220,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "移动端主图高度",
+      "default": 360
+    }
+  ],
+  "presets": [
+    {
+      "name": "浮层图片 Banner"
+    }
+  ]
+}
+{% endschema %}
