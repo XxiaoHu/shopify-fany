@@ -144,6 +144,44 @@
         "mobile_padding_bottom": 20
       }
     },
+    "collection_tabs_gVPgFn": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_tab_bjVDtj": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "all-products",
+            "link": ""
+          }
+        },
+        "collection_tab_M9ykVN": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "bands",
+            "link": ""
+          }
+        },
+        "collection_tab_XgcXET": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "accessories",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_bjVDtj",
+        "collection_tab_M9ykVN",
+        "collection_tab_XgcXET"
+      ],
+      "name": "系列集合切换按钮",
+      "settings": {
+        "aria_label": "系列集合导航",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -257,6 +295,7 @@
     "rich_text_p3rThm",
     "breadcrumbs_section_LWT8b6",
     "image_text_dL7gtd",
+    "collection_tabs_gVPgFn",
     "product-grid",
     "collapsible_content_jmKYAg"
   ]
