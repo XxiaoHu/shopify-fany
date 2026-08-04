@@ -144,6 +144,44 @@
         "mobile_padding_bottom": 20
       }
     },
+    "collection_tabs_zeGteE": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_tab_J8qDRi": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "all-products",
+            "link": ""
+          }
+        },
+        "collection_tab_4ejJKH": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "smartwatches-for-women",
+            "link": ""
+          }
+        },
+        "collection_tab_DxVymC": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "accessories",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_J8qDRi",
+        "collection_tab_4ejJKH",
+        "collection_tab_DxVymC"
+      ],
+      "name": "系列集合切换按钮",
+      "settings": {
+        "aria_label": "系列集合导航",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -227,6 +265,7 @@
     "rich_text_p3rThm",
     "breadcrumbs_section_qnedPR",
     "image_text_A7apGY",
+    "collection_tabs_zeGteE",
     "product-grid",
     "collapsible_content_aCcceM"
   ]
