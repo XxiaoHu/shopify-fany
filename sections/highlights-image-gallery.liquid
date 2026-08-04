@@ -1,0 +1,333 @@
+{{ 'highlights-image-gallery.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'highlights-image-gallery.js' | asset_url }}" defer="defer"></script>
+
+{%- if section.blocks.size > 0 -%}
+  <highlights-image-gallery
+    id="HighlightsImageGallery-{{ section.id }}"
+    class="highlights-image-gallery is-paused"
+    data-section-id="{{ section.id }}"
+    data-autoplay-duration="6150"
+    data-transition-duration="1000"
+  >
+    <div class="highlights-image-gallery__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="highlights-image-gallery__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="highlights-image-gallery__viewport"
+      data-gallery-viewport
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="{{ section.settings.heading | default: 'Highlights gallery' | escape }}"
+    >
+      <ul class="highlights-image-gallery__track" data-gallery-track role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign desktop_image = block.settings.image
+            assign mobile_image = block.settings.mobile_image
+            assign image_loading = 'lazy'
+            assign image_fetch_priority = 'auto'
+            if forloop.first
+              assign image_loading = 'eager'
+              assign image_fetch_priority = 'high'
+            endif
+          -%}
+
+          <li
+            id="HighlightsImageGallerySlide-{{ section.id }}-{{ block.id }}"
+            class="highlights-image-gallery__slide{% if forloop.first %} is-active{% endif %}"
+            data-copy-position="{{ block.settings.copy_position }}"
+            data-mobile-copy-position="{{ block.settings.mobile_copy_position }}"
+            data-gallery-slide
+            data-gallery-index="{{ forloop.index0 }}"
+            data-block-id="{{ block.id }}"
+            role="tabpanel"
+            aria-labelledby="HighlightsImageGalleryTab-{{ section.id }}-{{ block.id }}"
+            aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+            tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="highlights-image-gallery__card">
+              <picture class="highlights-image-gallery__picture">
+                {%- if mobile_image != blank -%}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="
+                      {{ mobile_image | image_url: width: 400 }} 400w,
+                      {{ mobile_image | image_url: width: 600 }} 600w,
+                      {{ mobile_image | image_url: width: 800 }} 800w
+                    "
+                    sizes="max(calc(87.5vw - 20px), 260px)"
+                  >
+                {%- endif -%}
+
+                {%- if desktop_image != blank -%}
+                  {{
+                    desktop_image
+                    | image_url: width: 2520
+                    | image_tag:
+                      class: 'highlights-image-gallery__image',
+                      loading: image_loading,
+                      fetchpriority: image_fetch_priority,
+                      widths: '400, 600, 800, 1000, 1260, 1600, 2000, 2520',
+                      sizes: '(max-width: 749px) max(calc(87.5vw - 20px), 260px), min(87.5vw, 1260px)',
+                      alt: block.settings.title
+                  }}
+                {%- else -%}
+                  <img
+                    class="highlights-image-gallery__image"
+                    src="{{ 'highlights-gallery-default.jpg' | asset_url }}"
+                    width="1260"
+                    height="680"
+                    loading="{{ image_loading }}"
+                    fetchpriority="{{ image_fetch_priority }}"
+                    alt="{{ block.settings.title | escape }}"
+                  >
+                {%- endif -%}
+              </picture>
+
+              <div class="highlights-image-gallery__copy">
+                <div class="highlights-image-gallery__copy-content">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="highlights-image-gallery__title">{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <p class="highlights-image-gallery__description">{{ block.settings.description | escape | newline_to_br }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <div class="highlights-image-gallery__controls-boundary">
+      <div class="highlights-image-gallery__controls" data-gallery-controls>
+        <div
+          class="highlights-image-gallery__pagination"
+          role="tablist"
+          aria-label="Highlights gallery tablist"
+        >
+          {%- for block in section.blocks -%}
+            <button
+              id="HighlightsImageGalleryTab-{{ section.id }}-{{ block.id }}"
+              class="highlights-image-gallery__tab{% if forloop.first %} is-active{% endif %}"
+              type="button"
+              role="tab"
+              data-gallery-tab
+              data-gallery-index="{{ forloop.index0 }}"
+              aria-controls="HighlightsImageGallerySlide-{{ section.id }}-{{ block.id }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+            >
+              <span class="highlights-image-gallery__dot" aria-hidden="true">
+                <span class="highlights-image-gallery__progress"></span>
+              </span>
+              <span class="visually-hidden">{{ block.settings.title | default: 'Highlight' | escape }}</span>
+            </button>
+          {%- endfor -%}
+        </div>
+
+        <button
+          class="highlights-image-gallery__play-pause"
+          type="button"
+          data-gallery-play-pause
+          data-label-play="Play highlights gallery"
+          data-label-pause="Pause highlights gallery"
+          data-label-replay="Replay highlights gallery"
+          aria-label="Play highlights gallery"
+        >
+          <img
+            class="highlights-image-gallery__control-icon highlights-image-gallery__control-icon--play"
+            src="{{ 'highlights-gallery-play.svg' | asset_url }}"
+            width="56"
+            height="56"
+            alt=""
+            aria-hidden="true"
+          >
+          <span
+            class="highlights-image-gallery__control-icon highlights-image-gallery__control-icon--pause"
+            aria-hidden="true"
+          ></span>
+          <img
+            class="highlights-image-gallery__control-icon highlights-image-gallery__control-icon--replay"
+            src="{{ 'highlights-gallery-replay.svg' | asset_url }}"
+            width="56"
+            height="56"
+            alt=""
+            aria-hidden="true"
+          >
+        </button>
+      </div>
+    </div>
+
+    <p class="visually-hidden" data-gallery-status aria-live="polite" aria-atomic="true"></p>
+  </highlights-image-gallery>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Highlights 图片轮播",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "标题",
+      "default": "Designed for Women标题3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "图片卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "桌面端图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片",
+          "info": "未设置时使用桌面端图片"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "卡片标题",
+          "default": "Heart Rate Monitor"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "卡片正文",
+          "default": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!"
+        },
+        {
+          "type": "select",
+          "id": "copy_position",
+          "label": "桌面端文本位置",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "左上"
+            },
+            {
+              "value": "center-left",
+              "label": "左中"
+            },
+            {
+              "value": "bottom-left",
+              "label": "左下"
+            },
+            {
+              "value": "top-center",
+              "label": "顶部居中"
+            },
+            {
+              "value": "center-center",
+              "label": "正中"
+            },
+            {
+              "value": "bottom-center",
+              "label": "底部居中"
+            },
+            {
+              "value": "top-right",
+              "label": "右上"
+            },
+            {
+              "value": "center-right",
+              "label": "右中"
+            },
+            {
+              "value": "bottom-right",
+              "label": "右下"
+            }
+          ],
+          "default": "center-left"
+        },
+        {
+          "type": "select",
+          "id": "mobile_copy_position",
+          "label": "移动端文本位置",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "左上"
+            },
+            {
+              "value": "center-left",
+              "label": "左中"
+            },
+            {
+              "value": "bottom-left",
+              "label": "左下"
+            },
+            {
+              "value": "top-center",
+              "label": "顶部居中"
+            },
+            {
+              "value": "center-center",
+              "label": "正中"
+            },
+            {
+              "value": "bottom-center",
+              "label": "底部居中"
+            },
+            {
+              "value": "top-right",
+              "label": "右上"
+            },
+            {
+              "value": "center-right",
+              "label": "右中"
+            },
+            {
+              "value": "bottom-right",
+              "label": "右下"
+            }
+          ],
+          "default": "top-left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlights 图片轮播",
+      "blocks": [
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
