@@ -745,6 +745,15 @@
             "page": ""
           }
         },
+        "collapsible_row_XRm4Xq": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "My Order & Delivery",
+            "heading": "When will my order ship?",
+            "row_content": "<p>Orders are typically processed and shipped within 1–2 business days after your order is placed. With our Standard Shipping, delivery usually takes 3–7 business days after the order has shipped.<br/>(Please note that delivery times may be affected by unforeseen circumstances or carrier delays.)<br/>P.O. Boxes, APO/FPO/DPO addresses, Alaska, and certain island addresses are not supported. We also do not ship to reshipping services, including third-party freight forwarders.<br/>If you need help with your order, please contact us at support@fany.us.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_6x7iFJ": {
           "type": "collapsible_row",
           "settings": {
@@ -798,6 +807,7 @@
         "collapsible_row_XD4J8q",
         "collapsible_row_ind7NG",
         "collapsible_row_tadpRA",
+        "collapsible_row_XRm4Xq",
         "collapsible_row_6x7iFJ",
         "collapsible_row_P3hEA3",
         "collapsible_row_nMx3bU",
