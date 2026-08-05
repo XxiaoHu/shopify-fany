@@ -731,8 +731,8 @@
           "type": "collapsible_row",
           "settings": {
             "category": "My Order & Delivery",
-            "heading": "When will my order ship?",
-            "row_content": "<p>Orders are typically processed and shipped within 1–2 business days after your order is placed. With our Standard Shipping, delivery usually takes 3–7 business days after the order has shipped.<br/>(Please note that delivery times may be affected by unforeseen circumstances or carrier delays.)<br/>P.O. Boxes, APO/FPO/DPO addresses, Alaska, and certain island addresses are not supported. We also do not ship to reshipping services, including third-party freight forwarders.<br/>If you need help with your order, please contact us at support@fany.us.</p>",
+            "heading": "I didn't receive my order. What should I do?",
+            "row_content": "<p>If you haven’t received your order yet, please check your tracking information first. Delivery dates are estimates and may change due to carrier delays or unexpected circumstances.<br/>If your tracking shows that your package has been delivered but you can’t find it, please check with:<br/><br/>Neighbors<br/>Roommates or family members<br/>Your building’s front desk or mailroom<br/>Other safe locations around your property<br/><br/>If you ordered multiple items, they may be shipped in separate packages and arrive at different times. Please check the tracking information for each package.<br/>If you’ve checked the above and still can’t locate your order, please contact us at support@fany.us with your order number and tracking number, and our customer service team will be happy to assist you.</p>",
             "page": ""
           }
         },
