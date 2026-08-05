@@ -1,0 +1,230 @@
+.sleep-insights-poster {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1920 / 1700;
+  overflow: hidden;
+  background: #fff;
+  color: #fff;
+  font-family: Lato, var(--font-body-family), sans-serif;
+  isolation: isolate;
+}
+
+.sleep-insights-poster,
+.sleep-insights-poster * {
+  box-sizing: border-box;
+}
+
+.sleep-insights-poster__picture,
+.sleep-insights-poster__image,
+.sleep-insights-poster__shade,
+.sleep-insights-poster__content {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sleep-insights-poster__picture {
+  z-index: 0;
+}
+
+.sleep-insights-poster__image {
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.sleep-insights-poster__mobile-image {
+  display: none;
+}
+
+.sleep-insights-poster__shade {
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+}
+
+.sleep-insights-poster__content {
+  z-index: 2;
+  display: flex;
+  padding: clamp(40px, 4.1667vw, 80px) clamp(48px, 17.1875vw, 330px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+.sleep-insights-poster__copy {
+  display: flex;
+  width: 340px;
+  max-width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  word-break: break-word;
+}
+
+.sleep-insights-poster__title,
+.sleep-insights-poster__body,
+.sleep-insights-poster__body p {
+  margin: 0;
+  color: inherit;
+}
+
+.sleep-insights-poster__title {
+  font-size: var(--sleep-poster-desktop-title-size, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.sleep-insights-poster__body {
+  font-size: var(--sleep-poster-desktop-body-size, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.sleep-insights-poster__body > * + * {
+  margin-top: 0.8em;
+}
+
+.sleep-insights-poster[data-desktop-position^='top-'] .sleep-insights-poster__content {
+  justify-content: flex-start;
+}
+
+.sleep-insights-poster[data-desktop-position^='center-'] .sleep-insights-poster__content {
+  justify-content: center;
+}
+
+.sleep-insights-poster[data-desktop-position^='bottom-'] .sleep-insights-poster__content {
+  justify-content: flex-end;
+}
+
+.sleep-insights-poster[data-desktop-position$='-left'] .sleep-insights-poster__content {
+  align-items: flex-start;
+}
+
+.sleep-insights-poster[data-desktop-position$='-center'] .sleep-insights-poster__content {
+  align-items: center;
+}
+
+.sleep-insights-poster[data-desktop-position$='-right'] .sleep-insights-poster__content {
+  align-items: flex-end;
+}
+
+.sleep-insights-poster[data-desktop-position$='-left'] .sleep-insights-poster__copy {
+  text-align: left;
+}
+
+.sleep-insights-poster[data-desktop-position$='-center'] .sleep-insights-poster__copy {
+  text-align: center;
+}
+
+.sleep-insights-poster[data-desktop-position$='-right'] .sleep-insights-poster__copy {
+  text-align: right;
+}
+
+@media screen and (min-width: 750px) {
+  .sleep-insights-poster {
+    height: 1700px;
+    aspect-ratio: auto;
+  }
+
+  .sleep-insights-poster__picture {
+    inset: 0 auto auto 50%;
+    width: 1920px;
+    height: 1700px;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1280px) {
+  .sleep-insights-poster__content {
+    padding: 80px;
+  }
+
+  .sleep-insights-poster__copy {
+    width: 440px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .sleep-insights-poster {
+    height: auto;
+    aspect-ratio: 393 / 472;
+  }
+
+  .sleep-insights-poster__picture {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .sleep-insights-poster__image {
+    object-position: right top;
+  }
+
+  .sleep-insights-poster__mobile-image {
+    display: block;
+  }
+
+  .sleep-insights-poster__shade {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .sleep-insights-poster__content {
+    padding: 20px;
+  }
+
+  .sleep-insights-poster__copy {
+    width: 100%;
+  }
+
+  .sleep-insights-poster__title {
+    font-size: var(--sleep-poster-mobile-title-size, 28px);
+  }
+
+  .sleep-insights-poster__body {
+    font-size: var(--sleep-poster-mobile-body-size, 16px);
+  }
+
+  .sleep-insights-poster[data-mobile-position^='top-'] .sleep-insights-poster__content {
+    justify-content: flex-start;
+  }
+
+  .sleep-insights-poster[data-mobile-position^='center-'] .sleep-insights-poster__content {
+    justify-content: center;
+  }
+
+  .sleep-insights-poster[data-mobile-position^='bottom-'] .sleep-insights-poster__content {
+    justify-content: flex-end;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-left'] .sleep-insights-poster__content {
+    align-items: flex-start;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-center'] .sleep-insights-poster__content {
+    align-items: center;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-right'] .sleep-insights-poster__content {
+    align-items: flex-end;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-left'] .sleep-insights-poster__copy {
+    text-align: left;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-center'] .sleep-insights-poster__copy {
+    text-align: center;
+  }
+
+  .sleep-insights-poster[data-mobile-position$='-right'] .sleep-insights-poster__copy {
+    text-align: right;
+  }
+}
