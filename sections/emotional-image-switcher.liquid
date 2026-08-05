@@ -1,0 +1,269 @@
+{{ 'emotional-image-switcher.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'emotional-image-switcher.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign initial_gradient_start = '#FFE3BD'
+  assign initial_gradient_end = '#FFFFFF'
+
+  if section.blocks.size > 0
+    assign initial_gradient_start = section.blocks.first.settings.gradient_start
+    assign initial_gradient_end = section.blocks.first.settings.gradient_end
+  endif
+-%}
+
+<emotional-image-switcher
+  id="EmotionalImageSwitcher-{{ section.id }}"
+  class="emotional-image-switcher"
+  data-autoplay="{{ section.settings.enable_autoplay }}"
+  data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
+  style="--emotional-gradient-start: {{ initial_gradient_start }}; --emotional-gradient-end: {{ initial_gradient_end }}; --emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px;"
+>
+  <div class="emotional-image-switcher__sticky">
+    <div class="emotional-image-switcher__visual" data-emotional-visual>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div
+            id="EmotionalPanel-{{ section.id }}-{{ forloop.index0 }}"
+            class="emotional-image-switcher__panel{% if forloop.first %} is-active{% endif %}"
+            role="tabpanel"
+            aria-labelledby="EmotionalTab-{{ section.id }}-{{ forloop.index0 }}"
+            aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+            data-emotional-panel
+            data-emotional-index="{{ forloop.index0 }}"
+            data-emotional-gradient-start="{{ block.settings.gradient_start }}"
+            data-emotional-gradient-end="{{ block.settings.gradient_end }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 2000
+                | image_tag:
+                  class: 'emotional-image-switcher__image',
+                  loading: 'lazy',
+                  widths: '500, 750, 1000, 1250, 1500, 1750, 2000',
+                  sizes: '(max-width: 749px) 100vw, 35vw',
+                  alt: block.settings.label
+              }}
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg emotional-image-switcher__image emotional-image-switcher__placeholder' }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="emotional-image-switcher__panel is-active" aria-hidden="false">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg emotional-image-switcher__image emotional-image-switcher__placeholder' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="emotional-image-switcher__right">
+      <div class="emotional-image-switcher__copy">
+        {%- if section.settings.title != blank -%}
+          <h2 class="emotional-image-switcher__title">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <div class="emotional-image-switcher__body rte">{{ section.settings.body }}</div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="emotional-image-switcher__controls" data-emotional-controls>
+          <div
+            class="emotional-image-switcher__tabs"
+            role="tablist"
+            aria-label="{{ section.settings.tabs_label | escape }}"
+            style="--emotional-tab-count: {{ section.blocks.size }};"
+            data-emotional-tabs
+          >
+            <span class="emotional-image-switcher__slider" aria-hidden="true" data-emotional-slider></span>
+
+            {%- for block in section.blocks -%}
+              <button
+                id="EmotionalTab-{{ section.id }}-{{ forloop.index0 }}"
+                class="emotional-image-switcher__tab{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                role="tab"
+                aria-controls="EmotionalPanel-{{ section.id }}-{{ forloop.index0 }}"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                data-emotional-tab
+                data-emotional-index="{{ forloop.index0 }}"
+              >
+                {%- if block.settings.label != blank -%}
+                  {{ block.settings.label | escape }}
+                {%- else -%}
+                  状态 {{ forloop.index }}
+                {%- endif -%}
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</emotional-image-switcher>
+
+{% schema %}
+{
+  "name": "情绪状态图片切换",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "文案"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Wear Your Heart on Your Sleeve"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "正文",
+      "default": "<p>The watch categorises your emotions into 12 types of subtle states across dimensions, which are visualised in varied forms of flowers. Nurture your emotional seeds and let them flourish.</p>"
+    },
+    {
+      "type": "text",
+      "id": "tabs_label",
+      "label": "按钮组辅助说明",
+      "default": "Choose an emotional state"
+    },
+    {
+      "type": "header",
+      "content": "字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_title_size",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_body_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端正文字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "min": 24,
+      "max": 52,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端正文字号",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "自动切换"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "启用自动切换",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "label": "自动切换间隔",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "state",
+      "name": "状态",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "按钮文字",
+          "default": "State"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "完整展示图片",
+          "info": "建议使用 1:1 的完整透明背景图片；未设置时显示 Shopify 原生占位图"
+        },
+        {
+          "type": "color",
+          "id": "gradient_start",
+          "label": "背景渐变顶部颜色",
+          "default": "#FFE3BD"
+        },
+        {
+          "type": "color",
+          "id": "gradient_end",
+          "label": "背景渐变底部颜色",
+          "default": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "情绪状态图片切换",
+      "blocks": [
+        {
+          "type": "state",
+          "settings": {
+            "label": "Pleasant",
+            "gradient_start": "#FFE3BD",
+            "gradient_end": "#FFFFFF"
+          }
+        },
+        {
+          "type": "state",
+          "settings": {
+            "label": "Neutral",
+            "gradient_start": "#C0F0EF",
+            "gradient_end": "#FFFFFF"
+          }
+        },
+        {
+          "type": "state",
+          "settings": {
+            "label": "Unpleasant",
+            "gradient_start": "#C7C7FF",
+            "gradient_end": "#FFFFFF"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

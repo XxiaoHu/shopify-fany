@@ -1,0 +1,291 @@
+.emotional-image-switcher {
+  position: relative;
+  display: block;
+  height: 150vh;
+  color: #1e0e06;
+  font-family: Lato, var(--font-body-family), sans-serif;
+}
+
+.emotional-image-switcher,
+.emotional-image-switcher * {
+  box-sizing: border-box;
+}
+
+.emotional-image-switcher__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--emotional-gradient-start, #ffe3bd), var(--emotional-gradient-end, #fff));
+}
+
+.emotional-image-switcher__visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34.469271vw;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.emotional-image-switcher.is-entered .emotional-image-switcher__visual {
+  transform: translate(calc(-50% - 15.78125vw), -50%);
+  transition-delay: 0.4s;
+}
+
+.emotional-image-switcher__panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.985);
+  transition: opacity 0.45s ease, transform 0.6s ease, visibility 0s linear 0.6s;
+  pointer-events: none;
+}
+
+.emotional-image-switcher__panel.is-active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition-delay: 0s;
+}
+
+.emotional-image-switcher__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+.emotional-image-switcher__placeholder {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.emotional-image-switcher__right {
+  position: absolute;
+  top: 50%;
+  left: 57.5vw;
+  z-index: 2;
+  display: flex;
+  width: 26.25vw;
+  flex-direction: column;
+  gap: 1.666667vw;
+  opacity: 0;
+  transform: translate(14.1667vw, -50%);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.emotional-image-switcher.is-entered .emotional-image-switcher__right {
+  opacity: 1;
+  transform: translate(0, -50%);
+  transition-delay: 0.4s;
+}
+
+.emotional-image-switcher__title,
+.emotional-image-switcher__body,
+.emotional-image-switcher__body p {
+  margin: 0;
+}
+
+.emotional-image-switcher__title {
+  color: #1e0e06;
+  font-size: var(--emotional-desktop-title-size, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.emotional-image-switcher__body {
+  margin-top: 20px;
+  color: #797c80;
+  font-size: var(--emotional-desktop-body-size, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.emotional-image-switcher__body > * + * {
+  margin-top: 0.8em;
+}
+
+.emotional-image-switcher__controls {
+  width: max-content;
+  max-width: 100%;
+}
+
+.emotional-image-switcher__tabs {
+  position: relative;
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  padding: 6px;
+  overflow-x: auto;
+  border-radius: 999px;
+  background: #fff;
+  scrollbar-width: none;
+}
+
+.emotional-image-switcher__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.emotional-image-switcher__slider {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  z-index: 0;
+  width: calc((100% - 12px) / var(--emotional-tab-count, 1));
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background: #000;
+  transform: translateX(6px);
+  transition: width 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.emotional-image-switcher__tab {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 110px;
+  min-height: 50px;
+  padding: 10px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #797c80;
+  font: inherit;
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 400;
+  line-height: 1.75;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.emotional-image-switcher__tab.is-active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.emotional-image-switcher__tab:focus-visible {
+  outline: 2px solid #1e0e06;
+  outline-offset: -3px;
+}
+
+@media screen and (max-aspect-ratio: 11 / 10), screen and (max-width: 749px) {
+  .emotional-image-switcher {
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .emotional-image-switcher__sticky {
+    position: relative;
+    display: grid;
+    height: auto;
+    min-height: 0;
+    grid-template-areas:
+      'copy'
+      'visual'
+      'controls';
+    background: linear-gradient(to bottom, var(--emotional-gradient-start, #ffe3bd), var(--emotional-gradient-end, #fff));
+  }
+
+  .emotional-image-switcher__right {
+    display: contents;
+  }
+
+  .emotional-image-switcher__copy {
+    position: relative;
+    grid-area: copy;
+    width: 86.1111vw;
+    margin-left: 6.9444vw;
+    padding-top: 11.1111vw;
+  }
+
+  .emotional-image-switcher__visual,
+  .emotional-image-switcher.is-entered .emotional-image-switcher__visual {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-area: visual;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 3.3333vw;
+    aspect-ratio: 1 / 1;
+    transform: none;
+    transition: none;
+  }
+
+  .emotional-image-switcher__image {
+    object-position: center;
+  }
+
+  .emotional-image-switcher__controls {
+    position: relative;
+    grid-area: controls;
+    width: max-content;
+    max-width: 93vw;
+    margin: 0 auto 11.1111vw;
+    opacity: 1;
+    transform: none;
+  }
+
+  .emotional-image-switcher__right,
+  .emotional-image-switcher.is-entered .emotional-image-switcher__right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .emotional-image-switcher__title {
+    font-size: var(--emotional-mobile-title-size, 40px);
+  }
+
+  .emotional-image-switcher__body {
+    font-size: var(--emotional-mobile-body-size, 18px);
+  }
+
+  .emotional-image-switcher__tabs {
+    max-width: 93vw;
+    padding: 4px;
+  }
+
+  .emotional-image-switcher__slider {
+    top: 4px;
+    height: calc(100% - 8px);
+    transform: translateX(4px);
+  }
+
+  .emotional-image-switcher__tab {
+    min-width: 28.5vw;
+    min-height: 0;
+    padding: 2.7778vw 3.5556vw 3.0556vw;
+    font-size: 3.8889vw;
+    line-height: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emotional-image-switcher__visual,
+  .emotional-image-switcher__right,
+  .emotional-image-switcher__panel,
+  .emotional-image-switcher__slider,
+  .emotional-image-switcher__tab {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
