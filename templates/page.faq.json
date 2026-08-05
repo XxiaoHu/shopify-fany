@@ -753,6 +753,15 @@
             "row_content": "<p>Yes. If you’re not completely satisfied with your purchase from fany.us, you can request a return within 30 days of purchase under our 30-Day Money-Back Guarantee.<br/>Please note:<br/>1. Your order must have been purchased directly from fany.us.<br/>2. Proof of purchase, such as your order number, is required.<br/>3. Returns for non-quality-related reasons are accepted, but return <br/>shipping costs are the customer’s responsibility.<br/><br/>Please contact our customer service team before sending your item back.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_gYCqDG": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Returns & Refunds",
+            "heading": "How do I return my order?",
+            "row_content": "<p>To start a return, please contact us at support@fany.us with your order number.<br/>Our customer service team will check whether your order is still within the 30-Day Money-Back Guarantee period. If eligible, we’ll provide you with the return instructions and return warehouse address.<br/>Once we receive and inspect your returned item, we’ll process your refund to the original payment method.<br/>Please do not send your item back before contacting us, as we need to provide the correct return instructions first.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -762,7 +771,8 @@
         "collapsible_row_XD4J8q",
         "collapsible_row_ind7NG",
         "collapsible_row_tadpRA",
-        "collapsible_row_XRm4Xq"
+        "collapsible_row_XRm4Xq",
+        "collapsible_row_gYCqDG"
       ],
       "name": "主题 FAQ",
       "settings": {
