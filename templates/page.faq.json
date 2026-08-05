@@ -15,10 +15,10 @@
         "slide_aGzWGV": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Black_Friday_Banner-PC.jpg",
-            "mobile_image": "shopify://shop_images/Black_Friday_Banner-Phone-768_x_1200.jpg",
+            "image": "shopify://shop_images/ALL_product_gift_-1.webp",
+            "mobile_image": "shopify://shop_images/ALL_PRODUCT_GIFT_1000003261.webp",
             "image_overlay_opacity": 0,
-            "heading": "",
+            "heading": "<p>FAQ</p>",
             "heading_font_size": 40,
             "mobile_heading_font_size": 32,
             "heading_2": "",
@@ -580,23 +580,112 @@
         "block_width": 1340
       }
     },
-    "breadcrumbs_section_nALjQf": {
+    "breadcrumbs_section_RDeK3M": {
       "type": "breadcrumbs-section",
       "name": "面包屑导航",
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "",
         "parent_label": "",
         "parent_link": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "padding_left": 100,
         "padding_right": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12,
         "padding_left_mobile": 0,
         "padding_right_mobile": 0,
-        "desktop_font_size": 16,
-        "mobile_font_size": 16
+        "desktop_font_size": 14,
+        "mobile_font_size": 14
+      }
+    },
+    "main_banner_4RNnQY": {
+      "type": "main-banner",
+      "blocks": {
+        "slide_CAeQnk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ALL_product_gift_-1.webp",
+            "mobile_image": "shopify://shop_images/ALL_PRODUCT_GIFT_1000003261.webp",
+            "image_overlay_opacity": 0,
+            "link": "",
+            "link_text": "",
+            "link_target_blank": false,
+            "desktop_layout_mode": "overlay",
+            "mobile_layout_mode": "overlay",
+            "content_horizontal": "left",
+            "content_vertical": "middle",
+            "mobile_content_horizontal": "center",
+            "mobile_content_vertical": "bottom",
+            "title": "FAQ",
+            "title_font_size": 40,
+            "mobile_title_font_size": 28,
+            "title_font_weight": "700",
+            "title_color": "#9E7163",
+            "mobile_title_color": "#9E7163",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "title_alignment": "left",
+            "mobile_title_alignment": "center",
+            "subtitle": "",
+            "subtitle_font_size": 18,
+            "mobile_subtitle_font_size": 14,
+            "subtitle_font_weight": "400",
+            "subtitle_color": "#686766",
+            "mobile_subtitle_color": "#ffffff",
+            "subtitle_line_height": 1.3,
+            "subtitle_letter_spacing": 0,
+            "subtitle_alignment": "left",
+            "mobile_subtitle_alignment": "left",
+            "title_subtitle_gap": 8,
+            "subtitle_desc_gap": 12,
+            "mobile_title_subtitle_gap": 6,
+            "mobile_subtitle_desc_gap": 10,
+            "description": "",
+            "desc_font_size": 20,
+            "mobile_desc_font_size": 16,
+            "desc_font_weight": "400",
+            "desc_color": "#686766",
+            "mobile_desc_color": "#ffffff",
+            "desc_line_height": 1.5,
+            "desc_letter_spacing": 0,
+            "desc_alignment": "left",
+            "mobile_desc_alignment": "left",
+            "title_desc_gap": 20,
+            "mobile_title_desc_gap": 16,
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_alignment": "flex-start",
+            "mobile_button_alignment": "flex-start",
+            "btn_font_size": 16,
+            "btn_border_radius": 6,
+            "btn_padding_y": 12,
+            "btn_padding_x": 24,
+            "btn_bg_color": "#794538",
+            "btn_text_color": "#ffffff",
+            "btn_bg_hover_color": "#5c342b",
+            "btn_text_hover_color": "#ffffff",
+            "btn_bg_active_color": "#4a2a22",
+            "btn_text_active_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_CAeQnk"
+      ],
+      "name": "主页 Banner 轮播",
+      "settings": {
+        "slide_height": "adapt_image",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "text_safe_margin": 200,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_text_safe_margin": 24,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": "首页横幅轮播"
       }
     },
     "collapsible_content_AcjBtT": {
@@ -912,7 +1001,8 @@
     "icon_group_Tpm7wQ",
     "creators_reviews_dX7kz8",
     "rich_text_7NVHGH",
-    "breadcrumbs_section_nALjQf",
+    "breadcrumbs_section_RDeK3M",
+    "main_banner_4RNnQY",
     "collapsible_content_AcjBtT"
   ]
 }
