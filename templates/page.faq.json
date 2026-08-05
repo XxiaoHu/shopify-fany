@@ -700,6 +700,33 @@
             "page": ""
           }
         },
+        "collapsible_row_t9mFkw": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "My Order & Delivery",
+            "heading": "How can I exchange an item from my order?",
+            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6iYWwk": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "My Order & Delivery",
+            "heading": "How can I exchange an item from my order?",
+            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XD4J8q": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "My Order & Delivery",
+            "heading": "How can I exchange an item from my order?",
+            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_6x7iFJ": {
           "type": "collapsible_row",
           "settings": {
@@ -748,6 +775,9 @@
       },
       "block_order": [
         "collapsible_row_TUUpXk",
+        "collapsible_row_t9mFkw",
+        "collapsible_row_6iYWwk",
+        "collapsible_row_XD4J8q",
         "collapsible_row_6x7iFJ",
         "collapsible_row_P3hEA3",
         "collapsible_row_nMx3bU",
