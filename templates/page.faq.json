@@ -694,9 +694,9 @@
         "collapsible_row_TUUpXk": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "How can I exchange an item from my order?",
+            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
             "page": ""
           }
         },
