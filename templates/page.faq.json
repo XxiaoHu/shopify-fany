@@ -718,43 +718,7 @@
             "page": ""
           }
         },
-        "collapsible_row_L3CrWX": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_bgmpxq": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_dV9NiA": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
         "collapsible_row_nMx3bU": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_CyCpLQ": {
           "type": "collapsible_row",
           "settings": {
             "category": "产品",
@@ -772,25 +736,7 @@
             "page": ""
           }
         },
-        "collapsible_row_TU44yh": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
         "collapsible_row_eRrWA7": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_jCehaT": {
           "type": "collapsible_row",
           "settings": {
             "category": "产品",
@@ -804,15 +750,9 @@
         "collapsible_row_TUUpXk",
         "collapsible_row_6x7iFJ",
         "collapsible_row_P3hEA3",
-        "collapsible_row_L3CrWX",
-        "collapsible_row_bgmpxq",
-        "collapsible_row_dV9NiA",
         "collapsible_row_nMx3bU",
-        "collapsible_row_CyCpLQ",
         "collapsible_row_VcTB8q",
-        "collapsible_row_TU44yh",
-        "collapsible_row_eRrWA7",
-        "collapsible_row_jCehaT"
+        "collapsible_row_eRrWA7"
       ],
       "name": "主题 FAQ",
       "settings": {
