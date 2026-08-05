@@ -688,6 +688,56 @@
         "mobile_font_size": 14
       }
     },
+    "topic_faq_VRy6aX": {
+      "type": "topic-faq",
+      "blocks": {
+        "collapsible_row_TU44yh": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "产品",
+            "heading": "问题",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_eRrWA7": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "产品",
+            "heading": "问题",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_jCehaT": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "产品",
+            "heading": "问题",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_TU44yh",
+        "collapsible_row_eRrWA7",
+        "collapsible_row_jCehaT"
+      ],
+      "name": "主题 FAQ",
+      "settings": {
+        "show_topic_selector": true,
+        "selector_label": "选择主题",
+        "selector_placeholder": "请选择主题",
+        "view_more_label": "查看更多",
+        "empty_text": "该主题暂无 FAQ。",
+        "initial_limit": 10,
+        "open_first_item": true,
+        "page_width": 1500,
+        "padding_top": 20,
+        "padding_bottom": 80
+      }
+    },
     "collapsible_content_AcjBtT": {
       "type": "collapsible-content",
       "blocks": {
@@ -1003,6 +1053,7 @@
     "rich_text_7NVHGH",
     "main_banner_4RNnQY",
     "breadcrumbs_section_RDeK3M",
+    "topic_faq_VRy6aX",
     "collapsible_content_AcjBtT"
   ]
 }
