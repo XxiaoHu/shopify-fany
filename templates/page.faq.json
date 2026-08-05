@@ -713,8 +713,8 @@
           "type": "collapsible_row",
           "settings": {
             "category": "My Order & Delivery",
-            "heading": "How can I exchange an item from my order?",
-            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
+            "heading": "How can I cancel my order?",
+            "row_content": "<p>If you’d like to cancel your order, please contact us as soon as possible at support@fany.us with your order number. Our customer service team will assist you with the cancellation.<br/>Order cancellations are free of charge.</p>",
             "page": ""
           }
         },
