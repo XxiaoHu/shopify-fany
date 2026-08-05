@@ -580,25 +580,6 @@
         "block_width": 1340
       }
     },
-    "breadcrumbs_section_RDeK3M": {
-      "type": "breadcrumbs-section",
-      "name": "面包屑导航",
-      "settings": {
-        "color_scheme": "",
-        "parent_label": "",
-        "parent_link": "",
-        "padding_top": 12,
-        "padding_bottom": 12,
-        "padding_left": 100,
-        "padding_right": 0,
-        "padding_top_mobile": 12,
-        "padding_bottom_mobile": 12,
-        "padding_left_mobile": 0,
-        "padding_right_mobile": 0,
-        "desktop_font_size": 14,
-        "mobile_font_size": 14
-      }
-    },
     "main_banner_4RNnQY": {
       "type": "main-banner",
       "blocks": {
@@ -621,8 +602,8 @@
             "title_font_size": 40,
             "mobile_title_font_size": 28,
             "title_font_weight": "700",
-            "title_color": "#9E7163",
-            "mobile_title_color": "#9E7163",
+            "title_color": "#9e7163",
+            "mobile_title_color": "#9e7163",
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
             "title_alignment": "left",
@@ -686,6 +667,25 @@
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0,
         "accessibility_info": "首页横幅轮播"
+      }
+    },
+    "breadcrumbs_section_RDeK3M": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 100,
+        "padding_right": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 14,
+        "mobile_font_size": 14
       }
     },
     "collapsible_content_AcjBtT": {
@@ -1001,8 +1001,8 @@
     "icon_group_Tpm7wQ",
     "creators_reviews_dX7kz8",
     "rich_text_7NVHGH",
-    "breadcrumbs_section_RDeK3M",
     "main_banner_4RNnQY",
+    "breadcrumbs_section_RDeK3M",
     "collapsible_content_AcjBtT"
   ]
 }
