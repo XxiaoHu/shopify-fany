@@ -835,6 +835,15 @@
             "page": ""
           }
         },
+        "collapsible_row_n3VEjJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Does FANY Luna support message notifications (WhatsApp, Instagram, etc.)?",
+            "row_content": "<p>Yes — FANY Luna supports phone notifications, including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. So your wrist only lights up for what truly matters to you.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_MKWJcT": {
           "type": "collapsible_row",
           "settings": {
@@ -907,6 +916,7 @@
         "collapsible_row_pU74Dx",
         "collapsible_row_xeye3C",
         "collapsible_row_7wGFEc",
+        "collapsible_row_n3VEjJ",
         "collapsible_row_MKWJcT",
         "collapsible_row_AkhULX",
         "collapsible_row_cLaiLz",
