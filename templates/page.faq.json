@@ -807,6 +807,15 @@
             "row_content": "<p>Yes. FANY Luna features IP68 water resistance and is suitable for everyday wear, including swimming. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_pU74Dx": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "How long does it take to fully charge the FANY Luna smartwatch?",
+            "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 2 hours to fully charge. Once fully charged, it can provide up to 7 days of battery life, depending on usage.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -822,7 +831,8 @@
         "collapsible_row_HBCExR",
         "collapsible_row_Vb46pA",
         "collapsible_row_QBeRrz",
-        "collapsible_row_YcLqXG"
+        "collapsible_row_YcLqXG",
+        "collapsible_row_pU74Dx"
       ],
       "name": "主题 FAQ",
       "settings": {
