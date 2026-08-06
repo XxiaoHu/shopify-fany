@@ -960,6 +960,15 @@
             "row_content": "<p>You can update your saved shipping address in just a few steps:<br/><br/>1. Log in to your FANY account.<br/>2. Go to My Profile and select Saved Addresses.<br/>3. Click Edit next to the address you want to update.<br/>4. Make your changes, then click Update Address to save them.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_rfFHDn": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Payment",
+            "heading": "What payment methods do we accept?",
+            "row_content": "<p>We accept major credit and debit cards, including Visa, Mastercard, and American Express, as well as PayPal, Apple Pay, Google Pay, Klarna, and Afterpay.<br/><br/>We also support flexible payment options with Klarna and Afterpay, allowing you to split your purchase into convenient installments (availability may vary depending on your location and eligibility).</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -992,7 +1001,8 @@
         "collapsible_row_byqkrb",
         "collapsible_row_cYCzJX",
         "collapsible_row_Bh3eta",
-        "collapsible_row_QwYRVU"
+        "collapsible_row_QwYRVU",
+        "collapsible_row_rfFHDn"
       ],
       "name": "主题 FAQ",
       "settings": {
