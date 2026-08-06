@@ -852,6 +852,15 @@
             "row_content": "<p>FANY Smartwatch uses an advanced sleep algorithm combined with a professional-grade sensor and heart rate monitoring to analyze your sleep stages—light, deep, and REM.<br/>View detailed sleep analysis, trends, and personalized insights in the FANY FIT app to better understand your sleep habits and support healthier rest.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_cLaiLz": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "How does FANY Luna measure heart rate?",
+            "row_content": "<p>FANY Luna uses a professional-grade optical sensor to detect tiny changes in blood flow beneath your skin — capturing your heartbeats and the subtle expansion and contraction of blood vessels to measure heart rate precisely.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -872,7 +881,8 @@
         "collapsible_row_xeye3C",
         "collapsible_row_7wGFEc",
         "collapsible_row_MKWJcT",
-        "collapsible_row_AkhULX"
+        "collapsible_row_AkhULX",
+        "collapsible_row_cLaiLz"
       ],
       "name": "主题 FAQ",
       "settings": {
