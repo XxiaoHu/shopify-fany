@@ -694,125 +694,85 @@
         "collapsible_row_TUUpXk": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "How can I exchange an item from my order?",
+            "row_content": "<p>We don’t offer direct exchanges at this time. If you’d like a different item, simply return your original order and place a new order for the item you prefer.<br/>All orders are covered by our 30-Day Money-Back Guarantee. Please contact us at support@fany.us before returning your item, and our team will guide you through the process.</p>",
             "page": ""
           }
         },
-        "collapsible_row_6x7iFJ": {
+        "collapsible_row_t9mFkw": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "How can I check my order status?",
+            "row_content": "<p>You can check your order and shipping status anytime through our Order Tracking page.<br/>Track Your Order: https://fany.us/apps/17track<br/>Need help? Contact us at support@fany.us with your order number, and our customer service team will be happy to check the status for you.</p>",
             "page": ""
           }
         },
-        "collapsible_row_P3hEA3": {
+        "collapsible_row_6iYWwk": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "How can I cancel my order?",
+            "row_content": "<p>If you’d like to cancel your order, please contact us as soon as possible at support@fany.us with your order number. Our customer service team will assist you with the cancellation.<br/>Order cancellations are free of charge.</p>",
             "page": ""
           }
         },
-        "collapsible_row_L3CrWX": {
+        "collapsible_row_XD4J8q": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "When will my order ship?",
+            "row_content": "<p>Orders are typically processed and shipped within 1–2 business days after your order is placed. With our Standard Shipping, delivery usually takes 3–7 business days after the order has shipped.<br/>(Please note that delivery times may be affected by unforeseen circumstances or carrier delays.)<br/>P.O. Boxes, APO/FPO/DPO addresses, Alaska, and certain island addresses are not supported. We also do not ship to reshipping services, including third-party freight forwarders.<br/>If you need help with your order, please contact us at support@fany.us.</p>",
             "page": ""
           }
         },
-        "collapsible_row_bgmpxq": {
+        "collapsible_row_ind7NG": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "I didn't receive my order. What should I do?",
+            "row_content": "<p>If you haven’t received your order yet, please check your tracking information first. Delivery dates are estimates and may change due to carrier delays or unexpected circumstances.<br/>If your tracking shows that your package has been delivered but you can’t find it, please check with:<br/><br/>Neighbors<br/>Roommates or family members<br/>Your building’s front desk or mailroom<br/>Other safe locations around your property<br/><br/>If you ordered multiple items, they may be shipped in separate packages and arrive at different times. Please check the tracking information for each package.<br/>If you’ve checked the above and still can’t locate your order, please contact us at support@fany.us with your order number and tracking number, and our customer service team will be happy to assist you.</p>",
             "page": ""
           }
         },
-        "collapsible_row_dV9NiA": {
+        "collapsible_row_tadpRA": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "My Order & Delivery",
+            "heading": "The item I want to buy is not available online. What can I do?",
+            "row_content": "<p>If you can’t find the product you’re looking for on our website, it may be out of stock or discontinued.<br/>Please contact us at support@fany.us with the product details you’re looking for. Our customer service team will be happy to check whether we can source the item from another location for you.</p>",
             "page": ""
           }
         },
-        "collapsible_row_nMx3bU": {
+        "collapsible_row_XRm4Xq": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "Returns & Refunds",
+            "heading": "Can I return my order?",
+            "row_content": "<p>Yes. If you’re not completely satisfied with your purchase from fany.us, you can request a return within 30 days of purchase under our 30-Day Money-Back Guarantee.<br/>Please note:<br/>1. Your order must have been purchased directly from fany.us.<br/>2. Proof of purchase, such as your order number, is required.<br/>3. Returns for non-quality-related reasons are accepted, but return <br/>shipping costs are the customer’s responsibility.<br/><br/>Please contact our customer service team before sending your item back.</p>",
             "page": ""
           }
         },
-        "collapsible_row_CyCpLQ": {
+        "collapsible_row_gYCqDG": {
           "type": "collapsible_row",
           "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_VcTB8q": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_TU44yh": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_eRrWA7": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_jCehaT": {
-          "type": "collapsible_row",
-          "settings": {
-            "category": "产品",
-            "heading": "问题",
-            "row_content": "",
+            "category": "Returns & Refunds",
+            "heading": "How do I return my order?",
+            "row_content": "<p>To start a return, please contact us at support@fany.us with your order number.<br/>Our customer service team will check whether your order is still within the 30-Day Money-Back Guarantee period. If eligible, we’ll provide you with the return instructions and return warehouse address.<br/>Once we receive and inspect your returned item, we’ll process your refund to the original payment method.<br/>Please do not send your item back before contacting us, as we need to provide the correct return instructions first.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
         "collapsible_row_TUUpXk",
-        "collapsible_row_6x7iFJ",
-        "collapsible_row_P3hEA3",
-        "collapsible_row_L3CrWX",
-        "collapsible_row_bgmpxq",
-        "collapsible_row_dV9NiA",
-        "collapsible_row_nMx3bU",
-        "collapsible_row_CyCpLQ",
-        "collapsible_row_VcTB8q",
-        "collapsible_row_TU44yh",
-        "collapsible_row_eRrWA7",
-        "collapsible_row_jCehaT"
+        "collapsible_row_t9mFkw",
+        "collapsible_row_6iYWwk",
+        "collapsible_row_XD4J8q",
+        "collapsible_row_ind7NG",
+        "collapsible_row_tadpRA",
+        "collapsible_row_XRm4Xq",
+        "collapsible_row_gYCqDG"
       ],
       "name": "主题 FAQ",
       "settings": {
