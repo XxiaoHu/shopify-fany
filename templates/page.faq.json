@@ -798,6 +798,15 @@
             "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_YcLqXG": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Is the FANY Luna smartwatch waterproof?",
+            "row_content": "<p>Yes. FANY Luna features IP68 water resistance and is suitable for everyday wear, including swimming. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -812,7 +821,8 @@
         "collapsible_row_fXfmjK",
         "collapsible_row_HBCExR",
         "collapsible_row_Vb46pA",
-        "collapsible_row_QBeRrz"
+        "collapsible_row_QBeRrz",
+        "collapsible_row_YcLqXG"
       ],
       "name": "主题 FAQ",
       "settings": {
