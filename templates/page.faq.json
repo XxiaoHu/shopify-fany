@@ -771,6 +771,15 @@
             "row_content": "<p>You can download the digital user manual from our User Manual page: https://fany.us/products/luna<br/><br/>If you have any questions or need additional assistance, please contact our customer service team at support@fany.us. We're happy to help.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_HBCExR": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Do you have different-sized watch bands?",
+            "row_content": "<p>All watch bands available on our store are 16 mm quick-release bands, designed specifically for the FANY Luna. Every band is fully compatible with your watch and can be swapped in seconds—no tools required.<br/>Our bands fit wrists measuring approximately 144–202 mm (5.67–7.95 in), making them suitable for a wide range of wrist sizes.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -782,7 +791,8 @@
         "collapsible_row_tadpRA",
         "collapsible_row_XRm4Xq",
         "collapsible_row_gYCqDG",
-        "collapsible_row_fXfmjK"
+        "collapsible_row_fXfmjK",
+        "collapsible_row_HBCExR"
       ],
       "name": "主题 FAQ",
       "settings": {
