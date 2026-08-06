@@ -844,6 +844,15 @@
             "page": ""
           }
         },
+        "collapsible_row_84PtFk": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Is the FANY Smartwatch compatible with my phone?",
+            "row_content": "<p>Yes, FANY Luna is compatible with both Android™ and iOS devices. Android phones require Android 6.0 or later, and iPhones require iOS 9.0 or later (iPhone 5s and newer).<br/><br/>Android users can download the Fany fit app from Google Play, while iOS users can download it from the App Store. You can also scan the QR code included on the product packaging or in the user manual to install the app.<br/><br/>If you're not sure whether your phone is compatible with FANY Luna, please contact our customer service team at support@fany.us. We'll be happy to help you confirm compatibility before you purchase.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_MKWJcT": {
           "type": "collapsible_row",
           "settings": {
@@ -917,6 +926,7 @@
         "collapsible_row_xeye3C",
         "collapsible_row_7wGFEc",
         "collapsible_row_n3VEjJ",
+        "collapsible_row_84PtFk",
         "collapsible_row_MKWJcT",
         "collapsible_row_AkhULX",
         "collapsible_row_cLaiLz",
