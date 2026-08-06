@@ -973,7 +973,7 @@
         "collapsible_row_hTwtPF": {
           "type": "collapsible_row",
           "settings": {
-            "category": "Privacy & Terms",
+            "category": "Legal & Data Protection",
             "heading": "Privacy & Terms",
             "row_content": "<p><a href=\"https://fany.us/pages/privacy-terms\" title=\"https://fany.us/pages/privacy-terms\">Click here</a> to learn more about your data privacy rights and how we protect your information.<br/><br/></p>",
             "page": ""
