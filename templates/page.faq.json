@@ -951,6 +951,15 @@
             "row_content": "<p>FANY Luna uses professional-grade multi-sensor technology to analyze heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate to evaluate your stress level.<br/>It senses rising tension even before you feel overwhelmed— from juggling work deadlines to caring for kids and keeping up with home life— reminding you to slow down, breathe, and find balance.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_QwYRVU": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "My Account",
+            "heading": "How do I update my address in my account?",
+            "row_content": "<p>You can update your saved shipping address in just a few steps:<br/><br/>1. Log in to your FANY account.<br/>2. Go to My Profile and select Saved Addresses.<br/>3. Click Edit next to the address you want to update.<br/>4. Make your changes, then click Update Address to save them.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -982,7 +991,8 @@
         "collapsible_row_cLaiLz",
         "collapsible_row_byqkrb",
         "collapsible_row_cYCzJX",
-        "collapsible_row_Bh3eta"
+        "collapsible_row_Bh3eta",
+        "collapsible_row_QwYRVU"
       ],
       "name": "主题 FAQ",
       "settings": {
