@@ -766,9 +766,9 @@
         "collapsible_row_MiHUHB": {
           "type": "collapsible_row",
           "settings": {
-            "category": "Returns & Refunds",
-            "heading": "How do I return my order?",
-            "row_content": "<p>To start a return, please contact us at support@fany.us with your order number.<br/>Our customer service team will check whether your order is still within the 30-Day Money-Back Guarantee period. If eligible, we’ll provide you with the return instructions and return warehouse address.<br/>Once we receive and inspect your returned item, we’ll process your refund to the original payment method.<br/>Please do not send your item back before contacting us, as we need to provide the correct return instructions first.</p>",
+            "category": "Repairs & Warranty",
+            "heading": "What is your 30-Day Money-Back Guarantee?",
+            "row_content": "<p>We offer a 30-Day Money-Back Guarantee on products purchased directly from fany.us.<br/><br/>If you're not completely satisfied with your purchase, you may request a refund within 30 days of purchase, provided the product is returned in its original condition with all accessories and packaging included.<br/><br/>To start a return, please contact our customer support team at support@fany.us with your order number.</p>",
             "page": ""
           }
         },
