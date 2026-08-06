@@ -767,8 +767,8 @@
           "type": "collapsible_row",
           "settings": {
             "category": "Returns & Refunds",
-            "heading": "How do I return my order?",
-            "row_content": "<p>To start a return, please contact us at support@fany.us with your order number.<br/>Our customer service team will check whether your order is still within the 30-Day Money-Back Guarantee period. If eligible, we’ll provide you with the return instructions and return warehouse address.<br/>Once we receive and inspect your returned item, we’ll process your refund to the original payment method.<br/>Please do not send your item back before contacting us, as we need to provide the correct return instructions first.</p>",
+            "heading": "Where can I download the user manual?",
+            "row_content": "<p>You can download the digital user manual from our User Manual page: https://fany.us/products/luna<br/><br/>If you have any questions or need additional assistance, please contact our customer service team at support@fany.us. We're happy to help.</p>",
             "page": ""
           }
         }
