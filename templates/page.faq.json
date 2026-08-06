@@ -879,6 +879,15 @@
             "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_Bh3eta": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "How does the FANY Luna smartwatch measure stress and mood?",
+            "row_content": "<p>FANY Luna uses professional-grade multi-sensor technology to analyze heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate to evaluate your stress level.<br/>It senses rising tension even before you feel overwhelmed— from juggling work deadlines to caring for kids and keeping up with home life— reminding you to slow down, breathe, and find balance.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -902,7 +911,8 @@
         "collapsible_row_AkhULX",
         "collapsible_row_cLaiLz",
         "collapsible_row_byqkrb",
-        "collapsible_row_cYCzJX"
+        "collapsible_row_cYCzJX",
+        "collapsible_row_Bh3eta"
       ],
       "name": "主题 FAQ",
       "settings": {
