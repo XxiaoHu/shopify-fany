@@ -858,7 +858,16 @@
           "settings": {
             "category": "Product Care & Instructions",
             "heading": "How do I connect my FANY Luna Smartwatch to my phone?",
-            "row_content": "<p>Yes, FANY Luna is compatible with both Android™ and iOS devices. Android phones require Android 6.0 or later, and iPhones require iOS 9.0 or later (iPhone 5s and newer).<br/><br/>Android users can download the Fany fit app from Google Play, while iOS users can download it from the App Store. You can also scan the QR code included on the product packaging or in the user manual to install the app.<br/><br/>If you're not sure whether your phone is compatible with FANY Luna, please contact our customer service team at support@fany.us. We'll be happy to help you confirm compatibility before you purchase.</p>",
+            "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app, and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_D3U8NY": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Do I need my phone nearby?",
+            "row_content": "<p>Yes. To receive notifications, sync data, and use connected features, your phone needs to be nearby with Bluetooth turned on.<br/><br/>The typical Bluetooth range is up to 8–10 meters (26–33 ft) in indoor environments such as an office. In open, unobstructed areas, the connection can often remain stable at distances of 20–30 meters (66–98 ft), depending on the surroundings.<br/><br/>If you move out of Bluetooth range, your health and activity data will continue to be stored on your watch and will automatically sync with the FANY FIT app once your phone reconnects.<br/></p>",
             "page": ""
           }
         },
@@ -937,6 +946,7 @@
         "collapsible_row_n3VEjJ",
         "collapsible_row_84PtFk",
         "collapsible_row_hQjDTG",
+        "collapsible_row_D3U8NY",
         "collapsible_row_MKWJcT",
         "collapsible_row_AkhULX",
         "collapsible_row_cLaiLz",
