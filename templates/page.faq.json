@@ -840,7 +840,16 @@
           "settings": {
             "category": "Product Care & Instructions",
             "heading": "Does FANY Luna support menstrual cycle tracking?",
-            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.<br/></p>",
+            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AkhULX": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "How does FANY Luna track sleep?",
+            "row_content": "<p>FANY Smartwatch uses an advanced sleep algorithm combined with a professional-grade sensor and heart rate monitoring to analyze your sleep stages—light, deep, and REM.<br/>View detailed sleep analysis, trends, and personalized insights in the FANY FIT app to better understand your sleep habits and support healthier rest.</p>",
             "page": ""
           }
         }
@@ -862,7 +871,8 @@
         "collapsible_row_pU74Dx",
         "collapsible_row_xeye3C",
         "collapsible_row_7wGFEc",
-        "collapsible_row_MKWJcT"
+        "collapsible_row_MKWJcT",
+        "collapsible_row_AkhULX"
       ],
       "name": "主题 FAQ",
       "settings": {
