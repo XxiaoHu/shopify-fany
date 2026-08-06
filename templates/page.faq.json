@@ -834,6 +834,15 @@
             "row_content": "<p>To keep your leather watch band looking its best:<br/>1. Keep it dry and avoid prolonged exposure to water or moisture.<br/>2. Do not use any chemical cleaners to care for the product.<br/>3. Protect it from direct sunlight and excessive heat to help preserve the leather.<br/>Natural leather may develop a unique patina and slight color variation over time with regular wear.<br/>To clean your leather watch band, gently wipe it with a soft, slightly damp cloth. Always test on a small, inconspicuous area first, and allow the band to air dry naturally.<br/><br/>Do not use harsh cleaners, alcohol, or abrasive materials. If your leather band requires deep cleaning or restoration, we recommend consulting a professional leather care specialist.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_MKWJcT": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Product Care & Instructions",
+            "heading": "Does FANY Luna support menstrual cycle tracking?",
+            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.<br/></p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -852,7 +861,8 @@
         "collapsible_row_YcLqXG",
         "collapsible_row_pU74Dx",
         "collapsible_row_xeye3C",
-        "collapsible_row_7wGFEc"
+        "collapsible_row_7wGFEc",
+        "collapsible_row_MKWJcT"
       ],
       "name": "主题 FAQ",
       "settings": {
