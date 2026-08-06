@@ -772,6 +772,15 @@
             "page": ""
           }
         },
+        "collapsible_row_PwV4xG": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "Repairs & Warranty",
+            "heading": "How do I request a refund, warranty service, or a return?",
+            "row_content": "<p>To request a refund, warranty service, or return, please contact our customer support team at support@fany.us with your order number.<br/><br/>Our team will verify your order, confirm your eligibility, and provide the appropriate instructions to help you complete the process as quickly and smoothly as possible.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_HGxepU": {
           "type": "collapsible_row",
           "settings": {
@@ -954,6 +963,7 @@
         "collapsible_row_XRm4Xq",
         "collapsible_row_gYCqDG",
         "collapsible_row_MiHUHB",
+        "collapsible_row_PwV4xG",
         "collapsible_row_HGxepU",
         "collapsible_row_fXfmjK",
         "collapsible_row_HBCExR",
