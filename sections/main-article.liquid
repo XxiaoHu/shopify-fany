@@ -20,7 +20,6 @@
     endif
   endfor
 
-  assign related_article_limit = section.settings.post_limit
   assign recommended_products = article.metafields.custom.recommended_products.value
   assign has_sidebar_content = false
   if recommended_products != blank or related_article_handles.size > 0
@@ -114,7 +113,7 @@
           <section class="article-template__related" aria-labelledby="RelatedHeading-{{ section.id }}">
             <h2 id="RelatedHeading-{{ section.id }}" class="article-template__related-heading">RELATED</h2>
             <div class="article-template__related-list">
-              {%- for handle in related_article_handles limit: related_article_limit -%}
+              {%- for handle in related_article_handles -%}
                 {%- liquid
                   assign clean_handle = handle | strip
                   assign related_article = articles[clean_handle]
@@ -363,17 +362,6 @@
   "blocks": [
     {
       "type": "@app"
-    }
-  ],
-  "settings": [
-    {
-      "type": "range",
-      "id": "post_limit",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "RELATED 文章数量"
     }
   ]
 }

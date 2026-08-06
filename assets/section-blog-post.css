@@ -293,7 +293,7 @@
   overflow: hidden;
   border: 0;
   border-radius: 4px;
-  background: #fff;
+  background: #fafafa;
   color: #1e0e06;
   text-decoration: none;
 }
@@ -312,7 +312,7 @@
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
-  background: #fff;
+  background: #fafafa;
 }
 
 .article-template__product-image {
@@ -331,7 +331,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 16px;
   width: 100%;
   padding: 0;
   text-align: center;
@@ -552,7 +552,7 @@
   }
 
   .article-template__product-content {
-    gap: 6px;
+    gap: 16px;
     padding: 0;
   }
 
