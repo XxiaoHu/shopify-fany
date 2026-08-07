@@ -399,6 +399,262 @@
         "padding_bottom": 40
       }
     },
+    "animated_floating_banner_Hn6FXT": {
+      "type": "animated-floating-banner",
+      "name": "浮层图片 Banner",
+      "settings": {
+        "heading": "Designed for Women",
+        "content": "<p>添加一段简短的品牌或产品说明。</p>",
+        "text_max_width": 840,
+        "text_gap": 14,
+        "heading_font_size": 50,
+        "heading_font_weight": "600",
+        "heading_line_height": 1.1,
+        "heading_letter_spacing": 0,
+        "heading_color": "#1D1D1F",
+        "content_font_size": 14,
+        "content_font_weight": "400",
+        "content_line_height": 1.5,
+        "content_letter_spacing": 0,
+        "content_color": "#6E6E73",
+        "main_image": "shopify://shop_images/01-1.webp",
+        "mobile_main_image": "shopify://shop_images/01-1-m.webp",
+        "main_image_height": 700,
+        "main_image_fit": "cover",
+        "main_image_position": "center center",
+        "floating_image": "shopify://shop_images/m_10109f1a-74ca-41ef-8868-7e8051889e3e.webp",
+        "mobile_floating_image": "shopify://shop_images/m_10109f1a-74ca-41ef-8868-7e8051889e3e.webp",
+        "scroll_trigger_distance": 24,
+        "intro_padding_top": 48,
+        "intro_padding_bottom": 52,
+        "background_color": "#FFFFFF",
+        "mobile_heading_font_size": 32,
+        "mobile_content_font_size": 13,
+        "mobile_text_gap": 10,
+        "mobile_intro_padding_top": 32,
+        "mobile_intro_padding_bottom": 36,
+        "mobile_main_image_height": 360
+      }
+    },
+    "interactive_product_viewer_GCWmjK": {
+      "type": "interactive-product-viewer",
+      "blocks": {
+        "finish_6MKYwD": {
+          "type": "finish",
+          "settings": {
+            "label": "Natural titanium",
+            "swatch_color": "#DDC8B3",
+            "image": "shopify://shop_images/02-1.webp",
+            "mobile_image": "shopify://shop_images/02-1-m.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_DwBm3r": {
+          "type": "finish",
+          "settings": {
+            "label": "Gold titanium",
+            "swatch_color": "#f4dec8",
+            "image": "shopify://shop_images/02-2.webp",
+            "mobile_image": "shopify://shop_images/02-2-m.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_G4Vkww": {
+          "type": "finish",
+          "settings": {
+            "label": "Slate titanium",
+            "swatch_color": "#47423d",
+            "image": "shopify://shop_images/02-1.webp",
+            "mobile_image": "shopify://shop_images/02-1-m.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_xMPrTY": {
+          "type": "finish",
+          "settings": {
+            "label": "Rose Gold aluminum",
+            "swatch_color": "#f6d9cd",
+            "image_alt": ""
+          }
+        },
+        "finish_iyBAeX": {
+          "type": "finish",
+          "settings": {
+            "label": "Silver aluminum",
+            "swatch_color": "#f0eff1",
+            "image_alt": ""
+          }
+        },
+        "finish_dmN8LT": {
+          "type": "finish",
+          "settings": {
+            "label": "Jet Black aluminum",
+            "swatch_color": "#010203",
+            "image_alt": ""
+          }
+        },
+        "finish_EFkGKh": {
+          "type": "finish",
+          "settings": {
+            "label": "Space Gray aluminum",
+            "swatch_color": "#979494",
+            "image_alt": ""
+          }
+        },
+        "feature_iAdQpg": {
+          "type": "feature",
+          "settings": {
+            "title": "Sleek design",
+            "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
+            "image": "shopify://shop_images/02-2.webp",
+            "mobile_image": "shopify://shop_images/02-2-m.webp",
+            "image_alt": ""
+          }
+        },
+        "feature_GGQxGy": {
+          "type": "feature",
+          "settings": {
+            "title": "Longer battery life",
+            "description": "<p>Reliable battery performance that keeps up with your day.</p>",
+            "image": "shopify://shop_images/02-1.webp",
+            "mobile_image": "shopify://shop_images/02-1-m.webp",
+            "image_alt": ""
+          }
+        },
+        "feature_TAkttr": {
+          "type": "feature",
+          "settings": {
+            "title": "Advanced sensors",
+            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_tFXtNN": {
+          "type": "feature",
+          "settings": {
+            "title": "Durable Ion-X display",
+            "description": "<p>A durable display designed for everyday movement and activity.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_fX8tbL": {
+          "type": "feature",
+          "settings": {
+            "title": "Water and dust resistance",
+            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_M8rPMw": {
+          "type": "feature",
+          "settings": {
+            "title": "Personalization",
+            "description": "<p>Choose the look and details that make the product feel like your own.</p>",
+            "image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "finish_6MKYwD",
+        "finish_DwBm3r",
+        "finish_G4Vkww",
+        "finish_xMPrTY",
+        "finish_iyBAeX",
+        "finish_dmN8LT",
+        "finish_EFkGKh",
+        "feature_iAdQpg",
+        "feature_GGQxGy",
+        "feature_TAkttr",
+        "feature_tFXtNN",
+        "feature_fX8tbL",
+        "feature_M8rPMw"
+      ],
+      "name": "Apple 风格产品查看器",
+      "settings": {
+        "heading": "Designed for Women",
+        "landing_alt": "Product close-up",
+        "finishes_label": "Finishes",
+        "finishes_heading": "Finishes.",
+        "finishes_description": "<p>Choose the finish that best matches your style.</p>"
+      }
+    },
+    "highlights_image_gallery_rq9adr": {
+      "type": "highlights-image-gallery",
+      "blocks": {
+        "highlight_dDaJ9V": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/03-1.webp",
+            "mobile_image": "shopify://shop_images/03-1-m.webp",
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_hY4qxa": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/03-2.webp",
+            "mobile_image": "shopify://shop_images/03-2-m.webp",
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_ghTiUV": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/03-1.webp",
+            "mobile_image": "shopify://shop_images/03-1-m.webp",
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_HA7E6W": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_cGxtKQ": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_zwtB9c": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_dDaJ9V",
+        "highlight_hY4qxa",
+        "highlight_ghTiUV",
+        "highlight_HA7E6W",
+        "highlight_cGxtKQ",
+        "highlight_zwtB9c"
+      ],
+      "name": "Highlights 图片轮播",
+      "settings": {
+        "heading": "Designed for Women标题3"
+      }
+    },
     "product_overview_group_F9Xy6b": {
       "type": "product-overview-group",
       "blocks": {
@@ -1861,6 +2117,9 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "animated_floating_banner_Hn6FXT",
+    "interactive_product_viewer_GCWmjK",
+    "highlights_image_gallery_rq9adr",
     "product_overview_group_F9Xy6b",
     "faq",
     "1758592045c9c68565",
