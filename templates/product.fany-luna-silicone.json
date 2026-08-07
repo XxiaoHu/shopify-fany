@@ -1373,6 +1373,7 @@
         "product_overview_image_text_8bzVWm": {
           "type": "product-overview-image-text",
           "name": "其他 功能",
+          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/FANY_Luna_Silicone_18.webp",
             "mobile_img": "shopify://shop_images/FANY_Luna_Silicone_18-M.webp",
@@ -1931,6 +1932,138 @@
         "include_margins": true
       }
     },
+    "interactive_product_viewer_VqAXYy": {
+      "type": "interactive-product-viewer",
+      "blocks": {
+        "finish_8WFaKd": {
+          "type": "finish",
+          "settings": {
+            "label": "Natural titanium",
+            "swatch_color": "#e3ddd7",
+            "image_alt": ""
+          }
+        },
+        "finish_P49ezw": {
+          "type": "finish",
+          "settings": {
+            "label": "Gold titanium",
+            "swatch_color": "#f4dec8",
+            "image_alt": ""
+          }
+        },
+        "finish_WnKfcB": {
+          "type": "finish",
+          "settings": {
+            "label": "Slate titanium",
+            "swatch_color": "#47423d",
+            "image_alt": ""
+          }
+        },
+        "finish_Gd6VxE": {
+          "type": "finish",
+          "settings": {
+            "label": "Rose Gold aluminum",
+            "swatch_color": "#f6d9cd",
+            "image_alt": ""
+          }
+        },
+        "finish_kXnwYq": {
+          "type": "finish",
+          "settings": {
+            "label": "Silver aluminum",
+            "swatch_color": "#f0eff1",
+            "image_alt": ""
+          }
+        },
+        "finish_MGBNLM": {
+          "type": "finish",
+          "settings": {
+            "label": "Jet Black aluminum",
+            "swatch_color": "#010203",
+            "image_alt": ""
+          }
+        },
+        "finish_WJeRJn": {
+          "type": "finish",
+          "settings": {
+            "label": "Space Gray aluminum",
+            "swatch_color": "#979494",
+            "image_alt": ""
+          }
+        },
+        "feature_diC6r6": {
+          "type": "feature",
+          "settings": {
+            "title": "Sleek design",
+            "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_xA4QH9": {
+          "type": "feature",
+          "settings": {
+            "title": "Longer battery life",
+            "description": "<p>Reliable battery performance that keeps up with your day.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_CHB3Jr": {
+          "type": "feature",
+          "settings": {
+            "title": "Advanced sensors",
+            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_tgJMQM": {
+          "type": "feature",
+          "settings": {
+            "title": "Durable Ion-X display",
+            "description": "<p>A durable display designed for everyday movement and activity.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_7RDmVq": {
+          "type": "feature",
+          "settings": {
+            "title": "Water and dust resistance",
+            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>",
+            "image_alt": ""
+          }
+        },
+        "feature_9DRWby": {
+          "type": "feature",
+          "settings": {
+            "title": "Personalization",
+            "description": "<p>Choose the look and details that make the product feel like your own.</p>",
+            "image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "finish_8WFaKd",
+        "finish_P49ezw",
+        "finish_WnKfcB",
+        "finish_Gd6VxE",
+        "finish_kXnwYq",
+        "finish_MGBNLM",
+        "finish_WJeRJn",
+        "feature_diC6r6",
+        "feature_xA4QH9",
+        "feature_CHB3Jr",
+        "feature_tgJMQM",
+        "feature_7RDmVq",
+        "feature_9DRWby"
+      ],
+      "name": "Apple 风格产品查看器",
+      "settings": {
+        "heading": "Designed for Women",
+        "landing_alt": "Product close-up",
+        "finishes_label": "Finishes",
+        "finishes_heading": "Finishes.",
+        "finishes_description": "<p>Choose the finish that best matches your style.</p>"
+      }
+    },
     "newsletter_QLP44D": {
       "type": "newsletter",
       "blocks": {
@@ -1975,6 +2108,7 @@
     "product_overview_group_F9Xy6b",
     "faq",
     "1758592045c9c68565",
+    "interactive_product_viewer_VqAXYy",
     "newsletter_QLP44D"
   ]
 }
