@@ -1,0 +1,480 @@
+{{ 'custom-watch-faces.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .watch-face__title {
+    color: #1E0E06;
+    font-size: {{ section.settings.title_font_size }}px;
+    margin-bottom: 1.2rem;
+  }
+
+  #shopify-section-{{ section.id }} .watch-face__desc {
+    color: #686766;
+    margin: 0 auto;
+    font-size: {{ section.settings.text_font_size }}px;
+    line-height: 1.6;
+    {% if section.settings.text_width != blank and section.settings.text_width > 0 %}
+    width: {{ section.settings.text_width }}px;
+    max-width: 100%;
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .watch-face__title {
+      font-size: {{ section.settings.mobile_title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .watch-face__desc {
+      font-size: {{ section.settings.mobile_text_font_size }}px;
+      {% if section.settings.mobile_text_width != blank and section.settings.mobile_text_width > 0 %}
+      width: {{ section.settings.mobile_text_width }}px;
+      max-width: 100%;
+      {% endif %}
+    }
+  }
+{%- endstyle -%}
+
+<div class="watch-face-wrapper section-{{ section.id }}-padding" data-watch-face-section data-section-id="{{ section.id }}">
+  <div class="watch-face-section">
+    <div class="watch-face__content">
+      {%- if section.settings.header != blank or section.settings.text != blank -%}
+        <div class="watch-face__title-container">
+          {%- if section.settings.header != blank -%}
+            <h2 class="watch-face__title">{{ section.settings.header }}</h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="watch-face__desc">{{ section.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="watch-face__icon-wrap">
+        <div class="watch-face__icon-circle" id="section-{{ section.id }}-wrap">
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.settings.image != blank -%}
+                <div class="watch-face__icon-item" data-icon="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                  <div class="watch-face__icon-img-wrapper">
+                    {{
+                      block.settings.image
+                      | image_url: width: block.settings.image.width, height: block.settings.image.height
+                      | image_tag: class: 'watch-face__icon-img', loading: 'lazy'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- elsif section.settings.image_group != blank -%}
+            {%- assign image_group = metaobjects.watch_faces_gallery[section.settings.image_group].images.value -%}
+            {%- for item in image_group -%}
+              <div class="watch-face__icon-item" data-icon="{{ forloop.index0 }}">
+                <div class="watch-face__icon-img-wrapper">
+                  {{
+                    item
+                    | image_url: width: item.value.width, height: item.value.height
+                    | image_tag: class: 'watch-face__icon-img', loading: 'lazy'
+                  }}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+        {%- if section.settings.watch_image != blank -%}
+          {{
+            section.settings.watch_image
+            | image_url: width: section.settings.watch_image.width, height: section.settings.watch_image.height
+            | image_tag: class: 'watch-face__watch-img', loading: 'lazy'
+          }}
+        {%- endif -%}
+      </div>
+
+      <div class="watch-face__icon-bar">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.image != blank -%}
+              <div class="watch-face__icon-button" data-icon="{{ forloop.index0 }}">
+                <div class="watch-face__button-border">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="watch-face__circle-path" />
+                  </svg>
+                </div>
+                {{
+                  block.settings.image
+                  | image_url: width: block.settings.image.width, height: block.settings.image.height
+                  | image_tag: class: 'watch-face__button-img', loading: 'lazy'
+                }}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- elsif section.settings.image_group != blank -%}
+          {%- assign image_group = metaobjects.watch_faces_gallery[section.settings.image_group].images.value -%}
+          {%- for item in image_group -%}
+            <div class="watch-face__icon-button" data-icon="{{ forloop.index0 }}">
+              <div class="watch-face__button-border">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="watch-face__circle-path" />
+                </svg>
+              </div>
+              {{
+                item
+                | image_url: width: item.value.width, height: item.value.height
+                | image_tag: class: 'watch-face__button-img', loading: 'lazy'
+              }}
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+
+      <div class="watch-face__side-mask watch-face__side-mask-left">
+        <div class="watch-face__gradient-left"></div>
+      </div>
+      <div class="watch-face__side-mask watch-face__side-mask-right">
+        <div class="watch-face__gradient-right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const sectionId = '{{ section.id }}';
+
+    const CONFIG = {
+      intervalTime: 4000,
+      baseAngle: 8,
+      circleDashTotal: 93,
+      progressStepInterval: 100,
+    };
+
+    let state = {
+      iconCount: null,
+      totalIconCount: null,
+      centerIndex: null,
+      currentIndex: 0,
+      timer: null,
+      progressTimer: null,
+      iconWrap: null,
+      iconButtons: [],
+    };
+
+    const $ = (selector, parent) => parent.querySelector(selector);
+    const $$ = (selector, parent) => Array.from(parent.querySelectorAll(selector));
+
+    const stopAllTimers = () => {
+      clearInterval(state.timer);
+      state.timer = null;
+      clearInterval(state.progressTimer);
+      state.progressTimer = null;
+    };
+
+    const destroy = () => {
+      stopAllTimers();
+      state = {
+        iconCount: null,
+        totalIconCount: null,
+        centerIndex: null,
+        currentIndex: 0,
+        timer: null,
+        progressTimer: null,
+        iconWrap: null,
+        iconButtons: [],
+      };
+    };
+
+    const autoPlay = () => {
+      state.timer = setInterval(() => {
+        switchToIndex(state.currentIndex + 1);
+      }, CONFIG.intervalTime);
+    };
+
+    const switchToIndex = (index) => {
+      const step = index - state.currentIndex;
+      state.currentIndex = (index + state.totalIconCount) % state.totalIconCount;
+      clearInterval(state.progressTimer);
+      state.progressTimer = null;
+      updateIconContainer(step);
+      updateIconBar();
+      startCircleProgress();
+    };
+
+    const updateIconContainer = (step) => {
+      const iconContainers = $$('.watch-face__icon-item', state.iconWrap);
+      iconContainers.forEach((container) => {
+        let dataIndex = parseInt(container.getAttribute('data-index'));
+        dataIndex = (dataIndex - step + state.totalIconCount) % state.totalIconCount;
+        container.setAttribute('data-index', dataIndex);
+
+        const rotateAngle = (dataIndex - state.centerIndex) * CONFIG.baseAngle;
+
+        container.classList.toggle('edge', dataIndex === state.totalIconCount - 1 || dataIndex === 0);
+        container.style.transform = 'rotate(' + rotateAngle + 'deg)';
+
+        const imgWrapper = container.querySelector('.watch-face__icon-img-wrapper');
+        imgWrapper.classList.toggle('highlight', rotateAngle === 0);
+      });
+    };
+
+    const updateIconBar = () => {
+      state.iconButtons.forEach((btn) => {
+        const circle = btn.querySelector('.watch-face__circle-path');
+        circle.style.strokeDashoffset = CONFIG.circleDashTotal;
+      });
+    };
+
+    const startCircleProgress = () => {
+      const targetBtn = state.iconButtons[state.currentIndex % state.iconCount];
+      if (!targetBtn) return;
+      const circle = targetBtn.querySelector('.watch-face__circle-path');
+      let currentOffset = CONFIG.circleDashTotal;
+      const step = CONFIG.circleDashTotal / (CONFIG.intervalTime / CONFIG.progressStepInterval);
+
+      state.progressTimer = setInterval(() => {
+        currentOffset -= step;
+        if (currentOffset <= 0) {
+          currentOffset = 0;
+          clearInterval(state.progressTimer);
+        }
+        circle.style.strokeDashoffset = currentOffset;
+      }, CONFIG.progressStepInterval);
+    };
+
+    const handleIconClick = (e) => {
+      const targetIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+      const newIndex = targetIndex + state.currentIndex - state.centerIndex;
+      stopAllTimers();
+      switchToIndex(newIndex);
+      autoPlay();
+    };
+
+    const handleBarButtonClick = (idx) => {
+      const curIconIdx = state.currentIndex % state.iconCount;
+      if (curIconIdx !== idx) {
+        const newIndex = parseInt(state.currentIndex / state.iconCount) * state.iconCount + idx;
+        stopAllTimers();
+        switchToIndex(newIndex);
+        autoPlay();
+      }
+    };
+
+    const initIconCircle = () => {
+      const originalIcons = $$('.watch-face__icon-item', state.iconWrap);
+      if (originalIcons.length === 0) return;
+      state.iconCount = originalIcons.length;
+      const originalIconList = originalIcons.map((icon) => icon.cloneNode(true));
+      state.iconWrap.innerHTML = '';
+      let num = parseInt(24 / state.iconCount);
+      if (num % 2 !== 0) {
+        num = num + 1;
+      }
+      state.totalIconCount = num * state.iconCount;
+      state.centerIndex = state.totalIconCount / 2;
+      for (let i = 0; i < state.totalIconCount; i++) {
+        const iconIdx = i % state.iconCount;
+        const cloneIcon = originalIconList[iconIdx].cloneNode(true);
+        cloneIcon.setAttribute('data-index', i);
+        cloneIcon.setAttribute('data-icon', iconIdx);
+        state.iconWrap.appendChild(cloneIcon);
+      }
+
+      $$('.watch-face__icon-item', state.iconWrap).forEach((icon) => {
+        icon.addEventListener('click', handleIconClick);
+      });
+
+      updateIconContainer(0);
+    };
+
+    const init = () => {
+      const sectionEl = document.querySelector('[data-watch-face-section][data-section-id="' + sectionId + '"]');
+      if (!sectionEl) return;
+
+      destroy();
+
+      state.iconWrap = $('#section-{{ section.id }}-wrap', sectionEl);
+      if (!state.iconWrap) return;
+      state.iconButtons = $$('.watch-face__icon-button', sectionEl);
+
+      state.iconButtons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => handleBarButtonClick(idx));
+      });
+
+      initIconCircle();
+      if (state.iconCount > 0) {
+        startCircleProgress();
+        autoPlay();
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.target.querySelector('[data-section-id="' + sectionId + '"]')) {
+        init();
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "自定义表盘",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "header",
+      "label": "标题"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "描述"
+    },
+    {
+      "type": "image_picker",
+      "id": "watch_image",
+      "label": "手表图片"
+    },
+    {
+      "type": "metaobject",
+      "id": "image_group",
+      "label": "背景图片组（metaobject）",
+      "info": "优先使用下方区块图片；未添加区块时读取此 metaobject",
+      "metaobject_type": "watch_faces_gallery"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "label": "描述宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "移动端布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字体大小",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_font_size",
+      "min": 10,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字体大小",
+      "default": 18
+    },
+    {
+      "type": "number",
+      "id": "mobile_text_width",
+      "label": "描述宽度",
+      "info": "默认为设置宽度"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "watch_face",
+      "name": "表盘图片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "表盘图片"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "自定义表盘"
+    }
+  ]
+}
+{% endschema %}
