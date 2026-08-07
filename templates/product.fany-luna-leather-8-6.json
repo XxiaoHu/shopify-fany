@@ -404,10 +404,10 @@
       "name": "浮层图片 Banner",
       "settings": {
         "heading": "Designed for Women: Shine in Your Rhythm",
-        "content": "<p>Every woman carries her own quiet transformation. FANY is your daily companion, aligned with your unique rhythm. It supports your wellbeing by tracking your sleep, menstrual cycles, heart rate, and mood. Like a butterfly taking wing, tune into your body and shine in your own light.<br/><br/>Discover FANY Luna-Winner of the American Good Design Gold Award & French Design Gold Award. </p>",
+        "content": "<p>Every woman carries her own quiet transformation. FANY is your daily companion, aligned with your unique rhythm. It supports your wellbeing by tracking your sleep, menstrual cycles, heart rate, and mood. Like a butterfly taking wing, tune into your body and shine in your own light.<br/>Discover FANY Luna-Winner of the American Good Design Gold Award & French Design Gold Award. </p>",
         "text_max_width": 840,
         "text_gap": 14,
-        "heading_font_size": 50,
+        "heading_font_size": 40,
         "heading_font_weight": "600",
         "heading_line_height": 1.1,
         "heading_letter_spacing": 0,
@@ -428,10 +428,10 @@
         "intro_padding_top": 48,
         "intro_padding_bottom": 52,
         "background_color": "#ffffff",
-        "mobile_heading_font_size": 32,
-        "mobile_content_font_size": 13,
+        "mobile_heading_font_size": 28,
+        "mobile_content_font_size": 16,
         "mobile_text_gap": 10,
-        "mobile_intro_padding_top": 32,
+        "mobile_intro_padding_top": 20,
         "mobile_intro_padding_bottom": 36,
         "mobile_main_image_height": 360
       }
