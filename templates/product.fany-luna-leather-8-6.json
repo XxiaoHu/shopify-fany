@@ -662,6 +662,7 @@
           "type": "state",
           "settings": {
             "label": "Pleasant",
+            "image": "shopify://shop_images/08-1.webp",
             "gradient_start": "#ffe3bd",
             "gradient_end": "#ffffff"
           }
