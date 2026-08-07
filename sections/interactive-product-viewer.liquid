@@ -1,6 +1,21 @@
 {{ 'interactive-product-viewer.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'interactive-product-viewer.js' | asset_url }}" defer="defer"></script>
 
+{%- style -%}
+  #shopify-section-{{ section.id }} .interactive-product-viewer__heading {
+    font-size: {{ section.settings.heading_font_size }}px;
+    color: {{ section.settings.heading_color }};
+  }
+  #shopify-section-{{ section.id }} .interactive-product-viewer__detail-title--finishes {
+    font-size: {{ section.settings.finishes_title_font_size }}px;
+    color: {{ section.settings.finishes_title_color }};
+  }
+  #shopify-section-{{ section.id }} .interactive-product-viewer__detail-copy--finishes {
+    font-size: {{ section.settings.finishes_desc_font_size }}px;
+    color: {{ section.settings.finishes_desc_color }};
+  }
+{%- endstyle -%}
+
 {%- liquid
   assign finish_blocks = section.blocks | where: 'type', 'finish'
   assign feature_blocks = section.blocks | where: 'type', 'feature'
@@ -228,12 +243,12 @@
           >
             <div class="interactive-product-viewer__detail-content">
               {%- if section.settings.finishes_heading != blank -%}
-                <h3 class="interactive-product-viewer__detail-title inline-richtext">
+                <h3 class="interactive-product-viewer__detail-title interactive-product-viewer__detail-title--finishes">
                   {{ section.settings.finishes_heading }}
                 </h3>
               {%- endif -%}
               {%- if section.settings.finishes_description != blank -%}
-                <div class="interactive-product-viewer__detail-copy rte">
+                <div class="interactive-product-viewer__detail-copy interactive-product-viewer__detail-copy--finishes rte">
                   {{ section.settings.finishes_description }}
                 </div>
               {%- endif -%}
@@ -307,10 +322,10 @@
           >
             <div class="interactive-product-viewer__detail-content">
               {%- if block.settings.title != blank -%}
-                <h3 class="interactive-product-viewer__detail-title">{{ block.settings.title | escape }}</h3>
+                <h3 class="interactive-product-viewer__detail-title" style="font-size: {{ block.settings.title_font_size }}px; color: {{ block.settings.title_color }};">{{ block.settings.title | escape }}</h3>
               {%- endif -%}
               {%- if block.settings.description != blank -%}
-                <div class="interactive-product-viewer__detail-copy rte">
+                <div class="interactive-product-viewer__detail-copy rte" style="font-size: {{ block.settings.desc_font_size }}px; color: {{ block.settings.desc_color }};">
                   {{ block.settings.description }}
                 </div>
               {%- endif -%}
@@ -366,6 +381,22 @@
       "default": "Designed for Women"
     },
     {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 16,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
+    },
+    {
       "type": "image_picker",
       "id": "landing_image",
       "label": "默认图片（桌面端）",
@@ -404,6 +435,38 @@
       "id": "finishes_description",
       "label": "展开说明",
       "default": "<p>Choose the finish that best matches your style.</p>"
+    },
+    {
+      "type": "range",
+      "id": "finishes_title_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "饰面标题字号",
+      "default": 17
+    },
+    {
+      "type": "color",
+      "id": "finishes_title_color",
+      "label": "饰面标题颜色",
+      "default": "#1d1d1f"
+    },
+    {
+      "type": "range",
+      "id": "finishes_desc_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "饰面说明字号",
+      "default": 17
+    },
+    {
+      "type": "color",
+      "id": "finishes_desc_color",
+      "label": "饰面说明颜色",
+      "default": "#1d1d1f"
     }
   ],
   "max_blocks": 16,
@@ -461,10 +524,42 @@
           "default": "Feature title"
         },
         {
+          "type": "range",
+          "id": "title_font_size",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "标题字号",
+          "default": 17
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "标题颜色",
+          "default": "#1d1d1f"
+        },
+        {
           "type": "richtext",
           "id": "description",
           "label": "说明",
           "default": "<p>Add a short description for this feature.</p>"
+        },
+        {
+          "type": "range",
+          "id": "desc_font_size",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "说明字号",
+          "default": 17
+        },
+        {
+          "type": "color",
+          "id": "desc_color",
+          "label": "说明颜色",
+          "default": "#1d1d1f"
         },
         {
           "type": "image_picker",
