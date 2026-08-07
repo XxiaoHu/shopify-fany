@@ -21,11 +21,21 @@
     --topic-faq-padding-top: {{ section.settings.padding_top }}px;
     --topic-faq-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+  #shopify-section-{{ section.id }} .topic-faq__heading {
+    font-size: {{ section.settings.heading_font_size }}px;
+    color: {{ section.settings.heading_color }};
+    text-align: {{ section.settings.heading_alignment }};
+    margin-bottom: {{ section.settings.heading_margin_bottom }}px;
+  }
 {%- endstyle -%}
 
 <div class="topic-faq" data-topic-faq data-section-id="{{ section.id }}" data-initial-limit="{{ initial_limit }}">
   <div class="topic-faq__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="topic-faq__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
     <div class="topic-faq__panel">
+
       {%- if section.settings.show_topic_selector and category_options.size > 0 -%}
         <div class="topic-faq__selector">
           <label class="topic-faq__label" for="TopicFaqSelect-{{ section.id }}">
@@ -302,6 +312,49 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "标题",
+      "default": "常见问题"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "标题对齐方式",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "标题与内容间距",
+      "default": 24
+    },
     {
       "type": "checkbox",
       "id": "show_topic_selector",
