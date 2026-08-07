@@ -200,13 +200,6 @@ if (!customElements.get('emotional-image-switcher')) {
         panel.setAttribute('aria-hidden', String(!isActive));
       });
 
-      const activePanel = this.panels[index];
-      const gradientStart = activePanel.dataset.emotionalGradientStart;
-      const gradientEnd = activePanel.dataset.emotionalGradientEnd;
-
-      if (gradientStart) this.style.setProperty('--emotional-gradient-start', gradientStart);
-      if (gradientEnd) this.style.setProperty('--emotional-gradient-end', gradientEnd);
-
       this.updateSlider();
 
       if (resetAutoplay) {

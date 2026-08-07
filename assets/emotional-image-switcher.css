@@ -17,24 +17,14 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to bottom, var(--emotional-gradient-start, #ffe3bd), var(--emotional-gradient-end, #fff));
+  background: #fff;
 }
 
 .emotional-image-switcher__visual {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 34.469271vw;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  transition: transform 0.8s ease;
-  will-change: transform;
-}
-
-.emotional-image-switcher.is-entered .emotional-image-switcher__visual {
-  transform: translate(calc(-50% - 15.78125vw), -50%);
-  transition-delay: 0.4s;
+  inset: 0;
+  transition: opacity 0.8s ease;
+  will-change: opacity;
 }
 
 .emotional-image-switcher__panel {
@@ -60,7 +50,7 @@
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -201,7 +191,7 @@
       'copy'
       'visual'
       'controls';
-    background: linear-gradient(to bottom, var(--emotional-gradient-start, #ffe3bd), var(--emotional-gradient-end, #fff));
+    background: #fff;
   }
 
   .emotional-image-switcher__right {

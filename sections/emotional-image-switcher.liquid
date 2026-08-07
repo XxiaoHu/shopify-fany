@@ -1,22 +1,12 @@
 {{ 'emotional-image-switcher.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'emotional-image-switcher.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid
-  assign initial_gradient_start = '#FFE3BD'
-  assign initial_gradient_end = '#FFFFFF'
-
-  if section.blocks.size > 0
-    assign initial_gradient_start = section.blocks.first.settings.gradient_start
-    assign initial_gradient_end = section.blocks.first.settings.gradient_end
-  endif
--%}
-
 <emotional-image-switcher
   id="EmotionalImageSwitcher-{{ section.id }}"
   class="emotional-image-switcher"
   data-autoplay="{{ section.settings.enable_autoplay }}"
   data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
-  style="--emotional-gradient-start: {{ initial_gradient_start }}; --emotional-gradient-end: {{ initial_gradient_end }}; --emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px;"
+  style="--emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px;"
 >
   <div class="emotional-image-switcher__sticky">
     <div class="emotional-image-switcher__visual" data-emotional-visual>
@@ -30,8 +20,6 @@
             aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
             data-emotional-panel
             data-emotional-index="{{ forloop.index0 }}"
-            data-emotional-gradient-start="{{ block.settings.gradient_start }}"
-            data-emotional-gradient-end="{{ block.settings.gradient_end }}"
             {{ block.shopify_attributes }}
           >
             {%- if block.settings.image != blank -%}
@@ -42,7 +30,7 @@
                   class: 'emotional-image-switcher__image',
                   loading: 'lazy',
                   widths: '500, 750, 1000, 1250, 1500, 1750, 2000',
-                  sizes: '(max-width: 749px) 100vw, 35vw',
+                  sizes: '100vw',
                   alt: block.settings.label
               }}
             {%- else -%}
@@ -215,20 +203,8 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "完整展示图片",
-          "info": "建议使用 1:1 的完整透明背景图片；未设置时显示 Shopify 原生占位图"
-        },
-        {
-          "type": "color",
-          "id": "gradient_start",
-          "label": "背景渐变顶部颜色",
-          "default": "#FFE3BD"
-        },
-        {
-          "type": "color",
-          "id": "gradient_end",
-          "label": "背景渐变底部颜色",
-          "default": "#FFFFFF"
+          "label": "背景图片",
+          "info": "图片将作为整个区块的全屏背景显示；未设置时显示占位图"
         }
       ]
     }
@@ -241,25 +217,19 @@
         {
           "type": "state",
           "settings": {
-            "label": "Pleasant",
-            "gradient_start": "#FFE3BD",
-            "gradient_end": "#FFFFFF"
+            "label": "Pleasant"
           }
         },
         {
           "type": "state",
           "settings": {
-            "label": "Neutral",
-            "gradient_start": "#C0F0EF",
-            "gradient_end": "#FFFFFF"
+            "label": "Neutral"
           }
         },
         {
           "type": "state",
           "settings": {
-            "label": "Unpleasant",
-            "gradient_start": "#C7C7FF",
-            "gradient_end": "#FFFFFF"
+            "label": "Unpleasant"
           }
         }
       ]
