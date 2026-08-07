@@ -1373,6 +1373,7 @@
         "product_overview_image_text_8bzVWm": {
           "type": "product-overview-image-text",
           "name": "其他 功能",
+          "disabled": true,
           "settings": {
             "pc_img": "shopify://shop_images/FANY_Luna_Silicone_18.webp",
             "mobile_img": "shopify://shop_images/FANY_Luna_Silicone_18-M.webp",
@@ -1876,7 +1877,6 @@
         "collapsible_row_bqz4g8",
         "collapsible_row_9wmwr3"
       ],
-      "disabled": true,
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
         ".collapsible-content__heading {color: #f2d0ad;}"
@@ -1909,26 +1909,6 @@
         "desktop_layout": "image_first",
         "padding_top": 20,
         "padding_bottom": 36
-      }
-    },
-    "1758592045c9c68565": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_33zBHA": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_33zBHA"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "newsletter_QLP44D": {
@@ -1974,7 +1954,6 @@
     "main",
     "product_overview_group_F9Xy6b",
     "faq",
-    "1758592045c9c68565",
     "newsletter_QLP44D"
   ]
 }
