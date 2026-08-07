@@ -535,53 +535,6 @@
           },
           "blocks": {}
         },
-        "product_overview_aesthetics_FqynqL": {
-          "type": "product-overview-aesthetics",
-          "name": "图片动画",
-          "disabled": true,
-          "settings": {
-            "mob": "aesthetics-gallery-zhhe7cfj",
-            "padding_top": 0,
-            "padding_bottom": 0,
-            "mobile_padding_top": 0,
-            "mobile_padding_bottom": 0
-          },
-          "blocks": {}
-        },
-        "product_overview_video_yTrkqr": {
-          "type": "product-overview-video",
-          "name": "t:sections.video.presets.name",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/icon旋转动画_紫_PC端1200(2).mp4",
-            "mobile_video": "shopify://files/videos/icon旋转动画_紫_手机端(2).mp4",
-            "description": "",
-            "full_width": false,
-            "enable_video_looping": true,
-            "autoplay": true,
-            "color_scheme": "",
-            "padding_top": 0,
-            "padding_bottom": 0
-          },
-          "blocks": {}
-        },
-        "product_overview_fitness_MaYPkK": {
-          "type": "product-overview-fitness",
-          "name": "运动健身",
-          "disabled": true,
-          "settings": {
-            "watch_image": "shopify://shop_images/images-fitness-watch-before-1_png.webp",
-            "circle_1": "fitness-circle-gallery-uyebyd2e",
-            "circle_2": "fitness-circle-gallery-uyebyd2e",
-            "circle_3": "fitness-circle-gallery-uyebyd2e",
-            "circle_color": "#000000",
-            "padding_top": 40,
-            "padding_bottom": 40,
-            "mobile_padding_top": 40,
-            "mobile_padding_bottom": 40
-          },
-          "blocks": {}
-        },
         "product_overview_image_text_bDVYqF": {
           "type": "product-overview-image-text",
           "name": "轻盈舒适设计 文案",
@@ -998,42 +951,6 @@
           },
           "blocks": {}
         },
-        "product_overview_two_image_text_pRTDi3": {
-          "type": "product-overview-two-image-text",
-          "name": "上下结构图文-两图",
-          "disabled": true,
-          "settings": {
-            "pc_img_1": "shopify://shop_images/pc_0701d03a-4498-4b75-873b-4e341bb539e0.webp",
-            "mobile_img_1": "shopify://shop_images/app.webp",
-            "pc_img_2": "shopify://shop_images/pc_acc5855a-fed7-4474-ae0b-c6192b55b96d.webp",
-            "mobile_img_2": "shopify://shop_images/app_87784ba0-a278-4e30-8238-34325ddf4678.webp",
-            "header_width": 1000,
-            "header": "<p>Menstrual Cycle Insights for Health and Balance</p>",
-            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
-            "img_text_margin": 70,
-            "padding_top": 36,
-            "padding_bottom": 36
-          },
-          "blocks": {}
-        },
-        "product_overview_image_text_video_jaAGVn": {
-          "type": "product-overview-image-text-video",
-          "name": "上下结构图文+视频",
-          "disabled": true,
-          "settings": {
-            "img": "shopify://shop_images/260326-2.webp",
-            "enable_video_looping": false,
-            "video": "shopify://files/videos/icon旋转动画_紫1200.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "header": "<p>Let's Start the Deep - </p><p>Breathing Exercise Now</p>",
-            "text-24": "<p>When stress builds, follow its 1-minute breathing guide—inhale, exhale—and feel yourself relax. At your desk, on the couch, or outdoors, calm is always within reach.</p>",
-            "img_text_margin": 70,
-            "padding_top": 36,
-            "padding_bottom": 36
-          },
-          "blocks": {}
-        },
         "product_overview_image_text_nFQFtH": {
           "type": "product-overview-image-text",
           "name": "110 运动",
@@ -1066,38 +983,6 @@
             "mobile_img_text_margin": 20,
             "mobile_padding_top": 40,
             "mobile_padding_bottom": 70
-          },
-          "blocks": {}
-        },
-        "product_overview_image_text_9CBGxL": {
-          "type": "product-overview-image-text",
-          "name": "上下结构图文",
-          "disabled": true,
-          "settings": {
-            "header": "<p>110 Fitness Tracking Modes: Work Out</p><p>Anytime, Anywhere</p>",
-            "text-24": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
-            "img_first": true,
-            "img_has_back": false,
-            "text_alignment": "center",
-            "back_color": "",
-            "font_color": "#1e0e06",
-            "title_font_size": 40,
-            "text_font_size": 24,
-            "img_text_margin": 75,
-            "padding_top": 36,
-            "padding_bottom": 36,
-            "mobile_header": "<p>110 Fitness Tracking Modes: Work OutAnytime, Anywhere</p>",
-            "mobile_text": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
-            "mobile_img_first": false,
-            "mobile_img_has_back": false,
-            "mobile_text_alignment": "center",
-            "mobile_back_color": "",
-            "mobile_font_color": "#1e0e06",
-            "mobile_title_font_size": 40,
-            "mobile_text_font_size": 24,
-            "mobile_img_text_margin": 20,
-            "mobile_padding_top": 36,
-            "mobile_padding_bottom": 36
           },
           "blocks": {}
         },
@@ -1335,6 +1220,155 @@
           },
           "blocks": {}
         },
+        "product_overview_highlights_bAWbKU": {
+          "type": "product-overview-highlights",
+          "name": "精选内测者评价图",
+          "settings": {
+            "overflow": true,
+            "text_alignment": "center",
+            "header": "",
+            "image_group": "media-gallery-k4rp5dj7",
+            "title_padding_bottom": 30,
+            "desktop_content_position": "middle-left",
+            "desktop_content_alignment": "left",
+            "text_width": 400,
+            "block_padding_top": 40,
+            "block_padding_bottom": 40,
+            "font_color": "#1e0e06",
+            "back_color": "",
+            "title_font_size": 40,
+            "text_font_size": 18,
+            "padding_top": 92,
+            "padding_bottom": 40,
+            "mobile_title_padding_bottom": 30,
+            "mobile_desktop_content_position": "top-left",
+            "mobile_content_alignment": "left",
+            "mobile_block_padding_top": 40,
+            "mobile_block_padding_bottom": 40,
+            "mobile_font_color": "#1e0e06",
+            "mobile_back_color": "",
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 18,
+            "mobile_padding_top": 60,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_video_yTrkqr": {
+          "type": "product-overview-video",
+          "name": "t:sections.video.presets.name",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/icon旋转动画_紫_PC端1200(2).mp4",
+            "mobile_video": "shopify://files/videos/icon旋转动画_紫_手机端(2).mp4",
+            "description": "",
+            "full_width": false,
+            "enable_video_looping": true,
+            "autoplay": true,
+            "color_scheme": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "product_overview_fitness_MaYPkK": {
+          "type": "product-overview-fitness",
+          "name": "运动健身",
+          "disabled": true,
+          "settings": {
+            "watch_image": "shopify://shop_images/images-fitness-watch-before-1_png.webp",
+            "circle_1": "fitness-circle-gallery-uyebyd2e",
+            "circle_2": "fitness-circle-gallery-uyebyd2e",
+            "circle_3": "fitness-circle-gallery-uyebyd2e",
+            "circle_color": "#000000",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "mobile_padding_top": 40,
+            "mobile_padding_bottom": 40
+          },
+          "blocks": {}
+        },
+        "product_overview_two_image_text_pRTDi3": {
+          "type": "product-overview-two-image-text",
+          "name": "上下结构图文-两图",
+          "disabled": true,
+          "settings": {
+            "pc_img_1": "shopify://shop_images/pc_0701d03a-4498-4b75-873b-4e341bb539e0.webp",
+            "mobile_img_1": "shopify://shop_images/app.webp",
+            "pc_img_2": "shopify://shop_images/pc_acc5855a-fed7-4474-ae0b-c6192b55b96d.webp",
+            "mobile_img_2": "shopify://shop_images/app_87784ba0-a278-4e30-8238-34325ddf4678.webp",
+            "header_width": 1000,
+            "header": "<p>Menstrual Cycle Insights for Health and Balance</p>",
+            "text-24": "<p>Whether your cycle is regular, irregular, or you're in menopause, menstrual health ties closely to women’s overall wellbeing. </p>",
+            "img_text_margin": 70,
+            "padding_top": 36,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_video_jaAGVn": {
+          "type": "product-overview-image-text-video",
+          "name": "上下结构图文+视频",
+          "disabled": true,
+          "settings": {
+            "img": "shopify://shop_images/260326-2.webp",
+            "enable_video_looping": false,
+            "video": "shopify://files/videos/icon旋转动画_紫1200.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "header": "<p>Let's Start the Deep - </p><p>Breathing Exercise Now</p>",
+            "text-24": "<p>When stress builds, follow its 1-minute breathing guide—inhale, exhale—and feel yourself relax. At your desk, on the couch, or outdoors, calm is always within reach.</p>",
+            "img_text_margin": 70,
+            "padding_top": 36,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_image_text_9CBGxL": {
+          "type": "product-overview-image-text",
+          "name": "上下结构图文",
+          "disabled": true,
+          "settings": {
+            "header": "<p>110 Fitness Tracking Modes: Work Out</p><p>Anytime, Anywhere</p>",
+            "text-24": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "img_first": true,
+            "img_has_back": false,
+            "text_alignment": "center",
+            "back_color": "",
+            "font_color": "#1e0e06",
+            "title_font_size": 40,
+            "text_font_size": 24,
+            "img_text_margin": 75,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_header": "<p>110 Fitness Tracking Modes: Work OutAnytime, Anywhere</p>",
+            "mobile_text": "<p>From running to yoga, Pilates, walking, cycling, HIIT, strength and more, FANY Luna keeps pace with your every move. Synchronize your workout data, heart rate, and calories, and master your fitness rhythm with ease.</p>",
+            "mobile_img_first": false,
+            "mobile_img_has_back": false,
+            "mobile_text_alignment": "center",
+            "mobile_back_color": "",
+            "mobile_font_color": "#1e0e06",
+            "mobile_title_font_size": 40,
+            "mobile_text_font_size": 24,
+            "mobile_img_text_margin": 20,
+            "mobile_padding_top": 36,
+            "mobile_padding_bottom": 36
+          },
+          "blocks": {}
+        },
+        "product_overview_aesthetics_FqynqL": {
+          "type": "product-overview-aesthetics",
+          "name": "图片动画",
+          "disabled": true,
+          "settings": {
+            "mob": "aesthetics-gallery-zhhe7cfj",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0
+          },
+          "blocks": {}
+        },
         "product_overview_image_text_peehF6": {
           "type": "product-overview-image-text",
           "name": "多色 可选",
@@ -1428,40 +1462,6 @@
             "mobile_padding_bottom": 0
           },
           "blocks": {}
-        },
-        "product_overview_highlights_bAWbKU": {
-          "type": "product-overview-highlights",
-          "name": "精选内测者评价图",
-          "settings": {
-            "overflow": true,
-            "text_alignment": "center",
-            "header": "",
-            "image_group": "media-gallery-k4rp5dj7",
-            "title_padding_bottom": 30,
-            "desktop_content_position": "middle-left",
-            "desktop_content_alignment": "left",
-            "text_width": 400,
-            "block_padding_top": 40,
-            "block_padding_bottom": 40,
-            "font_color": "#1e0e06",
-            "back_color": "",
-            "title_font_size": 40,
-            "text_font_size": 18,
-            "padding_top": 92,
-            "padding_bottom": 40,
-            "mobile_title_padding_bottom": 30,
-            "mobile_desktop_content_position": "top-left",
-            "mobile_content_alignment": "left",
-            "mobile_block_padding_top": 40,
-            "mobile_block_padding_bottom": 40,
-            "mobile_font_color": "#1e0e06",
-            "mobile_back_color": "",
-            "mobile_title_font_size": 40,
-            "mobile_text_font_size": 18,
-            "mobile_padding_top": 60,
-            "mobile_padding_bottom": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
@@ -1469,9 +1469,6 @@
         "product_overview_image_text_TRRfhc",
         "product_overview_banner_wPkbQ7",
         "product_overview_banner_YPEXQH",
-        "product_overview_aesthetics_FqynqL",
-        "product_overview_video_yTrkqr",
-        "product_overview_fitness_MaYPkK",
         "product_overview_image_text_bDVYqF",
         "product_overview_banner_iprVYE",
         "product_overview_image_text_regdBL",
@@ -1483,20 +1480,23 @@
         "product_overview_image_text_VG6jbX",
         "product_overview_image_text_c8MYCN",
         "product_overview_image_text_6nLWTm",
-        "product_overview_two_image_text_pRTDi3",
-        "product_overview_image_text_video_jaAGVn",
         "product_overview_image_text_nFQFtH",
-        "product_overview_image_text_9CBGxL",
         "product_overview_banner_UJAiQp",
         "product_overview_image_text_8AdJTd",
         "product_overview_image_text_p479qf",
         "product_overview_image_text_L4JVGr",
         "product_overview_banner_zJNeUk",
         "product_overview_image_text_8bzVWm",
+        "product_overview_highlights_bAWbKU",
+        "product_overview_video_yTrkqr",
+        "product_overview_fitness_MaYPkK",
+        "product_overview_two_image_text_pRTDi3",
+        "product_overview_image_text_video_jaAGVn",
+        "product_overview_image_text_9CBGxL",
+        "product_overview_aesthetics_FqynqL",
         "product_overview_image_text_peehF6",
         "custom_watch_faces_VcDmf9",
-        "product_overview_image_text_TEet9F",
-        "product_overview_highlights_bAWbKU"
+        "product_overview_image_text_TEet9F"
       ],
       "name": "product overview group",
       "settings": {
