@@ -655,6 +655,52 @@
         "heading": "Designed for Women标题3"
       }
     },
+    "emotional_image_switcher_HbPbqK": {
+      "type": "emotional-image-switcher",
+      "blocks": {
+        "state_6whFfq": {
+          "type": "state",
+          "settings": {
+            "label": "Pleasant",
+            "gradient_start": "#ffe3bd",
+            "gradient_end": "#ffffff"
+          }
+        },
+        "state_ghjQpk": {
+          "type": "state",
+          "settings": {
+            "label": "Neutral",
+            "gradient_start": "#c0f0ef",
+            "gradient_end": "#ffffff"
+          }
+        },
+        "state_Mi4QGy": {
+          "type": "state",
+          "settings": {
+            "label": "Unpleasant",
+            "gradient_start": "#c7c7ff",
+            "gradient_end": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "state_6whFfq",
+        "state_ghjQpk",
+        "state_Mi4QGy"
+      ],
+      "name": "情绪状态图片切换",
+      "settings": {
+        "title": "Wear Your Heart on Your Sleeve",
+        "body": "<p>The watch categorises your emotions into 12 types of subtle states across dimensions, which are visualised in varied forms of flowers. Nurture your emotional seeds and let them flourish.</p>",
+        "tabs_label": "Choose an emotional state",
+        "desktop_title_size": 40,
+        "desktop_body_size": 20,
+        "mobile_title_size": 40,
+        "mobile_body_size": 18,
+        "enable_autoplay": true,
+        "autoplay_interval": 5
+      }
+    },
     "product_overview_group_F9Xy6b": {
       "type": "product-overview-group",
       "blocks": {
@@ -2120,6 +2166,7 @@
     "animated_floating_banner_Hn6FXT",
     "interactive_product_viewer_GCWmjK",
     "highlights_image_gallery_rq9adr",
+    "emotional_image_switcher_HbPbqK",
     "product_overview_group_F9Xy6b",
     "faq",
     "1758592045c9c68565",
