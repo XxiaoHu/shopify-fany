@@ -445,6 +445,7 @@
             "label": "Natural titanium",
             "swatch_color": "#ddc8b3",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_ddb834fb-3b26-4757-96cf-0a2de32102b7.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_dd1bad4d-326d-4a80-9a81-aa38cf80cf5e.webp",
             "image_alt": ""
           }
         },
@@ -453,8 +454,8 @@
           "settings": {
             "label": "Gold titanium",
             "swatch_color": "#f4dec8",
-            "image": "shopify://shop_images/02-2.webp",
-            "mobile_image": "shopify://shop_images/02-2-m.webp",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_be6fbd74-d555-4632-b11e-aa96f98200fa.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_3642cc87-77d8-4b23-87cc-3bd7463068fa.webp",
             "image_alt": ""
           }
         },
