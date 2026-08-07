@@ -5,7 +5,9 @@
   class="sleep-insights-poster"
   data-desktop-position="{{ section.settings.desktop_text_position }}"
   data-mobile-position="{{ section.settings.mobile_text_position }}"
-  style="--sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px;"
+  data-mobile-layout="{{ section.settings.mobile_layout }}"
+  data-mobile-text-alignment="{{ section.settings.mobile_text_alignment }}"
+  style="--sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }};"
 >
   <div class="sleep-insights-poster__picture">
     {%- if section.settings.desktop_image != blank -%}
@@ -133,8 +135,30 @@
       "default": 20
     },
     {
+      "type": "color",
+      "id": "desktop_title_color",
+      "label": "标题颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "desktop_body_color",
+      "label": "正文颜色",
+      "default": "#ffffff"
+    },
+    {
       "type": "header",
       "content": "移动端文案样式"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "文字与图片关系",
+      "options": [
+        { "value": "overlay", "label": "悬浮在图片上" },
+        { "value": "below", "label": "排在图片下方" }
+      ],
+      "default": "overlay"
     },
     {
       "type": "select",
@@ -172,6 +196,29 @@
       "unit": "px",
       "label": "正文字号",
       "default": 16
+    },
+    {
+      "type": "color",
+      "id": "mobile_title_color",
+      "label": "标题颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_body_color",
+      "label": "正文颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "文本对齐方式",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "left"
     }
   ],
   "presets": [

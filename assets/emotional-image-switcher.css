@@ -86,7 +86,7 @@
 }
 
 .emotional-image-switcher__title {
-  color: #1e0e06;
+  color: var(--emotional-desktop-title-color, #1e0e06);
   font-size: var(--emotional-desktop-title-size, 40px);
   font-weight: 700;
   line-height: 1.2;
@@ -96,7 +96,7 @@
 
 .emotional-image-switcher__body {
   margin-top: 20px;
-  color: #797c80;
+  color: var(--emotional-desktop-body-color, #797c80);
   font-size: var(--emotional-desktop-body-size, 20px);
   font-weight: 400;
   line-height: 1.5;
@@ -243,10 +243,12 @@
 
   .emotional-image-switcher__title {
     font-size: var(--emotional-mobile-title-size, 40px);
+    color: var(--emotional-mobile-title-color, #1e0e06);
   }
 
   .emotional-image-switcher__body {
     font-size: var(--emotional-mobile-body-size, 18px);
+    color: var(--emotional-mobile-body-color, #797c80);
   }
 
   .emotional-image-switcher__tabs {

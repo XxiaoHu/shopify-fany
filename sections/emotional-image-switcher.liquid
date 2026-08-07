@@ -6,7 +6,7 @@
   class="emotional-image-switcher"
   data-autoplay="{{ section.settings.enable_autoplay }}"
   data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
-  style="--emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px;"
+  style="--emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px; --emotional-desktop-title-color: {{ section.settings.desktop_title_color }}; --emotional-desktop-body-color: {{ section.settings.desktop_body_color }}; --emotional-mobile-title-color: {{ section.settings.mobile_title_color }}; --emotional-mobile-body-color: {{ section.settings.mobile_body_color }};"
 >
   <div class="emotional-image-switcher__sticky">
     <div class="emotional-image-switcher__visual" data-emotional-visual>
@@ -126,7 +126,7 @@
     },
     {
       "type": "header",
-      "content": "字号"
+      "content": "桌面端样式"
     },
     {
       "type": "range",
@@ -135,8 +135,14 @@
       "max": 72,
       "step": 1,
       "unit": "px",
-      "label": "桌面端标题字号",
+      "label": "标题字号",
       "default": 40
+    },
+    {
+      "type": "color",
+      "id": "desktop_title_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
     },
     {
       "type": "range",
@@ -145,8 +151,18 @@
       "max": 32,
       "step": 1,
       "unit": "px",
-      "label": "桌面端正文字号",
+      "label": "正文字号",
       "default": 20
+    },
+    {
+      "type": "color",
+      "id": "desktop_body_color",
+      "label": "正文颜色",
+      "default": "#797c80"
+    },
+    {
+      "type": "header",
+      "content": "移动端样式"
     },
     {
       "type": "range",
@@ -155,8 +171,14 @@
       "max": 52,
       "step": 1,
       "unit": "px",
-      "label": "移动端标题字号",
+      "label": "标题字号",
       "default": 40
+    },
+    {
+      "type": "color",
+      "id": "mobile_title_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
     },
     {
       "type": "range",
@@ -165,8 +187,14 @@
       "max": 24,
       "step": 1,
       "unit": "px",
-      "label": "移动端正文字号",
+      "label": "正文字号",
       "default": 18
+    },
+    {
+      "type": "color",
+      "id": "mobile_body_color",
+      "label": "正文颜色",
+      "default": "#797c80"
     },
     {
       "type": "header",

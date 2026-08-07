@@ -2,17 +2,35 @@
 <script src="{{ 'interactive-product-viewer.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
+  #shopify-section-{{ section.id }} {
+    --apv-heading-size: {{ section.settings.heading_font_size }}px;
+    --apv-heading-color: {{ section.settings.heading_color }};
+    --apv-finishes-title-size: {{ section.settings.finishes_title_font_size }}px;
+    --apv-finishes-title-color: {{ section.settings.finishes_title_color }};
+    --apv-finishes-desc-size: {{ section.settings.finishes_desc_font_size }}px;
+    --apv-finishes-desc-color: {{ section.settings.finishes_desc_color }};
+  }
   #shopify-section-{{ section.id }} .interactive-product-viewer__heading {
-    font-size: {{ section.settings.heading_font_size }}px;
-    color: {{ section.settings.heading_color }};
+    font-size: var(--apv-heading-size);
+    color: var(--apv-heading-color);
   }
   #shopify-section-{{ section.id }} .interactive-product-viewer__detail-title--finishes {
-    font-size: {{ section.settings.finishes_title_font_size }}px;
-    color: {{ section.settings.finishes_title_color }};
+    font-size: var(--apv-finishes-title-size);
+    color: var(--apv-finishes-title-color);
   }
   #shopify-section-{{ section.id }} .interactive-product-viewer__detail-copy--finishes {
-    font-size: {{ section.settings.finishes_desc_font_size }}px;
-    color: {{ section.settings.finishes_desc_color }};
+    font-size: var(--apv-finishes-desc-size);
+    color: var(--apv-finishes-desc-color);
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --apv-heading-size: {{ section.settings.mobile_heading_font_size }}px;
+      --apv-heading-color: {{ section.settings.mobile_heading_color }};
+      --apv-finishes-title-size: {{ section.settings.mobile_finishes_title_font_size }}px;
+      --apv-finishes-title-color: {{ section.settings.mobile_finishes_title_color }};
+      --apv-finishes-desc-size: {{ section.settings.mobile_finishes_desc_font_size }}px;
+      --apv-finishes-desc-color: {{ section.settings.mobile_finishes_desc_color }};
+    }
   }
 {%- endstyle -%}
 
@@ -387,25 +405,45 @@
       "max": 72,
       "step": 1,
       "unit": "px",
-      "label": "标题字号",
+      "label": "标题字号(桌面端)",
       "default": 40
     },
     {
       "type": "color",
       "id": "heading_color",
-      "label": "标题颜色",
+      "label": "标题颜色(桌面端)",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "header",
+      "content": "移动端标题样式"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_font_size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号(移动端)",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "mobile_heading_color",
+      "label": "标题颜色(移动端)",
       "default": "#1e0e06"
     },
     {
       "type": "image_picker",
       "id": "landing_image",
-      "label": "默认图片（桌面端）",
+      "label": "默认图片(桌面端)",
       "info": "未选择时使用 Figma 设计稿中的默认产品图。"
     },
     {
       "type": "image_picker",
       "id": "mobile_landing_image",
-      "label": "默认图片（移动端）",
+      "label": "默认图片(移动端)",
       "info": "留空时使用桌面端图片。"
     },
     {
@@ -443,13 +481,13 @@
       "max": 36,
       "step": 1,
       "unit": "px",
-      "label": "饰面标题字号",
+      "label": "饰面标题字号(桌面端)",
       "default": 17
     },
     {
       "type": "color",
       "id": "finishes_title_color",
-      "label": "饰面标题颜色",
+      "label": "饰面标题颜色(桌面端)",
       "default": "#1d1d1f"
     },
     {
@@ -459,13 +497,49 @@
       "max": 36,
       "step": 1,
       "unit": "px",
-      "label": "饰面说明字号",
+      "label": "饰面说明字号(桌面端)",
       "default": 17
     },
     {
       "type": "color",
       "id": "finishes_desc_color",
-      "label": "饰面说明颜色",
+      "label": "饰面说明颜色(桌面端)",
+      "default": "#1d1d1f"
+    },
+    {
+      "type": "header",
+      "content": "移动端饰面样式"
+    },
+    {
+      "type": "range",
+      "id": "mobile_finishes_title_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "饰面标题字号(移动端)",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "mobile_finishes_title_color",
+      "label": "饰面标题颜色(移动端)",
+      "default": "#1d1d1f"
+    },
+    {
+      "type": "range",
+      "id": "mobile_finishes_desc_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "饰面说明字号(移动端)",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "mobile_finishes_desc_color",
+      "label": "饰面说明颜色(移动端)",
       "default": "#1d1d1f"
     }
   ],
@@ -497,12 +571,12 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "产品图片（桌面端）"
+          "label": "产品图片(桌面端)"
         },
         {
           "type": "image_picker",
           "id": "mobile_image",
-          "label": "产品图片（移动端）",
+          "label": "产品图片(移动端)",
           "info": "留空时使用桌面端图片；两者都留空时使用默认产品图。"
         },
         {
@@ -530,13 +604,13 @@
           "max": 36,
           "step": 1,
           "unit": "px",
-          "label": "标题字号",
+          "label": "标题字号(桌面端)",
           "default": 17
         },
         {
           "type": "color",
           "id": "title_color",
-          "label": "标题颜色",
+          "label": "标题颜色(桌面端)",
           "default": "#1d1d1f"
         },
         {
@@ -552,24 +626,24 @@
           "max": 36,
           "step": 1,
           "unit": "px",
-          "label": "说明字号",
+          "label": "说明字号(桌面端)",
           "default": 17
         },
         {
           "type": "color",
           "id": "desc_color",
-          "label": "说明颜色",
+          "label": "说明颜色(桌面端)",
           "default": "#1d1d1f"
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "图片（桌面端）"
+          "label": "图片(桌面端)"
         },
         {
           "type": "image_picker",
           "id": "mobile_image",
-          "label": "图片（移动端）",
+          "label": "图片(移动端)",
           "info": "留空时使用桌面端图片；两者都留空时使用默认产品图。"
         },
         {

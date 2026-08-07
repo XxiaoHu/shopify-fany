@@ -66,25 +66,27 @@
   word-break: break-word;
 }
 
-.sleep-insights-poster__title,
-.sleep-insights-poster__body,
-.sleep-insights-poster__body p {
-  margin: 0;
-  color: inherit;
-}
-
 .sleep-insights-poster__title {
+  margin: 0;
   font-size: var(--sleep-poster-desktop-title-size, 40px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
+  color: var(--sleep-poster-desktop-title-color, inherit);
 }
 
 .sleep-insights-poster__body {
+  margin: 0;
   font-size: var(--sleep-poster-desktop-body-size, 20px);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
+  color: var(--sleep-poster-desktop-body-color, inherit);
+}
+
+.sleep-insights-poster__body p {
+  margin: 0;
+  color: inherit;
 }
 
 .sleep-insights-poster__body > * + * {
@@ -226,5 +228,66 @@
 
   .sleep-insights-poster[data-mobile-position$='-right'] .sleep-insights-poster__copy {
     text-align: right;
+  }
+
+  .sleep-insights-poster[data-mobile-layout='below'] {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__picture {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 0;
+    padding-bottom: calc(472 / 393 * 100%);
+  }
+
+  .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__shade {
+    display: none;
+  }
+
+  .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__content {
+    position: relative;
+    padding: 24px 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__copy {
+    text-align: left;
+  }
+
+  .sleep-insights-poster__title {
+    color: var(--sleep-poster-mobile-title-color, inherit);
+  }
+
+  .sleep-insights-poster__body {
+    color: var(--sleep-poster-mobile-body-color, inherit);
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='left'] .sleep-insights-poster__copy {
+    text-align: left;
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='center'] .sleep-insights-poster__copy {
+    text-align: center;
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='right'] .sleep-insights-poster__copy {
+    text-align: right;
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='left'] .sleep-insights-poster__content {
+    align-items: flex-start;
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='center'] .sleep-insights-poster__content {
+    align-items: center;
+  }
+
+  .sleep-insights-poster[data-mobile-text-alignment='right'] .sleep-insights-poster__content {
+    align-items: flex-end;
   }
 }
