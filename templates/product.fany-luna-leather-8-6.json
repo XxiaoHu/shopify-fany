@@ -685,8 +685,10 @@
         "highlight_cGxtKQ": {
           "type": "highlight",
           "settings": {
-            "title": "Heart Rate Monitor",
-            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_c351d240-f2b0-4906-b6a2-78de1b071e23.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_dbb6942b-7ccf-4214-bc7f-685ef5dd7fda.webp",
+            "title": "Know Your Sleep Status",
+            "description": "FANY Luna continuously monitors your deep, light, REM, awake time, and consistency, giving you clear status insights like Excellent, Good, or Fair. Discover how rest shapes your daily energy, and follow gentle guidance to build better habits and refine your sleep quality.",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
