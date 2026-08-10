@@ -644,7 +644,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_388aac9c-c204-4a38-860a-5c2b13c4ca3b.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_a0db9321-3b2b-4c6a-b3c3-7745f280349b.webp",
             "title": "Monitor Your Heart Rate",
+            "title_font_size": 28,
+            "title_color": "#FFFFFF",
             "description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
+            "description_font_size": 20,
+            "description_color": "#FFFFFF",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -655,7 +659,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b606cd72-2c2e-4796-8808-ad4e63c7dee0.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_a3a93af4-1994-4f9e-982d-52da7b6019df.webp",
             "title": "Track Your Blood Oxygen",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
             "description": "FANY Luna tracks your real-time SpO2 levels and alerts you to low oxygen states to ward off fatigue and dizziness, giving you the confidence to maintain an active, healthy lifestyle.",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -666,7 +674,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M.webp",
             "title": "Keep Up with Your Cycle",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
             "description": "Your menstrual cycle reflects your overall wellness. Pair your FANY Luna watch with the FANY Fit app to easily access all cycle insights: period length, period predictions, ovulation, fertile windows, mood logs and full historical records. All your personal data stays fully private, offering thoughtful care for women’s health.",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -677,7 +689,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_fcfefe5a-0f06-4bab-ab2b-5f3d0de1bb9f.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_6f0973e0-afa5-46b1-b9b7-e95f28c7b913.webp",
             "title": "Close Your Activity Rings",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
             "description": "Track your daily distance, steps, and calorie goals with Activity Rings. Earn exclusive achievement badges when you hit your targets! Unlock special rewards for hitting 10,000 steps, 30 minutes of activity, and burning 500 calories in a single day.",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -688,7 +704,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_c351d240-f2b0-4906-b6a2-78de1b071e23.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_dbb6942b-7ccf-4214-bc7f-685ef5dd7fda.webp",
             "title": "Know Your Sleep Status",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
             "description": "FANY Luna continuously monitors your deep, light, REM, awake time, and consistency, giving you clear status insights like Excellent, Good, or Fair. Discover how rest shapes your daily energy, and follow gentle guidance to build better habits and refine your sleep quality.",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -699,7 +719,11 @@
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_cd654cc7-943a-40a1-8eee-e591eabc1478.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_18fb4387-8445-4f4f-8c2d-ae58e1ef1e26.webp",
             "title": "Understand Your Emotions & Stress",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
             "description": "Women are uniquely sensitive to emotional shifts and stress, both of which affect heart rate, sleep, and overall wellness. FANY Luna monitors your inner state and comes with a breathing relaxation function to ease tension, inviting you to slow down, reflect, and prioritize self-care every time you glance at your wrist.",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -715,7 +739,8 @@
       ],
       "name": "Highlights 图片轮播",
       "settings": {
-        "heading": "Highlights: Nurture Your All-Around Health"
+        "heading": "Highlights: Nurture Your All-Around Health",
+        "heading_font_size": 40
       }
     },
     "emotional_image_switcher_HbPbqK": {
