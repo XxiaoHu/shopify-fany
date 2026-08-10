@@ -696,8 +696,10 @@
         "highlight_zwtB9c": {
           "type": "highlight",
           "settings": {
-            "title": "Heart Rate Monitor",
-            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_cd654cc7-943a-40a1-8eee-e591eabc1478.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_18fb4387-8445-4f4f-8c2d-ae58e1ef1e26.webp",
+            "title": "Understand Your Emotions & Stress",
+            "description": "Women are uniquely sensitive to emotional shifts and stress, both of which affect heart rate, sleep, and overall wellness. FANY Luna monitors your inner state and comes with a breathing relaxation function to ease tension, inviting you to slow down, reflect, and prioritize self-care every time you glance at your wrist.",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
