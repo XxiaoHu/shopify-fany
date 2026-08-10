@@ -529,24 +529,28 @@
         "feature_TAkttr": {
           "type": "feature",
           "settings": {
-            "title": "Advanced sensors",
+            "title": "7-Day Battery Life",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>",
+            "description": "<p>No more daily charging. FANY Luna keeps pace with your busiest days, offering up to 7 days of battery life. Its magnetic connector attaches effortlessly, and a full fast charge takes just 2 hours.<br/>*Battery life may vary depending on usage.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_85441725-35f5-4fb4-a064-c9a3ff517506.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_1a6db565-84c8-4f5f-843e-20d0efb11cce.webp",
             "image_alt": ""
           }
         },
         "feature_tFXtNN": {
           "type": "feature",
           "settings": {
-            "title": "Durable Ion-X display",
+            "title": "Water Resistance",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>A durable display designed for everyday movement and activity.</p>",
+            "description": "<p>Features IP68 water resistance. From kitchen splashes and rain to workouts and beach getaways, FANY Luna brings confidence to every moment, keeping you elegant and composed wherever you go.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_78a7c529-5c88-4ba8-9385-acb835ee35f4.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_054d973f-b981-4934-bee0-76415dc92f0e.webp",
             "image_alt": ""
           }
         },
