@@ -743,6 +743,50 @@
         "heading_font_size": 40
       }
     },
+    "sleep_insights_poster_Ydygpn": {
+      "type": "sleep-insights-poster",
+      "name": "睡眠数据海报",
+      "settings": {
+        "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_328c131a-40ed-48fe-8b3e-47174d4f0f08.webp",
+        "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2e828c45-d0b9-44c1-be35-f76627052969.webp",
+        "title": "Better Sleep Better You",
+        "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
+        "desktop_text_position": "top-left",
+        "desktop_title_size": 40,
+        "desktop_body_size": 20,
+        "desktop_title_color": "#ffffff",
+        "desktop_body_color": "#ffffff",
+        "mobile_layout": "below",
+        "mobile_text_position": "top-left",
+        "mobile_title_size": 28,
+        "mobile_body_size": 16,
+        "mobile_title_color": "#1E1005",
+        "mobile_body_color": "#1E1005",
+        "mobile_text_alignment": "left"
+      }
+    },
+    "sleep_insights_poster_7QwUna": {
+      "type": "sleep-insights-poster",
+      "name": "睡眠数据海报",
+      "settings": {
+        "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_92c6bd95-6b84-4143-b5a6-16d7c18dbcbb.webp",
+        "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_ba38f810-4368-43ad-96fe-ccf98f75bd15.webp",
+        "title": "Better Sleep Better You",
+        "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
+        "desktop_text_position": "top-left",
+        "desktop_title_size": 40,
+        "desktop_body_size": 20,
+        "desktop_title_color": "#1E1005",
+        "desktop_body_color": "#1E1005",
+        "mobile_layout": "below",
+        "mobile_text_position": "top-left",
+        "mobile_title_size": 28,
+        "mobile_body_size": 16,
+        "mobile_title_color": "#1E1005",
+        "mobile_body_color": "#1E1005",
+        "mobile_text_alignment": "left"
+      }
+    },
     "emotional_image_switcher_HbPbqK": {
       "type": "emotional-image-switcher",
       "blocks": {
@@ -2258,6 +2302,8 @@
     "animated_floating_banner_Hn6FXT",
     "interactive_product_viewer_GCWmjK",
     "highlights_image_gallery_rq9adr",
+    "sleep_insights_poster_Ydygpn",
+    "sleep_insights_poster_7QwUna",
     "emotional_image_switcher_HbPbqK",
     "product_overview_group_F9Xy6b",
     "faq",
