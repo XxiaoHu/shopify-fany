@@ -724,19 +724,22 @@
         "state_6whFfq": {
           "type": "state",
           "settings": {
-            "label": "Pleasant"
+            "label": "Pleasant",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b1b408ae-d161-4877-8645-b379e6ad4047.webp"
           }
         },
         "state_ghjQpk": {
           "type": "state",
           "settings": {
-            "label": "Neutral"
+            "label": "Neutral",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_23eea646-4b62-4d99-b432-f4724aa4829b.webp"
           }
         },
         "state_Mi4QGy": {
           "type": "state",
           "settings": {
-            "label": "Unpleasant"
+            "label": "Unpleasant",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_a3bedcac-5c66-45e6-9e07-013b3bd99961.webp"
           }
         }
       },
