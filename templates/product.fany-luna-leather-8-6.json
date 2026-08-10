@@ -750,21 +750,24 @@
           "type": "state",
           "settings": {
             "label": "Pleasant",
-            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b1b408ae-d161-4877-8645-b379e6ad4047.webp"
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b1b408ae-d161-4877-8645-b379e6ad4047.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_e09bea0a-0786-4615-9bd9-d75f03f48c3f.webp"
           }
         },
         "state_ghjQpk": {
           "type": "state",
           "settings": {
             "label": "Neutral",
-            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_23eea646-4b62-4d99-b432-f4724aa4829b.webp"
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_23eea646-4b62-4d99-b432-f4724aa4829b.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_f6fe8992-cc11-4784-9911-97d0f37548f4.webp"
           }
         },
         "state_Mi4QGy": {
           "type": "state",
           "settings": {
             "label": "Unpleasant",
-            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_a3bedcac-5c66-45e6-9e07-013b3bd99961.webp"
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_a3bedcac-5c66-45e6-9e07-013b3bd99961.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2d4bdff4-0161-498c-8c90-00322e8eda49.webp"
           }
         }
       },
