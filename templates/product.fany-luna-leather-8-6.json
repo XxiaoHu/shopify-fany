@@ -652,8 +652,10 @@
         "highlight_hY4qxa": {
           "type": "highlight",
           "settings": {
-            "title": "Heart Rate Monitor",
-            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b606cd72-2c2e-4796-8808-ad4e63c7dee0.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_a3a93af4-1994-4f9e-982d-52da7b6019df.webp",
+            "title": "Track Your Blood Oxygen",
+            "description": "FANY Luna tracks your real-time SpO2 levels and alerts you to low oxygen states to ward off fatigue and dizziness, giving you the confidence to maintain an active, healthy lifestyle.",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
