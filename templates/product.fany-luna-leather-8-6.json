@@ -515,12 +515,14 @@
         "feature_GGQxGy": {
           "type": "feature",
           "settings": {
-            "title": "Longer battery life",
+            "title": "AMOLED Touch Display",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Reliable battery performance that keeps up with your day.</p>",
+            "description": "<p>Engineered with a sleek 1.1\" AMOLED touch screen for exceptional visual clarity day and night. Colors come alive with rich detail for easy viewing under sunlight. Ultra-low power consumption helps extend battery runtime.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_0bb28274-daa9-4bb6-ab03-7bbe6fb3e925.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2df5613c-0727-4895-a93d-b1d87405b26e.webp",
             "image_alt": ""
           }
         },
