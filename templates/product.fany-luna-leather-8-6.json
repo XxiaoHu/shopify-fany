@@ -641,8 +641,10 @@
         "highlight_dDaJ9V": {
           "type": "highlight",
           "settings": {
-            "title": "Heart Rate Monitor",
-            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_388aac9c-c204-4a38-860a-5c2b13c4ca3b.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_a0db9321-3b2b-4c6a-b3c3-7745f280349b.webp",
+            "title": "Monitor Your Heart Rate",
+            "description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -703,7 +705,7 @@
       ],
       "name": "Highlights 图片轮播",
       "settings": {
-        "heading": "Designed for Women标题3"
+        "heading": "Highlights: Nurture Your All-Around Health"
       }
     },
     "emotional_image_switcher_HbPbqK": {
