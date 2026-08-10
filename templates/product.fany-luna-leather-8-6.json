@@ -418,12 +418,11 @@
         "content_letter_spacing": 0,
         "content_color": "#6e6e73",
         "main_image": "shopify://shop_images/FANY_Luna_Leather_banner-PC.webp",
-        "mobile_main_image": "shopify://shop_images/01-1-m.webp",
         "main_image_height": 700,
         "main_image_fit": "cover",
         "main_image_position": "center center",
-        "floating_image": "shopify://shop_images/m_10109f1a-74ca-41ef-8868-7e8051889e3e.webp",
-        "mobile_floating_image": "shopify://shop_images/m_10109f1a-74ca-41ef-8868-7e8051889e3e.webp",
+        "floating_image": "shopify://shop_images/FANY_Luna_Leather_banner_2-PC.png",
+        "mobile_floating_image": "shopify://shop_images/FANY_Luna_Leather_banner_2-PC.png",
         "scroll_trigger_distance": 24,
         "intro_padding_top": 48,
         "intro_padding_bottom": 52,
@@ -510,8 +509,6 @@
             "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
-            "image": "shopify://shop_images/02-2.webp",
-            "mobile_image": "shopify://shop_images/02-2-m.webp",
             "image_alt": ""
           }
         },
@@ -524,8 +521,6 @@
             "description": "<p>Reliable battery performance that keeps up with your day.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
-            "image": "shopify://shop_images/02-1.webp",
-            "mobile_image": "shopify://shop_images/02-1-m.webp",
             "image_alt": ""
           }
         },
@@ -622,8 +617,6 @@
         "highlight_dDaJ9V": {
           "type": "highlight",
           "settings": {
-            "image": "shopify://shop_images/03-1.webp",
-            "mobile_image": "shopify://shop_images/03-1-m.webp",
             "title": "Heart Rate Monitor",
             "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
             "copy_position": "center-left",
@@ -633,8 +626,6 @@
         "highlight_hY4qxa": {
           "type": "highlight",
           "settings": {
-            "image": "shopify://shop_images/03-2.webp",
-            "mobile_image": "shopify://shop_images/03-2-m.webp",
             "title": "Heart Rate Monitor",
             "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
             "copy_position": "center-left",
@@ -644,8 +635,6 @@
         "highlight_ghTiUV": {
           "type": "highlight",
           "settings": {
-            "image": "shopify://shop_images/03-1.webp",
-            "mobile_image": "shopify://shop_images/03-1-m.webp",
             "title": "Heart Rate Monitor",
             "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
             "copy_position": "center-left",
@@ -699,8 +688,7 @@
         "state_6whFfq": {
           "type": "state",
           "settings": {
-            "label": "Pleasant",
-            "image": "shopify://shop_images/08-1.webp"
+            "label": "Pleasant"
           }
         },
         "state_ghjQpk": {
