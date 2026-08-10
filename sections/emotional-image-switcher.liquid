@@ -22,17 +22,48 @@
             data-emotional-index="{{ forloop.index0 }}"
             {{ block.shopify_attributes }}
           >
-            {%- if block.settings.image != blank -%}
-              {{
-                block.settings.image
-                | image_url: width: 2000
-                | image_tag:
-                  class: 'emotional-image-switcher__image',
-                  loading: 'lazy',
-                  widths: '500, 750, 1000, 1250, 1500, 1750, 2000',
-                  sizes: '100vw',
-                  alt: block.settings.label
-              }}
+            {%- assign desktop_image = block.settings.image -%}
+            {%- assign mobile_image = block.settings.mobile_image -%}
+
+            {%- if desktop_image != blank or mobile_image != blank -%}
+              <picture class="emotional-image-switcher__picture">
+                {%- if mobile_image != blank -%}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="
+                      {{ mobile_image | image_url: width: 400 }} 400w,
+                      {{ mobile_image | image_url: width: 600 }} 600w,
+                      {{ mobile_image | image_url: width: 800 }} 800w,
+                      {{ mobile_image | image_url: width: 1000 }} 1000w
+                    "
+                    sizes="100vw"
+                  >
+                {%- endif -%}
+
+                {%- if desktop_image != blank -%}
+                  {{
+                    desktop_image
+                    | image_url: width: 2000
+                    | image_tag:
+                      class: 'emotional-image-switcher__image',
+                      loading: 'lazy',
+                      widths: '500, 750, 1000, 1250, 1500, 1750, 2000',
+                      sizes: '100vw',
+                      alt: block.settings.label
+                  }}
+                {%- else -%}
+                  {{
+                    mobile_image
+                    | image_url: width: 1000
+                    | image_tag:
+                      class: 'emotional-image-switcher__image',
+                      loading: 'lazy',
+                      widths: '400, 600, 800, 1000',
+                      sizes: '100vw',
+                      alt: block.settings.label
+                  }}
+                {%- endif -%}
+              </picture>
             {%- else -%}
               {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg emotional-image-switcher__image emotional-image-switcher__placeholder' }}
             {%- endif -%}
@@ -231,8 +262,14 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "背景图片",
+          "label": "桌面端背景图片",
           "info": "图片将作为整个区块的全屏背景显示；未设置时显示占位图"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端背景图片",
+          "info": "未设置时使用桌面端图片"
         }
       ]
     }

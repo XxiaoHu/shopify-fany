@@ -11,7 +11,7 @@
   >
     <div class="highlights-image-gallery__header">
       {%- if section.settings.heading != blank -%}
-        <h2 class="highlights-image-gallery__heading">{{ section.settings.heading | escape }}</h2>
+        <h2 class="highlights-image-gallery__heading" style="font-size: {{ section.settings.heading_font_size }}px;">{{ section.settings.heading | escape }}</h2>
       {%- endif -%}
     </div>
 
@@ -91,10 +91,16 @@
               <div class="highlights-image-gallery__copy">
                 <div class="highlights-image-gallery__copy-content">
                   {%- if block.settings.title != blank -%}
-                    <h3 class="highlights-image-gallery__title">{{ block.settings.title | escape }}</h3>
+                    <h3
+                      class="highlights-image-gallery__title"
+                      style="font-size: {{ block.settings.title_font_size }}px; color: {{ block.settings.title_color }};"
+                    >{{ block.settings.title | escape }}</h3>
                   {%- endif -%}
                   {%- if block.settings.description != blank -%}
-                    <p class="highlights-image-gallery__description">{{ block.settings.description | escape | newline_to_br }}</p>
+                    <p
+                      class="highlights-image-gallery__description"
+                      style="font-size: {{ block.settings.description_font_size }}px; color: {{ block.settings.description_color }};"
+                    >{{ block.settings.description | escape | newline_to_br }}</p>
                   {%- endif -%}
                 </div>
               </div>
@@ -183,6 +189,16 @@
       "id": "heading",
       "label": "标题",
       "default": "Designed for Women标题3"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "标题字体大小",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
     }
   ],
   "blocks": [
@@ -208,10 +224,42 @@
           "default": "Heart Rate Monitor"
         },
         {
+          "type": "range",
+          "id": "title_font_size",
+          "label": "标题字体大小",
+          "min": 12,
+          "max": 72,
+          "step": 1,
+          "unit": "px",
+          "default": 28
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "标题颜色",
+          "default": "#1e0e06"
+        },
+        {
           "type": "textarea",
           "id": "description",
           "label": "卡片正文",
           "default": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!"
+        },
+        {
+          "type": "range",
+          "id": "description_font_size",
+          "label": "正文字体大小",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "default": 20
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "正文颜色",
+          "default": "#1e0e06"
         },
         {
           "type": "select",

@@ -30,7 +30,6 @@
 .highlights-image-gallery__heading {
   margin: 0;
   color: #1e0e06;
-  font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
@@ -174,18 +173,15 @@
 .highlights-image-gallery__title,
 .highlights-image-gallery__description {
   margin: 0;
-  color: #1e0e06;
 }
 
 .highlights-image-gallery__title {
-  font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
 }
 
 .highlights-image-gallery__description {
-  font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
@@ -393,10 +389,6 @@
     margin-bottom: 24px;
   }
 
-  .highlights-image-gallery__heading {
-    font-size: 32px;
-  }
-
   .highlights-image-gallery__slide {
     scroll-snap-align: start;
   }
@@ -438,12 +430,7 @@
     text-align: right;
   }
 
-  .highlights-image-gallery__title {
-    font-size: 24px;
-  }
-
   .highlights-image-gallery__description {
-    font-size: 17px;
     line-height: 1.4;
   }
 
