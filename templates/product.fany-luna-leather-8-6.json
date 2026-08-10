@@ -441,7 +441,7 @@
         "finish_6MKYwD": {
           "type": "finish",
           "settings": {
-            "label": "Mocha Brown",
+            "label": "FANY Luna shown in Mocha Brown",
             "swatch_color": "#ddc8b3",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_ddb834fb-3b26-4757-96cf-0a2de32102b7.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_dd1bad4d-326d-4a80-9a81-aa38cf80cf5e.webp",
@@ -451,7 +451,7 @@
         "finish_DwBm3r": {
           "type": "finish",
           "settings": {
-            "label": "Moonlight Gray",
+            "label": "FANY Luna shown in Moonlight Gray",
             "swatch_color": "#f4dec8",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_be6fbd74-d555-4632-b11e-aa96f98200fa.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_3642cc87-77d8-4b23-87cc-3bd7463068fa.webp",
@@ -461,7 +461,7 @@
         "finish_G4Vkww": {
           "type": "finish",
           "settings": {
-            "label": "Rose Gold",
+            "label": "FANY Luna shown in Rose Gold",
             "swatch_color": "#47423d",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_7a26dde2-9479-44c8-bb31-8aee798109ac.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_b3314240-6f33-41d8-a644-8792b680479e.webp",
@@ -471,7 +471,7 @@
         "finish_xMPrTY": {
           "type": "finish",
           "settings": {
-            "label": "Passion Red",
+            "label": "FANY Luna shown in Passion Red",
             "swatch_color": "#f6d9cd",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_f278a80b-c3c4-431e-8942-92f02aeaf915.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2368223b-3c4e-4b7b-b44a-878e2f840105.webp",
@@ -481,7 +481,7 @@
         "finish_iyBAeX": {
           "type": "finish",
           "settings": {
-            "label": "Blush Rose",
+            "label": "FANY Luna shown in Blush Rose",
             "swatch_color": "#f0eff1",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_e185c145-ba88-4913-a15d-957f9e26be4c.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_5405bf90-29dc-400f-a25d-1974cf589aa1.webp",
@@ -491,18 +491,10 @@
         "finish_dmN8LT": {
           "type": "finish",
           "settings": {
-            "label": "Modern Silver",
+            "label": "FANY Luna shown in Modern Silver",
             "swatch_color": "#010203",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_85d6e98a-849c-4725-ab3c-8aa05a6167fe.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_--_-M.webp",
-            "image_alt": ""
-          }
-        },
-        "finish_EFkGKh": {
-          "type": "finish",
-          "settings": {
-            "label": "Space Gray aluminum",
-            "swatch_color": "#979494",
             "image_alt": ""
           }
         },
@@ -586,7 +578,6 @@
         "finish_xMPrTY",
         "finish_iyBAeX",
         "finish_dmN8LT",
-        "finish_EFkGKh",
         "feature_iAdQpg",
         "feature_GGQxGy",
         "feature_TAkttr",
