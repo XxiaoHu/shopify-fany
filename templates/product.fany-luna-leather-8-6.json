@@ -501,12 +501,14 @@
         "feature_iAdQpg": {
           "type": "feature",
           "settings": {
-            "title": "Sleek design",
+            "title": "Ultra-Lightweight & Slim",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
+            "description": "<p>Crafted as one of the lightest women’s smartwatches,  you'll forget you're wearing it. With a slim 9.3 mm profile, a classic 37.5 mm case, and weighing just 23.9g, it delivers a tailor-made fit for wrists ranging from 144 to 202 mm, bringing effortless, all-day elegance.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_711ad364-473d-4935-99da-8a193ff5e300.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_89d1862a-dae0-457f-9dcb-d92f123e8432.webp",
             "image_alt": ""
           }
         },
