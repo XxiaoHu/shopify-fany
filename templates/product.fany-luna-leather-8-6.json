@@ -557,24 +557,42 @@
         "feature_fX8tbL": {
           "type": "feature",
           "settings": {
-            "title": "Water and dust resistance",
+            "title": "110 Workout Modes",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>",
+            "description": "<p>From running and Pilates to pickleball, yoga, HIIT, and strength training across 110+ activities, FANY Luna tracks your heart rate, burn, and movement, here to support your daily wellness and gently guide your personal rhythm.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_577af619-4f75-4f3b-b65c-c112fe4edd04.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_94e6e44e-8861-41bc-8fa0-089dc326d718.webp",
+            "image_alt": ""
+          }
+        },
+        "feature_6MmqfH": {
+          "type": "feature",
+          "settings": {
+            "title": "Sync Phone Notifications",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Never miss what matters. Receive instant real-time alerts for incoming calls, messages, app notifications, and calendar reminders at a glance. Stay updated during meetings, dates, drives, or family time without constantly checking your phone.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_b587f166-85bd-4e7c-b5b2-b03ad8ae1399.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_c0e8f5a5-36c8-4427-bef9-9ae0241680fc.webp",
             "image_alt": ""
           }
         },
         "feature_M8rPMw": {
           "type": "feature",
           "settings": {
-            "title": "Personalization",
+            "title": "Versatile Features",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Choose the look and details that make the product feel like your own.</p>",
+            "description": "<p>Seamlessly integrated into your daily routine. Combining continuous health tracking with effortless daily conveniences, FANY Luna handles the subtle details so you can flow through your day with clarity and ease.</p>",
             "desc_font_size": 17,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_8c5ddadd-972b-4ca5-b6ae-f6a28d5e57c0.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_602bc490-07db-4258-ae8c-9ec1f9a26174.webp",
             "image_alt": ""
           }
         }
@@ -591,6 +609,7 @@
         "feature_TAkttr",
         "feature_tFXtNN",
         "feature_fX8tbL",
+        "feature_6MmqfH",
         "feature_M8rPMw"
       ],
       "name": "Apple 风格产品查看器",
