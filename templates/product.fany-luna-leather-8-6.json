@@ -491,8 +491,10 @@
         "finish_dmN8LT": {
           "type": "finish",
           "settings": {
-            "label": "Jet Black aluminum",
+            "label": "Modern Silver",
             "swatch_color": "#010203",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_85d6e98a-849c-4725-ab3c-8aa05a6167fe.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_--_-M.webp",
             "image_alt": ""
           }
         },
