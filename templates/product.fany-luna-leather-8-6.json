@@ -724,7 +724,7 @@
             "mobile_title_font_size": 20,
             "mobile_title_color": "#1e0e06",
             "mobile_description_font_size": 16,
-            "mobile_description_color": "#1E1005",
+            "mobile_description_color": "#1e1005",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -766,7 +766,7 @@
             "mobile_title_font_size": 20,
             "mobile_title_color": "#1e0e06",
             "mobile_description_font_size": 16,
-            "mobile_description_color": "#1E1005",
+            "mobile_description_color": "#1e1005",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -913,18 +913,18 @@
         "title": "FANY Luna-Fashion Forward, Wellness Within",
         "body": "<p>FANY Luna is more than a smartwatch. It’s a quiet and gentle companion by your side. It elevates your everyday style while accurately tracking your health and workouts. A precious gift of love or a daily essential, FANY Luna inspires you to live fully and shine. FANY. See the Vibe.</p>",
         "desktop_text_position": "top-left",
-        "desktop_text_alignment": "left",
+        "desktop_text_alignment": "center",
         "desktop_copy_width": 340,
         "desktop_title_size": 40,
         "desktop_body_size": 20,
-        "desktop_title_color": "#ffffff",
-        "desktop_body_color": "#ffffff",
+        "desktop_title_color": "#1E1005",
+        "desktop_body_color": "#1E1005",
         "mobile_layout": "above",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
-        "mobile_body_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
+        "mobile_body_color": "#1e1005",
         "mobile_text_alignment": "center"
       }
     },
