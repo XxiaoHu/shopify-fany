@@ -1019,7 +1019,7 @@
         "heading": "Frequently Asked Questions",
         "heading_font_size": 24,
         "heading_color": "#1a1a1a",
-        "heading_alignment": "center",
+        "heading_alignment": "left",
         "heading_margin_bottom": 24,
         "show_topic_selector": true,
         "selector_label": "Choose Your Topic",
