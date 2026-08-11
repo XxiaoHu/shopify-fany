@@ -425,13 +425,13 @@
         "floating_image": "shopify://shop_images/FANY_Luna_Leather_banner_2-PC.png",
         "mobile_floating_image": "shopify://shop_images/FANY_Luna_Leather_banner_2-PC.png",
         "scroll_trigger_distance": 24,
-        "intro_padding_top": 48,
-        "intro_padding_bottom": 52,
+        "intro_padding_top": 60,
+        "intro_padding_bottom": 80,
         "background_color": "#ffffff",
         "mobile_heading_font_size": 28,
         "mobile_content_font_size": 16,
         "mobile_text_gap": 10,
-        "mobile_intro_padding_top": 20,
+        "mobile_intro_padding_top": 40,
         "mobile_intro_padding_bottom": 20,
         "mobile_main_image_height": 360
       }
