@@ -51,7 +51,7 @@
 .sleep-insights-poster__content {
   z-index: 2;
   display: flex;
-  padding: clamp(40px, 4.1667vw, 80px) clamp(48px, 17.1875vw, 330px);
+  padding: 10px clamp(48px, 17.1875vw, 330px);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -236,7 +236,7 @@
 
 @media screen and (min-width: 750px) and (max-width: 1280px) {
   .sleep-insights-poster__content {
-    padding: 80px;
+    padding: 10px 80px;
   }
 }
 
