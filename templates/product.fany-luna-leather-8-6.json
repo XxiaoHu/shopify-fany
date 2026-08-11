@@ -840,10 +840,14 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
+        "desktop_body_margin_top": 20,
+        "desktop_body_margin_bottom": 0,
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
-        "mobile_heading_margin_bottom": 0
+        "mobile_heading_margin_bottom": 0,
+        "mobile_body_margin_top": 20,
+        "mobile_body_margin_bottom": 0
       }
     },
     "sleep_insights_poster_7QwUna": {
@@ -861,8 +865,8 @@
         "desktop_body_width": 450,
         "desktop_title_size": 40,
         "desktop_body_size": 20,
-        "desktop_title_color": "#1E1005",
-        "desktop_body_color": "#1E1005",
+        "desktop_title_color": "#1e1005",
+        "desktop_body_color": "#1e1005",
         "mobile_layout": "below",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
@@ -874,10 +878,14 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
+        "desktop_body_margin_top": 20,
+        "desktop_body_margin_bottom": 0,
         "mobile_section_margin_top": 80,
         "mobile_section_margin_bottom": 40,
         "mobile_heading_margin_top": 0,
-        "mobile_heading_margin_bottom": 0
+        "mobile_heading_margin_bottom": 0,
+        "mobile_body_margin_top": 20,
+        "mobile_body_margin_bottom": 0
       }
     },
     "emotional_image_switcher_HbPbqK": {
@@ -986,10 +994,14 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
+        "desktop_body_margin_top": 20,
+        "desktop_body_margin_bottom": 20,
         "mobile_section_margin_top": 60,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 20,
-        "mobile_heading_margin_bottom": 0
+        "mobile_heading_margin_bottom": 0,
+        "mobile_body_margin_top": 20,
+        "mobile_body_margin_bottom": 0
       }
     },
     "product_overview_group_F9Xy6b": {
