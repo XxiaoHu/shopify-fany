@@ -1,5 +1,8 @@
 {{ 'sleep-insights-poster.css' | asset_url | stylesheet_tag }}
 
+{%- assign desktop_image_ratio = section.settings.desktop_image.aspect_ratio | default: 1.129412 -%}
+{%- assign mobile_image_ratio = section.settings.mobile_image.aspect_ratio | default: desktop_image_ratio -%}
+
 <div
   id="SleepInsightsPoster-{{ section.id }}"
   class="sleep-insights-poster"
@@ -8,7 +11,7 @@
   data-mobile-position="{{ section.settings.mobile_text_position }}"
   data-mobile-layout="{{ section.settings.mobile_layout }}"
   data-mobile-text-alignment="{{ section.settings.mobile_text_alignment }}"
-  style="--sleep-poster-desktop-copy-width: {{ section.settings.desktop_copy_width }}px; --sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }};"
+  style="--sleep-poster-desktop-image-ratio: {{ desktop_image_ratio }}; --sleep-poster-mobile-image-ratio: {{ mobile_image_ratio }}; --sleep-poster-desktop-copy-width: {{ section.settings.desktop_copy_width }}px; --sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }};"
 >
   <div class="sleep-insights-poster__picture">
     {%- if section.settings.desktop_image != blank -%}
@@ -70,13 +73,13 @@
       "type": "image_picker",
       "id": "desktop_image",
       "label": "桌面端背景图片",
-      "info": "建议比例 1920:1700；未设置时使用 Shopify 默认占位图"
+      "info": "区块高度根据图片原始比例自适应；未设置时使用 Shopify 默认占位图"
     },
     {
       "type": "image_picker",
       "id": "mobile_image",
       "label": "移动端背景图片",
-      "info": "建议比例 393:472；未设置时使用桌面端图片"
+      "info": "区块高度根据图片原始比例自适应；未设置时使用桌面端图片及其比例"
     },
     {
       "type": "header",
