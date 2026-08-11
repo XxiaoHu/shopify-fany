@@ -982,13 +982,13 @@
         "mobile_title_color": "#1e1005",
         "mobile_body_color": "#1e1005",
         "mobile_text_alignment": "center",
-        "desktop_section_margin_top": 0,
+        "desktop_section_margin_top": 120,
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
         "mobile_section_margin_top": 60,
         "mobile_section_margin_bottom": 0,
-        "mobile_heading_margin_top": 0,
+        "mobile_heading_margin_top": 20,
         "mobile_heading_margin_bottom": 0
       }
     },
