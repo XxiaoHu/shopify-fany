@@ -652,7 +652,7 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 30,
-        "mobile_section_margin_top": 0,
+        "mobile_section_margin_top": 40,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 24
@@ -806,7 +806,7 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 30,
-        "mobile_section_margin_top": 0,
+        "mobile_section_margin_top": 20,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 24
@@ -840,7 +840,7 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
-        "mobile_section_margin_top": 0,
+        "mobile_section_margin_top": 40,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 0
@@ -848,7 +848,7 @@
     },
     "sleep_insights_poster_7QwUna": {
       "type": "sleep-insights-poster",
-      "name": "睡眠数据海报",
+      "name": "经期数据海报",
       "settings": {
         "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_92c6bd95-6b84-4143-b5a6-16d7c18dbcbb.webp",
         "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_ba38f810-4368-43ad-96fe-ccf98f75bd15.webp",
@@ -874,8 +874,8 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
-        "mobile_section_margin_top": 0,
-        "mobile_section_margin_bottom": 0,
+        "mobile_section_margin_top": 80,
+        "mobile_section_margin_bottom": 40,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 0
       }
@@ -948,7 +948,7 @@
         "image_group": "watch-faces-gallery-acfy0hfy",
         "title_font_size": 40,
         "text_font_size": 16,
-        "text_width": 800,
+        "text_width": 0,
         "padding_top": 130,
         "padding_bottom": 40,
         "mobile_title_font_size": 28,
