@@ -443,6 +443,7 @@
           "settings": {
             "label": "FANY Luna shown in Mocha Brown",
             "swatch_color": "#ddc8b3",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather_f86f8d90-83a9-4c43-8492-42633a77d035.webp",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_ddb834fb-3b26-4757-96cf-0a2de32102b7.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_dd1bad4d-326d-4a80-9a81-aa38cf80cf5e.webp",
             "image_alt": ""
@@ -453,18 +454,9 @@
           "settings": {
             "label": "FANY Luna shown in Moonlight Gray",
             "swatch_color": "#f4dec8",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather_13364a4b-323b-4454-a0ff-988765b1fda8.webp",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_be6fbd74-d555-4632-b11e-aa96f98200fa.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_3642cc87-77d8-4b23-87cc-3bd7463068fa.webp",
-            "image_alt": ""
-          }
-        },
-        "finish_G4Vkww": {
-          "type": "finish",
-          "settings": {
-            "label": "FANY Luna shown in Rose Gold",
-            "swatch_color": "#47423d",
-            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_7a26dde2-9479-44c8-bb31-8aee798109ac.webp",
-            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_b3314240-6f33-41d8-a644-8792b680479e.webp",
             "image_alt": ""
           }
         },
@@ -473,18 +465,9 @@
           "settings": {
             "label": "FANY Luna shown in Passion Red",
             "swatch_color": "#f6d9cd",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather.webp",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_f278a80b-c3c4-431e-8942-92f02aeaf915.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2368223b-3c4e-4b7b-b44a-878e2f840105.webp",
-            "image_alt": ""
-          }
-        },
-        "finish_iyBAeX": {
-          "type": "finish",
-          "settings": {
-            "label": "FANY Luna shown in Blush Rose",
-            "swatch_color": "#f0eff1",
-            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_e185c145-ba88-4913-a15d-957f9e26be4c.webp",
-            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_5405bf90-29dc-400f-a25d-1974cf589aa1.webp",
             "image_alt": ""
           }
         },
@@ -493,8 +476,31 @@
           "settings": {
             "label": "FANY Luna shown in Modern Silver",
             "swatch_color": "#010203",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather_dee4acdd-d1a2-4710-9dea-f83386ec8ab8.webp",
             "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_85d6e98a-849c-4725-ab3c-8aa05a6167fe.webp",
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_--_-M.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_G4Vkww": {
+          "type": "finish",
+          "settings": {
+            "label": "FANY Luna shown in Rose Gold",
+            "swatch_color": "#47423d",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather_12f17878-a361-4c0f-9ed9-692c41c18ae4.webp",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_7a26dde2-9479-44c8-bb31-8aee798109ac.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_b3314240-6f33-41d8-a644-8792b680479e.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_iyBAeX": {
+          "type": "finish",
+          "settings": {
+            "label": "FANY Luna shown in Blush Rose",
+            "swatch_color": "#f0eff1",
+            "swatch_image": "shopify://shop_images/FANY_Luna_Leather_6b8a77c6-911f-4279-b01c-62295fd4a6a1.webp",
+            "image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_e185c145-ba88-4913-a15d-957f9e26be4c.webp",
+            "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_5405bf90-29dc-400f-a25d-1974cf589aa1.webp",
             "image_alt": ""
           }
         },
@@ -600,10 +606,10 @@
       "block_order": [
         "finish_6MKYwD",
         "finish_DwBm3r",
-        "finish_G4Vkww",
         "finish_xMPrTY",
-        "finish_iyBAeX",
         "finish_dmN8LT",
+        "finish_G4Vkww",
+        "finish_iyBAeX",
         "feature_iAdQpg",
         "feature_GGQxGy",
         "feature_TAkttr",
