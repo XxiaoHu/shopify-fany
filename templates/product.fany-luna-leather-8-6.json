@@ -645,10 +645,10 @@
             "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_a0db9321-3b2b-4c6a-b3c3-7745f280349b.webp",
             "title": "Monitor Your Heart Rate",
             "title_font_size": 28,
-            "title_color": "#FFFFFF",
+            "title_color": "#ffffff",
             "description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
             "description_font_size": 20,
-            "description_color": "#FFFFFF",
+            "description_color": "#ffffff",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -760,8 +760,8 @@
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
-        "mobile_body_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
+        "mobile_body_color": "#1e1005",
         "mobile_text_alignment": "left"
       }
     },
@@ -776,14 +776,14 @@
         "desktop_text_position": "top-left",
         "desktop_title_size": 40,
         "desktop_body_size": 20,
-        "desktop_title_color": "#1E1005",
-        "desktop_body_color": "#1E1005",
+        "desktop_title_color": "#1e1005",
+        "desktop_body_color": "#1e1005",
         "mobile_layout": "below",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
-        "mobile_body_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
+        "mobile_body_color": "#1e1005",
         "mobile_text_alignment": "left"
       }
     },
@@ -843,7 +843,7 @@
       "settings": {
         "header": "<p>150+ Diverse Watch Faces & Custom DIY Designs</p>",
         "text": "<p>Match your watch face to your mood, outfit, or moment. Pick from timeless classics, dedicated sport styles, and vibrant artistic creations, or upload a favorite photo of your pets, family, or kids to create a look that is uniquely yours. At a glance, joy shines through!</p>",
-        "watch_image": "shopify://shop_images/Watch_Faces-1.webp",
+        "watch_image": "shopify://shop_images/images-impression-icon-watch-1_png.webp",
         "image_group": "watch-faces-gallery-acfy0hfy",
         "title_font_size": 40,
         "text_font_size": 16,
