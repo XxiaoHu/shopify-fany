@@ -837,10 +837,30 @@
         "autoplay_interval": 5
       }
     },
+    "custom_watch_faces_kHgJ4m": {
+      "type": "custom-watch-faces",
+      "name": "自定义表盘",
+      "settings": {
+        "header": "<p>150+ Diverse Watch Faces & Custom DIY Designs</p>",
+        "text": "<p>Match your watch face to your mood, outfit, or moment. Pick from timeless classics, dedicated sport styles, and vibrant artistic creations, or upload a favorite photo of your pets, family, or kids to create a look that is uniquely yours. At a glance, joy shines through!</p>",
+        "watch_image": "shopify://shop_images/Watch_Faces-1.webp",
+        "image_group": "watch-faces-gallery-acfy0hfy",
+        "title_font_size": 40,
+        "text_font_size": 18,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_title_font_size": 28,
+        "mobile_text_font_size": 16,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
     "sleep_insights_poster_4NBdB6": {
       "type": "sleep-insights-poster",
       "name": "睡眠数据海报",
       "settings": {
+        "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-PC.webp",
+        "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-M.webp",
         "title": "Better Sleep Better You",
         "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
         "desktop_text_position": "top-left",
@@ -2325,6 +2345,7 @@
     "sleep_insights_poster_Ydygpn",
     "sleep_insights_poster_7QwUna",
     "emotional_image_switcher_HbPbqK",
+    "custom_watch_faces_kHgJ4m",
     "sleep_insights_poster_4NBdB6",
     "product_overview_group_F9Xy6b",
     "faq",
