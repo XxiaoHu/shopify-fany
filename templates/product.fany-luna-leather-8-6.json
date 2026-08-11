@@ -659,9 +659,9 @@
             "mobile_title": "Monitor Your Heart Rate",
             "mobile_description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
             "mobile_title_font_size": 20,
-            "mobile_title_color": "#FFFFFF",
+            "mobile_title_color": "#ffffff",
             "mobile_description_font_size": 16,
-            "mobile_description_color": "#FFFFFF",
+            "mobile_description_color": "#ffffff",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -721,10 +721,10 @@
             "description_color": "#1e0e06",
             "mobile_title": "",
             "mobile_description": "",
-            "mobile_title_font_size": 24,
+            "mobile_title_font_size": 20,
             "mobile_title_color": "#1e0e06",
-            "mobile_description_font_size": 17,
-            "mobile_description_color": "#1e0e06",
+            "mobile_description_font_size": 16,
+            "mobile_description_color": "#1E1005",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -742,9 +742,9 @@
             "description_color": "#1e0e06",
             "mobile_title": "",
             "mobile_description": "",
-            "mobile_title_font_size": 24,
+            "mobile_title_font_size": 20,
             "mobile_title_color": "#1e0e06",
-            "mobile_description_font_size": 17,
+            "mobile_description_font_size": 16,
             "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
@@ -763,10 +763,10 @@
             "description_color": "#1e0e06",
             "mobile_title": "",
             "mobile_description": "",
-            "mobile_title_font_size": 24,
+            "mobile_title_font_size": 20,
             "mobile_title_color": "#1e0e06",
-            "mobile_description_font_size": 17,
-            "mobile_description_color": "#1e0e06",
+            "mobile_description_font_size": 16,
+            "mobile_description_color": "#1E1005",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -872,7 +872,7 @@
       "name": "情绪状态图片切换",
       "settings": {
         "title": "Manage Your Stress & Emotional Health",
-        "body": "<p>The watch categorises your emotions into 12 types of subtle states across dimensions, which are visualised in varied forms of flowers. Nurture your emotional seeds and let them flourish.</p>",
+        "body": "<p>FANY Luna's advanced biosensors track key indicators like HRV and EDA, turning subtle physiological shifts into actionable insights about your stress and emotional balance. More than data, it is an inner health companion, helping you listen to your body and nurture your overall well-being.</p>",
         "tabs_label": "Choose an emotional state",
         "desktop_title_size": 40,
         "desktop_title_color": "#1e0e06",
@@ -910,8 +910,8 @@
       "settings": {
         "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-PC.webp",
         "mobile_image": "shopify://shop_images/FANY_Luna_Leather_-M.webp",
-        "title": "Better Sleep Better You",
-        "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
+        "title": "FANY Luna-Fashion Forward, Wellness Within",
+        "body": "<p>FANY Luna is more than a smartwatch. It’s a quiet and gentle companion by your side. It elevates your everyday style while accurately tracking your health and workouts. A precious gift of love or a daily essential, FANY Luna inspires you to live fully and shine. FANY. See the Vibe.</p>",
         "desktop_text_position": "top-left",
         "desktop_text_alignment": "left",
         "desktop_copy_width": 340,
@@ -919,13 +919,13 @@
         "desktop_body_size": 20,
         "desktop_title_color": "#ffffff",
         "desktop_body_color": "#ffffff",
-        "mobile_layout": "overlay",
+        "mobile_layout": "above",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#ffffff",
-        "mobile_body_color": "#ffffff",
-        "mobile_text_alignment": "left"
+        "mobile_title_color": "#1E1005",
+        "mobile_body_color": "#1E1005",
+        "mobile_text_alignment": "center"
       }
     },
     "product_overview_group_F9Xy6b": {
