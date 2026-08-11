@@ -6,7 +6,7 @@
   class="emotional-image-switcher"
   data-autoplay="{{ section.settings.enable_autoplay }}"
   data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
-  style="--emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px; --emotional-desktop-title-color: {{ section.settings.desktop_title_color }}; --emotional-desktop-body-color: {{ section.settings.desktop_body_color }}; --emotional-mobile-title-color: {{ section.settings.mobile_title_color }}; --emotional-mobile-body-color: {{ section.settings.mobile_body_color }};"
+  style="--emotional-desktop-title-size: {{ section.settings.desktop_title_size }}px; --emotional-desktop-body-size: {{ section.settings.desktop_body_size }}px; --emotional-mobile-title-size: {{ section.settings.mobile_title_size }}px; --emotional-mobile-body-size: {{ section.settings.mobile_body_size }}px; --emotional-desktop-title-color: {{ section.settings.desktop_title_color }}; --emotional-desktop-body-color: {{ section.settings.desktop_body_color }}; --emotional-mobile-title-color: {{ section.settings.mobile_title_color }}; --emotional-mobile-body-color: {{ section.settings.mobile_body_color }}; --emotional-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px; --emotional-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px; --emotional-title-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px; --emotional-title-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 0 }}px; --emotional-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px; --emotional-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px; --emotional-mobile-title-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px; --emotional-mobile-title-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 0 }}px;"
 >
   <div class="emotional-image-switcher__sticky">
     <div class="emotional-image-switcher__visual" data-emotional-visual>
@@ -246,6 +246,94 @@
       "unit": "s",
       "label": "自动切换间隔",
       "default": 5
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（桌面端）"
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（移动端）"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 0
     }
   ],
   "blocks": [

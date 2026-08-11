@@ -4,6 +4,8 @@
   --afb-overlay-height: clamp(116px, 11.3542vw, 218px);
 
   display: block;
+  margin-top: var(--afb-section-margin-top, 0);
+  margin-bottom: var(--afb-section-margin-bottom, 0);
   overflow: clip;
   background: var(--afb-background, #fff);
 }
@@ -17,7 +19,7 @@
 }
 
 .animated-floating-banner__heading {
-  margin: 0;
+  margin: var(--afb-heading-margin-top, 0) 0 var(--afb-heading-margin-bottom, 0);
   color: var(--afb-heading-color, #1d1d1f);
   font-size: var(--afb-heading-size, 50px);
   font-weight: var(--afb-heading-weight, 600);
@@ -187,6 +189,11 @@
 }
 
 @media screen and (max-width: 749px) {
+  .animated-floating-banner {
+    margin-top: var(--afb-mobile-section-margin-top, 0);
+    margin-bottom: var(--afb-mobile-section-margin-bottom, 0);
+  }
+
   .animated-floating-banner__intro {
     padding-top: var(--afb-mobile-intro-padding-top, 32px);
     padding-right: 16px;
@@ -195,6 +202,8 @@
   }
 
   .animated-floating-banner__heading {
+    margin-top: var(--afb-mobile-heading-margin-top, 0);
+    margin-bottom: var(--afb-mobile-heading-margin-bottom, 0);
     font-size: var(--afb-mobile-heading-size, 32px);
   }
 

@@ -2,6 +2,8 @@
   position: relative;
   display: block;
   width: 100%;
+  margin-top: var(--sleep-poster-section-margin-top, 0);
+  margin-bottom: var(--sleep-poster-section-margin-bottom, 0);
   aspect-ratio: var(--sleep-poster-desktop-image-ratio, 1.129412);
   overflow: hidden;
   background: #fff;
@@ -67,7 +69,7 @@
 }
 
 .sleep-insights-poster__title {
-  margin: 0;
+  margin: var(--sleep-poster-title-margin-top, 0) 0 var(--sleep-poster-title-margin-bottom, 0);
   font-size: var(--sleep-poster-desktop-title-size, 40px);
   font-weight: 700;
   line-height: 1.2;
@@ -241,6 +243,8 @@
 @media screen and (max-width: 749px) {
   .sleep-insights-poster {
     height: auto;
+    margin-top: var(--sleep-poster-mobile-section-margin-top, 0);
+    margin-bottom: var(--sleep-poster-mobile-section-margin-bottom, 0);
     aspect-ratio: var(--sleep-poster-mobile-image-ratio, 0.832627);
   }
 
@@ -272,6 +276,8 @@
   }
 
   .sleep-insights-poster__title {
+    margin-top: var(--sleep-poster-mobile-title-margin-top, 0);
+    margin-bottom: var(--sleep-poster-mobile-title-margin-bottom, 0);
     font-size: var(--sleep-poster-mobile-title-size, 28px);
   }
 

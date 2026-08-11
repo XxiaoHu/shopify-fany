@@ -8,6 +8,7 @@
     data-section-id="{{ section.id }}"
     data-autoplay-duration="6150"
     data-transition-duration="1000"
+    style="--highlights-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px; --highlights-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px; --highlights-heading-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px; --highlights-heading-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 30 }}px; --highlights-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px; --highlights-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px; --highlights-mobile-heading-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px; --highlights-mobile-heading-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 24 }}px;"
   >
     <div class="highlights-image-gallery__header" style="--heading-size: {{ section.settings.heading_font_size }}px; --heading-size-mobile: {{ section.settings.mobile_heading_font_size }}px;">
       {%- if section.settings.heading != blank -%}
@@ -225,6 +226,94 @@
       "step": 1,
       "unit": "px",
       "default": 32
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（桌面端）"
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（移动端）"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 24
     }
   ],
   "blocks": [

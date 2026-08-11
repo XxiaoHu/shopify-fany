@@ -3,6 +3,10 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} {
+    --apv-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px;
+    --apv-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px;
+    --apv-heading-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px;
+    --apv-heading-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 30 }}px;
     --apv-heading-size: {{ section.settings.heading_font_size }}px;
     --apv-heading-color: {{ section.settings.heading_color }};
     --apv-finishes-title-size: {{ section.settings.finishes_title_font_size }}px;
@@ -24,6 +28,10 @@
   }
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} {
+      --apv-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px;
+      --apv-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px;
+      --apv-heading-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px;
+      --apv-heading-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 24 }}px;
       --apv-heading-size: {{ section.settings.mobile_heading_font_size }}px;
       --apv-heading-color: {{ section.settings.mobile_heading_color }};
       --apv-finishes-title-size: {{ section.settings.mobile_finishes_title_font_size }}px;
@@ -541,6 +549,94 @@
       "id": "mobile_finishes_desc_color",
       "label": "饰面说明颜色(移动端)",
       "default": "#1d1d1f"
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（桌面端）"
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（移动端）"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 24
     }
   ],
   "max_blocks": 16,

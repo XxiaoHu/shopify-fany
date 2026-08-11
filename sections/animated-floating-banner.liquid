@@ -10,6 +10,10 @@
 
 {%- style -%}
   .animated-floating-banner--{{ section.id }} {
+    --afb-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px;
+    --afb-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px;
+    --afb-heading-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px;
+    --afb-heading-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 0 }}px;
     --afb-background: {{ section.settings.background_color }};
     --afb-text-width: {{ section.settings.text_max_width }}px;
     --afb-intro-padding-top: {{ section.settings.intro_padding_top }}px;
@@ -34,6 +38,10 @@
     --afb-mobile-heading-size: {{ section.settings.mobile_heading_font_size }}px;
     --afb-mobile-content-size: {{ section.settings.mobile_content_font_size }}px;
     --afb-mobile-main-height: {{ section.settings.mobile_main_image_height }}px;
+    --afb-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px;
+    --afb-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px;
+    --afb-mobile-heading-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px;
+    --afb-mobile-heading-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 0 }}px;
   }
 {%- endstyle -%}
 
@@ -425,6 +433,94 @@
       "unit": "px",
       "label": "移动端主图高度",
       "default": 360
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（桌面端）"
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "区块与标题间距（移动端）"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "区块下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "标题下间距",
+      "default": 0
     }
   ],
   "presets": [
