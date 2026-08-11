@@ -840,7 +840,7 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
-        "mobile_section_margin_top": 40,
+        "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 0
@@ -985,7 +985,7 @@
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
-        "mobile_section_margin_top": 0,
+        "mobile_section_margin_top": 60,
         "mobile_section_margin_bottom": 0,
         "mobile_heading_margin_top": 0,
         "mobile_heading_margin_bottom": 0
