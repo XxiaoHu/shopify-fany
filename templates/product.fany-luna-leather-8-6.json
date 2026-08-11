@@ -434,7 +434,7 @@
         "mobile_intro_padding_top": 40,
         "mobile_intro_padding_bottom": 20,
         "mobile_main_image_height": 360,
-        "desktop_section_margin_top": 0,
+        "desktop_section_margin_top": 100,
         "desktop_section_margin_bottom": 0,
         "desktop_heading_margin_top": 0,
         "desktop_heading_margin_bottom": 0,
