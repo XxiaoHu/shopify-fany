@@ -656,6 +656,12 @@
             "description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
             "description_font_size": 20,
             "description_color": "#ffffff",
+            "mobile_title": "Monitor Your Heart Rate",
+            "mobile_description": "Continuous 24/7 tracking of your resting heart rate, active heart rate, and HRV. Receive notifications for high or low heart rate and irregular rhythm readings.",
+            "mobile_title_font_size": 20,
+            "mobile_title_color": "#FFFFFF",
+            "mobile_description_font_size": 16,
+            "mobile_description_color": "#FFFFFF",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -671,6 +677,12 @@
             "description": "FANY Luna tracks your real-time SpO2 levels and alerts you to low oxygen states to ward off fatigue and dizziness, giving you the confidence to maintain an active, healthy lifestyle.",
             "description_font_size": 20,
             "description_color": "#1e0e06",
+            "mobile_title": "Track Your Blood Oxygen",
+            "mobile_description": "FANY Luna tracks your real-time SpO2 levels and alerts you to low oxygen states to ward off fatigue and dizziness, giving you the confidence to maintain an active, healthy lifestyle.",
+            "mobile_title_font_size": 20,
+            "mobile_title_color": "#1e0e06",
+            "mobile_description_font_size": 16,
+            "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -686,6 +698,12 @@
             "description": "Your menstrual cycle reflects your overall wellness. Pair your FANY Luna watch with the FANY Fit app to easily access all cycle insights: period length, period predictions, ovulation, fertile windows, mood logs and full historical records. All your personal data stays fully private, offering thoughtful care for women’s health.",
             "description_font_size": 20,
             "description_color": "#1e0e06",
+            "mobile_title": "",
+            "mobile_description": "",
+            "mobile_title_font_size": 20,
+            "mobile_title_color": "#1e0e06",
+            "mobile_description_font_size": 16,
+            "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -701,6 +719,12 @@
             "description": "Track your daily distance, steps, and calorie goals with Activity Rings. Earn exclusive achievement badges when you hit your targets! Unlock special rewards for hitting 10,000 steps, 30 minutes of activity, and burning 500 calories in a single day.",
             "description_font_size": 20,
             "description_color": "#1e0e06",
+            "mobile_title": "",
+            "mobile_description": "",
+            "mobile_title_font_size": 24,
+            "mobile_title_color": "#1e0e06",
+            "mobile_description_font_size": 17,
+            "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -716,6 +740,12 @@
             "description": "FANY Luna continuously monitors your deep, light, REM, awake time, and consistency, giving you clear status insights like Excellent, Good, or Fair. Discover how rest shapes your daily energy, and follow gentle guidance to build better habits and refine your sleep quality.",
             "description_font_size": 20,
             "description_color": "#1e0e06",
+            "mobile_title": "",
+            "mobile_description": "",
+            "mobile_title_font_size": 24,
+            "mobile_title_color": "#1e0e06",
+            "mobile_description_font_size": 17,
+            "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -731,6 +761,12 @@
             "description": "Women are uniquely sensitive to emotional shifts and stress, both of which affect heart rate, sleep, and overall wellness. FANY Luna monitors your inner state and comes with a breathing relaxation function to ease tension, inviting you to slow down, reflect, and prioritize self-care every time you glance at your wrist.",
             "description_font_size": 20,
             "description_color": "#1e0e06",
+            "mobile_title": "",
+            "mobile_description": "",
+            "mobile_title_font_size": 24,
+            "mobile_title_color": "#1e0e06",
+            "mobile_description_font_size": 17,
+            "mobile_description_color": "#1e0e06",
             "copy_position": "center-left",
             "mobile_copy_position": "top-left"
           }
@@ -747,7 +783,9 @@
       "name": "Highlights 图片轮播",
       "settings": {
         "heading": "Highlights: Nurture Your All-Around Health",
-        "heading_font_size": 40
+        "heading_font_size": 40,
+        "mobile_heading": "Highlights: Nurture Your All-Around Health",
+        "mobile_heading_font_size": 28
       }
     },
     "sleep_insights_poster_Ydygpn": {
@@ -759,6 +797,8 @@
         "title": "Better Sleep Better You",
         "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
         "desktop_text_position": "top-left",
+        "desktop_text_alignment": "left",
+        "desktop_copy_width": 340,
         "desktop_title_size": 40,
         "desktop_body_size": 20,
         "desktop_title_color": "#ffffff",
@@ -781,6 +821,8 @@
         "title": "Menstrual Cycle Insights for  Health and Balance",
         "body": "<p>Whether your cycle is predictable, irregular, or transitioning, menstrual health plays a big role in a woman's overall well-being.<br/>FANY Luna logs your cycle, ovulation, and body signals to give you personalized, actionable guidance. Align your workouts and life with your natural rhythm, anticipate emotional shifts, and spot potential health risks early. You can check all your detailed reports right in the FANY Fit App. All health data is fully encrypted. It is more than a tracker: it is your secure companion for a balanced, peaceful everyday life.</p>",
         "desktop_text_position": "top-left",
+        "desktop_text_alignment": "left",
+        "desktop_copy_width": 340,
         "desktop_title_size": 40,
         "desktop_body_size": 20,
         "desktop_title_color": "#1e1005",
@@ -871,6 +913,8 @@
         "title": "Better Sleep Better You",
         "body": "<p>The FANY smartwatch tracks key sleep metrics including heart rate, HRV, breathing, blood oxygen and movements to generate your personalized report. Every morning, instantly check your sleep score, sleep stages (deep/light/REM), sleep timing (fall asleep/wake time), plus tailored insights and improvement tips</p>",
         "desktop_text_position": "top-left",
+        "desktop_text_alignment": "left",
+        "desktop_copy_width": 340,
         "desktop_title_size": 40,
         "desktop_body_size": 20,
         "desktop_title_color": "#ffffff",
