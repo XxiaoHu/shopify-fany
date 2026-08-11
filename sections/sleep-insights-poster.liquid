@@ -14,7 +14,7 @@
   data-mobile-position="{{ section.settings.mobile_text_position }}"
   data-mobile-layout="{{ section.settings.mobile_layout }}"
   data-mobile-text-alignment="{{ section.settings.mobile_text_alignment }}"
-  style="--sleep-poster-desktop-image-ratio: {{ desktop_image_ratio }}; --sleep-poster-mobile-image-ratio: {{ mobile_image_ratio }}; --sleep-poster-desktop-title-width: {{ desktop_title_width }}px; --sleep-poster-desktop-body-width: {{ desktop_body_width }}px; --sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }}; --sleep-poster-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px; --sleep-poster-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px; --sleep-poster-title-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px; --sleep-poster-title-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 0 }}px; --sleep-poster-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px; --sleep-poster-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px; --sleep-poster-mobile-title-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px; --sleep-poster-mobile-title-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 0 }}px;"
+  style="--sleep-poster-desktop-image-ratio: {{ desktop_image_ratio }}; --sleep-poster-mobile-image-ratio: {{ mobile_image_ratio }}; --sleep-poster-desktop-title-width: {{ desktop_title_width }}px; --sleep-poster-desktop-body-width: {{ desktop_body_width }}px; --sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }}; --sleep-poster-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px; --sleep-poster-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px; --sleep-poster-title-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px; --sleep-poster-title-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 0 }}px; --sleep-poster-body-margin-top: {{ section.settings.desktop_body_margin_top | default: 20 }}px; --sleep-poster-body-margin-bottom: {{ section.settings.desktop_body_margin_bottom | default: 0 }}px; --sleep-poster-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px; --sleep-poster-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px; --sleep-poster-mobile-title-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px; --sleep-poster-mobile-title-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 0 }}px; --sleep-poster-mobile-body-margin-top: {{ section.settings.mobile_body_margin_top | default: 20 }}px; --sleep-poster-mobile-body-margin-bottom: {{ section.settings.mobile_body_margin_bottom | default: 0 }}px;"
 >
   <div class="sleep-insights-poster__picture">
     {%- if section.settings.desktop_image != blank -%}
@@ -272,7 +272,7 @@
     },
     {
       "type": "header",
-      "content": "区块与标题间距（桌面端）"
+      "content": "区块、标题与描述间距（桌面端）"
     },
     {
       "type": "range",
@@ -315,8 +315,28 @@
       "default": 0
     },
     {
+      "type": "range",
+      "id": "desktop_body_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "描述上间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_body_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "描述下间距",
+      "default": 0
+    },
+    {
       "type": "header",
-      "content": "区块与标题间距（移动端）"
+      "content": "区块、标题与描述间距（移动端）"
     },
     {
       "type": "range",
@@ -356,6 +376,26 @@
       "step": 2,
       "unit": "px",
       "label": "标题下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "描述上间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "描述下间距",
       "default": 0
     }
   ],
