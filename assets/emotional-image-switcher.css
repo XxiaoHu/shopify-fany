@@ -279,6 +279,49 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .emotional-image-switcher__sticky {
+    grid-template-areas: 'stage';
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .emotional-image-switcher__visual,
+  .emotional-image-switcher.is-entered .emotional-image-switcher__visual {
+    position: relative;
+    z-index: 0;
+    grid-area: stage;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .emotional-image-switcher__panel.is-active {
+    position: relative;
+  }
+
+  .emotional-image-switcher__picture {
+    position: relative;
+    height: auto;
+  }
+
+  .emotional-image-switcher__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .emotional-image-switcher__copy {
+    z-index: 2;
+    grid-area: stage;
+    align-self: start;
+  }
+
+  .emotional-image-switcher__controls {
+    z-index: 2;
+    grid-area: stage;
+    align-self: end;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .emotional-image-switcher__visual,
   .emotional-image-switcher__right,

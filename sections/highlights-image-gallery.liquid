@@ -9,9 +9,14 @@
     data-autoplay-duration="6150"
     data-transition-duration="1000"
   >
-    <div class="highlights-image-gallery__header">
+    <div class="highlights-image-gallery__header" style="--heading-size: {{ section.settings.heading_font_size }}px; --heading-size-mobile: {{ section.settings.mobile_heading_font_size }}px;">
       {%- if section.settings.heading != blank -%}
-        <h2 class="highlights-image-gallery__heading" style="font-size: {{ section.settings.heading_font_size }}px;">{{ section.settings.heading | escape }}</h2>
+        {%- if section.settings.mobile_heading != blank -%}
+          <h2 class="highlights-image-gallery__heading is-desktop-only">{{ section.settings.heading | escape }}</h2>
+          <h2 class="highlights-image-gallery__heading is-mobile-only">{{ section.settings.mobile_heading | escape }}</h2>
+        {%- else -%}
+          <h2 class="highlights-image-gallery__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
       {%- endif -%}
     </div>
 
@@ -47,6 +52,7 @@
             aria-labelledby="HighlightsImageGalleryTab-{{ section.id }}-{{ block.id }}"
             aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
             tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+            style="--slide-title-size: {{ block.settings.title_font_size }}px; --slide-title-color: {{ block.settings.title_color }}; --slide-desc-size: {{ block.settings.description_font_size }}px; --slide-desc-color: {{ block.settings.description_color }}; --slide-title-size-mobile: {{ block.settings.mobile_title_font_size }}px; --slide-title-color-mobile: {{ block.settings.mobile_title_color }}; --slide-desc-size-mobile: {{ block.settings.mobile_description_font_size }}px; --slide-desc-color-mobile: {{ block.settings.mobile_description_color }};"
             {{ block.shopify_attributes }}
           >
             <div class="highlights-image-gallery__card">
@@ -91,16 +97,20 @@
               <div class="highlights-image-gallery__copy">
                 <div class="highlights-image-gallery__copy-content">
                   {%- if block.settings.title != blank -%}
-                    <h3
-                      class="highlights-image-gallery__title"
-                      style="font-size: {{ block.settings.title_font_size }}px; color: {{ block.settings.title_color }};"
-                    >{{ block.settings.title | escape }}</h3>
+                    {%- if block.settings.mobile_title != blank -%}
+                      <h3 class="highlights-image-gallery__title is-desktop-only">{{ block.settings.title | escape }}</h3>
+                      <h3 class="highlights-image-gallery__title is-mobile-only">{{ block.settings.mobile_title | escape }}</h3>
+                    {%- else -%}
+                      <h3 class="highlights-image-gallery__title">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
                   {%- endif -%}
                   {%- if block.settings.description != blank -%}
-                    <p
-                      class="highlights-image-gallery__description"
-                      style="font-size: {{ block.settings.description_font_size }}px; color: {{ block.settings.description_color }};"
-                    >{{ block.settings.description | escape | newline_to_br }}</p>
+                    {%- if block.settings.mobile_description != blank -%}
+                      <p class="highlights-image-gallery__description is-desktop-only">{{ block.settings.description | escape | newline_to_br }}</p>
+                      <p class="highlights-image-gallery__description is-mobile-only">{{ block.settings.mobile_description | escape | newline_to_br }}</p>
+                    {%- else -%}
+                      <p class="highlights-image-gallery__description">{{ block.settings.description | escape | newline_to_br }}</p>
+                    {%- endif -%}
                   {%- endif -%}
                 </div>
               </div>
@@ -199,6 +209,22 @@
       "step": 1,
       "unit": "px",
       "default": 40
+    },
+    {
+      "type": "text",
+      "id": "mobile_heading",
+      "label": "移动端标题",
+      "info": "未设置时使用桌面端标题"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_font_size",
+      "label": "移动端标题字体大小",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 32
     }
   ],
   "blocks": [
@@ -259,6 +285,54 @@
           "type": "color",
           "id": "description_color",
           "label": "正文颜色",
+          "default": "#1e0e06"
+        },
+        {
+          "type": "header",
+          "content": "移动端文字样式"
+        },
+        {
+          "type": "text",
+          "id": "mobile_title",
+          "label": "移动端标题",
+          "info": "未设置时使用桌面端标题"
+        },
+        {
+          "type": "textarea",
+          "id": "mobile_description",
+          "label": "移动端正文",
+          "info": "未设置时使用桌面端正文"
+        },
+        {
+          "type": "range",
+          "id": "mobile_title_font_size",
+          "label": "移动端标题字体大小",
+          "min": 12,
+          "max": 72,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "color",
+          "id": "mobile_title_color",
+          "label": "移动端标题颜色",
+          "default": "#1e0e06"
+        },
+        {
+          "type": "range",
+          "id": "mobile_description_font_size",
+          "label": "移动端正文字体大小",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "default": 17
+        },
+        {
+          "type": "color",
+          "id": "mobile_description_color",
+          "label": "移动端正文颜色",
           "default": "#1e0e06"
         },
         {

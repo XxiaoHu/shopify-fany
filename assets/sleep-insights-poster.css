@@ -58,7 +58,7 @@
 
 .sleep-insights-poster__copy {
   display: flex;
-  width: 340px;
+  width: var(--sleep-poster-desktop-copy-width, 340px);
   max-width: 100%;
   flex-direction: column;
   gap: 20px;
@@ -129,6 +129,18 @@
   text-align: right;
 }
 
+.sleep-insights-poster[data-desktop-text-alignment='left'] .sleep-insights-poster__copy {
+  text-align: left;
+}
+
+.sleep-insights-poster[data-desktop-text-alignment='center'] .sleep-insights-poster__copy {
+  text-align: center;
+}
+
+.sleep-insights-poster[data-desktop-text-alignment='right'] .sleep-insights-poster__copy {
+  text-align: right;
+}
+
 @media screen and (min-width: 750px) {
   .sleep-insights-poster {
     height: 1700px;
@@ -146,10 +158,6 @@
 @media screen and (min-width: 750px) and (max-width: 1280px) {
   .sleep-insights-poster__content {
     padding: 80px;
-  }
-
-  .sleep-insights-poster__copy {
-    width: 440px;
   }
 }
 
@@ -230,12 +238,18 @@
     text-align: right;
   }
 
+  .sleep-insights-poster[data-mobile-layout='above'],
   .sleep-insights-poster[data-mobile-layout='below'] {
     aspect-ratio: auto;
     display: flex;
     flex-direction: column;
   }
 
+  .sleep-insights-poster[data-mobile-layout='above'] {
+    flex-direction: column-reverse;
+  }
+
+  .sleep-insights-poster[data-mobile-layout='above'] .sleep-insights-poster__picture,
   .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__picture {
     position: relative;
     flex: 0 0 auto;
@@ -244,10 +258,12 @@
     padding-bottom: calc(472 / 393 * 100%);
   }
 
+  .sleep-insights-poster[data-mobile-layout='above'] .sleep-insights-poster__shade,
   .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__shade {
     display: none;
   }
 
+  .sleep-insights-poster[data-mobile-layout='above'] .sleep-insights-poster__content,
   .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__content {
     position: relative;
     padding: 24px 20px;
@@ -255,6 +271,7 @@
     justify-content: flex-start;
   }
 
+  .sleep-insights-poster[data-mobile-layout='above'] .sleep-insights-poster__copy,
   .sleep-insights-poster[data-mobile-layout='below'] .sleep-insights-poster__copy {
     text-align: left;
   }

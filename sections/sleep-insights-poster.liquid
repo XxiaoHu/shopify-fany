@@ -4,10 +4,11 @@
   id="SleepInsightsPoster-{{ section.id }}"
   class="sleep-insights-poster"
   data-desktop-position="{{ section.settings.desktop_text_position }}"
+  data-desktop-text-alignment="{{ section.settings.desktop_text_alignment }}"
   data-mobile-position="{{ section.settings.mobile_text_position }}"
   data-mobile-layout="{{ section.settings.mobile_layout }}"
   data-mobile-text-alignment="{{ section.settings.mobile_text_alignment }}"
-  style="--sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }};"
+  style="--sleep-poster-desktop-copy-width: {{ section.settings.desktop_copy_width }}px; --sleep-poster-desktop-title-size: {{ section.settings.desktop_title_size }}px; --sleep-poster-desktop-body-size: {{ section.settings.desktop_body_size }}px; --sleep-poster-mobile-title-size: {{ section.settings.mobile_title_size }}px; --sleep-poster-mobile-body-size: {{ section.settings.mobile_body_size }}px; --sleep-poster-desktop-title-color: {{ section.settings.desktop_title_color }}; --sleep-poster-desktop-body-color: {{ section.settings.desktop_body_color }}; --sleep-poster-mobile-title-color: {{ section.settings.mobile_title_color }}; --sleep-poster-mobile-body-color: {{ section.settings.mobile_body_color }};"
 >
   <div class="sleep-insights-poster__picture">
     {%- if section.settings.desktop_image != blank -%}
@@ -115,6 +116,27 @@
       "default": "top-left"
     },
     {
+      "type": "select",
+      "id": "desktop_text_alignment",
+      "label": "文本对齐方式",
+      "options": [
+        { "value": "left", "label": "左对齐" },
+        { "value": "center", "label": "居中" },
+        { "value": "right", "label": "右对齐" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "desktop_copy_width",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "文本内容宽度",
+      "default": 340
+    },
+    {
       "type": "range",
       "id": "desktop_title_size",
       "min": 16,
@@ -156,6 +178,7 @@
       "label": "文字与图片关系",
       "options": [
         { "value": "overlay", "label": "悬浮在图片上" },
+        { "value": "above", "label": "排在图片上方" },
         { "value": "below", "label": "排在图片下方" }
       ],
       "default": "overlay"
