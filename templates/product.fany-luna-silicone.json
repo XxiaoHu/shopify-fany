@@ -1947,6 +1947,102 @@
         "padding_top": 116,
         "padding_bottom": 96
       }
+    },
+    "highlights_image_gallery_HBtFVK": {
+      "type": "highlights-image-gallery",
+      "blocks": {
+        "highlight_GiayVq": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_GNWthi": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_meMDja": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_EJNxff": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_wQMCTR": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        },
+        "highlight_rpBN8t": {
+          "type": "highlight",
+          "settings": {
+            "title": "Heart Rate Monitor",
+            "title_font_size": 28,
+            "title_color": "#1e0e06",
+            "description": "24/7 heart rate monitoring—tracks rest/sleep rates, alerts on abnormalities. Guards health beyond overexertion!",
+            "description_font_size": 20,
+            "description_color": "#1e0e06",
+            "copy_position": "center-left",
+            "mobile_copy_position": "top-left"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_GiayVq",
+        "highlight_GNWthi",
+        "highlight_meMDja",
+        "highlight_EJNxff",
+        "highlight_wQMCTR",
+        "highlight_rpBN8t"
+      ],
+      "name": "Highlights 图片轮播",
+      "settings": {
+        "heading": "Designed for Women标题3",
+        "heading_font_size": 40
+      }
     }
   },
   "order": [
@@ -1954,6 +2050,7 @@
     "main",
     "product_overview_group_F9Xy6b",
     "faq",
-    "newsletter_QLP44D"
+    "newsletter_QLP44D",
+    "highlights_image_gallery_HBtFVK"
   ]
 }
