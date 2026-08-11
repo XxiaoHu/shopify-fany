@@ -418,6 +418,7 @@
         "content_letter_spacing": 0,
         "content_color": "#6e6e73",
         "main_image": "shopify://shop_images/FANY_Luna_Leather_banner-PC.webp",
+        "mobile_main_image": "shopify://shop_images/FANY_Luna_Leather_banner-M.webp",
         "main_image_height": 700,
         "main_image_fit": "cover",
         "main_image_position": "center center",
