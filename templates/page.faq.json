@@ -1029,8 +1029,8 @@
         "initial_limit": 10,
         "open_first_item": true,
         "page_width": 1500,
-        "padding_top": 20,
-        "padding_bottom": 80
+        "padding_top": 40,
+        "padding_bottom": 100
       }
     },
     "collapsible_content_AcjBtT": {
