@@ -234,6 +234,34 @@
   }
 }
 
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .sleep-insights-poster {
+    height: calc(1920px / var(--sleep-poster-desktop-image-ratio, 1.129412));
+    aspect-ratio: auto;
+  }
+
+  .sleep-insights-poster__picture {
+    left: 50%;
+    width: 1920px;
+    height: calc(1920px / var(--sleep-poster-desktop-image-ratio, 1.129412));
+    transform: translateX(-50%);
+  }
+
+  .sleep-insights-poster[data-desktop-layout='above'],
+  .sleep-insights-poster[data-desktop-layout='below'] {
+    height: auto;
+  }
+
+  .sleep-insights-poster[data-desktop-layout='above'] .sleep-insights-poster__picture,
+  .sleep-insights-poster[data-desktop-layout='below'] .sleep-insights-poster__picture {
+    left: 50%;
+    width: 1920px;
+    height: calc(1920px / var(--sleep-poster-desktop-image-ratio, 1.129412));
+    aspect-ratio: auto;
+    transform: translateX(-50%);
+  }
+}
+
 @media screen and (min-width: 750px) and (max-width: 1280px) {
   .sleep-insights-poster__content {
     padding: 10px 80px;

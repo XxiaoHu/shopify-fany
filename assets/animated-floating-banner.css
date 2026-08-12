@@ -1,5 +1,5 @@
 .animated-floating-banner {
-  --afb-float-width: clamp(320px, 41.6667vw, 800px);
+  --afb-float-width: clamp(320px, 62.5vw, 800px);
   --afb-float-reserve: clamp(80px, 7.8125vw, 150px);
   --afb-overlay-height: clamp(116px, 11.3542vw, 218px);
 

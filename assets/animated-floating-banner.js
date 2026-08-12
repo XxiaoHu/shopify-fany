@@ -23,6 +23,9 @@ if (!customElements.get('animated-floating-banner')) {
 
       this.hasStarted = true;
       this.scrollTriggerDistance = Number.parseInt(this.dataset.scrollTriggerDistance, 10) || 24;
+      this.bannerFullyShown = false;
+      this.fullyShownScrollY = null;
+      this.lastScrollY = window.scrollY;
       this.handleScroll = this.queueScrollCheck.bind(this);
       this.handleResize = this.queueScrollCheck.bind(this);
 
@@ -42,12 +45,25 @@ if (!customElements.get('animated-floating-banner')) {
 
     checkRevealState() {
       if (this.classList.contains('is-revealed')) return;
-      if (window.scrollY < this.scrollTriggerDistance) return;
 
       const bounds = this.getBoundingClientRect();
-      const isNearViewport = bounds.top < window.innerHeight && bounds.bottom > 0;
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > this.lastScrollY;
 
-      if (isNearViewport) this.reveal();
+      if (!this.bannerFullyShown && bounds.bottom <= window.innerHeight && bounds.bottom > 0) {
+        this.bannerFullyShown = true;
+        this.fullyShownScrollY = currentScrollY;
+        this.lastScrollY = currentScrollY;
+        return;
+      }
+
+      const hasScrolledPastTrigger =
+        this.bannerFullyShown &&
+        currentScrollY >= this.fullyShownScrollY + this.scrollTriggerDistance;
+
+      this.lastScrollY = currentScrollY;
+
+      if (isScrollingDown && hasScrolledPastTrigger && bounds.bottom > 0) this.reveal();
     }
 
     reveal() {

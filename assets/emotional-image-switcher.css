@@ -34,8 +34,7 @@
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.985);
-  transition: opacity 0.45s ease, transform 0.6s ease, visibility 0s linear 0.6s;
+  transition: opacity 0.45s ease, visibility 0s linear 0.45s;
   pointer-events: none;
 }
 
@@ -43,7 +42,6 @@
   z-index: 1;
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
   transition-delay: 0s;
 }
 
