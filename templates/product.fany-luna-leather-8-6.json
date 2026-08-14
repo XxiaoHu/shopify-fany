@@ -997,7 +997,7 @@
         "desktop_body_margin_top": 20,
         "desktop_body_margin_bottom": 20,
         "mobile_section_margin_top": 60,
-        "mobile_section_margin_bottom": 0,
+        "mobile_section_margin_bottom": 100,
         "mobile_heading_margin_top": 20,
         "mobile_heading_margin_bottom": 0,
         "mobile_body_margin_top": 20,
@@ -2103,6 +2103,7 @@
         "custom_watch_faces_VcDmf9",
         "product_overview_image_text_TEet9F"
       ],
+      "disabled": true,
       "name": "product overview group",
       "settings": {
         "overview_padding_top": 30,
