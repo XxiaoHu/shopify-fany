@@ -1,7 +1,7 @@
 .emotional-image-switcher {
   position: relative;
   display: block;
-  height: 150vh;
+  height: auto;
   margin-top: var(--emotional-section-margin-top, 0);
   margin-bottom: var(--emotional-section-margin-bottom, 0);
   color: #1e0e06;
@@ -14,17 +14,15 @@
 }
 
 .emotional-image-switcher__sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   background: #fff;
 }
 
 .emotional-image-switcher__visual {
-  position: absolute;
-  inset: 0;
+  position: relative;
   transition: opacity 0.8s ease;
   will-change: opacity;
 }
@@ -39,6 +37,7 @@
 }
 
 .emotional-image-switcher__panel.is-active {
+  position: relative;
   z-index: 1;
   opacity: 1;
   visibility: visible;
@@ -46,19 +45,18 @@
 }
 
 .emotional-image-switcher__picture {
-  position: absolute;
-  inset: 0;
+  position: relative;
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .emotional-image-switcher__image {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
