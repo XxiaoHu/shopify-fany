@@ -34,7 +34,9 @@
                       {{ mobile_image | image_url: width: 400 }} 400w,
                       {{ mobile_image | image_url: width: 600 }} 600w,
                       {{ mobile_image | image_url: width: 800 }} 800w,
-                      {{ mobile_image | image_url: width: 1000 }} 1000w
+                      {{ mobile_image | image_url: width: 1000 }} 1000w,
+                      {{ mobile_image | image_url: width: 1200 }} 1200w,
+                      {{ mobile_image | image_url: width: 1500 }} 1500w
                     "
                     sizes="100vw"
                   >
@@ -43,22 +45,22 @@
                 {%- if desktop_image != blank -%}
                   {{
                     desktop_image
-                    | image_url: width: 2000
+                    | image_url: width: 3840
                     | image_tag:
                       class: 'emotional-image-switcher__image',
                       loading: 'lazy',
-                      widths: '500, 750, 1000, 1250, 1500, 1750, 2000',
+                      widths: '500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3840',
                       sizes: '100vw',
                       alt: block.settings.label
                   }}
                 {%- else -%}
                   {{
                     mobile_image
-                    | image_url: width: 1000
+                    | image_url: width: 1500
                     | image_tag:
                       class: 'emotional-image-switcher__image',
                       loading: 'lazy',
-                      widths: '400, 600, 800, 1000',
+                      widths: '400, 600, 800, 1000, 1200, 1500',
                       sizes: '100vw',
                       alt: block.settings.label
                   }}
