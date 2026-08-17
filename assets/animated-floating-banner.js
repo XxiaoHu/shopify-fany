@@ -83,7 +83,7 @@ if (!customElements.get('animated-floating-banner')) {
         this.classList.add('is-settled');
         this.motion.style.willChange = 'auto';
         if (this.overlay) this.overlay.style.willChange = 'auto';
-      }, 2080);
+      }, 1580);
     }
   }
 

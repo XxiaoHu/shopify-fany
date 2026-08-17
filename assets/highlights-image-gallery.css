@@ -47,7 +47,7 @@
   scroll-padding-inline: var(--highlights-side-space);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  touch-action: pan-y pinch-zoom;
+  touch-action: pan-x pan-y pinch-zoom;
   cursor: grab;
 }
 
@@ -475,6 +475,13 @@
 
   .highlights-image-gallery__pagination {
     max-width: calc(100vw - 112px);
+  }
+
+  .highlights-image-gallery__pagination,
+  .highlights-image-gallery__play-pause {
+    background: rgba(232, 232, 237, 0.92);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .highlights-image-gallery__tab.is-active .highlights-image-gallery__dot {

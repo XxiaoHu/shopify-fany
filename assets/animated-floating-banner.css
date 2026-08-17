@@ -122,14 +122,14 @@
 }
 
 .animated-floating-banner.is-revealed .animated-floating-banner__overlay {
-  animation: animated-floating-banner-overlay-opacity 2s linear both;
+  animation: animated-floating-banner-overlay-opacity 1.5s linear both;
   will-change: opacity;
 }
 
 .animated-floating-banner.is-revealed .animated-floating-banner__floating-motion {
   animation:
-    animated-floating-banner-model-opacity 2s linear both,
-    animated-floating-banner-model-translate 2s linear both;
+    animated-floating-banner-model-opacity 1.5s linear both,
+    animated-floating-banner-model-translate 1.5s linear both;
   will-change: opacity, transform;
 }
 

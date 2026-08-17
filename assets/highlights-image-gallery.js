@@ -29,7 +29,7 @@ if (!customElements.get('highlights-image-gallery')) {
       this.status = this.querySelector('[data-gallery-status]');
       this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       this.autoplayDuration = Number(this.dataset.autoplayDuration) || 6150;
-      this.transitionDuration = Number(this.dataset.transitionDuration) || 1000;
+      this.transitionDuration = Number(this.dataset.transitionDuration) || 450;
 
       if (!this.viewport || !this.slides.length || !this.playPauseButton) return;
 
@@ -49,7 +49,7 @@ if (!customElements.get('highlights-image-gallery')) {
       this.addEventListener('keydown', this.onKeydown);
       this.viewport.addEventListener('scroll', this.onScroll, { passive: true });
       this.viewport.addEventListener('pointerdown', this.onPointerDown);
-      this.viewport.addEventListener('pointermove', this.onPointerMove, { passive: false });
+      this.viewport.addEventListener('pointermove', this.onPointerMove, { passive: true });
       this.viewport.addEventListener('pointerup', this.onPointerUp);
       this.viewport.addEventListener('pointercancel', this.onPointerUp);
       document.addEventListener('visibilitychange', this.onVisibilityChange);
@@ -205,6 +205,7 @@ if (!customElements.get('highlights-image-gallery')) {
         y: event.clientY,
         scrollLeft: this.viewport.scrollLeft,
         dragging: false,
+        nativeScroll: event.pointerType !== 'mouse',
       };
       this.wasDragged = false;
 
@@ -226,10 +227,11 @@ if (!customElements.get('highlights-image-gallery')) {
 
         this.pointer.dragging = true;
         this.wasDragged = true;
-        this.viewport.classList.add('is-dragging');
+        if (!this.pointer.nativeScroll) this.viewport.classList.add('is-dragging');
       }
 
-      event.preventDefault();
+      if (this.pointer.nativeScroll) return;
+
       this.viewport.scrollLeft = this.pointer.scrollLeft - deltaX;
     }
 
@@ -237,6 +239,7 @@ if (!customElements.get('highlights-image-gallery')) {
       if (!this.pointer || event.pointerId !== this.pointer.id) return;
 
       const wasDragging = this.pointer.dragging;
+      const usedNativeScroll = this.pointer.nativeScroll;
       if (event.pointerType === 'mouse' && this.viewport.hasPointerCapture?.(event.pointerId)) {
         this.viewport.releasePointerCapture(event.pointerId);
       }
@@ -244,9 +247,12 @@ if (!customElements.get('highlights-image-gallery')) {
       this.pointer = null;
       this.viewport.classList.remove('is-dragging');
 
-      if (wasDragging) {
+      if (wasDragging && !usedNativeScroll) {
         const nearestIndex = this.getNearestIndex();
         this.goTo(nearestIndex, { source: 'manual', force: true });
+      }
+
+      if (wasDragging) {
         window.setTimeout(() => {
           this.wasDragged = false;
         }, 80);
@@ -254,7 +260,7 @@ if (!customElements.get('highlights-image-gallery')) {
     }
 
     handleScroll() {
-      if (this.isProgrammaticScroll || this.pointer?.dragging) return;
+      if (this.isProgrammaticScroll || (this.pointer?.dragging && !this.pointer.nativeScroll)) return;
 
       window.clearTimeout(this.scrollEndTimer);
       this.scrollEndTimer = window.setTimeout(() => {

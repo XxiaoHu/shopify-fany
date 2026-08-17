@@ -7,7 +7,7 @@
     class="highlights-image-gallery is-paused"
     data-section-id="{{ section.id }}"
     data-autoplay-duration="6150"
-    data-transition-duration="1000"
+    data-transition-duration="450"
     style="--highlights-section-margin-top: {{ section.settings.desktop_section_margin_top | default: 0 }}px; --highlights-section-margin-bottom: {{ section.settings.desktop_section_margin_bottom | default: 0 }}px; --highlights-heading-margin-top: {{ section.settings.desktop_heading_margin_top | default: 0 }}px; --highlights-heading-margin-bottom: {{ section.settings.desktop_heading_margin_bottom | default: 30 }}px; --highlights-mobile-section-margin-top: {{ section.settings.mobile_section_margin_top | default: 0 }}px; --highlights-mobile-section-margin-bottom: {{ section.settings.mobile_section_margin_bottom | default: 0 }}px; --highlights-mobile-heading-margin-top: {{ section.settings.mobile_heading_margin_top | default: 0 }}px; --highlights-mobile-heading-margin-bottom: {{ section.settings.mobile_heading_margin_bottom | default: 24 }}px;"
   >
     <div class="highlights-image-gallery__header" style="--heading-size: {{ section.settings.heading_font_size }}px; --heading-size-mobile: {{ section.settings.mobile_heading_font_size }}px;">
@@ -77,6 +77,7 @@
                     | image_tag:
                       class: 'highlights-image-gallery__image',
                       loading: image_loading,
+                      decoding: 'async',
                       fetchpriority: image_fetch_priority,
                       widths: '400, 600, 800, 1000, 1260, 1600, 2000, 2520',
                       sizes: '(max-width: 749px) max(calc(87.5vw - 20px), 260px), min(87.5vw, 1260px)',
@@ -89,6 +90,7 @@
                     width="1260"
                     height="680"
                     loading="{{ image_loading }}"
+                    decoding="async"
                     fetchpriority="{{ image_fetch_priority }}"
                     alt="{{ block.settings.title | escape }}"
                   >
