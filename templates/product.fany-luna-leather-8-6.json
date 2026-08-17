@@ -862,7 +862,7 @@
         "desktop_text_position": "top-left",
         "desktop_text_alignment": "left",
         "desktop_title_width": 500,
-        "desktop_body_width": 450,
+        "desktop_body_width": 400,
         "desktop_title_size": 40,
         "desktop_body_size": 16,
         "desktop_title_color": "#1e1005",
