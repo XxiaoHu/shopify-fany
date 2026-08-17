@@ -863,11 +863,25 @@
   }
 
   .interactive-product-viewer__finish-list {
-    max-width: 220px;
-    justify-content: center;
-    gap: 8px 12px;
+    display: grid;
+    width: 100%;
+    max-width: 244px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .interactive-product-viewer__finish-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .interactive-product-viewer__swatch {
+    width: calc(100% - 2px);
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .interactive-product-viewer__media-layer.is-entering-forward
