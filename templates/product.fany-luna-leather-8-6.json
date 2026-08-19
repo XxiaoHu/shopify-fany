@@ -2406,6 +2406,23 @@
         "padding_bottom": 36
       }
     },
+    "1787113551d5ed5ac2": {
+      "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_playlist_qcfxkn": {
+          "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "playlist_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_playlist_qcfxkn"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "1758592045c9c68565": {
       "type": "apps",
       "blocks": {
@@ -2477,6 +2494,7 @@
     "sleep_insights_poster_4NBdB6",
     "product_overview_group_F9Xy6b",
     "faq",
+    "1787113551d5ed5ac2",
     "1758592045c9c68565",
     "newsletter_QLP44D"
   ]
