@@ -75,6 +75,7 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: var(--sleep-poster-desktop-title-color, inherit);
+  white-space: pre-line;
 }
 
 .sleep-insights-poster__body {
