@@ -22,6 +22,8 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
@@ -32,6 +34,150 @@
         "padding_right_mobile": 0,
         "desktop_font_size": 16,
         "mobile_font_size": 16
+      }
+    },
+    "slideshow_w9MTWR": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8X8NFC": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "<p>Image slide</p>",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
+            "heading_2": "<p>Image slide</p>",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
+            "subheading": "<p>Tell your brand's story through images</p>",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "",
+            "mobile_box_align": "middle",
+            "mobile_color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_8X8NFC"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_text_below": true,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_KiV6i4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ktawP6": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1",
+            "heading_width": 600
+          }
+        },
+        "text_4tPbkH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        },
+        "button_BUDcQi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ktawP6",
+        "text_4tPbkH",
+        "button_BUDcQi"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "image_with_text_XdC4Cx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gn9YhA": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Sia Cooper",
+            "heading_size": "h1"
+          }
+        },
+        "text_VXya4V": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sia Cooper is a NASM-certified personal trainer, former nurse, and the founder of Diary of a Fit Mom. As an IVF mama, prenatal and postpartum fitness advocate, and your “trainer bestie,” she is passionate about helping women build healthier, stronger, and more sustainable lifestyles.<br/><br/>Sia’s own wellness journey began while she was in nursing school in 2010. After struggling with weight, low energy, and unhealthy eating habits, she decided to educate herself and make lasting lifestyle changes. Through clean eating and a more intentional approach to wellness, she lost 45 pounds in nine months.<br/><br/>She started Diary of a Fit Mom to stay accountable and share the lessons, challenges, and strategies that worked for her. Her journey continued through pregnancy and motherhood, shaping her approach to prenatal and postpartum fitness and women’s wellness.<br/><br/>Today, Sia uses her professional training and personal experience to motivate and inspire women to feel stronger, healthier, and more confident at every stage of life.<br/><br/><br/>Sia Cooper Instagram: @diaryofafitmommyofficial<br/>Diary of a Fit Mom website: https://diaryofafitmommy.com/healthy-habits-that-keep-me-active-during-pregnancy-and-the-smartwatch-that-s-been-keeping-up-with-me/</p>",
+            "text_style": "body"
+          }
+        },
+        "button_QD8B8W": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gn9YhA",
+        "text_VXya4V",
+        "button_QD8B8W"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "bread_crumbs_cdXfUR": {
@@ -61,59 +207,10 @@
       "block_order": [
         "contact_form_ryf9WA"
       ],
+      "disabled": true,
       "name": "政策页",
       "settings": {
         "blog": "privacy-policy"
-      }
-    },
-    "rich_text_KiV6i4": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_ktawP6": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1",
-            "heading_width": 600
-          }
-        },
-        "text_4tPbkH": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-            "font_size": "f-18",
-            "text_width": 800
-          }
-        },
-        "button_BUDcQi": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ktawP6",
-        "text_4tPbkH",
-        "button_BUDcQi"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "block_width": 800
       }
     },
     "newsletter_KhQRTE": {
@@ -156,9 +253,11 @@
   "order": [
     "main",
     "breadcrumbs_section_bLYdwW",
+    "slideshow_w9MTWR",
+    "rich_text_KiV6i4",
+    "image_with_text_XdC4Cx",
     "bread_crumbs_cdXfUR",
     "privacy_policy_H4Ky3t",
-    "rich_text_KiV6i4",
     "newsletter_KhQRTE"
   ]
 }
