@@ -42,24 +42,26 @@
         "slide_8X8NFC": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/band_story-_-PC_efe5fa1a-b3ce-4404-920c-6cc4498a370f.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-PC_0b97d683-e1bb-4e43-81fc-e29e30040cc3.webp",
             "image_overlay_opacity": 0,
-            "heading": "<p>Image slide</p>",
+            "heading": "<p>Our Blog Authors</p>",
             "heading_font_size": 40,
             "mobile_heading_font_size": 32,
-            "heading_2": "<p>Image slide</p>",
+            "heading_2": "",
             "heading2_font_size": 22,
             "mobile_heading2_font_size": 20,
-            "subheading": "<p>Tell your brand's story through images</p>",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": "",
-            "mobile_box_align": "middle",
-            "mobile_color_scheme": ""
+            "color_scheme": "scheme-3",
+            "mobile_box_align": "center",
+            "mobile_color_scheme": "scheme-3"
           }
         }
       },
@@ -69,67 +71,17 @@
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
+        "slide_height": "adapt_image",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
         "padding_top": 0,
-        "padding_bottom": 0,
-        "show_text_below": true,
+        "padding_bottom": 20,
+        "show_text_below": false,
         "mobile_padding_top": 0,
-        "mobile_padding_bottom": 0,
+        "mobile_padding_bottom": 20,
         "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "rich_text_KiV6i4": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_ktawP6": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1",
-            "heading_width": 600
-          }
-        },
-        "text_4tPbkH": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-            "font_size": "f-18",
-            "text_width": 800
-          }
-        },
-        "button_BUDcQi": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ktawP6",
-        "text_4tPbkH",
-        "button_BUDcQi"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "block_width": 800
       }
     },
     "image_with_text_XdC4Cx": {
@@ -166,6 +118,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "image": "shopify://shop_images/sia_homenew_75c02a71-f583-49c5-9597-a79c17bf3bac.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -254,7 +207,6 @@
     "main",
     "breadcrumbs_section_bLYdwW",
     "slideshow_w9MTWR",
-    "rich_text_KiV6i4",
     "image_with_text_XdC4Cx",
     "bread_crumbs_cdXfUR",
     "privacy_policy_H4Ky3t",
