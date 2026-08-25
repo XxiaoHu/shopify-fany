@@ -171,7 +171,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>Crafted from premium leather with a sleek, elegant finish that elevates any look. Soft, lightweight, and breathable for all-day comfort, it stays gentle on the skin from work to the weekend. The slim design ensures a secure yet effortless fit for everyday wear.</p>",
+            "content": "<p>Crafted from soft, skin-friendly silicone with a smooth, flexible feel that stays comfortable from workouts to everyday wear. The easy-to-clean material keeps your band looking fresh, while the secure fit ensures all-day comfort whether you’re at the gym, on a walk, or simply on the go.</p>",
             "page": ""
           }
         },
@@ -319,15 +319,15 @@
             "label_1": "Compatible Models",
             "value_1": "FANY Luna",
             "label_2": "Color",
-            "value_2": "Blush Rose, Linen White, Mocha Brown, Moonlight Gray, Burgundy Red",
+            "value_2": "Dream Purple, Morning Pink, Cloud Cream, Orchid Purple",
             "label_3": "Width",
             "value_3": "16mm(0.63 in)",
             "label_4": "Wrist Circumference",
             "value_4": "144-202 mm (5.67–7.95 in)",
             "label_5": "Type",
             "value_5": "Quick Release",
-            "label_6": "",
-            "value_6": "",
+            "label_6": "Material",
+            "value_6": "Silicone",
             "label_7": "",
             "value_7": "",
             "label_8": "",
@@ -457,7 +457,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>The box contains:<br/>* 1 × 16 mm Quick Release Leather Watch Band</p>",
+            "content": "<p>The box contains:<br/>* 1 × 16 mm Quick Release Silicone Watch Band</p>",
             "page": ""
           }
         },
@@ -575,7 +575,7 @@
         "product_gyYRwF": {
           "type": "product",
           "settings": {
-            "product": "16-mm-quick-release-silicone-watch-band",
+            "product": "16-mm-quick-release-leather-watch-band",
             "badge_text": ""
           }
         }
