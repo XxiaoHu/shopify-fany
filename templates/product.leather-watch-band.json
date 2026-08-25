@@ -548,6 +548,56 @@
         "padding_bottom": 40
       }
     },
+    "recommended_products_manual_G9Rcit": {
+      "type": "recommended-products-manual",
+      "blocks": {
+        "product_GhzP3L": {
+          "type": "product",
+          "settings": {
+            "product": "luna",
+            "badge_text": "Best Seller"
+          }
+        },
+        "product_EhD9GJ": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-leather-smartwatch-butterfly-bracelet",
+            "badge_text": ""
+          }
+        },
+        "product_xMCeiG": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-stylish-silicone-smartwatch-for-women",
+            "badge_text": ""
+          }
+        },
+        "product_gyYRwF": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-silicone-watch-band",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_GhzP3L",
+        "product_EhD9GJ",
+        "product_xMCeiG",
+        "product_gyYRwF"
+      ],
+      "name": "推荐产品",
+      "settings": {
+        "title": "You May also like",
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "safe_margin": 200,
+        "padding_top": 160,
+        "padding_bottom": 200,
+        "mobile_safe_margin": 16,
+        "mobile_padding_y": 60
+      }
+    },
     "product_overview_group_F9Xy6b": {
       "type": "product-overview-group",
       "blocks": {
@@ -2018,6 +2068,7 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "recommended_products_manual_G9Rcit",
     "product_overview_group_F9Xy6b",
     "faq",
     "1758592045c9c68565",
