@@ -924,7 +924,7 @@
       "name": "情绪状态图片切换",
       "settings": {
         "title": "Manage Your Stress & Emotional Health",
-        "body": "<p>FANY Luna's advanced biosensors track key indicators like HRV and EDA, turning subtle physiological shifts into actionable insights about your stress and emotional balance. More than data, it is an inner health companion, helping you listen to your body and nurture your overall well-being.</p>",
+        "body": "<p>FANY Luna's advanced biosensors track key indicators like HRV, turning subtle physiological shifts into actionable insights about your stress and emotional balance. More than data, it is an inner health companion, helping you listen to your body and nurture your overall well-being.</p>",
         "tabs_label": "Choose an emotional state",
         "desktop_title_size": 40,
         "desktop_title_color": "#1e0e06",
