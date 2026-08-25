@@ -457,7 +457,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>The FANY Luna box contains:<br/>* 1 × Mother of Pearl Butterfly Bracelet<br/>* 1 × Drawstring Pouch</p>",
+            "content": "<p>The box contains:<br/>* 1 × Mother of Pearl Butterfly Bracelet<br/>* 1 × Drawstring Pouch</p>",
             "page": ""
           }
         },
@@ -546,6 +546,56 @@
         "enable_video_looping": false,
         "padding_top": 0,
         "padding_bottom": 40
+      }
+    },
+    "recommended_products_manual_QEbEmr": {
+      "type": "recommended-products-manual",
+      "blocks": {
+        "product_rG4LN6": {
+          "type": "product",
+          "settings": {
+            "product": "luna",
+            "badge_text": "Best Seller"
+          }
+        },
+        "product_gC6Ymd": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-stylish-silicone-smartwatch-for-women",
+            "badge_text": ""
+          }
+        },
+        "product_KMaWrz": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-leather-watch-band",
+            "badge_text": ""
+          }
+        },
+        "product_GTVdP6": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-silicone-watch-band",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_rG4LN6",
+        "product_gC6Ymd",
+        "product_KMaWrz",
+        "product_GTVdP6"
+      ],
+      "name": "推荐产品",
+      "settings": {
+        "title": "You May also like",
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "safe_margin": 200,
+        "padding_top": 160,
+        "padding_bottom": 200,
+        "mobile_safe_margin": 16,
+        "mobile_padding_y": 60
       }
     },
     "product_overview_group_F9Xy6b": {
@@ -2018,6 +2068,7 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "recommended_products_manual_QEbEmr",
     "product_overview_group_F9Xy6b",
     "faq",
     "1758592045c9c68565",
