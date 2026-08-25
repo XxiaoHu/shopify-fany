@@ -14,6 +14,8 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
         "padding_top": 0,
         "padding_bottom": 12,
         "padding_left": 0,
@@ -118,6 +120,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_ADe6er"
       ],
+      "disabled": true,
       "name": "配件 overview group",
       "settings": {}
     },
