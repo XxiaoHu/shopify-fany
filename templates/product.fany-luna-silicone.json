@@ -1621,56 +1621,6 @@
         "box_text_group": "product-in-the-box-text-group"
       }
     },
-    "recommended_products_manual_RbP8qP": {
-      "type": "recommended-products-manual",
-      "blocks": {
-        "product_RHNJxV": {
-          "type": "product",
-          "settings": {
-            "product": "luna",
-            "badge_text": "Best Seller"
-          }
-        },
-        "product_gAkfFQ": {
-          "type": "product",
-          "settings": {
-            "product": "fany-luna-leather-smartwatch-butterfly-bracelet",
-            "badge_text": ""
-          }
-        },
-        "product_rAe9yM": {
-          "type": "product",
-          "settings": {
-            "product": "16-mm-quick-release-leather-watch-band",
-            "badge_text": ""
-          }
-        },
-        "product_ry3rcG": {
-          "type": "product",
-          "settings": {
-            "product": "16-mm-quick-release-silicone-watch-band",
-            "badge_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_RHNJxV",
-        "product_gAkfFQ",
-        "product_rAe9yM",
-        "product_ry3rcG"
-      ],
-      "name": "推荐产品",
-      "settings": {
-        "title": "You May also like",
-        "view_more_text": "View more",
-        "view_more_link": "",
-        "safe_margin": 200,
-        "padding_top": 100,
-        "padding_bottom": 200,
-        "mobile_safe_margin": 16,
-        "mobile_padding_y": 60
-      }
-    },
     "faq": {
       "type": "collapsible-content",
       "blocks": {
@@ -1961,6 +1911,56 @@
         "padding_bottom": 36
       }
     },
+    "recommended_products_manual_RbP8qP": {
+      "type": "recommended-products-manual",
+      "blocks": {
+        "product_RHNJxV": {
+          "type": "product",
+          "settings": {
+            "product": "luna",
+            "badge_text": "Best Seller"
+          }
+        },
+        "product_gAkfFQ": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-leather-smartwatch-butterfly-bracelet",
+            "badge_text": ""
+          }
+        },
+        "product_rAe9yM": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-leather-watch-band",
+            "badge_text": ""
+          }
+        },
+        "product_ry3rcG": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-silicone-watch-band",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_RHNJxV",
+        "product_gAkfFQ",
+        "product_rAe9yM",
+        "product_ry3rcG"
+      ],
+      "name": "推荐产品",
+      "settings": {
+        "title": "You May also like",
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "safe_margin": 200,
+        "padding_top": 100,
+        "padding_bottom": 200,
+        "mobile_safe_margin": 16,
+        "mobile_padding_y": 60
+      }
+    },
     "newsletter_QLP44D": {
       "type": "newsletter",
       "blocks": {
@@ -2003,8 +2003,8 @@
     "breadcrumbs_section_9pyfRj",
     "main",
     "product_overview_group_F9Xy6b",
-    "recommended_products_manual_RbP8qP",
     "faq",
+    "recommended_products_manual_RbP8qP",
     "newsletter_QLP44D"
   ]
 }
