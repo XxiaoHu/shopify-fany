@@ -2179,7 +2179,7 @@
         "desktop_intro_horizontal": "flex-start",
         "desktop_intro_vertical": "flex-start",
         "desktop_intro_heading_width": 760,
-        "desktop_intro_body_width": 760,
+        "desktop_intro_body_width": 500,
         "mobile_intro_horizontal": "flex-start",
         "mobile_intro_vertical": "flex-start",
         "mobile_intro_heading_width": 355,
