@@ -2040,11 +2040,11 @@
         "feature_egzmFT": {
           "type": "feature",
           "settings": {
-            "title": "Water and dust resistance",
+            "title": "110+ Workout Modes",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>",
-            "desc_font_size": 17,
+            "description": "<p>From running and pickleball to yoga, Pilates, and HIIT, FANY Luna supports over 110 activities tailored to your diverse interests. Effortlessly track heart rate, calorie burn, and movement while exploring new ways to stay active on your own terms.</p>",
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
@@ -2052,11 +2052,23 @@
         "feature_FtMt7d": {
           "type": "feature",
           "settings": {
-            "title": "Personalization",
+            "title": "Instant Wrist Notifications",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Choose the look and details that make the product feel like your own.</p>",
-            "desc_font_size": 17,
+            "description": "<p>Receive real-time notifications for incoming calls, texts, calendar events, and key apps directly on your wrist. Stay seamlessly updated during workouts, busy workdays, daily commutes, or personal downtime without pulling out your phone.</p>",
+            "desc_font_size": 16,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_NCnBdi": {
+          "type": "feature",
+          "settings": {
+            "title": "All-in-One Functionality",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Uniting nonstop health insights with practical daily tools, FANY Luna simplifies every routine. Enjoy instant convenience and stay present through every part of your schedule.</p>",
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
@@ -2072,7 +2084,8 @@
         "feature_zTTBYd",
         "feature_rQUnt7",
         "feature_egzmFT",
-        "feature_FtMt7d"
+        "feature_FtMt7d",
+        "feature_NCnBdi"
       ],
       "name": "Apple 风格产品查看器",
       "settings": {
