@@ -2008,7 +2008,7 @@
             "title_font_size": 17,
             "title_color": "#1d1d1f",
             "description": "<p>Engineered for complete day and night readability, the 1.1 inch AMOLED display presents vibrant detail in every environment. Read all your metrics effortlessly under bright sunlight as the energy-efficient design keeps your battery going strong.</p>",
-            "desc_font_size": 17,
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
@@ -2016,11 +2016,11 @@
         "feature_zTTBYd": {
           "type": "feature",
           "settings": {
-            "title": "Advanced sensors",
+            "title": "7 Day Battery Life",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>",
-            "desc_font_size": 17,
+            "description": "<p>Leave daily charging behind. FANY Luna delivers up to 7 days* of continuous battery life to keep up with your active schedule. The magnetic charger snaps into place effortlessly, reaching a full fast charge in just two hours based on typical personal usage.<br/>*Battery life may vary depending on usage.</p>",
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
@@ -2028,11 +2028,11 @@
         "feature_rQUnt7": {
           "type": "feature",
           "settings": {
-            "title": "Durable Ion-X display",
+            "title": "IP68 Water Resistance",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>A durable display designed for everyday movement and activity.</p>",
-            "desc_font_size": 17,
+            "description": "<p>Built to endure heavy sweat and wet training conditions, FANY Luna gives you total freedom during high-intensity workouts. It effortlessly extends to handle sudden rain and daily kitchen tasks, so you can stay active and composed in every setting.</p>",
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
