@@ -2555,6 +2555,56 @@
         "box_text_group": "product-in-the-box-text-group"
       }
     },
+    "recommended_products_manual_YqdYym": {
+      "type": "recommended-products-manual",
+      "blocks": {
+        "product_xcy6RK": {
+          "type": "product",
+          "settings": {
+            "product": "luna",
+            "badge_text": "Best Seller"
+          }
+        },
+        "product_y7XtUY": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-stylish-silicone-smartwatch-for-women",
+            "badge_text": ""
+          }
+        },
+        "product_yfdMMn": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-leather-watch-band",
+            "badge_text": ""
+          }
+        },
+        "product_g6jQiM": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-silicone-watch-band",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_xcy6RK",
+        "product_y7XtUY",
+        "product_yfdMMn",
+        "product_g6jQiM"
+      ],
+      "name": "推荐产品",
+      "settings": {
+        "title": "You May also like",
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "safe_margin": 200,
+        "padding_top": 100,
+        "padding_bottom": 200,
+        "mobile_safe_margin": 16,
+        "mobile_padding_y": 60
+      }
+    },
     "1758592045c9c68565": {
       "type": "apps",
       "blocks": {
@@ -2625,6 +2675,7 @@
     "gift_feature_FdkPHx",
     "faq",
     "product_overview_group_F9Xy6b",
+    "recommended_products_manual_YqdYym",
     "1758592045c9c68565",
     "newsletter_QLP44D"
   ]
