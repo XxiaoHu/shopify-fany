@@ -1,0 +1,585 @@
+{{ 'apple-scroll-feature-gallery.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'apple-scroll-feature-gallery.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign desktop_background = section.settings.desktop_background_image
+  assign mobile_background = section.settings.mobile_background_image
+  assign section_heading = section.settings.intro_heading | default: section.settings.detail_heading
+-%}
+
+<apple-scroll-feature-gallery
+  id="AppleScrollFeatureGallery-{{ section.id }}"
+  class="apple-scroll-feature-gallery"
+  data-section-id="{{ section.id }}"
+  style="--asfg-desktop-margin-top: {{ section.settings.margin_top }}px; --asfg-desktop-margin-bottom: {{ section.settings.margin_bottom }}px; --asfg-mobile-margin-top: {{ section.settings.mobile_margin_top }}px; --asfg-mobile-margin-bottom: {{ section.settings.mobile_margin_bottom }}px; --asfg-desktop-intro-horizontal: {{ section.settings.desktop_intro_horizontal }}; --asfg-desktop-intro-vertical: {{ section.settings.desktop_intro_vertical }}; --asfg-mobile-intro-horizontal: {{ section.settings.mobile_intro_horizontal }}; --asfg-mobile-intro-vertical: {{ section.settings.mobile_intro_vertical }}; --asfg-desktop-intro-heading-width: {{ section.settings.desktop_intro_heading_width }}px; --asfg-desktop-intro-body-width: {{ section.settings.desktop_intro_body_width }}px; --asfg-mobile-intro-heading-width: {{ section.settings.mobile_intro_heading_width }}px; --asfg-mobile-intro-body-width: {{ section.settings.mobile_intro_body_width }}px; --asfg-desktop-intro-heading-size: {{ section.settings.desktop_intro_heading_size }}px; --asfg-desktop-intro-body-size: {{ section.settings.desktop_intro_body_size }}px; --asfg-mobile-intro-heading-size: {{ section.settings.mobile_intro_heading_size }}px; --asfg-mobile-intro-body-size: {{ section.settings.mobile_intro_body_size }}px; --asfg-desktop-detail-heading-size: {{ section.settings.desktop_detail_heading_size }}px; --asfg-desktop-detail-body-size: {{ section.settings.desktop_detail_body_size }}px; --asfg-mobile-detail-heading-size: {{ section.settings.mobile_detail_heading_size }}px; --asfg-mobile-detail-body-size: {{ section.settings.mobile_detail_body_size }}px; --asfg-desktop-card-text-size: {{ section.settings.desktop_card_text_size }}px; --asfg-mobile-card-text-size: {{ section.settings.mobile_card_text_size }}px; --asfg-desktop-object-position: {{ section.settings.desktop_image_position }}; --asfg-mobile-object-position: {{ section.settings.mobile_image_position }};"
+>
+  <div class="apple-scroll-feature-gallery__intro apple-scroll-feature-gallery__content-width">
+    <div class="apple-scroll-feature-gallery__intro-copy">
+      {%- if section.settings.intro_heading != blank -%}
+        <h2 class="apple-scroll-feature-gallery__intro-heading" data-asfg-intro-item>
+          {{ section.settings.intro_heading | escape | newline_to_br }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.intro_body != blank -%}
+        <div class="apple-scroll-feature-gallery__intro-body rte" data-asfg-intro-item>
+          {{ section.settings.intro_body }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="apple-scroll-feature-gallery__visual" data-asfg-visual aria-hidden="true">
+    <picture class="apple-scroll-feature-gallery__picture">
+      {%- if mobile_background != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="
+            {{ mobile_background | image_url: width: 480 }} 480w,
+            {{ mobile_background | image_url: width: 750 }} 750w,
+            {{ mobile_background | image_url: width: 1000 }} 1000w
+          "
+          sizes="100vw"
+        >
+      {%- endif -%}
+
+      {%- if desktop_background != blank -%}
+        {{
+          desktop_background
+          | image_url: width: 3840
+          | image_tag:
+            class: 'apple-scroll-feature-gallery__background-image',
+            loading: 'lazy',
+            widths: '750, 1000, 1280, 1440, 1920, 2560, 3200, 3840',
+            sizes: '100vw',
+            alt: section_heading
+        }}
+      {%- elsif mobile_background != blank -%}
+        {{
+          mobile_background
+          | image_url: width: 1000
+          | image_tag:
+            class: 'apple-scroll-feature-gallery__background-image',
+            loading: 'lazy',
+            widths: '480, 750, 1000',
+            sizes: '100vw',
+            alt: section_heading
+        }}
+      {%- else -%}
+        <div class="apple-scroll-feature-gallery__background-fallback"></div>
+      {%- endif -%}
+    </picture>
+
+    <div class="apple-scroll-feature-gallery__blur-layer" data-asfg-blur></div>
+  </div>
+
+  <div class="apple-scroll-feature-gallery__details" data-asfg-details>
+    <div class="apple-scroll-feature-gallery__detail-copy apple-scroll-feature-gallery__content-width" data-asfg-detail-item>
+      <div class="apple-scroll-feature-gallery__detail-copy-inner">
+        {%- if section.settings.detail_heading != blank -%}
+          <h3 class="apple-scroll-feature-gallery__detail-heading">
+            {{ section.settings.detail_heading | escape | newline_to_br }}
+          </h3>
+        {%- endif -%}
+
+        {%- if section.settings.detail_body != blank -%}
+          <div class="apple-scroll-feature-gallery__detail-body rte">
+            {{ section.settings.detail_body }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="apple-scroll-feature-gallery__gallery" data-asfg-detail-item>
+        <div
+          id="AppleScrollFeatureTrack-{{ section.id }}"
+          class="apple-scroll-feature-gallery__track"
+          data-asfg-track
+          tabindex="0"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="{{ section.settings.gallery_label | escape }}"
+        >
+          <div class="apple-scroll-feature-gallery__track-spacer" aria-hidden="true"></div>
+
+          {%- for block in section.blocks -%}
+            <article
+              id="AppleScrollFeatureCard-{{ section.id }}-{{ forloop.index }}"
+              class="apple-scroll-feature-gallery__card{% if block.settings.wide_card %} apple-scroll-feature-gallery__card--wide{% endif %}"
+              data-asfg-card
+              data-asfg-card-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="apple-scroll-feature-gallery__card-media">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 1600
+                    | image_tag:
+                      class: 'apple-scroll-feature-gallery__card-image',
+                      loading: 'lazy',
+                      widths: '320, 520, 744, 1000, 1392, 1600',
+                      sizes: '(max-width: 749px) 260px, 372px',
+                      alt: block.settings.heading
+                  }}
+                {%- elsif request.design_mode -%}
+                  {{ 'image' | placeholder_svg_tag: 'apple-scroll-feature-gallery__card-placeholder placeholder-svg' }}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.heading != blank or block.settings.body != blank -%}
+                <div class="apple-scroll-feature-gallery__card-caption">
+                  <p>
+                    {%- if block.settings.heading != blank -%}
+                      <strong>{{ block.settings.heading | escape }}</strong>
+                    {%- endif -%}
+                    {%- if block.settings.body != blank -%}
+                      <span>{{ block.settings.body | escape }}</span>
+                    {%- endif -%}
+                  </p>
+                </div>
+              {%- endif -%}
+            </article>
+          {%- endfor -%}
+
+          <div class="apple-scroll-feature-gallery__track-spacer" aria-hidden="true"></div>
+        </div>
+
+        {%- if section.blocks.size > 1 -%}
+          <div class="apple-scroll-feature-gallery__controls apple-scroll-feature-gallery__content-width" data-asfg-controls>
+            <button
+              class="apple-scroll-feature-gallery__control"
+              type="button"
+              data-asfg-previous
+              aria-label="Previous card"
+              aria-controls="AppleScrollFeatureTrack-{{ section.id }}"
+            >
+              <img src="{{ 'apple-feature-arrow-prev.svg' | asset_url }}" width="36" height="36" alt="">
+            </button>
+            <button
+              class="apple-scroll-feature-gallery__control"
+              type="button"
+              data-asfg-next
+              aria-label="Next card"
+              aria-controls="AppleScrollFeatureTrack-{{ section.id }}"
+            >
+              <img src="{{ 'apple-feature-arrow-next.svg' | asset_url }}" width="36" height="36" alt="">
+            </button>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <noscript>
+    <style>
+      #AppleScrollFeatureGallery-{{ section.id }} .apple-scroll-feature-gallery__blur-layer {
+        background: rgba(0, 0, 0, 0.2);
+        -webkit-backdrop-filter: blur(20px) brightness(60%);
+        backdrop-filter: blur(20px) brightness(60%);
+      }
+    </style>
+  </noscript>
+</apple-scroll-feature-gallery>
+
+{% schema %}
+{
+  "name": "滚动模糊功能画廊",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "背景图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_background_image",
+      "label": "桌面端背景图片",
+      "info": "建议尺寸 1920 × 1828px 或相同比例"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "桌面端图片焦点",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" }
+      ],
+      "default": "center top"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "移动端背景图片",
+      "info": "建议尺寸 393 × 1100px；未上传时使用桌面端图片"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "移动端图片焦点",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" }
+      ],
+      "default": "center top"
+    },
+    {
+      "type": "header",
+      "content": "第一阶段文案"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_heading",
+      "label": "标题",
+      "default": "To know you\nis to move you."
+    },
+    {
+      "type": "richtext",
+      "id": "intro_body",
+      "label": "正文",
+      "default": "<p>In addition to detailed insights, Apple Watch Series 11 provides personalized fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones, and Custom Workouts, there are even more brains behind the burn.</p>"
+    },
+    {
+      "type": "header",
+      "content": "第一阶段布局"
+    },
+    {
+      "type": "select",
+      "id": "desktop_intro_horizontal",
+      "label": "桌面端水平位置",
+      "options": [
+        { "value": "flex-start", "label": "左侧" },
+        { "value": "center", "label": "居中" },
+        { "value": "flex-end", "label": "右侧" }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "desktop_intro_vertical",
+      "label": "桌面端垂直位置",
+      "options": [
+        { "value": "flex-start", "label": "顶部" },
+        { "value": "center", "label": "居中" },
+        { "value": "flex-end", "label": "底部" }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_heading_width",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "桌面端标题宽度",
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_body_width",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "桌面端正文宽度",
+      "default": 760
+    },
+    {
+      "type": "select",
+      "id": "mobile_intro_horizontal",
+      "label": "移动端水平位置",
+      "options": [
+        { "value": "flex-start", "label": "左侧" },
+        { "value": "center", "label": "居中" },
+        { "value": "flex-end", "label": "右侧" }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "mobile_intro_vertical",
+      "label": "移动端垂直位置",
+      "options": [
+        { "value": "flex-start", "label": "顶部" },
+        { "value": "center", "label": "居中" },
+        { "value": "flex-end", "label": "底部" }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_heading_width",
+      "min": 120,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "label": "移动端标题宽度",
+      "default": 355
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_body_width",
+      "min": 120,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "label": "移动端正文宽度",
+      "default": 355
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_heading_size",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_body_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端正文字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_heading_size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_body_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端正文字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "第二阶段文案"
+    },
+    {
+      "type": "textarea",
+      "id": "detail_heading",
+      "label": "标题",
+      "default": "Way to go! That was your fastest 5K ever."
+    },
+    {
+      "type": "richtext",
+      "id": "detail_body",
+      "label": "正文",
+      "default": "<p><strong>Meet your Workout Buddy.</strong> A text-to-speech model generates personalized pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style, and tone for a workout. Time to buddy up.</p>"
+    },
+    {
+      "type": "range",
+      "id": "desktop_detail_heading_size",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_detail_body_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端正文字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_detail_heading_size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_detail_body_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端正文字号",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "gallery_label",
+      "label": "画廊无障碍标签",
+      "default": "Feature card gallery"
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "桌面端卡片字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端卡片字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "区块间距"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端下边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上边距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下边距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "功能卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "标题",
+          "default": "Feature title."
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "正文",
+          "default": "Add a concise description for this feature card."
+        },
+        {
+          "type": "checkbox",
+          "id": "wide_card",
+          "label": "桌面端使用宽卡片",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "滚动模糊功能画廊",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Get a load of training load.",
+            "body": "Know when to push or when to recover thanks to helpful insights that make it easier for you to see the impact your workouts have on your body over time."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Create a Custom Workout.",
+            "body": "Tailor your workout and training style by modifying time, distance, or calorie goals."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Your workout data on your phone.",
+            "body": "Track your progress, view completed workouts, change your goals, and share your activity with others."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Workout media that tunes in to you.",
+            "body": "Choose music or podcasts based on the workout you are doing and the media you love."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "heading": "A powerful pairing.",
+            "body": "See your real-time metrics onscreen and enjoy audio-guided workouts when you are on the go.",
+            "wide_card": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
