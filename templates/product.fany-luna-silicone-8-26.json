@@ -1960,7 +1960,7 @@
         "finish_dRHVd7": {
           "type": "finish",
           "settings": {
-            "label": "Natural titanium",
+            "label": "The featured model is FANY Luna in Cloud Cream.",
             "swatch_color": "#e3ddd7",
             "image_alt": ""
           }
@@ -1968,7 +1968,7 @@
         "finish_3WEkt9": {
           "type": "finish",
           "settings": {
-            "label": "Gold titanium",
+            "label": "The featured model is FANY Luna in Morning Pink.",
             "swatch_color": "#f4dec8",
             "image_alt": ""
           }
@@ -1976,7 +1976,7 @@
         "finish_wdVWzw": {
           "type": "finish",
           "settings": {
-            "label": "Slate titanium",
+            "label": "The featured model is FANY Luna in Dream Purple.",
             "swatch_color": "#47423d",
             "image_alt": ""
           }
@@ -1984,32 +1984,8 @@
         "finish_itNjdU": {
           "type": "finish",
           "settings": {
-            "label": "Rose Gold aluminum",
+            "label": "The featured model is FANY Luna in Orchid Purple.",
             "swatch_color": "#f6d9cd",
-            "image_alt": ""
-          }
-        },
-        "finish_pDCKi6": {
-          "type": "finish",
-          "settings": {
-            "label": "Silver aluminum",
-            "swatch_color": "#f0eff1",
-            "image_alt": ""
-          }
-        },
-        "finish_4bKHWX": {
-          "type": "finish",
-          "settings": {
-            "label": "Jet Black aluminum",
-            "swatch_color": "#010203",
-            "image_alt": ""
-          }
-        },
-        "finish_YWAa3L": {
-          "type": "finish",
-          "settings": {
-            "label": "Space Gray aluminum",
-            "swatch_color": "#979494",
             "image_alt": ""
           }
         },
@@ -2091,9 +2067,6 @@
         "finish_3WEkt9",
         "finish_wdVWzw",
         "finish_itNjdU",
-        "finish_pDCKi6",
-        "finish_4bKHWX",
-        "finish_YWAa3L",
         "feature_Prgyam",
         "feature_KJL8Me",
         "feature_zTTBYd",
