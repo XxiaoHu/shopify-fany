@@ -1996,7 +1996,7 @@
             "title_font_size": 17,
             "title_color": "#1d1d1f",
             "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
-            "desc_font_size": 17,
+            "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image_alt": ""
           }
@@ -2085,11 +2085,11 @@
         "finishes_label": "Finishes",
         "finishes_heading": "Finishes.",
         "finishes_description": "<p>Paired with a lightweight, durable silicone strap featuring an olive leaf pattern, each piece adds a distinct aesthetic touch. The watch bezel is forged from hypoallergenic, recycled, aerospace-grade aluminum to ensure complete comfort for all skin types. </p>",
-        "finishes_title_font_size": 16,
+        "finishes_title_font_size": 17,
         "finishes_title_color": "#1d1d1f",
         "finishes_desc_font_size": 16,
         "finishes_desc_color": "#1d1d1f",
-        "mobile_finishes_title_font_size": 16,
+        "mobile_finishes_title_font_size": 17,
         "mobile_finishes_title_color": "#1d1d1f",
         "mobile_finishes_desc_font_size": 16,
         "mobile_finishes_desc_color": "#1d1d1f",
