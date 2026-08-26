@@ -2123,7 +2123,7 @@
         "feature_card_wBDRNF": {
           "type": "feature_card",
           "settings": {
-            "heading": "Complete Your Daily Rings.",
+            "heading": "Complete Your Daily Rings — Move, Track & Achieve.",
             "body": "Seamlessly monitor your daily steps, distance, and calories burned. Every target hit earns you exclusive achievement badges, rewarding key accomplishments like reaching 10,000 steps, logging 30 active minutes, and burning 500 calories a day. Track your movement and collect your wins!",
             "wide_card": false
           }
@@ -2131,32 +2131,32 @@
         "feature_card_xNqtJX": {
           "type": "feature_card",
           "settings": {
-            "heading": "Create a Custom Workout.",
-            "body": "Tailor your workout and training style by modifying time, distance, or calorie goals.",
+            "heading": "Move Anytime. Train Scientifically.",
+            "body": "Get precise analysis for every way you move on the FANY Luna smartwatch. Track yoga, strength training, running courses, and more with real-time metrics for heart rate, distance, and calorie burn. By monitoring your heart rate zones and effort levels, you can understand your body's status, optimize results, and prevent overexertion. Choose your mode and make every effort count!",
             "wide_card": false
           }
         },
         "feature_card_9WjcA9": {
           "type": "feature_card",
           "settings": {
-            "heading": "Your workout data on your phone.",
-            "body": "Track your progress, view completed workouts, change your goals, and share your activity with others.",
+            "heading": "Professional Workout Insights in the FANY Fit App.",
+            "body": "Transform raw numbers into actionable insights with deep workout analysis in the FANY Fit App. Master your athletic journey with daily, weekly, monthly, and yearly stats across active time, exercise logs, movement hours, calorie burn, and comprehensive workout metrics to visualize your continuous progress. Push your limits and unlock your full athletic potential day by day!",
             "wide_card": false
           }
         },
         "feature_card_hkTPBw": {
           "type": "feature_card",
           "settings": {
-            "heading": "Workout media that tunes in to you.",
-            "body": "Choose music or podcasts based on the workout you are doing and the media you love.",
+            "heading": "Run with Your Wrist Coach. Elevate Your Fitness.",
+            "body": "Transform every stride into progress with your free wrist trainer in the FANY Luna smartwatch. Master your daily training with quick 6, 10, or 15 minute Easy Runs, multi-level Keep Fit courses from primary to advanced, and real-time tracking for heart rate, pace, and calories to crush your fitness goals. Push your limit and unlock your best performance day by day!",
             "wide_card": false
           }
         },
         "feature_card_NqNRfA": {
           "type": "feature_card",
           "settings": {
-            "heading": "A powerful pairing.",
-            "body": "See your real-time metrics onscreen and enjoy audio-guided workouts when you are on the go.",
+            "heading": "Win Badges. Reward Your Health.",
+            "body": "Celebrate every health victory with the FANY Fit App. Crush your daily targets for fitness, steps, sleep, stress balance, activity goals, and streak days to earn exclusive themed achievement badges. Push your limits and build your badge collection day by day!",
             "wide_card": true
           }
         }
