@@ -1913,6 +1913,309 @@
         "padding_bottom": 36
       }
     },
+    "animated_floating_banner_4k7gAm": {
+      "type": "animated-floating-banner",
+      "name": "浮层图片 Banner",
+      "settings": {
+        "heading": "Designed for Women",
+        "content": "<p>添加一段简短的品牌或产品说明。</p>",
+        "text_max_width": 840,
+        "text_gap": 14,
+        "heading_font_size": 50,
+        "heading_font_weight": "600",
+        "heading_line_height": 1.1,
+        "heading_letter_spacing": 0,
+        "heading_color": "#1D1D1F",
+        "content_font_size": 14,
+        "content_font_weight": "400",
+        "content_line_height": 1.5,
+        "content_letter_spacing": 0,
+        "content_color": "#6E6E73",
+        "main_image_height": 700,
+        "main_image_fit": "cover",
+        "main_image_position": "center center",
+        "scroll_trigger_distance": 24,
+        "intro_padding_top": 48,
+        "intro_padding_bottom": 52,
+        "background_color": "#FFFFFF",
+        "mobile_heading_font_size": 32,
+        "mobile_content_font_size": 13,
+        "mobile_text_gap": 10,
+        "mobile_intro_padding_top": 32,
+        "mobile_intro_padding_bottom": 36,
+        "mobile_main_image_height": 360,
+        "desktop_section_margin_top": 0,
+        "desktop_section_margin_bottom": 0,
+        "desktop_heading_margin_top": 0,
+        "desktop_heading_margin_bottom": 0,
+        "mobile_section_margin_top": 0,
+        "mobile_section_margin_bottom": 0,
+        "mobile_heading_margin_top": 0,
+        "mobile_heading_margin_bottom": 0
+      }
+    },
+    "interactive_product_viewer_qdWTDt": {
+      "type": "interactive-product-viewer",
+      "blocks": {
+        "finish_dRHVd7": {
+          "type": "finish",
+          "settings": {
+            "label": "Natural titanium",
+            "swatch_color": "#e3ddd7",
+            "image_alt": ""
+          }
+        },
+        "finish_3WEkt9": {
+          "type": "finish",
+          "settings": {
+            "label": "Gold titanium",
+            "swatch_color": "#f4dec8",
+            "image_alt": ""
+          }
+        },
+        "finish_wdVWzw": {
+          "type": "finish",
+          "settings": {
+            "label": "Slate titanium",
+            "swatch_color": "#47423d",
+            "image_alt": ""
+          }
+        },
+        "finish_itNjdU": {
+          "type": "finish",
+          "settings": {
+            "label": "Rose Gold aluminum",
+            "swatch_color": "#f6d9cd",
+            "image_alt": ""
+          }
+        },
+        "finish_pDCKi6": {
+          "type": "finish",
+          "settings": {
+            "label": "Silver aluminum",
+            "swatch_color": "#f0eff1",
+            "image_alt": ""
+          }
+        },
+        "finish_4bKHWX": {
+          "type": "finish",
+          "settings": {
+            "label": "Jet Black aluminum",
+            "swatch_color": "#010203",
+            "image_alt": ""
+          }
+        },
+        "finish_YWAa3L": {
+          "type": "finish",
+          "settings": {
+            "label": "Space Gray aluminum",
+            "swatch_color": "#979494",
+            "image_alt": ""
+          }
+        },
+        "feature_Prgyam": {
+          "type": "feature",
+          "settings": {
+            "title": "Sleek design",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>A refined profile designed for comfortable, all-day wear.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_KJL8Me": {
+          "type": "feature",
+          "settings": {
+            "title": "Longer battery life",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Reliable battery performance that keeps up with your day.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_zTTBYd": {
+          "type": "feature",
+          "settings": {
+            "title": "Advanced sensors",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Advanced sensors provide useful insights throughout the day.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_rQUnt7": {
+          "type": "feature",
+          "settings": {
+            "title": "Durable Ion-X display",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>A durable display designed for everyday movement and activity.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_egzmFT": {
+          "type": "feature",
+          "settings": {
+            "title": "Water and dust resistance",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Built to handle the routines, workouts, and environments of daily life.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        },
+        "feature_FtMt7d": {
+          "type": "feature",
+          "settings": {
+            "title": "Personalization",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Choose the look and details that make the product feel like your own.</p>",
+            "desc_font_size": 17,
+            "desc_color": "#1d1d1f",
+            "image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "finish_dRHVd7",
+        "finish_3WEkt9",
+        "finish_wdVWzw",
+        "finish_itNjdU",
+        "finish_pDCKi6",
+        "finish_4bKHWX",
+        "finish_YWAa3L",
+        "feature_Prgyam",
+        "feature_KJL8Me",
+        "feature_zTTBYd",
+        "feature_rQUnt7",
+        "feature_egzmFT",
+        "feature_FtMt7d"
+      ],
+      "name": "Apple 风格产品查看器",
+      "settings": {
+        "heading": "Designed for Women",
+        "heading_font_size": 40,
+        "heading_color": "#1e0e06",
+        "mobile_heading_font_size": 28,
+        "mobile_heading_color": "#1e0e06",
+        "landing_alt": "Product close-up",
+        "finishes_label": "Finishes",
+        "finishes_heading": "Finishes.",
+        "finishes_description": "<p>Choose the finish that best matches your style.</p>",
+        "finishes_title_font_size": 17,
+        "finishes_title_color": "#1d1d1f",
+        "finishes_desc_font_size": 17,
+        "finishes_desc_color": "#1d1d1f",
+        "mobile_finishes_title_font_size": 15,
+        "mobile_finishes_title_color": "#1d1d1f",
+        "mobile_finishes_desc_font_size": 15,
+        "mobile_finishes_desc_color": "#1d1d1f",
+        "desktop_section_margin_top": 0,
+        "desktop_section_margin_bottom": 0,
+        "desktop_heading_margin_top": 0,
+        "desktop_heading_margin_bottom": 30,
+        "mobile_section_margin_top": 0,
+        "mobile_section_margin_bottom": 0,
+        "mobile_heading_margin_top": 0,
+        "mobile_heading_margin_bottom": 24
+      }
+    },
+    "apple_scroll_feature_gallery_XjymXP": {
+      "type": "apple-scroll-feature-gallery",
+      "blocks": {
+        "feature_card_wBDRNF": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Get a load of training load.",
+            "body": "Know when to push or when to recover thanks to helpful insights that make it easier for you to see the impact your workouts have on your body over time.",
+            "wide_card": false
+          }
+        },
+        "feature_card_xNqtJX": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Create a Custom Workout.",
+            "body": "Tailor your workout and training style by modifying time, distance, or calorie goals.",
+            "wide_card": false
+          }
+        },
+        "feature_card_9WjcA9": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Your workout data on your phone.",
+            "body": "Track your progress, view completed workouts, change your goals, and share your activity with others.",
+            "wide_card": false
+          }
+        },
+        "feature_card_hkTPBw": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "Workout media that tunes in to you.",
+            "body": "Choose music or podcasts based on the workout you are doing and the media you love.",
+            "wide_card": false
+          }
+        },
+        "feature_card_NqNRfA": {
+          "type": "feature_card",
+          "settings": {
+            "heading": "A powerful pairing.",
+            "body": "See your real-time metrics onscreen and enjoy audio-guided workouts when you are on the go.",
+            "wide_card": true
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_wBDRNF",
+        "feature_card_xNqtJX",
+        "feature_card_9WjcA9",
+        "feature_card_hkTPBw",
+        "feature_card_NqNRfA"
+      ],
+      "name": "滚动模糊功能画廊",
+      "settings": {
+        "desktop_background_image": "shopify://shop_images/FANY_Luna_Silicone_1_e123505a-b66c-4ab2-9b8e-2cc2c4b90574.webp",
+        "desktop_image_position": "center top",
+        "mobile_background_image": "shopify://shop_images/FANY_Luna_Silicone_-_M.webp",
+        "mobile_image_position": "center top",
+        "intro_heading": "To know you\nis to move you.",
+        "intro_body": "<p>In addition to detailed insights, Apple Watch Series 11 provides personalized fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones, and Custom Workouts, there are even more brains behind the burn.</p>",
+        "desktop_intro_horizontal": "flex-start",
+        "desktop_intro_vertical": "flex-start",
+        "desktop_intro_heading_width": 760,
+        "desktop_intro_body_width": 760,
+        "mobile_intro_horizontal": "flex-start",
+        "mobile_intro_vertical": "flex-start",
+        "mobile_intro_heading_width": 355,
+        "mobile_intro_body_width": 355,
+        "desktop_intro_heading_size": 40,
+        "desktop_intro_body_size": 20,
+        "mobile_intro_heading_size": 28,
+        "mobile_intro_body_size": 16,
+        "detail_heading": "Way to go! That was your fastest 5K ever.",
+        "detail_body": "<p><strong>Meet your Workout Buddy.</strong> A text-to-speech model generates personalized pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style, and tone for a workout. Time to buddy up.</p>",
+        "desktop_detail_heading_size": 40,
+        "desktop_detail_body_size": 20,
+        "mobile_detail_heading_size": 28,
+        "mobile_detail_body_size": 16,
+        "gallery_label": "Feature card gallery",
+        "desktop_card_text_size": 16,
+        "mobile_card_text_size": 16,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 0
+      }
+    },
     "recommended_products_manual_RbP8qP": {
       "type": "recommended-products-manual",
       "blocks": {
@@ -2026,6 +2329,9 @@
     "main",
     "product_overview_group_F9Xy6b",
     "faq",
+    "animated_floating_banner_4k7gAm",
+    "interactive_product_viewer_qdWTDt",
+    "apple_scroll_feature_gallery_XjymXP",
     "recommended_products_manual_RbP8qP",
     "17876538872444c7a5",
     "newsletter_QLP44D"
