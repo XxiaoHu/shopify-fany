@@ -1610,6 +1610,7 @@
         "product_overview_image_text_8AdJTd",
         "product_overview_highlights_bAWbKU"
       ],
+      "disabled": true,
       "name": "product overview group",
       "settings": {
         "overview_padding_top": 30,
@@ -1877,6 +1878,7 @@
         "collapsible_row_bqz4g8",
         "collapsible_row_9wmwr3"
       ],
+      "disabled": true,
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
         ".collapsible-content__heading {color: #f2d0ad;}"
