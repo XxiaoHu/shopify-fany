@@ -60,7 +60,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "3. Is the FANY Luna Leather smartwatch heavier than the silicone version?",
-            "icon": "check_mark",
+            "icon": "none",
             "row_content": "<p>No. The FANY Luna Leather is actually lighter, weighing approximately 23.9g, while the FANY Luna Silicone weighs approximately 29.2g. Both are designed to be comfortable enough for all-day wear.</p>",
             "page": ""
           }
@@ -68,9 +68,9 @@
         "collapsible_row_ihaN3a": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "4. Is a leather or silicone smartwatch band better for workouts?",
+            "icon": "none",
+            "row_content": "<p>Silicone is generally the more practical choice for workouts and active use because it is easy to wipe clean and has a sportier design. The FANY Luna Silicone is well suited to running, gym sessions, walking, and other active routines. The leather version is better suited to everyday and dressier wear.<br/><br/></p>",
             "page": ""
           }
         }
