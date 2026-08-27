@@ -41,9 +41,9 @@
         "collapsible_row_BTRi9n": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "1. What is the difference between the FANY Luna Leather and Silicone smartwatches?",
+            "icon": "none",
+            "row_content": "<p>The main difference is the watch band. The FANY Luna Leather features a genuine leather band with a more refined, classic look, while the FANY Luna Silicone uses a lightweight, sportier band designed for active everyday wear. Both versions share the same core Luna smartwatch features, including a 1.1-inch AMOLED display, up to 7 days of battery life, IP68 water resistance, 110+ workout modes, and health tracking.<br/><br/></p>",
             "page": ""
           }
         },
@@ -84,7 +84,7 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
+        "heading": "FAQs",
         "heading_size": "h2",
         "heading_color": "#121212",
         "heading_alignment": "center",
