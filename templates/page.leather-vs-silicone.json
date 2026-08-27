@@ -70,7 +70,16 @@
           "settings": {
             "heading": "4. Is a leather or silicone smartwatch band better for workouts?",
             "icon": "none",
-            "row_content": "<p>Silicone is generally the more practical choice for workouts and active use because it is easy to wipe clean and has a sportier design. The FANY Luna Silicone is well suited to running, gym sessions, walking, and other active routines. The leather version is better suited to everyday and dressier wear.<br/><br/></p>",
+            "row_content": "<p>Silicone is generally the more practical choice for workouts and active use because it is easy to wipe clean and has a sportier design. The FANY Luna Silicone is well suited to running, gym sessions, walking, and other active routines. The leather version is better suited to everyday and dressier wear.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EhX63R": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "5. Is the FANY Luna Leather smartwatch good for everyday wear?",
+            "icon": "none",
+            "row_content": "<p>Yes. The FANY Luna Leather is designed for everyday wear and combines smartwatch functionality with a more traditional, elegant watch style. Its genuine leather band makes it a natural choice for work, casual outfits, dinners, and other occasions where you want a more refined look.</p>",
             "page": ""
           }
         }
@@ -79,7 +88,8 @@
         "collapsible_row_BTRi9n",
         "collapsible_row_Wfrk3h",
         "collapsible_row_Wbiq3m",
-        "collapsible_row_ihaN3a"
+        "collapsible_row_ihaN3a",
+        "collapsible_row_EhX63R"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
