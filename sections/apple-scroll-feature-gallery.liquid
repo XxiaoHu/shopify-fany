@@ -11,7 +11,7 @@
   id="AppleScrollFeatureGallery-{{ section.id }}"
   class="apple-scroll-feature-gallery"
   data-section-id="{{ section.id }}"
-  style="--asfg-desktop-margin-top: {{ section.settings.margin_top }}px; --asfg-desktop-margin-bottom: {{ section.settings.margin_bottom }}px; --asfg-mobile-margin-top: {{ section.settings.mobile_margin_top }}px; --asfg-mobile-margin-bottom: {{ section.settings.mobile_margin_bottom }}px; --asfg-desktop-intro-horizontal: {{ section.settings.desktop_intro_horizontal }}; --asfg-desktop-intro-vertical: {{ section.settings.desktop_intro_vertical }}; --asfg-mobile-intro-horizontal: {{ section.settings.mobile_intro_horizontal }}; --asfg-mobile-intro-vertical: {{ section.settings.mobile_intro_vertical }}; --asfg-desktop-intro-heading-width: {{ section.settings.desktop_intro_heading_width }}px; --asfg-desktop-intro-body-width: {{ section.settings.desktop_intro_body_width }}px; --asfg-mobile-intro-heading-width: {{ section.settings.mobile_intro_heading_width }}px; --asfg-mobile-intro-body-width: {{ section.settings.mobile_intro_body_width }}px; --asfg-desktop-intro-heading-size: {{ section.settings.desktop_intro_heading_size }}px; --asfg-desktop-intro-body-size: {{ section.settings.desktop_intro_body_size }}px; --asfg-mobile-intro-heading-size: {{ section.settings.mobile_intro_heading_size }}px; --asfg-mobile-intro-body-size: {{ section.settings.mobile_intro_body_size }}px; --asfg-desktop-detail-heading-size: {{ section.settings.desktop_detail_heading_size }}px; --asfg-desktop-detail-body-size: {{ section.settings.desktop_detail_body_size }}px; --asfg-mobile-detail-heading-size: {{ section.settings.mobile_detail_heading_size }}px; --asfg-mobile-detail-body-size: {{ section.settings.mobile_detail_body_size }}px; --asfg-desktop-card-text-size: {{ section.settings.desktop_card_text_size }}px; --asfg-mobile-card-text-size: {{ section.settings.mobile_card_text_size }}px; --asfg-desktop-object-position: {{ section.settings.desktop_image_position }}; --asfg-mobile-object-position: {{ section.settings.mobile_image_position }};"
+  style="--asfg-desktop-margin-top: {{ section.settings.margin_top }}px; --asfg-desktop-margin-bottom: {{ section.settings.margin_bottom }}px; --asfg-mobile-margin-top: {{ section.settings.mobile_margin_top }}px; --asfg-mobile-margin-bottom: {{ section.settings.mobile_margin_bottom }}px; --asfg-desktop-intro-horizontal: {{ section.settings.desktop_intro_horizontal }}; --asfg-desktop-intro-vertical: {{ section.settings.desktop_intro_vertical }}; --asfg-mobile-intro-horizontal: {{ section.settings.mobile_intro_horizontal }}; --asfg-mobile-intro-vertical: {{ section.settings.mobile_intro_vertical }}; --asfg-desktop-intro-heading-width: {{ section.settings.desktop_intro_heading_width }}px; --asfg-desktop-intro-body-width: {{ section.settings.desktop_intro_body_width }}px; --asfg-mobile-intro-heading-width: {{ section.settings.mobile_intro_heading_width }}px; --asfg-mobile-intro-body-width: {{ section.settings.mobile_intro_body_width }}px; --asfg-desktop-intro-heading-size: {{ section.settings.desktop_intro_heading_size }}px; --asfg-desktop-intro-body-size: {{ section.settings.desktop_intro_body_size }}px; --asfg-mobile-intro-heading-size: {{ section.settings.mobile_intro_heading_size }}px; --asfg-mobile-intro-body-size: {{ section.settings.mobile_intro_body_size }}px; --asfg-desktop-intro-color: {{ section.settings.desktop_intro_text_color }}; --asfg-mobile-intro-color: {{ section.settings.mobile_intro_text_color }}; --asfg-desktop-detail-heading-width: {{ section.settings.desktop_detail_heading_width }}px; --asfg-desktop-detail-body-width: {{ section.settings.desktop_detail_body_width }}px; --asfg-mobile-detail-heading-width: {{ section.settings.mobile_detail_heading_width }}px; --asfg-mobile-detail-body-width: {{ section.settings.mobile_detail_body_width }}px; --asfg-desktop-detail-heading-size: {{ section.settings.desktop_detail_heading_size }}px; --asfg-desktop-detail-body-size: {{ section.settings.desktop_detail_body_size }}px; --asfg-mobile-detail-heading-size: {{ section.settings.mobile_detail_heading_size }}px; --asfg-mobile-detail-body-size: {{ section.settings.mobile_detail_body_size }}px; --asfg-desktop-detail-color: {{ section.settings.desktop_detail_text_color }}; --asfg-mobile-detail-color: {{ section.settings.mobile_detail_text_color }}; --asfg-desktop-card-text-size: {{ section.settings.desktop_card_text_size }}px; --asfg-mobile-card-text-size: {{ section.settings.mobile_card_text_size }}px; --asfg-desktop-object-position: {{ section.settings.desktop_image_position }}; --asfg-mobile-object-position: {{ section.settings.mobile_image_position }};"
 >
   <div class="apple-scroll-feature-gallery__intro apple-scroll-feature-gallery__content-width">
     <div class="apple-scroll-feature-gallery__intro-copy">
@@ -104,6 +104,11 @@
           <div class="apple-scroll-feature-gallery__track-spacer" aria-hidden="true"></div>
 
           {%- for block in section.blocks -%}
+            {%- liquid
+              assign card_desktop_image = block.settings.image
+              assign card_mobile_image = block.settings.mobile_image
+              assign card_fallback_image = card_desktop_image | default: card_mobile_image
+            -%}
             <article
               id="AppleScrollFeatureCard-{{ section.id }}-{{ forloop.index }}"
               class="apple-scroll-feature-gallery__card{% if block.settings.wide_card %} apple-scroll-feature-gallery__card--wide{% endif %}"
@@ -112,17 +117,30 @@
               {{ block.shopify_attributes }}
             >
               <div class="apple-scroll-feature-gallery__card-media">
-                {%- if block.settings.image != blank -%}
-                  {{
-                    block.settings.image
-                    | image_url: width: 1600
-                    | image_tag:
-                      class: 'apple-scroll-feature-gallery__card-image',
-                      loading: 'lazy',
-                      widths: '320, 520, 744, 1000, 1392, 1600',
-                      sizes: '(max-width: 749px) 260px, 372px',
-                      alt: block.settings.heading
-                  }}
+                {%- if card_fallback_image != blank -%}
+                  <picture class="apple-scroll-feature-gallery__card-picture">
+                    {%- if card_mobile_image != blank -%}
+                      <source
+                        media="(max-width: 749px)"
+                        srcset="
+                          {{ card_mobile_image | image_url: width: 320 }} 320w,
+                          {{ card_mobile_image | image_url: width: 520 }} 520w,
+                          {{ card_mobile_image | image_url: width: 780 }} 780w
+                        "
+                        sizes="260px"
+                      >
+                    {%- endif -%}
+                    {{
+                      card_fallback_image
+                      | image_url: width: 1600
+                      | image_tag:
+                        class: 'apple-scroll-feature-gallery__card-image',
+                        loading: 'lazy',
+                        widths: '320, 520, 744, 1000, 1392, 1600',
+                        sizes: '(max-width: 749px) 260px, 372px',
+                        alt: block.settings.heading
+                    }}
+                  </picture>
                 {%- elsif request.design_mode -%}
                   {{ 'image' | placeholder_svg_tag: 'apple-scroll-feature-gallery__card-placeholder placeholder-svg' }}
                 {%- endif -%}
@@ -251,6 +269,18 @@
       "id": "intro_body",
       "label": "正文",
       "default": "<p>In addition to detailed insights, Apple Watch Series 11 provides personalized fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones, and Custom Workouts, there are even more brains behind the burn.</p>"
+    },
+    {
+      "type": "color",
+      "id": "desktop_intro_text_color",
+      "label": "桌面端文字颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "mobile_intro_text_color",
+      "label": "移动端文字颜色",
+      "default": "#FFFFFF"
     },
     {
       "type": "header",
@@ -397,6 +427,62 @@
       "default": "<p><strong>Meet your Workout Buddy.</strong> A text-to-speech model generates personalized pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style, and tone for a workout. Time to buddy up.</p>"
     },
     {
+      "type": "header",
+      "content": "第二阶段布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_detail_heading_width",
+      "min": 160,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "桌面端标题宽度",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "desktop_detail_body_width",
+      "min": 160,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "桌面端正文宽度",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "mobile_detail_heading_width",
+      "min": 120,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "label": "移动端标题宽度",
+      "default": 355
+    },
+    {
+      "type": "range",
+      "id": "mobile_detail_body_width",
+      "min": 120,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "label": "移动端正文宽度",
+      "default": 355
+    },
+    {
+      "type": "color",
+      "id": "desktop_detail_text_color",
+      "label": "桌面端文字颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "mobile_detail_text_color",
+      "label": "移动端文字颜色",
+      "default": "#FFFFFF"
+    },
+    {
       "type": "range",
       "id": "desktop_detail_heading_size",
       "min": 20,
@@ -515,7 +601,13 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "图片"
+          "label": "桌面端图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片",
+          "info": "未上传时自动使用桌面端图片"
         },
         {
           "type": "text",
