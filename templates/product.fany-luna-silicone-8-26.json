@@ -2193,7 +2193,7 @@
         "desktop_intro_heading_width": 760,
         "desktop_intro_body_width": 500,
         "mobile_intro_horizontal": "flex-start",
-        "mobile_intro_vertical": "flex-start",
+        "mobile_intro_vertical": "flex-end",
         "mobile_intro_heading_width": 355,
         "mobile_intro_body_width": 355,
         "desktop_intro_heading_size": 40,
