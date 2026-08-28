@@ -3,6 +3,9 @@ if (!customElements.get('apple-scroll-feature-gallery')) {
     connectedCallback() {
       this.visual = this.querySelector('[data-asfg-visual]');
       this.blurLayer = this.querySelector('[data-asfg-blur]');
+      this.backgroundMedia = this.querySelector(
+        '.apple-scroll-feature-gallery__background-image, .apple-scroll-feature-gallery__background-fallback'
+      );
       this.details = this.querySelector('[data-asfg-details]');
       this.detailItems = Array.from(this.querySelectorAll('[data-asfg-detail-item]'));
       this.cards = Array.from(this.querySelectorAll('[data-asfg-card]'));
@@ -11,6 +14,7 @@ if (!customElements.get('apple-scroll-feature-gallery')) {
       this.previousButton = this.querySelector('[data-asfg-previous]');
       this.nextButton = this.querySelector('[data-asfg-next]');
       this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.mobileViewport = window.matchMedia('(max-width: 749px)');
       this.frame = null;
       this.resizeFrame = null;
       this.isInView = false;
@@ -231,8 +235,26 @@ if (!customElements.get('apple-scroll-feature-gallery')) {
       const filter = `blur(${blur}px) brightness(${brightness}%)`;
 
       this.style.setProperty('--asfg-blur-progress', blurProgress.toFixed(4));
-      this.blurLayer.style.webkitBackdropFilter = filter;
-      this.blurLayer.style.backdropFilter = filter;
+
+      if (this.mobileViewport.matches && this.backgroundMedia) {
+        const backgroundScale = (1 + blurProgress * 0.05).toFixed(4);
+
+        this.blurLayer.style.webkitBackdropFilter = 'none';
+        this.blurLayer.style.backdropFilter = 'none';
+        this.backgroundMedia.style.webkitFilter = filter;
+        this.backgroundMedia.style.filter = filter;
+        this.backgroundMedia.style.transform = `scale(${backgroundScale})`;
+      } else {
+        this.blurLayer.style.webkitBackdropFilter = filter;
+        this.blurLayer.style.backdropFilter = filter;
+
+        if (this.backgroundMedia) {
+          this.backgroundMedia.style.webkitFilter = '';
+          this.backgroundMedia.style.filter = '';
+          this.backgroundMedia.style.transform = '';
+        }
+      }
+
       this.blurLayer.style.backgroundColor = `rgba(0, 0, 0, ${shade})`;
 
       const copyProgress = this.clamp((blurProgress - 0.14) / 0.58);

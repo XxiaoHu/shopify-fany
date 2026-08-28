@@ -415,6 +415,11 @@
     object-position: var(--asfg-mobile-object-position, center top);
   }
 
+  .apple-scroll-feature-gallery.is-active .apple-scroll-feature-gallery__background-image,
+  .apple-scroll-feature-gallery.is-active .apple-scroll-feature-gallery__background-fallback {
+    will-change: filter, transform;
+  }
+
   .apple-scroll-feature-gallery__details {
     padding-bottom: 40px;
   }
