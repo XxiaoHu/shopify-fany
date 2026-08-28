@@ -70,10 +70,10 @@
   {%- endif -%}
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   {% assign selected_variant = product.selected_or_first_available_variant %}
-  {% assign variant_title_slug = selected_variant.title | replace: ' / ', '_' | replace: '/', '_' | replace: ' ', '_' %}
-  {% assign option1_slug = selected_variant.option1 | default: '' | replace: ' ', '_' %}
-  {% assign option2_slug = selected_variant.option2 | default: '' | replace: ' ', '_' %}
-  {% assign option3_slug = selected_variant.option3 | default: '' | replace: ' ', '_' %}
+  {% assign variant_title_slug = selected_variant.title | replace: ' / ', '_' | replace: '/', '_' | replace: '-', '_' | replace: ' ', '_' | downcase %}
+  {% assign option1_slug = selected_variant.option1 | default: '' | replace: '/', '_' | replace: '-', '_' | replace: ' ', '_' | downcase %}
+  {% assign option2_slug = selected_variant.option2 | default: '' | replace: '/', '_' | replace: '-', '_' | replace: ' ', '_' | downcase %}
+  {% assign option3_slug = selected_variant.option3 | default: '' | replace: '/', '_' | replace: '-', '_' | replace: ' ', '_' | downcase %}
   {% assign variant_specific_slug = option1_slug %}
   {% if option2_slug != blank %}
     {% assign variant_specific_slug = option2_slug %}
@@ -87,10 +87,11 @@
           {%- for media in product.media -%}
             {% unless variant_images contains media.src %}
               {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
+              {% assign filename_match_key = filename | replace: '-', '_' | replace: ' ', '_' | downcase %}
               {% if selected_variant.title == 'Default Title'
-                or filename contains variant_title_slug
-                or filename contains variant_specific_slug
-                or option3_slug != blank and filename contains option3_slug
+                or filename_match_key contains variant_title_slug
+                or filename_match_key contains variant_specific_slug
+                or option3_slug != blank and filename_match_key contains option3_slug
               %}
                 <div class="swiper-slide">
                   {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -123,10 +124,11 @@
               {%- for media in product.media -%}
                 {% unless variant_images contains media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
+                  {% assign filename_match_key = filename | replace: '-', '_' | replace: ' ', '_' | downcase %}
                   {% if selected_variant.title == 'Default Title'
-                    or filename contains variant_title_slug
-                    or filename contains variant_specific_slug
-                    or option3_slug != blank and filename contains option3_slug
+                    or filename_match_key contains variant_title_slug
+                    or filename_match_key contains variant_specific_slug
+                    or option3_slug != blank and filename_match_key contains option3_slug
                   %}
                     <li class="swiper-slide" data-media-id="{{ section.id }}-{{ media.id }}">
                       {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
@@ -141,10 +143,11 @@
               {%- for media in product.media -%}
                 {% unless variant_images contains media.src %}
                   {% assign filename = media.src | split: '/' | last | split: '?' | first | split: '.' | first %}
+                  {% assign filename_match_key = filename | replace: '-', '_' | replace: ' ', '_' | downcase %}
                   {% if selected_variant.title == 'Default Title'
-                    or filename contains variant_title_slug
-                    or filename contains variant_specific_slug
-                    or option3_slug != blank and filename contains option3_slug
+                    or filename_match_key contains variant_title_slug
+                    or filename_match_key contains variant_specific_slug
+                    or option3_slug != blank and filename_match_key contains option3_slug
                   %}
                     <li
                       class="swiper-slide"
