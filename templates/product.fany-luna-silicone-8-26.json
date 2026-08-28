@@ -1925,19 +1925,19 @@
         "heading_font_weight": "600",
         "heading_line_height": 1.1,
         "heading_letter_spacing": 0,
-        "heading_color": "#1D1D1F",
+        "heading_color": "#1d1d1f",
         "content_font_size": 16,
         "content_font_weight": "400",
         "content_line_height": 1.5,
         "content_letter_spacing": 0,
-        "content_color": "#6E6E73",
+        "content_color": "#6e6e73",
         "main_image_height": 890,
         "main_image_fit": "cover",
         "main_image_position": "center center",
         "scroll_trigger_distance": 24,
         "intro_padding_top": 60,
         "intro_padding_bottom": 30,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "mobile_heading_font_size": 28,
         "mobile_content_font_size": 16,
         "mobile_text_gap": 10,
@@ -2123,6 +2123,8 @@
         "feature_card_wBDRNF": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-s-2.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-s-2.webp",
             "heading": "Complete Your Daily Rings — Move, Track & Achieve.",
             "body": "Seamlessly monitor your daily steps, distance, and calories burned. Every target hit earns you exclusive achievement badges, rewarding key accomplishments like reaching 10,000 steps, logging 30 active minutes, and burning 500 calories a day. Track your movement and collect your wins!",
             "wide_card": false
@@ -2131,6 +2133,8 @@
         "feature_card_xNqtJX": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-s-4.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-s-4.webp",
             "heading": "Move Anytime. Train Scientifically.",
             "body": "Get precise analysis for every way you move on the FANY Luna smartwatch. Track yoga, strength training, running courses, and more with real-time metrics for heart rate, distance, and calorie burn. By monitoring your heart rate zones and effort levels, you can understand your body's status, optimize results, and prevent overexertion. Choose your mode and make every effort count!",
             "wide_card": false
@@ -2139,6 +2143,8 @@
         "feature_card_9WjcA9": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-s-2.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-s-2.webp",
             "heading": "Professional Workout Insights in the FANY Fit App.",
             "body": "Transform raw numbers into actionable insights with deep workout analysis in the FANY Fit App. Master your athletic journey with daily, weekly, monthly, and yearly stats across active time, exercise logs, movement hours, calorie burn, and comprehensive workout metrics to visualize your continuous progress. Push your limits and unlock your full athletic potential day by day!",
             "wide_card": false
@@ -2147,6 +2153,8 @@
         "feature_card_hkTPBw": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-s-4.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-s-4.webp",
             "heading": "Run with Your Wrist Coach. Elevate Your Fitness.",
             "body": "Transform every stride into progress with your free wrist trainer in the FANY Luna smartwatch. Master your daily training with quick 6, 10, or 15 minute Easy Runs, multi-level Keep Fit courses from primary to advanced, and real-time tracking for heart rate, pace, and calories to crush your fitness goals. Push your limit and unlock your best performance day by day!",
             "wide_card": false
@@ -2155,6 +2163,8 @@
         "feature_card_NqNRfA": {
           "type": "feature_card",
           "settings": {
+            "image": "shopify://shop_images/FANY-Luna-s-3.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-s-2.webp",
             "heading": "Win Badges. Reward Your Health.",
             "body": "Celebrate every health victory with the FANY Fit App. Crush your daily targets for fitness, steps, sleep, stress balance, activity goals, and streak days to earn exclusive themed achievement badges. Push your limits and build your badge collection day by day!",
             "wide_card": true
@@ -2176,6 +2186,8 @@
         "mobile_image_position": "center top",
         "intro_heading": "110+ Workout Modes\nFuel Every Passion",
         "intro_body": "<p>From running and pickleball to yoga, Pilates, and HIIT, FANY Luna supports over 110 activities tailored to your diverse interests. Effortlessly track heart rate, calorie burn, and movement while exploring new ways to stay active on your own terms.</p>",
+        "desktop_intro_text_color": "#ffffff",
+        "mobile_intro_text_color": "#ffffff",
         "desktop_intro_horizontal": "flex-start",
         "desktop_intro_vertical": "flex-start",
         "desktop_intro_heading_width": 760,
@@ -2190,6 +2202,12 @@
         "mobile_intro_body_size": 16,
         "detail_heading": "Move Your Way",
         "detail_body": "<p>From everyday steps to focused workouts, FANY Luna helps you stay connected to your movement, understand your progress, and celebrate every achievement along the way.</p>",
+        "desktop_detail_heading_width": 340,
+        "desktop_detail_body_width": 340,
+        "mobile_detail_heading_width": 355,
+        "mobile_detail_body_width": 355,
+        "desktop_detail_text_color": "#ffffff",
+        "mobile_detail_text_color": "#ffffff",
         "desktop_detail_heading_size": 40,
         "desktop_detail_body_size": 16,
         "mobile_detail_heading_size": 20,
@@ -2344,7 +2362,7 @@
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
         "mobile_body_color": "#686766",
         "mobile_text_alignment": "left",
         "desktop_section_margin_top": 60,
@@ -2374,13 +2392,13 @@
         "desktop_body_width": 400,
         "desktop_title_size": 40,
         "desktop_body_size": 16,
-        "desktop_title_color": "#1E1005",
-        "desktop_body_color": "#1E1005",
+        "desktop_title_color": "#1e1005",
+        "desktop_body_color": "#1e1005",
         "mobile_layout": "below",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
         "mobile_body_color": "#686766",
         "mobile_text_alignment": "left",
         "desktop_section_margin_top": 100,
@@ -2481,13 +2499,13 @@
         "desktop_body_width": 1000,
         "desktop_title_size": 40,
         "desktop_body_size": 16,
-        "desktop_title_color": "#1E1005",
+        "desktop_title_color": "#1e1005",
         "desktop_body_color": "#686766",
         "mobile_layout": "overlay",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
-        "mobile_title_color": "#1E1005",
+        "mobile_title_color": "#1e1005",
         "mobile_body_color": "#686766",
         "mobile_text_alignment": "center",
         "desktop_section_margin_top": 120,
