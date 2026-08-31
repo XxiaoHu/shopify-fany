@@ -1,0 +1,215 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "breadcrumbs_section_bLYdwW": {
+      "type": "breadcrumbs-section",
+      "name": "面包屑导航",
+      "settings": {
+        "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "desktop_font_size": 16,
+        "mobile_font_size": 16
+      }
+    },
+    "slideshow_w9MTWR": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8X8NFC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/band_story-_-PC_efe5fa1a-b3ce-4404-920c-6cc4498a370f.webp",
+            "mobile_image": "shopify://shop_images/band_story-_-PC_0b97d683-e1bb-4e43-81fc-e29e30040cc3.webp",
+            "image_overlay_opacity": 0,
+            "heading": "<p>Our Blog Authors</p>",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
+            "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3",
+            "mobile_box_align": "center",
+            "mobile_color_scheme": "scheme-3"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8X8NFC"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "show_text_below": false,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "image_with_text_XdC4Cx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gn9YhA": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Sia Cooper",
+            "heading_size": "h1"
+          }
+        },
+        "text_VXya4V": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sia Cooper is a NASM-certified personal trainer, former nurse, and the founder of Diary of a Fit Mom. As an IVF mama, prenatal and postpartum fitness advocate, and your “trainer bestie,” she is passionate about helping women build healthier, stronger, and more sustainable lifestyles.<br/><br/>Sia’s own wellness journey began while she was in nursing school in 2010. After struggling with weight, low energy, and unhealthy eating habits, she decided to educate herself and make lasting lifestyle changes. Through clean eating and a more intentional approach to wellness, she lost 45 pounds in nine months.<br/><br/>She started Diary of a Fit Mom to stay accountable and share the lessons, challenges, and strategies that worked for her. Her journey continued through pregnancy and motherhood, shaping her approach to prenatal and postpartum fitness and women’s wellness.<br/><br/>Today, Sia uses her professional training and personal experience to motivate and inspire women to feel stronger, healthier, and more confident at every stage of life.<br/><br/><br/>Sia Cooper Instagram: @diaryofafitmommyofficial<br/>Diary of a Fit Mom website: https://diaryofafitmommy.com/healthy-habits-that-keep-me-active-during-pregnancy-and-the-smartwatch-that-s-been-keeping-up-with-me/</p>",
+            "text_style": "body"
+          }
+        },
+        "button_QD8B8W": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gn9YhA",
+        "text_VXya4V",
+        "button_QD8B8W"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/sia_homenew_75c02a71-f583-49c5-9597-a79c17bf3bac.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bread_crumbs_cdXfUR": {
+      "type": "bread-crumbs",
+      "disabled": true,
+      "name": "面包屑",
+      "settings": {
+        "heading": "Fany Privacy Policy",
+        "color_scheme": "scheme-4"
+      }
+    },
+    "privacy_policy_H4Ky3t": {
+      "type": "privacy-policy",
+      "blocks": {
+        "contact_form_ryf9WA": {
+          "type": "contact-form",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1",
+            "color_scheme": "scheme-1",
+            "padding_top": 36,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "contact_form_ryf9WA"
+      ],
+      "disabled": true,
+      "name": "政策页",
+      "settings": {
+        "blog": "privacy-policy"
+      }
+    },
+    "newsletter_KhQRTE": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_eMK4nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover FANY: SAVE $20 & More",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_ehqryt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get style, stress relief, sleep & fitness tips. New members: SAVE $20 first order, exclusive perks & a warm community await!</p>",
+            "text_style": "f-20"
+          }
+        },
+        "email_form_xKVtTk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_eMK4nj",
+        "paragraph_ehqryt",
+        "email_form_xKVtTk"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "full_width": true,
+        "placeholder": "luna@example.com",
+        "padding_top": 116,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_section_bLYdwW",
+    "slideshow_w9MTWR",
+    "image_with_text_XdC4Cx",
+    "bread_crumbs_cdXfUR",
+    "privacy_policy_H4Ky3t",
+    "newsletter_KhQRTE"
+  ]
+}
