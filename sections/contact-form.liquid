@@ -99,6 +99,34 @@
           {%- endif -%}
         </div>
       </div>
+      <div class="contact__fields">
+        <div class="field">
+          <input
+            type="text"
+            id="ContactForm-order-number"
+            class="field__input"
+            name="contact[Order number]"
+            autocomplete="off"
+            placeholder="{{ section.settings.order_number_placeholder | escape }}"
+          >
+          <label class="field__label" for="ContactForm-order-number">
+            {{- section.settings.order_number_label | escape -}}
+          </label>
+        </div>
+        <div class="field">
+          <input
+            type="text"
+            id="ContactForm-purchase-channel"
+            class="field__input"
+            name="contact[Purchase channel]"
+            autocomplete="off"
+            placeholder="{{ section.settings.purchase_channel_placeholder | escape }}"
+          >
+          <label class="field__label" for="ContactForm-purchase-channel">
+            {{- section.settings.purchase_channel_label | escape -}}
+          </label>
+        </div>
+      </div>
       <div class="field">
         <input
           type="tel"
@@ -177,6 +205,34 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "Additional fields"
+    },
+    {
+      "type": "text",
+      "id": "order_number_label",
+      "label": "Order number field label",
+      "default": "Order number"
+    },
+    {
+      "type": "text",
+      "id": "order_number_placeholder",
+      "label": "Order number placeholder",
+      "default": "e.g. #1234"
+    },
+    {
+      "type": "text",
+      "id": "purchase_channel_label",
+      "label": "Purchase channel field label",
+      "default": "Purchase channel"
+    },
+    {
+      "type": "text",
+      "id": "purchase_channel_placeholder",
+      "label": "Purchase channel placeholder",
+      "default": "e.g. FANY website, Amazon, or TikTok"
     },
     {
       "type": "color_scheme",
