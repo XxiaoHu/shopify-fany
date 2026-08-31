@@ -461,14 +461,14 @@
           "type": "information",
           "settings": {
             "heading": "",
-            "text": "<p>Room 1801, Yee Shun Commercial Building<br>253–261 Hennessy Road, Wanchai, Hong Kong</p>"
+            "text": "<p>Flat 503K, 5th Floor, Festigood Centre, 8 Lok Yip Road, Fanling, New Territories, Hong Kong</p>"
           }
         },
         "information_9XzMWx": {
           "type": "information",
           "settings": {
             "heading": "",
-            "text": "<p>General wellness and lifestyle use only.<br>Not intended for medical diagnosis or treatment.</p>"
+            "text": "<p>General wellness and lifestyle use only.<br/>Not intended for medical diagnosis or treatment.</p>"
           }
         }
       },
