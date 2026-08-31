@@ -1,0 +1,281 @@
+{{ 'business-stats-bar.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="BusinessStatsBar-{{ section.id }}"
+  class="business-stats-bar"
+  style="
+    --bsb-background: {{ section.settings.background }};
+    --bsb-heading-color: {{ section.settings.heading_color }};
+    --bsb-value-color: {{ section.settings.value_color }};
+    --bsb-text-color: {{ section.settings.text_color }};
+    --bsb-border-color: {{ section.settings.border_color }};
+    --bsb-desktop-horizontal-padding: {{ section.settings.desktop_horizontal_padding }}px;
+    --bsb-mobile-horizontal-padding: {{ section.settings.mobile_horizontal_padding }}px;
+    --bsb-desktop-min-height: {{ section.settings.desktop_min_height }}px;
+    --bsb-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bsb-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bsb-desktop-value-size: {{ section.settings.desktop_value_size }}px;
+    --bsb-mobile-value-size: {{ section.settings.mobile_value_size }}px;
+    --bsb-desktop-text-size: {{ section.settings.desktop_text_size }}px;
+    --bsb-mobile-text-size: {{ section.settings.mobile_text_size }}px;
+    --bsb-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bsb-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bsb-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bsb-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="business-stats-bar__surface">
+    <div class="business-stats-bar__inner">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="business-stats-bar__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.settings.value != blank or block.settings.text != blank -%}
+          <div class="business-stats-bar__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.value != blank -%}
+              <strong class="business-stats-bar__value">{{ block.settings.value | escape }}</strong>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <span class="business-stats-bar__text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "商务数据条",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "标题",
+      "default": "FANY Luna at a glance"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "背景颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#CFCDCC"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "数据值颜色",
+      "default": "#FCC12B"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "描述颜色",
+      "default": "#CFCDCC"
+    },
+    {
+      "type": "color_background",
+      "id": "border_color",
+      "label": "分隔线颜色",
+      "default": "rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_horizontal_padding",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 左右间距",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端左右间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_min_height",
+      "min": 80,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 最小高度",
+      "default": 114
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_value_size",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "数据值字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_text_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "移动端字号"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_value_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "数据值字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_item",
+      "name": "数据项",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "数据值",
+          "default": "23.9 g"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "描述",
+          "default": "Lightweight design"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务数据条",
+      "blocks": [
+        { "type": "stat_item", "settings": { "value": "23.9 g", "text": "Lightweight design" } },
+        { "type": "stat_item", "settings": { "value": "37.5 mm", "text": "Compact watch case" } },
+        { "type": "stat_item", "settings": { "value": "Two straps", "text": "Leather and silicone options" } },
+        { "type": "stat_item", "settings": { "value": "Everyday wellness", "text": "Designed for daily life" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

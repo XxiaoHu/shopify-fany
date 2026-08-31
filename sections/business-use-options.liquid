@@ -1,0 +1,641 @@
+{{ 'business-use-options.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign cta_link = section.settings.cta_link | default: '#business-inquiry'
+-%}
+
+<section
+  id="BusinessUseOptions-{{ section.id }}"
+  class="business-use-options"
+  style="
+    --buo-background: {{ section.settings.background }};
+    --buo-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --buo-heading-color: {{ section.settings.heading_color }};
+    --buo-intro-color: {{ section.settings.intro_color }};
+    --buo-card-border-color: {{ section.settings.card_border_color }};
+    --buo-card-label-color: {{ section.settings.card_label_color }};
+    --buo-card-heading-color: {{ section.settings.card_heading_color }};
+    --buo-card-text-color: {{ section.settings.card_text_color }};
+    --buo-feature-color: {{ section.settings.feature_color }};
+    --buo-feature-line-color: {{ section.settings.feature_line_color }};
+    --buo-cta-background: {{ section.settings.cta_background }};
+    --buo-cta-heading-color: {{ section.settings.cta_heading_color }};
+    --buo-cta-text-color: {{ section.settings.cta_text_color }};
+    --buo-cta-link-color: {{ section.settings.cta_link_color }};
+    --buo-desktop-horizontal-padding: {{ section.settings.desktop_horizontal_padding }}px;
+    --buo-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --buo-desktop-intro-width: {{ section.settings.desktop_intro_width }}px;
+    --buo-desktop-cards-top-spacing: {{ section.settings.desktop_cards_top_spacing }}px;
+    --buo-mobile-cards-top-spacing: {{ section.settings.mobile_cards_top_spacing }}px;
+    --buo-desktop-eyebrow-size: {{ section.settings.desktop_eyebrow_size }}px;
+    --buo-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --buo-desktop-intro-size: {{ section.settings.desktop_intro_size }}px;
+    --buo-desktop-card-heading-size: {{ section.settings.desktop_card_heading_size }}px;
+    --buo-desktop-card-text-size: {{ section.settings.desktop_card_text_size }}px;
+    --buo-desktop-feature-size: {{ section.settings.desktop_feature_size }}px;
+    --buo-desktop-cta-heading-size: {{ section.settings.desktop_cta_heading_size }}px;
+    --buo-desktop-cta-text-size: {{ section.settings.desktop_cta_text_size }}px;
+    --buo-desktop-cta-link-size: {{ section.settings.desktop_cta_link_size }}px;
+    --buo-mobile-eyebrow-size: {{ section.settings.mobile_eyebrow_size }}px;
+    --buo-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --buo-mobile-intro-size: {{ section.settings.mobile_intro_size }}px;
+    --buo-mobile-card-heading-size: {{ section.settings.mobile_card_heading_size }}px;
+    --buo-mobile-card-text-size: {{ section.settings.mobile_card_text_size }}px;
+    --buo-mobile-feature-size: {{ section.settings.mobile_feature_size }}px;
+    --buo-mobile-cta-heading-size: {{ section.settings.mobile_cta_heading_size }}px;
+    --buo-mobile-cta-text-size: {{ section.settings.mobile_cta_text_size }}px;
+    --buo-mobile-cta-link-size: {{ section.settings.mobile_cta_link_size }}px;
+    --buo-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --buo-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --buo-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --buo-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="business-use-options__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="business-use-options__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.intro != blank -%}
+      <div class="business-use-options__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="business-use-options__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.intro != blank -%}
+          <div class="business-use-options__intro rte">{{ section.settings.intro }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="business-use-options__cards-wrap">
+        <div class="business-use-options__cards">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.link != blank -%}
+              <a
+                class="business-use-options__card"
+                href="{{ block.settings.link | escape }}"
+                style="--buo-card-background: {{ block.settings.background }};"
+                {{ block.shopify_attributes }}
+              >
+            {%- else -%}
+              <article
+                class="business-use-options__card"
+                style="--buo-card-background: {{ block.settings.background }};"
+                {{ block.shopify_attributes }}
+              >
+            {%- endif -%}
+
+              {%- if block.settings.label != blank -%}
+                <p class="business-use-options__card-label">{{ block.settings.label | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.heading != blank -%}
+                <h3 class="business-use-options__card-heading">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <div class="business-use-options__card-description rte">{{ block.settings.description }}</div>
+              {%- endif -%}
+
+              {%- if block.settings.features != blank -%}
+                <div class="business-use-options__features rte">{{ block.settings.features }}</div>
+              {%- endif -%}
+
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- else -%}
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_heading != blank
+      or section.settings.cta_text != blank
+      or section.settings.cta_link_label != blank
+    -%}
+      <div class="business-use-options__cta">
+        {%- if section.settings.cta_heading != blank -%}
+          <div class="business-use-options__cta-heading">{{ section.settings.cta_heading }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_text != blank -%}
+          <div class="business-use-options__cta-text rte">{{ section.settings.cta_text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_link_label != blank -%}
+          <a
+            class="business-use-options__cta-link"
+            href="{{ cta_link | escape }}"
+          >
+            {{ section.settings.cta_link_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "商务合作方式",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "header",
+      "content": "顶部内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "眉题",
+      "default": "Business uses"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "Two clear ways to work with FANY."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "说明富文本",
+      "default": "<p>Start with the outcome you need. Estimated quantity and timing help us match the right business option—even if your plan is still taking shape.</p>"
+    },
+    {
+      "type": "header",
+      "content": "底部行动栏"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cta_heading",
+      "label": "标题",
+      "default": "Starting with a smaller order?"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_text",
+      "label": "说明富文本",
+      "default": "<p>Small-batch requests can support a retail test, team gift, private event, or special project. Share your estimated quantity and timing, and we’ll confirm what is available.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_link_label",
+      "label": "链接文字",
+      "default": "Start a request →"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "链接地址"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Section 背景",
+      "default": "#FAF6F6"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "眉题颜色",
+      "default": "#9E7163"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "intro_color",
+      "label": "说明颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color_background",
+      "id": "card_border_color",
+      "label": "卡片边框颜色",
+      "default": "rgba(30, 14, 6, 0.16)"
+    },
+    {
+      "type": "color",
+      "id": "card_label_color",
+      "label": "卡片眉题颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "卡片标题颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "卡片说明颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "列表文字与加号颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color_background",
+      "id": "feature_line_color",
+      "label": "列表分隔线颜色",
+      "default": "rgba(158, 113, 99, 0.2)"
+    },
+    {
+      "type": "color",
+      "id": "cta_background",
+      "label": "行动栏背景",
+      "default": "#794538"
+    },
+    {
+      "type": "color",
+      "id": "cta_heading_color",
+      "label": "行动栏标题颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "行动栏说明颜色",
+      "default": "#F0DFE5"
+    },
+    {
+      "type": "color",
+      "id": "cta_link_color",
+      "label": "行动栏链接颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_horizontal_padding",
+      "min": 0,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 左右间距",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_width",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "PC 标题宽度",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_width",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "PC 说明宽度",
+      "default": 640
+    },
+    {
+      "type": "range",
+      "id": "desktop_cards_top_spacing",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 卡片顶部间距",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "mobile_cards_top_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端卡片顶部间距",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_eyebrow_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_intro_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_heading_size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_text_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_feature_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片列表字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_cta_heading_size",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_cta_text_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏说明字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_cta_link_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏链接字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "移动端字号"
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "说明字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_heading_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_feature_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片列表字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_cta_heading_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_cta_text_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏说明字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_cta_link_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "行动栏链接字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "option_card",
+      "name": "合作方式卡片",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "眉题",
+          "default": "01 / RETAIL"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "标题",
+          "default": "Retail & Wholesale"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "说明富文本",
+          "default": "<p>See how FANY Luna could fit your assortment before finalizing an opening order.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "features",
+          "label": "权益列表",
+          "info": "使用项目符号列表，可自由增加或删除条目",
+          "default": "<ul><li>Available styles and strap options</li><li>Business pricing matched to estimated quantity</li><li>Smaller opening requests for retail testing</li></ul>"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "卡片链接"
+        },
+        {
+          "type": "color_background",
+          "id": "background",
+          "label": "卡片背景",
+          "default": "#FFFDFD"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务合作方式",
+      "blocks": [
+        {
+          "type": "option_card"
+        },
+        {
+          "type": "option_card",
+          "settings": {
+            "label": "02 / GIFTING",
+            "heading": "Corporate & Client Gifting",
+            "description": "<p>Plan a useful employee or client gift around your audience, quantity, timing, and occasion.</p>",
+            "features": "<ul><li>Available gift-set and style options</li><li>Business pricing matched to estimated quantity</li><li>Ordering guidance based on your project</li></ul>",
+            "background": "rgba(158, 113, 99, 0.2)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

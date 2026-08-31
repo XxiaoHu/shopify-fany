@@ -1,0 +1,109 @@
+.business-stats-bar {
+  width: 100%;
+  padding-top: var(--bsb-desktop-padding-top, 0px);
+  padding-bottom: var(--bsb-desktop-padding-bottom, 0px);
+  font-family: Lato, var(--font-body-family), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.business-stats-bar,
+.business-stats-bar * {
+  box-sizing: border-box;
+}
+
+.business-stats-bar__surface {
+  width: 100%;
+  background: var(--bsb-background, #1e0e06);
+}
+
+.business-stats-bar__inner {
+  display: grid;
+  min-height: var(--bsb-desktop-min-height, 114px);
+  padding-inline: var(--bsb-desktop-horizontal-padding, 200px);
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+
+.business-stats-bar__heading,
+.business-stats-bar__item {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 20px 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 1px solid var(--bsb-border-color, rgba(255, 255, 255, 0.2));
+}
+
+.business-stats-bar__heading {
+  padding-left: 0;
+  color: var(--bsb-heading-color, #cfcdcc);
+  font-size: var(--bsb-desktop-heading-size, 14px);
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.business-stats-bar__value {
+  color: var(--bsb-value-color, #fcc12b);
+  font-family: Merriweather, Georgia, var(--font-heading-family), serif;
+  font-size: var(--bsb-desktop-value-size, 20px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.business-stats-bar__text {
+  margin-top: 5px;
+  color: var(--bsb-text-color, #cfcdcc);
+  font-size: var(--bsb-desktop-text-size, 14px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 750px) {
+  .business-stats-bar__inner {
+    padding-inline: min(var(--bsb-desktop-horizontal-padding, 200px), 60px);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .business-stats-bar {
+    padding-top: var(--bsb-mobile-padding-top, 0px);
+    padding-bottom: var(--bsb-mobile-padding-bottom, 0px);
+  }
+
+  .business-stats-bar__surface {
+    padding-block: 20px;
+  }
+
+  .business-stats-bar__inner {
+    min-height: 0;
+    padding-inline: var(--bsb-mobile-horizontal-padding, 0px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row;
+  }
+
+  .business-stats-bar__heading {
+    min-height: 52px;
+    grid-column: 1 / -1;
+    align-items: center;
+    padding: 10px 0;
+    font-size: var(--bsb-mobile-heading-size, 14px);
+    text-align: center;
+  }
+
+  .business-stats-bar__item {
+    min-height: 92px;
+    padding: 20px 22px;
+  }
+
+  .business-stats-bar__value {
+    font-size: var(--bsb-mobile-value-size, 20px);
+  }
+
+  .business-stats-bar__text {
+    font-size: var(--bsb-mobile-text-size, 14px);
+  }
+}

@@ -1,0 +1,679 @@
+{{ 'business-inquiry-form.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'business-inquiry-form.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign contact_form_id = 'BusinessInquiryContact-' | append: section.id
+  assign heading_id = 'BusinessInquiryHeading-' | append: section.id
+  assign email_subject = 'FANY Luna business inquiry' | url_encode
+-%}
+
+<business-inquiry-form
+  class="business-inquiry-form"
+  data-step-one-label="Step 1 of 2 · Your request"
+  data-step-two-label="Step 2 of 2 · Contact details"
+  style="
+    --bif-section-background: {{ section.settings.section_background }};
+    --bif-left-text-color: {{ section.settings.left_text_color }};
+    --bif-form-background: {{ section.settings.form_background }};
+    --bif-form-heading-color: {{ section.settings.form_heading_color }};
+    --bif-form-text-color: {{ section.settings.form_text_color }};
+    --bif-border-color: {{ section.settings.border_color }};
+    --bif-selected-background: {{ section.settings.selected_background }};
+    --bif-progress-color: {{ section.settings.progress_color }};
+    --bif-button-background: {{ section.settings.button_background }};
+    --bif-button-text-color: {{ section.settings.button_text_color }};
+    --bif-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bif-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --bif-desktop-form-heading-size: {{ section.settings.desktop_form_heading_size }}px;
+    --bif-desktop-form-text-size: {{ section.settings.desktop_form_text_size }}px;
+    --bif-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bif-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --bif-mobile-form-heading-size: {{ section.settings.mobile_form_heading_size }}px;
+    --bif-mobile-form-text-size: {{ section.settings.mobile_form_text_size }}px;
+    --bif-mobile-horizontal-padding: {{ section.settings.mobile_horizontal_padding }}px;
+    --bif-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bif-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bif-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bif-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <a class="business-inquiry-form__anchor" name="business-inquiry" aria-hidden="true"></a>
+
+  <section
+    id="BusinessInquiryForm-{{ section.id }}"
+    class="business-inquiry-form__section"
+    {% if section.settings.heading != blank %}
+      aria-labelledby="{{ heading_id }}"
+    {% else %}
+      aria-label="{{ section.settings.eyebrow | default: 'Business inquiry' | escape }}"
+    {% endif %}
+  >
+    <div class="business-inquiry-form__inner">
+      <div class="business-inquiry-form__copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="business-inquiry-form__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 id="{{ heading_id }}" class="business-inquiry-form__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="business-inquiry-form__description rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.contact_email != blank -%}
+          <a
+            class="business-inquiry-form__email"
+            href="mailto:{{ section.settings.contact_email | escape }}?subject={{ email_subject }}"
+          >
+            {{ section.settings.contact_email | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- form 'contact', id: contact_form_id, class: 'business-inquiry-form__form' -%}
+        {%- liquid
+          assign initial_step = 1
+          if form.errors
+            assign initial_step = 2
+          endif
+        -%}
+
+        <div
+          class="business-inquiry-form__progress"
+          aria-label="Inquiry form progress"
+          data-bif-progress
+          data-initial-step="{{ initial_step }}"
+        >
+          <div class="business-inquiry-form__progress-copy">
+            <strong data-bif-progress-label>
+              {%- if form.posted_successfully? or form.errors -%}
+                Step 2 of 2 · Contact details
+              {%- else -%}
+                Step 1 of 2 · Your request
+              {%- endif -%}
+            </strong>
+            <span data-bif-progress-percent>
+              {%- if form.posted_successfully? or form.errors -%}100%{%- else -%}50%{%- endif -%}
+            </span>
+          </div>
+          <div class="business-inquiry-form__progress-track" aria-hidden="true">
+            <span
+              class="business-inquiry-form__progress-bar"
+              data-bif-progress-bar
+              style="width: {% if form.posted_successfully? or form.errors %}100{% else %}50{% endif %}%;"
+            ></span>
+          </div>
+        </div>
+
+        {%- if form.posted_successfully? -%}
+          <div class="business-inquiry-form__result" role="status" tabindex="-1" data-bif-result>
+            <h3>{{ section.settings.success_heading | escape }}</h3>
+            <p>{{ section.settings.success_message | escape }}</p>
+          </div>
+        {%- else -%}
+          <div class="business-inquiry-form__step" data-bif-step="1"{% if initial_step == 2 %} hidden{% endif %}>
+            <h3 class="business-inquiry-form__step-heading">{{ section.settings.step_one_heading | escape }}</h3>
+
+            {%- if section.settings.step_one_description != blank -%}
+              <p class="business-inquiry-form__step-intro">{{ section.settings.step_one_description | escape }}</p>
+            {%- endif -%}
+
+            <fieldset class="business-inquiry-form__choices">
+              <legend class="visually-hidden">Purchase type</legend>
+
+              <label class="business-inquiry-form__choice" data-bif-choice>
+                <input
+                  type="radio"
+                  name="contact[Purchase type]"
+                  value="{{ section.settings.option_one_heading | escape }}"
+                  required
+                  checked
+                >
+                <span class="business-inquiry-form__choice-copy">
+                  <strong>{{ section.settings.option_one_heading | escape }}</strong>
+                  <span>{{ section.settings.option_one_description | escape }}</span>
+                </span>
+              </label>
+
+              <label class="business-inquiry-form__choice" data-bif-choice>
+                <input
+                  type="radio"
+                  name="contact[Purchase type]"
+                  value="{{ section.settings.option_two_heading | escape }}"
+                  required
+                >
+                <span class="business-inquiry-form__choice-copy">
+                  <strong>{{ section.settings.option_two_heading | escape }}</strong>
+                  <span>{{ section.settings.option_two_description | escape }}</span>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="business-inquiry-form__fields business-inquiry-form__fields--two">
+              <div class="business-inquiry-form__field">
+                <label for="BusinessInquiryQuantity-{{ section.id }}">
+                  {{ section.settings.quantity_label | escape }}
+                </label>
+                <input
+                  id="BusinessInquiryQuantity-{{ section.id }}"
+                  name="contact[Estimated quantity]"
+                  type="text"
+                  placeholder="{{ section.settings.quantity_placeholder | escape }}"
+                  required
+                  data-bif-quantity
+                >
+              </div>
+
+              <div class="business-inquiry-form__field">
+                <label for="BusinessInquiryTiming-{{ section.id }}">
+                  {{ section.settings.timing_label | escape }}
+                </label>
+                <input
+                  id="BusinessInquiryTiming-{{ section.id }}"
+                  name="contact[Desired timing]"
+                  type="text"
+                  placeholder="{{ section.settings.timing_placeholder | escape }}"
+                >
+              </div>
+            </div>
+
+            <div class="business-inquiry-form__actions">
+              <button class="business-inquiry-form__button" type="button" data-bif-next>
+                {{ section.settings.continue_label | escape }}
+              </button>
+              {%- if section.settings.step_one_note != blank -%}
+                <p class="business-inquiry-form__note">{{ section.settings.step_one_note | escape }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="business-inquiry-form__step" data-bif-step="2"{% if initial_step == 1 %} hidden{% endif %}>
+            <h3 class="business-inquiry-form__step-heading">{{ section.settings.step_two_heading | escape }}</h3>
+
+            {%- if section.settings.step_two_description != blank -%}
+              <p class="business-inquiry-form__step-intro">{{ section.settings.step_two_description | escape }}</p>
+            {%- endif -%}
+
+            {%- if form.errors -%}
+              <div class="business-inquiry-form__error" role="alert" tabindex="-1" data-bif-result>
+                Please check the form and submit it again.
+              </div>
+            {%- endif -%}
+
+            <div class="business-inquiry-form__fields business-inquiry-form__fields--two">
+              <div class="business-inquiry-form__field">
+                <label for="BusinessInquiryName-{{ section.id }}">{{ section.settings.name_label | escape }}</label>
+                <input
+                  id="BusinessInquiryName-{{ section.id }}"
+                  name="contact[Name]"
+                  type="text"
+                  autocomplete="name"
+                  value="{% if customer %}{{ customer.name | escape }}{% endif %}"
+                  required
+                  data-bif-first-contact-field
+                >
+              </div>
+
+              <div class="business-inquiry-form__field">
+                <label for="BusinessInquiryCompany-{{ section.id }}">
+                  {{ section.settings.company_label | escape }}
+                </label>
+                <input
+                  id="BusinessInquiryCompany-{{ section.id }}"
+                  name="contact[Company or organization]"
+                  type="text"
+                  autocomplete="organization"
+                  required
+                >
+              </div>
+
+              <div class="business-inquiry-form__field business-inquiry-form__field--wide">
+                <label for="BusinessInquiryEmail-{{ section.id }}">{{ section.settings.email_label | escape }}</label>
+                <input
+                  id="BusinessInquiryEmail-{{ section.id }}"
+                  name="contact[email]"
+                  type="email"
+                  autocomplete="email"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  value="{% if customer %}{{ customer.email | escape }}{% endif %}"
+                  required
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                  {% endif %}
+                >
+              </div>
+
+              <div class="business-inquiry-form__field business-inquiry-form__field--wide">
+                <label for="BusinessInquiryDetails-{{ section.id }}">{{ section.settings.details_label | escape }}</label>
+                <textarea
+                  id="BusinessInquiryDetails-{{ section.id }}"
+                  name="contact[body]"
+                  rows="4"
+                  placeholder="{{ section.settings.details_placeholder | escape }}"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="business-inquiry-form__actions business-inquiry-form__actions--split">
+              <button
+                class="business-inquiry-form__button business-inquiry-form__button--secondary"
+                type="button"
+                data-bif-back
+              >
+                {{ section.settings.back_label | escape }}
+              </button>
+              <button class="business-inquiry-form__button" type="submit">
+                {{ section.settings.submit_label | escape }}
+              </button>
+            </div>
+          </div>
+
+          <input type="hidden" name="contact[tags]" value="business-inquiry">
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </section>
+</business-inquiry-form>
+
+{% schema %}
+{
+  "name": "商务咨询表单",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "左侧内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "眉题",
+      "default": "Business inquiry"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "Get options matched to your order."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "说明",
+      "default": "<p>Share your business goal and estimated quantity. We’ll use it to identify relevant styles, business pricing, gift-set options, and ordering guidance.</p>"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "联系邮箱",
+      "default": "sales@fanyofficial.com"
+    },
+    {
+      "type": "header",
+      "content": "第一步"
+    },
+    {
+      "type": "text",
+      "id": "step_one_heading",
+      "label": "标题",
+      "default": "What are you planning?"
+    },
+    {
+      "type": "textarea",
+      "id": "step_one_description",
+      "label": "说明",
+      "default": "Choose the closest option. Small-batch requests are welcome under either main path."
+    },
+    {
+      "type": "text",
+      "id": "option_one_heading",
+      "label": "选项一标题",
+      "default": "Retail & Wholesale"
+    },
+    {
+      "type": "textarea",
+      "id": "option_one_description",
+      "label": "选项一说明",
+      "default": "For stores, studios, wellness businesses, and online collections."
+    },
+    {
+      "type": "text",
+      "id": "option_two_heading",
+      "label": "选项二标题",
+      "default": "Corporate & Client Gifting"
+    },
+    {
+      "type": "textarea",
+      "id": "option_two_description",
+      "label": "选项二说明",
+      "default": "For employees, clients, events, retreats, and programs."
+    },
+    {
+      "type": "text",
+      "id": "quantity_label",
+      "label": "数量字段标题",
+      "default": "Estimated quantity"
+    },
+    {
+      "type": "text",
+      "id": "quantity_placeholder",
+      "label": "数量字段提示",
+      "default": "e.g. 25, 100, or not sure"
+    },
+    {
+      "type": "text",
+      "id": "timing_label",
+      "label": "时间字段标题",
+      "default": "Desired timing"
+    },
+    {
+      "type": "text",
+      "id": "timing_placeholder",
+      "label": "时间字段提示",
+      "default": "Month, target date, or flexible"
+    },
+    {
+      "type": "text",
+      "id": "continue_label",
+      "label": "继续按钮文字",
+      "default": "Continue"
+    },
+    {
+      "type": "text",
+      "id": "step_one_note",
+      "label": "按钮旁说明",
+      "default": "An estimate is enough to start."
+    },
+    {
+      "type": "header",
+      "content": "第二步"
+    },
+    {
+      "type": "text",
+      "id": "step_two_heading",
+      "label": "标题",
+      "default": "Where should we send the options?"
+    },
+    {
+      "type": "textarea",
+      "id": "step_two_description",
+      "label": "说明",
+      "default": "Add the essentials now. Details can be refined with the FANY business team."
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "姓名字段标题",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "company_label",
+      "label": "公司字段标题",
+      "default": "Company or organization"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "邮箱字段标题",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "details_label",
+      "label": "项目说明字段标题",
+      "default": "Project details"
+    },
+    {
+      "type": "text",
+      "id": "details_placeholder",
+      "label": "项目说明字段提示",
+      "default": "Who is it for, and what are you planning?"
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "返回按钮文字",
+      "default": "Back"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "提交按钮文字",
+      "default": "Get Wholesale & Gifting Options"
+    },
+    {
+      "type": "text",
+      "id": "success_heading",
+      "label": "提交成功标题",
+      "default": "Thank you."
+    },
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "提交成功说明",
+      "default": "Your request has been sent to the FANY business team."
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section 背景",
+      "default": "#9E7163"
+    },
+    {
+      "type": "color",
+      "id": "left_text_color",
+      "label": "左侧文字颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "form_background",
+      "label": "表单背景",
+      "default": "#FFFDFD"
+    },
+    {
+      "type": "color",
+      "id": "form_heading_color",
+      "label": "表单标题颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "form_text_color",
+      "label": "表单说明颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color_background",
+      "id": "border_color",
+      "label": "输入框和卡片边框",
+      "default": "rgba(30, 14, 6, 0.16)"
+    },
+    {
+      "type": "color_background",
+      "id": "selected_background",
+      "label": "选中卡片背景",
+      "default": "rgba(158, 113, 99, 0.2)"
+    },
+    {
+      "type": "color",
+      "id": "progress_color",
+      "label": "进度条和选中边框",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "按钮背景",
+      "default": "#794538"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "按钮文字",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "左侧标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "左侧说明字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_form_heading_size",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "表单主标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_form_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "表单输入文字字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 24,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "左侧标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "左侧说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_form_heading_size",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "表单主标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_form_text_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "表单输入文字字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端左右间距",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 76
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务咨询表单"
+    }
+  ]
+}
+{% endschema %}

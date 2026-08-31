@@ -1,0 +1,553 @@
+{{ 'business-inquiry-steps.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign heading_lines = section.settings.heading | newline_to_br | split: '<br />'
+  assign partner_link = section.settings.partner_link | default: '#business-inquiry'
+  assign populated_step_count = 0
+
+  for block in section.blocks
+    if block.settings.heading != blank or block.settings.description != blank
+      assign populated_step_count = populated_step_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section
+  id="BusinessInquirySteps-{{ section.id }}"
+  class="business-inquiry-steps"
+  style="
+    --bis-desktop-background: {{ section.settings.desktop_background }};
+    --bis-mobile-background: {{ section.settings.mobile_background }};
+    --bis-accent-color: {{ section.settings.accent_color }};
+    --bis-heading-color: {{ section.settings.heading_color }};
+    --bis-body-color: {{ section.settings.body_color }};
+    --bis-secondary-text-color: {{ section.settings.secondary_text_color }};
+    --bis-divider-color: {{ section.settings.divider_color }};
+    --bis-partner-background: {{ section.settings.partner_background }};
+    --bis-partner-border-color: {{ section.settings.partner_border_color }};
+    --bis-mobile-horizontal-padding: {{ section.settings.mobile_horizontal_padding }}px;
+    --bis-desktop-heading-column-width: {{ section.settings.desktop_heading_column_width }}px;
+    --bis-mobile-partner-horizontal-padding: {{ section.settings.mobile_partner_horizontal_padding }}px;
+    --bis-desktop-eyebrow-size: {{ section.settings.desktop_eyebrow_size }}px;
+    --bis-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bis-desktop-body-size: {{ section.settings.desktop_body_size }}px;
+    --bis-desktop-number-size: {{ section.settings.desktop_number_size }}px;
+    --bis-desktop-step-heading-size: {{ section.settings.desktop_step_heading_size }}px;
+    --bis-desktop-step-body-size: {{ section.settings.desktop_step_body_size }}px;
+    --bis-desktop-partner-heading-size: {{ section.settings.desktop_partner_heading_size }}px;
+    --bis-desktop-partner-body-size: {{ section.settings.desktop_partner_body_size }}px;
+    --bis-mobile-eyebrow-size: {{ section.settings.mobile_eyebrow_size }}px;
+    --bis-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bis-mobile-body-size: {{ section.settings.mobile_body_size }}px;
+    --bis-mobile-number-size: {{ section.settings.mobile_number_size }}px;
+    --bis-mobile-step-heading-size: {{ section.settings.mobile_step_heading_size }}px;
+    --bis-mobile-step-body-size: {{ section.settings.mobile_step_body_size }}px;
+    --bis-mobile-partner-heading-size: {{ section.settings.mobile_partner_heading_size }}px;
+    --bis-mobile-partner-body-size: {{ section.settings.mobile_partner_body_size }}px;
+    --bis-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bis-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bis-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bis-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="business-inquiry-steps__inner">
+    <div class="business-inquiry-steps__main">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="business-inquiry-steps__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank or section.settings.intro != blank -%}
+        <div class="business-inquiry-steps__header">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="business-inquiry-steps__heading">
+              {%- for heading_line in heading_lines -%}
+                {%- assign clean_heading_line = heading_line | strip -%}
+                {%- if clean_heading_line != blank -%}
+                  <span class="business-inquiry-steps__heading-line">{{ clean_heading_line | escape }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </h2>
+          {%- endif -%}
+
+          {%- if section.settings.intro != blank -%}
+            <div class="business-inquiry-steps__intro rte">{{ section.settings.intro }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if populated_step_count > 0 -%}
+        <div class="business-inquiry-steps__steps">
+          {%- assign step_number = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.heading != blank or block.settings.description != blank -%}
+              {%- assign step_number = step_number | plus: 1 -%}
+              <article class="business-inquiry-steps__step" {{ block.shopify_attributes }}>
+                <strong class="business-inquiry-steps__number" aria-hidden="true">{{ step_number }}</strong>
+
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="business-inquiry-steps__step-heading">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+
+                {%- if block.settings.description != blank -%}
+                  <div class="business-inquiry-steps__step-description rte">
+                    {{ block.settings.description }}
+                  </div>
+                {%- endif -%}
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.partner_label != blank
+      or section.settings.partner_heading != blank
+      or section.settings.partner_body != blank
+      or section.settings.partner_link_label != blank
+    -%}
+      <div class="business-inquiry-steps__partner-wrap">
+        <aside class="business-inquiry-steps__partner">
+          {%- if section.settings.partner_label != blank -%}
+            <p class="business-inquiry-steps__partner-label">{{ section.settings.partner_label | escape }}</p>
+          {%- endif -%}
+
+          {%- if section.settings.partner_heading != blank or section.settings.partner_body != blank -%}
+            <div class="business-inquiry-steps__partner-copy">
+              {%- if section.settings.partner_heading != blank -%}
+                <h3 class="business-inquiry-steps__partner-heading">{{ section.settings.partner_heading }}</h3>
+              {%- endif -%}
+
+              {%- if section.settings.partner_body != blank -%}
+                <div class="business-inquiry-steps__partner-body rte">{{ section.settings.partner_body }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.partner_link_label != blank -%}
+            <a class="business-inquiry-steps__partner-link" href="{{ partner_link | escape }}">
+              {{ section.settings.partner_link_label | escape }}
+            </a>
+          {%- endif -%}
+        </aside>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "商务咨询步骤",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "眉题",
+      "default": "How it works"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "标题",
+      "info": "换行用于控制 PC 端标题断行；移动端会自动显示为一行文字",
+      "default": "Start with a\nsimple request."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "说明",
+      "default": "<p>You do not need a final quantity or a finished plan. Tell us what you know, and we’ll confirm the relevant options.</p>"
+    },
+    {
+      "type": "text",
+      "id": "partner_label",
+      "label": "合作伙伴标签",
+      "default": "For channel partners"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "partner_heading",
+      "label": "合作伙伴标题",
+      "default": "Interested in distribution or representation?"
+    },
+    {
+      "type": "richtext",
+      "id": "partner_body",
+      "label": "合作伙伴说明",
+      "default": "<p>Distributors, showrooms, sales representatives, and regional partners can use the same inquiry form and select Distribution Partnership.</p>"
+    },
+    {
+      "type": "text",
+      "id": "partner_link_label",
+      "label": "合作伙伴链接文字",
+      "default": "Discuss a partnership →"
+    },
+    {
+      "type": "url",
+      "id": "partner_link",
+      "label": "合作伙伴链接地址"
+    },
+    {
+      "type": "header",
+      "content": "布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_column_width",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "PC 标题列宽",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端内容左右间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_partner_horizontal_padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端合作卡片左右间距",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "desktop_background",
+      "label": "PC 背景颜色",
+      "default": "#FAF6F6"
+    },
+    {
+      "type": "color",
+      "id": "mobile_background",
+      "label": "移动端背景颜色",
+      "default": "#FFFDFD"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "强调文字颜色",
+      "info": "用于眉题、步骤编号和合作伙伴标签",
+      "default": "#9E7163"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题与链接颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "正文颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "secondary_text_color",
+      "label": "合作伙伴说明颜色",
+      "default": "#6F6269"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "步骤分隔线颜色",
+      "default": "#CECECE"
+    },
+    {
+      "type": "color",
+      "id": "partner_background",
+      "label": "合作卡片背景",
+      "default": "#F7F4F6"
+    },
+    {
+      "type": "color_background",
+      "id": "partner_border_color",
+      "label": "合作卡片边框",
+      "default": "rgba(30, 14, 6, 0.16)"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_eyebrow_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "主标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_body_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "顶部说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_number_size",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤编号字号",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "desktop_step_heading_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_step_body_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_partner_heading_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "合作卡片标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_partner_body_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "合作卡片说明字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "移动端字号"
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "主标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "顶部说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_size",
+      "min": 24,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤编号字号",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "mobile_step_heading_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤标题字号",
+      "default": 21
+    },
+    {
+      "type": "range",
+      "id": "mobile_step_body_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "步骤说明字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_partner_heading_size",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "合作卡片标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_partner_body_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "合作卡片说明字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "步骤",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "标题",
+          "default": "Step heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "说明",
+          "default": "<p>Add a short description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务咨询步骤",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Tell us what you’re planning",
+            "description": "<p>Choose retail and wholesale or corporate and client gifting.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Share quantity and timing",
+            "description": "<p>An estimate is enough to begin the conversation.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Review the available options",
+            "description": "<p>Receive the relevant styles, business pricing, availability, and purchasing information.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

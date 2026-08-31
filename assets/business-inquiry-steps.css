@@ -1,0 +1,344 @@
+.business-inquiry-steps {
+  width: 100%;
+  padding-top: var(--bis-desktop-padding-top, 80px);
+  padding-bottom: var(--bis-desktop-padding-bottom, 80px);
+  color: var(--bis-heading-color, #1e0e06);
+  background: var(--bis-desktop-background, #faf6f6);
+  font-family: Lato, var(--font-body-family), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.business-inquiry-steps,
+.business-inquiry-steps * {
+  box-sizing: border-box;
+}
+
+.business-inquiry-steps__inner {
+  display: flex;
+  width: calc(100% - 400px);
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 80px;
+}
+
+.business-inquiry-steps__main {
+  width: 100%;
+}
+
+.business-inquiry-steps__eyebrow {
+  width: 100%;
+  margin: 0;
+  color: var(--bis-accent-color, #9e7163);
+  font-size: var(--bis-desktop-eyebrow-size, 14px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.business-inquiry-steps__header {
+  display: grid;
+  width: 100%;
+  margin-top: 20px;
+  grid-template-columns: minmax(0, var(--bis-desktop-heading-column-width, 600px)) minmax(0, 1fr);
+  align-items: end;
+}
+
+.business-inquiry-steps__heading {
+  min-width: 0;
+  margin: 0;
+  color: var(--bis-heading-color, #1e0e06);
+  font-size: var(--bis-desktop-heading-size, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.business-inquiry-steps__heading-line {
+  display: block;
+}
+
+.business-inquiry-steps__intro {
+  min-width: 0;
+  color: var(--bis-body-color, #686766);
+  font-size: var(--bis-desktop-body-size, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.business-inquiry-steps__intro p,
+.business-inquiry-steps__step-description p,
+.business-inquiry-steps__partner-body p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.business-inquiry-steps__intro > * + *,
+.business-inquiry-steps__step-description > * + *,
+.business-inquiry-steps__partner-body > * + * {
+  margin-top: 0.8em;
+}
+
+.business-inquiry-steps__steps {
+  display: grid;
+  width: 100%;
+  margin-top: 58px;
+  border-top: 1px solid var(--bis-divider-color, #cecece);
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+
+.business-inquiry-steps__step {
+  min-width: 0;
+  padding: 32px 36px 6px;
+  border-right: 1px solid var(--bis-divider-color, #cecece);
+}
+
+.business-inquiry-steps__step:first-child {
+  padding-left: 0;
+}
+
+.business-inquiry-steps__step:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.business-inquiry-steps__number {
+  display: block;
+  margin: 0;
+  color: var(--bis-accent-color, #9e7163);
+  font-family: Merriweather, Georgia, var(--font-heading-family), serif;
+  font-size: var(--bis-desktop-number-size, 48px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.business-inquiry-steps__step-heading {
+  margin: 48px 0 0;
+  color: var(--bis-heading-color, #1e0e06);
+  font-size: var(--bis-desktop-step-heading-size, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.business-inquiry-steps__step-heading p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.business-inquiry-steps__step-description {
+  margin-top: 10px;
+  color: var(--bis-body-color, #686766);
+  font-size: var(--bis-desktop-step-body-size, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.business-inquiry-steps__partner-wrap {
+  width: 100%;
+}
+
+.business-inquiry-steps__partner {
+  display: grid;
+  width: 100%;
+  min-height: 117px;
+  padding: 36px 40px;
+  border: 1px solid var(--bis-partner-border-color, rgba(30, 14, 6, 0.16));
+  border-radius: 6px;
+  grid-template-columns: max-content minmax(0, 676px) minmax(max-content, 1fr);
+  align-items: center;
+  gap: 40px;
+  background: var(--bis-partner-background, #f7f4f6);
+}
+
+.business-inquiry-steps__partner-label {
+  margin: 0;
+  color: var(--bis-accent-color, #9e7163);
+  font-family: Merriweather, Georgia, var(--font-heading-family), serif;
+  font-size: var(--bis-desktop-partner-heading-size, 20px);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.business-inquiry-steps__partner-copy {
+  min-width: 0;
+}
+
+.business-inquiry-steps__partner-heading {
+  margin: 0;
+  color: var(--bis-heading-color, #1e0e06);
+  font-size: var(--bis-desktop-partner-heading-size, 20px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.business-inquiry-steps__partner-heading p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.business-inquiry-steps__partner-body {
+  margin-top: 7px;
+  color: var(--bis-secondary-text-color, #6f6269);
+  font-size: var(--bis-desktop-partner-body-size, 14px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.business-inquiry-steps__partner-link {
+  justify-self: center;
+  color: var(--bis-heading-color, #1e0e06);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.business-inquiry-steps__partner-link:hover {
+  color: var(--bis-heading-color, #1e0e06);
+  text-decoration-thickness: 2px;
+}
+
+.business-inquiry-steps__partner-link:focus-visible {
+  outline: 2px solid var(--bis-heading-color, #1e0e06);
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 750px) {
+  .business-inquiry-steps__header {
+    grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .business-inquiry-steps__partner {
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 750px) {
+  .business-inquiry-steps__partner {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .business-inquiry-steps__partner-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .business-inquiry-steps {
+    padding-top: var(--bis-mobile-padding-top, 40px);
+    padding-bottom: var(--bis-mobile-padding-bottom, 40px);
+    background: var(--bis-mobile-background, #fffdfd);
+  }
+
+  .business-inquiry-steps__inner {
+    width: 100%;
+    gap: 40px;
+  }
+
+  .business-inquiry-steps__main {
+    padding-inline: var(--bis-mobile-horizontal-padding, 20px);
+  }
+
+  .business-inquiry-steps__eyebrow {
+    font-size: var(--bis-mobile-eyebrow-size, 14px);
+  }
+
+  .business-inquiry-steps__header {
+    display: flex;
+    margin-top: 18px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .business-inquiry-steps__heading {
+    width: 100%;
+    font-size: var(--bis-mobile-heading-size, 28px);
+  }
+
+  .business-inquiry-steps__heading-line {
+    display: inline;
+  }
+
+  .business-inquiry-steps__heading-line:not(:last-child)::after {
+    content: " ";
+  }
+
+  .business-inquiry-steps__intro {
+    width: 100%;
+    font-size: var(--bis-mobile-body-size, 16px);
+  }
+
+  .business-inquiry-steps__steps {
+    display: block;
+    margin-top: 38px;
+  }
+
+  .business-inquiry-steps__step,
+  .business-inquiry-steps__step:first-child,
+  .business-inquiry-steps__step:last-child {
+    width: 100%;
+    padding: 26px 0 30px;
+    border-right: 0;
+    border-bottom: 1px solid var(--bis-divider-color, #cecece);
+  }
+
+  .business-inquiry-steps__number {
+    font-size: var(--bis-mobile-number-size, 38px);
+  }
+
+  .business-inquiry-steps__step-heading {
+    margin-top: 24px;
+    font-family: Arial, sans-serif;
+    font-size: var(--bis-mobile-step-heading-size, 21px);
+    line-height: 1.55;
+  }
+
+  .business-inquiry-steps__step-description {
+    margin-top: 10px;
+    color: var(--bis-secondary-text-color, #6f6269);
+    font-family: Arial, sans-serif;
+    font-size: var(--bis-mobile-step-body-size, 16px);
+    line-height: 1.55;
+  }
+
+  .business-inquiry-steps__partner-wrap {
+    padding-inline: var(--bis-mobile-partner-horizontal-padding, 14px);
+  }
+
+  .business-inquiry-steps__partner {
+    display: flex;
+    min-height: 0;
+    padding: 26px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .business-inquiry-steps__partner-label {
+    font-size: var(--bis-mobile-partner-heading-size, 20px);
+  }
+
+  .business-inquiry-steps__partner-heading {
+    font-size: var(--bis-mobile-partner-heading-size, 20px);
+  }
+
+  .business-inquiry-steps__partner-body {
+    font-size: var(--bis-mobile-partner-body-size, 14px);
+  }
+
+  .business-inquiry-steps__partner-link {
+    align-self: flex-start;
+    justify-self: auto;
+  }
+}

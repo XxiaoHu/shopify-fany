@@ -1,0 +1,189 @@
+.why-fany-luna {
+  width: 100%;
+  padding-top: var(--wfl-desktop-padding-top, 0);
+  padding-bottom: var(--wfl-desktop-padding-bottom, 0);
+  font-family: Lato, var(--font-body-family), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.why-fany-luna,
+.why-fany-luna * {
+  box-sizing: border-box;
+}
+
+.why-fany-luna__layout {
+  display: grid;
+  width: 100%;
+  min-height: var(--wfl-desktop-min-height, 750px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.why-fany-luna__media {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--wfl-image-background, #e8b399);
+}
+
+.why-fany-luna__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.why-fany-luna__image,
+.why-fany-luna__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.why-fany-luna__image {
+  object-fit: cover;
+  object-position: var(--wfl-desktop-image-position, center center);
+}
+
+.why-fany-luna__placeholder {
+  color: rgba(30, 14, 6, 0.28);
+  background: var(--wfl-image-background, #e8b399);
+}
+
+.why-fany-luna__content {
+  display: flex;
+  min-width: 0;
+  padding-block: 40px;
+  align-items: center;
+  background: var(--wfl-content-background, #1e0e06);
+}
+
+.why-fany-luna__content-inner {
+  width: min(
+    var(--wfl-desktop-content-width, 512px),
+    calc(100% - var(--wfl-desktop-content-left, 68px) - 20px)
+  );
+  margin-left: var(--wfl-desktop-content-left, 68px);
+}
+
+.why-fany-luna__eyebrow {
+  margin: 0 0 20px;
+  color: var(--wfl-eyebrow-color, #fcc12b);
+  font-size: var(--wfl-desktop-eyebrow-size, 14px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.why-fany-luna__heading {
+  margin: 0 0 32px;
+  color: var(--wfl-heading-color, #fff);
+  font-size: var(--wfl-desktop-heading-size, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.why-fany-luna__heading p,
+.why-fany-luna__feature-heading p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.why-fany-luna__features {
+  width: 100%;
+  border-top: 1px solid var(--wfl-divider-color, rgba(255, 255, 255, 0.2));
+}
+
+.why-fany-luna__feature {
+  display: grid;
+  width: 100%;
+  padding-block: 24px;
+  grid-template-columns: var(--wfl-desktop-feature-heading-width, 145px) minmax(0, 1fr);
+  align-items: start;
+  gap: 26px;
+  border-bottom: 1px solid var(--wfl-divider-color, rgba(255, 255, 255, 0.2));
+}
+
+.why-fany-luna__feature-heading {
+  margin: 0;
+  color: var(--wfl-feature-heading-color, #fff);
+  font-size: var(--wfl-desktop-feature-heading-size, 18px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.why-fany-luna__feature-text {
+  min-width: 0;
+  color: var(--wfl-feature-text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--wfl-desktop-feature-text-size, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.why-fany-luna__feature-text p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.why-fany-luna__feature-text > * + * {
+  margin-top: 0.8em;
+}
+
+@media screen and (max-width: 749px) {
+  .why-fany-luna {
+    padding-top: var(--wfl-mobile-padding-top, 0);
+    padding-bottom: var(--wfl-mobile-padding-bottom, 0);
+  }
+
+  .why-fany-luna__layout {
+    display: block;
+    min-height: 0;
+    background: var(--wfl-content-background, #1e0e06);
+  }
+
+  .why-fany-luna__media {
+    width: 100%;
+    height: var(--wfl-mobile-image-height, 320px);
+  }
+
+  .why-fany-luna__image {
+    object-position: var(--wfl-mobile-image-position, center center);
+  }
+
+  .why-fany-luna__content {
+    display: block;
+    padding: var(--wfl-mobile-content-padding, 40px) var(--wfl-mobile-horizontal-padding, 22px);
+  }
+
+  .why-fany-luna__content-inner {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .why-fany-luna__eyebrow {
+    margin-bottom: 18px;
+    font-size: var(--wfl-mobile-eyebrow-size, 14px);
+  }
+
+  .why-fany-luna__heading {
+    margin-bottom: 32px;
+    font-size: var(--wfl-mobile-heading-size, 28px);
+  }
+
+  .why-fany-luna__feature {
+    display: flex;
+    padding-block: 24px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .why-fany-luna__feature-heading {
+    font-size: var(--wfl-mobile-feature-heading-size, 18px);
+  }
+
+  .why-fany-luna__feature-text {
+    font-size: var(--wfl-mobile-feature-text-size, 16px);
+  }
+}

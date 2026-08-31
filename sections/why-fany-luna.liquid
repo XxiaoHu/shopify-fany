@@ -1,0 +1,492 @@
+{{ 'why-fany-luna.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign desktop_image = section.settings.desktop_image
+  assign mobile_image = section.settings.mobile_image
+  assign primary_image = desktop_image | default: mobile_image
+  assign image_alt = section.settings.image_alt | default: primary_image.alt
+-%}
+
+<section
+  id="WhyFanyLuna-{{ section.id }}"
+  class="why-fany-luna"
+  style="
+    --wfl-image-background: {{ section.settings.image_background }};
+    --wfl-content-background: {{ section.settings.content_background }};
+    --wfl-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --wfl-heading-color: {{ section.settings.heading_color }};
+    --wfl-feature-heading-color: {{ section.settings.feature_heading_color }};
+    --wfl-feature-text-color: {{ section.settings.feature_text_color }};
+    --wfl-divider-color: {{ section.settings.divider_color }};
+    --wfl-desktop-min-height: {{ section.settings.desktop_min_height }}px;
+    --wfl-desktop-content-width: {{ section.settings.desktop_content_width }}px;
+    --wfl-desktop-content-left: {{ section.settings.desktop_content_left }}px;
+    --wfl-desktop-feature-heading-width: {{ section.settings.desktop_feature_heading_width }}px;
+    --wfl-mobile-image-height: {{ section.settings.mobile_image_height }}px;
+    --wfl-mobile-horizontal-padding: {{ section.settings.mobile_horizontal_padding }}px;
+    --wfl-mobile-content-padding: {{ section.settings.mobile_content_padding }}px;
+    --wfl-desktop-eyebrow-size: {{ section.settings.desktop_eyebrow_size }}px;
+    --wfl-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --wfl-desktop-feature-heading-size: {{ section.settings.desktop_feature_heading_size }}px;
+    --wfl-desktop-feature-text-size: {{ section.settings.desktop_feature_text_size }}px;
+    --wfl-mobile-eyebrow-size: {{ section.settings.mobile_eyebrow_size }}px;
+    --wfl-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --wfl-mobile-feature-heading-size: {{ section.settings.mobile_feature_heading_size }}px;
+    --wfl-mobile-feature-text-size: {{ section.settings.mobile_feature_text_size }}px;
+    --wfl-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --wfl-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --wfl-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --wfl-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    --wfl-desktop-image-position: {{ section.settings.desktop_image_position }};
+    --wfl-mobile-image-position: {{ section.settings.mobile_image_position }};
+  "
+>
+  <div class="why-fany-luna__layout">
+    <div class="why-fany-luna__media">
+      {%- if primary_image != blank -%}
+        <picture>
+          {%- if mobile_image != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ mobile_image | image_url: width: 393 }} 393w,
+                {{ mobile_image | image_url: width: 590 }} 590w,
+                {{ mobile_image | image_url: width: 750 }} 750w,
+                {{ mobile_image | image_url: width: 1000 }} 1000w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{-
+            primary_image
+            | image_url: width: 1600
+            | image_tag:
+              class: 'why-fany-luna__image',
+              widths: '480, 640, 800, 960, 1200, 1600',
+              sizes: '(max-width: 749px) 100vw, 50vw',
+              loading: 'lazy',
+              alt: image_alt
+          -}}
+        </picture>
+      {%- elsif request.design_mode -%}
+        {{ 'image' | placeholder_svg_tag: 'why-fany-luna__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="why-fany-luna__content">
+      <div class="why-fany-luna__content-inner">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="why-fany-luna__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="why-fany-luna__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="why-fany-luna__features">
+            {%- for block in section.blocks -%}
+              <article class="why-fany-luna__feature" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="why-fany-luna__feature-heading">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+
+                {%- if block.settings.description != blank -%}
+                  <div class="why-fany-luna__feature-text rte">{{ block.settings.description }}</div>
+                {%- endif -%}
+              </article>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why FANY Luna",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "眉题",
+      "default": "WHY FANY LUNA"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "A gift with life after the moment."
+    },
+    {
+      "type": "header",
+      "content": "图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "桌面端图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "移动端图片",
+      "info": "未设置时使用桌面端图片"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "图片替代文字",
+      "info": "留空时使用图片在 Shopify 中的替代文字"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "桌面端图片位置",
+      "default": "center center",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" },
+        { "value": "left bottom", "label": "左下" },
+        { "value": "center bottom", "label": "中下" },
+        { "value": "right bottom", "label": "右下" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "移动端图片位置",
+      "default": "center center",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" },
+        { "value": "left bottom", "label": "左下" },
+        { "value": "center bottom", "label": "中下" },
+        { "value": "right bottom", "label": "右下" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "image_background",
+      "label": "图片区域背景",
+      "default": "#E8B399"
+    },
+    {
+      "type": "color",
+      "id": "content_background",
+      "label": "内容区域背景",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "眉题颜色",
+      "default": "#FCC12B"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "feature_heading_color",
+      "label": "功能标题颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "feature_text_color",
+      "label": "功能说明颜色",
+      "default": "rgba(255, 255, 255, 0.8)"
+    },
+    {
+      "type": "color_background",
+      "id": "divider_color",
+      "label": "分隔线颜色",
+      "default": "rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "type": "header",
+      "content": "桌面端布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_min_height",
+      "min": 500,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "内容最小高度",
+      "default": 750
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_width",
+      "min": 320,
+      "max": 640,
+      "step": 8,
+      "unit": "px",
+      "label": "文字内容宽度",
+      "default": 512
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_left",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "内容左侧距离",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "desktop_feature_heading_width",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "label": "功能标题列宽",
+      "default": 145
+    },
+    {
+      "type": "header",
+      "content": "移动端布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "min": 240,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "label": "图片高度",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "内容左右间距",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "内容上下内边距",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "桌面端字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_eyebrow_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_feature_heading_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "功能标题字号",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desktop_feature_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "功能说明字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "移动端字号"
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_feature_heading_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "功能标题字号",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_feature_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "功能说明字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Section 上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "功能说明",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "标题",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "说明",
+          "default": "<p>Add a short description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why FANY Luna",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "Polished design",
+            "description": "<p>Made to feel like an everyday accessory—not generic corporate merchandise.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "Everyday wellness",
+            "description": "<p>Activity, sleep, stress, heart-rate, and cycle awareness for daily life.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "Flexible use",
+            "description": "<p>Suitable for retail, gifting, member rewards, events, and wellness programs.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

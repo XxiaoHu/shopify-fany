@@ -1,0 +1,531 @@
+{{ 'business-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign desktop_image = section.settings.desktop_image
+  assign mobile_image = section.settings.mobile_image
+  assign fallback_image = desktop_image | default: mobile_image
+  assign image_alt = section.settings.image_alt | default: fallback_image.alt
+  assign button_link = section.settings.button_link | default: '#business-inquiry'
+  assign offer_blocks = section.blocks | where: 'type', 'offer_item'
+-%}
+
+<section
+  id="BusinessHero-{{ section.id }}"
+  class="business-hero"
+  style="
+    --bh-copy-background: {{ section.settings.copy_background }};
+    --bh-visual-background: {{ section.settings.visual_background }};
+    --bh-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --bh-heading-color: {{ section.settings.heading_color }};
+    --bh-highlight-color: {{ section.settings.highlight_color }};
+    --bh-lead-color: {{ section.settings.lead_color }};
+    --bh-note-color: {{ section.settings.note_color }};
+    --bh-offer-color: {{ section.settings.offer_color }};
+    --bh-offer-line-color: {{ section.settings.offer_line_color }};
+    --bh-button-background: {{ section.settings.button_background }};
+    --bh-button-color: {{ section.settings.button_color }};
+    --bh-button-hover-background: {{ section.settings.button_hover_background }};
+    --bh-button-hover-color: {{ section.settings.button_hover_color }};
+    --bh-desktop-main-height: {{ section.settings.desktop_main_height }}px;
+    --bh-mobile-image-height: {{ section.settings.mobile_image_height }}px;
+    --bh-desktop-eyebrow-size: {{ section.settings.desktop_eyebrow_size }}px;
+    --bh-mobile-eyebrow-size: {{ section.settings.mobile_eyebrow_size }}px;
+    --bh-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bh-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bh-desktop-lead-size: {{ section.settings.desktop_lead_size }}px;
+    --bh-mobile-lead-size: {{ section.settings.mobile_lead_size }}px;
+    --bh-desktop-button-size: {{ section.settings.desktop_button_size }}px;
+    --bh-mobile-button-size: {{ section.settings.mobile_button_size }}px;
+    --bh-desktop-note-size: {{ section.settings.desktop_note_size }}px;
+    --bh-mobile-note-size: {{ section.settings.mobile_note_size }}px;
+    --bh-desktop-offer-size: {{ section.settings.desktop_offer_size }}px;
+    --bh-mobile-offer-size: {{ section.settings.mobile_offer_size }}px;
+    --bh-desktop-image-position: {{ section.settings.desktop_image_position }};
+    --bh-mobile-image-position: {{ section.settings.mobile_image_position }};
+    --bh-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bh-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bh-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bh-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="business-hero__main">
+    <div class="business-hero__copy">
+      <div class="business-hero__copy-inner">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="business-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <div class="business-hero__heading rte">{{ section.settings.heading }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.lead != blank -%}
+          <div class="business-hero__lead rte">{{ section.settings.lead }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a class="business-hero__button" href="{{ button_link }}">
+            {{ section.settings.button_label | escape }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.note != blank -%}
+          <div class="business-hero__note rte">{{ section.settings.note }}</div>
+        {%- endif -%}
+
+        {%- if offer_blocks.size > 0 -%}
+          <ul class="business-hero__offers" aria-label="{{ section.settings.eyebrow | escape }}">
+            {%- for block in offer_blocks -%}
+              {%- if block.settings.text != blank -%}
+                <li {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="business-hero__visual">
+      {%- if fallback_image != blank -%}
+        <picture class="business-hero__picture">
+          {%- if mobile_image != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ mobile_image | image_url: width: 480 }} 480w,
+                {{ mobile_image | image_url: width: 750 }} 750w,
+                {{ mobile_image | image_url: width: 1000 }} 1000w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            fallback_image
+            | image_url: width: 2400
+            | image_tag:
+              class: 'business-hero__image',
+              loading: 'eager',
+              fetchpriority: 'high',
+              widths: '750, 1000, 1280, 1600, 2000, 2400',
+              sizes: '(max-width: 749px) 100vw, 50vw',
+              alt: image_alt
+          }}
+        </picture>
+      {%- elsif request.design_mode -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'business-hero__placeholder placeholder-svg' }}
+      {%- endif -%}
+
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "商务 Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "左侧内容"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "眉题",
+      "default": "FANY Luna for business"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "标题富文本",
+      "info": "加粗文字使用标题高亮颜色",
+      "default": "<p>A Women-First Smartwatch for <strong>Wholesale</strong> &amp; Corporate Gifting</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "描述富文本",
+      "default": "<p>Offer customers—or give employees and clients—something designed to stay useful beyond the shelf, gift box, or event.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "按钮文字",
+      "default": "Get Wholesale & Gifting Options"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "按钮链接"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "按钮下方文案富文本",
+      "default": "<p>No final quantity required. An estimate is enough.</p>"
+    },
+    {
+      "type": "header",
+      "content": "右侧整图"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "PC 图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "移动端图片",
+      "info": "未上传时自动使用 PC 图片"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "图片替代文字"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "PC 图片焦点",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" },
+        { "value": "left bottom", "label": "左下" },
+        { "value": "center bottom", "label": "中下" },
+        { "value": "right bottom", "label": "右下" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "移动端图片焦点",
+      "options": [
+        { "value": "left top", "label": "左上" },
+        { "value": "center top", "label": "中上" },
+        { "value": "right top", "label": "右上" },
+        { "value": "left center", "label": "左中" },
+        { "value": "center center", "label": "居中" },
+        { "value": "right center", "label": "右中" },
+        { "value": "left bottom", "label": "左下" },
+        { "value": "center bottom", "label": "中下" },
+        { "value": "right bottom", "label": "右下" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "header",
+      "content": "尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_main_height",
+      "min": 646,
+      "max": 1096,
+      "step": 5,
+      "unit": "px",
+      "label": "PC 主区域高度",
+      "default": 886
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "min": 320,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "移动端图片高度",
+      "default": 510
+    },
+    {
+      "type": "header",
+      "content": "背景与文字颜色"
+    },
+    {
+      "type": "color",
+      "id": "copy_background",
+      "label": "文案区域背景",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "visual_background",
+      "label": "图片区域背景",
+      "default": "rgba(158, 113, 99, 0.3)"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "眉题颜色",
+      "default": "#9E7163"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "标题加粗文字颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "lead_color",
+      "label": "描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "note_color",
+      "label": "按钮下方文案颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "offer_color",
+      "label": "权益文字与圆点颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "offer_line_color",
+      "label": "权益顶部线条颜色",
+      "default": "#E4E4E4"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "按钮背景",
+      "default": "#794538"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "按钮文字",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "按钮悬停背景",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "按钮悬停文字",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_eyebrow_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_lead_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "按钮字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_note_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "按钮下方文案字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_offer_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "权益字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "移动端字号"
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "眉题字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_lead_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "按钮字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_note_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "按钮下方文案字号",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_offer_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "权益字号",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "offer_item",
+      "name": "权益项",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "文字",
+          "default": "Available styles"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务 Hero",
+      "blocks": [
+        { "type": "offer_item", "settings": { "text": "Available styles" } },
+        { "type": "offer_item", "settings": { "text": "Business pricing" } },
+        { "type": "offer_item", "settings": { "text": "Gift-set options" } },
+        { "type": "offer_item", "settings": { "text": "Ordering guidance" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
