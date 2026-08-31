@@ -2,7 +2,6 @@
 
 {%- liquid
   assign heading_lines = section.settings.heading | newline_to_br | split: '<br />'
-  assign partner_link = section.settings.partner_link | default: '#business-inquiry'
   assign populated_step_count = 0
 
   for block in section.blocks
@@ -124,7 +123,7 @@
           {%- endif -%}
 
           {%- if section.settings.partner_link_label != blank -%}
-            <a class="business-inquiry-steps__partner-link" href="{{ partner_link | escape }}">
+            <a class="business-inquiry-steps__partner-link" href="#business-inquiry">
               {{ section.settings.partner_link_label | escape }}
             </a>
           {%- endif -%}
@@ -189,11 +188,6 @@
       "id": "partner_link_label",
       "label": "合作伙伴链接文字",
       "default": "Discuss a partnership →"
-    },
-    {
-      "type": "url",
-      "id": "partner_link",
-      "label": "合作伙伴链接地址"
     },
     {
       "type": "header",

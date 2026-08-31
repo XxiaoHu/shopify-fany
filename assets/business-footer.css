@@ -1,0 +1,106 @@
+.business-footer {
+  width: 100%;
+  padding-top: var(--bf-desktop-padding-top, 38px);
+  padding-bottom: var(--bf-desktop-padding-bottom, 38px);
+  color: var(--bf-text-color, #d8ccd2);
+  background: var(--bf-background, #1e0e06);
+  font-family: Lato, var(--font-body-family, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+.business-footer,
+.business-footer * {
+  box-sizing: border-box;
+}
+
+.business-footer__inner {
+  display: grid;
+  width: calc(100% - 400px);
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 20px;
+  align-items: start;
+}
+
+.business-footer__item {
+  width: 100%;
+  min-width: 0;
+}
+
+.business-footer__heading,
+.business-footer__text {
+  margin: 0;
+  word-break: break-word;
+}
+
+.business-footer__heading {
+  color: var(--bf-heading-color, #ffffff);
+  font-size: var(--bf-desktop-heading-size, 12px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.business-footer__heading p,
+.business-footer__text p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.business-footer__heading > * + *,
+.business-footer__text > * + * {
+  margin-top: 0.5em;
+}
+
+.business-footer__text {
+  color: var(--bf-text-color, #d8ccd2);
+  font-size: var(--bf-desktop-text-size, 12px);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.business-footer__heading + .business-footer__text {
+  margin-top: 0;
+}
+
+.business-footer__text a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
+.business-footer__text a:hover {
+  color: var(--bf-heading-color, #ffffff);
+}
+
+.business-footer__text a:focus-visible {
+  outline: 2px solid var(--bf-heading-color, #ffffff);
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 749px) {
+  .business-footer {
+    padding-top: var(--bf-mobile-padding-top, 38px);
+    padding-bottom: var(--bf-mobile-padding-bottom, 38px);
+  }
+
+  .business-footer__inner {
+    width: auto;
+    margin-inline: var(--bf-mobile-horizontal-padding, 20px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .business-footer__heading {
+    font-size: var(--bf-mobile-heading-size, 12px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  .business-footer__text {
+    font-size: var(--bf-mobile-text-size, 12px);
+    line-height: 1.5;
+  }
+}

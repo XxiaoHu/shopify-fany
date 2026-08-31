@@ -1,9 +1,5 @@
 {{ 'business-use-options.css' | asset_url | stylesheet_tag }}
 
-{%- liquid
-  assign cta_link = section.settings.cta_link | default: '#business-inquiry'
--%}
-
 <section
   id="BusinessUseOptions-{{ section.id }}"
   class="business-use-options"
@@ -72,20 +68,12 @@
       <div class="business-use-options__cards-wrap">
         <div class="business-use-options__cards">
           {%- for block in section.blocks -%}
-            {%- if block.settings.link != blank -%}
-              <a
-                class="business-use-options__card"
-                href="{{ block.settings.link | escape }}"
-                style="--buo-card-background: {{ block.settings.background }};"
-                {{ block.shopify_attributes }}
-              >
-            {%- else -%}
-              <article
-                class="business-use-options__card"
-                style="--buo-card-background: {{ block.settings.background }};"
-                {{ block.shopify_attributes }}
-              >
-            {%- endif -%}
+            <a
+              class="business-use-options__card"
+              href="#business-inquiry"
+              style="--buo-card-background: {{ block.settings.background }};"
+              {{ block.shopify_attributes }}
+            >
 
               {%- if block.settings.label != blank -%}
                 <p class="business-use-options__card-label">{{ block.settings.label | escape }}</p>
@@ -103,11 +91,7 @@
                 <div class="business-use-options__features rte">{{ block.settings.features }}</div>
               {%- endif -%}
 
-            {%- if block.settings.link != blank -%}
-              </a>
-            {%- else -%}
-              </article>
-            {%- endif -%}
+            </a>
           {%- endfor -%}
         </div>
       </div>
@@ -129,7 +113,7 @@
         {%- if section.settings.cta_link_label != blank -%}
           <a
             class="business-use-options__cta-link"
-            href="{{ cta_link | escape }}"
+            href="#business-inquiry"
           >
             {{ section.settings.cta_link_label | escape }}
           </a>
@@ -192,11 +176,6 @@
       "id": "cta_link_label",
       "label": "链接文字",
       "default": "Start a request →"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "链接地址"
     },
     {
       "type": "header",
@@ -602,11 +581,6 @@
           "label": "权益列表",
           "info": "使用项目符号列表，可自由增加或删除条目",
           "default": "<ul><li>Available styles and strap options</li><li>Business pricing matched to estimated quantity</li><li>Smaller opening requests for retail testing</li></ul>"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "卡片链接"
         },
         {
           "type": "color_background",

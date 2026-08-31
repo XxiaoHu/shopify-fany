@@ -1,0 +1,229 @@
+{{ 'business-footer.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign populated_block_count = 0
+
+  for block in section.blocks
+    if block.settings.heading != blank or block.settings.text != blank
+      assign populated_block_count = populated_block_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section
+  id="BusinessFooter-{{ section.id }}"
+  class="business-footer"
+  style="
+    --bf-background: {{ section.settings.background }};
+    --bf-heading-color: {{ section.settings.heading_color }};
+    --bf-text-color: {{ section.settings.text_color }};
+    --bf-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bf-desktop-text-size: {{ section.settings.desktop_text_size }}px;
+    --bf-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bf-mobile-text-size: {{ section.settings.mobile_text_size }}px;
+    --bf-mobile-horizontal-padding: {{ section.settings.mobile_horizontal_padding }}px;
+    --bf-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bf-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bf-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bf-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  {%- if populated_block_count > 0 -%}
+    <div class="business-footer__inner">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.heading != blank or block.settings.text != blank -%}
+          <div class="business-footer__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.heading != blank -%}
+              <div class="business-footer__heading">{{ block.settings.heading }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <div class="business-footer__text rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "商务页底部信息",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "背景颜色",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "说明文字颜色",
+      "default": "#D8CCD2"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_text_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "说明字号",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "说明字号",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端左右间距",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 38
+    }
+  ],
+  "blocks": [
+    {
+      "type": "information",
+      "name": "信息项",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "标题"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "说明"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "商务页底部信息",
+      "blocks": [
+        {
+          "type": "information",
+          "settings": {
+            "heading": "FANY",
+            "text": "<p>Women-first smartwatches for everyday wellness</p>"
+          }
+        },
+        {
+          "type": "information",
+          "settings": {
+            "text": "<p>Room 1801, Yee Shun Commercial Building<br>253–261 Hennessy Road, Wanchai, Hong Kong</p>"
+          }
+        },
+        {
+          "type": "information",
+          "settings": {
+            "text": "<p>General wellness and lifestyle use only.<br>Not intended for medical diagnosis or treatment.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -5,7 +5,6 @@
   assign mobile_image = section.settings.mobile_image
   assign fallback_image = desktop_image | default: mobile_image
   assign image_alt = section.settings.image_alt | default: fallback_image.alt
-  assign button_link = section.settings.button_link | default: '#business-inquiry'
   assign offer_blocks = section.blocks | where: 'type', 'offer_item'
 -%}
 
@@ -64,7 +63,7 @@
         {%- endif -%}
 
         {%- if section.settings.button_label != blank -%}
-          <a class="business-hero__button" href="{{ button_link }}">
+          <a class="business-hero__button" href="#business-inquiry">
             {{ section.settings.button_label | escape }}
           </a>
         {%- endif -%}
@@ -157,11 +156,6 @@
       "id": "button_label",
       "label": "按钮文字",
       "default": "Get Wholesale & Gifting Options"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "按钮链接"
     },
     {
       "type": "richtext",
