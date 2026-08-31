@@ -43,7 +43,7 @@
   font-size: var(--bsb-desktop-heading-size, 14px);
   font-weight: 400;
   line-height: 1.5;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .business-stats-bar__value {

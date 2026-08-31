@@ -45,7 +45,7 @@
   font-size: var(--bh-desktop-eyebrow-size, 14px);
   font-weight: 700;
   line-height: 1.5;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .business-hero__heading {
