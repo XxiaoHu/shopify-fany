@@ -2521,6 +2521,7 @@
       "settings": {
         "header": "<p>Switch Your Mood, Customize Your Moment</p>",
         "text": "<p>Access more than 150 watch faces crafted for every occasion, including elegant everyday looks, active sports themes, and creative illustrations. Elevate your design by creating a DIY watch face with your favorite personal photos, turning every glance at your wrist into a moment of joy.</p>",
+        "watch_image": "shopify://shop_images/Watch_Faces-1.webp",
         "image_group": "watch-faces-gallery-acfy0hfy",
         "title_font_size": 40,
         "text_font_size": 16,
@@ -2538,6 +2539,8 @@
       "type": "sleep-insights-poster",
       "name": "使用场景海报",
       "settings": {
+        "desktop_image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_e0f73481-6629-44a7-9c03-5a47005b8bb4.webp",
+        "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_0eb95a6e-8264-4032-a26f-fa3a1ed57a6e.webp",
         "title": "Live in Motion, Shine in Style",
         "body": "<p>FANY Luna smartwatch is designed for the moments that make you feel truly alive. It supports your high-energy workouts, nurtures your health and emotional balance, and adds a sleek touch to your daily wardrobe. It stands as a celebration of self-care and a precious gift of love. </p>",
         "desktop_layout": "above",
