@@ -2096,6 +2096,7 @@
             "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_2fbcf110-3bb8-4e4b-92bd-e275740bd025.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_9d979a40-0893-421f-b8fe-d9d251a8347c.webp",
             "image_alt": ""
           }
         }
@@ -2207,9 +2208,9 @@
       ],
       "name": "滚动模糊功能画廊",
       "settings": {
-        "desktop_background_image": "shopify://shop_images/FANY_Luna_Silicone_1_e123505a-b66c-4ab2-9b8e-2cc2c4b90574.webp",
+        "desktop_background_image": "shopify://shop_images/FANY-Luna-Silicone-_-PC.webp",
         "desktop_image_position": "center top",
-        "mobile_background_image": "shopify://shop_images/FANY_Luna_Silicone_-_M.webp",
+        "mobile_background_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_33c22378-d394-45b3-bf65-5b2893155b98.webp",
         "mobile_image_position": "center top",
         "intro_heading": "110+ Workout Modes\nFuel Every Passion",
         "intro_body": "<p>From running and pickleball to yoga, Pilates, and HIIT, FANY Luna supports over 110 activities tailored to your diverse interests. Effortlessly track heart rate, calorie burn, and movement while exploring new ways to stay active on your own terms.</p>",
