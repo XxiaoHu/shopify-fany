@@ -1959,14 +1959,14 @@
     "interactive_product_viewer_qdWTDt": {
       "type": "interactive-product-viewer",
       "blocks": {
-        "finish_dRHVd7": {
+        "finish_wdVWzw": {
           "type": "finish",
           "settings": {
-            "label": "The featured model is FANY Luna in Cloud Cream.",
-            "swatch_color": "#e3ddd7",
-            "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_ecd7ecd4-9c70-4a50-84d0-71b077fbbd44.webp",
-            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_6103b44e-ff98-48e6-a59b-e62b062f75ab.webp",
-            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_9c84f2c9-3f33-4f05-8d8c-ea1ef3e12d66.webp",
+            "label": "The featured model is FANY Luna in Dream Purple.",
+            "swatch_color": "#47423d",
+            "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_e287480e-6970-410e-87a5-f4b8179234a7.webp",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_0feba325-08c7-48c9-bcc8-cd39a503e70a.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M.webp",
             "image_alt": ""
           }
         },
@@ -1981,17 +1981,6 @@
             "image_alt": ""
           }
         },
-        "finish_wdVWzw": {
-          "type": "finish",
-          "settings": {
-            "label": "The featured model is FANY Luna in Dream Purple.",
-            "swatch_color": "#47423d",
-            "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_e287480e-6970-410e-87a5-f4b8179234a7.webp",
-            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_0feba325-08c7-48c9-bcc8-cd39a503e70a.webp",
-            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M.webp",
-            "image_alt": ""
-          }
-        },
         "finish_itNjdU": {
           "type": "finish",
           "settings": {
@@ -2000,6 +1989,17 @@
             "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_183cef61-b31d-4751-9297-309954bb11d0.webp",
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_e5c3bb43-096a-4e22-bc77-676219bbaafd.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_024c5961-f54e-4e9d-bea6-d92cb7c43769.webp",
+            "image_alt": ""
+          }
+        },
+        "finish_dRHVd7": {
+          "type": "finish",
+          "settings": {
+            "label": "The featured model is FANY Luna in Cloud Cream.",
+            "swatch_color": "#e3ddd7",
+            "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_ecd7ecd4-9c70-4a50-84d0-71b077fbbd44.webp",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_6103b44e-ff98-48e6-a59b-e62b062f75ab.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_9c84f2c9-3f33-4f05-8d8c-ea1ef3e12d66.webp",
             "image_alt": ""
           }
         },
@@ -2090,10 +2090,10 @@
         }
       },
       "block_order": [
-        "finish_dRHVd7",
-        "finish_3WEkt9",
         "finish_wdVWzw",
+        "finish_3WEkt9",
         "finish_itNjdU",
+        "finish_dRHVd7",
         "feature_Prgyam",
         "feature_KJL8Me",
         "feature_zTTBYd",
