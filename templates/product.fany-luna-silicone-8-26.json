@@ -2031,20 +2031,6 @@
             "image_alt": ""
           }
         },
-        "feature_zTTBYd": {
-          "type": "feature",
-          "settings": {
-            "title": "7 Day Battery Life",
-            "title_font_size": 17,
-            "title_color": "#1d1d1f",
-            "description": "<p>Leave daily charging behind. FANY Luna delivers up to 7 days* of continuous battery life to keep up with your active schedule. The magnetic charger snaps into place effortlessly, reaching a full fast charge in just two hours based on typical personal usage.<br/>*Battery life may vary depending on usage.</p>",
-            "desc_font_size": 16,
-            "desc_color": "#1d1d1f",
-            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_0a6e325a-980d-4e81-a602-d89830d1e8ea.webp",
-            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_a1ad501b-18fd-4a89-acfa-9b7768125b3d.webp",
-            "image_alt": ""
-          }
-        },
         "feature_rQUnt7": {
           "type": "feature",
           "settings": {
@@ -2056,6 +2042,20 @@
             "desc_color": "#1d1d1f",
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_67d54757-888d-4a1d-bd01-5ed0f7ac2efe.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_00fd1514-027f-4fa5-9ab0-f326f304726f.webp",
+            "image_alt": ""
+          }
+        },
+        "feature_zTTBYd": {
+          "type": "feature",
+          "settings": {
+            "title": "7 Day Battery Life",
+            "title_font_size": 17,
+            "title_color": "#1d1d1f",
+            "description": "<p>Leave daily charging behind. FANY Luna delivers up to 7 days* of continuous battery life to keep up with your active schedule. The magnetic charger snaps into place effortlessly, reaching a full fast charge in just two hours based on typical personal usage.<br/>*Battery life may vary depending on usage.</p>",
+            "desc_font_size": 16,
+            "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_0a6e325a-980d-4e81-a602-d89830d1e8ea.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_a1ad501b-18fd-4a89-acfa-9b7768125b3d.webp",
             "image_alt": ""
           }
         },
@@ -2081,6 +2081,8 @@
             "description": "<p>Receive real-time notifications for incoming calls, texts, calendar events, and key apps directly on your wrist. Stay seamlessly updated during workouts, busy workdays, daily commutes, or personal downtime without pulling out your phone.</p>",
             "desc_font_size": 16,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_2766f9e8-4361-45fe-935a-b13c4ef4e776.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_2f39f5c7-e9a7-4744-af54-907be1d434e8.webp",
             "image_alt": ""
           }
         },
@@ -2093,6 +2095,7 @@
             "description": "<p>Uniting nonstop health insights with practical daily tools, FANY Luna simplifies every routine. Enjoy instant convenience and stay present through every part of your schedule.</p>",
             "desc_font_size": 16,
             "desc_color": "#1d1d1f",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_2fbcf110-3bb8-4e4b-92bd-e275740bd025.webp",
             "image_alt": ""
           }
         }
@@ -2104,8 +2107,8 @@
         "finish_dRHVd7",
         "feature_Prgyam",
         "feature_KJL8Me",
-        "feature_zTTBYd",
         "feature_rQUnt7",
+        "feature_zTTBYd",
         "feature_egzmFT",
         "feature_FtMt7d",
         "feature_NCnBdi"
