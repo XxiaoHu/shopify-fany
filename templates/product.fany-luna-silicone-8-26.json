@@ -1964,6 +1964,9 @@
           "settings": {
             "label": "The featured model is FANY Luna in Cloud Cream.",
             "swatch_color": "#e3ddd7",
+            "swatch_image": "shopify://shop_images/FANY-Luna-Silicone_ecd7ecd4-9c70-4a50-84d0-71b077fbbd44.webp",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_6103b44e-ff98-48e6-a59b-e62b062f75ab.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_9c84f2c9-3f33-4f05-8d8c-ea1ef3e12d66.webp",
             "image_alt": ""
           }
         },
