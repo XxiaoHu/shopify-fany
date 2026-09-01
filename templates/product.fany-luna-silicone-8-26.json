@@ -2385,6 +2385,8 @@
       "type": "sleep-insights-poster",
       "name": "睡眠数据海报",
       "settings": {
+        "desktop_image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_54a79671-4e32-41f9-9a2e-d7ce9019f0e2.webp",
+        "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M.jpg",
         "title": "Sleep Better, Shine Brighter",
         "body": "<p>True restoration starts with good sleep. Research shows that women thrive on tailored rest to fully recharge mind and body. Designed with a lightweight, skin-friendly silicone strap, the FANY Luna smartwatch offers all-night, weightless comfort while tracking vital metrics such as heart rate, SpO2, HRV, breathing, and nocturnal movement.<br/><br/>Wake up every morning to a personalized Sleep Quality Score, complete with detailed Deep, Light, and REM sleep stage analysis alongside bedtime rhythm consistency insights. Guided by actionable daily advice, the FANY Luna smartwatch gives you the clarity and energy to conquer your day.</p>",
         "desktop_layout": "overlay",
@@ -2421,6 +2423,8 @@
       "type": "sleep-insights-poster",
       "name": "经期数据海报",
       "settings": {
+        "desktop_image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_aab7ef5e-fcbf-4efa-ba04-2724e280236d.webp",
+        "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_eabe9fca-2207-43d6-a9a7-f38eb9bf33d6.webp",
         "title": "Master Your Cycle, Live in Harmony",
         "body": "<p>Whether your rhythm is predictable, transitioning, or unique to you, menstrual health is integral to your total well-being. FANY Luna smartwatch seamlessly logs your period, ovulation window, and key physical indicators to deliver tailored, actionable insights.<br/><br/>Sync your fitness routines with your body's natural phases, anticipate emotional shifts, and identify subtle health trends early. Every detail is conveniently accessible within the FANY Fit App, which is fully encrypted to guarantee absolute personal privacy. Far more than a tracker, the FANY Luna smartwatch is your private, secure companion for a balanced and peaceful lifestyle.</p>",
         "desktop_layout": "overlay",
@@ -2459,19 +2463,25 @@
         "state_EFfatX": {
           "type": "state",
           "settings": {
-            "label": "Pleasant"
+            "label": "Pleasant",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_57906c2b-e73b-494f-99be-193f0136a354.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_6816b931-6555-4c9a-8302-fba86f7d1ed7.webp"
           }
         },
         "state_VJBLrm": {
           "type": "state",
           "settings": {
-            "label": "Neutral"
+            "label": "Neutral",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_4cb7fe19-6643-4ea4-99ba-c7b9bcc17e37.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_77dd2a62-f685-4c99-9589-a750fa21a7ca.webp"
           }
         },
         "state_FzpKPG": {
           "type": "state",
           "settings": {
-            "label": "Unpleasant"
+            "label": "Unpleasant",
+            "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_1c7d1950-006a-443c-927f-c7a4acae9ce3.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-_-M_4edbd1b1-e7fc-4888-b201-e189d247cd74.webp"
           }
         }
       },
