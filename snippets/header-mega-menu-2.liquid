@@ -14,7 +14,9 @@
             <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu mega-menu-2">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset{% if link.child_active %} header__active-menu-item{% endif %}">
+                class="header__menu-item list-menu__item link focus-inset{% if link.child_active %} header__active-menu-item{% endif %}"
+                data-menu-url="{{ link.url | escape }}"
+              >
                 <span>
                   {{- link.title | upcase -}}
                 </span>

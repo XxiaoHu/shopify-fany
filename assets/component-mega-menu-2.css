@@ -3,7 +3,7 @@
 }
 
 .mega-menu-2 summary {
-  pointer-events: none;
+  pointer-events: auto;
   align-items: center;
   color: inherit;
 }

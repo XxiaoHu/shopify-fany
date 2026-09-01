@@ -46,6 +46,8 @@ class HeaderMenu2 extends DetailsDisclosure {
   constructor() {
     super();
     this.header = document.querySelector('.header-wrapper');
+    this.summaryToggle = this.mainDetailsToggle.querySelector('summary');
+    this.boundSummaryClick = this.handleSummaryClick.bind(this);
 
     // 核心状态管理
     this.isOpening = false;   // 标记是否正在打开
@@ -55,6 +57,20 @@ class HeaderMenu2 extends DetailsDisclosure {
 
     this.mainDetailsToggle.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
     this.mainDetailsToggle.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+    this.summaryToggle.addEventListener('click', this.boundSummaryClick);
+  }
+
+  handleSummaryClick(event) {
+    const menuUrl = event.currentTarget.dataset.menuUrl;
+
+    event.preventDefault();
+
+    if (!menuUrl || menuUrl === '#') {
+      this.updateMenuState(!this.mainDetailsToggle.open);
+      return;
+    }
+
+    window.location.assign(menuUrl);
   }
 
   // 统一状态更新：同步手动操作和原生状态
@@ -141,6 +157,7 @@ class HeaderMenu2 extends DetailsDisclosure {
   // 元素销毁：彻底清理所有状态和事件
   disconnectedCallback() {
     clearTimeout(this.timeoutId);
+    this.summaryToggle?.removeEventListener('click', this.boundSummaryClick);
     if (this.mainDetailsToggle) {
       this.mainDetailsToggle.removeEventListener('mouseenter', this.handleMouseEnter.bind(this));
       this.mainDetailsToggle.removeEventListener('mouseleave', this.handleMouseLeave.bind(this));
@@ -150,4 +167,4 @@ class HeaderMenu2 extends DetailsDisclosure {
     this.menuState = 'closed';
   }
 }
-customElements.define('header-menu-2', HeaderMenu2); 
+customElements.define('header-menu-2', HeaderMenu2);
