@@ -1936,6 +1936,8 @@
         "main_image_height": 890,
         "main_image_fit": "cover",
         "main_image_position": "center center",
+        "floating_image": "shopify://shop_images/FANY-Luna-Silicone_426d577a-d1f1-4b44-a462-630f486ec94a.webp",
+        "mobile_floating_image": "shopify://shop_images/FANY-Luna-Silicone_426d577a-d1f1-4b44-a462-630f486ec94a.webp",
         "scroll_trigger_distance": 24,
         "intro_padding_top": 60,
         "intro_padding_bottom": 30,
