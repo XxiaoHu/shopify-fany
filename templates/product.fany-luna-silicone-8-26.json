@@ -2168,16 +2168,6 @@
             "wide_card": false
           }
         },
-        "feature_card_9WjcA9": {
-          "type": "feature_card",
-          "settings": {
-            "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
-            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
-            "heading": "Professional Workout Insights in the FANY Fit App.",
-            "body": "Transform raw numbers into actionable insights with deep workout analysis in the FANY Fit App. Master your athletic journey with daily, weekly, monthly, and yearly stats across active time, exercise logs, movement hours, calorie burn, and comprehensive workout metrics to visualize your continuous progress. Push your limits and unlock your full athletic potential day by day!",
-            "wide_card": false
-          }
-        },
         "feature_card_hkTPBw": {
           "type": "feature_card",
           "settings": {
@@ -2185,6 +2175,16 @@
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_4.webp",
             "heading": "Run with Your Wrist Coach. Elevate Your Fitness.",
             "body": "Transform every stride into progress with your free wrist trainer in the FANY Luna smartwatch. Master your daily training with quick 6, 10, or 15 minute Easy Runs, multi-level Keep Fit courses from primary to advanced, and real-time tracking for heart rate, pace, and calories to crush your fitness goals. Push your limit and unlock your best performance day by day!",
+            "wide_card": false
+          }
+        },
+        "feature_card_9WjcA9": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
+            "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
+            "heading": "Professional Workout Insights in the FANY Fit App.",
+            "body": "Transform raw numbers into actionable insights with deep workout analysis in the FANY Fit App. Master your athletic journey with daily, weekly, monthly, and yearly stats across active time, exercise logs, movement hours, calorie burn, and comprehensive workout metrics to visualize your continuous progress. Push your limits and unlock your full athletic potential day by day!",
             "wide_card": false
           }
         },
@@ -2202,8 +2202,8 @@
       "block_order": [
         "feature_card_wBDRNF",
         "feature_card_xNqtJX",
-        "feature_card_9WjcA9",
         "feature_card_hkTPBw",
+        "feature_card_9WjcA9",
         "feature_card_NqNRfA"
       ],
       "name": "滚动模糊功能画廊",
@@ -2390,10 +2390,10 @@
         "title": "Sleep Better, Shine Brighter",
         "body": "<p>True restoration starts with good sleep. Research shows that women thrive on tailored rest to fully recharge mind and body. Designed with a lightweight, skin-friendly silicone strap, the FANY Luna smartwatch offers all-night, weightless comfort while tracking vital metrics such as heart rate, SpO2, HRV, breathing, and nocturnal movement.<br/><br/>Wake up every morning to a personalized Sleep Quality Score, complete with detailed Deep, Light, and REM sleep stage analysis alongside bedtime rhythm consistency insights. Guided by actionable daily advice, the FANY Luna smartwatch gives you the clarity and energy to conquer your day.</p>",
         "desktop_layout": "overlay",
-        "desktop_text_position": "top-left",
+        "desktop_text_position": "top-right",
         "desktop_text_alignment": "left",
         "desktop_title_width": 500,
-        "desktop_body_width": 400,
+        "desktop_body_width": 480,
         "desktop_title_size": 40,
         "desktop_body_size": 16,
         "desktop_title_color": "#ffffff",
