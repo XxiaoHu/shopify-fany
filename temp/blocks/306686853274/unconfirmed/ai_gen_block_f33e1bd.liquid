@@ -1,6 +1,221 @@
+{% doc %}
+  @prompt
+    Build this section for FANY.us based on the reference image.
+    
+    Create a premium FANY-style editorial carousel:
+    - Left: heading + description + CTA.
+    - Right: horizontal cards with image, category, title and description.
+    - Desktop: 2 full cards + part of the 3rd card and 4th card visible.
+    - Mobile: text on top + horizontally swipeable cards, showing about 1.1 cards.
+    - Tablet: 1.5–2 cards visible.
+    - Never turn the cards into a vertical list on mobile.
+    - Fully responsive at 1440px, 1024px, 768px and 390px.
+    - No horizontal page overflow.
+    
+    Style: feminine, elegant, premium, modern, wellness + fashion technology.
+    Use FANY’s existing fonts, colors, spacing and design system.
+    Do not copy Withings branding, text or images.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-editorial-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    overflow: hidden;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__inner {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding }}px 0;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.8fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__eyebrow {
+    margin: 0 0 18px;
+    color: {{ block.settings.accent_color }};
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__heading {
+    margin: 0 0 18px;
+    color: {{ block.settings.text_color }};
+    font-family: {{ block.settings.heading_font.family }}, sans-serif;
+    font-size: clamp(32px, 4vw, 58px);
+    line-height: 1.04;
+    letter-spacing: -.03em;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__description {
+    max-width: 390px;
+    margin: 0 0 30px;
+    color: {{ block.settings.text_color }};
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: .04em;
+    border-radius: {{ block.settings.button_radius }}px;
+  }
+
+  .ai-editorial-{{ ai_gen_id }}__cta:focus-visible,
+  .ai-editorial-{{ ai_gen_id }}__arrow:focus-visible { outline: 2px solid {{ block.settings.accent_color }}; outline-offset: 3px; }
+
+  .ai-editorial-{{ ai_gen_id }}__media { min-width: 0; position: relative; }
+  .ai-editorial-{{ ai_gen_id }}__track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 2px 0 12px;
+  }
+  .ai-editorial-{{ ai_gen_id }}__track::-webkit-scrollbar { display: none; }
+  .ai-editorial-{{ ai_gen_id }}__card {
+    flex: 0 0 calc((100% - 18px) / 2.15);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .ai-editorial-{{ ai_gen_id }}__image,
+  .ai-editorial-{{ ai_gen_id }}__placeholder {
+    width: 100%;
+    aspect-ratio: 0.82;
+    display: block;
+    object-fit: cover;
+    background: #f0eae8;
+    border-radius: {{ block.settings.card_radius }}px;
+  }
+  .ai-editorial-{{ ai_gen_id }}__placeholder { position: relative; }
+  .ai-editorial-{{ ai_gen_id }}__placeholder svg { width: 100%; height: 100%; opacity: .45; }
+  .ai-editorial-{{ ai_gen_id }}__copy { padding: 16px 2px 0; }
+  .ai-editorial-{{ ai_gen_id }}__category { margin: 0 0 8px; color: {{ block.settings.accent_color }}; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+  .ai-editorial-{{ ai_gen_id }}__title { margin: 0 0 8px; font-size: 20px; line-height: 1.15; }
+  .ai-editorial-{{ ai_gen_id }}__text { margin: 0; font-size: 14px; line-height: 1.5; opacity: .78; }
+  .ai-editorial-{{ ai_gen_id }}__controls { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+  .ai-editorial-{{ ai_gen_id }}__arrow { width: 38px; height: 38px; border: 1px solid {{ block.settings.text_color }}; background: transparent; color: {{ block.settings.text_color }}; border-radius: 50%; cursor: pointer; font-size: 18px; }
+
+  @media screen and (max-width: 990px) {
+    .ai-editorial-{{ ai_gen_id }}__inner { grid-template-columns: minmax(190px, .7fr) minmax(0, 1.5fr); gap: 34px; }
+    .ai-editorial-{{ ai_gen_id }}__card { flex-basis: calc((100% - 18px) / 1.7); }
+  }
+  @media screen and (max-width: 749px) {
+    .ai-editorial-{{ ai_gen_id }}__inner { width: 100%; display: block; padding: 48px 0 42px; }
+    .ai-editorial-{{ ai_gen_id }}__intro { padding: 0 20px 30px; }
+    .ai-editorial-{{ ai_gen_id }}__description { margin-bottom: 22px; }
+    .ai-editorial-{{ ai_gen_id }}__track { padding-left: 20px; gap: 14px; }
+    .ai-editorial-{{ ai_gen_id }}__card { flex-basis: 78%; }
+    .ai-editorial-{{ ai_gen_id }}__controls { padding: 0 20px; }
+  }
+{% endstyle %}
+
+<editorial-carousel-{{ ai_gen_id }} class="ai-editorial-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-editorial-{{ ai_gen_id }}__inner">
+    <div class="ai-editorial-{{ ai_gen_id }}__intro">
+      {% if block.settings.eyebrow != blank %}<p class="ai-editorial-{{ ai_gen_id }}__eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}
+      <h2 class="ai-editorial-{{ ai_gen_id }}__heading">{{ block.settings.heading }}</h2>
+      <div class="ai-editorial-{{ ai_gen_id }}__description">{{ block.settings.description }}</div>
+      {% if block.settings.cta_link != blank %}<a class="ai-editorial-{{ ai_gen_id }}__cta" href="{{ block.settings.cta_link }}">{{ block.settings.cta_label }} <span aria-hidden="true">→</span></a>{% endif %}
+    </div>
+    <div class="ai-editorial-{{ ai_gen_id }}__media">
+      <div class="ai-editorial-{{ ai_gen_id }}__track" data-track>
+        {% for i in (1..4) %}
+          {% liquid
+            assign image_key = 'card_' | append: i | append: '_image'
+            assign category_key = 'card_' | append: i | append: '_category'
+            assign title_key = 'card_' | append: i | append: '_title'
+            assign text_key = 'card_' | append: i | append: '_text'
+          %}
+          <article class="ai-editorial-{{ ai_gen_id }}__card">
+            {% if block.settings[image_key] %}<img class="ai-editorial-{{ ai_gen_id }}__image" src="{{ block.settings[image_key] | image_url: width: 900 }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy" width="900" height="1100">{% else %}<div class="ai-editorial-{{ ai_gen_id }}__placeholder">{{ 'image' | placeholder_svg_tag }}</div>{% endif %}
+            <div class="ai-editorial-{{ ai_gen_id }}__copy"><p class="ai-editorial-{{ ai_gen_id }}__category">{{ block.settings[category_key] }}</p><h3 class="ai-editorial-{{ ai_gen_id }}__title">{{ block.settings[title_key] }}</h3><p class="ai-editorial-{{ ai_gen_id }}__text">{{ block.settings[text_key] }}</p></div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="ai-editorial-{{ ai_gen_id }}__controls"><button class="ai-editorial-{{ ai_gen_id }}__arrow" type="button" data-direction="prev" aria-label="Previous stories">←</button><button class="ai-editorial-{{ ai_gen_id }}__arrow" type="button" data-direction="next" aria-label="Next stories">→</button></div>
+    </div>
+  </div>
+</editorial-carousel-{{ ai_gen_id }}>
+
+<script>
+  (() => {
+    class EditorialCarousel{{ ai_gen_id }} extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[data-track]');
+        this.buttons = this.querySelectorAll('[data-direction]');
+        this.buttons.forEach((button) => button.addEventListener('click', () => this.move(button.dataset.direction)));
+      }
+      move(direction) {
+        const amount = this.track.clientWidth * 0.72;
+        this.track.scrollBy({ left: direction === 'next' ? amount : -amount, behavior: 'smooth' });
+      }
+    }
+    customElements.define('editorial-carousel-{{ ai_gen_id }}', EditorialCarousel{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Editorial carousel",
+  "tag": null,
+  "class": "editorial-carousel-block",
+  "settings": [
+    {"type":"header","content":"Intro"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"The FANY edit"},
+    {"type":"text","id":"heading","label":"Heading","default":"Designed for your every day"},
+    {"type":"textarea","id":"description","label":"Description","default":"Discover thoughtful stories where wellness, beauty and intelligent technology meet."},
+    {"type":"text","id":"cta_label","label":"Button label","default":"Explore the edit"},
+    {"type":"url","id":"cta_link","label":"Button link"},
+    {"type":"header","content":"Cards"},
+    {"type":"image_picker","id":"card_1_image","label":"Card 1 image"},
+    {"type":"text","id":"card_1_category","label":"Card 1 category","default":"Wellness"},
+    {"type":"text","id":"card_1_title","label":"Card 1 title","default":"A softer way to move"},
+    {"type":"textarea","id":"card_1_text","label":"Card 1 description","default":"Small rituals that help you feel beautifully in tune."},
+    {"type":"image_picker","id":"card_2_image","label":"Card 2 image"},
+    {"type":"text","id":"card_2_category","label":"Card 2 category","default":"Style"},
+    {"type":"text","id":"card_2_title","label":"Card 2 title","default":"Technology, refined"},
+    {"type":"textarea","id":"card_2_text","label":"Card 2 description","default":"Smart details made to complement your personal style."},
+    {"type":"image_picker","id":"card_3_image","label":"Card 3 image"},
+    {"type":"text","id":"card_3_category","label":"Card 3 category","default":"Mindful living"},
+    {"type":"text","id":"card_3_title","label":"Card 3 title","default":"Make space for you"},
+    {"type":"textarea","id":"card_3_text","label":"Card 3 description","default":"Create a little more calm in the moments that matter."},
+    {"type":"image_picker","id":"card_4_image","label":"Card 4 image"},
+    {"type":"text","id":"card_4_category","label":"Card 4 category","default":"FANY journal"},
+    {"type":"text","id":"card_4_title","label":"Card 4 title","default":"Your rhythm, your way"},
+    {"type":"textarea","id":"card_4_text","label":"Card 4 description","default":"A modern perspective on feeling good and looking great."},
+    {"type":"header","content":"Style"},
+    {"type":"range","id":"desktop_width_percent","label":"Desktop width","min":50,"max":100,"step":5,"unit":"%","default":100},
+    {"type":"range","id":"section_padding","label":"Vertical spacing","min":20,"max":120,"step":10,"unit":"px","default":70},
+    {"type":"range","id":"card_radius","label":"Card radius","min":0,"max":40,"step":2,"unit":"px","default":0},
+    {"type":"range","id":"button_radius","label":"Button radius","min":0,"max":40,"step":2,"unit":"px","default":0},
+    {"type":"color","id":"background_color","label":"Background","default":"#faf4f4"},
+    {"type":"color","id":"text_color","label":"Text","default":"#1e0e06"},
+    {"type":"color","id":"accent_color","label":"Accent","default":"#9e7163"},
+    {"type":"color","id":"button_color","label":"Button","default":"#58443c"},
+    {"type":"color","id":"button_text_color","label":"Button text","default":"#ffffff"},
+    {"type":"font_picker","id":"heading_font","label":"Heading font","default":"lato_n4"},
+    {"type":"font_picker","id":"body_font","label":"Body font","default":"lato_n4"}
+  ],
+  "presets": [{"name":"Editorial carousel"}]
+}
 {% endschema %}
