@@ -202,6 +202,55 @@
         "padding_bottom": 36
       }
     },
+    "1788356255cfa79169": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cf0287d_eygYeb": {
+          "type": "ai_gen_block_cf0287d",
+          "settings": {
+            "eyebrow": "Your Health, Your Way",
+            "heading": "Why Choose a Women's Smartwatch?",
+            "description": "A smartwatch can help simplify everyday routines by bringing health, fitness and useful notifications to your wrist. For women, comfort and size can be just as important as features. A smaller, lightweight smartwatch can be easier to wear throughout the day, while wellness tools can help you keep track of sleep, activity, stress and other personal trends.",
+            "cta_label": "",
+            "cta_link": "",
+            "card_1_image": "shopify://shop_images/FANY_Luna_Leather_banner-M.webp",
+            "card_1_category": "Style",
+            "card_1_title": "Lightweight Design",
+            "card_1_text": "A lightweight smartwatch can be more comfortable for all-day wear, especially during work, exercise, and sleep.",
+            "card_2_image": "shopify://shop_images/FANY_Luna_Leather_-_-M_2e828c45-d0b9-44c1-be35-f76627052969.webp",
+            "card_2_category": "Wellness",
+            "card_2_title": "Women's Wellness Tracking",
+            "card_2_text": "Look for features such as sleep, heart rate, stress and menstrual cycle tracking if wellness is an important part of your routine.",
+            "card_3_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_4.webp",
+            "card_3_category": "Movement",
+            "card_3_title": "Fitness Tracking",
+            "card_3_text": "Workout modes can help track activities such as walking, running, cycling, yoga, and strength training.",
+            "card_4_image": "shopify://shop_images/FANY-Luna-Mocha_Brown-women-smart-watch-15.webp",
+            "card_4_category": "Mindset",
+            "card_4_title": "Smart Everyday Features",
+            "card_4_text": "Notifications, alarms, timers and other connected features can help reduce the need to check your phone throughout the day.",
+            "image_width": 360,
+            "image_height": 480,
+            "desktop_width_percent": 100,
+            "section_padding": 70,
+            "card_radius": 0,
+            "button_radius": 0,
+            "background_color": "#faf4f4",
+            "text_color": "#1e0e06",
+            "accent_color": "#9e7163",
+            "button_color": "#58443c",
+            "button_text_color": "#ffffff",
+            "heading_font": "lato_n4",
+            "body_font": "lato_n4"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cf0287d_eygYeb"
+      ],
+      "settings": {}
+    },
     "collapsible_content_jmKYAg": {
       "type": "collapsible-content",
       "blocks": {
@@ -297,6 +346,7 @@
     "image_text_dL7gtd",
     "collection_tabs_gVPgFn",
     "product-grid",
+    "1788356255cfa79169",
     "collapsible_content_jmKYAg"
   ]
 }
