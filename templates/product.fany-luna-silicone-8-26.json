@@ -2226,7 +2226,7 @@
         "mobile_intro_vertical": "flex-end",
         "mobile_intro_heading_width": 355,
         "mobile_intro_body_width": 355,
-        "desktop_intro_heading_size": 40,
+        "desktop_intro_heading_size": 50,
         "desktop_intro_body_size": 16,
         "mobile_intro_heading_size": 20,
         "mobile_intro_body_size": 16,
@@ -2245,8 +2245,8 @@
         "gallery_label": "Feature card gallery",
         "desktop_card_text_size": 16,
         "mobile_card_text_size": 16,
-        "margin_top": 0,
-        "margin_bottom": 0,
+        "margin_top": 120,
+        "margin_bottom": 120,
         "mobile_margin_top": 60,
         "mobile_margin_bottom": 60
       }
@@ -2554,7 +2554,7 @@
         "desktop_body_size": 16,
         "desktop_title_color": "#1e1005",
         "desktop_body_color": "#686766",
-        "mobile_layout": "overlay",
+        "mobile_layout": "above",
         "mobile_text_position": "top-left",
         "mobile_title_size": 28,
         "mobile_body_size": 16,
