@@ -1,6 +1,161 @@
+{% doc %}
+  @prompt
+    上面是标题，下面是段落, 整体居中显示
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-title-paragraph-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    padding: {{ block.settings.vertical_padding }}px 0;
+  }
+
+  .ai-title-paragraph-{{ ai_gen_id }}__title {
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size }}px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ai-title-paragraph-{{ ai_gen_id }}__text {
+    margin: 0;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+  }
+
+  .ai-title-paragraph-{{ ai_gen_id }}__text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-title-paragraph-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-title-paragraph-{{ ai_gen_id }}__title {
+      font-size: {{ block.settings.title_size | times: 0.85 }}px;
+    }
+
+    .ai-title-paragraph-{{ ai_gen_id }}__text {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-title-paragraph-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.title != blank %}
+    <h2 class="ai-title-paragraph-{{ ai_gen_id }}__title">{{ block.settings.title | escape }}</h2>
+  {% endif %}
+
+  {% if block.settings.paragraph != blank %}
+    <div class="ai-title-paragraph-{{ ai_gen_id }}__text">{{ block.settings.paragraph }}</div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Title and paragraph",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your title"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "<p>Add a paragraph to introduce your content.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical spacing",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 18,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1E0E06"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1E0E06"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title and paragraph"
+    }
+  ],
+  "tag": null,
+  "class": "title-paragraph-block"
+}
 {% endschema %}
