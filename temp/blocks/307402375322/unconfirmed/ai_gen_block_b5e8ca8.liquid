@@ -1,6 +1,265 @@
+{% doc %}
+  @prompt
+    并排居中的四个文字块，每一块都包含：上面h3小标题，下面文字段落，每个文字块显示浅粉色。
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-four-text-blocks-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-four-text-blocks__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: {{ block.settings.gap }}px;
+    align-items: stretch;
+  }
+
+  .ai-four-text-blocks__item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: {{ block.settings.min_height }}px;
+    padding: {{ block.settings.padding }}px;
+    text-align: center;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.corner_radius }}px;
+    box-sizing: border-box;
+  }
+
+  .ai-four-text-blocks__title-{{ ai_gen_id }} {
+    margin: 0 0 10px;
+    color: {{ block.settings.text_color }};
+    font-family: {{ block.settings.heading_font.family }};
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .ai-four-text-blocks__text-{{ ai_gen_id }} {
+    margin: 0;
+    color: {{ block.settings.text_color }};
+    font-family: {{ block.settings.body_font.family }};
+    font-size: {{ block.settings.body_size }}px;
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-four-text-blocks__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-four-text-blocks__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-four-text-blocks-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-four-text-blocks__grid-{{ ai_gen_id }}">
+    <div class="ai-four-text-blocks__item-{{ ai_gen_id }}">
+      <h3 class="ai-four-text-blocks__title-{{ ai_gen_id }}">{{ block.settings.title_1 | escape }}</h3>
+      <p class="ai-four-text-blocks__text-{{ ai_gen_id }}">{{ block.settings.text_1 | escape | newline_to_br }}</p>
+    </div>
+    <div class="ai-four-text-blocks__item-{{ ai_gen_id }}">
+      <h3 class="ai-four-text-blocks__title-{{ ai_gen_id }}">{{ block.settings.title_2 | escape }}</h3>
+      <p class="ai-four-text-blocks__text-{{ ai_gen_id }}">{{ block.settings.text_2 | escape | newline_to_br }}</p>
+    </div>
+    <div class="ai-four-text-blocks__item-{{ ai_gen_id }}">
+      <h3 class="ai-four-text-blocks__title-{{ ai_gen_id }}">{{ block.settings.title_3 | escape }}</h3>
+      <p class="ai-four-text-blocks__text-{{ ai_gen_id }}">{{ block.settings.text_3 | escape | newline_to_br }}</p>
+    </div>
+    <div class="ai-four-text-blocks__item-{{ ai_gen_id }}">
+      <h3 class="ai-four-text-blocks__title-{{ ai_gen_id }}">{{ block.settings.title_4 | escape }}</h3>
+      <p class="ai-four-text-blocks__text-{{ ai_gen_id }}">{{ block.settings.text_4 | escape | newline_to_br }}</p>
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Four text blocks",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text block 1"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title",
+      "default": "Thoughtfully designed"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Paragraph",
+      "default": "Beautiful details made for everyday moments."
+    },
+    {
+      "type": "header",
+      "content": "Text block 2"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title",
+      "default": "Effortless comfort"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Paragraph",
+      "default": "Lightweight comfort that moves with you."
+    },
+    {
+      "type": "header",
+      "content": "Text block 3"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title",
+      "default": "Made to last"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "Paragraph",
+      "default": "Reliable quality for your daily routine."
+    },
+    {
+      "type": "header",
+      "content": "Text block 4"
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Title",
+      "default": "A little more joy"
+    },
+    {
+      "type": "textarea",
+      "id": "text_4",
+      "label": "Paragraph",
+      "default": "Small touches that make every day special."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Minimum height",
+      "min": 80,
+      "max": 240,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#FCE8EC"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#4A252B"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "lato_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "lato_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Four text blocks"
+    }
+  ],
+  "tag": null,
+  "class": "four-text-blocks"
+}
 {% endschema %}
