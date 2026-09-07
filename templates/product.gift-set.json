@@ -1128,6 +1128,65 @@
         "text_font_weight": "400"
       }
     },
+    "1788792116c3708cb9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6f26153_RcMeXd": {
+          "type": "ai_gen_block_6f26153",
+          "settings": {
+            "heading": "Why This Smartwatch Gift Set Is Special",
+            "paragraph": "<p>More than a smartwatch, it's a gift she'll actually use and wear every day.<br/><br/>The FANY Luna smartwatch combines elegant leather styling with everyday wellness and fitness features, while the 14K gold-plated butterfly bracelet adds a meaningful finishing touch. Together, they create a thoughtful gift for women who appreciate both technology and timeless style.</p>",
+            "desktop_width_percent": 100,
+            "heading_size": 32,
+            "text_size": 16,
+            "text_max_width": 640,
+            "heading_spacing": 12,
+            "vertical_padding": 20,
+            "heading_color": "#1e0e06",
+            "text_color": "#1e0e06"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6f26153_RcMeXd"
+      ],
+      "settings": {}
+    },
+    "178879219494cdf5b9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b5e8ca8_TYbBKh": {
+          "type": "ai_gen_block_b5e8ca8",
+          "settings": {
+            "title_1": "Thoughtful & Elegant",
+            "text_1": "The leather smartwatch and butterfly bracelet create a feminine, sophisticated look that works with everyday outfits, workwear, and special occasions.",
+            "title_2": "Wellness at Her Wrist",
+            "text_2": "FANY Luna tracks sleep, heart rate, activity, stress, menstrual cycles, blood oxygen, and more to help her stay connected to her everyday wellness.",
+            "title_3": "Made for Everyday Life",
+            "text_3": "With up to 7 days of battery life, 110 workout modes, an AMOLED touchscreen, and smart notifications, Luna is designed to fit naturally into her daily routine.",
+            "title_4": "A Meaningful Gift",
+            "text_4": "The butterfly represents transformation and new beginnings, making this smartwatch and bracelet set especially suitable for birthdays, graduations, anniversaries, and milestone moments.",
+            "desktop_width_percent": 100,
+            "gap": 16,
+            "padding": 24,
+            "min_height": 150,
+            "corner_radius": 0,
+            "background_color": "#FCE8EC",
+            "text_color": "#4A252B",
+            "heading_font": "lato_n4",
+            "body_font": "lato_n4",
+            "heading_size": 20,
+            "body_size": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b5e8ca8_TYbBKh"
+      ],
+      "settings": {}
+    },
     "faq": {
       "type": "collapsible-content",
       "blocks": {
@@ -2673,6 +2732,8 @@
     "gift_feature_wQV474",
     "gift_feature_cybMJ6",
     "gift_feature_FdkPHx",
+    "1788792116c3708cb9",
+    "178879219494cdf5b9",
     "faq",
     "product_overview_group_F9Xy6b",
     "recommended_products_manual_YqdYym",
