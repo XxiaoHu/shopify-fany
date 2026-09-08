@@ -80,6 +80,7 @@
     },
     "blog_index_B4DDMW": {
       "type": "blog-index",
+      "disabled": true,
       "settings": {
         "blogsHandles": "{{ metaobjects.blog_push_to_index[\"blog-push-to\"].blogs_handle.value }}",
         "heading_size": "h2",
@@ -89,6 +90,49 @@
         "show_date": true,
         "show_excerpt": false,
         "color_scheme": "scheme-dbf414e9-6849-434c-8f3c-7e033fe5a421",
+        "padding_top": 0,
+        "padding_bottom": 96
+      }
+    },
+    "blog_index_manual_zwWmqJ": {
+      "type": "blog-index-manual",
+      "blocks": {
+        "popular_article_ad9McU": {
+          "type": "popular_article",
+          "settings": {
+            "article": "wellness-fitness/labor-day-womens-day-of-honoring-their-work-seen-and-unseen"
+          }
+        },
+        "popular_article_BMHjXY": {
+          "type": "popular_article",
+          "settings": {
+            "article": "wellness-fitness/smartwatch-without-subscription"
+          }
+        },
+        "popular_article_CcNtgY": {
+          "type": "popular_article",
+          "settings": {
+            "article": "wellness-fitness/can-a-smartwatch-replace-a-phone"
+          }
+        }
+      },
+      "block_order": [
+        "popular_article_ad9McU",
+        "popular_article_BMHjXY",
+        "popular_article_CcNtgY"
+      ],
+      "name": "手动博客推荐",
+      "settings": {
+        "featured_article": "wellness-fitness/back-to-school-essentials-for-college-girls",
+        "read_more_label": "Read On",
+        "featured_heading_size": "h2",
+        "popular_heading": "Most Popular",
+        "popular_heading_size": "f-28",
+        "show_title": true,
+        "popular_article_title_size": "f-20",
+        "show_date": true,
+        "show_excerpt": false,
+        "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 96
       }
@@ -149,6 +193,7 @@
     "blogs_rich_text_f9UcRw",
     "page_menu_gG6mQj",
     "blog_index_B4DDMW",
+    "blog_index_manual_zwWmqJ",
     "all_blog_iLp7w9",
     "newsletter_4h8BYR"
   ]
