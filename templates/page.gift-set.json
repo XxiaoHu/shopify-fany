@@ -340,9 +340,9 @@
       "type": "gift-feature",
       "name": "礼物图文",
       "settings": {
-        "eyebrow": "For Graduations",
-        "title": "A meaningful gift for a new chapter",
-        "text": "<p>Choose a stylish smartwatch that helps her stay connected, active, and mindful as she begins a new journey.</p>",
+        "eyebrow": "For New Beginnings",
+        "title": "A meaningful gift for her next chapter",
+        "text": "<p>From starting a career to moving into a new stage of life, give her something that celebrates confidence, growth, and independence.</p>",
         "image": "shopify://shop_images/Gift_Set_b53b4464-c9c9-4863-9ff3-50748cf787e0.webp",
         "desktop_image_position": "image-left",
         "padding_top": 0,
