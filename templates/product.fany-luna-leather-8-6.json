@@ -2371,7 +2371,6 @@
         "collapsible_row_bqz4g8",
         "collapsible_row_9wmwr3"
       ],
-      "disabled": true,
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
         ".collapsible-content__heading {color: #f2d0ad;}"
@@ -2543,8 +2542,8 @@
     "custom_watch_faces_kHgJ4m",
     "sleep_insights_poster_4NBdB6",
     "product_overview_group_F9Xy6b",
-    "faq",
     "1787113551d5ed5ac2",
+    "faq",
     "recommended_products_manual_yz7kAW",
     "1758592045c9c68565",
     "newsletter_QLP44D"
