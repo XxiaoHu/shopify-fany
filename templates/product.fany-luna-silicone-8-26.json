@@ -2284,6 +2284,23 @@
         "mobile_body_margin_bottom": 0
       }
     },
+    "17890218693bc9ea2b": {
+      "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_playlist_fCXgeC": {
+          "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "playlist_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_playlist_fCXgeC"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "faq": {
       "type": "collapsible-content",
       "blocks": {
@@ -2535,6 +2552,7 @@
     "emotional_image_switcher_i7mdQF",
     "custom_watch_faces_apaB4M",
     "sleep_insights_poster_LBjznX",
+    "17890218693bc9ea2b",
     "faq",
     "recommended_products_manual_RbP8qP",
     "17876538872444c7a5",
