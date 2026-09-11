@@ -545,7 +545,7 @@
             "link_target_blank": false,
             "desktop_layout_mode": "overlay",
             "mobile_layout_mode": "overlay",
-            "content_horizontal": "left",
+            "content_horizontal": "right",
             "content_vertical": "middle",
             "mobile_content_horizontal": "center",
             "mobile_content_vertical": "bottom",
