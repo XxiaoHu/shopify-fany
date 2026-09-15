@@ -47,20 +47,7 @@
             data-option-value-id="{{ value.id }}"
           {%- endcapture -%}
           <li>
-            {%
-              render 'swatch-input',
-              id: input_id,
-              name: input_name,
-              value: value | escape,
-              swatch: value.swatch,
-              product_form_id: product_form_id,
-              checked: value.selected,
-              disabled: option_disabled,
-              visually_disabled: option_disabled,
-              shape: block.settings.swatch_shape,
-              help_text: value | escape,
-              additional_props: input_dataset
-            %}
+            {% render 'swatch-input', id: input_id, name: input_name, value: value, swatch: value.swatch, product_form_id: product_form_id, checked: value.selected, disabled: option_disabled, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: value, additional_props: input_dataset %}
             {% if option_disabled %}
               <span class="bntHoverTips">Out Of Stock <i></i></span>
             {% endif %}
@@ -73,3 +60,30 @@
     </script>
   </variant-selects>
 {%- endunless -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                  render 'swatch-input',
+                  id: input_id,
+                  name: input_name,
+                  value: value | escape,
+                  swatch: value.swatch,
+                  product_form_id: product_form_id,
+                  checked: value.selected,
+                  disabled: option_disabled,
+                  visually_disabled: option_disabled,
+                  shape: block.settings.swatch_shape,
+                  help_text: value | escape,
+                  additional_props: input_dataset
+                %}
+  to: "{% render 'swatch-input', id: input_id, name: input_name, value: value, swatch:
+    value.swatch, product_form_id: product_form_id, checked: value.selected, disabled:
+    option_disabled, visually_disabled: option_disabled, shape: block.settings.swatch_shape,
+    help_text: value, additional_props: input_dataset %}"
+  position: 1824..2128
+{% endcomment %}
