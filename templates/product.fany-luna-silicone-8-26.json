@@ -170,7 +170,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>Created for movement and made for everyday comfort, the FANY Luna Silicone Smartwatch pairs a refined, ultra-slim case with a soft-touch silicone band that feels light, breathable, and gentle on the skin. Designed to transition effortlessly from workouts to weekends, it brings together sporty versatility and timeless style.<br/>Thoughtfully equipped with intelligent wellness features, 110 workout modes, smart notifications, and long-lasting battery life, Luna keeps you connected, active, and ready for every moment.</p>",
+            "content": "<p>FANY Luna is a lightweight, hypoallergenic silicone smartwatch for women, designed for everyday comfort and skin-friendly wear. Weighing just 29.2g, it features a compact 37.5 mm watch diameter and a soft-touch silicone band that fits wrists from 144–202 mm, making it comfortable for all-day wear, workouts, and sleep.<br/><br/>Featuring a vivid 1.1-inch AMOLED display, 110+ workout modes, sleep and stress tracking, menstrual cycle tracking, smart notifications, and up to 7 days of battery life, FANY Luna combines everyday wellness features with a sleek, minimalist design.<br/><br/>Why you'll love it:<br/><br/>Hypoallergenic soft-touch silicone band<br/>Lightweight 29.2g design<br/>Slim 37.5 mm watch diameter<br/>Fits wrists from 144–202mm<br/>1.1-inch AMOLED display<br/>110+ workout modes<br/>Sleep, stress & menstrual cycle tracking<br/>Up to 7 days of battery life<br/><br/></p>",
             "page": ""
           }
         },
@@ -1626,8 +1626,8 @@
       "type": "animated-floating-banner",
       "name": "浮层图片 Banner",
       "settings": {
-        "heading": "Sweat in Style. Embrace Your Transformation",
-        "content": "<p>Thoughtfully designed for women, FANY Luna bridges the gap between athletic power and everyday elegance. Every drop of sweat becomes a statement of your progress, reminding you that real change happens when you move with confidence and shine in your own rhythm. Discover FANY Luna-Winner of the American Good Design Gold Award & French Design Gold Award. </p>",
+        "heading": "Move Your Way. Wear It Your Way.",
+        "content": "<p>Designed to keep pace with real life, FANY Luna moves effortlessly from morning workouts to busy workdays and relaxed weekends. Its refined silhouette brings a softer, more versatile approach to everyday fitness, so staying active never means giving up your personal style. Whether you're building a new routine, chasing a personal goal, or simply moving more each day, Luna is made to feel like part of your lifestyle—not just another piece of fitness gear.<br/><br/>Move with confidence. Wear it everywhere.<br/><br/></p>",
         "text_max_width": 1000,
         "text_gap": 14,
         "heading_font_size": 40,
