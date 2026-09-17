@@ -1,0 +1,278 @@
+{{ 'sticky-category-navigation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'sticky-category-navigation.js' | asset_url }}" defer="defer"></script>
+
+<sticky-category-navigation
+  id="StickyCategoryNavigation-{{ section.id }}"
+  class="sticky-category-navigation"
+  style="
+    --scn-background: {{ section.settings.background_color }};
+    --scn-text: {{ section.settings.text_color }};
+    --scn-hover-background: {{ section.settings.hover_background_color }};
+    --scn-hover-text: {{ section.settings.hover_text_color }};
+    --scn-active-background: {{ section.settings.active_background_color }};
+    --scn-active-text: {{ section.settings.active_text_color }};
+    --scn-divider: {{ section.settings.divider_color }};
+    --scn-desktop-font-size: {{ section.settings.desktop_font_size }}px;
+    --scn-mobile-font-size: {{ section.settings.mobile_font_size }}px;
+    --scn-desktop-height: {{ section.settings.desktop_height }}px;
+    --scn-mobile-height: {{ section.settings.mobile_height }}px;
+    --scn-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --scn-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --scn-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --scn-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <nav class="sticky-category-navigation__nav" aria-label="{{ section.settings.navigation_label | escape }}">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="sticky-category-navigation__list" role="list">
+        {%- for block in section.blocks -%}
+        {%- if block.settings.text != blank -%}
+          {%- assign target_anchor = block.settings.target_anchor | handleize -%}
+          <li
+            id="StickyCategoryNavigationItem-{{ section.id }}-{{ block.id }}"
+            class="sticky-category-navigation__item{% if block.settings.is_active %} is-active{% endif %}"
+            data-scn-item
+            {{ block.shopify_attributes }}
+          >
+            <button
+              class="sticky-category-navigation__trigger"
+              type="button"
+              data-scn-trigger
+              data-scn-target="{{ target_anchor | escape }}"
+              {% if block.settings.is_active %}aria-current="true"{% endif %}
+            >
+              <span class="sticky-category-navigation__text">{{ block.settings.text | escape }}</span>
+            </button>
+          </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- elsif request.design_mode -%}
+      <p class="sticky-category-navigation__empty">请添加导航项</p>
+    {%- endif -%}
+  </nav>
+</sticky-category-navigation>
+
+{% schema %}
+{
+  "name": "吸顶分类导航",
+  "tag": "section",
+  "class": "sticky-category-navigation-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "navigation_label",
+      "label": "无障碍导航名称",
+      "default": "分类导航"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "默认文字颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "悬停背景颜色",
+      "default": "#925044"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color",
+      "label": "悬停文字颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "active_background_color",
+      "label": "选中背景颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "active_text_color",
+      "label": "选中文字颜色",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color_background",
+      "id": "divider_color",
+      "label": "分隔线颜色",
+      "default": "rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "type": "header",
+      "content": "桌面端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "文字大小",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 44,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "导航高度",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "文字大小",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "导航高度",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "导航项",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "文字",
+          "default": "导航项"
+        },
+        {
+          "type": "text",
+          "id": "target_anchor",
+          "label": "目标锚点",
+          "info": "填写对应模块的导航锚点，例如 labor-day；不要填写 #。"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_active",
+          "label": "显示为当前选中项",
+          "default": false,
+          "info": "当前仅用于预览选中样式；滚动联动功能将在后续增加。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "吸顶分类导航",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Labor Day",
+            "target_anchor": "labor-day",
+            "is_active": true
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Women's Equality Day",
+            "target_anchor": "womens-equality"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Halloween",
+            "target_anchor": "halloween"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Other",
+            "target_anchor": "other"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

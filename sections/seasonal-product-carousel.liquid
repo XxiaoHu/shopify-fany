@@ -1,0 +1,503 @@
+{{ 'seasonal-product-carousel.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'seasonal-product-carousel.js' | asset_url }}" defer="defer"></script>
+
+<seasonal-product-carousel
+  id="SeasonalProductCarousel-{{ section.id }}"
+  class="seasonal-product-carousel"
+  style="
+    --spc-background: {{ section.settings.background_color }};
+    --spc-heading-color: {{ section.settings.heading_color }};
+    --spc-description-color: {{ section.settings.description_color }};
+    --spc-card-heading-color: {{ section.settings.card_heading_color }};
+    --spc-card-description-color: {{ section.settings.card_description_color }};
+    --spc-image-background: {{ section.settings.image_background_color }};
+    --spc-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --spc-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
+    --spc-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --spc-desktop-description-line-height: {{ section.settings.desktop_description_line_height | divided_by: 100.0 }};
+    --spc-desktop-card-heading-size: {{ section.settings.desktop_card_heading_size }}px;
+    --spc-desktop-card-heading-line-height: {{ section.settings.desktop_card_heading_line_height | divided_by: 100.0 }};
+    --spc-desktop-card-description-size: {{ section.settings.desktop_card_description_size }}px;
+    --spc-desktop-card-description-line-height: {{ section.settings.desktop_card_description_line_height | divided_by: 100.0 }};
+    --spc-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --spc-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
+    --spc-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --spc-mobile-description-line-height: {{ section.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --spc-mobile-card-heading-size: {{ section.settings.mobile_card_heading_size }}px;
+    --spc-mobile-card-heading-line-height: {{ section.settings.mobile_card_heading_line_height | divided_by: 100.0 }};
+    --spc-mobile-card-description-size: {{ section.settings.mobile_card_description_size }}px;
+    --spc-mobile-card-description-line-height: {{ section.settings.mobile_card_description_line_height | divided_by: 100.0 }};
+    --spc-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --spc-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --spc-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --spc-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  {%- if section.settings.navigation_anchor != blank -%}
+    <span
+      id="SeasonalProductCarouselAnchor-{{ section.id }}"
+      class="seasonal-product-carousel__anchor"
+      data-navigation-anchor="{{ section.settings.navigation_anchor | handleize }}"
+      aria-hidden="true"
+    ></span>
+  {%- endif -%}
+  <div class="seasonal-product-carousel__inner">
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+      <div class="seasonal-product-carousel__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="seasonal-product-carousel__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="seasonal-product-carousel__description rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="seasonal-product-carousel__carousel">
+        <div
+          id="SeasonalProductTrack-{{ section.id }}"
+          class="seasonal-product-carousel__track"
+          data-spc-track
+          tabindex="0"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="{{ section.settings.carousel_label | escape }}"
+        >
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign desktop_image = block.settings.desktop_image
+              assign mobile_image = block.settings.mobile_image
+              assign fallback_image = desktop_image | default: mobile_image
+              assign card_tag = 'div'
+              if block.settings.link != blank
+                assign card_tag = 'a'
+              endif
+            -%}
+            <article
+              id="SeasonalProductCard-{{ section.id }}-{{ block.id }}"
+              class="seasonal-product-carousel__card"
+              data-spc-card
+              {{ block.shopify_attributes }}
+            >
+              <{{ card_tag }}
+                class="seasonal-product-carousel__card-link"
+                {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}
+              >
+                <div class="seasonal-product-carousel__media">
+                  {%- if fallback_image != blank -%}
+                    <picture class="seasonal-product-carousel__picture">
+                      {%- if mobile_image != blank -%}
+                        <source
+                          media="(max-width: 749px)"
+                          srcset="
+                            {{ mobile_image | image_url: width: 350 }} 350w,
+                            {{ mobile_image | image_url: width: 550 }} 550w,
+                            {{ mobile_image | image_url: width: 750 }} 750w
+                          "
+                          sizes="calc((100vw - 43px) / 2)"
+                        >
+                      {%- endif -%}
+                      {{
+                        fallback_image
+                        | image_url: width: 1000
+                        | image_tag:
+                          class: 'seasonal-product-carousel__image',
+                          loading: 'lazy',
+                          widths: '350, 550, 736, 1000',
+                          sizes: '(max-width: 749px) calc((100vw - 43px) / 2), (max-width: 1199px) calc((100vw - 128px) / 4), 368px',
+                          alt: block.settings.image_alt
+                      }}
+                    </picture>
+                  {%- elsif request.design_mode -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'seasonal-product-carousel__placeholder placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.heading != blank or block.settings.description != blank -%}
+                  <div class="seasonal-product-carousel__card-copy">
+                    {%- if block.settings.heading != blank -%}
+                      <h3 class="seasonal-product-carousel__card-heading">{{ block.settings.heading | escape }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.description != blank -%}
+                      <p class="seasonal-product-carousel__card-description">{{ block.settings.description | escape }}</p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </{{ card_tag }}>
+            </article>
+          {%- endfor -%}
+        </div>
+
+        {%- if section.blocks.size > 4 -%}
+          <button
+            class="seasonal-product-carousel__arrow seasonal-product-carousel__arrow--previous"
+            type="button"
+            data-spc-previous
+            aria-label="上一组产品"
+            aria-controls="SeasonalProductTrack-{{ section.id }}"
+          >
+            <img src="{{ 'featured-showcase-arrow-prev.svg' | asset_url }}" width="28" height="28" alt="">
+          </button>
+          <button
+            class="seasonal-product-carousel__arrow seasonal-product-carousel__arrow--next"
+            type="button"
+            data-spc-next
+            aria-label="下一组产品"
+            aria-controls="SeasonalProductTrack-{{ section.id }}"
+          >
+            <img src="{{ 'featured-showcase-arrow-next.svg' | asset_url }}" width="28" height="28" alt="">
+          </button>
+        {%- endif -%}
+      </div>
+    {%- elsif request.design_mode -%}
+      <p class="seasonal-product-carousel__empty">请添加产品卡片</p>
+    {%- endif -%}
+  </div>
+</seasonal-product-carousel>
+
+{% schema %}
+{
+  "name": "节日产品轮播",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "New in : Labor Day"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "描述",
+      "default": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>"
+    },
+    {
+      "type": "text",
+      "id": "carousel_label",
+      "label": "轮播无障碍名称",
+      "default": "节日产品"
+    },
+    {
+      "type": "text",
+      "id": "navigation_anchor",
+      "label": "导航锚点",
+      "info": "用于吸顶导航跳转，例如 labor-day；同一页面不能重复。"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "卡片标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "卡片描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "image_background_color",
+      "label": "图片区域背景颜色",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号与行高"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 16,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "标题行高",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_line_height",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "%",
+      "label": "描述行高",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_heading_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_heading_line_height",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "卡片标题行高",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_description_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_description_line_height",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "%",
+      "label": "卡片描述行高",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与行高"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "标题行高",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_line_height",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "%",
+      "label": "描述行高",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_heading_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片标题字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_heading_line_height",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "卡片标题行高",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_description_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "卡片描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_description_line_height",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "%",
+      "label": "卡片描述行高",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "产品卡片",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "PC 图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片",
+          "info": "留空时自动使用 PC 图片。"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文字"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "标题",
+          "default": "Surf Holiday"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "描述",
+          "default": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "链接"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "节日产品轮播",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

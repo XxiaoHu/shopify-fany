@@ -317,6 +317,18 @@ assets/<feature-name>-*.svg    # 只有真实导出资源时才创建
 }
 ```
 
+### 11.4.1 重复内容的每端显示数量
+
+当卡片网格、产品列表或轮播需要由商家控制每行或每屏显示数量时：
+
+- 必须分别提供 PC 与移动端设置，推荐 ID 为 `desktop_columns` 和 `mobile_columns`。
+- 默认值以对应 Figma 节点为准；设置范围必须符合目标端的实际可用宽度，不能提供必然导致内容不可读的数量。
+- 显示数量只控制网格列数或轮播视口内数量，不能用于限制、截断或隐藏 `section.blocks`。
+- 数量通过 section 根节点的实例级 CSS 变量传递，例如 `--fn-desktop-columns` 和 `--fn-mobile-columns`，确保多实例互不影响。
+- Grid 使用 `repeat(var(--fn-columns), minmax(0, 1fr))`；横向轮播应结合间距计算单项宽度，并在数量变化后重新计算翻页距离与按钮边界。
+- 必须验证最小值、最大值、项目不足一屏、项目超过一屏及最后一行不足列数的情况。
+- 如果设计或业务没有要求商家调整显示数量，不应为了配置而新增该设置。
+
 ### 11.5 动效
 
 - 优先动画 `transform` 和 `opacity`。
@@ -459,6 +471,7 @@ git diff --no-index --check /dev/null assets/<feature-name>.css
 - [ ] PC/移动端图片及回退逻辑正确。
 - [ ] 图片使用 Shopify CDN 响应式输出并有 alt。
 - [ ] blocks 不写死数量，并包含 `shopify_attributes`。
+- [ ] 需要可调列数时，PC/移动端显示数量分别配置，且不限制或隐藏 blocks 总数。
 - [ ] CSS 不污染全站，多实例正常。
 - [ ] PC 与移动端均可分别设置 section 上、下间距，且 `0px` 可正常关闭留白。
 - [ ] JS 可清理、可重复初始化，并支持 Theme Editor。
