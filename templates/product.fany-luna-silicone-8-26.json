@@ -2203,8 +2203,8 @@
       ],
       "name": "情绪状态图片切换",
       "settings": {
-        "title": "Manage Your Stress & Emotional Health",
-        "body": "<p>Due to unique biological rhythms and hormonal shifts, women are naturally more sensitive to emotional stress. FANY Luna smartwatch is designed to understand these subtle nuances. Powered by advanced biosensors, it continuously tracks key vital indicators, including HRV, translating physiological signals into meaningful insights about your stress levels and emotional well-being.</p>",
+        "title": "Check In with How You Feel",
+        "body": "<p>Take a moment to record how you feel throughout the day with simple mood check-ins on FANY Luna. Mark moments as pleasant, neutral, or unpleasant, then look back on your entries alongside your everyday wellness data in the FANY Fit App.<br/><br/>Over time, these check-ins can help you notice patterns between your mood, routines, activity, rest, and daily experiences—giving you more context around how your days feel.</p>",
         "tabs_label": "Choose an emotional state",
         "desktop_title_size": 40,
         "desktop_title_color": "#1e0e06",
