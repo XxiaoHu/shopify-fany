@@ -98,396 +98,434 @@
         "accessibility_info": "首页横幅轮播"
       }
     },
-    "main_banner_36B9fz": {
-      "type": "main-banner",
+    "sticky_category_navigation_HdcFVx": {
+      "type": "sticky-category-navigation",
       "blocks": {
-        "slide_BULjFE": {
-          "type": "slide",
+        "item_WhiNWh": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/a33ea0150b6bbf14c7c14e55a1a8d225.webp",
-            "mobile_image": "shopify://shop_images/1066583a6217cd26a47a55ce63b87a95.webp",
-            "image_overlay_opacity": 0,
-            "link": "",
-            "link_text": "",
-            "link_target_blank": false,
-            "desktop_layout_mode": "overlay",
-            "mobile_layout_mode": "overlay",
-            "content_horizontal": "center",
-            "content_vertical": "middle",
-            "mobile_content_horizontal": "center",
-            "mobile_content_vertical": "middle",
-            "title": "Smartwatch Gifts for Women",
-            "title_font_size": 28,
-            "mobile_title_font_size": 24,
-            "title_font_weight": "700",
-            "title_color": "#1e0e06",
-            "mobile_title_color": "#1e0e06",
-            "title_line_height": 1.2,
-            "title_letter_spacing": 0,
-            "title_alignment": "center",
-            "mobile_title_alignment": "center",
-            "subtitle": "",
-            "subtitle_font_size": 18,
-            "mobile_subtitle_font_size": 14,
-            "subtitle_font_weight": "400",
-            "subtitle_color": "#686766",
-            "mobile_subtitle_color": "#0a0909",
-            "subtitle_line_height": 1.3,
-            "subtitle_letter_spacing": 0,
-            "subtitle_alignment": "left",
-            "mobile_subtitle_alignment": "left",
-            "title_subtitle_gap": 8,
-            "subtitle_desc_gap": 12,
-            "mobile_title_subtitle_gap": 6,
-            "mobile_subtitle_desc_gap": 10,
-            "description": "<p>Thoughtful gifts that combine style, wellness, and everyday technology.</p><p><br/>Whether you're shopping for a birthday, anniversary, graduation, Mother's Day, or a new beginning, discover FANY smartwatch gifts designed to make meaningful moments even more special.</p>",
-            "desc_font_size": 16,
-            "mobile_desc_font_size": 16,
-            "desc_font_weight": "400",
-            "desc_color": "#686766",
-            "mobile_desc_color": "#1e0e06",
-            "desc_line_height": 1.5,
-            "desc_letter_spacing": 0,
-            "desc_alignment": "center",
-            "mobile_desc_alignment": "center",
-            "title_desc_gap": 20,
-            "mobile_title_desc_gap": 16,
-            "button_label": "",
-            "button_link": "",
-            "button_style": "primary",
-            "button_alignment": "flex-start",
-            "mobile_button_alignment": "flex-start",
-            "btn_font_size": 16,
-            "btn_border_radius": 6,
-            "btn_padding_y": 12,
-            "btn_padding_x": 24,
-            "btn_bg_color": "#794538",
-            "btn_text_color": "#ffffff",
-            "btn_bg_hover_color": "#5c342b",
-            "btn_text_hover_color": "#ffffff",
-            "btn_bg_active_color": "#4a2a22",
-            "btn_text_active_color": "#ffffff"
+            "text": "Labor Day",
+            "target_anchor": "labor-day",
+            "is_active": true
+          }
+        },
+        "item_c4fH6q": {
+          "type": "item",
+          "settings": {
+            "text": "Women's Equality Day",
+            "target_anchor": "Women's Equality Day",
+            "is_active": false
+          }
+        },
+        "item_pmDBkm": {
+          "type": "item",
+          "settings": {
+            "text": "Back to School",
+            "target_anchor": "Back to School",
+            "is_active": false
+          }
+        },
+        "item_nzTQYp": {
+          "type": "item",
+          "settings": {
+            "text": "Other",
+            "target_anchor": "Other",
+            "is_active": false
           }
         }
       },
       "block_order": [
-        "slide_BULjFE"
+        "item_WhiNWh",
+        "item_c4fH6q",
+        "item_pmDBkm",
+        "item_nzTQYp"
       ],
-      "name": "主页 Banner 轮播",
+      "name": "吸顶分类导航",
       "settings": {
-        "slide_height": "adapt_image",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "text_safe_margin": 200,
-        "padding_top": 0,
-        "padding_bottom": 50,
-        "mobile_text_safe_margin": 24,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 0,
-        "accessibility_info": "首页横幅轮播"
-      }
-    },
-    "transformative_journey_YjzYEc": {
-      "type": "transformative-journey",
-      "name": "多图多文",
-      "settings": {
-        "her_image": "shopify://shop_images/her.webp",
-        "title_font_size": 28,
-        "mobile_title_font_size": 24,
-        "title_font_weight": "700",
-        "text_font_size": 16,
-        "mobile_text_font_size": 16,
-        "text_font_weight": "400",
-        "image_1": "shopify://shop_images/Gift_Set_900a3b49-d73f-4a4e-9636-8989ab7e24a0.webp",
-        "title_1": "Transformation: Bloom From Within",
-        "text_1": "A night of deeper rest.\nA deeper understanding of our bodies, emotions, and natural rhythms.\nFANY Luna is with you through it all. Make space for intentional self-care.\nBecause true transformation always blooms from within.",
-        "button_label_1": "Shop Gift Set",
-        "button_link_1": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
-        "image_2": "shopify://shop_images/Gift_Set.webp",
-        "title_2": "Shine: Celebrate Every Step",
-        "text_2": "Every workout.\nEvery moment of self-discovery.\nThese moments deserve to be celebrated.\nAs a special gift with your watch, you'll receive our 14K Gold Butterfly Bracelet—the confidence to shine.\nBecause every chapter of your journey matters.",
-        "button_label_2": "Shop Gift Set",
-        "button_link_2": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
-        "image_3": "shopify://shop_images/Gift_Set_803d0341-2a26-44ca-a2af-30923ec7e27d.webp",
-        "title_3": "Freedom: Designed For The Life You Love",
-        "text_3": "From morning workouts to weekend escapes.\nFrom busy days to quiet moments by the sea.\nWith IP68 water resistance and up to 7 days of battery life, FANY Luna adapts beautifully to every part of your lifestyle.\nBecause the best technology should feel as natural as living.",
-        "padding_top": 0,
-        "padding_bottom": 100,
+        "navigation_label": "分类导航",
+        "background_color": "#1e0e06",
+        "text_color": "#ffffff",
+        "hover_background_color": "#925044",
+        "hover_text_color": "#ffffff",
+        "active_background_color": "#1e0e06",
+        "active_text_color": "#fcc12b",
+        "divider_color": "rgba(255, 255, 255, 0.2)",
+        "desktop_font_size": 20,
+        "desktop_height": 80,
+        "mobile_font_size": 14,
+        "mobile_height": 60,
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0
       }
     },
-    "main_banner_6yLWWG": {
-      "type": "main-banner",
+    "seasonal_product_carousel_rtTm8X": {
+      "type": "seasonal-product-carousel",
       "blocks": {
-        "slide_zKhQg7": {
-          "type": "slide",
+        "card_tg9Hna": {
+          "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gift_Set_d70e2d3e-dfcd-47d3-9239-b5e5c5545229.webp",
-            "mobile_image": "shopify://shop_images/gift_set_-_-M.webp",
-            "image_overlay_opacity": 0,
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
-            "link_text": "",
-            "link_target_blank": false,
-            "desktop_layout_mode": "overlay",
-            "mobile_layout_mode": "overlay",
-            "content_horizontal": "left",
-            "content_vertical": "middle",
-            "mobile_content_horizontal": "center",
-            "mobile_content_vertical": "bottom",
-            "title": "",
-            "title_font_size": 40,
-            "mobile_title_font_size": 28,
-            "title_font_weight": "700",
-            "title_color": "#1e0e06",
-            "mobile_title_color": "#ffffff",
-            "title_line_height": 1.2,
-            "title_letter_spacing": 0,
-            "title_alignment": "left",
-            "mobile_title_alignment": "left",
-            "subtitle": "",
-            "subtitle_font_size": 18,
-            "mobile_subtitle_font_size": 14,
-            "subtitle_font_weight": "400",
-            "subtitle_color": "#686766",
-            "mobile_subtitle_color": "#ffffff",
-            "subtitle_line_height": 1.3,
-            "subtitle_letter_spacing": 0,
-            "subtitle_alignment": "left",
-            "mobile_subtitle_alignment": "left",
-            "title_subtitle_gap": 8,
-            "subtitle_desc_gap": 12,
-            "mobile_title_subtitle_gap": 6,
-            "mobile_subtitle_desc_gap": 10,
-            "description": "",
-            "desc_font_size": 20,
-            "mobile_desc_font_size": 16,
-            "desc_font_weight": "400",
-            "desc_color": "#686766",
-            "mobile_desc_color": "#ffffff",
-            "desc_line_height": 1.5,
-            "desc_letter_spacing": 0,
-            "desc_alignment": "left",
-            "mobile_desc_alignment": "left",
-            "title_desc_gap": 20,
-            "mobile_title_desc_gap": 16,
-            "button_label": "",
-            "button_link": "",
-            "button_style": "primary",
-            "button_alignment": "flex-start",
-            "mobile_button_alignment": "flex-start",
-            "btn_font_size": 16,
-            "btn_border_radius": 6,
-            "btn_padding_y": 12,
-            "btn_padding_x": 24,
-            "btn_bg_color": "#794538",
-            "btn_text_color": "#ffffff",
-            "btn_bg_hover_color": "#5c342b",
-            "btn_text_hover_color": "#ffffff",
-            "btn_bg_active_color": "#4a2a22",
-            "btn_text_active_color": "#ffffff"
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "card_mRKnM4": {
+          "type": "card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "card_gUtFbG": {
+          "type": "card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "card_UNhKrX": {
+          "type": "card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "slide_zKhQg7"
+        "card_tg9Hna",
+        "card_mRKnM4",
+        "card_gUtFbG",
+        "card_UNhKrX"
       ],
-      "name": "主页 Banner 轮播",
+      "name": "节日产品轮播",
       "settings": {
-        "slide_height": "adapt_image",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "text_safe_margin": 200,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "mobile_text_safe_margin": 24,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 0,
-        "accessibility_info": "首页横幅轮播"
-      }
-    },
-    "image_text_a9RyJR": {
-      "type": "image-text",
-      "name": "上下结构图文",
-      "settings": {
-        "header": "<p>Find the Right Smartwatch Gift for Her</p>",
-        "text": "<p>Gifting every chapter worth celebrating.</p>",
-        "img_first": true,
-        "img_has_back": false,
-        "text_alignment": "center",
-        "back_color": "",
-        "font_color": "#1e0e06",
-        "title_font_size": 28,
-        "text_font_size": 16,
-        "img_text_margin": 75,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "mobile_header": "<p>A Watch, A Bracelet, Double the Blessings</p>",
-        "mobile_text": "<p>Gifting every chapter worth celebrating.</p>",
-        "mobile_img_first": true,
-        "mobile_img_has_back": false,
-        "mobile_text_alignment": "center",
-        "mobile_back_color": "",
-        "mobile_font_color": "#1e0e06",
-        "mobile_title_font_size": 24,
-        "mobile_text_font_size": 16,
-        "mobile_img_text_margin": 10,
-        "mobile_padding_top": 36,
-        "mobile_padding_bottom": 0
-      }
-    },
-    "gift_feature_PCWUQ3": {
-      "type": "gift-feature",
-      "name": "礼物图文",
-      "settings": {
-        "eyebrow": "For New Beginnings",
-        "title": "A meaningful gift for her next chapter",
-        "text": "<p>From starting a career to moving into a new stage of life, give her something that celebrates confidence, growth, and independence.</p>",
-        "image": "shopify://shop_images/Gift_Set_b53b4464-c9c9-4863-9ff3-50748cf787e0.webp",
-        "desktop_image_position": "image-left",
-        "padding_top": 0,
-        "padding_bottom": 100,
+        "heading": "New in : Labor Day",
+        "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
+        "carousel_label": "节日产品",
+        "navigation_anchor": "labor-day",
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "image_background_color": "#f7f7f7",
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 20,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 16,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
         "mobile_padding_top": 40,
-        "mobile_padding_bottom": 20,
-        "eyebrow_color": "#600012",
-        "eyebrow_font_size": 28,
-        "mobile_eyebrow_font_size": 24,
-        "eyebrow_font_weight": "700",
-        "title_color": "#1e0e06",
-        "title_font_size": 20,
-        "mobile_title_font_size": 20,
-        "title_font_weight": "700",
-        "text_color": "#686766",
-        "text_font_size": 16,
-        "mobile_text_font_size": 16,
-        "text_font_weight": "400"
+        "mobile_padding_bottom": 40
       }
     },
-    "gift_feature_6n87Jd": {
-      "type": "gift-feature",
-      "name": "礼物图文",
-      "settings": {
-        "eyebrow": "For Birthdays",
-        "title": "A gift she'll actually use every day",
-        "text": "<p>Combine elegant design with wellness and fitness tracking for a birthday gift that's both beautiful and practical.</p>",
-        "image": "shopify://shop_images/Gift_Set_da499f79-93e9-419d-820e-2e5ea0e8ff86.webp",
-        "desktop_image_position": "image-right",
-        "padding_top": 0,
-        "padding_bottom": 100,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 20,
-        "eyebrow_color": "#600012",
-        "eyebrow_font_size": 28,
-        "mobile_eyebrow_font_size": 24,
-        "eyebrow_font_weight": "700",
-        "title_color": "#1e0e06",
-        "title_font_size": 20,
-        "mobile_title_font_size": 20,
-        "title_font_weight": "700",
-        "text_color": "#686766",
-        "text_font_size": 16,
-        "mobile_text_font_size": 16,
-        "text_font_weight": "400"
-      }
-    },
-    "gift_feature_WakU4a": {
-      "type": "gift-feature",
-      "name": "礼物图文",
-      "settings": {
-        "eyebrow": "For Anniversaries",
-        "title": "Celebrate the journey together",
-        "text": "<p>Choose a thoughtful wearable gift that blends timeless style with everyday wellness.</p>",
-        "image": "shopify://shop_images/Gift_Set_56705d71-ef49-4efa-a276-7c07efb6a81c.webp",
-        "desktop_image_position": "image-left",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 20,
-        "eyebrow_color": "#600012",
-        "eyebrow_font_size": 28,
-        "mobile_eyebrow_font_size": 24,
-        "eyebrow_font_weight": "700",
-        "title_color": "#1e0e06",
-        "title_font_size": 20,
-        "mobile_title_font_size": 20,
-        "title_font_weight": "700",
-        "text_color": "#686766",
-        "text_font_size": 16,
-        "mobile_text_font_size": 16,
-        "text_font_weight": "400"
-      }
-    },
-    "gift_sets_iGD6TX": {
-      "type": "gift-sets",
+    "featured_product_showcase_EhbU3F": {
+      "type": "featured-product-showcase",
       "blocks": {
-        "card_BBBXYL": {
-          "type": "card",
+        "product_card_pRbLNe": {
+          "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/homepage_set-1000x1000-01.webp",
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363176090"
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
           }
         },
-        "card_j66L3c": {
-          "type": "card",
+        "product_card_dBiWYp": {
+          "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/homepage_set-1000x1000-03.webp",
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363241626"
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
           }
         },
-        "card_nGPPzd": {
-          "type": "card",
+        "product_card_RTBJqB": {
+          "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/homepage_set-1000x1000-02.webp",
-            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363274394"
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "product_card_fqEYJR": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "card_BBBXYL",
-        "card_j66L3c",
-        "card_nGPPzd"
+        "product_card_pRbLNe",
+        "product_card_dBiWYp",
+        "product_card_RTBJqB",
+        "product_card_fqEYJR"
       ],
-      "name": "礼物套装展示",
+      "name": "主视觉产品展示",
       "settings": {
-        "title": "Timeless Gifts to Cherish Every Moment",
-        "title_font_size": 28,
-        "mobile_title_font_size": 24,
-        "title_font_weight": "700",
-        "title_line_height": 1.2,
-        "title_letter_spacing": 0,
-        "title_alignment": "center",
-        "title_color": "#1e0e06",
-        "subtitle": "",
-        "subtitle_font_size": 20,
-        "mobile_subtitle_font_size": 16,
-        "subtitle_font_weight": "500",
-        "subtitle_line_height": 1.4,
-        "subtitle_letter_spacing": 0,
-        "subtitle_alignment": "center",
-        "subtitle_color": "#3d3d3d",
-        "description": "Save 24% on Gift Sets",
-        "desc_font_size": 20,
-        "mobile_desc_font_size": 16,
-        "desc_font_weight": "400",
-        "desc_line_height": 1.5,
-        "desc_letter_spacing": 0,
-        "desc_alignment": "center",
-        "desc_color": "#686766",
-        "header_gap": 10,
-        "mobile_header_gap": 20,
-        "view_more_text": "View more",
-        "view_more_link": "",
-        "view_more_font_size": 16,
-        "view_more_color": "#9e7163",
-        "view_more_hover_color": "#794538",
-        "text_safe_margin": 200,
-        "mobile_text_safe_margin": 16,
-        "image_gap": 16,
-        "mobile_image_gap": 12,
-        "card_border_radius": 4,
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "mobile_padding_y": 40
+        "heading": "Women's Equality Day",
+        "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
+        "navigation_anchor": "Women's Equality Day",
+        "carousel_label": "节日产品",
+        "feature_image_alt": "",
+        "feature_link": "",
+        "desktop_columns": 3,
+        "mobile_columns": 2,
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "media_background_color": "#f7f7f7",
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 16,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 14,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "featured_product_showcase_DKim7e": {
+      "type": "featured-product-showcase",
+      "blocks": {
+        "product_card_XdxFKq": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "product_card_ND3mez": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "product_card_QTHBaU": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
+        "product_card_7qr9WT": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_XdxFKq",
+        "product_card_ND3mez",
+        "product_card_QTHBaU",
+        "product_card_7qr9WT"
+      ],
+      "name": "主视觉产品展示",
+      "settings": {
+        "heading": "Back to School",
+        "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
+        "navigation_anchor": "Back to School",
+        "carousel_label": "节日产品",
+        "feature_image_alt": "",
+        "feature_link": "",
+        "desktop_columns": 3,
+        "mobile_columns": 2,
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "media_background_color": "#f7f7f7",
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 16,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 14,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "seasonal_product_grid_7BVY8m": {
+      "type": "seasonal-product-grid",
+      "blocks": {
+        "product_card_MJzcQL": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_ReEieb": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_TqJAy9": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_3pp4GJ": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_Ak3P9h": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_ciHBbg": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_L6CXwa": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        },
+        "product_card_fRHKNH": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_MJzcQL",
+        "product_card_ReEieb",
+        "product_card_TqJAy9",
+        "product_card_3pp4GJ",
+        "product_card_Ak3P9h",
+        "product_card_ciHBbg",
+        "product_card_L6CXwa",
+        "product_card_fRHKNH"
+      ],
+      "name": "节日产品网格",
+      "settings": {
+        "heading": "Other",
+        "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
+        "navigation_anchor": "Other",
+        "mobile_visible_blocks": 4,
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "media_background_color": "#f7f7f7",
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 16,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 14,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
       }
     },
     "collapsible_content_AcjBtT": {
@@ -690,697 +728,415 @@
         "padding_bottom": 40
       }
     },
-    "slideshow_R8g6Mr": {
-      "type": "slideshow",
+    "main_banner_36B9fz": {
+      "type": "main-banner",
       "blocks": {
-        "slide_aGzWGV": {
+        "slide_BULjFE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/PC.webp",
-            "mobile_image": "shopify://shop_images/1_a67f2689-a1c7-4ded-8b55-5bcdd7a62cb8.webp",
+            "image": "shopify://shop_images/a33ea0150b6bbf14c7c14e55a1a8d225.webp",
+            "mobile_image": "shopify://shop_images/1066583a6217cd26a47a55ce63b87a95.webp",
             "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_font_size": 40,
-            "mobile_heading_font_size": 32,
-            "heading_2": "",
-            "heading2_font_size": 22,
-            "mobile_heading2_font_size": 20,
-            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_target_blank": false,
+            "desktop_layout_mode": "overlay",
+            "mobile_layout_mode": "overlay",
+            "content_horizontal": "center",
+            "content_vertical": "middle",
+            "mobile_content_horizontal": "center",
+            "mobile_content_vertical": "middle",
+            "title": "Smartwatch Gifts for Women",
+            "title_font_size": 28,
+            "mobile_title_font_size": 24,
+            "title_font_weight": "700",
+            "title_color": "#1e0e06",
+            "mobile_title_color": "#1e0e06",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "title_alignment": "center",
+            "mobile_title_alignment": "center",
+            "subtitle": "",
+            "subtitle_font_size": 18,
+            "mobile_subtitle_font_size": 14,
+            "subtitle_font_weight": "400",
+            "subtitle_color": "#686766",
+            "mobile_subtitle_color": "#0a0909",
+            "subtitle_line_height": 1.3,
+            "subtitle_letter_spacing": 0,
+            "subtitle_alignment": "left",
+            "mobile_subtitle_alignment": "left",
+            "title_subtitle_gap": 8,
+            "subtitle_desc_gap": 12,
+            "mobile_title_subtitle_gap": 6,
+            "mobile_subtitle_desc_gap": 10,
+            "description": "<p>Thoughtful gifts that combine style, wellness, and everyday technology.</p><p><br/>Whether you're shopping for a birthday, anniversary, graduation, Mother's Day, or a new beginning, discover FANY smartwatch gifts designed to make meaningful moments even more special.</p>",
+            "desc_font_size": 16,
+            "mobile_desc_font_size": 16,
+            "desc_font_weight": "400",
+            "desc_color": "#686766",
+            "mobile_desc_color": "#1e0e06",
+            "desc_line_height": 1.5,
+            "desc_letter_spacing": 0,
+            "desc_alignment": "center",
+            "mobile_desc_alignment": "center",
+            "title_desc_gap": 20,
+            "mobile_title_desc_gap": 16,
             "button_label": "",
-            "link": "shopify://products/luna",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "",
-            "mobile_box_align": "middle",
-            "mobile_color_scheme": ""
+            "button_link": "",
+            "button_style": "primary",
+            "button_alignment": "flex-start",
+            "mobile_button_alignment": "flex-start",
+            "btn_font_size": 16,
+            "btn_border_radius": 6,
+            "btn_padding_y": 12,
+            "btn_padding_x": 24,
+            "btn_bg_color": "#794538",
+            "btn_text_color": "#ffffff",
+            "btn_bg_hover_color": "#5c342b",
+            "btn_text_hover_color": "#ffffff",
+            "btn_bg_active_color": "#4a2a22",
+            "btn_text_active_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "slide_aGzWGV"
+        "slide_BULjFE"
       ],
       "disabled": true,
-      "name": "t:sections.slideshow.presets.name",
+      "name": "主页 Banner 轮播",
       "settings": {
-        "layout": "full_bleed",
         "slide_height": "adapt_image",
-        "slider_visual": "counter",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
-        "image_behavior": "none",
+        "text_safe_margin": 200,
         "padding_top": 0,
-        "padding_bottom": 0,
-        "show_text_below": true,
+        "padding_bottom": 50,
+        "mobile_text_safe_margin": 24,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0,
-        "accessibility_info": ""
+        "accessibility_info": "首页横幅轮播"
       }
     },
-    "1763087890ff327669": {
-      "type": "apps",
+    "transformative_journey_YjzYEc": {
+      "type": "transformative-journey",
       "disabled": true,
+      "name": "多图多文",
       "settings": {
-        "include_margins": false
-      }
-    },
-    "luck_draw_HkBAia": {
-      "type": "luck-draw",
-      "disabled": true,
-      "custom_css": [],
-      "name": "抽奖",
-      "settings": {
-        "heading": "Lucky Draws",
-        "heading_size": "h2",
-        "text": "Only at FANY Official Website",
-        "text_style": "f-20",
-        "image": "shopify://shop_images/PC-choujiang.webp",
-        "mobile_image": "shopify://shop_images/M-choujiang.webp",
-        "alignment": "center",
-        "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "multicolumn_UhPk3L": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_YyMM9a": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_1.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_aeJVfh": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_5.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_piEBEF": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_2.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_H6rFm4": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_3.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_cNKd33": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_4.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_YyMM9a",
-        "column_aeJVfh",
-        "column_piEBEF",
-        "column_H6rFm4",
-        "column_cNKd33"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".multicolumn__title {justify-content: center;}",
-        ".multicolumn__title .title {color: #f2d0ad;}",
-        ".multicolumn-card__image-wrapper {margin-left: 0rem; margin-right: 0rem;}",
-        ".media {border-radius: 16px;}"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "only_image": true,
-        "title": "",
-        "heading_size": "h2",
-        "text": "Your satisfaction is our greatest honor.",
-        "heading_content_gap": 20,
-        "mobile_heading_content_gap": 20,
-        "text_font_size": 20,
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 5,
-        "title_alignment": "center",
-        "column_alignment": "center",
-        "background_style": "none",
-        "hover_background_style": "none",
-        "section_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "column_title_size": 16,
-        "column_subtitle_size": 14,
-        "column_text_size": 14,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "columns_mobile": "2",
-        "mobile_title_alignment": "left",
-        "mobile_column_title_size": 16,
-        "mobile_column_subtitle_size": 14,
-        "mobile_column_text_size": 14,
-        "swipe_on_mobile": true,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 40
-      }
-    },
-    "icon_group_C4fddH": {
-      "type": "icon-group",
-      "blocks": {
-        "image_FR7K8D": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_1.webp",
-            "text": "30-DayPrice Match"
-          }
-        },
-        "image_dYggGy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Fast.png",
-            "text": "Fast Local Shipping"
-          }
-        },
-        "image_hYnczK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/60-day.png",
-            "text": "60-DayFast & Free Returns"
-          }
-        },
-        "image_nTJ789": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/2-year.png",
-            "text": "2-Year Warranty"
-          }
-        },
-        "image_pTRDqk": {
-          "type": "image",
-          "settings": {
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_FR7K8D",
-        "image_dYggGy",
-        "image_hYnczK",
-        "image_nTJ789",
-        "image_pTRDqk"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".icon-group-list__item {padding: 49px 0px; background: linear-gradient(180deg, #be9773 0%, #584635 100%);}",
-        ".icon-group-list {--grid-mobile-vertical-spacing: 8px; padding: 0px;}",
-        "@media screen and (max-width: 768px) {.icon-group-list__item {padding: 20px 0px; }}"
-      ],
-      "name": "图标组",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "alignment": "center",
-        "columns_desktop": 5,
-        "columns_mobile": 2,
-        "section_color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "padding_top": 4,
-        "padding_bottom": 4,
-        "border-radius": 0
-      }
-    },
-    "one_image_word_xrj8Va": {
-      "type": "one-image-word",
-      "disabled": true,
-      "custom_css": [
-        ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
-        ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
-      ],
-      "name": "t:sections.collage-2.presets.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "text": "",
-        "text_style": "f-18",
-        "image": "shopify://shop_images/Valentine_s_Day_5.gif",
-        "mobile_image": "shopify://shop_images/Valentine_s_Day_5.gif",
-        "button_label": "",
-        "link": "shopify://products/luna",
-        "alignment": "center",
-        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_HqFCFH": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_4BbxRi": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_6.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": "https://fany.us/products/fany-luna-classic-smart-watch-women-for-your-partner-gift"
-          }
-        },
-        "column_hqQk9b": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_7.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": "https://fany.us/products/fany-luna-classic-smart-watch-women-for-yourself-combo"
-          }
-        },
-        "column_mEUPmJ": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_8.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": "https://fany.us/products/fany-luna-classic-smart-watch-women-for-yourself-plus-combo"
-          }
-        },
-        "column_76CgzT": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Valentine_s_Day_9.webp",
-            "title": "",
-            "subtitle": "",
-            "hr": false,
-            "text": "",
-            "link_label": "",
-            "link": "https://fany.us/products/fany-luna-classic-smart-watch-women-for-your-friends-combo"
-          }
-        }
-      },
-      "block_order": [
-        "column_4BbxRi",
-        "column_hqQk9b",
-        "column_mEUPmJ",
-        "column_76CgzT"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".multicolumn__title {justify-content: center;}",
-        ".multicolumn__title .title {color: #f2d0ad;}",
-        ".multicolumn-card__image-wrapper {margin-left: 0rem; margin-right: 0rem;}",
-        ".media {border-radius: 16px;}"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "only_image": true,
-        "title": "",
-        "heading_size": "h2",
-        "text": "Your satisfaction is our greatest honor.",
-        "heading_content_gap": 20,
-        "mobile_heading_content_gap": 20,
-        "text_font_size": 20,
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 4,
-        "title_alignment": "center",
-        "column_alignment": "center",
-        "background_style": "none",
-        "hover_background_style": "none",
-        "section_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "column_title_size": 16,
-        "column_subtitle_size": 14,
-        "column_text_size": 14,
+        "her_image": "shopify://shop_images/her.webp",
+        "title_font_size": 28,
+        "mobile_title_font_size": 24,
+        "title_font_weight": "700",
+        "text_font_size": 16,
+        "mobile_text_font_size": 16,
+        "text_font_weight": "400",
+        "image_1": "shopify://shop_images/Gift_Set_900a3b49-d73f-4a4e-9636-8989ab7e24a0.webp",
+        "title_1": "Transformation: Bloom From Within",
+        "text_1": "A night of deeper rest.\nA deeper understanding of our bodies, emotions, and natural rhythms.\nFANY Luna is with you through it all. Make space for intentional self-care.\nBecause true transformation always blooms from within.",
+        "button_label_1": "Shop Gift Set",
+        "button_link_1": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
+        "image_2": "shopify://shop_images/Gift_Set.webp",
+        "title_2": "Shine: Celebrate Every Step",
+        "text_2": "Every workout.\nEvery moment of self-discovery.\nThese moments deserve to be celebrated.\nAs a special gift with your watch, you'll receive our 14K Gold Butterfly Bracelet—the confidence to shine.\nBecause every chapter of your journey matters.",
+        "button_label_2": "Shop Gift Set",
+        "button_link_2": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
+        "image_3": "shopify://shop_images/Gift_Set_803d0341-2a26-44ca-a2af-30923ec7e27d.webp",
+        "title_3": "Freedom: Designed For The Life You Love",
+        "text_3": "From morning workouts to weekend escapes.\nFrom busy days to quiet moments by the sea.\nWith IP68 water resistance and up to 7 days of battery life, FANY Luna adapts beautifully to every part of your lifestyle.\nBecause the best technology should feel as natural as living.",
         "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "main_banner_6yLWWG": {
+      "type": "main-banner",
+      "blocks": {
+        "slide_zKhQg7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gift_Set_d70e2d3e-dfcd-47d3-9239-b5e5c5545229.webp",
+            "mobile_image": "shopify://shop_images/gift_set_-_-M.webp",
+            "image_overlay_opacity": 0,
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet",
+            "link_text": "",
+            "link_target_blank": false,
+            "desktop_layout_mode": "overlay",
+            "mobile_layout_mode": "overlay",
+            "content_horizontal": "left",
+            "content_vertical": "middle",
+            "mobile_content_horizontal": "center",
+            "mobile_content_vertical": "bottom",
+            "title": "",
+            "title_font_size": 40,
+            "mobile_title_font_size": 28,
+            "title_font_weight": "700",
+            "title_color": "#1e0e06",
+            "mobile_title_color": "#ffffff",
+            "title_line_height": 1.2,
+            "title_letter_spacing": 0,
+            "title_alignment": "left",
+            "mobile_title_alignment": "left",
+            "subtitle": "",
+            "subtitle_font_size": 18,
+            "mobile_subtitle_font_size": 14,
+            "subtitle_font_weight": "400",
+            "subtitle_color": "#686766",
+            "mobile_subtitle_color": "#ffffff",
+            "subtitle_line_height": 1.3,
+            "subtitle_letter_spacing": 0,
+            "subtitle_alignment": "left",
+            "mobile_subtitle_alignment": "left",
+            "title_subtitle_gap": 8,
+            "subtitle_desc_gap": 12,
+            "mobile_title_subtitle_gap": 6,
+            "mobile_subtitle_desc_gap": 10,
+            "description": "",
+            "desc_font_size": 20,
+            "mobile_desc_font_size": 16,
+            "desc_font_weight": "400",
+            "desc_color": "#686766",
+            "mobile_desc_color": "#ffffff",
+            "desc_line_height": 1.5,
+            "desc_letter_spacing": 0,
+            "desc_alignment": "left",
+            "mobile_desc_alignment": "left",
+            "title_desc_gap": 20,
+            "mobile_title_desc_gap": 16,
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_alignment": "flex-start",
+            "mobile_button_alignment": "flex-start",
+            "btn_font_size": 16,
+            "btn_border_radius": 6,
+            "btn_padding_y": 12,
+            "btn_padding_x": 24,
+            "btn_bg_color": "#794538",
+            "btn_text_color": "#ffffff",
+            "btn_bg_hover_color": "#5c342b",
+            "btn_text_hover_color": "#ffffff",
+            "btn_bg_active_color": "#4a2a22",
+            "btn_text_active_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zKhQg7"
+      ],
+      "disabled": true,
+      "name": "主页 Banner 轮播",
+      "settings": {
+        "slide_height": "adapt_image",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "text_safe_margin": 200,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "mobile_text_safe_margin": 24,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": "首页横幅轮播"
+      }
+    },
+    "image_text_a9RyJR": {
+      "type": "image-text",
+      "disabled": true,
+      "name": "上下结构图文",
+      "settings": {
+        "header": "<p>Find the Right Smartwatch Gift for Her</p>",
+        "text": "<p>Gifting every chapter worth celebrating.</p>",
+        "img_first": true,
+        "img_has_back": false,
+        "text_alignment": "center",
+        "back_color": "",
+        "font_color": "#1e0e06",
+        "title_font_size": 28,
+        "text_font_size": 16,
+        "img_text_margin": 75,
+        "padding_top": 36,
         "padding_bottom": 36,
-        "columns_mobile": "1",
-        "mobile_title_alignment": "left",
-        "mobile_column_title_size": 16,
-        "mobile_column_subtitle_size": 14,
-        "mobile_column_text_size": 14,
-        "swipe_on_mobile": false,
+        "mobile_header": "<p>A Watch, A Bracelet, Double the Blessings</p>",
+        "mobile_text": "<p>Gifting every chapter worth celebrating.</p>",
+        "mobile_img_first": true,
+        "mobile_img_has_back": false,
+        "mobile_text_alignment": "center",
+        "mobile_back_color": "",
+        "mobile_font_color": "#1e0e06",
+        "mobile_title_font_size": 24,
+        "mobile_text_font_size": 16,
+        "mobile_img_text_margin": 10,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "gift_feature_PCWUQ3": {
+      "type": "gift-feature",
+      "disabled": true,
+      "name": "礼物图文",
+      "settings": {
+        "eyebrow": "For New Beginnings",
+        "title": "A meaningful gift for her next chapter",
+        "text": "<p>From starting a career to moving into a new stage of life, give her something that celebrates confidence, growth, and independence.</p>",
+        "image": "shopify://shop_images/Gift_Set_b53b4464-c9c9-4863-9ff3-50748cf787e0.webp",
+        "desktop_image_position": "image-left",
+        "padding_top": 0,
+        "padding_bottom": 100,
         "mobile_padding_top": 40,
-        "mobile_padding_bottom": 40
+        "mobile_padding_bottom": 20,
+        "eyebrow_color": "#600012",
+        "eyebrow_font_size": 28,
+        "mobile_eyebrow_font_size": 24,
+        "eyebrow_font_weight": "700",
+        "title_color": "#1e0e06",
+        "title_font_size": 20,
+        "mobile_title_font_size": 20,
+        "title_font_weight": "700",
+        "text_color": "#686766",
+        "text_font_size": 16,
+        "mobile_text_font_size": 16,
+        "text_font_weight": "400"
       }
     },
-    "one_image_word_DdnjGg": {
-      "type": "one-image-word",
+    "gift_feature_6n87Jd": {
+      "type": "gift-feature",
       "disabled": true,
-      "custom_css": [
-        ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
-        ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
-      ],
-      "name": "t:sections.collage-2.presets.name",
+      "name": "礼物图文",
       "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "text": "",
-        "text_style": "f-18",
-        "image": "shopify://shop_images/2025.webp",
-        "mobile_image": "shopify://shop_images/2025_911c6011-6bb6-446d-a2e8-064a7518f5eb.webp",
-        "button_label": "",
-        "link": "shopify://products/luna",
-        "alignment": "center",
-        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "For Birthdays",
+        "title": "A gift she'll actually use every day",
+        "text": "<p>Combine elegant design with wellness and fitness tracking for a birthday gift that's both beautiful and practical.</p>",
+        "image": "shopify://shop_images/Gift_Set_da499f79-93e9-419d-820e-2e5ea0e8ff86.webp",
+        "desktop_image_position": "image-right",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 20,
+        "eyebrow_color": "#600012",
+        "eyebrow_font_size": 28,
+        "mobile_eyebrow_font_size": 24,
+        "eyebrow_font_weight": "700",
+        "title_color": "#1e0e06",
+        "title_font_size": 20,
+        "mobile_title_font_size": 20,
+        "title_font_weight": "700",
+        "text_color": "#686766",
+        "text_font_size": 16,
+        "mobile_text_font_size": 16,
+        "text_font_weight": "400"
       }
     },
-    "one_image_word_c4kw8n": {
-      "type": "one-image-word",
+    "gift_feature_WakU4a": {
+      "type": "gift-feature",
       "disabled": true,
-      "custom_css": [
-        ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
-        ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
-      ],
-      "name": "t:sections.collage-2.presets.name",
+      "name": "礼物图文",
       "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "text": "",
-        "text_style": "f-18",
-        "image": "shopify://shop_images/Watch_Faces.webp",
-        "mobile_image": "shopify://shop_images/M-Watch_Faces.webp",
-        "button_label": "",
-        "link": "",
-        "alignment": "center",
-        "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "For Anniversaries",
+        "title": "Celebrate the journey together",
+        "text": "<p>Choose a thoughtful wearable gift that blends timeless style with everyday wellness.</p>",
+        "image": "shopify://shop_images/Gift_Set_56705d71-ef49-4efa-a276-7c07efb6a81c.webp",
+        "desktop_image_position": "image-left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 20,
+        "eyebrow_color": "#600012",
+        "eyebrow_font_size": 28,
+        "mobile_eyebrow_font_size": 24,
+        "eyebrow_font_weight": "700",
+        "title_color": "#1e0e06",
+        "title_font_size": 20,
+        "mobile_title_font_size": 20,
+        "title_font_weight": "700",
+        "text_color": "#686766",
+        "text_font_size": 16,
+        "mobile_text_font_size": 16,
+        "text_font_weight": "400"
       }
     },
-    "one_image_word_jkM9Nc": {
-      "type": "one-image-word",
-      "disabled": true,
-      "custom_css": [
-        ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
-        ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
-      ],
-      "name": "t:sections.collage-2.presets.name",
-      "settings": {
-        "heading": "7-Day Power. Endless Style.",
-        "heading_size": "h1",
-        "text": "",
-        "text_style": "f-18",
-        "image": "shopify://shop_images/XQ-xuhang-3840x1632-V3.webp",
-        "mobile_image": "shopify://shop_images/M-XQ-xuhang-750x520-V3.webp",
-        "button_label": "",
-        "link": "",
-        "alignment": "center",
-        "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "icon_group_Tpm7wQ": {
-      "type": "icon-group",
+    "gift_sets_iGD6TX": {
+      "type": "gift-sets",
       "blocks": {
-        "image_HF3f6N": {
-          "type": "image",
+        "card_BBBXYL": {
+          "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BD-Heart_rate_monitoring.png",
-            "text": "Heart rate monitoring"
+            "image": "shopify://shop_images/homepage_set-1000x1000-01.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363176090"
           }
         },
-        "image_dpc9tb": {
-          "type": "image",
+        "card_j66L3c": {
+          "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BD-Step_counting.png",
-            "text": "Step counting"
+            "image": "shopify://shop_images/homepage_set-1000x1000-03.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363241626"
           }
         },
-        "image_PbbAtD": {
-          "type": "image",
+        "card_nGPPzd": {
+          "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BD-110_Workout_Modes.png",
-            "text": "110 Workout Modes"
-          }
-        },
-        "image_YV36b3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-Sync_Phone_Notifications.png",
-            "text": "Sync Phone Notifications"
-          }
-        },
-        "image_d8aLwi": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-2_shortcut_keys.png",
-            "text": "2 shortcut keys"
-          }
-        },
-        "image_tkyYJA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-Light_Moments.png",
-            "text": "Light Moments"
-          }
-        },
-        "image_QgpjPY": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-1ATM_Waterproof.png",
-            "text": "1ATM Waterproof"
-          }
-        },
-        "image_yUgy39": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-Ble5.3_Connection.png",
-            "text": "Ble5.3 Connection"
-          }
-        },
-        "image_Bhim6R": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-2.5hr_fully_charged.png",
-            "text": "2.5hr fully charged"
-          }
-        },
-        "image_cExCyM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BD-others-14.png",
-            "text": "Track blood oxygen"
+            "image": "shopify://shop_images/homepage_set-1000x1000-02.webp",
+            "link": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363274394"
           }
         }
       },
       "block_order": [
-        "image_HF3f6N",
-        "image_dpc9tb",
-        "image_PbbAtD",
-        "image_YV36b3",
-        "image_d8aLwi",
-        "image_tkyYJA",
-        "image_QgpjPY",
-        "image_yUgy39",
-        "image_Bhim6R",
-        "image_cExCyM"
+        "card_BBBXYL",
+        "card_j66L3c",
+        "card_nGPPzd"
       ],
       "disabled": true,
-      "custom_css": [
-        ".icon-group-list {--grid-desktop-horizontal-spacing: 18px; --grid-desktop-vertical-spacing: 18px; --grid-mobile-horizontal-spacing: 8px; --grid-mobile-vertical-spacing: 8px;}"
-      ],
-      "name": "图标组",
+      "name": "礼物套装展示",
       "settings": {
-        "title": "Other Highlights",
-        "heading_size": "h2",
-        "alignment": "center",
-        "columns_desktop": 5,
-        "columns_mobile": 2,
-        "section_color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "color_scheme": "scheme-8bcc2850-38c1-483e-82af-a602c54f71a9",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "border-radius": 0
-      }
-    },
-    "creators_reviews_dX7kz8": {
-      "type": "creators-reviews",
-      "blocks": {
-        "column_AbyrhT": {
-          "type": "column",
-          "name": "pinark_usa",
-          "settings": {
-            "cover_image": "shopify://shop_images/pinark_usa.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@pinark_usa",
-            "url": "https://www.instagram.com/p/DP3l1XFkbGa/",
-            "summary": "<strong>A Chic & Life-Loving Mom</strong>",
-            "description": "Elegance meets technology ✨The FANY Luna Classic Smartwatch combines smart features with timeless style — track your health, stay connected, and look effortlessly chic every day 💕 🩷 Plus, it comes with a 60-day money-back guarantee and a 2-year warranty, so you can shop with confidence!"
-          }
-        },
-        "column_6Bd6cP": {
-          "type": "column",
-          "name": "ginnypaxkrosel",
-          "settings": {
-            "cover_image": "shopify://shop_images/ginnypaxkrosel.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@ginnypaxkrosel",
-            "url": "https://www.instagram.com/p/DPkxVaQjB0k/?img_index=1",
-            "summary": "<strong>A Fashion & lifestyle content creator and mom</strong>",
-            "description": "💖 I finally found a watch that does its smartwatch thing and is fashionable. My new FANY Luna tracks my steps, monitors my sleep, keeps me connected to my phone and even checks my stress levels. The watch has an HD touch display that I just changed to be the cutest picture of my daughter. ✨"
-          }
-        },
-        "column_gRejTe": {
-          "type": "column",
-          "name": "Jennyg2bfit",
-          "settings": {
-            "cover_image": "shopify://shop_images/TS-HR-jennyg2bfit-002.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@Jennyg2bfit",
-            "url": "https://www.instagram.com/reel/DOgrkkGETJ2/",
-            "summary": "<strong>Yoga instructor, wife, mom, cat mom</strong>",
-            "description": "\"This watch has so many wonderful features and options to track your health, fitness and wellness journey. Not only does it have 110 workout modes and heart rate monitoring, it can also track sleep, your moods and stress and syncs up to your playlist too.\""
-          }
-        },
-        "column_hje6gR": {
-          "type": "column",
-          "name": "fashionmeetsritu",
-          "settings": {
-            "cover_image": "shopify://shop_images/fashionmeetsritu.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@fashionmeetsritu",
-            "url": "https://www.instagram.com/p/DPkVEcxkpNE/?img_index=1",
-            "summary": "<strong>A Fashion & Travel Creator</strong>",
-            "description": "Ready to shine with style and smarts? ✨ The FANY Luna Smartwatch is my new go-to for daily life, workouts, and everything in between! 🐾💻 From tracking my steps and heartrate to mood tracking and guiding me through calming breaths, this sleek watch keeps me balanced and looking chic."
-          }
-        },
-        "column_9bGgaL": {
-          "type": "column",
-          "name": "Fitandfashion with krista",
-          "settings": {
-            "cover_image": "shopify://shop_images/TS-HR-fitandfashionwithkrista-002.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@Fitandfashion with krista",
-            "url": "https://www.instagram.com/p/DPEMUfAjjuF/",
-            "summary": "<strong>A fashional mom offers style inspiration for women 30+</strong>",
-            "description": "\"When fashion meets function. 🤎 I have been blown away by this smartwatch…and it’s so pretty! Wearing it every single day! \""
-          }
-        },
-        "column_TEekKJ": {
-          "type": "column",
-          "name": "Anlena_ea",
-          "settings": {
-            "cover_image": "shopify://shop_images/TS-HR-anlena_ea-002.webp",
-            "color_scheme": "scheme-1",
-            "auth": "@Anlena_ea",
-            "url": "https://www.instagram.com/p/DPDGGRHDcdx/",
-            "summary": "<strong>She loves fashion and travel</strong>",
-            "description": "“My little wrist buddy.The FANY Luna Classic Smartwatch keeps me feeling balanced and looking cute all day. From tracking workouts and sleep to moods and heart rate—it’s got me covered. Honestly, every time I check it, I just smile.\""
-          }
-        },
-        "column_tj9fxM": {
-          "type": "column",
-          "name": "Niece_shauniece",
-          "disabled": true,
-          "settings": {
-            "cover_image": "shopify://shop_images/TS-HR-niece_shauniece-002.webp",
-            "color_scheme": "scheme-1",
-            "auth": "Niece_shauniece",
-            "url": "",
-            "summary": "<strong>A busy and fashionable mom</strong>",
-            "description": "\"I’m very pleased with the FANY watch overall. The design is lightweight, comfortable to wear for long periods, and fashionable enough to pair with both casual and professional outfits. Shipping was impressively fast, which made the experience even better.\""
-          }
-        }
-      },
-      "block_order": [
-        "column_AbyrhT",
-        "column_6Bd6cP",
-        "column_gRejTe",
-        "column_hje6gR",
-        "column_9bGgaL",
-        "column_TEekKJ",
-        "column_tj9fxM"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".review-section-title {color: #f2d0ad;}"
-      ],
-      "name": "红人评价",
-      "settings": {
-        "title": "Loved by Fashion, Mom, and Yoga Creators",
-        "heading_size": "h2",
-        "alignment": "center",
-        "section_color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
-        "color_scheme": "",
-        "padding_top": 48,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_7NVHGH": {
-      "type": "rich-text",
-      "blocks": {
-        "text_KaqjJG": {
-          "type": "text",
-          "settings": {
-            "text": "<p>FANY. The Intelligent Companion Created for Women<br/>FANY is more than a smartwatch brand; it’s a dedicated companion that truly understands the rhythms of a woman’s life. We are committed to fostering a fashion-forward, healthy, and intelligent lifestyle tailored for women.<br/><br/>FANY’s fusion of elegance and technology has earned global recognition. Our FANY Luna Smartwatch is the proud winner of the American Good Design 2025 Gold Award and the French Design Award 2025.<br/><br/>Our factory, focusing on smart wearables, was founded in 2014. We now employ over 1,300 people , including over 300 R&D engineers , and reinvest 20% of annual revenue into R&D each year. FANY continuously drives technological progress and product refinement. <br/><br/>We champion women — over 80% of our team — as the heart of FANY, embodying vision, elegance, and creative strength that lead the way in innovation and design. <br/><br/>We walk together. Every rhythm, every spark — we share, we feel, we glow.<br/><br/>FANY, See the Vibe.</p>",
-            "font_size": "f-18",
-            "text_width": 1340
-          }
-        }
-      },
-      "block_order": [
-        "text_KaqjJG"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "block_width": 1340
+        "title": "Timeless Gifts to Cherish Every Moment",
+        "title_font_size": 28,
+        "mobile_title_font_size": 24,
+        "title_font_weight": "700",
+        "title_line_height": 1.2,
+        "title_letter_spacing": 0,
+        "title_alignment": "center",
+        "title_color": "#1e0e06",
+        "subtitle": "",
+        "subtitle_font_size": 20,
+        "mobile_subtitle_font_size": 16,
+        "subtitle_font_weight": "500",
+        "subtitle_line_height": 1.4,
+        "subtitle_letter_spacing": 0,
+        "subtitle_alignment": "center",
+        "subtitle_color": "#3d3d3d",
+        "description": "Save 24% on Gift Sets",
+        "desc_font_size": 20,
+        "mobile_desc_font_size": 16,
+        "desc_font_weight": "400",
+        "desc_line_height": 1.5,
+        "desc_letter_spacing": 0,
+        "desc_alignment": "center",
+        "desc_color": "#686766",
+        "header_gap": 10,
+        "mobile_header_gap": 20,
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "view_more_font_size": 16,
+        "view_more_color": "#9e7163",
+        "view_more_hover_color": "#794538",
+        "text_safe_margin": 200,
+        "mobile_text_safe_margin": 16,
+        "image_gap": 16,
+        "mobile_image_gap": 12,
+        "card_border_radius": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_y": 40
       }
     }
   },
   "order": [
     "main_banner_gegQgM",
+    "sticky_category_navigation_HdcFVx",
+    "seasonal_product_carousel_rtTm8X",
+    "featured_product_showcase_EhbU3F",
+    "featured_product_showcase_DKim7e",
+    "seasonal_product_grid_7BVY8m",
+    "collapsible_content_AcjBtT",
     "main_banner_36B9fz",
     "transformative_journey_YjzYEc",
     "main_banner_6yLWWG",
@@ -1388,20 +1144,6 @@
     "gift_feature_PCWUQ3",
     "gift_feature_6n87Jd",
     "gift_feature_WakU4a",
-    "gift_sets_iGD6TX",
-    "collapsible_content_AcjBtT",
-    "slideshow_R8g6Mr",
-    "1763087890ff327669",
-    "luck_draw_HkBAia",
-    "multicolumn_UhPk3L",
-    "icon_group_C4fddH",
-    "one_image_word_xrj8Va",
-    "multicolumn_HqFCFH",
-    "one_image_word_DdnjGg",
-    "one_image_word_c4kw8n",
-    "one_image_word_jkM9Nc",
-    "icon_group_Tpm7wQ",
-    "creators_reviews_dX7kz8",
-    "rich_text_7NVHGH"
+    "gift_sets_iGD6TX"
   ]
 }
