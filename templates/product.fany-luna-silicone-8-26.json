@@ -2230,8 +2230,8 @@
       "type": "custom-watch-faces",
       "name": "自定义表盘",
       "settings": {
-        "header": "<p>Switch Your Mood, Customize Your Moment</p>",
-        "text": "<p>Access more than 150 watch faces crafted for every occasion, including elegant everyday looks, active sports themes, and creative illustrations. Elevate your design by creating a DIY watch face with your favorite personal photos, turning every glance at your wrist into a moment of joy.</p>",
+        "header": "<p>A New Look for Every Moment</p>",
+        "text": "<p>Explore 100+ watch faces for everyday wear, workouts, special occasions, and playful styles. Create a personalized watch face with your favorite photo in the FANY Fit App, and switch styles anytime to match your outfit, activity, or mood.</p>",
         "watch_image": "shopify://shop_images/Watch_Faces-1.webp",
         "image_group": "watch-faces-gallery-acfy0hfy",
         "title_font_size": 40,
