@@ -1864,8 +1864,8 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_1.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_1.webp",
-            "heading": "Complete Your Daily Rings — Move, Track & Achieve.",
-            "body": "Seamlessly monitor your daily steps, distance, and calories burned. Every target hit earns you exclusive achievement badges, rewarding key accomplishments like reaching 10,000 steps, logging 30 active minutes, and burning 500 calories a day. Track your movement and collect your wins!",
+            "heading": "Complete Your Daily Rings",
+            "body": "Track your daily steps, distance, calories burned, and active minutes at a glance. Reach your activity goals, earn achievement badges, and turn everyday movement into progress you can see.",
             "wide_card": false
           }
         },
@@ -1874,8 +1874,8 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_2.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_2.webp",
-            "heading": "Move Anytime. Train Scientifically.",
-            "body": "Get precise analysis for every way you move on the FANY Luna smartwatch. Track yoga, strength training, running courses, and more with real-time metrics for heart rate, distance, and calorie burn. By monitoring your heart rate zones and effort levels, you can understand your body's status, optimize results, and prevent overexertion. Choose your mode and make every effort count!",
+            "heading": "Train Smarter with Real-Time Metrics",
+            "body": "See key workout metrics such as heart rate, distance, pace, and calories burned while you move. Follow your workout data and heart rate zones to better understand your effort, adjust your pace, and make every session more purposeful.",
             "wide_card": false
           }
         },
@@ -1884,8 +1884,8 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_4.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_4.webp",
-            "heading": "Run with Your Wrist Coach. Elevate Your Fitness.",
-            "body": "Transform every stride into progress with your free wrist trainer in the FANY Luna smartwatch. Master your daily training with quick 6, 10, or 15 minute Easy Runs, multi-level Keep Fit courses from primary to advanced, and real-time tracking for heart rate, pace, and calories to crush your fitness goals. Push your limit and unlock your best performance day by day!",
+            "heading": "Guided Runs, Right on Your Wrist",
+            "body": "Follow quick 6-, 10-, or 15-minute Easy Runs and multi-level Keep Fit sessions directly from FANY Luna. View your heart rate, pace, and workout progress as you move, helping you build a more consistent running routine one session at a time.",
             "wide_card": false
           }
         },
@@ -1894,8 +1894,8 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-PC_M-_3.webp",
-            "heading": "Professional Workout Insights in the FANY Fit App.",
-            "body": "Transform raw numbers into actionable insights with deep workout analysis in the FANY Fit App. Master your athletic journey with daily, weekly, monthly, and yearly stats across active time, exercise logs, movement hours, calorie burn, and comprehensive workout metrics to visualize your continuous progress. Push your limits and unlock your full athletic potential day by day!",
+            "heading": "See Your Progress in the FANY Fit App",
+            "body": "Review your workouts and activity trends in one place with the FANY Fit App. Explore daily, weekly, monthly, and yearly summaries for active time, workout records, calories burned, movement, and other tracked activity metrics—so you can see patterns and follow your progress over time.",
             "wide_card": false
           }
         },
@@ -1904,8 +1904,8 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-PC-_5.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-M-_5.webp",
-            "heading": "Win Badges. Reward Your Health.",
-            "body": "Celebrate every health victory with the FANY Fit App. Crush your daily targets for fitness, steps, sleep, stress balance, activity goals, and streak days to earn exclusive themed achievement badges. Push your limits and build your badge collection day by day!",
+            "heading": "Turn Your Goals into Achievements",
+            "body": "Hit activity milestones and unlock themed achievement badges along the way. From steps and distance to active minutes and completed workouts, each badge gives you another reason to keep your routine going and celebrate the progress you've made.",
             "wide_card": true
           }
         }
@@ -1968,10 +1968,10 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_386edeaa-f47e-4ddb-ad93-12bef52009a0.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_adc88ad9-01ca-4609-a29a-c7299dc2489c.webp",
-            "title": "Monitor Your Heart Rate 24/7",
+            "title": "24/7 Heart Rate & HRV Tracking",
             "title_font_size": 28,
             "title_color": "#1e0e06",
-            "description": "FANY Luna provides continuous 24/7 tracking for your resting heart rate, active heart rate, and HRV. Receive instant notifications for high or low heart rate anomalies and irregular rhythms.",
+            "description": "Stay connected to your heart rate throughout the day with continuous monitoring of resting and active heart rate, plus HRV trends. Review your data over time to better understand how your body responds to daily activity, workouts, rest, and recovery.",
             "description_font_size": 16,
             "description_color": "#1e0e06",
             "mobile_title": "",
@@ -1989,10 +1989,10 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_fc34e342-84b3-4861-8b83-56724c59ba66.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_ecf49b0a-e643-47aa-b0d8-e79165cb344a.webp",
-            "title": "Track Oxygen Levels",
+            "title": "Stay in Tune with Your SpO₂",
             "title_font_size": 28,
             "title_color": "#1e0e06",
-            "description": "FANY Luna keeps a watchful eye on your SpO2 status throughout your high-energy days and quiet nights. Receive instant alerts for low oxygen levels to prevent fatigue and dizziness.",
+            "description": "Measure your blood oxygen (SpO₂) levels right from your wrist and review your readings over time. FANY Luna makes it easy to keep an eye on your blood oxygen trends alongside your other everyday wellness data.",
             "description_font_size": 16,
             "description_color": "#1e0e06",
             "mobile_title": "",
@@ -2010,10 +2010,10 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_b20874b7-2e45-4a49-9bf3-1e85ff5a5727.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_91e833f0-e7e5-4ddc-acb2-86018d2f4dd2.webp",
-            "title": "Learn Your Menstrual Cycle",
+            "title": "Stay in Tune with Your Cycle",
             "title_font_size": 28,
             "title_color": "#1e0e06",
-            "description": "Understanding your menstrual health helps you optimize your daily workouts and recharge when your body needs it most. FANY Luna smartwatch pairs with the FANY Fit App to log ovulation trends, period length, and physiological shifts with quiet precision.",
+            "description": "Track your period and keep your cycle history organized with FANY Luna and the FANY Fit App. Log cycle information, review past patterns, and view estimated upcoming cycle dates to help you stay informed and plan ahead.",
             "description_font_size": 16,
             "description_color": "#1e0e06",
             "mobile_title": "",
@@ -2031,10 +2031,10 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-PC-06.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M-06.webp",
-            "title": "Get Your Sleep Insight",
+            "title": "Understand Your Sleep, Night by Night",
             "title_font_size": 28,
             "title_color": "#1e0e06",
-            "description": "Crafted with a soft, lightweight silicone strap for comfortable overnight wear, the FANY Luna smartwatch continuously tracks your deep sleep, light sleep, REM stages, and awake time with quiet precision.",
+            "description": "Wear FANY Luna overnight to track your total sleep time, deep sleep, light sleep, REM sleep, and awake periods. Review your nightly sleep patterns in the FANY Fit App and see how your sleep changes over time, helping you build a more consistent bedtime routine.",
             "description_font_size": 16,
             "description_color": "#1e0e06",
             "mobile_title": "",
@@ -2052,10 +2052,10 @@
           "settings": {
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-PC_7dca3835-0e2d-499b-8b6e-c518274c9d6f.webp",
             "mobile_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_71eead53-bcf4-4e78-864c-ebf47f36a1ee.webp",
-            "title": "Read Your Emotions",
+            "title": "Understand Your Stress, Find Your Balance",
             "title_font_size": 28,
             "title_color": "#1e0e06",
-            "description": "A woman's heart rate, sleep quality, and energy levels are closely linked to her emotional health. FANY Luna smartwatch stays seamlessly by your side from workout sessions to quiet evenings, translating your biometric signals into clear emotional health insights.",
+            "description": "Stay more aware of your daily stress with insights based on your tracked wellness data. FANY Luna helps you follow stress trends throughout the day, giving you a clearer view of when your body may be under more strain and when it’s time to slow down, reset, and recharge.",
             "description_font_size": 16,
             "description_color": "#1e0e06",
             "mobile_title": "",
@@ -2078,7 +2078,7 @@
       ],
       "name": "Highlights 图片轮播",
       "settings": {
-        "heading": "Highlights: Fuel Your Vitality and Health",
+        "heading": "Everyday Wellness, Closer to Your Heart",
         "heading_font_size": 40,
         "mobile_heading": "",
         "mobile_heading_font_size": 32,
