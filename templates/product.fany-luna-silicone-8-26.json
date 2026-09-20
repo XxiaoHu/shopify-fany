@@ -2318,7 +2318,7 @@
           "settings": {
             "heading": "2. Does FANY Luna fit small wrists?",
             "icon": "none",
-            "row_content": "<p>Yes, FANY Luna has a compact 37.5 mm case, weighs just 29.2 g, and fits wrist circumferences from 144 to 202 mm (5.67 to 7.95 inches). Its slim profile is designed to feel comfortable on smaller wrists without looking bulky.</p>",
+            "row_content": "<p>Yes, FANY Luna has a compact 37.5 mm watch diameter, weighs just 29.2 g, and fits wrist circumferences from 144 to 202 mm (5.67 to 7.95 inches). Its slim profile is designed to feel comfortable on smaller wrists without looking bulky.</p>",
             "page": ""
           }
         },
@@ -2384,6 +2384,15 @@
             "row_content": "<p>FANY Luna offers up to 7 days of battery life under typical use. Actual battery life may vary depending on features, notification frequency, workout tracking, display use, and other settings.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_itdjh9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "10. What notifications and everyday smart features does FANY Luna support?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna can display notifications for incoming calls, messages, calendar events, and supported apps when connected to your phone. It also includes everyday tools such as alarms, timers, a stopwatch, weather information, calendar features, and more.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -2395,7 +2404,8 @@
         "collapsible_row_cxPQFx",
         "collapsible_row_7hieFk",
         "collapsible_row_CbXBqt",
-        "collapsible_row_et434w"
+        "collapsible_row_et434w",
+        "collapsible_row_itdjh9"
       ],
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
