@@ -2325,63 +2325,63 @@
         "collapsible_row_WyzMqb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "3. Is FANY Luna hypoallergenic?",
+            "heading": "3. Can I wear FANY Luna all day and while sleeping?",
             "icon": "none",
-            "row_content": "<p>FANY Luna uses skin-friendly materials, and the silicone version features a hypoallergenic silicone band designed for comfortable everyday wear. If you have a known material allergy or particularly sensitive skin, check the material specifications and consult a healthcare professional if needed.</p>",
+            "row_content": "<p>Yes. FANY Luna is designed for comfortable extended wear throughout the day and overnight. Its lightweight case and soft silicone band make it easy to wear during work, workouts, daily activities, and sleep tracking.</p>",
             "page": ""
           }
         },
         "collapsible_row_nBLnWt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "4. How does the FANY Luna smartwatch measure steps?",
+            "heading": "4. How does FANY Luna track sleep?",
             "icon": "none",
-            "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.<br/>From walking the dog, commuting, or taking a mindful stroll after dinner, every step gently reminds you: staying active is also a form of self-care.</p>",
+            "row_content": "<p>FANY Luna tracks your total sleep time, deep sleep, light sleep, REM sleep, and awake periods while you wear it overnight. You can review your sleep history and nightly patterns in the FANY Fit app to see how your sleep changes over time.</p>",
             "page": ""
           }
         },
         "collapsible_row_zcaimh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "5. How does FANY Luna track sleep?",
+            "heading": "5. Does FANY Luna support menstrual cycle tracking?",
             "icon": "none",
-            "row_content": "<p>FANY Luna uses an advanced sleep algorithm combined with a Professional-grade sensor sensor and heart rate monitoring to analyze your sleep stages — light, deep, and REM.<br/>It turns sleep data into insights <br/><br/>FANY Luna understands that sleep can be easily disrupted — by work thoughts that won’t stop, a child’s call at night, or the quiet worries that come before rest.<br/>It helps you see your real sleep rhythm, reminding you that good rest starts with understanding yourself. </p>",
+            "row_content": "<p>Yes. FANY Luna and the FANY Fit App let you log cycle information, review your period history, and view estimated upcoming cycle dates. This makes it easier to keep your cycle information organized and plan ahead.</p>",
             "page": ""
           }
         },
         "collapsible_row_cxPQFx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "6. Does FANY Luna support menstrual cycle tracking?",
+            "heading": "6. How does FANY Luna track stress and mood?",
             "icon": "none",
-            "row_content": "<p>Menstrual Cycle Tracking Available.<br/>FANY Luna understands women’s changing rhythms — from regular periods to pregnancy planning and perimenopause.<br/>It tracks your full cycle, predicts upcoming periods, and helps you notice mood and body changes, keeping you connected with your body at every stage.</p>",
+            "row_content": "<p>FANY Luna helps you follow daily stress trends using tracked wellness data such as heart rate and HRV. For mood tracking, you can also record simple check-ins such as pleasant, neutral, or unpleasant moments and review them alongside your other wellness data in the FANY Fit App.</p>",
             "page": ""
           }
         },
         "collapsible_row_7hieFk": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "7. How does the FANY Luna smartwatch measure stress and mood?",
+            "heading": "7. Does FANY Luna have built-in GPS?",
             "icon": "none",
-            "row_content": "<p>FANY Luna uses Professional-grade sensor multi-sensor technology to analyze — heart rate, pulse, blood pressure, blood oxygen, sleep quality, and breathing rate — to evaluate your stress level. <br/><br/>It senses rising tension even before you overwhelming— from juggling work deadlines to caring for kids and keeping up with home life — reminding you to slow down, breathe, and find balance.</p>",
+            "row_content": "<p>FANY Luna does not use standalone GPS for outdoor running. For GPS-based distance, time, and pace, connect the watch to your phone so it can use your phone’s GPS.</p>",
             "page": ""
           }
         },
         "collapsible_row_CbXBqt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "8. Is FANY waterproof?",
+            "heading": "8. Is FANY Luna waterproof?",
             "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is 1ATM waterproof, meaning it’s safe for everyday use and swimming in shallow water. However, please avoid hot water, saunas, or wearing it while showering to protect the sensors and coating.</p>",
+            "row_content": "<p>FANY Luna is IP68 water resistant, making it suitable for everyday exposure to sweat, rain, and splashes. Follow the product care instructions for swimming, showering, hot water, saunas, and other prolonged water exposure.</p>",
             "page": ""
           }
         },
         "collapsible_row_et434w": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "9. How long does the battery last on a single charge?",
+            "heading": "9. How long does the FANY Luna battery last?",
             "icon": "none",
-            "row_content": "<p>FANY Luna lasts up to 7 days on a single charge keeping up with your week. Whether you’re working, family traveling, or simply enjoying “me time,” it stays by your side without constant recharging.</p>",
+            "row_content": "<p>FANY Luna offers up to 7 days of battery life under typical use. Actual battery life may vary depending on features, notification frequency, workout tracking, display use, and other settings.</p>",
             "page": ""
           }
         }
