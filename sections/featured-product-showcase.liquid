@@ -5,7 +5,7 @@
   assign feature_desktop_image = section.settings.feature_desktop_image
   assign feature_mobile_image = section.settings.feature_mobile_image
   assign feature_fallback_image = feature_desktop_image | default: feature_mobile_image
-  assign desktop_gap_total = section.settings.desktop_columns | minus: 1 | times: 32
+  assign desktop_gap_total_cqi = section.settings.desktop_columns | minus: 1 | times: 32.0 | divided_by: 15.2
 -%}
 
 <featured-product-showcase
@@ -21,7 +21,7 @@
     --fps-media-background: {{ section.settings.media_background_color }};
     --fps-desktop-columns: {{ section.settings.desktop_columns }};
     --fps-mobile-columns: {{ section.settings.mobile_columns }};
-    --fps-desktop-card-width: calc((100% - {{ desktop_gap_total }}px) / {{ section.settings.desktop_columns }});
+    --fps-desktop-card-width: calc((100% - {{ desktop_gap_total_cqi }}cqi) / {{ section.settings.desktop_columns }});
     --fps-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
     --fps-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
     --fps-desktop-description-size: {{ section.settings.desktop_description_size }}px;
