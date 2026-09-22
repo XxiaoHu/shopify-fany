@@ -163,17 +163,6 @@
     "seasonal_product_carousel_rtTm8X": {
       "type": "seasonal-product-carousel",
       "blocks": {
-        "card_tg9Hna": {
-          "type": "card",
-          "settings": {
-            "desktop_image": "shopify://shop_images/watchface-labor1.webp",
-            "mobile_image": "shopify://shop_images/watchface-labor1.webp",
-            "image_alt": "",
-            "heading": "Holiday Sip",
-            "description": "Orange sips intertwine with soft floral shadows; cherish Labor Day's quiet elegance with a moment of refined ease.",
-            "link": ""
-          }
-        },
         "card_mRKnM4": {
           "type": "card",
           "settings": {
@@ -185,17 +174,6 @@
             "link": ""
           }
         },
-        "card_gUtFbG": {
-          "type": "card",
-          "settings": {
-            "desktop_image": "shopify://shop_images/watchface-labor3.webp",
-            "mobile_image": "shopify://shop_images/watchface-labor3.webp",
-            "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
-            "link": ""
-          }
-        },
         "card_UNhKrX": {
           "type": "card",
           "settings": {
@@ -203,7 +181,29 @@
             "mobile_image": "shopify://shop_images/watchface-labor4.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "description": "Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the holiday.",
+            "link": ""
+          }
+        },
+        "card_gUtFbG": {
+          "type": "card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-labor3.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor3.webp",
+            "image_alt": "",
+            "heading": "Juice Cheers",
+            "description": "An elegant toast with chilled juice by the pool- cheers! Treat yourself to effortless style this Labor Day weekend.",
+            "link": ""
+          }
+        },
+        "card_tg9Hna": {
+          "type": "card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-labor1.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor1.webp",
+            "image_alt": "",
+            "heading": "Holiday Sip",
+            "description": "Orange sips intertwine with soft floral shadows; cherish Labor Day's quiet elegance with a moment of refined ease.",
             "link": ""
           }
         },
@@ -213,17 +213,17 @@
             "desktop_image": "shopify://shop_images/watchface-labor5.webp",
             "mobile_image": "shopify://shop_images/watchface-labor5.webp",
             "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "heading": "BBQ Spark",
+            "description": "Rising flames and sparkling fireworks unleash pure joy through endless BBQ feasts with your loved ones and friends.",
             "link": ""
           }
         }
       },
       "block_order": [
-        "card_tg9Hna",
         "card_mRKnM4",
-        "card_gUtFbG",
         "card_UNhKrX",
+        "card_gUtFbG",
+        "card_tg9Hna",
         "card_bChxfK"
       ],
       "name": "节日产品轮播",
