@@ -465,9 +465,10 @@
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface1.webp",
+            "mobile_image": "shopify://shop_images/watchface1.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "It's not difficult to be a competent business person, starting from the dial",
             "link": ""
           }
         },
@@ -475,9 +476,10 @@
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface2.webp",
+            "mobile_image": "shopify://shop_images/watchface2.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "A delicate butterfly evokes freedom, beauty, and imagination.",
             "link": ""
           }
         },
@@ -487,7 +489,7 @@
             "desktop_image": "shopify://shop_images/watchface3.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "The carefree spirit of a tropical escape, captured in every moment.",
             "link": ""
           }
         },
@@ -497,7 +499,7 @@
             "desktop_image": "shopify://shop_images/watchface4.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "Like a rose in full bloom, every day is a chance to shine beautifully.",
             "link": ""
           }
         },
@@ -507,7 +509,7 @@
             "desktop_image": "shopify://shop_images/watchface6.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "Feel the thrill of movement and keep your day moving forward.",
             "link": ""
           }
         },
@@ -517,7 +519,7 @@
             "desktop_image": "shopify://shop_images/watchface5.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "The Energy of Movement, Expressed in Colorful Rainbow Tracks.",
             "link": ""
           }
         },
@@ -527,7 +529,7 @@
             "desktop_image": "shopify://shop_images/watchface8.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "Life should shine brightly every day. Find beauty in every moment.",
             "link": ""
           }
         },
@@ -537,7 +539,7 @@
             "desktop_image": "shopify://shop_images/watchface7.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the season.",
+            "description": "The Charm of Colorful Gradients in Large Figures",
             "link": ""
           }
         }
