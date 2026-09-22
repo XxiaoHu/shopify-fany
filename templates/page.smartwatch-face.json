@@ -505,13 +505,13 @@
             "link": ""
           }
         },
-        "product_card_MJzcQL": {
+        "product_card_TqJAy9": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface6.webp",
+            "desktop_image": "shopify://shop_images/watchface8.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Feel the thrill of movement and keep your day moving forward.",
+            "description": "Life should shine brightly every day. Find beauty in every moment.",
             "link": ""
           }
         },
@@ -525,13 +525,13 @@
             "link": ""
           }
         },
-        "product_card_TqJAy9": {
+        "product_card_MJzcQL": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface8.webp",
+            "desktop_image": "shopify://shop_images/watchface6.webp",
             "image_alt": "",
             "heading": "",
-            "description": "Life should shine brightly every day. Find beauty in every moment.",
+            "description": "Feel the thrill of movement and keep your day moving forward.",
             "link": ""
           }
         },
@@ -551,9 +551,9 @@
         "product_card_ciHBbg",
         "product_card_L6CXwa",
         "product_card_fRHKNH",
-        "product_card_MJzcQL",
-        "product_card_ReEieb",
         "product_card_TqJAy9",
+        "product_card_ReEieb",
+        "product_card_MJzcQL",
         "product_card_3pp4GJ"
       ],
       "name": "节日产品网格",
