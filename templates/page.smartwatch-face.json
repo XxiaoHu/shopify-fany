@@ -593,6 +593,15 @@
     "collapsible_content_AcjBtT": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are FANY watch faces free to download?",
+            "icon": "none",
+            "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_9Wp6DL": {
           "type": "collapsible_row",
           "settings": {
@@ -605,36 +614,27 @@
         "collapsible_row_7hieFk": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Does the gift set come with a gift box?",
+            "heading": "Can I use my own photo as a watch face?",
             "icon": "none",
-            "row_content": "<p>No. The gift set does not include a decorative gift box. The butterfly bracelet comes with a soft pouch for safe storage and gifting.</p>",
+            "row_content": "<p>Yes! You can personalize your FANY smartwatch with your own photos, whether it’s a favorite memory, a loved one, or an image that matches your style.</p>",
             "page": ""
           }
         },
         "collapsible_row_cxPQFx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I purchase the butterfly bracelet separately?",
+            "heading": "How can I create a custom watch face with my own photo?",
             "icon": "none",
-            "row_content": "<p>At this time, the Mother of Pearl Butterfly Bracelet is exclusively available as part of the FANY Luna Leather Smartwatch Gift Set and is not sold separately. This exclusive pairing was thoughtfully designed to create a meaningful gift for life's most special moments.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rdVrU8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What material is the butterfly bracelet made of?",
-            "icon": "none",
-            "row_content": "<p>The butterfly bracelet features:<br/>14K gold PVD-plated copper<br/>Mother of Pearl<br/>Synthetic Cubic Zirconia<br/>The butterfly design symbolizes transformation, confidence, and endless possibilities.</p>",
+            "row_content": "<p>It’s easy to create a personalized watch face:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>4. Scroll down and find Photo.<br/>5. Tap Photos and upload your favorite image.<br/>Follow the prompts to set your photo as your watch face.</p>",
             "page": ""
           }
         },
         "collapsible_row_zzkb6r": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What is the warranty period for the butterfly bracelet?",
+            "heading": "How many watch faces does FANY offer?",
             "icon": "none",
-            "row_content": "<p>The butterfly bracelet included in the FANY Luna Leather Smartwatch Gift Set comes with a 6-month warranty, the same as the watch band warranty. The warranty covers manufacturing defects under normal use conditions.</p>",
+            "row_content": "<p>FANY offers 150+ beautifully designed watch faces, with styles ranging from elegant and minimalist to colorful, seasonal, and holiday-inspired designs. New designs are added regularly to keep your watch feeling fresh and personal.</p>",
             "page": ""
           }
         },
@@ -739,10 +739,10 @@
         }
       },
       "block_order": [
+        "collapsible_row_rdVrU8",
         "collapsible_row_9Wp6DL",
         "collapsible_row_7hieFk",
         "collapsible_row_cxPQFx",
-        "collapsible_row_rdVrU8",
         "collapsible_row_zzkb6r",
         "collapsible_row_NbBki4",
         "collapsible_row_zcaimh",
