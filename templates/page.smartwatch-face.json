@@ -357,25 +357,25 @@
     "featured_product_showcase_DKim7e": {
       "type": "featured-product-showcase",
       "blocks": {
+        "product_card_7qr9WT": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-shchol3.webp",
+            "mobile_image": "shopify://shop_images/watchface-shchol3.webp",
+            "image_alt": "",
+            "heading": "Home Run",
+            "description": "Celebrating growth and women’s personal home‑run victories. This watch face features retro baseball artwork, and clearly displays your time, date, steps, heart rate and calories.",
+            "link": ""
+          }
+        },
         "product_card_gBNGHi": {
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-shchol2.webp",
             "mobile_image": "shopify://shop_images/watchface-shchol2.webp",
             "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
-            "link": ""
-          }
-        },
-        "product_card_XdxFKq": {
-          "type": "product_card",
-          "settings": {
-            "desktop_image": "shopify://shop_images/watchface-shchol5.webp",
-            "mobile_image": "shopify://shop_images/watchface-shchol5.webp",
-            "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "heading": "Pigskin Pretty",
+            "description": "Honoring women’s balance of power and beauty. This watch face features vintage pigskin football, dainty bow accents and the \"See the Vibe\" motto, and clearly displays your time, steps, heart rate and calories on‑screen.",
             "link": ""
           }
         },
@@ -385,8 +385,19 @@
             "desktop_image": "shopify://shop_images/watchface-shchol4.webp",
             "mobile_image": "shopify://shop_images/watchface-shchol4.webp",
             "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "heading": "Street Flame",
+            "description": "Celebrating women’s fearless, fiery drive to move forward. This watch face features bold skate‑art and flame graphics, and clearly displays your time, date, heart rate, and steps.",
+            "link": ""
+          }
+        },
+        "product_card_XdxFKq": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-shchol5.webp",
+            "mobile_image": "shopify://shop_images/watchface-shchol5.webp",
+            "image_alt": "",
+            "heading": "Beat Dropper",
+            "description": "Celebrating women’s vibrant rhythm and unapologetic self‑expression. This watch face features retro turntable artwork and clearly displays your time, calories, heart rate, and battery level on‑screen.",
             "link": ""
           }
         },
@@ -396,27 +407,18 @@
             "desktop_image": "shopify://shop_images/watchface-shchol6.webp",
             "mobile_image": "shopify://shop_images/watchface-shchol6.webp",
             "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
-            "link": ""
-          }
-        },
-        "product_card_7qr9WT": {
-          "type": "product_card",
-          "settings": {
-            "image_alt": "",
-            "heading": "Surf Holiday",
-            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "heading": "Gridiron Glory",
+            "description": "Celebrating the champion spirit within every woman. This watch face features bold helmet and football graphics and clearly displays your time, steps, heart rate, and calories on‑screen, bringing champion spirit to your daily wear.",
             "link": ""
           }
         }
       },
       "block_order": [
+        "product_card_7qr9WT",
         "product_card_gBNGHi",
-        "product_card_XdxFKq",
         "product_card_QTHBaU",
-        "product_card_ND3mez",
-        "product_card_7qr9WT"
+        "product_card_XdxFKq",
+        "product_card_ND3mez"
       ],
       "name": "主视觉产品展示",
       "settings": {
