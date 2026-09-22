@@ -274,17 +274,6 @@
             "link": ""
           }
         },
-        "product_card_dBiWYp": {
-          "type": "product_card",
-          "settings": {
-            "desktop_image": "shopify://shop_images/watchface-women5.webp",
-            "mobile_image": "shopify://shop_images/watchface-women5.webp",
-            "image_alt": "",
-            "heading": "She Leads",
-            "description": "Bold pop-art colors capture a powerful presence. Inspiring action with confidence, honoring women leaders who march forward.",
-            "link": ""
-          }
-        },
         "product_card_RTBJqB": {
           "type": "product_card",
           "settings": {
@@ -306,13 +295,24 @@
             "description": "Classic pop art reflects red-lip glamour. Grasp your power to ignite dream sparks and shine as the star of your life.",
             "link": ""
           }
+        },
+        "product_card_dBiWYp": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-women5.webp",
+            "mobile_image": "shopify://shop_images/watchface-women5.webp",
+            "image_alt": "",
+            "heading": "She Leads",
+            "description": "Bold pop-art colors capture a powerful presence. Inspiring action with confidence, honoring women leaders who march forward.",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "product_card_pRbLNe",
-        "product_card_dBiWYp",
         "product_card_RTBJqB",
-        "product_card_fqEYJR"
+        "product_card_fqEYJR",
+        "product_card_dBiWYp"
       ],
       "name": "主视觉产品展示",
       "settings": {
