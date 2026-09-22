@@ -228,7 +228,7 @@
       ],
       "name": "节日产品轮播",
       "settings": {
-        "heading": "New in: Labor Day",
+        "heading": "New in: Labor Day Watch Face",
         "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
         "carousel_label": "节日产品",
         "navigation_anchor": "labor-day",
@@ -316,7 +316,7 @@
       ],
       "name": "主视觉产品展示",
       "settings": {
-        "heading": "Women's Equality Day",
+        "heading": "Women's Equality Day Watch Face",
         "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
         "navigation_anchor": "Women's Equality Day",
         "carousel_label": "节日产品",
@@ -420,7 +420,7 @@
       ],
       "name": "主视觉产品展示",
       "settings": {
-        "heading": "Back to School",
+        "heading": "Back to School Watch Face",
         "description": "<p>Distinct silhouettes and thoughtful details. This season’s watches explore texture, proportion, and finish with quiet confidence.</p>",
         "navigation_anchor": "Back to School",
         "carousel_label": "节日产品",
