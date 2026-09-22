@@ -650,90 +650,9 @@
         "collapsible_row_zcaimh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How does FANY Luna Leather Smartwatch track sleep?",
+            "heading": "Can I change my watch face whenever I want?",
             "icon": "none",
-            "row_content": "<p>FANY Luna uses an advanced sleep algorithm combined with a Professional-grade sensor sensor and heart rate monitoring to analyze your sleep stages — light, deep, and REM.<br/>It turns sleep data into insights <br/><br/>FANY Luna understands that sleep can be easily disrupted — by work thoughts that won’t stop, a child’s call at night, or the quiet worries that come before rest.<br/>It helps you see your real sleep rhythm, reminding you that good rest starts with understanding yourself. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_GBhf9M": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How does FANY Luna Leather Smartwatch measure heart rate?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a Professional-grade sensor optical sensor to detect tiny changes in blood flow beneath your skin — capturing your heartbeats and the subtle expansion and contraction of blood vessels to measure heart rate precisely.<br/><br/>It helps you see how your body responds through real moments of life:<br/>the pressure of back-to-back meetings, the calm after yoga, the rush of family routines, or the quiet pause before sleep, reminding you to care for your body the way you care for everything else.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_WyzMqb": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How does the FANY Luna Leather Smartwatch measure blood oxygen?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a professional-grade sensor with red and infrared light technology to measure how much light your blood absorbs, accurately estimating your blood oxygen (SpO₂) level.<br/><br/>It helps you understand your breathing and energy in everyday life — when long meetings leave you drained, late nights bring fatigue, or you just need a deep breath after caring for everyone else.<br/>A quiet reminder that your body also needs its own space to recover and breathe.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_nBLnWt": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How does the FANY Luna Leather Smartwatch measure steps?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.<br/>From walking the dog, commuting, or taking a mindful stroll after dinner, every step gently reminds you: staying active is also a form of self-care.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_YpiDDn": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "ls FANY Luna Leather Smartwatch compatible with my phone?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is compatible with Android™ and iOS devices. Android phones require Android 6.0+ or higher; iOS phones require iOS 9.0+,iPhone 5S).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download). </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_et434w": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How long does the battery last on a single charge?",
-            "icon": "none",
-            "row_content": "<p>FANY Luna lasts up to 7 days on a single charge keeping up with your week. Whether you’re working, family traveling, or simply enjoying “me time,” it stays by your side without constant recharging.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_eyGne4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Does it support message notifications (WhatsApp, Instagram, etc.)?",
-            "icon": "none",
-            "row_content": "<p>Yes — FANY Luna supports phone notifications including messaging apps like WhatsApp and Instagram. You can choose which apps to receive alerts from and turn off the ones you don’t need. so your wrist only lights up for what truly matters to you.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_7exWnC": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "ls the watch safe for sensitive skin?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna uses a genuine cowhide leather strap that’s soft, breathable, and gentle on the skin.<br/>It’s carefully crafted to minimize irritation, making it comfortable and safe even for sensitive skin.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_CEezCT": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Do I need my phone nearby?",
-            "icon": "none",
-            "row_content": "<p>you do need to have your phone nearby and Bluetooth turned on. If you step away for a bit, your health data stays stored on the watch and will sync automatically once reconnected. </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_CbXBqt": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Is FANY Luna Leather Smartwatch waterproof?",
-            "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is 1ATM waterproof, meaning it’s safe for everyday use and swimming in shallow water. However, please avoid hot water, saunas, or wearing it while showering to protect the sensors and coating.</p>",
+            "row_content": "<p>Absolutely. You can switch between downloaded watch faces and your custom photo whenever you like, allowing your FANY smartwatch to match your outfit, mood, activity, or the occasion.</p>",
             "page": ""
           }
         }
@@ -745,16 +664,7 @@
         "collapsible_row_cxPQFx",
         "collapsible_row_zzkb6r",
         "collapsible_row_NbBki4",
-        "collapsible_row_zcaimh",
-        "collapsible_row_GBhf9M",
-        "collapsible_row_WyzMqb",
-        "collapsible_row_nBLnWt",
-        "collapsible_row_YpiDDn",
-        "collapsible_row_et434w",
-        "collapsible_row_eyGne4",
-        "collapsible_row_7exWnC",
-        "collapsible_row_CEezCT",
-        "collapsible_row_CbXBqt"
+        "collapsible_row_zcaimh"
       ],
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
