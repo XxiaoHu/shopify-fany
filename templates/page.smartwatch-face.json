@@ -167,7 +167,7 @@
           "type": "card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor1.webp",
-            "mobile_image": "shopify://shop_images/watchface-labor2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor1.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -178,6 +178,7 @@
           "type": "card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor2.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -188,6 +189,7 @@
           "type": "card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor3.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor3.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -198,6 +200,7 @@
           "type": "card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor4.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor4.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -208,6 +211,7 @@
           "type": "card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor5.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor5.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -285,6 +289,7 @@
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-women3.webp",
+            "mobile_image": "shopify://shop_images/watchface-women3.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -295,6 +300,7 @@
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-women4.webp",
+            "mobile_image": "shopify://shop_images/watchface-women4.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
@@ -315,6 +321,7 @@
         "navigation_anchor": "Women's Equality Day",
         "carousel_label": "节日产品",
         "feature_desktop_image": "shopify://shop_images/watchface-women1.webp",
+        "feature_mobile_image": "shopify://shop_images/watchface-women1.webp",
         "feature_image_alt": "",
         "feature_link": "",
         "desktop_columns": 3,
@@ -350,6 +357,17 @@
     "featured_product_showcase_DKim7e": {
       "type": "featured-product-showcase",
       "blocks": {
+        "product_card_gBNGHi": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface-shchol2.webp",
+            "mobile_image": "shopify://shop_images/watchface-shchol2.webp",
+            "image_alt": "",
+            "heading": "Surf Holiday",
+            "description": "Design Story: Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of",
+            "link": ""
+          }
+        },
         "product_card_XdxFKq": {
           "type": "product_card",
           "settings": {
@@ -388,6 +406,7 @@
         }
       },
       "block_order": [
+        "product_card_gBNGHi",
         "product_card_XdxFKq",
         "product_card_ND3mez",
         "product_card_QTHBaU",
