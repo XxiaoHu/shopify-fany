@@ -10,6 +10,8 @@
     --spg-card-heading-color: {{ section.settings.card_heading_color }};
     --spg-card-description-color: {{ section.settings.card_description_color }};
     --spg-media-background: {{ section.settings.media_background_color }};
+    --spg-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --spg-desktop-description-width: {{ section.settings.desktop_description_width }}px;
     --spg-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
     --spg-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
     --spg-desktop-description-size: {{ section.settings.desktop_description_size }}px;
@@ -22,6 +24,8 @@
     --spg-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
     --spg-mobile-description-size: {{ section.settings.mobile_description_size }}px;
     --spg-mobile-description-line-height: {{ section.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --spg-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --spg-mobile-description-width: {{ section.settings.mobile_description_width }}px;
     --spg-mobile-card-heading-size: {{ section.settings.mobile_card_heading_size }}px;
     --spg-mobile-card-heading-line-height: {{ section.settings.mobile_card_heading_line_height | divided_by: 100.0 }};
     --spg-mobile-card-description-size: {{ section.settings.mobile_card_description_size }}px;
@@ -148,6 +152,8 @@
     { "type": "color", "id": "media_background_color", "label": "图片区域背景颜色", "default": "#f7f7f7" },
 
     { "type": "header", "content": "PC 字号与行高" },
+    { "type": "range", "id": "desktop_heading_width", "min": 160, "max": 1200, "step": 16, "unit": "px", "label": "标题宽度", "default": 416 },
+    { "type": "range", "id": "desktop_description_width", "min": 160, "max": 1200, "step": 16, "unit": "px", "label": "描述宽度", "default": 576 },
     { "type": "range", "id": "desktop_heading_size", "min": 16, "max": 56, "step": 1, "unit": "px", "label": "标题字号", "default": 28 },
     { "type": "range", "id": "desktop_heading_line_height", "min": 80, "max": 200, "step": 5, "unit": "%", "label": "标题行高", "default": 120 },
     { "type": "range", "id": "desktop_description_size", "min": 12, "max": 32, "step": 1, "unit": "px", "label": "描述字号", "default": 16 },
@@ -158,6 +164,8 @@
     { "type": "range", "id": "desktop_card_description_line_height", "min": 100, "max": 220, "step": 5, "unit": "%", "label": "卡片描述行高", "default": 150 },
 
     { "type": "header", "content": "移动端字号与行高" },
+    { "type": "range", "id": "mobile_heading_width", "min": 120, "max": 500, "step": 4, "unit": "px", "label": "标题宽度", "default": 268 },
+    { "type": "range", "id": "mobile_description_width", "min": 120, "max": 500, "step": 4, "unit": "px", "label": "描述宽度", "default": 356 },
     { "type": "range", "id": "mobile_heading_size", "min": 16, "max": 40, "step": 1, "unit": "px", "label": "标题字号", "default": 24 },
     { "type": "range", "id": "mobile_heading_line_height", "min": 80, "max": 200, "step": 5, "unit": "%", "label": "标题行高", "default": 120 },
     { "type": "range", "id": "mobile_description_size", "min": 12, "max": 28, "step": 1, "unit": "px", "label": "描述字号", "default": 16 },

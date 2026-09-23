@@ -32,7 +32,7 @@
 }
 
 .featured-product-showcase__heading {
-  width: min(100%, 416px);
+  width: min(100%, var(--fps-desktop-heading-width, 416px));
   margin: 0;
   color: var(--fps-heading-color, #1e0e06);
   font-family: var(--font-body-family);
@@ -43,7 +43,7 @@
 }
 
 .featured-product-showcase__description {
-  width: min(100%, 576px);
+  width: min(100%, var(--fps-desktop-description-width, 576px));
   color: var(--fps-description-color, #686766);
   font-family: var(--font-body-family);
   font-size: var(--fps-desktop-description-size, 16px);
@@ -266,12 +266,13 @@
   }
 
   .featured-product-showcase__heading {
-    width: min(100%, 300px);
+    width: min(100%, var(--fps-mobile-heading-width, 300px));
     font-size: var(--fps-mobile-heading-size, 24px);
     line-height: var(--fps-mobile-heading-line-height, 1.2);
   }
 
   .featured-product-showcase__description {
+    width: min(100%, var(--fps-mobile-description-width, 356px));
     font-size: var(--fps-mobile-description-size, 16px);
     line-height: var(--fps-mobile-description-line-height, 1.5);
   }

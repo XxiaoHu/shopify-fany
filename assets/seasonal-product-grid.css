@@ -31,6 +31,7 @@
 }
 
 .seasonal-product-grid__heading {
+  width: min(100%, var(--spg-desktop-heading-width, 416px));
   margin: 0;
   color: var(--spg-heading-color, #1e0e06);
   font-family: var(--font-body-family);
@@ -41,7 +42,7 @@
 }
 
 .seasonal-product-grid__description {
-  width: min(100%, 576px);
+  width: min(100%, var(--spg-desktop-description-width, 576px));
   color: var(--spg-description-color, #686766);
   font-family: var(--font-body-family);
   font-size: var(--spg-desktop-description-size, 16px);
@@ -174,12 +175,13 @@
   }
 
   .seasonal-product-grid__heading {
-    width: min(100%, 268px);
+    width: min(100%, var(--spg-mobile-heading-width, 268px));
     font-size: var(--spg-mobile-heading-size, 24px);
     line-height: var(--spg-mobile-heading-line-height, 1.2);
   }
 
   .seasonal-product-grid__description {
+    width: min(100%, var(--spg-mobile-description-width, 356px));
     font-size: var(--spg-mobile-description-size, 16px);
     line-height: var(--spg-mobile-description-line-height, 1.5);
   }

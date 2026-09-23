@@ -11,6 +11,8 @@
     --spc-card-heading-color: {{ section.settings.card_heading_color }};
     --spc-card-description-color: {{ section.settings.card_description_color }};
     --spc-image-background: {{ section.settings.image_background_color }};
+    --spc-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --spc-desktop-description-width: {{ section.settings.desktop_description_width }}px;
     --spc-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
     --spc-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
     --spc-desktop-description-size: {{ section.settings.desktop_description_size }}px;
@@ -23,6 +25,8 @@
     --spc-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
     --spc-mobile-description-size: {{ section.settings.mobile_description_size }}px;
     --spc-mobile-description-line-height: {{ section.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --spc-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --spc-mobile-description-width: {{ section.settings.mobile_description_width }}px;
     --spc-mobile-card-heading-size: {{ section.settings.mobile_card_heading_size }}px;
     --spc-mobile-card-heading-line-height: {{ section.settings.mobile_card_heading_line_height | divided_by: 100.0 }};
     --spc-mobile-card-description-size: {{ section.settings.mobile_card_description_size }}px;
@@ -240,6 +244,26 @@
     },
     {
       "type": "range",
+      "id": "desktop_heading_width",
+      "min": 160,
+      "max": 1200,
+      "step": 16,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 416
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_width",
+      "min": 160,
+      "max": 1200,
+      "step": 16,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 576
+    },
+    {
+      "type": "range",
       "id": "desktop_heading_size",
       "min": 16,
       "max": 56,
@@ -321,6 +345,26 @@
     {
       "type": "header",
       "content": "移动端字号与行高"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "min": 120,
+      "max": 500,
+      "step": 4,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_width",
+      "min": 120,
+      "max": 500,
+      "step": 4,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 356
     },
     {
       "type": "range",
