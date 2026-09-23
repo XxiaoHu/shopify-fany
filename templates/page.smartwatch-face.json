@@ -635,7 +635,7 @@
         "view_more_link": "",
         "safe_margin": 200,
         "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_bottom": 160,
         "mobile_safe_margin": 16,
         "mobile_padding_y": 40
       }
