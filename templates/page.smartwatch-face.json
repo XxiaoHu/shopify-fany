@@ -101,19 +101,19 @@
     "sticky_category_navigation_HdcFVx": {
       "type": "sticky-category-navigation",
       "blocks": {
+        "item_pmDBkm": {
+          "type": "item",
+          "settings": {
+            "text": "Labor Day",
+            "target_anchor": "Labor Day",
+            "is_active": false
+          }
+        },
         "item_c4fH6q": {
           "type": "item",
           "settings": {
             "text": "Women's Equality Day",
             "target_anchor": "Women's Equality Day",
-            "is_active": false
-          }
-        },
-        "item_pmDBkm": {
-          "type": "item",
-          "settings": {
-            "text": "Back to School",
-            "target_anchor": "Back to School",
             "is_active": false
           }
         },
@@ -128,15 +128,15 @@
         "item_WhiNWh": {
           "type": "item",
           "settings": {
-            "text": "Download",
+            "text": "Download Watch Face",
             "target_anchor": "download",
             "is_active": true
           }
         }
       },
       "block_order": [
-        "item_c4fH6q",
         "item_pmDBkm",
+        "item_c4fH6q",
         "item_nzTQYp",
         "item_WhiNWh"
       ],
@@ -692,8 +692,8 @@
         "mobile_card_description_line_height": 150,
         "desktop_padding_top": 0,
         "desktop_padding_bottom": 0,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 40
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
       }
     },
     "seasonal_product_grid_DHX4yR": {
