@@ -475,6 +475,17 @@
     "seasonal_product_grid_7BVY8m": {
       "type": "seasonal-product-grid",
       "blocks": {
+        "product_card_3pp4GJ": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/watchface7.webp",
+            "mobile_image": "shopify://shop_images/8_868b87a0-76c0-40a1-b1f6-ada002df840a.webp",
+            "image_alt": "",
+            "heading": "",
+            "description": "The Charm of Colorful Gradients in Large Figures",
+            "link": ""
+          }
+        },
         "product_card_Ak3P9h": {
           "type": "product_card",
           "settings": {
@@ -546,27 +557,17 @@
             "description": "Feel the thrill of movement and keep your day moving forward.",
             "link": ""
           }
-        },
-        "product_card_3pp4GJ": {
-          "type": "product_card",
-          "settings": {
-            "desktop_image": "shopify://shop_images/watchface7.webp",
-            "image_alt": "",
-            "heading": "",
-            "description": "The Charm of Colorful Gradients in Large Figures",
-            "link": ""
-          }
         }
       },
       "block_order": [
+        "product_card_3pp4GJ",
         "product_card_Ak3P9h",
         "product_card_ciHBbg",
         "product_card_L6CXwa",
         "product_card_fRHKNH",
         "product_card_TqJAy9",
         "product_card_ReEieb",
-        "product_card_MJzcQL",
-        "product_card_3pp4GJ"
+        "product_card_MJzcQL"
       ],
       "name": "节日产品网格",
       "settings": {
