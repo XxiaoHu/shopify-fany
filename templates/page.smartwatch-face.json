@@ -129,7 +129,7 @@
           "type": "item",
           "settings": {
             "text": "Download",
-            "target_anchor": "labor-day",
+            "target_anchor": "download",
             "is_active": true
           }
         }
@@ -656,6 +656,46 @@
         "mobile_padding_y": 80
       }
     },
+    "seasonal_product_grid_DHX4yR": {
+      "type": "seasonal-product-grid",
+      "name": "节日产品网格",
+      "settings": {
+        "heading": "&nbsp;<strong>Frequently Asked Questions</strong>&nbsp;",
+        "description": "",
+        "navigation_anchor": "download",
+        "mobile_visible_blocks": 4,
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "media_background_color": "#f7f7f7",
+        "desktop_heading_width": 416,
+        "desktop_description_width": 576,
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_width": 268,
+        "mobile_description_width": 356,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 16,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 14,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 0
+      }
+    },
     "collapsible_content_AcjBtT": {
       "type": "collapsible-content",
       "blocks": {
@@ -739,7 +779,7 @@
       "name": "FAQ",
       "settings": {
         "caption": "",
-        "heading": "<strong>Frequently Asked Questions</strong>",
+        "heading": "",
         "heading_size": "f-28",
         "heading_color": "#121212",
         "heading_alignment": "center",
@@ -762,7 +802,7 @@
         "mobile_answer_font_weight": "400",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -1175,6 +1215,7 @@
     "featured_product_showcase_DKim7e",
     "seasonal_product_grid_7BVY8m",
     "recommended_products_manual_FMA87F",
+    "seasonal_product_grid_DHX4yR",
     "collapsible_content_AcjBtT",
     "main_banner_36B9fz",
     "transformative_journey_YjzYEc",
