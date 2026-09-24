@@ -101,14 +101,6 @@
     "sticky_category_navigation_HdcFVx": {
       "type": "sticky-category-navigation",
       "blocks": {
-        "item_WhiNWh": {
-          "type": "item",
-          "settings": {
-            "text": "Labor Day",
-            "target_anchor": "labor-day",
-            "is_active": true
-          }
-        },
         "item_c4fH6q": {
           "type": "item",
           "settings": {
@@ -128,17 +120,25 @@
         "item_nzTQYp": {
           "type": "item",
           "settings": {
-            "text": "Other",
+            "text": "Classic",
             "target_anchor": "Other",
             "is_active": false
+          }
+        },
+        "item_WhiNWh": {
+          "type": "item",
+          "settings": {
+            "text": "Download",
+            "target_anchor": "labor-day",
+            "is_active": true
           }
         }
       },
       "block_order": [
-        "item_WhiNWh",
         "item_c4fH6q",
         "item_pmDBkm",
-        "item_nzTQYp"
+        "item_nzTQYp",
+        "item_WhiNWh"
       ],
       "name": "吸顶分类导航",
       "settings": {
@@ -659,21 +659,21 @@
     "collapsible_content_AcjBtT": {
       "type": "collapsible-content",
       "blocks": {
-        "collapsible_row_rdVrU8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are FANY watch faces free to download?",
-            "icon": "none",
-            "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
-            "page": ""
-          }
-        },
         "collapsible_row_9Wp6DL": {
           "type": "collapsible_row",
           "settings": {
             "heading": "How can I download new watch faces?",
             "icon": "none",
             "row_content": "<p>You can easily download watch faces to suit your style. Follow these simple steps:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>Browse 150+ beautifully designed watch faces and download your favorites directly to your watch.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are FANY watch faces free to download?",
+            "icon": "none",
+            "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
             "page": ""
           }
         },
@@ -724,8 +724,8 @@
         }
       },
       "block_order": [
-        "collapsible_row_rdVrU8",
         "collapsible_row_9Wp6DL",
+        "collapsible_row_rdVrU8",
         "collapsible_row_7hieFk",
         "collapsible_row_cxPQFx",
         "collapsible_row_zzkb6r",
