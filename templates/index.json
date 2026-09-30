@@ -399,6 +399,7 @@
         },
         "slide_L63WgC": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FALL_sale_banner_pc_2.webp",
             "mobile_image": "shopify://shop_images/FALL_sale_banner_M_2.webp",
