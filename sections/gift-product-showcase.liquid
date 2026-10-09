@@ -1,0 +1,651 @@
+{{ 'gift-product-showcase.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign desktop_heading = section.settings.desktop_heading | default: section.settings.mobile_heading
+  assign mobile_heading = section.settings.mobile_heading | default: desktop_heading
+  assign desktop_description = section.settings.desktop_description | default: section.settings.mobile_description
+  assign mobile_description = section.settings.mobile_description | default: desktop_description
+-%}
+
+<section
+  id="GiftProductShowcase-{{ section.id }}"
+  class="gift-product-showcase"
+  style="
+    --gps-background: {{ section.settings.background_color }};
+    --gps-heading-color: {{ section.settings.heading_color }};
+    --gps-description-color: {{ section.settings.description_color }};
+    --gps-card-title-color: {{ section.settings.card_title_color }};
+    --gps-price-color: {{ section.settings.price_color }};
+    --gps-cta-color: {{ section.settings.cta_color }};
+    --gps-cta-hover-color: {{ section.settings.cta_hover_color }};
+    --gps-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --gps-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --gps-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --gps-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    --gps-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --gps-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --gps-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --gps-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --gps-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height }};
+    --gps-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height }};
+    --gps-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --gps-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --gps-desktop-description-width: {{ section.settings.desktop_description_width }}px;
+    --gps-mobile-description-width: {{ section.settings.mobile_description_width }}px;
+    --gps-desktop-description-line-height: {{ section.settings.desktop_description_line_height }};
+    --gps-mobile-description-line-height: {{ section.settings.mobile_description_line_height }};
+    --gps-desktop-card-title-size: {{ section.settings.desktop_card_title_size }}px;
+    --gps-mobile-card-title-size: {{ section.settings.mobile_card_title_size }}px;
+    --gps-desktop-card-title-line-height: {{ section.settings.desktop_card_title_line_height }};
+    --gps-mobile-card-title-line-height: {{ section.settings.mobile_card_title_line_height }};
+    --gps-desktop-cta-size: {{ section.settings.desktop_cta_size }}px;
+    --gps-mobile-cta-size: {{ section.settings.mobile_cta_size }}px;
+    --gps-desktop-price-size: {{ section.settings.desktop_price_size }}px;
+    --gps-mobile-price-size: {{ section.settings.mobile_price_size }}px;
+    --gps-desktop-content-gap: {{ section.settings.desktop_content_gap }}px;
+    --gps-mobile-content-gap: {{ section.settings.mobile_content_gap }}px;
+    --gps-desktop-card-gap: {{ section.settings.desktop_card_gap }}px;
+    --gps-mobile-card-gap: {{ section.settings.mobile_card_gap }}px;
+    --gps-desktop-image-text-gap: {{ section.settings.desktop_image_text_gap }}px;
+    --gps-mobile-image-text-gap: {{ section.settings.mobile_image_text_gap }}px;
+    --gps-card-copy-gap: {{ section.settings.card_copy_gap }}px;
+    --gps-image-radius: {{ section.settings.image_radius }}px;
+  "
+>
+  {%- if desktop_heading != blank
+    or mobile_heading != blank
+    or desktop_description != blank
+    or mobile_description != blank
+  -%}
+    <header class="gift-product-showcase__header">
+      {%- if desktop_heading != blank or mobile_heading != blank -%}
+        <h2 class="gift-product-showcase__heading">
+          {%- if desktop_heading != blank -%}
+            <span class="gift-product-showcase__desktop-copy">{{ desktop_heading | escape | newline_to_br }}</span>
+          {%- endif -%}
+          {%- if mobile_heading != blank -%}
+            <span class="gift-product-showcase__mobile-copy">{{ mobile_heading | escape | newline_to_br }}</span>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      {%- if desktop_description != blank or mobile_description != blank -%}
+        <div class="gift-product-showcase__description">
+          {%- if desktop_description != blank -%}
+            <span class="gift-product-showcase__desktop-copy">{{ desktop_description | escape | newline_to_br }}</span>
+          {%- endif -%}
+          {%- if mobile_description != blank -%}
+            <span class="gift-product-showcase__mobile-copy">{{ mobile_description | escape | newline_to_br }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </header>
+  {%- endif -%}
+
+  <div class="gift-product-showcase__grid">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign card_product = block.settings.product
+        assign desktop_image = block.settings.desktop_image | default: block.settings.mobile_image | default: card_product.featured_image
+        assign mobile_image = block.settings.mobile_image | default: desktop_image
+        assign card_title = block.settings.title | default: card_product.title
+        assign card_link = card_product.url
+        assign image_alt = block.settings.image_alt | default: desktop_image.alt | default: card_title
+      -%}
+      <div
+        class="gift-product-showcase__card"
+        {{ block.shopify_attributes }}
+      >
+        {%- if card_link != blank -%}
+          <a class="gift-product-showcase__card-link" href="{{ card_link }}">
+            <span class="visually-hidden">{{ card_title | default: image_alt | escape }}</span>
+          </a>
+        {%- endif -%}
+        <div class="gift-product-showcase__media">
+          {%- if desktop_image != blank -%}
+            <picture>
+              {%- if mobile_image != blank -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="
+                    {{ mobile_image | image_url: width: 361 }} 361w,
+                    {{ mobile_image | image_url: width: 550 }} 550w,
+                    {{ mobile_image | image_url: width: 750 }} 750w
+                  "
+                  sizes="calc(100vw - 32px)"
+                >
+              {%- endif -%}
+              {{
+                desktop_image
+                | image_url: width: 1200
+                | image_tag:
+                  class: 'gift-product-showcase__image',
+                  loading: 'lazy',
+                  sizes: '(max-width: 749px) calc(100vw - 32px), calc((100vw - 432px) / 3)',
+                  widths: '361, 496, 550, 750, 992, 1200',
+                  alt: image_alt
+              }}
+            </picture>
+          {%- elsif request.design_mode -%}
+            {{ 'product-1' | placeholder_svg_tag: 'gift-product-showcase__placeholder' }}
+          {%- endif -%}
+        </div>
+
+        {%- if card_title != blank or card_product != blank or block.settings.cta_text != blank -%}
+          <div class="gift-product-showcase__card-copy">
+            {%- if card_title != blank -%}
+              <h3 class="gift-product-showcase__card-title">{{ card_title | escape }}</h3>
+            {%- endif -%}
+            <span class="gift-product-showcase__action">
+              {%- if card_product != blank -%}
+                <span class="gift-product-showcase__price">{{ card_product.price | money }}</span>
+              {%- elsif request.design_mode -%}
+                <span class="gift-product-showcase__price gift-product-showcase__price--empty">请先选择商品</span>
+              {%- endif -%}
+              {%- if block.settings.cta_text != blank -%}
+                <span class="gift-product-showcase__cta">{{ block.settings.cta_text | escape }}</span>
+              {%- endif -%}
+            </span>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      {%- if request.design_mode -%}
+        {%- for index in (1..3) -%}
+          <div class="gift-product-showcase__card">
+            <div class="gift-product-showcase__media">
+              {{ 'product-' | append: index | placeholder_svg_tag: 'gift-product-showcase__placeholder' }}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "礼物产品展示",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "PC 文案"
+    },
+    {
+      "type": "textarea",
+      "id": "desktop_heading",
+      "label": "标题",
+      "default": "Timeless Gifts to\nCherish Every Moment"
+    },
+    {
+      "type": "textarea",
+      "id": "desktop_description",
+      "label": "描述",
+      "default": "Order now and get a FREE 14K Gold Plated Butterfly Bracelet ($39.99 Value)."
+    },
+    {
+      "type": "header",
+      "content": "移动端文案"
+    },
+    {
+      "type": "textarea",
+      "id": "mobile_heading",
+      "label": "标题",
+      "default": "Timeless gifts that stand\nout 20% OFF GIFT SETS"
+    },
+    {
+      "type": "textarea",
+      "id": "mobile_description",
+      "label": "描述",
+      "default": "Discover gifts that make every moment extraordinary."
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "产品标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "价格颜色",
+      "default": "#9e7163"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "链接颜色",
+      "default": "#9e7163"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_color",
+      "label": "链接悬停颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_width",
+      "min": 200,
+      "max": 800,
+      "step": 6,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 308
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_width",
+      "min": 300,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "描述行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_title_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "产品标题字号",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_title_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "产品标题行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "desktop_price_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "价格字号",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_cta_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "链接字号",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "min": 159,
+      "max": 359,
+      "step": 2,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 267
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_width",
+      "min": 161,
+      "max": 361,
+      "step": 2,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 361
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "描述行高",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "产品标题字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "产品标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "mobile_price_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "价格字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_cta_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "链接字号",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "布局间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 标题区域与卡片间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_gap",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端标题区域与卡片间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "PC 卡片间距",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端卡片间距",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_text_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "PC 图片与文案间距",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_text_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "移动端图片与文案间距",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_copy_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "产品标题与链接间距",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "图片圆角",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "产品卡片",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "选择商品",
+          "info": "价格读取 Shopify 商品价格，卡片跳转到该商品详情页"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "PC 图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片（为空时使用 PC 图片）"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文本"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "产品标题",
+          "default": "Geometric Mother of Pearl Vegan Leather Bracelet Watch Band"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "链接文案",
+          "default": "SHOP NOW"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "礼物产品展示",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Geometric Mother of Pearl Vegan Leather Bracelet Watch Band"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Meow Crystal Bracelet Watch Band"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Stellar Crystal Bangle Watch Band"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

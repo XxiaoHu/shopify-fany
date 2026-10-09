@@ -1,0 +1,554 @@
+{{ 'responsive-video-showcase.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'responsive-video-showcase.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign desktop_heading = section.settings.desktop_heading | default: section.settings.mobile_heading
+  assign mobile_heading = section.settings.mobile_heading | default: desktop_heading
+  assign desktop_description = section.settings.desktop_description | default: section.settings.mobile_description
+  assign mobile_description = section.settings.mobile_description | default: desktop_description
+
+  assign desktop_type = section.settings.desktop_source_type
+  assign desktop_youtube = section.settings.desktop_youtube
+  assign desktop_video = section.settings.desktop_video
+  assign desktop_has_source = false
+  if desktop_type == 'youtube' and desktop_youtube != blank
+    assign desktop_has_source = true
+  elsif desktop_type == 'shopify' and desktop_video != blank
+    assign desktop_has_source = true
+  endif
+
+  assign mobile_type = section.settings.mobile_source_type
+  assign mobile_youtube = section.settings.mobile_youtube
+  assign mobile_video = section.settings.mobile_video
+  assign mobile_has_source = false
+  if mobile_type == 'youtube' and mobile_youtube != blank
+    assign mobile_has_source = true
+  elsif mobile_type == 'shopify' and mobile_video != blank
+    assign mobile_has_source = true
+  endif
+
+  unless desktop_has_source
+    assign desktop_type = mobile_type
+    assign desktop_youtube = mobile_youtube
+    assign desktop_video = mobile_video
+    assign desktop_has_source = mobile_has_source
+  endunless
+
+  unless mobile_has_source
+    assign mobile_type = desktop_type
+    assign mobile_youtube = desktop_youtube
+    assign mobile_video = desktop_video
+    assign mobile_has_source = desktop_has_source
+  endunless
+
+  assign desktop_poster = section.settings.desktop_poster | default: section.settings.mobile_poster
+  assign mobile_poster = section.settings.mobile_poster | default: desktop_poster
+  assign desktop_poster_url = blank
+  assign mobile_poster_url = blank
+  if desktop_poster != blank
+    assign desktop_poster_url = desktop_poster | image_url: width: 1600
+  endif
+  if mobile_poster != blank
+    assign mobile_poster_url = mobile_poster | image_url: width: 750
+  endif
+-%}
+
+<responsive-video-showcase
+  id="ResponsiveVideoShowcase-{{ section.id }}"
+  class="responsive-video-showcase"
+  style="
+    --rvs-background: {{ section.settings.background_color }};
+    --rvs-heading-color: {{ section.settings.heading_color }};
+    --rvs-description-color: {{ section.settings.description_color }};
+    --rvs-media-background: {{ section.settings.media_background_color }};
+    --rvs-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --rvs-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --rvs-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --rvs-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    --rvs-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --rvs-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --rvs-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --rvs-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --rvs-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height }};
+    --rvs-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height }};
+    --rvs-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --rvs-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --rvs-desktop-description-width: {{ section.settings.desktop_description_width }}px;
+    --rvs-mobile-description-width: {{ section.settings.mobile_description_width }}px;
+    --rvs-desktop-description-line-height: {{ section.settings.desktop_description_line_height }};
+    --rvs-mobile-description-line-height: {{ section.settings.mobile_description_line_height }};
+    --rvs-desktop-content-gap: {{ section.settings.desktop_content_gap }}px;
+    --rvs-mobile-content-gap: {{ section.settings.mobile_content_gap }}px;
+    --rvs-copy-gap: {{ section.settings.copy_gap }}px;
+    --rvs-media-radius: {{ section.settings.media_radius }}px;
+  "
+>
+  {%- if desktop_heading != blank or mobile_heading != blank or desktop_description != blank or mobile_description != blank -%}
+    <header class="responsive-video-showcase__header">
+      {%- if desktop_heading != blank or mobile_heading != blank -%}
+        <h2 class="responsive-video-showcase__heading">
+          <span class="responsive-video-showcase__desktop-copy">{{ desktop_heading | escape | newline_to_br }}</span>
+          <span class="responsive-video-showcase__mobile-copy">{{ mobile_heading | escape | newline_to_br }}</span>
+        </h2>
+      {%- endif -%}
+      {%- if desktop_description != blank or mobile_description != blank -%}
+        <div class="responsive-video-showcase__description">
+          <span class="responsive-video-showcase__desktop-copy">{{ desktop_description | escape | newline_to_br }}</span>
+          <span class="responsive-video-showcase__mobile-copy">{{ mobile_description | escape | newline_to_br }}</span>
+        </div>
+      {%- endif -%}
+    </header>
+  {%- endif -%}
+
+  {%- if desktop_has_source or desktop_poster != blank or request.design_mode -%}
+  <div class="responsive-video-showcase__media responsive-video-showcase__media--desktop" data-rvs-media="desktop">
+    {%- if desktop_has_source -%}
+      {%- if desktop_type == 'youtube' -%}
+        <iframe
+          class="responsive-video-showcase__player"
+          data-src="https://www.youtube.com/embed/{{ desktop_youtube.id }}?autoplay=1&mute=1&loop=1&playlist={{ desktop_youtube.id }}&controls=1&playsinline=1&rel=0&modestbranding=1"
+          data-reduced-src="https://www.youtube.com/embed/{{ desktop_youtube.id }}?autoplay=0&mute=1&loop=1&playlist={{ desktop_youtube.id }}&controls=1&playsinline=1&rel=0&modestbranding=1"
+          title="{{ section.settings.video_label | escape }}"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      {%- else -%}
+        {{
+          desktop_video
+          | video_tag:
+            class: 'responsive-video-showcase__player',
+            image_size: '1600x',
+            autoplay: false,
+            loop: true,
+            muted: true,
+            controls: true,
+            playsinline: true,
+            preload: 'none',
+            poster: desktop_poster_url
+        }}
+      {%- endif -%}
+    {%- elsif desktop_poster != blank -%}
+      {{
+        desktop_poster
+        | image_url: width: 1600
+        | image_tag:
+          class: 'responsive-video-showcase__poster',
+          loading: 'lazy',
+          sizes: '(max-width: 1068px) calc(100vw - 96px), 1260px',
+          widths: '750, 960, 1260, 1600',
+          alt: section.settings.video_label
+      }}
+    {%- elsif request.design_mode -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'responsive-video-showcase__placeholder' }}
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+
+  {%- if mobile_has_source or mobile_poster != blank or request.design_mode -%}
+  <div class="responsive-video-showcase__media responsive-video-showcase__media--mobile" data-rvs-media="mobile">
+    {%- if mobile_has_source -%}
+      {%- if mobile_type == 'youtube' -%}
+        <iframe
+          class="responsive-video-showcase__player"
+          data-src="https://www.youtube.com/embed/{{ mobile_youtube.id }}?autoplay=1&mute=1&loop=1&playlist={{ mobile_youtube.id }}&controls=1&playsinline=1&rel=0&modestbranding=1"
+          data-reduced-src="https://www.youtube.com/embed/{{ mobile_youtube.id }}?autoplay=0&mute=1&loop=1&playlist={{ mobile_youtube.id }}&controls=1&playsinline=1&rel=0&modestbranding=1"
+          title="{{ section.settings.video_label | escape }}"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      {%- else -%}
+        {{
+          mobile_video
+          | video_tag:
+            class: 'responsive-video-showcase__player',
+            image_size: '750x',
+            autoplay: false,
+            loop: true,
+            muted: true,
+            controls: true,
+            playsinline: true,
+            preload: 'none',
+            poster: mobile_poster_url
+        }}
+      {%- endif -%}
+    {%- elsif mobile_poster != blank -%}
+      {{
+        mobile_poster
+        | image_url: width: 750
+        | image_tag:
+          class: 'responsive-video-showcase__poster',
+          loading: 'lazy',
+          sizes: 'calc(100vw - 32px)',
+          widths: '361, 550, 750',
+          alt: section.settings.video_label
+      }}
+    {%- elsif request.design_mode -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'responsive-video-showcase__placeholder' }}
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+</responsive-video-showcase>
+
+{% schema %}
+{
+  "name": "响应式视频展示",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "PC 文案"
+    },
+    {
+      "type": "textarea",
+      "id": "desktop_heading",
+      "label": "标题",
+      "default": "A Watch, A Bracelet,Double the Blessings"
+    },
+    {
+      "type": "textarea",
+      "id": "desktop_description",
+      "label": "描述",
+      "default": "Gifting every chapter worth celebrating."
+    },
+    {
+      "type": "header",
+      "content": "移动端文案"
+    },
+    {
+      "type": "textarea",
+      "id": "mobile_heading",
+      "label": "标题",
+      "default": "Timeless gifts that stand\nout 20% OFF GIFT SETS"
+    },
+    {
+      "type": "textarea",
+      "id": "mobile_description",
+      "label": "描述",
+      "default": "Discover gifts that make every moment extraordinary."
+    },
+    {
+      "type": "header",
+      "content": "PC 视频"
+    },
+    {
+      "type": "select",
+      "id": "desktop_source_type",
+      "label": "视频来源",
+      "options": [
+        { "value": "youtube", "label": "YouTube" },
+        { "value": "shopify", "label": "Shopify 视频" }
+      ],
+      "default": "youtube"
+    },
+    {
+      "type": "video_url",
+      "id": "desktop_youtube",
+      "label": "YouTube 链接",
+      "accept": ["youtube"]
+    },
+    {
+      "type": "video",
+      "id": "desktop_video",
+      "label": "Shopify 视频"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_poster",
+      "label": "PC 封面图"
+    },
+    {
+      "type": "header",
+      "content": "移动端视频"
+    },
+    {
+      "type": "select",
+      "id": "mobile_source_type",
+      "label": "视频来源",
+      "options": [
+        { "value": "youtube", "label": "YouTube" },
+        { "value": "shopify", "label": "Shopify 视频" }
+      ],
+      "default": "youtube"
+    },
+    {
+      "type": "video_url",
+      "id": "mobile_youtube",
+      "label": "YouTube 链接",
+      "accept": ["youtube"]
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Shopify 视频"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_poster",
+      "label": "移动端封面图（为空时使用 PC 封面）"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "color",
+      "id": "media_background_color",
+      "label": "视频区域背景颜色",
+      "default": "#d9d9d9"
+    },
+    {
+      "type": "header",
+      "content": "PC 字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_width",
+      "min": 300,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_width",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 450
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "描述行高",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "标题字号",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "min": 159,
+      "max": 359,
+      "step": 2,
+      "unit": "px",
+      "label": "标题宽度",
+      "default": 267
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "标题行高",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "描述字号",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_width",
+      "min": 161,
+      "max": 361,
+      "step": 2,
+      "unit": "px",
+      "label": "描述宽度",
+      "default": 361
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "描述行高",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "布局间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "PC 文案与视频间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_gap",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "移动端文案与视频间距",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "copy_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "标题与描述间距",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "media_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "视频圆角",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 上间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "PC 下间距",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "无障碍"
+    },
+    {
+      "type": "text",
+      "id": "video_label",
+      "label": "视频说明",
+      "default": "FANY product video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "响应式视频展示"
+    }
+  ]
+}
+{% endschema %}

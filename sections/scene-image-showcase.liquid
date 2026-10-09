@@ -1,0 +1,636 @@
+{{ 'scene-image-showcase.css' | asset_url | stylesheet_tag }}
+<section id="SceneImageShowcase-{{ section.id }}" class="scene-image-showcase{% unless section.settings.show_mobile_header %} scene-image-showcase--hide-mobile-header{% endunless %}" style="
+    --sis-background: {{ section.settings.background }};
+    --sis-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --sis-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --sis-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
+    --sis-desktop-heading-color: {{ section.settings.desktop_heading_color }};
+    --sis-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --sis-desktop-description-width: {{ section.settings.desktop_description_width }}px;
+    --sis-desktop-description-line-height: {{ section.settings.desktop_description_line_height | divided_by: 100.0 }};
+    --sis-desktop-description-color: {{ section.settings.desktop_description_color }};
+    --sis-desktop-row-gap: {{ section.settings.desktop_row_gap }}px;
+    --sis-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --sis-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --sis-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
+    --sis-mobile-heading-color: {{ section.settings.mobile_heading_color }};
+    --sis-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --sis-mobile-description-width: {{ section.settings.mobile_description_width }}px;
+    --sis-mobile-description-line-height: {{ section.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --sis-mobile-description-color: {{ section.settings.mobile_description_color }};
+    --sis-mobile-row-gap: {{ section.settings.mobile_row_gap }}px;
+    --sis-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --sis-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --sis-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --sis-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+">
+  {% if section.settings.heading != blank or section.settings.description != blank %}
+    <div class="scene-image-showcase__header">
+      {% if section.settings.heading != blank %}<h2 class="scene-image-showcase__heading">{{ section.settings.heading }}</h2>{% endif %}
+      {% if section.settings.description != blank %}<div class="scene-image-showcase__description rte">{{ section.settings.description }}</div>{% endif %}
+    </div>
+  {% endif %}
+  <div class="scene-image-showcase__rows">
+    {% for block in section.blocks %}
+      {% liquid
+        assign desktop_image = block.settings.desktop_image | default: block.settings.mobile_image
+        assign mobile_image = block.settings.mobile_image | default: desktop_image
+        assign image_alt = block.settings.image_alt | default: desktop_image.alt
+      %}
+      {% if desktop_image != blank or block.settings.heading != blank or block.settings.description != blank or request.design_mode %}
+        <article id="SceneImageShowcase-{{ section.id }}-{{ block.id }}" class="scene-image-showcase__row scene-image-showcase__row--{{ block.settings.desktop_side }}" style="
+    --sis-desktop-heading-size: {{ block.settings.desktop_heading_size }}px;
+    --sis-desktop-heading-width: {{ block.settings.desktop_heading_width }}px;
+    --sis-desktop-heading-line-height: {{ block.settings.desktop_heading_line_height | divided_by: 100.0 }};
+    --sis-desktop-heading-color: {{ block.settings.desktop_heading_color }};
+    --sis-desktop-description-size: {{ block.settings.desktop_description_size }}px;
+    --sis-desktop-description-width: {{ block.settings.desktop_description_width }}px;
+    --sis-desktop-description-line-height: {{ block.settings.desktop_description_line_height | divided_by: 100.0 }};
+    --sis-desktop-description-color: {{ block.settings.desktop_description_color }};
+    --sis-desktop-copy-gap: {{ block.settings.desktop_copy_gap }}px;
+    --sis-desktop-copy-top: {{ block.settings.desktop_copy_top }}px;
+    --sis-desktop-copy-bottom: {{ block.settings.desktop_copy_bottom }}px;
+    --sis-desktop-copy-background: {{ block.settings.desktop_copy_background }};
+    --sis-mobile-heading-size: {{ block.settings.mobile_heading_size }}px;
+    --sis-mobile-heading-width: {{ block.settings.mobile_heading_width }}px;
+    --sis-mobile-heading-line-height: {{ block.settings.mobile_heading_line_height | divided_by: 100.0 }};
+    --sis-mobile-heading-color: {{ block.settings.mobile_heading_color }};
+    --sis-mobile-description-size: {{ block.settings.mobile_description_size }}px;
+    --sis-mobile-description-width: {{ block.settings.mobile_description_width }}px;
+    --sis-mobile-description-line-height: {{ block.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --sis-mobile-description-color: {{ block.settings.mobile_description_color }};
+    --sis-mobile-copy-gap: {{ block.settings.mobile_copy_gap }}px;
+    --sis-mobile-copy-top: {{ block.settings.mobile_copy_top }}px;
+    --sis-mobile-copy-bottom: {{ block.settings.mobile_copy_bottom }}px;
+    --sis-mobile-copy-background: {{ block.settings.mobile_copy_background }};
+        " {{ block.shopify_attributes }}>
+          {% if desktop_image != blank %}
+            <picture class="scene-image-showcase__media">
+              <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 393 }} 393w, {{ mobile_image | image_url: width: 786 }} 786w, {{ mobile_image | image_url: width: 1200 }} 1200w" sizes="100vw" width="{{ mobile_image.width }}" height="{{ mobile_image.height }}">
+              {{ desktop_image | image_url: width: 3840 | image_tag: class: 'scene-image-showcase__image', widths: '750, 1200, 1600, 1920, 2560, 3840', sizes: '100vw', loading: 'lazy', alt: image_alt }}
+            </picture>
+          {% elsif request.design_mode %}
+            <div class="scene-image-showcase__media">{{ 'lifestyle-1' | placeholder_svg_tag: 'scene-image-showcase__placeholder' }}</div>
+          {% endif %}
+          {% if block.settings.heading != blank or block.settings.description != blank %}
+            <div class="scene-image-showcase__copy">
+              {% if block.settings.heading != blank %}<h3 class="scene-image-showcase__title">{{ block.settings.heading }}</h3>{% endif %}
+              {% if block.settings.description != blank %}<div class="scene-image-showcase__body rte">{{ block.settings.description }}</div>{% endif %}
+            </div>
+          {% endif %}
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "场景图片展示",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "总标题",
+      "default": "A Watch, A Bracelet, Double the Blessings"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "总描述",
+      "default": "<p>Gifting every chapter worth celebrating.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_header",
+      "label": "移动端显示总标题和描述",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "模块背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "PC 文案与布局"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "总标题字号",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_width",
+      "label": "总标题宽度",
+      "min": 120,
+      "max": 1560,
+      "step": 24,
+      "default": 792,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "label": "总标题行高",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "default": 120,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "desktop_heading_color",
+      "label": "总标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "label": "总描述字号",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_width",
+      "label": "总描述宽度",
+      "min": 120,
+      "max": 1560,
+      "step": 24,
+      "default": 456,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_line_height",
+      "label": "总描述行高",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "default": 150,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "desktop_description_color",
+      "label": "总描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "range",
+      "id": "desktop_row_gap",
+      "label": "图片组间距",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "default": 160,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "移动端 文案与布局"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "总标题字号",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "label": "总标题宽度",
+      "min": 120,
+      "max": 1560,
+      "step": 24,
+      "default": 792,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "label": "总标题行高",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "default": 120,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "mobile_heading_color",
+      "label": "总标题颜色",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "label": "总描述字号",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_width",
+      "label": "总描述宽度",
+      "min": 120,
+      "max": 1560,
+      "step": 24,
+      "default": 456,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_line_height",
+      "label": "总描述行高",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "default": 150,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "mobile_description_color",
+      "label": "总描述颜色",
+      "default": "#686766"
+    },
+    {
+      "type": "range",
+      "id": "mobile_row_gap",
+      "label": "图片组间距",
+      "min": 0,
+      "max": 240,
+      "step": 4,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "PC上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "PC下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "移动端上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "移动端下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scene",
+      "name": "图片展示组",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "PC 整张背景图",
+          "info": "建议 1920×800，不包含独立标题和描述。"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端图片",
+          "info": "建议 393×435，留空使用 PC 图片。"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文字"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "标题",
+          "default": "New Beginnings:"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "描述",
+          "default": "<p>Whether she's saying goodbye to campus, stepping into her first career, or chasing dreams beyond the horizon, the FANY Luna stylish smartwatch paired with the 14K gold butterfly bracelet celebrates a beautiful new beginning.</p>"
+        },
+        {
+          "type": "select",
+          "id": "desktop_side",
+          "label": "PC 文案位置",
+          "options": [
+            {
+              "value": "left",
+              "label": "左侧"
+            },
+            {
+              "value": "right",
+              "label": "右侧"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "header",
+          "content": "PC 文案"
+        },
+        {
+          "type": "range",
+          "id": "desktop_heading_size",
+          "label": "标题字号",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "default": 28,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_heading_width",
+          "label": "标题宽度",
+          "min": 120,
+          "max": 720,
+          "step": 10,
+          "default": 450,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_heading_line_height",
+          "label": "标题行高",
+          "min": 100,
+          "max": 220,
+          "step": 5,
+          "default": 120,
+          "unit": "%"
+        },
+        {
+          "type": "color",
+          "id": "desktop_heading_color",
+          "label": "标题颜色",
+          "default": "#600012"
+        },
+        {
+          "type": "range",
+          "id": "desktop_description_size",
+          "label": "描述字号",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "default": 16,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_description_width",
+          "label": "描述宽度",
+          "min": 120,
+          "max": 720,
+          "step": 10,
+          "default": 450,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_description_line_height",
+          "label": "描述行高",
+          "min": 100,
+          "max": 220,
+          "step": 5,
+          "default": 150,
+          "unit": "%"
+        },
+        {
+          "type": "color",
+          "id": "desktop_description_color",
+          "label": "描述颜色",
+          "default": "#686766"
+        },
+        {
+          "type": "range",
+          "id": "desktop_copy_gap",
+          "label": "标题与描述间距",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "default": 20,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_copy_top",
+          "label": "文案上间距",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "default": 60,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "desktop_copy_bottom",
+          "label": "文案下间距",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "default": 40,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "desktop_copy_background",
+          "label": "文案背景",
+          "default": "#f8f8f8"
+        },
+        {
+          "type": "header",
+          "content": "移动端 文案"
+        },
+        {
+          "type": "range",
+          "id": "mobile_heading_size",
+          "label": "标题字号",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "default": 24,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_heading_width",
+          "label": "标题宽度",
+          "min": 120,
+          "max": 720,
+          "step": 10,
+          "default": 330,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_heading_line_height",
+          "label": "标题行高",
+          "min": 100,
+          "max": 220,
+          "step": 5,
+          "default": 120,
+          "unit": "%"
+        },
+        {
+          "type": "color",
+          "id": "mobile_heading_color",
+          "label": "标题颜色",
+          "default": "#600012"
+        },
+        {
+          "type": "range",
+          "id": "mobile_description_size",
+          "label": "描述字号",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "default": 16,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_description_width",
+          "label": "描述宽度",
+          "min": 120,
+          "max": 720,
+          "step": 10,
+          "default": 330,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_description_line_height",
+          "label": "描述行高",
+          "min": 100,
+          "max": 220,
+          "step": 5,
+          "default": 150,
+          "unit": "%"
+        },
+        {
+          "type": "color",
+          "id": "mobile_description_color",
+          "label": "描述颜色",
+          "default": "#686766"
+        },
+        {
+          "type": "range",
+          "id": "mobile_copy_gap",
+          "label": "标题与描述间距",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "default": 20,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_copy_top",
+          "label": "文案上间距",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "default": 40,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_copy_bottom",
+          "label": "文案下间距",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "default": 40,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "mobile_copy_background",
+          "label": "文案背景",
+          "default": "#f8f8f8"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "场景图片展示",
+      "blocks": [
+        {
+          "type": "scene"
+        },
+        {
+          "type": "scene",
+          "settings": {
+            "desktop_side": "left"
+          }
+        },
+        {
+          "type": "scene"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
