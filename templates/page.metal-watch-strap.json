@@ -31,7 +31,7 @@
             "title_font_size": 28,
             "mobile_title_font_size": 24,
             "title_font_weight": "700",
-            "title_color": "#E36627",
+            "title_color": "#e36627",
             "mobile_title_color": "#ffffff",
             "title_line_height": 1.2,
             "title_letter_spacing": 0,
@@ -55,7 +55,7 @@
             "desc_font_size": 16,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#DFD0C1",
+            "desc_color": "#dfd0c1",
             "mobile_desc_color": "#ffffff",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
@@ -98,6 +98,249 @@
         "accessibility_info": "首页横幅轮播"
       }
     },
+    "gift_product_showcase_ALDif4": {
+      "type": "gift-product-showcase",
+      "blocks": {
+        "product_card_dYmkQy": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "image_alt": "",
+            "title": "Geometric Mother of Pearl Vegan Leather Bracelet Watch Band",
+            "cta_text": "SHOP NOW"
+          }
+        },
+        "product_card_JKrKF4": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "image_alt": "",
+            "title": "Meow Crystal Bracelet Watch Band",
+            "cta_text": "SHOP NOW"
+          }
+        },
+        "product_card_zJji8e": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "image_alt": "",
+            "title": "Stellar Crystal Bangle Watch Band",
+            "cta_text": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_dYmkQy",
+        "product_card_JKrKF4",
+        "product_card_zJji8e"
+      ],
+      "name": "礼物产品展示",
+      "settings": {
+        "desktop_heading": "Timeless Gifts to\nCherish Every Moment",
+        "desktop_description": "Order now and get a FREE 14K Gold Plated Butterfly Bracelet ($39.99 Value).",
+        "mobile_heading": "Timeless gifts that stand\nout 20% OFF GIFT SETS",
+        "mobile_description": "Discover gifts that make every moment extraordinary.",
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_title_color": "#1e0e06",
+        "price_color": "#9e7163",
+        "cta_color": "#9e7163",
+        "cta_hover_color": "#794538",
+        "desktop_heading_size": 28,
+        "desktop_heading_width": 308,
+        "desktop_heading_line_height": 1.2,
+        "desktop_description_size": 16,
+        "desktop_description_width": 800,
+        "desktop_description_line_height": 1.5,
+        "desktop_card_title_size": 18,
+        "desktop_card_title_line_height": 1.5,
+        "desktop_price_size": 20,
+        "desktop_cta_size": 20,
+        "mobile_heading_size": 24,
+        "mobile_heading_width": 267,
+        "mobile_heading_line_height": 1.2,
+        "mobile_description_size": 16,
+        "mobile_description_width": 361,
+        "mobile_description_line_height": 1.5,
+        "mobile_card_title_size": 16,
+        "mobile_card_title_line_height": 1.2,
+        "mobile_price_size": 16,
+        "mobile_cta_size": 16,
+        "desktop_content_gap": 40,
+        "mobile_content_gap": 20,
+        "desktop_card_gap": 16,
+        "mobile_card_gap": 10,
+        "desktop_image_text_gap": 16,
+        "mobile_image_text_gap": 10,
+        "card_copy_gap": 10,
+        "image_radius": 4,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "recommended_products_manual_FMA87F": {
+      "type": "recommended-products-manual",
+      "blocks": {
+        "product_xtWEKm": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-leather-smartwatch-butterfly-bracelet",
+            "badge_text": "Best Seller"
+          }
+        },
+        "product_z8L3TG": {
+          "type": "product",
+          "settings": {
+            "product": "fany-luna-stylish-silicone-smartwatch-for-women",
+            "badge_text": ""
+          }
+        },
+        "product_GaBgDd": {
+          "type": "product",
+          "settings": {
+            "product": "luna",
+            "badge_text": ""
+          }
+        },
+        "product_FmKUTd": {
+          "type": "product",
+          "settings": {
+            "product": "16-mm-quick-release-silicone-watch-band",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_xtWEKm",
+        "product_z8L3TG",
+        "product_GaBgDd",
+        "product_FmKUTd"
+      ],
+      "name": "推荐产品",
+      "settings": {
+        "title": "You May also like",
+        "view_more_text": "View more",
+        "view_more_link": "",
+        "safe_margin": 200,
+        "padding_top": 80,
+        "padding_bottom": 160,
+        "mobile_safe_margin": 16,
+        "mobile_padding_y": 80
+      }
+    },
+    "collapsible_content_AcjBtT": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_9Wp6DL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I download new watch faces?",
+            "icon": "none",
+            "row_content": "<p>You can easily download watch faces to suit your style. Follow these simple steps:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>Browse 150+ beautifully designed watch faces and download your favorites directly to your watch.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rdVrU8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are FANY watch faces free to download?",
+            "icon": "none",
+            "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7hieFk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use my own photo as a watch face?",
+            "icon": "none",
+            "row_content": "<p>Yes! You can personalize your FANY smartwatch with your own photos, whether it’s a favorite memory, a loved one, or an image that matches your style.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cxPQFx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I create a custom watch face with my own photo?",
+            "icon": "none",
+            "row_content": "<p>It’s easy to create a personalized watch face:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>4. Scroll down and find Photo.<br/>5. Tap Photos and upload your favorite image.<br/>Follow the prompts to set your photo as your watch face.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zzkb6r": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many watch faces does FANY offer?",
+            "icon": "none",
+            "row_content": "<p>FANY offers 150+ beautifully designed watch faces, with styles ranging from elegant and minimalist to colorful, seasonal, and holiday-inspired designs. New designs are added regularly to keep your watch feeling fresh and personal.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NbBki4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does FANY create special watch faces for holidays?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY creates special watch faces for holidays and seasonal moments, thoughtfully designed around the spirit of each occasion. From Labor Day to future celebrations, we’ll continue creating new designs as FANY grows—so there’s always something new to enjoy.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zcaimh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change my watch face whenever I want?",
+            "icon": "none",
+            "row_content": "<p>Absolutely. You can switch between downloaded watch faces and your custom photo whenever you like, allowing your FANY smartwatch to match your outfit, mood, activity, or the occasion.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_9Wp6DL",
+        "collapsible_row_rdVrU8",
+        "collapsible_row_7hieFk",
+        "collapsible_row_cxPQFx",
+        "collapsible_row_zzkb6r",
+        "collapsible_row_NbBki4",
+        "collapsible_row_zcaimh"
+      ],
+      "custom_css": [
+        ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
+        ".collapsible-content__heading {color: #1e0e06;}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "f-28",
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_position": "outside",
+        "mobile_heading_size": 26,
+        "layout": "none",
+        "container_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
+        "open_first_collapsible_row": true,
+        "hide_question_dividers": false,
+        "questions_padding_top": 30,
+        "questions_padding_bottom": 30,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 18,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 16,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
     "gift_sets_iGD6TX": {
       "type": "gift-sets",
       "blocks": {
@@ -128,6 +371,7 @@
         "card_j66L3c",
         "card_nGPPzd"
       ],
+      "disabled": true,
       "name": "礼物套装展示",
       "settings": {
         "title": "Timeless Gifts to Cherish Every Moment",
@@ -173,6 +417,7 @@
     },
     "seasonal_product_carousel_Dbjgp7": {
       "type": "seasonal-product-carousel",
+      "disabled": true,
       "name": "节日产品轮播",
       "settings": {
         "heading": "&nbsp;A Watch, A Bracelet,Double the",
@@ -243,8 +488,8 @@
             "subtitle_font_size": 18,
             "mobile_subtitle_font_size": 14,
             "subtitle_font_weight": "400",
-            "subtitle_color": "#5F5D5D",
-            "mobile_subtitle_color": "#5F5D5D",
+            "subtitle_color": "#5f5d5d",
+            "mobile_subtitle_color": "#5f5d5d",
             "subtitle_line_height": 1.3,
             "subtitle_letter_spacing": 0,
             "subtitle_alignment": "left",
@@ -257,8 +502,8 @@
             "desc_font_size": 16,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#5F5D5D",
-            "mobile_desc_color": "#5F5D5D",
+            "desc_color": "#5f5d5d",
+            "mobile_desc_color": "#5f5d5d",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
@@ -286,6 +531,7 @@
       "block_order": [
         "slide_B8bzG3"
       ],
+      "disabled": true,
       "name": "主页 Banner 轮播",
       "settings": {
         "slide_height": "adapt_image",
@@ -332,8 +578,8 @@
             "subtitle_font_size": 18,
             "mobile_subtitle_font_size": 14,
             "subtitle_font_weight": "400",
-            "subtitle_color": "#5F5D5D",
-            "mobile_subtitle_color": "#5F5D5D",
+            "subtitle_color": "#5f5d5d",
+            "mobile_subtitle_color": "#5f5d5d",
             "subtitle_line_height": 1.3,
             "subtitle_letter_spacing": 0,
             "subtitle_alignment": "left",
@@ -346,8 +592,8 @@
             "desc_font_size": 16,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#5F5D5D",
-            "mobile_desc_color": "#5F5D5D",
+            "desc_color": "#5f5d5d",
+            "mobile_desc_color": "#5f5d5d",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
@@ -375,6 +621,7 @@
       "block_order": [
         "slide_GRapwF"
       ],
+      "disabled": true,
       "name": "主页 Banner 轮播",
       "settings": {
         "slide_height": "adapt_image",
@@ -421,8 +668,8 @@
             "subtitle_font_size": 18,
             "mobile_subtitle_font_size": 14,
             "subtitle_font_weight": "400",
-            "subtitle_color": "#5F5D5D",
-            "mobile_subtitle_color": "#5F5D5D",
+            "subtitle_color": "#5f5d5d",
+            "mobile_subtitle_color": "#5f5d5d",
             "subtitle_line_height": 1.3,
             "subtitle_letter_spacing": 0,
             "subtitle_alignment": "left",
@@ -435,8 +682,8 @@
             "desc_font_size": 16,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
-            "desc_color": "#5F5D5D",
-            "mobile_desc_color": "#5F5D5D",
+            "desc_color": "#5f5d5d",
+            "mobile_desc_color": "#5f5d5d",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
@@ -464,6 +711,7 @@
       "block_order": [
         "slide_FJQndE"
       ],
+      "disabled": true,
       "name": "主页 Banner 轮播",
       "settings": {
         "slide_height": "adapt_image",
@@ -476,56 +724,6 @@
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 40,
         "accessibility_info": "首页横幅轮播"
-      }
-    },
-    "recommended_products_manual_FMA87F": {
-      "type": "recommended-products-manual",
-      "blocks": {
-        "product_xtWEKm": {
-          "type": "product",
-          "settings": {
-            "product": "fany-luna-leather-smartwatch-butterfly-bracelet",
-            "badge_text": "Best Seller"
-          }
-        },
-        "product_z8L3TG": {
-          "type": "product",
-          "settings": {
-            "product": "fany-luna-stylish-silicone-smartwatch-for-women",
-            "badge_text": ""
-          }
-        },
-        "product_GaBgDd": {
-          "type": "product",
-          "settings": {
-            "product": "luna",
-            "badge_text": ""
-          }
-        },
-        "product_FmKUTd": {
-          "type": "product",
-          "settings": {
-            "product": "16-mm-quick-release-silicone-watch-band",
-            "badge_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_xtWEKm",
-        "product_z8L3TG",
-        "product_GaBgDd",
-        "product_FmKUTd"
-      ],
-      "name": "推荐产品",
-      "settings": {
-        "title": "You May also like",
-        "view_more_text": "View more",
-        "view_more_link": "",
-        "safe_margin": 200,
-        "padding_top": 80,
-        "padding_bottom": 160,
-        "mobile_safe_margin": 16,
-        "mobile_padding_y": 80
       }
     },
     "sticky_category_navigation_HdcFVx": {
@@ -1088,116 +1286,6 @@
         "mobile_padding_bottom": 0
       }
     },
-    "collapsible_content_AcjBtT": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_9Wp6DL": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How can I download new watch faces?",
-            "icon": "none",
-            "row_content": "<p>You can easily download watch faces to suit your style. Follow these simple steps:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>Browse 150+ beautifully designed watch faces and download your favorites directly to your watch.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rdVrU8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are FANY watch faces free to download?",
-            "icon": "none",
-            "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_7hieFk": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Can I use my own photo as a watch face?",
-            "icon": "none",
-            "row_content": "<p>Yes! You can personalize your FANY smartwatch with your own photos, whether it’s a favorite memory, a loved one, or an image that matches your style.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_cxPQFx": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How can I create a custom watch face with my own photo?",
-            "icon": "none",
-            "row_content": "<p>It’s easy to create a personalized watch face:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>4. Scroll down and find Photo.<br/>5. Tap Photos and upload your favorite image.<br/>Follow the prompts to set your photo as your watch face.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_zzkb6r": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How many watch faces does FANY offer?",
-            "icon": "none",
-            "row_content": "<p>FANY offers 150+ beautifully designed watch faces, with styles ranging from elegant and minimalist to colorful, seasonal, and holiday-inspired designs. New designs are added regularly to keep your watch feeling fresh and personal.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_NbBki4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Does FANY create special watch faces for holidays?",
-            "icon": "none",
-            "row_content": "<p>Yes. FANY creates special watch faces for holidays and seasonal moments, thoughtfully designed around the spirit of each occasion. From Labor Day to future celebrations, we’ll continue creating new designs as FANY grows—so there’s always something new to enjoy.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_zcaimh": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Can I change my watch face whenever I want?",
-            "icon": "none",
-            "row_content": "<p>Absolutely. You can switch between downloaded watch faces and your custom photo whenever you like, allowing your FANY smartwatch to match your outfit, mood, activity, or the occasion.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_9Wp6DL",
-        "collapsible_row_rdVrU8",
-        "collapsible_row_7hieFk",
-        "collapsible_row_cxPQFx",
-        "collapsible_row_zzkb6r",
-        "collapsible_row_NbBki4",
-        "collapsible_row_zcaimh"
-      ],
-      "custom_css": [
-        ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
-        ".collapsible-content__heading {color: #1e0e06;}"
-      ],
-      "name": "FAQ",
-      "settings": {
-        "caption": "",
-        "heading": "",
-        "heading_size": "f-28",
-        "heading_color": "#121212",
-        "heading_alignment": "center",
-        "heading_position": "outside",
-        "mobile_heading_size": 26,
-        "layout": "none",
-        "container_color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "color_scheme": "scheme-60a3f952-081e-40da-bd72-5b453e6f2fbf",
-        "open_first_collapsible_row": true,
-        "hide_question_dividers": false,
-        "questions_padding_top": 30,
-        "questions_padding_bottom": 30,
-        "question_title_font_size": 18,
-        "question_title_font_weight": "700",
-        "answer_font_size": 16,
-        "answer_font_weight": "400",
-        "mobile_question_title_font_size": 18,
-        "mobile_question_title_font_weight": "700",
-        "mobile_answer_font_size": 16,
-        "mobile_answer_font_weight": "400",
-        "image_ratio": "adapt",
-        "desktop_layout": "image_first",
-        "padding_top": 0,
-        "padding_bottom": 40
-      }
-    },
     "main_banner_36B9fz": {
       "type": "main-banner",
       "blocks": {
@@ -1443,19 +1531,20 @@
   },
   "order": [
     "main_banner_gegQgM",
+    "gift_product_showcase_ALDif4",
+    "recommended_products_manual_FMA87F",
+    "collapsible_content_AcjBtT",
     "gift_sets_iGD6TX",
     "seasonal_product_carousel_Dbjgp7",
     "main_banner_hdQ4dF",
     "main_banner_QaAQGX",
     "main_banner_GayWHL",
-    "recommended_products_manual_FMA87F",
     "sticky_category_navigation_HdcFVx",
     "seasonal_product_carousel_rtTm8X",
     "featured_product_showcase_EhbU3F",
     "featured_product_showcase_DKim7e",
     "seasonal_product_grid_7BVY8m",
     "seasonal_product_grid_DHX4yR",
-    "collapsible_content_AcjBtT",
     "main_banner_36B9fz",
     "transformative_journey_YjzYEc",
     "main_banner_6yLWWG",
