@@ -170,7 +170,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>FANY Luna is a lightweight, hypoallergenic silicone smartwatch for women, designed for everyday comfort and skin-friendly wear. Weighing just 29.2g, it features a compact 37.5 mm watch diameter and a soft-touch silicone band that fits wrists from 144–202 mm, making it comfortable for all-day wear, workouts, and sleep.<br/><br/>Featuring a vivid 1.1-inch AMOLED display, 110+ workout modes, sleep and stress tracking, menstrual cycle tracking, smart notifications, and up to 7 days of battery life, FANY Luna combines everyday wellness features with a sleek, minimalist design.<br/><br/>Why you'll love it:<br/><br/>Hypoallergenic soft-touch silicone band<br/>Lightweight 29.2g design<br/>Slim 37.5 mm watch diameter<br/>Fits wrists from 144–202mm<br/>1.1-inch AMOLED display<br/>110+ workout modes<br/>Sleep, stress & menstrual cycle tracking<br/>Up to 7 days of battery life<br/><br/></p>",
+            "content": "<p>FANY Luna is a lightweight, hypoallergenic silicone smartwatch for women, designed for everyday comfort and skin-friendly wear. Weighing just 29.2g, it features a compact 37.5 mm watch diameter and a soft-touch silicone band that fits wrists from 144–202 mm, making it comfortable for all-day wear, workouts, and sleep.<br/><br/>Featuring a vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and stress tracking, menstrual cycle tracking, smart notifications, and up to 10 days of battery life, FANY Luna combines everyday wellness features with a sleek, minimalist design.<br/><br/>Why you'll love it:<br/><br/>Hypoallergenic soft-touch silicone band<br/>Lightweight 29.2g design<br/>Slim 37.5 mm watch diameter<br/>Fits wrists from 144–202mm<br/>1.1-inch AMOLED display<br/>120+ workout modes<br/>Sleep, stress & menstrual cycle tracking<br/>Up to 10 days of battery life<br/><br/></p>",
             "page": ""
           }
         },
@@ -205,9 +205,9 @@
             "label_3": "Display Resolution",
             "value_3": "360*360",
             "label_4": "Battery life",
-            "value_4": "Up to 7 days",
+            "value_4": "Up to 10 days",
             "label_5": "Full Charge",
-            "value_5": "2h",
+            "value_5": "1.5h",
             "label_6": "Charging Method",
             "value_6": "Magnetic charger",
             "label_7": "Display type",
@@ -232,7 +232,7 @@
             "value_16": "yes (spot-check and automatic monitoring every 5 minutes)",
             "label_17": "Step counter",
             "value_17": "✔",
-            "label_18": "110 Workout Tracking Modes (running, yoga, Pilates, walking, cycling, and more)",
+            "label_18": "120 Workout Tracking Modes (running, yoga, Pilates, walking, cycling, and more)",
             "value_18": "✓",
             "label_19": "Focus & Relax with Light Moments Pomodoro Clock",
             "value_19": "✓",
@@ -1759,10 +1759,10 @@
         "feature_zTTBYd": {
           "type": "feature",
           "settings": {
-            "title": "7 Day Battery Life",
+            "title": "10 Day Battery Life",
             "title_font_size": 17,
             "title_color": "#1d1d1f",
-            "description": "<p>Leave daily charging behind. FANY Luna delivers up to 7 days* of continuous battery life to keep up with your active schedule. The magnetic charger snaps into place effortlessly, reaching a full fast charge in just two hours based on typical personal usage.<br/>*Battery life may vary depending on usage.</p>",
+            "description": "<p>Leave daily charging behind. FANY Luna delivers up to 10 days* of continuous battery life to keep up with your active schedule. The magnetic charger snaps into place effortlessly, reaching a full fast charge in just 1.5 hours based on typical personal usage.<br/>*Battery life may vary depending on usage.</p>",
             "desc_font_size": 16,
             "desc_color": "#1d1d1f",
             "image": "shopify://shop_images/FANY-Luna-Silicone-_-_-PC_0a6e325a-980d-4e81-a602-d89830d1e8ea.webp",
@@ -1923,8 +1923,8 @@
         "desktop_image_position": "center top",
         "mobile_background_image": "shopify://shop_images/FANY-Luna-Silicone-_-M_33c22378-d394-45b3-bf65-5b2893155b98.webp",
         "mobile_image_position": "center top",
-        "intro_heading": "110+ Workout Modes\nfor Every Way You Move",
-        "intro_body": "<p>From running and pickleball to yoga, Pilates, HIIT, cycling, and more, FANY Luna supports 110+ workout modes to match the way you move. Track key activity metrics such as heart rate, calories burned, workout duration, and movement data—all from your wrist.<br/><br/>Whether you're training hard or simply moving more each day, Luna helps you see your progress and stay motivated.</p>",
+        "intro_heading": "120+ Workout Modes\nfor Every Way You Move",
+        "intro_body": "<p>From running and pickleball to yoga, Pilates, HIIT, cycling, and more, FANY Luna supports 120+ workout modes to match the way you move. Track key activity metrics such as heart rate, calories burned, workout duration, and movement data—all from your wrist.<br/><br/>Whether you're training hard or simply moving more each day, Luna helps you see your progress and stay motivated.</p>",
         "desktop_intro_text_color": "#ffffff",
         "mobile_intro_text_color": "#ffffff",
         "desktop_intro_horizontal": "flex-start",
@@ -2381,7 +2381,7 @@
           "settings": {
             "heading": "9. How long does the FANY Luna battery last?",
             "icon": "none",
-            "row_content": "<p>FANY Luna offers up to 7 days of battery life under typical use. Actual battery life may vary depending on features, notification frequency, workout tracking, display use, and other settings.</p>",
+            "row_content": "<p>FANY Luna offers up to 10 days of battery life under typical use. Actual battery life may vary depending on features, notification frequency, workout tracking, display use, and other settings.</p>",
             "page": ""
           }
         },
