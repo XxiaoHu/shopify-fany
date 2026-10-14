@@ -190,7 +190,7 @@
             "desktop_image": "shopify://shop_images/Stellar-Spark-Bangle-5.webp",
             "mobile_image": "shopify://shop_images/Stellar-Spark-Bangle-4.webp",
             "image_alt": "",
-            "heading": "&nbsp;Stellar Crystal Bangle Watch Band",
+            "heading": "Stellar Crystal Bangle Watch Band",
             "description": "<p>A radiant rose gold finish, delicate star details, and sparkling crystals create an elegant, celestial look.</p>",
             "desktop_side": "right",
             "desktop_heading_size": 28,
@@ -222,9 +222,11 @@
         "scene_cVxwnq": {
           "type": "scene",
           "settings": {
+            "desktop_image": "shopify://shop_images/Meow-Sparkle-Band-5.webp",
+            "mobile_image": "shopify://shop_images/Meow-Sparkle-Band-4.webp",
             "image_alt": "",
-            "heading": "New Beginnings:",
-            "description": "<p>Whether she's saying goodbye to campus, stepping into her first career, or chasing dreams beyond the horizon, the FANY Luna stylish smartwatch paired with the 14K gold butterfly bracelet celebrates a beautiful new beginning.</p>",
+            "heading": "Meow Crystal Bracelet Watch Band",
+            "description": "<p>Playful cat-ear details, sparkling crystals, and a polished metal finish add a touch of charm and whimsy.</p>",
             "desktop_side": "left",
             "desktop_heading_size": 28,
             "desktop_heading_width": 450,
@@ -255,9 +257,11 @@
         "scene_k7ghyc": {
           "type": "scene",
           "settings": {
+            "desktop_image": "shopify://shop_images/Pearl-Glow-Band-5.webp",
+            "mobile_image": "shopify://shop_images/Pearl-Glow-Band-4.webp",
             "image_alt": "",
-            "heading": "New Beginnings:",
-            "description": "<p>Whether she's saying goodbye to campus, stepping into her first career, or chasing dreams beyond the horizon, the FANY Luna stylish smartwatch paired with the 14K gold butterfly bracelet celebrates a beautiful new beginning.</p>",
+            "heading": "Mother of Pearl Leather Bracelet Watch Band",
+            "description": "<p>Natural mother-of-pearl shimmer, geometric accents, and refined leather blend comfort with understated elegance.</p>",
             "desktop_side": "right",
             "desktop_heading_size": 28,
             "desktop_heading_width": 450,
