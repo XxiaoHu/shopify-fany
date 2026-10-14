@@ -447,9 +447,9 @@
         "collapsible_row_cxPQFx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How can I create a custom watch face with my own photo?",
+            "heading": "Which smartwatch is this band compatible with?",
             "icon": "none",
-            "row_content": "<p>It’s easy to create a personalized watch face:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>4. Scroll down and find Photo.<br/>5. Tap Photos and upload your favorite image.<br/>Follow the prompts to set your photo as your watch face.</p>",
+            "row_content": "<p>This band is designed for FANY Luna smartwatches. Please check the product specifications before purchasing to ensure compatibility.</p>",
             "page": ""
           }
         },
