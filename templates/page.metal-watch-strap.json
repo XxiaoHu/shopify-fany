@@ -101,10 +101,19 @@
     "gift_product_showcase_ALDif4": {
       "type": "gift-product-showcase",
       "blocks": {
+        "product_card_zJji8e": {
+          "type": "product_card",
+          "settings": {
+            "product": "geometric-mother-of-pearl-leather-bracelet-watch-band",
+            "image_alt": "",
+            "title": "Stellar Crystal Bangle Watch Band",
+            "cta_text": "SHOP NOW"
+          }
+        },
         "product_card_dYmkQy": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "meow-crystal-bracelet-watch-band",
             "image_alt": "",
             "title": "Geometric Mother of Pearl Vegan Leather Bracelet Watch Band",
             "cta_text": "SHOP NOW"
@@ -113,26 +122,17 @@
         "product_card_JKrKF4": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "stellar-crystal-bangle-watch-band",
             "image_alt": "",
             "title": "Meow Crystal Bracelet Watch Band",
-            "cta_text": "SHOP NOW"
-          }
-        },
-        "product_card_zJji8e": {
-          "type": "product_card",
-          "settings": {
-            "product": "",
-            "image_alt": "",
-            "title": "Stellar Crystal Bangle Watch Band",
             "cta_text": "SHOP NOW"
           }
         }
       },
       "block_order": [
+        "product_card_zJji8e",
         "product_card_dYmkQy",
-        "product_card_JKrKF4",
-        "product_card_zJji8e"
+        "product_card_JKrKF4"
       ],
       "name": "礼物产品展示",
       "settings": {
@@ -187,9 +187,11 @@
         "scene_J6xgAB": {
           "type": "scene",
           "settings": {
+            "desktop_image": "shopify://shop_images/Stellar-Spark-Bangle-5.webp",
+            "mobile_image": "shopify://shop_images/Stellar-Spark-Bangle-4.webp",
             "image_alt": "",
-            "heading": "New Beginnings:",
-            "description": "<p>Whether she's saying goodbye to campus, stepping into her first career, or chasing dreams beyond the horizon, the FANY Luna stylish smartwatch paired with the 14K gold butterfly bracelet celebrates a beautiful new beginning.</p>",
+            "heading": "&nbsp;Stellar Crystal Bangle Watch Band",
+            "description": "<p>A radiant rose gold finish, delicate star details, and sparkling crystals create an elegant, celestial look.</p>",
             "desktop_side": "right",
             "desktop_heading_size": 28,
             "desktop_heading_width": 450,
@@ -328,7 +330,9 @@
         "mobile_heading": "Timeless gifts that stand\nout 20% OFF GIFT SETS",
         "mobile_description": "Discover gifts that make every moment extraordinary.",
         "desktop_source_type": "youtube",
+        "desktop_youtube": "",
         "mobile_source_type": "youtube",
+        "mobile_youtube": "",
         "background_color": "#ffffff",
         "heading_color": "#1e0e06",
         "description_color": "#686766",
