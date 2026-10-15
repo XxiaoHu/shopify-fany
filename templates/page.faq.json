@@ -691,6 +691,24 @@
     "topic_faq_VRy6aX": {
       "type": "topic-faq",
       "blocks": {
+        "collapsible_row_LNNzKT": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "产品",
+            "heading": "What is FANY?",
+            "row_content": "<p>FANY is a smartwatch brand that designs smartwatches specifically for women. Our first product line, FANY Luna, is a 37.5 mm, 29.2 g smartwatch with sleep, stress, heart rate, and cycle tracking, 110+ workout modes, and up to 7 days of battery life.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qDzPfR": {
+          "type": "collapsible_row",
+          "settings": {
+            "category": "产品",
+            "heading": "Is FANY the same as other brands with a similar name?",
+            "row_content": "<p>No. FANY is a smartwatch brand that designs smartwatches exclusively for women, headquartered in Hong Kong. Our only product line is FANY Luna. If the brand you are looking at sells a different category of products, it is a different company.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_TUUpXk": {
           "type": "collapsible_row",
           "settings": {
@@ -981,6 +999,8 @@
         }
       },
       "block_order": [
+        "collapsible_row_LNNzKT",
+        "collapsible_row_qDzPfR",
         "collapsible_row_TUUpXk",
         "collapsible_row_t9mFkw",
         "collapsible_row_6iYWwk",
