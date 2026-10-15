@@ -114,6 +114,10 @@
             "show_gift_card_recipient": true
           }
         },
+        "essential_upsell_frequently_bought_together_app_block_DRrw44": {
+          "type": "shopify://apps/essential-upsell/blocks/frequently-bought-together-app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        },
         "klarna_on_site_messaging_app_block_HH4iJi": {
           "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
           "disabled": true,
@@ -529,6 +533,7 @@
         "complementary_XHQWby",
         "discount_FbgCrr",
         "buy_buttons",
+        "essential_upsell_frequently_bought_together_app_block_DRrw44",
         "klarna_on_site_messaging_app_block_HH4iJi",
         "payment_RJtWhH",
         "side_panel_links_qBVbeB",
