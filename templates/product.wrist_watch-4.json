@@ -14,6 +14,8 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
         "padding_top": 0,
         "padding_bottom": 12,
         "padding_left": 0,
@@ -91,8 +93,13 @@
           "type": "variant_img",
           "settings": {}
         },
+        "essential_upsell_frequently_bought_together_app_block_tnYA8W": {
+          "type": "shopify://apps/essential-upsell/blocks/frequently-bought-together-app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        },
         "complementary_XHQWby": {
           "type": "complementary",
+          "disabled": true,
           "settings": {}
         },
         "discount_FbgCrr": {
@@ -138,6 +145,7 @@
         "price",
         "klarna_on_site_messaging_app_block_gKEjj8",
         "variant_img_m4j3e4",
+        "essential_upsell_frequently_bought_together_app_block_tnYA8W",
         "complementary_XHQWby",
         "discount_FbgCrr",
         "buy_buttons",
@@ -1524,6 +1532,7 @@
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
+        "heading_color": "#121212",
         "heading_alignment": "center",
         "heading_position": "inside",
         "mobile_heading_size": 28,
