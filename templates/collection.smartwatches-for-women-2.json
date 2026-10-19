@@ -20,27 +20,6 @@
     },
     "image_banner_zPR6f6": {
       "type": "image-banner",
-      "blocks": {
-        "heading_PiHfDU": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_mJXygP": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
-            "text_style": "f-18"
-          }
-        }
-      },
-      "block_order": [
-        "heading_PiHfDU",
-        "text_mJXygP"
-      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/FANY_Luna_Smartwatch_2.webp",
