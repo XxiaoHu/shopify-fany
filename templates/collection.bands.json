@@ -202,6 +202,41 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_dkzarE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XzkWiL": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Choose the Right Watch Band? &nbsp;",
+            "heading_size": "h1",
+            "heading_width": 600
+          }
+        },
+        "text_dBNPre": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Choose Silicone for Everyday Comfort</h3><p>A silicone watch band offers a casual, sporty look for everyday activities and active routines. It is a versatile choice if you prefer a relaxed style.</p><h3>Choose Leather for Timeless Style</h3><p>A leather watch band adds a classic, polished finish that pairs well with workwear, everyday outfits, and more formal occasions.</p><h3>Choose a Bracelet-Style Band for a Statement Look</h3><p>Decorative bracelet-style watch bands add sparkle and personality to your smartwatch. Choose a crystal or mother-of-pearl design when you want your watch to complement your outfit or stand out as an accessory.</p><h3>Check Compatibility Before Buying</h3><p>FANY Luna replacement bands use a 16mm quick-release connection and are designed for the FANY Luna smartwatch. Check the product specifications before ordering to ensure a compatible fit.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_XzkWiL",
+        "text_dBNPre"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "collapsible_content_xxzg7w": {
       "type": "collapsible-content",
       "blocks": {
@@ -277,6 +312,7 @@
     "image_text_qLjCR3",
     "collection_tabs_idD4pA",
     "product-grid",
+    "rich_text_dkzarE",
     "collapsible_content_xxzg7w"
   ]
 }
