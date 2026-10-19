@@ -95,6 +95,11 @@
         },
         "complementary_XHQWby": {
           "type": "complementary",
+          "disabled": true,
+          "settings": {}
+        },
+        "essential_upsell_frequently_bought_together_app_block_T4D3P4": {
+          "type": "shopify://apps/essential-upsell/blocks/frequently-bought-together-app-block/50627fd9-24fd-4250-8614-accc12826d80",
           "settings": {}
         },
         "buy_buttons": {
@@ -380,6 +385,7 @@
         "text_8Pieka",
         "variant_img_m4j3e4",
         "complementary_XHQWby",
+        "essential_upsell_frequently_bought_together_app_block_T4D3P4",
         "buy_buttons",
         "klarna_on_site_messaging_app_block_HH4iJi",
         "payment_RJtWhH",
