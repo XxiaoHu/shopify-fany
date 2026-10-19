@@ -240,35 +240,65 @@
     "collapsible_content_xxzg7w": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_NecHeU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1.  Are FANY Luna Watch Bands Interchangeable?",
+            "icon": "none",
+            "row_content": "<p>Yes. FANY Luna uses 16mm quick-release watch bands, allowing you to switch between compatible styles without special tools. Choose a band that matches your outfit, daily routine, or personal style.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nT4jCY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "2.  What Styles of Watch Bands Are Available?",
+            "icon": "none",
+            "row_content": "<p>FANY offers a variety of styles, including silicone bands for a casual, sporty look, leather bands for timeless elegance, and decorative bracelet-style bands for a more distinctive appearance. Explore the collection to find a style that suits your everyday wear or special occasions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_BXQFcU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "3. Are FANY Luna Watch Bands Compatible with Other Smartwatches?",
+            "icon": "none",
+            "row_content": "<p>FANY Luna replacement bands are designed for the FANY Luna smartwatch. Although they use a 16mm quick-release connection, compatibility with other smartwatch brands and models is not guaranteed. Check your watch's attachment mechanism and the product specifications before purchasing.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_mxcQNb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. What size wrist does the 16 mm leather band fit?",
+            "heading": "4. Are FANY Luna Watch Bands Suitable for Sensitive Skin?",
             "icon": "none",
-            "row_content": "<p>The band fits wrists measuring approximately 144–202 mm (5.67–7.95 in), making it suitable for a wide range of wrist sizes.</p>",
+            "row_content": "<p>FANY offers bands made from different materials, including silicone and leather. Comfort can vary depending on your skin and the material. If you have sensitive skin, check the material details of your preferred band and discontinue use if irritation occurs.</p>",
             "page": ""
           }
         },
         "collapsible_row_pkyDfW": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "2. Can I easily change the FANY Luna watch bands?",
+            "heading": "5. How Do I Choose the Right Watch Band?",
             "icon": "none",
-            "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
+            "row_content": "<p>Consider your preferred style, daily activities, and the band's material. Silicone is a versatile choice for casual and active routines, leather offers a classic finish, and decorative bracelet-style bands add a distinctive touch. Always check the product specifications to ensure compatibility with your FANY Luna smartwatch.</p>",
             "page": ""
           }
         },
         "collapsible_row_xVV4aP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "3. Is the FANY Luna comfortable for sensitive skin?",
+            "heading": "6. How Should I Care for My Watch Band?",
             "icon": "none",
-            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
+            "row_content": "<p>Care depends on the material. Keep leather bands away from prolonged moisture and clean them gently with a soft cloth. For silicone bands, follow the product care instructions and clean gently as needed. Avoid harsh chemicals and allow the band to dry before wearing it again.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
+        "collapsible_row_NecHeU",
+        "collapsible_row_nT4jCY",
+        "collapsible_row_BXQFcU",
         "collapsible_row_mxcQNb",
         "collapsible_row_pkyDfW",
         "collapsible_row_xVV4aP"
