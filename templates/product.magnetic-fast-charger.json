@@ -94,6 +94,10 @@
           "type": "variant_img",
           "settings": {}
         },
+        "essential_upsell_frequently_bought_together_app_block_HnEPbB": {
+          "type": "shopify://apps/essential-upsell/blocks/frequently-bought-together-app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        },
         "complementary_XHQWby": {
           "type": "complementary",
           "disabled": true,
@@ -526,6 +530,7 @@
         "price",
         "klarna_on_site_messaging_app_block_gKEjj8",
         "variant_img_m4j3e4",
+        "essential_upsell_frequently_bought_together_app_block_HnEPbB",
         "complementary_XHQWby",
         "discount_FbgCrr",
         "buy_buttons",
