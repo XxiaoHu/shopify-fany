@@ -537,6 +537,7 @@
         },
         "slide_4TEh7C": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/band-banner-pc-4.webp",
             "mobile_image": "shopify://shop_images/band-banner-m-2.webp",
@@ -587,7 +588,7 @@
             "title_desc_gap": 20,
             "mobile_title_desc_gap": 16,
             "button_label": "SHOP NOW",
-            "button_link": "https://fany.us/collections/smartwatches-for-women",
+            "button_link": "https://fany.us/collections/bands",
             "button_style": "primary",
             "button_alignment": "flex-start",
             "mobile_button_alignment": "center",
@@ -605,7 +606,6 @@
         },
         "slide_k84HUr": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/summer_sale_banner.webp",
             "mobile_image": "shopify://shop_images/summer_sale_banner_2.webp",
@@ -674,7 +674,6 @@
         },
         "slide_q8zgnr": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/gift_set_PC1.webp",
             "mobile_image": "shopify://shop_images/gift_set_M.webp",
