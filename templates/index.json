@@ -538,7 +538,7 @@
         "slide_4TEh7C": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/summer_sale_banner.webp",
+            "image": "shopify://shop_images/band-banner-pc-4.webp",
             "mobile_image": "shopify://shop_images/band-banner-m-2.webp",
             "image_overlay_opacity": 0,
             "link": "https://fany.us/collections/smartwatches-for-women",
@@ -574,7 +574,7 @@
             "subtitle_desc_gap": 12,
             "mobile_title_subtitle_gap": 6,
             "mobile_subtitle_desc_gap": 10,
-            "description": "<p>Jewelry-inspired designs that bring a touch of elegance to your style.</p>",
+            "description": "<p>Jewelry-inspired designs&nbsp;</p><p>that bring a touch of elegance to your style.</p>",
             "desc_font_size": 20,
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
@@ -605,6 +605,7 @@
         },
         "slide_k84HUr": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/summer_sale_banner.webp",
             "mobile_image": "shopify://shop_images/summer_sale_banner_2.webp",
@@ -673,6 +674,7 @@
         },
         "slide_q8zgnr": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/gift_set_PC1.webp",
             "mobile_image": "shopify://shop_images/gift_set_M.webp",
