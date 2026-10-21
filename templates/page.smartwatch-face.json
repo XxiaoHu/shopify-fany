@@ -273,8 +273,8 @@
             "desktop_image": "shopify://shop_images/watchface-women2.webp",
             "mobile_image": "shopify://shop_images/watchface-women2.webp",
             "image_alt": "",
-            "heading": "She Power",
-            "description": "Classic pop art reimagined. Celebrating bold female power with a daily statement of equality on your wrist.",
+            "heading": "Pool Party",
+            "description": "Float into Labor Day weekend with iconic flamingo pool party vibes and carefree holiday relaxation.",
             "link": ""
           }
         },
@@ -284,8 +284,8 @@
             "desktop_image": "shopify://shop_images/watchface-women3.webp",
             "mobile_image": "shopify://shop_images/watchface-women3.webp",
             "image_alt": "",
-            "heading": "Glory Girl",
-            "description": "Blending pop art aesthetics with youthful energy, raising the flag with fearless confidence to live out bright, undefined glory.",
+            "heading": "Surf Holiday",
+            "description": "Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the holiday.",
             "link": ""
           }
         },
@@ -295,8 +295,8 @@
             "desktop_image": "shopify://shop_images/watchface-women4.webp",
             "mobile_image": "shopify://shop_images/watchface-women4.webp",
             "image_alt": "",
-            "heading": "Lady Spark",
-            "description": "Classic pop art reflects red-lip glamour. Grasp your power to ignite dream sparks and shine as the star of your life.",
+            "heading": "Juice Cheers",
+            "description": "An elegant toast with chilled juice by the pool- cheers! Treat yourself to effortless style this Labor Day",
             "link": ""
           }
         },
@@ -306,8 +306,17 @@
             "desktop_image": "shopify://shop_images/watchface-women5.webp",
             "mobile_image": "shopify://shop_images/watchface-women5.webp",
             "image_alt": "",
-            "heading": "She Leads",
-            "description": "Bold pop-art colors capture a powerful presence. Inspiring action with confidence, honoring women leaders who march forward.",
+            "heading": "Holiday Sip",
+            "description": "Orange sips intertwine with soft floral shadows; cherish Labor Day's quiet elegance with a moment of refined ease.",
+            "link": ""
+          }
+        },
+        "product_card_kbtMMw": {
+          "type": "product_card",
+          "settings": {
+            "image_alt": "",
+            "heading": "BBQ Spark",
+            "description": "Rising flames and sparkling fireworks unleash pure joy through endless BBQ feasts with your loved ones and",
             "link": ""
           }
         }
@@ -316,13 +325,14 @@
         "product_card_pRbLNe",
         "product_card_RTBJqB",
         "product_card_fqEYJR",
-        "product_card_dBiWYp"
+        "product_card_dBiWYp",
+        "product_card_kbtMMw"
       ],
       "name": "主视觉产品展示",
       "settings": {
-        "heading": "Women's Equality Day Watch Face",
-        "description": "<p>Celebrate women’s power on your wrist with pop‑art designs portraying confident women. A woman can be powerful, beautiful, or lovely — she shall not be defined by anyone.&nbsp;</p>",
-        "navigation_anchor": "Women's Equality Day",
+        "heading": "Labor Day Watch Face",
+        "description": "<p>Pool, flamingo loungers, coconut trees, sunset, sandy beach, BBQ, and fresh juice… Pure Labor Day vacation vibes! Carry vacation joy right on your wrist to lift your mood and style.</p>",
+        "navigation_anchor": "Labor Day",
         "carousel_label": "节日产品",
         "feature_desktop_image": "shopify://shop_images/watchface-women1.webp",
         "feature_mobile_image": "shopify://shop_images/watchface-women1-2.webp",
