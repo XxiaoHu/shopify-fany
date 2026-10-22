@@ -327,6 +327,7 @@
     },
     "responsive_video_showcase_BNjHJx": {
       "type": "responsive-video-showcase",
+      "disabled": true,
       "name": "响应式视频展示",
       "settings": {
         "desktop_heading": "How to Change Your Watch Band",
