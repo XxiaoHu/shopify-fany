@@ -104,16 +104,16 @@
         "item_pmDBkm": {
           "type": "item",
           "settings": {
-            "text": "Halloween",
-            "target_anchor": "Halloween",
+            "text": "New in",
+            "target_anchor": "New in",
             "is_active": false
           }
         },
         "item_c4fH6q": {
           "type": "item",
           "settings": {
-            "text": "Women's Equality Day",
-            "target_anchor": "Women's Equality Day",
+            "text": "Holiday Watch Faces",
+            "target_anchor": "Holiday Watch Faces",
             "is_active": false
           }
         },
@@ -231,7 +231,7 @@
         "heading": "New in: Halloween Watch Face",
         "description": "<p>Midnight Cat, Jack Glow, Vampire Kiss, and a touch of devilish glamour… Halloween is calling! Dress up your wrist with spooky-cute watch faces that bring a little fun, mystery, and festive flair.</p>",
         "carousel_label": "节日产品",
-        "navigation_anchor": "Halloween",
+        "navigation_anchor": "New in",
         "background_color": "#ffffff",
         "heading_color": "#1e0e06",
         "description_color": "#686766",
@@ -334,7 +334,7 @@
       "settings": {
         "heading": "Labor Day Watch Face",
         "description": "<p>Pool, flamingo loungers, coconut trees, sunset, sandy beach, BBQ, and fresh juice… Pure Labor Day vacation vibes! Carry vacation joy right on your wrist to lift your mood and style.</p>",
-        "navigation_anchor": "Labor Day",
+        "navigation_anchor": "Holiday Watch Faces",
         "carousel_label": "节日产品",
         "feature_desktop_image": "shopify://shop_images/watchface-labor6.webp",
         "feature_mobile_image": "shopify://shop_images/watchface-labor6-2.webp",
