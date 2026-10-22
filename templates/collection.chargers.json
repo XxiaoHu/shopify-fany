@@ -21,13 +21,6 @@
     "image_banner_zPR6f6": {
       "type": "image-banner",
       "blocks": {
-        "heading_PiHfDU": {
-          "type": "heading",
-          "settings": {
-            "heading": "FANY Luna Magnetic Fast Charger",
-            "heading_size": "h1"
-          }
-        },
         "text_mJXygP": {
           "type": "text",
           "disabled": true,
@@ -38,7 +31,6 @@
         }
       },
       "block_order": [
-        "heading_PiHfDU",
         "text_mJXygP"
       ],
       "name": "t:sections.image-banner.presets.name",
@@ -118,7 +110,7 @@
       "type": "image-text",
       "name": "上下结构图文",
       "settings": {
-        "header": "",
+        "header": "<p>FANY Luna Magnetic Fast Charger</p>",
         "text": "<p>A 600 mm magnetic charging cable built for the FANY Luna. Snap it on, and the watch aligns itself—a full charge takes about 1.5 hours over USB-C, enough for up to 10 days of use.</p><h2>Why 600 mm Matters</h2><p>Long enough to reach from a bedside outlet, a desk USB-C port or a power bank, so the watch keeps charging while you keep wearing it. The connector seats itself the moment it gets close—no pins to line up, no fumbling in the dark.</p><h2>Compatibility</h2><p>Charges the FANY Luna smartwatch, with leather and silicone editions alike. The connector is shaped for Luna's back only—it does not work with iPhones, Apple Watches, Samsung Galaxy Watches, or any other third-party smartwatches.</p>",
         "img_first": true,
         "img_has_back": false,
