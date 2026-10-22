@@ -21,13 +21,6 @@
     "image_banner_zPR6f6": {
       "type": "image-banner",
       "blocks": {
-        "heading_PiHfDU": {
-          "type": "heading",
-          "settings": {
-            "heading": "&nbsp;FANY Smartwatch & Accessories &nbsp;",
-            "heading_size": "h1"
-          }
-        },
         "text_mJXygP": {
           "type": "text",
           "disabled": true,
@@ -38,7 +31,6 @@
         }
       },
       "block_order": [
-        "heading_PiHfDU",
         "text_mJXygP"
       ],
       "name": "t:sections.image-banner.presets.name",
@@ -83,7 +75,7 @@
       "type": "image-text",
       "name": "上下结构图文",
       "settings": {
-        "header": "<p>All Products</p>",
+        "header": "<p>FANY Smartwatch & Accessories &nbsp;</p>",
         "text": "<p>Everything You Need. One Complete FANY Experience.<br/>Discover the FANY collection, centered around the FANY smartwatch—designed to bring together elegant style, everyday wellness, and thoughtful technology. Complement your FANY with carefully selected accessories, from versatile bands and charging essentials to stylish pieces made for effortless pairing.</p>",
         "img_first": true,
         "img_has_back": false,
