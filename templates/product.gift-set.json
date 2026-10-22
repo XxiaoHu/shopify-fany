@@ -127,6 +127,7 @@
         },
         "discount_FbgCrr": {
           "type": "discount",
+          "disabled": true,
           "settings": {
             "discount_text": "SAVE $10",
             "coupon_code": "FANY GIFT"
