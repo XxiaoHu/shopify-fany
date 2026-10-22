@@ -100,19 +100,19 @@
         "popular_article_ad9McU": {
           "type": "popular_article",
           "settings": {
-            "article": "wellness-fitness/labor-day-womens-day-of-honoring-their-work-seen-and-unseen"
+            "article": "wellness-fitness/best-travel-smartwatch-for-women"
           }
         },
         "popular_article_BMHjXY": {
           "type": "popular_article",
           "settings": {
-            "article": "wellness-fitness/smartwatch-without-subscription"
+            "article": "wellness-fitness/how-to-choose-and-use-a-fitness-tracker-during-pregnancy"
           }
         },
         "popular_article_CcNtgY": {
           "type": "popular_article",
           "settings": {
-            "article": "wellness-fitness/can-a-smartwatch-replace-a-phone"
+            "article": "wellness-fitness/smartwatch-vs-fitness-tracker"
           }
         }
       },
@@ -123,7 +123,7 @@
       ],
       "name": "手动博客推荐",
       "settings": {
-        "featured_article": "wellness-fitness/back-to-school-essentials-for-college-girls",
+        "featured_article": "wellness-fitness/how-do-smartwatches-count-steps-measure-heart-rate-and-track-sleep",
         "read_more_label": "Read On",
         "featured_heading_size": "h2",
         "popular_heading": "Most Popular",
