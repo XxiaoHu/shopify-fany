@@ -270,8 +270,8 @@
         "product_card_pRbLNe": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface-women2.webp",
-            "mobile_image": "shopify://shop_images/watchface-women2.webp",
+            "desktop_image": "shopify://shop_images/watchface-labor2-2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor2-2.webp",
             "image_alt": "",
             "heading": "Pool Party",
             "description": "Float into Labor Day weekend with iconic flamingo pool party vibes and carefree holiday relaxation.",
@@ -281,8 +281,8 @@
         "product_card_RTBJqB": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface-women3.webp",
-            "mobile_image": "shopify://shop_images/watchface-women3.webp",
+            "desktop_image": "shopify://shop_images/watchface-labor4-2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor4-2.webp",
             "image_alt": "",
             "heading": "Surf Holiday",
             "description": "Ride the golden sunset waves into late-summer freedom; relaxation is the true spirit of the holiday.",
@@ -292,8 +292,8 @@
         "product_card_fqEYJR": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface-women4.webp",
-            "mobile_image": "shopify://shop_images/watchface-women4.webp",
+            "desktop_image": "shopify://shop_images/watchface-labor3-2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor3-2.webp",
             "image_alt": "",
             "heading": "Juice Cheers",
             "description": "An elegant toast with chilled juice by the pool- cheers! Treat yourself to effortless style this Labor Day",
@@ -303,8 +303,8 @@
         "product_card_dBiWYp": {
           "type": "product_card",
           "settings": {
-            "desktop_image": "shopify://shop_images/watchface-women5.webp",
-            "mobile_image": "shopify://shop_images/watchface-women5.webp",
+            "desktop_image": "shopify://shop_images/watchface-labor1-2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor1-2.webp",
             "image_alt": "",
             "heading": "Holiday Sip",
             "description": "Orange sips intertwine with soft floral shadows; cherish Labor Day's quiet elegance with a moment of refined ease.",
@@ -314,6 +314,8 @@
         "product_card_kbtMMw": {
           "type": "product_card",
           "settings": {
+            "desktop_image": "shopify://shop_images/watchface-labor5-2.webp",
+            "mobile_image": "shopify://shop_images/watchface-labor5-2.webp",
             "image_alt": "",
             "heading": "BBQ Spark",
             "description": "Rising flames and sparkling fireworks unleash pure joy through endless BBQ feasts with your loved ones and",
@@ -334,8 +336,8 @@
         "description": "<p>Pool, flamingo loungers, coconut trees, sunset, sandy beach, BBQ, and fresh juice… Pure Labor Day vacation vibes! Carry vacation joy right on your wrist to lift your mood and style.</p>",
         "navigation_anchor": "Labor Day",
         "carousel_label": "节日产品",
-        "feature_desktop_image": "shopify://shop_images/watchface-women1.webp",
-        "feature_mobile_image": "shopify://shop_images/watchface-women1-2.webp",
+        "feature_desktop_image": "shopify://shop_images/watchface-labor6.webp",
+        "feature_mobile_image": "shopify://shop_images/watchface-labor6-2.webp",
         "feature_image_alt": "",
         "feature_link": "",
         "desktop_columns": 3,
