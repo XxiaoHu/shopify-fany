@@ -327,7 +327,6 @@
     },
     "responsive_video_showcase_BNjHJx": {
       "type": "responsive-video-showcase",
-      "disabled": true,
       "name": "响应式视频展示",
       "settings": {
         "desktop_heading": "How to Change Your Watch Band",
@@ -335,9 +334,9 @@
         "mobile_heading": "How to Change Your Watch Band",
         "mobile_description": "Watch the step-by-step guide to easily replace your watch band.",
         "desktop_source_type": "youtube",
-        "desktop_youtube": "https://www.youtube.com/watch?v=MyB7CqN2jwU",
+        "desktop_youtube": "https://www.youtube.com/watch?v=1uRUpkmhNIg",
         "mobile_source_type": "youtube",
-        "mobile_youtube": "",
+        "mobile_youtube": "https://www.youtube.com/watch?v=1uRUpkmhNIg",
         "background_color": "#ffffff",
         "heading_color": "#1e0e06",
         "description_color": "#686766",
