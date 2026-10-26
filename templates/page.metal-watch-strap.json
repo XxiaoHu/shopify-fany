@@ -101,19 +101,10 @@
     "gift_product_showcase_ALDif4": {
       "type": "gift-product-showcase",
       "blocks": {
-        "product_card_zJji8e": {
-          "type": "product_card",
-          "settings": {
-            "product": "geometric-mother-of-pearl-leather-bracelet-watch-band",
-            "image_alt": "",
-            "title": "Stellar Crystal Bangle Watch Band",
-            "cta_text": "SHOP NOW"
-          }
-        },
         "product_card_dYmkQy": {
           "type": "product_card",
           "settings": {
-            "product": "meow-crystal-bracelet-watch-band",
+            "product": "geometric-mother-of-pearl-leather-bracelet-watch-band",
             "image_alt": "",
             "title": "Geometric Mother of Pearl Vegan Leather Bracelet Watch Band",
             "cta_text": "SHOP NOW"
@@ -122,17 +113,26 @@
         "product_card_JKrKF4": {
           "type": "product_card",
           "settings": {
-            "product": "stellar-crystal-bangle-watch-band",
+            "product": "meow-crystal-bracelet-watch-band",
             "image_alt": "",
             "title": "Meow Crystal Bracelet Watch Band",
+            "cta_text": "SHOP NOW"
+          }
+        },
+        "product_card_zJji8e": {
+          "type": "product_card",
+          "settings": {
+            "product": "stellar-crystal-bangle-watch-band",
+            "image_alt": "",
+            "title": "Stellar Crystal Bangle Watch Band",
             "cta_text": "SHOP NOW"
           }
         }
       },
       "block_order": [
-        "product_card_zJji8e",
         "product_card_dYmkQy",
-        "product_card_JKrKF4"
+        "product_card_JKrKF4",
+        "product_card_zJji8e"
       ],
       "name": "礼物产品展示",
       "settings": {
