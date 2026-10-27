@@ -222,45 +222,54 @@
         "collapsible_row_mxcQNb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. What size wrist does the 16 mm leather band fit?",
+            "heading": "1.  What accessories are available for the FANY Luna smartwatch?",
             "icon": "none",
-            "row_content": "<p>The band fits wrists measuring approximately 144–202 mm (5.67–7.95 in), making it suitable for a wide range of wrist sizes.</p>",
+            "row_content": "<p>FANY Luna accessories include 16mm quick-release leather and silicone watch bands, jewelry-inspired bracelet bands, and a compatible magnetic USB-C charging cable.</p>",
             "page": ""
           }
         },
         "collapsible_row_pkyDfW": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "2. Can I easily change the FANY Luna watch bands?",
+            "heading": "2. What size watch band does FANY Luna use?",
             "icon": "none",
-            "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
+            "row_content": "<p>FANY Luna uses compatible 16mm quick-release watch bands. Check the band width and connection mechanism before purchasing a replacement strap.</p>",
             "page": ""
           }
         },
         "collapsible_row_xVV4aP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "3. Is the FANY Luna comfortable for sensitive skin?",
+            "heading": "3.  How do I change a FANY Luna smartwatch band?",
             "icon": "none",
-            "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
+            "row_content": "<p>Locate the quick-release mechanism on the back of the watch band, slide the release pin, and gently remove the existing strap. Attach the replacement band, then check that both ends are securely connected before wearing the watch.</p>",
             "page": ""
           }
         },
         "collapsible_row_4mMRxf": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "4.  Is the magnetic charger compatible with iPhones or other devices?",
+            "heading": "4.  Which FANY Luna watch band should I choose?",
             "icon": "none",
-            "row_content": "<p>No. The <strong>600 mm Magnetic Fast Charger to USB-C Cable</strong> is designed specifically for charging the FANY Luna smartwatch and is <strong>not compatible with iPhones or other devices</strong>. Please use it only with your FANY Luna smartwatch.</p>",
+            "row_content": "<p>Choose a leather band for a classic everyday style, a silicone band for flexibility and easy care, or a jewelry-inspired bracelet band for a more decorative look. Your best option depends on your comfort preferences, outfit, and activities.</p>",
             "page": ""
           }
         },
         "collapsible_row_TiP4Pa": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "5. How long does it take to fully charge the FANY Luna smartwatch?",
+            "heading": "5. Are FANY Luna watch bands compatible with other smartwatches?",
             "icon": "none",
-            "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 1.5 hours to fully charge. Once fully charged, it can provide up to 7 days of battery life, depending on usage.</p>",
+            "row_content": "<p>FANY Luna bands use a 16mm quick-release connection. They may fit other watches with compatible attachment systems, but width alone does not guarantee compatibility. Check the specifications of both the watch and the band before purchasing.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ye494R": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "6. Can I use the FANY Luna magnetic charger with another device?",
+            "icon": "none",
+            "row_content": "<p>The FANY Luna magnetic USB-C charging cable is designed specifically for the FANY Luna smartwatch. It is not compatible with iPhones and should not be assumed to work with other smartwatches or electronic devices.</p>",
             "page": ""
           }
         }
@@ -270,7 +279,8 @@
         "collapsible_row_pkyDfW",
         "collapsible_row_xVV4aP",
         "collapsible_row_4mMRxf",
-        "collapsible_row_TiP4Pa"
+        "collapsible_row_TiP4Pa",
+        "collapsible_row_ye494R"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
