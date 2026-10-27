@@ -181,6 +181,41 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_EKaBWU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Gxt3Xk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find the Right Accessories for Your FANY Luna Smartwatch&nbsp;",
+            "heading_size": "h2",
+            "heading_width": 800
+          }
+        },
+        "text_Hp3hTq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The right smartwatch accessory should fit your watch, suit your routine, and reflect your personal style. From elegant jewelry-inspired bands to practical everyday straps, FANY Luna accessories offer different ways to customize your watch.</p><h3>Jewelry-Inspired Smartwatch Bands</h3><p>For a more polished look, explore FANY's decorative bracelet-style watch bands. Designs such as the Meow Crystal Bracelet Watch Band, Stellar Crystal Bangle Watch Band, and Geometric Mother of Pearl Leather Bracelet Watch Band bring jewelry-inspired details to your smartwatch.</p><p>These styles are especially suited to dressy outfits, celebrations, and occasions when you want your watch to complement your accessories.</p><h3>16mm Leather and Silicone Watch Bands</h3><p>For everyday wear, FANY Luna offers 16mm quick-release leather and silicone watch bands.</p><p>Leather bands provide a classic, refined appearance that works well with casual or professional outfits. Silicone bands offer a flexible, easy-care alternative for daily activities.</p><p>Choose the material that best matches your comfort preferences and how you plan to wear your smartwatch.</p><h3>Magnetic Charging Accessories</h3><p>Keep your FANY Luna ready for everyday use with a compatible magnetic charging cable.</p><p>The FANY Luna Magnetic Fast Charger to USB-C Cable is designed specifically for the FANY Luna smartwatch. It is not intended for charging iPhones or unrelated devices.</p><h3>How to Choose the Right FANY Luna Accessory</h3><p>Before choosing an accessory, consider three important factors:</p><p><strong>Compatibility:</strong> FANY Luna uses compatible 16mm quick-release watch bands. Check the connection and product specifications before purchasing.</p><p><strong>Style and material:</strong> Choose jewelry-inspired styles for dressier occasions, leather for a classic look, or silicone for flexible everyday wear.</p><p><strong>Function:</strong> Watch bands change the appearance and feel of your smartwatch, while charging accessories help maintain its everyday usability.</p><p>For additional styles, explore our <a href=\"https://fany.us/collections/bands\">FANY Watch Bands</a> collection or browse <a href=\"https://fany.us/collections/chargers\">FANY Magnetic Chargers</a>.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_Gxt3Xk",
+        "text_Hp3hTq"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "collapsible_content_xxzg7w": {
       "type": "collapsible-content",
       "blocks": {
@@ -276,6 +311,7 @@
     "image_text_qLjCR3",
     "collection_tabs_idD4pA",
     "product-grid",
+    "rich_text_EKaBWU",
     "collapsible_content_xxzg7w"
   ]
 }
