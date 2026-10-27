@@ -578,7 +578,7 @@
             "mobile_desc_font_size": 16,
             "desc_font_weight": "400",
             "desc_color": "#fcc12a",
-            "mobile_desc_color": "#FCC12A",
+            "mobile_desc_color": "#fcc12a",
             "desc_line_height": 1.5,
             "desc_letter_spacing": 0,
             "desc_alignment": "left",
@@ -1188,6 +1188,50 @@
     "customer_reviews_MwicHg": {
       "type": "customer-reviews",
       "blocks": {
+        "review_fj8Lff": {
+          "type": "review",
+          "settings": {
+            "author": "LAAmbrosia",
+            "rating": "4",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Beautiful watch & bracelet set",
+            "review_text": "I love how the bracelet confidence the watch. Stunning.",
+            "meta": "1 month ago"
+          }
+        },
+        "review_Hzzt9a": {
+          "type": "review",
+          "settings": {
+            "author": "Janice Daugherty",
+            "rating": "5",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Love it",
+            "review_text": "I love this watch because it's slender and fits my tiny wrist very comfortably. It tracks my sleep well and my stress levels.",
+            "meta": "1 month ago"
+          }
+        },
+        "review_9e6BeA": {
+          "type": "review",
+          "settings": {
+            "author": "Telling Everyone about my FANY Luna watch",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "Telling Everyone about my FANY Luna watch",
+            "review_text": "I'm so un love with my new FANY Luna watch so much that I've been telling everyone that crosses my path about it. What I'm enjoying the most is keeping track of my sleep patterns, and practicing my breathing.",
+            "meta": "10 days ago"
+          }
+        },
+        "review_yLbPFY": {
+          "type": "review",
+          "settings": {
+            "author": "Christie Kulesza",
+            "rating": "4_half",
+            "rating_label": "4.5 out of 5 stars",
+            "product_title": "I just love the watch",
+            "review_text": "I’m having fun with keeping track of my workouts. Really, I just now have kind of gotten a handle on it, and so far it’s great.",
+            "meta": "18 days ago"
+          }
+        },
         "review_FL6UKK": {
           "type": "review",
           "settings": {
@@ -1231,61 +1275,17 @@
             "review_text": "Works great for what I wanted it for.",
             "meta": "1 month ago"
           }
-        },
-        "review_yLbPFY": {
-          "type": "review",
-          "settings": {
-            "author": "Christie Kulesza",
-            "rating": "4_half",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "I just love the watch",
-            "review_text": "I’m having fun with keeping track of my workouts. Really, I just now have kind of gotten a handle on it, and so far it’s great.",
-            "meta": "18 days ago"
-          }
-        },
-        "review_9e6BeA": {
-          "type": "review",
-          "settings": {
-            "author": "Jeanie Lynn",
-            "rating": "4_half",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "So comfortable",
-            "review_text": "Really stylish and comfortable. So far, all is going well.",
-            "meta": "10 days ago"
-          }
-        },
-        "review_Hzzt9a": {
-          "type": "review",
-          "settings": {
-            "author": "Michelle Phillips",
-            "rating": "5",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "I was looking for a watch that was more dress than sport",
-            "review_text": "I found FANY Luna and fell in love with it. It has a leather band, and I have a nice choice of faces to choose from.",
-            "meta": "1 month ago"
-          }
-        },
-        "review_fj8Lff": {
-          "type": "review",
-          "settings": {
-            "author": "Pricilla Yang",
-            "rating": "4",
-            "rating_label": "4.5 out of 5 stars",
-            "product_title": "I love my Fany so far",
-            "review_text": "It’s small to my liking and beautiful!",
-            "meta": "1 month ago"
-          }
         }
       },
       "block_order": [
+        "review_fj8Lff",
+        "review_Hzzt9a",
+        "review_9e6BeA",
+        "review_yLbPFY",
         "review_FL6UKK",
         "review_j4U973",
         "review_rr9UJX",
-        "review_9TQzcf",
-        "review_yLbPFY",
-        "review_9e6BeA",
-        "review_Hzzt9a",
-        "review_fj8Lff"
+        "review_9TQzcf"
       ],
       "name": "用户评论",
       "settings": {
