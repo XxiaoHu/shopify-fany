@@ -553,6 +553,41 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_WmmWYT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AbVm8d": {
+          "type": "heading",
+          "settings": {
+            "heading": "&nbsp;Meow Crystal Bracelet Watch Band – Playful Cat-Inspired Style",
+            "heading_size": "h2",
+            "heading_width": 800
+          }
+        },
+        "text_KPKBBY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bring a playful touch to your FANY Luna with the Meow Crystal Bracelet Watch Band. Featuring charming cat-ear details, sparkling crystal accents, and a polished rose-gold-colored finish, this decorative smartwatch band adds personality to everyday outfits.<br/><br/>Whether you're heading out for brunch, meeting friends, or enjoying a casual weekend, Meow Crystal brings a subtle hint of whimsy to your wrist without requiring extra statement jewelry.<br/><br/><strong>Why Choose Meow Crystal?</strong><br/><br/><strong>Cat-Inspired Details:</strong> Distinctive cat-ear accents give the bracelet a playful, recognizable look.<br/><br/><strong>Crystal Sparkle:</strong> Decorative crystals add a touch of shine to casual outfits.<br/><br/><strong>Rose Gold Finish: </strong>Easy to coordinate with delicate jewelry and warm-toned accessories.<br/><br/><strong>Quick-Release Connection: </strong>The 16mm design is made for compatible FANY Luna smartwatches.<br/><br/><strong>Styling Tip:</strong> Wear Meow Crystal with a simple white blouse, pastel knitwear, or a casual dress. Pair it with small rose-gold-colored rings to keep your accessories coordinated.<br/><br/><strong>Product Specifications</strong><br/><br/>Material: Zinc Alloy<br/><br/>Decorative Stones: Crystal<br/><br/>Color: Rose Gold<br/><br/>Band Width: 16mm<br/><br/>Wrist Circumference: 140–190mm<br/><br/>Weight: 30g<br/><br/>Compatible Model: FANY Luna<br/><br/><strong>Best For: </strong>Cat lovers, playful everyday fashion, brunch outfits, and casual styling.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_AbVm8d",
+        "text_KPKBBY"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "recommended_products_manual_G9Rcit": {
       "type": "recommended-products-manual",
       "blocks": {
@@ -2073,6 +2108,7 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "rich_text_WmmWYT",
     "recommended_products_manual_G9Rcit",
     "product_overview_group_F9Xy6b",
     "faq",
