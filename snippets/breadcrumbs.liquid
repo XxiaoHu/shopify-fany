@@ -1,5 +1,16 @@
 {%- liquid
   assign separator = '<span aria-hidden="true"> / </span>'
+  assign all_products_breadcrumb = nil
+  if template contains 'product'
+    assign all_products_breadcrumb = collections['all-products']
+  endif
+  assign show_parent_breadcrumb = false
+  if parent_label != blank
+    assign show_parent_breadcrumb = true
+    if all_products_breadcrumb.url != blank and parent_link == all_products_breadcrumb.url
+      assign show_parent_breadcrumb = false
+    endif
+  endif
 -%}
 
 {%- style -%}
@@ -45,7 +56,12 @@
 <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
   <a href="{{ routes.root_url }}" title="Home">Home</a>
 
-  {%- if parent_label != blank -%}
+  {%- if all_products_breadcrumb.url != blank -%}
+    {{ separator }}
+    <a href="{{ all_products_breadcrumb.url | escape }}">{{ all_products_breadcrumb.title | escape }}</a>
+  {%- endif -%}
+
+  {%- if show_parent_breadcrumb -%}
     {{ separator }}
     {%- if parent_link != blank -%}
       <a href="{{ parent_link }}">{{ parent_label | escape }}</a>
@@ -60,13 +76,16 @@
 
   {% elsif template contains 'product' %}
     {%- if collection.url != blank -%}
-      {{ separator }}
-      <a href="{{ collection.url }}">{{ collection.title }}</a>
-    {%- else -%}
-      {%- assign product_collections = product.collections | sort: 'position' -%}
-      {%- for col in product_collections -%}
+      {%- unless all_products_breadcrumb.url != blank and collection.handle == all_products_breadcrumb.handle -%}
         {{ separator }}
-        <a href="{{ col.url }}">{{ col.title }}</a>
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      {%- endunless -%}
+    {%- else -%}
+      {%- for col in product.collections -%}
+        {%- unless all_products_breadcrumb.url != blank and col.handle == all_products_breadcrumb.handle -%}
+          {{ separator }}
+          <a href="{{ col.url }}">{{ col.title }}</a>
+        {%- endunless -%}
       {%- endfor -%}
     {%- endif -%}
     {{ separator }}
