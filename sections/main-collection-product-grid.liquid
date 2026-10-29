@@ -479,44 +479,60 @@
                   "
                   style="--product-card-text-alignment: left;"
                 >
-                  {% assign skip_card_product_styles = false %}
+                  {%- liquid
+                    assign skip_card_product_styles = false
+                    assign card_index = 0
+                  -%}
                   {%- for product in collection.products -%}
-                    {% assign lazy_load = false %}
-                    {% assign show_best_seller_badge = false %}
-                    {%- if forloop.index > 2 -%}
-                      {%- assign lazy_load = true -%}
-                    {%- endif -%}
-                    {%- if product.tags contains 'Best Seller'
-                      or product.tags contains 'best-seller'
-                      or product.tags contains 'best seller'
-                      or product.metafields.custom.best_seller.value == true
+                    {%- liquid
+                      assign show_best_seller_badge = false
+                      if product.tags contains 'Best Seller' or product.tags contains 'best-seller' or product.tags contains 'best seller' or product.metafields.custom.best_seller.value == true
+                        assign show_best_seller_badge = true
+                      endif
+                      assign expand_variants = false
+                      if product.metafields.custom.expand_variants.value == true and product.has_only_default_variant == false and product.variants.size > 0
+                        assign expand_variants = true
+                      endif
                     -%}
-                      {% assign show_best_seller_badge = true %}
-                    {%- endif -%}
-                    <li
-                      class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                      {% if settings.animations_reveal_on_scroll %}
-                        data-cascade
-                        style="--animation-order: {{ forloop.index }};"
-                      {% endif %}
-                    >
-                      {% render 'card-product',
+                    {%- if expand_variants -%}
+                      {%- comment -%}
+                        Batch the available variants to avoid Liquid's 50-iteration loop limit.
+                        Keep collection pagination at the product level.
+                      {%- endcomment -%}
+                      {%- assign last_variant_batch = product.variants.size | minus: 1 | divided_by: 50 -%}
+                      {%- for variant_batch in (0..last_variant_batch) -%}
+                        {%- assign variant_offset = variant_batch | times: 50 -%}
+                        {%- for variant in product.variants limit: 50 offset: variant_offset -%}
+                          {%- assign card_index = card_index | plus: 1 -%}
+                          {% render 'collection-product-grid-item',
+                            card_product: product,
+                            card_variant: variant,
+                            card_index: card_index,
+                            show_best_seller_badge: show_best_seller_badge,
+                            skip_styles: skip_card_product_styles,
+                            section: section
+                          %}
+                          {%- assign skip_card_product_styles = true -%}
+                        {%- endfor -%}
+                      {%- endfor -%}
+                      {%- if product.variants_count > product.variants.size -%}
+                        <li class="grid__item">
+                          <a href="{{ product.url | split: '?' | first | escape }}" class="link">
+                            {{ product.title | escape }} — {{ 'products.product.view_full_details' | t }}
+                          </a>
+                        </li>
+                      {%- endif -%}
+                    {%- else -%}
+                      {%- assign card_index = card_index | plus: 1 -%}
+                      {% render 'collection-product-grid-item',
                         card_product: product,
-                        media_aspect_ratio: section.settings.image_ratio,
-                        image_shape: section.settings.image_shape,
-                        show_secondary_image: section.settings.show_secondary_image,
-                        show_vendor: section.settings.show_vendor,
-                        show_rating: section.settings.show_rating,
-                        show_price: true,
+                        card_index: card_index,
                         show_best_seller_badge: show_best_seller_badge,
-                        show_shop_now_hover: true,
-                        lazy_load: lazy_load,
                         skip_styles: skip_card_product_styles,
-                        quick_add: section.settings.quick_add,
-                        section_id: section.id
+                        section: section
                       %}
-                    </li>
-                    {%- assign skip_card_product_styles = true -%}
+                      {%- assign skip_card_product_styles = true -%}
+                    {%- endif -%}
                   {%- endfor -%}
                 </ul>
 

@@ -1,0 +1,35 @@
+{% comment %}
+  Collection grid item shared by ordinary products and expanded SKU cards.
+  Accepts: card_product, card_variant (optional), card_index,
+  show_best_seller_badge, skip_styles, section.
+{% endcomment %}
+{%- liquid
+  assign lazy_load = false
+  if card_index > 2
+    assign lazy_load = true
+  endif
+-%}
+<li
+  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  {% if settings.animations_reveal_on_scroll %}
+    data-cascade
+    style="--animation-order: {{ card_index }};"
+  {% endif %}
+>
+  {% render 'card-product',
+    card_product: card_product,
+    card_variant: card_variant,
+    media_aspect_ratio: section.settings.image_ratio,
+    image_shape: section.settings.image_shape,
+    show_secondary_image: section.settings.show_secondary_image,
+    show_vendor: section.settings.show_vendor,
+    show_rating: section.settings.show_rating,
+    show_price: true,
+    show_best_seller_badge: show_best_seller_badge,
+    show_shop_now_hover: true,
+    lazy_load: lazy_load,
+    skip_styles: skip_styles,
+    quick_add: section.settings.quick_add,
+    section_id: section.id
+  %}
+</li>

@@ -3,6 +3,7 @@
 
   Accepts:
   - product: {Object} Product Liquid object (optional)
+  - variant: {Object} Explicit variant for a variant card (optional)
   - placeholder: {Boolean} Renders a placeholder price (optional)
   - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
@@ -13,7 +14,13 @@
   {% render 'price', product: product %}
 {% endcomment %}
 {%- liquid
-  if use_variant
+  assign unit_price_variant = product.selected_or_first_available_variant
+  assign has_volume_pricing = product.quantity_price_breaks_configured?
+  if variant != blank
+    assign target = variant
+    assign unit_price_variant = variant
+    assign has_volume_pricing = false
+  elsif use_variant
     assign target = product.selected_or_first_available_variant
   elsif placeholder
     assign target = null
@@ -46,9 +53,9 @@
       price
       {%- if price_class %} {{ price_class }}{% endif -%}
       {%- if available == false %} price--sold-out{% endif -%}
-      {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
-      {%- if compare_at_price > price and product.quantity_price_breaks_configured? %} volume-pricing--sale-badge{% endif -%}
-      {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
+      {%- if compare_at_price > price and has_volume_pricing != true %} price--on-sale{% endif -%}
+      {%- if compare_at_price > price and has_volume_pricing %} volume-pricing--sale-badge{% endif -%}
+      {%- if variant == blank and product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
       {%- if show_badges %} price--show-badge{% endif -%}
     "
   >
@@ -59,9 +66,9 @@
           - div.price__sale: Displayed when a variant is a sale
       {%- endcomment -%}
       <div class="price__regular">
-        {%- if product.quantity_price_breaks_configured? -%}
+        {%- if has_volume_pricing -%}
           {%- if show_compare_at_price and compare_at_price -%}
-            {%- unless product.price_varies == false and product.compare_at_price_varies %}
+            {%- unless variant == blank and product.price_varies == false and product.compare_at_price_varies %}
               <span class="visually-hidden visually-hidden--inline">
                 {{- 'products.product.price.regular_price' | t -}}
               </span>
@@ -91,7 +98,7 @@
         {%- endif -%}
       </div>
       <div class="price__sale">
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
+        {%- unless variant == blank and product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span>
             <s class="price-item price-item--regular">
@@ -108,17 +115,17 @@
           {{ money_price }}
         </span>
       </div>
-      <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+      <small class="unit-price caption{% if unit_price_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
         <span class="price-item price-item--last">
-          <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
+          <span>{{- unit_price_variant.unit_price | money -}}</span>
           <span aria-hidden="true">/</span>
           <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
           <span>
-            {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
-              {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+            {%- if unit_price_variant.unit_price_measurement.reference_value != 1 -%}
+              {{- unit_price_variant.unit_price_measurement.reference_value -}}
             {%- endif -%}
-            {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+            {{ unit_price_variant.unit_price_measurement.reference_unit }}
           </span>
         </span>
       </small>
