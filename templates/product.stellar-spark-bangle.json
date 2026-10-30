@@ -553,6 +553,41 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_97aUy4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3TaLf7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stellar Crystal Bangle Watch Band – Celestial Elegance&nbsp;",
+            "heading_size": "h1",
+            "heading_width": 800
+          }
+        },
+        "text_6ibRRj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Add a little starlight to your FANY Luna with the Stellar Crystal Bangle Watch Band. Delicate star-inspired accents, sparkling rhinestones, and a radiant rose-gold-colored finish give this smartwatch bracelet an elegant, celestial look.<br/><br/>Designed for women who enjoy refined, statement-making accessories, Stellar Crystal is a stylish choice for dinner dates, celebrations, and evening outfits.<br/><br/><strong>Why Choose Stellar Crystal?</strong><br/><br/>Celestial Star Details: Star-inspired accents create a distinctive jewelry look.<br/><br/>Rhinestone Sparkle: Decorative stones add shine to dressier outfits.<br/><br/>Bangle-Style Design: A bracelet-inspired appearance complements dresses and eveningwear.<br/><br/>Quick-Release Connection: The 16mm band is designed for compatible FANY Luna smartwatches.<br/><br/>Styling Tip: Pair Stellar Crystal with a black dress, satin blouse, or minimalist evening outfit. Keep other jewelry simple to let the star details stand out.<br/><br/><strong>Product Specifications</strong><br/><br/>Material: Zinc Alloy<br/><br/>Decorative Stones: Rhinestones<br/><br/>Color: Rose Gold<br/><br/>Band Width: 16mm<br/><br/>Wrist Circumference: 140–190mm<br/><br/>Weight: 30g<br/><br/>Compatible Model: FANY Luna<br/><br/>Best For: Evening events, special occasions, celestial-inspired accessories, and elegant styling.<br/></p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_3TaLf7",
+        "text_6ibRRj"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "recommended_products_manual_G9Rcit": {
       "type": "recommended-products-manual",
       "blocks": {
@@ -2073,6 +2108,7 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "rich_text_97aUy4",
     "recommended_products_manual_G9Rcit",
     "product_overview_group_F9Xy6b",
     "faq",
