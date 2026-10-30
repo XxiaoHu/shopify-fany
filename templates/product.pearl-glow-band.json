@@ -553,6 +553,41 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_qdRWUc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_G9myq7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Geometric Mother of Pearl Watch Band – Refined Everyday Style &nbsp;",
+            "heading_size": "h2",
+            "heading_width": 800
+          }
+        },
+        "text_yTPj6h": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover an understated way to personalize your FANY Luna with the Geometric Mother of Pearl Leather Bracelet Watch Band. Its mocha-brown vegan leather strap combines geometric detailing with iridescent mother-of-pearl accents for a polished, jewelry-inspired finish.<br/><br/>Unlike decorative metal bracelet bands, this design pairs a traditional leather-style strap with subtle gemstone details. It complements tailored clothing, knitwear, neutral outfits, and everyday office style.<br/><br/><strong>Why Choose Geometric Mother of Pearl?</strong><br/><br/>Mother-of-Pearl Accents: Natural iridescent details create visual depth as the light changes.<br/><br/>Mocha Brown Vegan Leather: A warm, classic appearance suitable for everyday styling.<br/><br/>Lightweight Design: The band weighs approximately 20g, compared with 30g for the Meow and Stellar metal bracelets.<br/><br/>Geometric Styling: Structured decorative accents provide an alternative to cat- or star-inspired designs.<br/><br/>Quick-Release Connection: The 16mm band is designed for FANY Luna.<br/><br/>Styling Tip: Pair the mocha-brown strap with beige knitwear, a white blouse, or a tailored coat. Neutral clothing allows the mother-of-pearl accents to stand out subtly.<br/><br/><strong>Product Specifications</strong><br/><br/>Material: Vegan Leather<br/><br/>Decorative Material: Mother of Pearl<br/><br/>Color: Mocha Brown<br/><br/>Band Width: 16mm<br/><br/>Wrist Circumference: 140–190mm<br/><br/>Weight: 20g<br/><br/>Compatible Model: FANY Luna<br/><br/>Best For: Office wear, everyday outfits, understated jewelry, and classic styling.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_G9myq7",
+        "text_yTPj6h"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "recommended_products_manual_G9Rcit": {
       "type": "recommended-products-manual",
       "blocks": {
@@ -2073,6 +2108,7 @@
   "order": [
     "breadcrumbs_section_9pyfRj",
     "main",
+    "rich_text_qdRWUc",
     "recommended_products_manual_G9Rcit",
     "product_overview_group_F9Xy6b",
     "faq",
