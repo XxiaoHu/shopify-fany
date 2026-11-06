@@ -468,6 +468,7 @@
         },
         "slide_RPrdQz": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HALLOWEEN-banner-PC.webp",
             "mobile_image": "shopify://shop_images/HALLOWEEN-banner-M.webp",

@@ -19,7 +19,11 @@
             "mobile_image": "shopify://shop_images/Black_Friday_Banner-Phone-768_x_1200.jpg",
             "image_overlay_opacity": 0,
             "heading": "",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
             "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
             "subheading": "",
             "button_label": "",
             "link": "shopify://products/luna",
@@ -29,6 +33,7 @@
             "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": "",
+            "mobile_box_align": "middle",
             "mobile_color_scheme": ""
           }
         }
@@ -44,7 +49,11 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 0,
         "show_text_below": true,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
         "accessibility_info": ""
       }
     },
@@ -110,6 +119,7 @@
         "image_hYnczK",
         "image_nTJ789"
       ],
+      "disabled": true,
       "custom_css": [
         ".icon-group-list__item {padding: 49px 0px; background: linear-gradient(180deg, #be9773 0%, #584635 100%);}",
         ".icon-group-list {--grid-mobile-vertical-spacing: 8px; padding: 0px;}",
@@ -213,6 +223,7 @@
         "column_JiAgJP",
         "column_PfGwn7"
       ],
+      "disabled": true,
       "custom_css": [
         ".multicolumn__title {justify-content: center;}",
         ".multicolumn__title .title {color: #f2d0ad;}",
@@ -224,23 +235,39 @@
         "only_image": true,
         "title": "Intelligent companion, Effortless Living",
         "heading_size": "h2",
+        "text": "Your satisfaction is our greatest honor.",
+        "heading_content_gap": 20,
+        "mobile_heading_content_gap": 20,
+        "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
+        "title_alignment": "center",
         "column_alignment": "center",
         "background_style": "none",
+        "hover_background_style": "none",
         "section_color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
         "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
+        "column_title_size": 16,
+        "column_subtitle_size": 14,
+        "column_text_size": 14,
         "padding_top": 36,
         "padding_bottom": 36,
         "columns_mobile": "2",
-        "swipe_on_mobile": false
+        "mobile_title_alignment": "left",
+        "mobile_column_title_size": 16,
+        "mobile_column_subtitle_size": 14,
+        "mobile_column_text_size": 14,
+        "swipe_on_mobile": false,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
       }
     },
     "one_image_word_xrj8Va": {
       "type": "one-image-word",
+      "disabled": true,
       "custom_css": [
         ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
         ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
@@ -263,6 +290,7 @@
     },
     "one_image_word_c4kw8n": {
       "type": "one-image-word",
+      "disabled": true,
       "custom_css": [
         ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
         ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
@@ -285,6 +313,7 @@
     },
     "one_image_word_jkM9Nc": {
       "type": "one-image-word",
+      "disabled": true,
       "custom_css": [
         ".img-wrapper-title .wrapper-title {color: #f2d0ad;}",
         ".img-wrapper-title .wrapper-sub_title {margin-top: 1.5rem;}"
@@ -391,6 +420,7 @@
         "image_Bhim6R",
         "image_cExCyM"
       ],
+      "disabled": true,
       "custom_css": [
         ".icon-group-list {--grid-desktop-horizontal-spacing: 18px; --grid-desktop-vertical-spacing: 18px; --grid-mobile-horizontal-spacing: 8px; --grid-mobile-vertical-spacing: 8px;}"
       ],
@@ -506,6 +536,7 @@
         "column_TEekKJ",
         "column_tj9fxM"
       ],
+      "disabled": true,
       "custom_css": [
         ".review-section-title {color: #f2d0ad;}"
       ],
@@ -535,6 +566,7 @@
       "block_order": [
         "text_KaqjJG"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -721,11 +753,25 @@
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
+        "heading_color": "#121212",
         "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
         "layout": "none",
-        "container_color_scheme": "",
-        "color_scheme": "scheme-2c1859c8-5a8b-46b3-882c-f5414c9f009e",
+        "container_color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
+        "color_scheme": "scheme-606a71e6-b3a2-4ee5-9a99-e22e2fb16830",
         "open_first_collapsible_row": true,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
         "padding_top": 36,
