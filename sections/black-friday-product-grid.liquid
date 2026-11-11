@@ -1,0 +1,905 @@
+{{ 'black-friday-product-grid.css' | asset_url | stylesheet_tag }}
+{{ 'black-friday-promo-heading.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'black-friday-gift-sets.js' | asset_url }}" defer="defer"></script>
+
+<black-friday-gift-sets
+  id="BlackFridayProductGrid-{{ section.id }}"
+  class="black-friday-product-grid"
+  {% if section.settings.navigation_anchor != blank %}data-navigation-anchor="{{ section.settings.navigation_anchor | handleize | escape }}"{% endif %}
+  data-cart-add-url="{{ routes.cart_add_url | escape }}"
+  data-cart-url="{{ routes.cart_url | escape }}"
+  data-error-message="{{ 'sections.cart.cart_error' | t | escape }}"
+  style="
+    --bfpg-background-color: {{ section.settings.background_color }};
+    --bfpg-mobile-background-color: {{ section.settings.mobile_background_color }};
+    --bfpg-heading-color: {{ section.settings.heading_color }};
+    --bfpg-description-color: {{ section.settings.description_color }};
+    --bfpg-highlight-color: {{ section.settings.highlight_color }};
+    --bfpg-glow-color: {{ section.settings.glow_color }};
+    --bfpg-glow-inner-color: {{ section.settings.glow_inner_color }};
+    --bfpg-card-background: {{ section.settings.card_background }};
+    --bfpg-card-text-color: {{ section.settings.card_text_color }};
+    --bfpg-price-color: {{ section.settings.price_color }};
+    --bfpg-buy-background: {{ section.settings.buy_background }};
+    --bfpg-buy-text: {{ section.settings.buy_text }};
+    --bfpg-description-opacity: {{ section.settings.description_opacity | divided_by: 100.0 }};
+    --bfpg-desktop-heading-size: {{ section.settings.desktop_heading_size }}px;
+    --bfpg-desktop-heading-width: {{ section.settings.desktop_heading_width }}px;
+    --bfpg-desktop-description-size: {{ section.settings.desktop_description_size }}px;
+    --bfpg-desktop-description-width: {{ section.settings.desktop_description_width }}px;
+    --bfpg-desktop-image-width: {{ section.settings.desktop_image_width }}px;
+    --bfpg-desktop-image-height: {{ section.settings.desktop_image_height }}px;
+    --bfpg-desktop-card-title-size: {{ section.settings.desktop_card_title_size }}px;
+    --bfpg-desktop-card-title-line-height: {{ section.settings.desktop_card_title_line_height | divided_by: 100.0 }};
+    --bfpg-desktop-price-size: {{ section.settings.desktop_price_size }}px;
+    --bfpg-desktop-compare-size: {{ section.settings.desktop_compare_size }}px;
+    --bfpg-desktop-heading-line-height: {{ section.settings.desktop_heading_line_height | divided_by: 100.0 }};
+    --bfpg-desktop-description-line-height: {{ section.settings.desktop_description_line_height | divided_by: 100.0 }};
+    --bfpg-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --bfpg-mobile-heading-width: {{ section.settings.mobile_heading_width }}px;
+    --bfpg-mobile-description-size: {{ section.settings.mobile_description_size }}px;
+    --bfpg-mobile-description-width: {{ section.settings.mobile_description_width }}px;
+    --bfpg-mobile-image-width: {{ section.settings.mobile_image_width }}px;
+    --bfpg-mobile-image-height: {{ section.settings.mobile_image_height }}px;
+    --bfpg-mobile-card-title-size: {{ section.settings.mobile_card_title_size }}px;
+    --bfpg-mobile-card-title-line-height: {{ section.settings.mobile_card_title_line_height | divided_by: 100.0 }};
+    --bfpg-mobile-price-size: {{ section.settings.mobile_price_size }}px;
+    --bfpg-mobile-compare-size: {{ section.settings.mobile_compare_size }}px;
+    --bfpg-mobile-heading-line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
+    --bfpg-mobile-description-line-height: {{ section.settings.mobile_description_line_height | divided_by: 100.0 }};
+    --bfpg-desktop-image-heading-gap: {{ section.settings.desktop_image_heading_gap }}px;
+    --bfpg-desktop-heading-description-gap: {{ section.settings.desktop_heading_description_gap }}px;
+    --bfpg-desktop-header-cards-gap: {{ section.settings.desktop_header_cards_gap }}px;
+    --bfpg-desktop-card-gap: {{ section.settings.desktop_card_gap }}px;
+    --bfpg-desktop-copy-gap: {{ section.settings.desktop_copy_gap }}px;
+    --bfpg-mobile-image-heading-gap: {{ section.settings.mobile_image_heading_gap }}px;
+    --bfpg-mobile-heading-description-gap: {{ section.settings.mobile_heading_description_gap }}px;
+    --bfpg-mobile-header-cards-gap: {{ section.settings.mobile_header_cards_gap }}px;
+    --bfpg-mobile-card-gap: {{ section.settings.mobile_card_gap }}px;
+    --bfpg-mobile-copy-gap: {{ section.settings.mobile_copy_gap }}px;
+    --bfpg-desktop-column-gap: {{ section.settings.desktop_column_gap }}px;
+    --bfpg-mobile-column-gap: {{ section.settings.mobile_column_gap }}px;
+    --bfpg-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bfpg-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bfpg-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bfpg-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="black-friday-product-grid__heading black-friday-product-grid__heading--desktop">
+    {% render 'black-friday-promo-heading', config: section.settings, full_default_image: true %}
+  </div>
+  <div class="black-friday-product-grid__heading black-friday-product-grid__heading--mobile">
+    {% render 'black-friday-promo-heading', config: section.settings, heading_override: section.settings.mobile_heading, description_override: section.settings.mobile_description %}
+  </div>
+  <div class="black-friday-product-grid__cards">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.variant_id != blank or request.design_mode -%}
+        {% render 'black-friday-gift-sets-card', block: block, section: section, card_layout: 'grid' %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</black-friday-gift-sets>
+
+{% schema %}
+{
+  "name": "黑五变体商品网格",
+  "tag": "section",
+  "class": "black-friday-product-grid-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "navigation_anchor",
+      "label": "导航锚点",
+      "info": "与黑五导航的目标锚点填写相同值；每个模块请使用不同锚点。",
+      "default": "best-sellers"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "标题",
+      "default": "Early Black Friday Deals"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "说明文字",
+      "info": "展示文案手动填写；移动端可单独配置说明。不会自动计算促销或修改结账优惠。",
+      "default": "<p>Spend Less, Gift More. Buy 2 for 15% off, 3 or more for 20% off, and get a FREE Butterfly Bracelet ($39.99 value)</p><p>with every Leather Smartwatch purchase.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "mobile_heading",
+      "label": "移动端标题（留空使用 PC）",
+      "default": "Black Friday Gift Sets Are Here!"
+    },
+    {
+      "type": "richtext",
+      "id": "mobile_description",
+      "label": "移动端说明（留空使用 PC）",
+      "default": "<p>Save up to $120 on our gift sets! Pair a stylish leather smartwatch with crystal band and a butterfly bracelet</p><p>—one watch, endless styles. The perfect gift for her!</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sparkles",
+      "label": "显示 PC 顶部星光装饰",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "add_label",
+      "label": "加购按钮文案",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "buy_label",
+      "label": "购买按钮文案",
+      "default": "Buy Now"
+    },
+    {
+      "type": "text",
+      "id": "off_label",
+      "label": "优惠标识文字",
+      "default": "OFF"
+    },
+    {
+      "type": "header",
+      "content": "顶部图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "PC 顶部图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "移动端顶部图片",
+      "info": "为空时使用 PC 图片。两张均为空时，可使用设计稿原始 Flash Deal 图片。"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_default_image",
+      "label": "未上传时使用 Flash Deal 图片",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "顶部图片替代文本",
+      "default": "Flash Deal"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "PC 背景",
+      "default": "#221008"
+    },
+    {
+      "type": "color",
+      "id": "mobile_background_color",
+      "label": "移动端背景",
+      "default": "#221008"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题文字",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "说明文字",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "说明高亮",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color",
+      "id": "glow_color",
+      "label": "标题外层光晕",
+      "default": "#ffb800"
+    },
+    {
+      "type": "color",
+      "id": "glow_inner_color",
+      "label": "标题内层光晕",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "卡片背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "卡片文字",
+      "default": "#1e0e06"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "售价",
+      "default": "#af3335"
+    },
+    {
+      "type": "color",
+      "id": "buy_background",
+      "label": "购买按钮背景",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color",
+      "id": "buy_text",
+      "label": "购买按钮文字",
+      "default": "#600012"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_glow",
+      "label": "启用标题光晕",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "description_opacity",
+      "label": "说明不透明度",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "PC 字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "标题字号",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_width",
+      "label": "标题最大宽度",
+      "min": 106,
+      "max": 1006,
+      "step": 10,
+      "unit": "px",
+      "default": 416
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "label": "说明字号",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_width",
+      "label": "说明最大宽度",
+      "min": 152,
+      "max": 1552,
+      "step": 20,
+      "unit": "px",
+      "default": 952
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_width",
+      "label": "顶部图片宽度",
+      "min": 80,
+      "max": 480,
+      "step": 4,
+      "unit": "px",
+      "default": 368
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_height",
+      "label": "顶部图片高度",
+      "min": 30,
+      "max": 230,
+      "step": 2,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_title_size",
+      "label": "商品标题字号",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_title_line_height",
+      "label": "商品标题行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "desktop_price_size",
+      "label": "售价字号",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "desktop_compare_size",
+      "label": "原价字号",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "label": "标题行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_line_height",
+      "label": "说明行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "移动端 字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "标题字号",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "label": "标题最大宽度",
+      "min": 159,
+      "max": 359,
+      "step": 2,
+      "unit": "px",
+      "default": 267
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "label": "说明字号",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_width",
+      "label": "说明最大宽度",
+      "min": 161,
+      "max": 561,
+      "step": 4,
+      "unit": "px",
+      "default": 361
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_width",
+      "label": "顶部图片宽度",
+      "min": 80,
+      "max": 480,
+      "step": 4,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "顶部图片高度",
+      "min": 30,
+      "max": 230,
+      "step": 2,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_size",
+      "label": "商品标题字号",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_line_height",
+      "label": "商品标题行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "mobile_price_size",
+      "label": "售价字号",
+      "min": 16,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_compare_size",
+      "label": "原价字号",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "label": "标题行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_line_height",
+      "label": "说明行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "内容间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_heading_gap",
+      "label": "PC 顶部图片与标题间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_description_gap",
+      "label": "PC 标题与说明间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "desktop_header_cards_gap",
+      "label": "PC 标题区与卡片间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_gap",
+      "label": "PC 卡片之间间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_copy_gap",
+      "label": "PC 卡片内容之间间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_heading_gap",
+      "label": "移动端 顶部图片与标题间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_description_gap",
+      "label": "移动端 标题与说明间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_cards_gap",
+      "label": "移动端 标题区与卡片间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "移动端 卡片之间间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_copy_gap",
+      "label": "移动端 卡片内容之间间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "desktop_column_gap",
+      "label": "PC 卡片列间距",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_column_gap",
+      "label": "移动端卡片列间距",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "PC上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "PC下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "移动端上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "移动端下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "商品卡片",
+      "settings": [
+        {
+          "type": "text",
+          "id": "variant_id",
+          "label": "颜色版本链接",
+          "info": "只粘贴选好颜色后的完整商品链接（含 ?variant=...），用于指定加购颜色。标题、售价、原价和优惠标识均由下方独立配置。"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "商品标题",
+          "default": "FANY Luna Leather Small Smartwatch for Women"
+        },
+        {
+          "type": "text",
+          "id": "price_text",
+          "label": "展示售价",
+          "info": "例如 $169.99，按填写内容直接显示；留空不显示。仅控制卡片展示，实际成交价仍由 Shopify 商品价格决定。"
+        },
+        {
+          "type": "text",
+          "id": "compare_price_text",
+          "label": "展示划线价",
+          "info": "例如 $289.99，按填写内容直接显示；留空不显示。"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "PC 商品图片",
+          "info": "优先使用此图片；为空时使用链接对应颜色的图片，再回退商品主图。"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "移动端商品图片",
+          "info": "为空时回退 PC 图片或对应颜色图片。"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "图片替代文本（留空使用商品名称）"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_badge",
+          "label": "显示优惠标识",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "badge_amount",
+          "label": "优惠标识金额",
+          "default": "$20",
+          "info": "按填写内容直接显示，例如 $120、$100 或 80；请自行填写货币符号。留空时隐藏标识，切换变体不会改变此金额。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "黑五变体商品网格",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$109.99",
+            "compare_price_text": "$129.99",
+            "badge_amount": "$20"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$74.99",
+            "compare_price_text": "$89.99",
+            "badge_amount": "$15"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$74.99",
+            "compare_price_text": "$89.99",
+            "badge_amount": "$15"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$74.99",
+            "compare_price_text": "$89.99",
+            "badge_amount": "$15"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "FANY Luna Leather Small Smartwatch for Women",
+            "price_text": "$74.99",
+            "compare_price_text": "$89.99",
+            "badge_amount": "$15"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Meow Crystal Bracelet Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Stellar Crystal Bangle Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "Geometric Mother of Pearl Leather Bracelet Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "16 mm Quick Release Leather Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "16 mm Quick Release Leather Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "title": "16 mm Quick Release Leather Watch Band",
+            "price_text": "$34.99",
+            "compare_price_text": "$39.99",
+            "badge_amount": "$5"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

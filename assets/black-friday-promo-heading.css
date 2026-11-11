@@ -134,3 +134,22 @@
     margin-top: var(--bfph-mobile-heading-description-gap, 10px);
   }
 }
+
+.black-friday-promo-heading .black-friday-promo-heading__media--full {
+  overflow: visible;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media--full > img {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media--full > .black-friday-promo-heading__sparkles {
+  position: absolute;
+  top: 16.667%;
+  left: 67.12%;
+  width: 30.978%;
+  height: auto;
+  aspect-ratio: 1;
+}

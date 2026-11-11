@@ -3,6 +3,8 @@
   config: section.settings. The calling section supplies the corresponding settings.
 {% endcomment %}
 {%- liquid
+  assign heading = heading_override | default: config.heading
+  assign description = description_override | default: config.description
   assign desktop_image = config.desktop_image
   assign mobile_image = config.mobile_image
   assign fallback_image = desktop_image | default: mobile_image
@@ -18,7 +20,7 @@
     assign has_image = true
   endif
 -%}
-{%- if has_image or config.heading != blank or config.description != blank -%}
+{%- if has_image or heading != blank or description != blank -%}
   <header
     class="black-friday-promo-heading{% if config.heading_glow %} black-friday-promo-heading--glow{% endif %}"
     style="
@@ -51,7 +53,7 @@
     "
   >
     {%- if has_image -%}
-      <div class="black-friday-promo-heading__media{% if fallback_image == blank %} black-friday-promo-heading__media--default{% endif %}">
+      <div class="black-friday-promo-heading__media{% if fallback_image == blank %} black-friday-promo-heading__media--default{% endif %}{% if full_default_image and fallback_image == blank %} black-friday-promo-heading__media--full{% endif %}">
         {%- if fallback_image != blank -%}
           <picture>
             {%- if mobile_image != blank -%}
@@ -61,14 +63,17 @@
           </picture>
         {%- else -%}
           <img src="{{ 'black-friday-gift-sets-flash-deal.png' | asset_url }}" width="872" height="228" alt="{{ config.image_alt | escape }}" loading="lazy">
+          {%- if full_default_image and config.show_sparkles -%}
+            <img class="black-friday-promo-heading__sparkles" src="{{ 'black-friday-product-grid-sparkles.png' | asset_url }}" width="114" height="114" alt="" loading="lazy">
+          {%- endif -%}
         {%- endif -%}
       </div>
     {%- endif -%}
-    {%- if config.heading != blank -%}
-      <h2 class="black-friday-promo-heading__title">{{ config.heading }}</h2>
+    {%- if heading != blank -%}
+      <h2 class="black-friday-promo-heading__title">{{ heading }}</h2>
     {%- endif -%}
-    {%- if config.description != blank -%}
-      <div class="black-friday-promo-heading__description rte">{{ config.description }}</div>
+    {%- if description != blank -%}
+      <div class="black-friday-promo-heading__description rte">{{ description }}</div>
     {%- endif -%}
   </header>
 {%- endif -%}

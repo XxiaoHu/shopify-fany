@@ -72,6 +72,9 @@
     assign variant_image = variant.featured_image
   endif
   assign card_title = block.settings.title | default: card_product.title
+  if card_layout == 'grid'
+    assign card_title = block.settings.title
+  endif
   assign desktop_image = block.settings.desktop_image | default: variant_image | default: card_product.featured_image
   assign mobile_image = block.settings.mobile_image
   assign product_image = desktop_image | default: mobile_image
@@ -86,6 +89,30 @@
   assign form_id = 'BlackFridayGiftSetsForm-' | append: section.id | append: '-' | append: block.id
   assign variant_select_id = form_id | append: '-variant'
   assign error_id = form_id | append: '-error'
+  assign card_image_sizes = '(max-width: 749px) calc(100vw - 32px), (max-width: 1068px) calc(100vw - 64px), (max-width: 1440px) calc(100vw - 400px), calc((100vw - 400px) * 0.5263)'
+  assign card_mobile_sizes = 'calc(100vw - 32px)'
+  if card_layout == 'grid'
+    assign mobile_gutters = section.settings.mobile_column_gap | plus: 32
+    assign tablet_gutters = section.settings.desktop_column_gap | plus: 64
+    assign small_desktop_gutters = section.settings.desktop_column_gap | plus: 400
+    assign desktop_gutters = section.settings.desktop_column_gap | times: 3 | plus: 400
+    capture card_image_sizes
+      echo '(max-width: 749px) calc((100vw - '
+      echo mobile_gutters
+      echo 'px) / 2), (max-width: 1068px) calc((100vw - '
+      echo tablet_gutters
+      echo 'px) / 2), (max-width: 1440px) calc((100vw - '
+      echo small_desktop_gutters
+      echo 'px) / 2), calc((100vw - '
+      echo desktop_gutters
+      echo 'px) / 4)'
+    endcapture
+    capture card_mobile_sizes
+      echo 'calc((100vw - '
+      echo mobile_gutters
+      echo 'px) / 2)'
+    endcapture
+  endif
   assign ready = false
   if variant.available and variant.quantity_rule.min <= 1 and card_product.requires_selling_plan == false
     assign ready = true
@@ -104,10 +131,10 @@
           <source
             media="(max-width: 749px)"
             srcset="{{ mobile_image | image_url: width: 375 }} 375w, {{ mobile_image | image_url: width: 550 }} 550w, {{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1100 }} 1100w, {{ mobile_image | image_url: width: 1500 }} 1500w"
-            sizes="calc(100vw - 32px)"
+            sizes="{{ card_mobile_sizes }}"
           >
         {%- endif -%}
-        {{ product_image | image_url: width: 1600 | image_tag: class: 'black-friday-gift-sets__image', widths: '375, 550, 750, 1000, 1200, 1600', sizes: '(max-width: 749px) calc(100vw - 32px), (max-width: 1068px) calc(100vw - 64px), (max-width: 1440px) calc(100vw - 400px), calc((100vw - 400px) * 0.5263)', loading: 'lazy', alt: image_alt }}
+        {{ product_image | image_url: width: 1600 | image_tag: class: 'black-friday-gift-sets__image', widths: '375, 550, 750, 1000, 1200, 1600', sizes: card_image_sizes, loading: 'lazy', alt: image_alt }}
       </picture>
     {%- elsif request.design_mode -%}
       {{ 'product-1' | placeholder_svg_tag: 'black-friday-gift-sets__image placeholder-svg' }}
@@ -115,6 +142,18 @@
   </div>
   {%- if block.settings.show_badge and badge_amount != blank -%}
     <div class="black-friday-gift-sets__badge" data-bfgs-badge>
+      {%- if card_layout == 'grid' -%}
+      <div class="black-friday-gift-sets__badge-desktop" aria-hidden="true">
+        <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-gift-sets-badge-mobile-shadow.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-mobile-base.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-fill" src="{{ 'black-friday-gift-sets-badge-mobile-fill.png' | asset_url }}" width="150" height="123" alt="" loading="lazy">
+      </div>
+      <div class="black-friday-gift-sets__badge-mobile" aria-hidden="true">
+        <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-product-grid-badge-mobile-shadow.svg' | asset_url }}" width="42" height="35" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-product-grid-badge-mobile-base.svg' | asset_url }}" width="42" height="35" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-fill" src="{{ 'black-friday-product-grid-badge-mobile-fill.png' | asset_url }}" width="81" height="67" alt="" loading="lazy">
+      </div>
+      {%- else -%}
       <div class="black-friday-gift-sets__badge-desktop" aria-hidden="true">
         <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-gift-sets-badge-shadow.svg' | asset_url }}" width="90" height="76" alt="" loading="lazy">
         <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-base.svg' | asset_url }}" width="90" height="76" alt="" loading="lazy">
@@ -125,6 +164,7 @@
         <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-mobile-base.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
         <img class="black-friday-gift-sets__badge-fill" src="{{ 'black-friday-gift-sets-badge-mobile-fill.png' | asset_url }}" width="150" height="123" alt="" loading="lazy">
       </div>
+      {%- endif -%}
       <span class="black-friday-gift-sets__badge-amount">{{ badge_amount | escape }}</span>
       <span class="black-friday-gift-sets__badge-label">{{ section.settings.off_label | escape }}</span>
     </div>

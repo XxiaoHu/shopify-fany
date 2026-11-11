@@ -1,0 +1,387 @@
+.black-friday-product-grid {
+  display: block;
+  padding: var(--bfpg-desktop-padding-top, 80px) 200px var(--bfpg-desktop-padding-bottom, 80px);
+  background: var(--bfpg-background-color, #221008);
+  color: var(--bfpg-card-text-color, #1e0e06);
+  font-family: Lato, var(--font-body-family, sans-serif);
+  letter-spacing: 0;
+}
+
+.black-friday-product-grid,
+.black-friday-product-grid * {
+  box-sizing: border-box;
+}
+
+.black-friday-product-grid [hidden] {
+  display: none !important;
+}
+
+.black-friday-product-grid .black-friday-product-grid__heading--mobile {
+  display: none;
+}
+
+.black-friday-product-grid .black-friday-product-grid__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--bfpg-desktop-card-gap, 40px) var(--bfpg-desktop-column-gap, 16px);
+}
+
+.black-friday-product-grid:has(.black-friday-product-grid__heading--desktop .black-friday-promo-heading) .black-friday-product-grid__cards:not(:empty) {
+  margin-top: var(--bfpg-desktop-header-cards-gap, 40px);
+}
+
+.black-friday-product-grid .black-friday-gift-sets__card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 4px;
+  background: var(--bfpg-card-background, #fff);
+}
+
+.black-friday-product-grid .black-friday-gift-sets__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 368 / 458;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  background: #f7f7f7;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--bfgs-desktop-object-position, center);
+}
+
+.black-friday-product-grid .black-friday-gift-sets__copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bfpg-desktop-copy-gap, 10px);
+  min-width: 0;
+  padding: 20px 24px;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__title {
+  display: -webkit-box;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: inherit;
+  font-family: inherit;
+  font-size: var(--bfpg-desktop-card-title-size, 18px);
+  font-weight: 400;
+  line-height: var(--bfpg-desktop-card-title-line-height, 1.5);
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__prices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 0;
+  color: inherit;
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__price {
+  color: var(--bfpg-price-color, #af3335);
+  font-size: var(--bfpg-desktop-price-size, 30px);
+}
+
+.black-friday-product-grid .black-friday-gift-sets__compare {
+  padding-bottom: 1px;
+  color: inherit;
+  font-size: var(--bfpg-desktop-compare-size, 20px);
+  opacity: 0.5;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin: auto 0 0;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 47px;
+  padding: 9px 6px;
+  border: 1px solid var(--bfpg-card-text-color, #1e0e06);
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  font: 400 18px/1.5 Lato, var(--font-body-family, sans-serif);
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: opacity 160ms ease;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__button--buy {
+  border-color: transparent;
+  color: var(--bfpg-buy-text, #600012);
+  background: var(--bfpg-buy-background, #fcc12b);
+  font-weight: 900;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__button:disabled {
+  cursor: not-allowed;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__button[aria-busy='true'] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__variant-label,
+.black-friday-product-grid .black-friday-gift-sets__error,
+.black-friday-product-grid .black-friday-gift-sets__editor-note {
+  margin: 0;
+  font: 400 12px/1.5 Lato, var(--font-body-family, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__variant-select {
+  max-width: 100%;
+  min-height: 44px;
+  color: inherit;
+  background: var(--bfpg-card-background, #fff);
+  font: inherit;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 69.333px;
+  pointer-events: none;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__card {
+  position: relative;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-desktop,
+.black-friday-product-grid .black-friday-gift-sets__badge-mobile {
+  position: absolute;
+  inset: 0;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-mobile {
+  display: none;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-shadow,
+.black-friday-product-grid .black-friday-gift-sets__badge-base {
+  position: absolute;
+  left: 0;
+  display: block;
+  max-width: none;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-shadow {
+  top: 3.47px;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-base {
+  top: 0;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-fill {
+  position: absolute;
+  top: 1.73px;
+  left: 1.73px;
+  width: 74.533px;
+  height: 61.533px;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-amount,
+.black-friday-product-grid .black-friday-gift-sets__badge-label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-family: Merriweather, serif;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 0.867px 1.733px #b66820;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-amount {
+  top: 10.933px;
+  font-size: 25px;
+}
+
+.black-friday-product-grid .black-friday-gift-sets__badge-label {
+  top: 37.133px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.black-friday-product-grid :is(a, button, select):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .black-friday-product-grid .black-friday-gift-sets__button:enabled:hover,
+  .black-friday-product-grid a.black-friday-gift-sets__button:hover {
+    opacity: 0.8;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1440px) {
+  .black-friday-product-grid .black-friday-product-grid__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1068px) {
+  .black-friday-product-grid {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .black-friday-product-grid {
+    padding: var(--bfpg-mobile-padding-top, 40px) 16px var(--bfpg-mobile-padding-bottom, 40px);
+    background: var(--bfpg-mobile-background-color, #221008);
+  }
+
+  .black-friday-product-grid .black-friday-product-grid__heading--desktop {
+    display: none;
+  }
+
+  .black-friday-product-grid .black-friday-product-grid__heading--mobile {
+    display: block;
+  }
+
+  .black-friday-product-grid .black-friday-product-grid__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--bfpg-mobile-card-gap, 20px) var(--bfpg-mobile-column-gap, 11px);
+    margin-top: 0;
+  }
+
+  .black-friday-product-grid:has(.black-friday-product-grid__heading--desktop .black-friday-promo-heading) .black-friday-product-grid__cards:not(:empty) {
+    margin-top: 0;
+  }
+
+  .black-friday-product-grid:has(.black-friday-product-grid__heading--mobile .black-friday-promo-heading) .black-friday-product-grid__cards:not(:empty) {
+    margin-top: var(--bfpg-mobile-header-cards-gap, 20px);
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__media {
+    aspect-ratio: 370.002533 / 460;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__image {
+    object-position: var(--bfgs-mobile-object-position, center);
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__card {
+    border-radius: 2px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__copy {
+    gap: var(--bfpg-mobile-copy-gap, 10px);
+    padding: 10px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__title {
+    font-size: var(--bfpg-mobile-card-title-size, 14px);
+    line-height: var(--bfpg-mobile-card-title-line-height, 1.5);
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__price {
+    font-size: var(--bfpg-mobile-price-size, 20px);
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__compare {
+    font-size: var(--bfpg-mobile-compare-size, 14px);
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__buttons {
+    gap: 4px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__button {
+    min-height: 30px;
+    padding: 5px 2px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge {
+    width: 42px;
+    height: 37.333px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-desktop {
+    display: none;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-mobile {
+    display: block;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-shadow {
+    top: 1.867px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-fill {
+    top: 0.933px;
+    left: 0.933px;
+    width: 40.133px;
+    height: 33.133px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-amount {
+    top: 6.067px;
+    font-size: 13.462px;
+  }
+
+  .black-friday-product-grid .black-friday-gift-sets__badge-label {
+    top: 20.174px;
+    font-size: 7.538px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .black-friday-product-grid .black-friday-gift-sets__button {
+    transition: none;
+  }
+}
