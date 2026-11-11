@@ -72,7 +72,7 @@
     assign variant_image = variant.featured_image
   endif
   assign card_title = block.settings.title | default: card_product.title
-  if card_layout == 'grid'
+  if card_layout == 'grid' or card_layout == 'horizontal'
     assign card_title = block.settings.title
   endif
   assign desktop_image = block.settings.desktop_image | default: variant_image | default: card_product.featured_image
@@ -113,6 +113,15 @@
       echo 'px) / 2)'
     endcapture
   endif
+  if card_layout == 'horizontal'
+    assign desktop_gutters = section.settings.desktop_column_gap | plus: 400
+    capture card_image_sizes
+      echo '(max-width: 749px) calc((100vw - 32px) / 2), (max-width: 1068px) calc((100vw - 64px) / 2), (max-width: 1440px) calc((100vw - 400px) / 2), calc((100vw - '
+      echo desktop_gutters
+      echo 'px) / 4)'
+    endcapture
+    assign card_mobile_sizes = 'calc((100vw - 32px) / 2)'
+  endif
   assign ready = false
   if variant.available and variant.quantity_rule.min <= 1 and card_product.requires_selling_plan == false
     assign ready = true
@@ -142,7 +151,7 @@
   </div>
   {%- if block.settings.show_badge and badge_amount != blank -%}
     <div class="black-friday-gift-sets__badge" data-bfgs-badge>
-      {%- if card_layout == 'grid' -%}
+      {%- if card_layout == 'grid' or card_layout == 'horizontal' -%}
       <div class="black-friday-gift-sets__badge-desktop" aria-hidden="true">
         <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-gift-sets-badge-mobile-shadow.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
         <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-mobile-base.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
@@ -188,13 +197,9 @@
     {%- if block.settings.contents != blank -%}<div class="black-friday-gift-sets__contents rte">{{ block.settings.contents }}</div>{%- endif -%}
     {%- if card_product != blank -%}
       {%- form 'product', card_product, id: form_id, class: 'black-friday-gift-sets__form', data-bfgs-form: '', aria-describedby: error_id -%}
-        {%- if request.design_mode and variant_is_locked -%}
+        {%- if request.design_mode and variant_is_locked and invalid_variant -%}
           <p class="black-friday-gift-sets__editor-note">
-            {%- if invalid_variant -%}
-              颜色版本链接无效或不属于所选商品，请选好颜色后重新复制完整链接。
-            {%- else -%}
-              当前颜色版本：{{ variant.title | escape }}
-            {%- endif -%}
+            颜色版本链接无效或不属于所选商品，请选好颜色后重新复制完整链接。
           </p>
         {%- endif -%}
         {%- if card_product.has_only_default_variant or variant_is_locked -%}
