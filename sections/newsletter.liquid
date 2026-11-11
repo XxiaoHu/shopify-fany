@@ -3,7 +3,7 @@
 
 {%- style -%}
   {%- if section.settings.background_image != blank -%}
-    .newsletter__wrapper {
+    .section-{{ section.id }}-padding.newsletter__wrapper {
       background-image: url('{{ section.settings.background_image | image_url }}');
       background-size: cover;
       background-position: center;
@@ -16,6 +16,14 @@
   }
 
   @media screen and (max-width: 749px) {
+    {%- if section.settings.mobile_background_image != blank -%}
+      .section-{{ section.id }}-padding.newsletter__wrapper {
+        background-image: url('{{ section.settings.mobile_background_image | image_url: width: 1500 }}');
+        background-size: cover;
+        background-position: {{ section.settings.mobile_background_image.presentation.focal_point | default: 'center center' }};
+        background-attachment: local;
+      }
+    {%- endif -%}
     .section-{{ section.id }}-padding,
     .section-{{ section.id }}-padding > .inline-richtext,
     .section-{{ section.id }}-padding .newsletter__subheading,
@@ -242,6 +250,12 @@
       "type": "image_picker",
       "id": "background_image",
       "label": "背景图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "移动端背景图片",
+      "info": "仅在 749px 及以下显示；留空时使用上方背景图片。"
     },
     {
       "type": "checkbox",

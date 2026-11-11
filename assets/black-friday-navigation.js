@@ -24,12 +24,18 @@ if (!customElements.get('black-friday-navigation')) {
         });
       };
       this.refresh = () => {
+        const anchors = Array.from(document.querySelectorAll('[data-navigation-anchor]'));
+        const findTarget = (id) => document.getElementById(id) || anchors.find(
+          (element) => element.dataset.navigationAnchor === id
+        );
+        const anchorAliases = {
+          'butterfly-bracelet-set': 'butterfly-gift-sets',
+          'butterfly-gift-sets': 'butterfly-bracelet-set',
+        };
         this.targets = this.links.map((link) => {
           const id = link.dataset.bfnTarget;
           // Targets belong to other sections; all navigation state stays in this instance.
-          const target = document.getElementById(id) || Array.from(
-            document.querySelectorAll('[data-navigation-anchor]')
-          ).find((element) => element.dataset.navigationAnchor === id);
+          const target = findTarget(id) || (anchorAliases[id] && findTarget(anchorAliases[id]));
           return target ? { link, target, id } : null;
         }).filter(Boolean);
         this.schedule();
