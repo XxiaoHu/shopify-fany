@@ -888,125 +888,6 @@
         "mobile_padding_bottom": 0
       }
     },
-    "black_friday_gift_sets_tRkXke": {
-      "type": "black-friday-gift-sets",
-      "blocks": {
-        "product_card_MCXTgF": {
-          "type": "product_card",
-          "settings": {
-            "variant_id": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women?variant=47823963750554",
-            "product": "",
-            "title": "The Ultimate Glam Gift Set",
-            "price_text": "$169.99",
-            "compare_price_text": "$289.99",
-            "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Meow Crystal Bracelet Watch Band</li><li>1 × Stellar Crystal Bangle Watch Band</li><li>1 × Geometric Mother-of-Pearl Leather Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Mocha Brown</li></ul>",
-            "image_alt": "",
-            "show_badge": true,
-            "badge_amount": "$120"
-          }
-        },
-        "product_card_bq6Rea": {
-          "type": "product_card",
-          "settings": {
-            "variant_id": "",
-            "product": "",
-            "title": "The Timeless Elegance Gift Set",
-            "price_text": "$149.99",
-            "compare_price_text": "$249.99",
-            "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Stellar Crystal Bangle Watch Band</li><li>1 × Geometric Mother-of-Pearl Leather Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Moonlight Gray</li></ul>",
-            "image_alt": "",
-            "show_badge": true,
-            "badge_amount": "$100"
-          }
-        },
-        "product_card_paxcRe": {
-          "type": "product_card",
-          "settings": {
-            "variant_id": "",
-            "product": "",
-            "title": "The Chic Sparkle Gift Set",
-            "price_text": "$129.99",
-            "compare_price_text": "$209.99",
-            "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Meow Crystal Bracelet Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Rose Gold</li></ul>",
-            "image_alt": "",
-            "show_badge": true,
-            "badge_amount": "$80"
-          }
-        }
-      },
-      "block_order": [
-        "product_card_MCXTgF",
-        "product_card_bq6Rea",
-        "product_card_paxcRe"
-      ],
-      "name": "黑五礼盒商品模块",
-      "settings": {
-        "navigation_anchor": "gift-sets",
-        "heading": "Black Friday Gift Sets Are Here!",
-        "description": "<p>Save up to <strong>$120</strong> on our gift sets! Pair a stylish leather smartwatch with crystal band and a butterfly bracelet</p><p>—one watch, endless styles. The perfect gift for her!</p>",
-        "add_label": "Add to cart",
-        "buy_label": "Buy Now",
-        "off_label": "OFF",
-        "show_default_image": true,
-        "image_alt": "Flash Deal",
-        "background_color": "#221008",
-        "mobile_background_color": "#221008",
-        "heading_color": "#ffffff",
-        "description_color": "#ffffff",
-        "highlight_color": "#fcc12b",
-        "glow_color": "#ffb800",
-        "glow_inner_color": "#fcc12b",
-        "card_background": "#ffffff",
-        "card_text_color": "#1e0e06",
-        "price_color": "#af3335",
-        "buy_background": "#fcc12b",
-        "buy_text": "#600012",
-        "heading_glow": true,
-        "description_opacity": 80,
-        "desktop_heading_size": 28,
-        "desktop_heading_width": 416,
-        "desktop_description_size": 16,
-        "desktop_description_width": 952,
-        "desktop_image_width": 240,
-        "desktop_image_height": 90,
-        "desktop_card_title_size": 28,
-        "desktop_card_title_line_height": 120,
-        "desktop_contents_size": 16,
-        "desktop_contents_line_height": 150,
-        "desktop_price_size": 50,
-        "desktop_compare_size": 30,
-        "desktop_heading_line_height": 120,
-        "desktop_description_line_height": 150,
-        "mobile_heading_size": 24,
-        "mobile_heading_width": 267,
-        "mobile_description_size": 16,
-        "mobile_description_width": 361,
-        "mobile_image_width": 240,
-        "mobile_image_height": 90,
-        "mobile_card_title_size": 24,
-        "mobile_card_title_line_height": 120,
-        "mobile_contents_size": 16,
-        "mobile_contents_line_height": 150,
-        "mobile_price_size": 32,
-        "mobile_compare_size": 20,
-        "mobile_heading_line_height": 120,
-        "mobile_description_line_height": 150,
-        "desktop_image_heading_gap": 10,
-        "desktop_heading_description_gap": 10,
-        "desktop_header_cards_gap": 40,
-        "desktop_card_gap": 80,
-        "desktop_copy_gap": 20,
-        "mobile_image_heading_gap": 10,
-        "mobile_heading_description_gap": 10,
-        "mobile_header_cards_gap": 20,
-        "mobile_card_gap": 20,
-        "mobile_copy_gap": 20,
-        "desktop_padding_top": 80,
-        "desktop_padding_bottom": 80,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 40
-      }
-    },
     "product_category_home_list_88gpqD": {
       "type": "product-category-home-list",
       "blocks": {
@@ -2349,7 +2230,6 @@
     "slideshow_BEJXCK",
     "main_banner_BfXnqn",
     "awards_scroll_xzi4mF",
-    "black_friday_gift_sets_tRkXke",
     "product_category_home_list_88gpqD",
     "use_cases_7Mqyjy",
     "gift_sets_qbx3NW",
