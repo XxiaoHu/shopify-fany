@@ -1,0 +1,201 @@
+{%- liquid
+  assign card_product = block.settings.product | default: ''
+  assign variant_reference = block.settings.variant_id | strip
+  assign lookup_path = variant_reference | split: '#' | first | split: '?' | first
+  if lookup_path contains '/products/'
+    assign lookup_handle = lookup_path | split: '/products/' | last | split: '/' | first | url_decode
+    if lookup_handle != blank
+      if card_product == blank or card_product.handle != lookup_handle
+        assign card_product = all_products[lookup_handle] | default: ''
+      endif
+    else
+      assign card_product = nil
+    endif
+  endif
+  assign variant = card_product.selected_or_first_available_variant
+  assign requested_variant_id = variant_reference
+  assign variant_is_locked = false
+  assign invalid_variant = false
+  assign reference_product_matches = true
+  if variant_reference != blank and card_product != blank
+    assign variant_is_locked = true
+    assign invalid_variant = true
+    assign variant = nil
+    if variant_reference contains '?'
+      assign requested_variant_id = ''
+      assign reference_without_fragment = variant_reference | split: '#' | first
+      assign reference_path = reference_without_fragment | split: '?' | first
+      assign reference_product_matches = false
+      if reference_path contains '/products/'
+        assign reference_handle = reference_path | split: '/products/' | last | split: '/' | first | url_decode
+        if reference_handle == card_product.handle
+          assign reference_product_matches = true
+        endif
+      endif
+      assign reference_parts = reference_without_fragment | split: '?'
+      assign variant_parameter_count = 0
+      if reference_parts.size == 2
+        assign reference_parameters = reference_parts[1] | replace: '&amp;', '&' | split: '&'
+        for parameter in reference_parameters
+          assign parameter_parts = parameter | split: '='
+          assign parameter_name = parameter_parts | first | url_decode
+          if parameter_name == 'variant'
+            assign variant_parameter_count = variant_parameter_count | plus: 1
+            if parameter_parts.size == 2
+              assign requested_variant_id = parameter_parts[1] | url_decode | strip
+            endif
+          endif
+        endfor
+      endif
+      if variant_parameter_count != 1
+        assign reference_product_matches = false
+      endif
+    endif
+    if reference_product_matches
+      for product_variant in card_product.variants
+        assign candidate_id = product_variant.id | append: ''
+        if candidate_id == requested_variant_id
+          assign variant = product_variant
+          assign invalid_variant = false
+          break
+        endif
+      endfor
+    endif
+  endif
+  if variant_reference != blank and card_product == blank
+    assign variant_is_locked = true
+    assign invalid_variant = true
+    assign variant = nil
+  endif
+  assign variant_image = nil
+  if variant_is_locked and invalid_variant == false
+    assign variant_image = variant.featured_image
+  endif
+  assign card_title = block.settings.title | default: card_product.title
+  assign desktop_image = block.settings.desktop_image | default: variant_image | default: card_product.featured_image
+  assign mobile_image = block.settings.mobile_image
+  assign product_image = desktop_image | default: mobile_image
+  assign image_alt = block.settings.image_alt | default: card_product.title | default: card_title
+  assign price_text = block.settings.price_text | strip
+  assign compare_price_text = block.settings.compare_price_text | strip
+  assign badge_amount = block.settings.badge_amount | strip
+  assign form_id = 'BlackFridayGiftSetsForm-' | append: section.id | append: '-' | append: block.id
+  assign variant_select_id = form_id | append: '-variant'
+  assign error_id = form_id | append: '-error'
+  assign ready = false
+  if variant.available and variant.quantity_rule.min <= 1 and card_product.requires_selling_plan == false
+    assign ready = true
+  endif
+-%}
+<article
+  id="BlackFridayGiftSetsCard-{{ section.id }}-{{ block.id }}"
+  class="black-friday-gift-sets__card"
+  style="--bfgs-desktop-object-position: {{ product_image.presentation.focal_point | default: 'center center' }}; --bfgs-mobile-object-position: {{ mobile_image.presentation.focal_point | default: product_image.presentation.focal_point | default: 'center center' }};"
+  {{ block.shopify_attributes }}
+>
+  <div class="black-friday-gift-sets__media">
+    {%- if product_image != blank -%}
+      <picture>
+        {%- if mobile_image != blank -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ mobile_image | image_url: width: 375 }} 375w, {{ mobile_image | image_url: width: 550 }} 550w, {{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1100 }} 1100w, {{ mobile_image | image_url: width: 1500 }} 1500w"
+            sizes="calc(100vw - 32px)"
+          >
+        {%- endif -%}
+        {{ product_image | image_url: width: 1600 | image_tag: class: 'black-friday-gift-sets__image', widths: '375, 550, 750, 1000, 1200, 1600', sizes: '(max-width: 749px) calc(100vw - 32px), (max-width: 1068px) calc(100vw - 64px), (max-width: 1440px) calc(100vw - 400px), calc((100vw - 400px) * 0.5263)', loading: 'lazy', alt: image_alt }}
+      </picture>
+    {%- elsif request.design_mode -%}
+      {{ 'product-1' | placeholder_svg_tag: 'black-friday-gift-sets__image placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  {%- if block.settings.show_badge and badge_amount != blank -%}
+    <div class="black-friday-gift-sets__badge" data-bfgs-badge>
+      <div class="black-friday-gift-sets__badge-desktop" aria-hidden="true">
+        <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-gift-sets-badge-shadow.svg' | asset_url }}" width="90" height="76" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-base.svg' | asset_url }}" width="90" height="76" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-fill" src="{{ 'black-friday-gift-sets-badge-fill.png' | asset_url }}" width="172" height="142" alt="" loading="lazy">
+      </div>
+      <div class="black-friday-gift-sets__badge-mobile" aria-hidden="true">
+        <img class="black-friday-gift-sets__badge-shadow" src="{{ 'black-friday-gift-sets-badge-mobile-shadow.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-base" src="{{ 'black-friday-gift-sets-badge-mobile-base.svg' | asset_url }}" width="78" height="66" alt="" loading="lazy">
+        <img class="black-friday-gift-sets__badge-fill" src="{{ 'black-friday-gift-sets-badge-mobile-fill.png' | asset_url }}" width="150" height="123" alt="" loading="lazy">
+      </div>
+      <span class="black-friday-gift-sets__badge-amount">{{ badge_amount | escape }}</span>
+      <span class="black-friday-gift-sets__badge-label">{{ section.settings.off_label | escape }}</span>
+    </div>
+  {%- endif -%}
+  <div class="black-friday-gift-sets__copy">
+    {%- if card_title != blank -%}<h3 class="black-friday-gift-sets__title">{{ card_title | escape }}</h3>{%- endif -%}
+    {%- if price_text != blank or compare_price_text != blank -%}
+      <div class="black-friday-gift-sets__prices">
+        {%- if price_text != blank -%}
+          <span class="visually-hidden">{% if compare_price_text != blank %}{{ 'products.product.price.sale_price' | t }}{% else %}{{ 'products.product.price.regular_price' | t }}{% endif %}</span>
+          <span class="black-friday-gift-sets__price">{{ price_text | escape }}</span>
+        {%- endif -%}
+        {%- if compare_price_text != blank -%}
+          <s class="black-friday-gift-sets__compare">
+            <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+            {{ compare_price_text | escape }}
+          </s>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if block.settings.contents != blank -%}<div class="black-friday-gift-sets__contents rte">{{ block.settings.contents }}</div>{%- endif -%}
+    {%- if card_product != blank -%}
+      {%- form 'product', card_product, id: form_id, class: 'black-friday-gift-sets__form', data-bfgs-form: '', aria-describedby: error_id -%}
+        {%- if request.design_mode and variant_is_locked -%}
+          <p class="black-friday-gift-sets__editor-note">
+            {%- if invalid_variant -%}
+              颜色版本链接无效或不属于所选商品，请选好颜色后重新复制完整链接。
+            {%- else -%}
+              当前颜色版本：{{ variant.title | escape }}
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+        {%- if card_product.has_only_default_variant or variant_is_locked -%}
+
+          <input type="hidden" name="id" value="{{ variant.id }}"{% if invalid_variant %} disabled{% endif %}>
+        {%- else -%}
+          <label class="black-friday-gift-sets__variant-label" for="{{ variant_select_id }}">{{ 'products.product.product_variants' | t }}</label>
+          <select class="black-friday-gift-sets__variant-select" id="{{ variant_select_id }}" name="id" data-bfgs-variants>
+            {%- for option in card_product.variants -%}
+              {%- liquid
+                assign option_ready = false
+                if option.available and option.quantity_rule.min <= 1 and card_product.requires_selling_plan == false
+                  assign option_ready = true
+                endif
+              -%}
+              <option value="{{ option.id }}" {% if option.id == variant.id %}selected{% endif %}
+                data-available="{{ option_ready }}"
+              >{{ option.title | escape }}{% unless option.available %} — {{ 'products.product.sold_out' | t }}{% endunless %}</option>
+            {%- endfor -%}
+          </select>
+        {%- endif -%}
+        <input type="hidden" name="quantity" value="1">
+        <div class="black-friday-gift-sets__buttons">
+          <button class="black-friday-gift-sets__button black-friday-gift-sets__button--add" type="submit" name="return_to" value="{{ routes.cart_url | escape }}" data-bfgs-add data-label="{{ section.settings.add_label | escape }}" data-unavailable="{{ 'products.product.unavailable' | t | escape }}" {% unless ready %}disabled{% endunless %}>
+            {% if ready %}{{ section.settings.add_label | escape }}{% elsif variant.available == false and invalid_variant == false %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.unavailable' | t }}{% endif %}
+          </button>
+          <button class="black-friday-gift-sets__button black-friday-gift-sets__button--buy" type="submit" name="return_to" value="{{ routes.root_url | append: 'checkout' | escape }}" data-bfgs-checkout {% unless ready %}disabled{% endunless %}>{{ section.settings.buy_label | escape }}</button>
+        </div>
+        <a class="black-friday-gift-sets__details" data-bfgs-details href="{{ card_product.url | escape }}"{% if ready %} hidden{% endif %}>{{ 'products.product.view_full_details' | t }}</a>
+        <p id="{{ error_id }}" class="black-friday-gift-sets__error" role="alert" hidden></p>
+      {%- endform -%}
+    {%- elsif request.design_mode or variant_reference != blank -%}
+      <div class="black-friday-gift-sets__buttons">
+        <button class="black-friday-gift-sets__button black-friday-gift-sets__button--add" type="button" disabled>{{ section.settings.add_label | escape }}</button>
+        <button class="black-friday-gift-sets__button black-friday-gift-sets__button--buy" type="button" disabled>{{ section.settings.buy_label | escape }}</button>
+      </div>
+      {%- if request.design_mode -%}
+        <p class="black-friday-gift-sets__editor-note">
+          {%- if variant_reference != blank -%}
+            无法识别颜色版本链接中的商品，请检查链接及商品是否已发布到在线商店。
+          {%- else -%}
+            填写颜色版本链接后启用购买功能。
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</article>

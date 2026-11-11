@@ -1,0 +1,136 @@
+.black-friday-promo-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  font-family: Lato, var(--font-body-family, sans-serif);
+  text-align: center;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media {
+  position: relative;
+  flex-shrink: 0;
+  width: min(100%, var(--bfph-desktop-image-width, 240px));
+  height: var(--bfph-desktop-image-height, 90px);
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media picture,
+.black-friday-promo-heading .black-friday-promo-heading__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media--default {
+  overflow: hidden;
+  mix-blend-mode: lighten;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media--default img {
+  position: absolute;
+  top: -6.79%;
+  left: -26.67%;
+  width: 153.33%;
+  max-width: none;
+  height: 106.91%;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__title {
+  width: min(100%, var(--bfph-desktop-heading-width, 416px));
+  margin: 0;
+  padding: 0;
+  color: var(--bfph-heading-color, #fff);
+  font-family: inherit;
+  font-style: normal;
+  font-size: var(--bfph-desktop-heading-size, 28px);
+  font-weight: 700;
+  line-height: var(--bfph-desktop-heading-line-height, 1.2);
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.black-friday-promo-heading--glow .black-friday-promo-heading__title {
+  text-shadow: 0 0 20px var(--bfph-glow, #ffb800), 0 1px 4px var(--bfph-inner-glow, #fcc12b);
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__media + .black-friday-promo-heading__title,
+.black-friday-promo-heading .black-friday-promo-heading__media + .black-friday-promo-heading__description {
+  margin-top: var(--bfph-desktop-image-heading-gap, 10px);
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__description {
+  width: min(100%, var(--bfph-desktop-description-width, 952px));
+  margin: 0;
+  padding: 0;
+  color: var(--bfph-description-color, #fff);
+  font-family: inherit;
+  font-size: var(--bfph-desktop-description-size, 16px);
+  font-weight: 400;
+  line-height: var(--bfph-desktop-description-line-height, 1.5);
+  letter-spacing: 0;
+  opacity: var(--bfph-opacity, 0.8);
+  overflow-wrap: anywhere;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__title + .black-friday-promo-heading__description {
+  margin-top: var(--bfph-desktop-heading-description-gap, 10px);
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__description p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__description strong,
+.black-friday-promo-heading .black-friday-promo-heading__description b {
+  color: var(--bfph-highlight, #fcc12b);
+  font-family: Merriweather, serif;
+  font-weight: 900;
+}
+
+.black-friday-promo-heading .black-friday-promo-heading__description a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.black-friday-promo-heading a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 749px) {
+  .black-friday-promo-heading .black-friday-promo-heading__media {
+    width: min(100%, var(--bfph-mobile-image-width, 240px));
+    height: var(--bfph-mobile-image-height, 90px);
+  }
+
+  .black-friday-promo-heading .black-friday-promo-heading__title {
+    width: min(100%, var(--bfph-mobile-heading-width, 267px));
+    font-size: var(--bfph-mobile-heading-size, 24px);
+    line-height: var(--bfph-mobile-heading-line-height, 1.2);
+  }
+
+  .black-friday-promo-heading .black-friday-promo-heading__description {
+    width: min(100%, var(--bfph-mobile-description-width, 361px));
+    font-size: var(--bfph-mobile-description-size, 16px);
+    line-height: var(--bfph-mobile-description-line-height, 1.5);
+  }
+
+  .black-friday-promo-heading .black-friday-promo-heading__description strong,
+  .black-friday-promo-heading .black-friday-promo-heading__description b {
+    color: inherit;
+    font: inherit;
+  }
+
+  .black-friday-promo-heading .black-friday-promo-heading__media + .black-friday-promo-heading__title,
+  .black-friday-promo-heading .black-friday-promo-heading__media + .black-friday-promo-heading__description {
+    margin-top: var(--bfph-mobile-image-heading-gap, 10px);
+  }
+
+  .black-friday-promo-heading .black-friday-promo-heading__title + .black-friday-promo-heading__description {
+    margin-top: var(--bfph-mobile-heading-description-gap, 10px);
+  }
+}

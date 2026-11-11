@@ -1,0 +1,74 @@
+{% comment %}
+  Shared promotional heading. Load black-friday-promo-heading.css, then render with
+  config: section.settings. The calling section supplies the corresponding settings.
+{% endcomment %}
+{%- liquid
+  assign desktop_image = config.desktop_image
+  assign mobile_image = config.mobile_image
+  assign fallback_image = desktop_image | default: mobile_image
+  capture image_sizes
+    echo '(max-width: 749px) min('
+    echo config.mobile_image_width
+    echo 'px, calc(100vw - 32px)), min('
+    echo config.desktop_image_width
+    echo 'px, calc(100vw - 400px))'
+  endcapture
+  assign has_image = false
+  if fallback_image != blank or config.show_default_image
+    assign has_image = true
+  endif
+-%}
+{%- if has_image or config.heading != blank or config.description != blank -%}
+  <header
+    class="black-friday-promo-heading{% if config.heading_glow %} black-friday-promo-heading--glow{% endif %}"
+    style="
+      --bfph-heading-color: {{ config.heading_color }};
+      --bfph-description-color: {{ config.description_color }};
+      --bfph-highlight: {{ config.highlight_color }};
+      --bfph-glow: {{ config.glow_color }};
+      --bfph-inner-glow: {{ config.glow_inner_color }};
+      --bfph-opacity: {{ config.description_opacity | divided_by: 100.0 }};
+      --bfph-desktop-image-width: {{ config.desktop_image_width }}px;
+      --bfph-desktop-image-height: {{ config.desktop_image_height }}px;
+      --bfph-mobile-image-width: {{ config.mobile_image_width }}px;
+      --bfph-mobile-image-height: {{ config.mobile_image_height }}px;
+      --bfph-desktop-heading-size: {{ config.desktop_heading_size }}px;
+      --bfph-desktop-heading-width: {{ config.desktop_heading_width }}px;
+      --bfph-desktop-description-size: {{ config.desktop_description_size }}px;
+      --bfph-desktop-description-width: {{ config.desktop_description_width }}px;
+      --bfph-mobile-heading-size: {{ config.mobile_heading_size }}px;
+      --bfph-mobile-heading-width: {{ config.mobile_heading_width }}px;
+      --bfph-mobile-description-size: {{ config.mobile_description_size }}px;
+      --bfph-mobile-description-width: {{ config.mobile_description_width }}px;
+      --bfph-desktop-heading-line-height: {{ config.desktop_heading_line_height | divided_by: 100.0 }};
+      --bfph-desktop-description-line-height: {{ config.desktop_description_line_height | divided_by: 100.0 }};
+      --bfph-mobile-heading-line-height: {{ config.mobile_heading_line_height | divided_by: 100.0 }};
+      --bfph-mobile-description-line-height: {{ config.mobile_description_line_height | divided_by: 100.0 }};
+      --bfph-desktop-image-heading-gap: {{ config.desktop_image_heading_gap }}px;
+      --bfph-desktop-heading-description-gap: {{ config.desktop_heading_description_gap }}px;
+      --bfph-mobile-image-heading-gap: {{ config.mobile_image_heading_gap }}px;
+      --bfph-mobile-heading-description-gap: {{ config.mobile_heading_description_gap }}px;
+    "
+  >
+    {%- if has_image -%}
+      <div class="black-friday-promo-heading__media{% if fallback_image == blank %} black-friday-promo-heading__media--default{% endif %}">
+        {%- if fallback_image != blank -%}
+          <picture>
+            {%- if mobile_image != blank -%}
+              <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 240 }} 240w, {{ mobile_image | image_url: width: 480 }} 480w, {{ mobile_image | image_url: width: 960 }} 960w" sizes="{{ config.mobile_image_width }}px">
+            {%- endif -%}
+            {{ fallback_image | image_url: width: 960 | image_tag: widths: '240, 480, 720, 960', sizes: image_sizes, loading: 'lazy', alt: config.image_alt }}
+          </picture>
+        {%- else -%}
+          <img src="{{ 'black-friday-gift-sets-flash-deal.png' | asset_url }}" width="872" height="228" alt="{{ config.image_alt | escape }}" loading="lazy">
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if config.heading != blank -%}
+      <h2 class="black-friday-promo-heading__title">{{ config.heading }}</h2>
+    {%- endif -%}
+    {%- if config.description != blank -%}
+      <div class="black-friday-promo-heading__description rte">{{ config.description }}</div>
+    {%- endif -%}
+  </header>
+{%- endif -%}
