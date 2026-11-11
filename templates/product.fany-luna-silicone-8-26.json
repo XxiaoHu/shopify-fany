@@ -175,7 +175,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>FANY Luna is a lightweight, hypoallergenic silicone smartwatch for women, designed for everyday comfort and skin-friendly wear. Weighing just 29.2g, it features a compact 37.5 mm watch diameter and a soft-touch silicone band that fits wrists from 144–202 mm, making it comfortable for all-day wear, workouts, and sleep.<br/><br/>Featuring a vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and stress tracking, menstrual cycle tracking, smart notifications, and up to 10 days of battery life, FANY Luna combines everyday wellness features with a sleek, minimalist design.<br/><br/>Why you'll love it:<br/><br/>Hypoallergenic soft-touch silicone band<br/>Lightweight 29.2g design<br/>Slim 37.5 mm watch diameter<br/>Fits wrists from 144–202mm<br/>1.1-inch AMOLED display<br/>120+ workout modes<br/>Sleep, stress & menstrual cycle tracking<br/>Up to 10 days of battery life<br/><br/></p>",
+            "content": "<p>FANY Luna silicone smartwatch is lightweight, hypoallergenic for women, designed for everyday comfort and skin-friendly wear. Weighing just 29.2g, it features a compact 37.5 mm watch diameter and a soft-touch silicone band that fits wrists from 144–202 mm, making it comfortable for all-day wear, workouts, and sleep.<br/><br/>Featuring a vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and stress tracking, menstrual cycle tracking, smart notifications, and up to 10 days of battery life, FANY Luna combines everyday wellness features with a sleek, minimalist design.<br/><br/>Why you'll love it:<br/><br/>Hypoallergenic soft-touch silicone band<br/>Lightweight 29.2g design<br/>Slim 37.5 mm watch diameter<br/>Fits wrists from 144–202mm<br/>1.1-inch AMOLED display<br/>120+ workout modes<br/>Sleep, stress & menstrual cycle tracking<br/>Up to 10 days of battery life<br/><br/></p>",
             "page": ""
           }
         },
@@ -2313,10 +2313,11 @@
         "collapsible_row_9Wp6DL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. Is FANY Luna a good smartwatch for sensitive skin?",
+            "heading": "1. Is FANY Luna silicone smartwatch a good smartwatch for sensitive skin?",
             "icon": "none",
-            "row_content": "<p>Yes. FANY Luna Silicone features a soft-touch hypoallergenic silicone band designed for comfortable everyday wear. Its lightweight 29.2g design also helps reduce the bulky feel of larger smartwatches during work, workouts, and sleep.<br/><br/>If you have a known material allergy or highly sensitive skin, we recommend reviewing the material details before purchase.</p>",
-            "page": ""
+            "row_content": "<p>Yes. FANY Luna silicone smartwatch features a soft-touch hypoallergenic silicone band designed for comfortable everyday wear. Its lightweight 29.2g design also helps reduce the bulky feel of larger smartwatches during work, workouts, and sleep.<br/><br/>If you have a known material allergy or highly sensitive skin, we recommend reviewing the material details before purchase.</p>",
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_GBhf9M": {
@@ -2325,7 +2326,8 @@
             "heading": "2. Does FANY Luna fit small wrists?",
             "icon": "none",
             "row_content": "<p>Yes, FANY Luna has a compact 37.5 mm watch diameter, weighs just 29.2 g, and fits wrist circumferences from 144 to 202 mm (5.67 to 7.95 inches). Its slim profile is designed to feel comfortable on smaller wrists without looking bulky.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_WyzMqb": {
@@ -2334,7 +2336,8 @@
             "heading": "3. Can I wear FANY Luna all day and while sleeping?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna is designed for comfortable extended wear throughout the day and overnight. Its lightweight case and soft silicone band make it easy to wear during work, workouts, daily activities, and sleep tracking.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_nBLnWt": {
@@ -2343,7 +2346,8 @@
             "heading": "4. How does FANY Luna track sleep?",
             "icon": "none",
             "row_content": "<p>FANY Luna tracks your total sleep time, deep sleep, light sleep, REM sleep, and awake periods while you wear it overnight. You can review your sleep history and nightly patterns in the FANY Fit app to see how your sleep changes over time.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_zcaimh": {
@@ -2352,7 +2356,8 @@
             "heading": "5. Does FANY Luna support menstrual cycle tracking?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna and the FANY Fit App let you log cycle information, review your period history, and view estimated upcoming cycle dates. This makes it easier to keep your cycle information organized and plan ahead.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_cxPQFx": {
@@ -2361,7 +2366,8 @@
             "heading": "6. How does FANY Luna track stress and mood?",
             "icon": "none",
             "row_content": "<p>FANY Luna helps you follow daily stress trends using tracked wellness data such as heart rate and HRV. For mood tracking, you can also record simple check-ins such as pleasant, neutral, or unpleasant moments and review them alongside your other wellness data in the FANY Fit App.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_7hieFk": {
@@ -2370,7 +2376,8 @@
             "heading": "7. Does FANY Luna have built-in GPS?",
             "icon": "none",
             "row_content": "<p>FANY Luna does not use standalone GPS for outdoor running. For GPS-based distance, time, and pace, connect the watch to your phone so it can use your phone’s GPS.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_CbXBqt": {
@@ -2379,7 +2386,8 @@
             "heading": "8. Is FANY Luna waterproof?",
             "icon": "none",
             "row_content": "<p>FANY Luna is IP68 water resistant, making it suitable for everyday exposure to sweat, rain, and splashes. Follow the product care instructions for swimming, showering, hot water, saunas, and other prolonged water exposure.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_et434w": {
@@ -2388,7 +2396,8 @@
             "heading": "9. How long does the FANY Luna battery last?",
             "icon": "none",
             "row_content": "<p>FANY Luna offers up to 10 days of battery life under typical use. Actual battery life may vary depending on features, notification frequency, workout tracking, display use, and other settings.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_itdjh9": {
@@ -2397,7 +2406,8 @@
             "heading": "10. What notifications and everyday smart features does FANY Luna support?",
             "icon": "none",
             "row_content": "<p>FANY Luna can display notifications for incoming calls, messages, calendar events, and supported apps when connected to your phone. It also includes everyday tools such as alarms, timers, a stopwatch, weather information, calendar features, and more.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         }
       },
@@ -2419,6 +2429,30 @@
       ],
       "name": "FAQ",
       "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
