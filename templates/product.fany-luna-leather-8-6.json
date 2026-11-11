@@ -174,7 +174,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>FANY Luna is a lightweight leather smartwatch for women, designed to bring everyday wellness, smart features, and refined style together. Weighing just 23.9 g, it features a compact 37.5 mm watch diameter and fits wrist circumferences from 144 to 202 mm for comfortable all-day wear.<br/><br/>A vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and menstrual cycle tracking, smart notifications, and up to 10 days of battery life make Luna easy to wear from workdays and workouts to evenings out.</p>",
+            "content": "<p>FANY Luna leather style is a lightweight leather smartwatch for women, designed to bring everyday wellness, smart features, and refined style together. Weighing just 23.9 g, it features a compact 37.5 mm watch diameter and fits wrist circumferences from 144 to 202 mm for comfortable all-day wear.<br/><br/>A vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and menstrual cycle tracking, smart notifications, and up to 10 days of battery life make Luna easy to wear from workdays and workouts to evenings out.</p>",
             "page": ""
           }
         },
@@ -316,7 +316,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Magnetic Charger(Full Charge in 2.5 Hours)<br/>* Instruction manual, Quick start guide</p>",
+            "content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Magnetic Charger(Full Charge in 1.5 Hours)<br/>* Instruction manual, Quick start guide</p>",
             "page": ""
           }
         },
@@ -2147,8 +2147,9 @@
           "settings": {
             "heading": "1. Is FANY Luna a good smartwatch for women?",
             "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is a smartwatch designed specifically for women who want a lightweight, elegant watch with everyday health, wellness, and fitness tracking. It weighs just 23.9g and features sleep tracking, heart rate monitoring, menstrual cycle tracking, stress tracking, blood oxygen monitoring, and 120+ workout modes.</p>",
-            "page": ""
+            "row_content": "<p>Yes, FANY Luna leather style is a smartwatch designed specifically for women who want a lightweight, elegant watch with everyday health, wellness, and fitness tracking. It weighs just 23.9g and features sleep tracking, heart rate monitoring, menstrual cycle tracking, stress tracking, blood oxygen monitoring, and 120+ workout modes.</p>",
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_GBhf9M": {
@@ -2157,7 +2158,8 @@
             "heading": "2. Does FANY Luna track heart rate?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna supports continuous and automatic heart rate monitoring, including resting and active heart rate. It can also provide heart rate alerts and HRV-related insights through the FANY FIT app.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_nBLnWt": {
@@ -2166,7 +2168,8 @@
             "heading": "3. How does the FANY Luna smartwatch measure steps?",
             "icon": "none",
             "row_content": "<p>FANY Luna uses a professional-grade motion sensor to track your daily movements with accuracy and ease.<br/>It’s not about chasing fitness goals — it’s about knowing you’ve moved enough to care for your health.<br/>From walking the dog, commuting, or taking a mindful stroll after dinner, every step gently reminds you: staying active is also a form of self-care.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_zcaimh": {
@@ -2175,7 +2178,8 @@
             "heading": "4. Does FANY Luna track sleep?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna tracks sleep stages, including light, deep, and REM sleep. It also monitors sleep duration and sleep patterns, with detailed sleep reports and insights available in the FANY FIT app.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_cxPQFx": {
@@ -2184,7 +2188,8 @@
             "heading": "5. Does FANY Luna support menstrual cycle tracking?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna supports menstrual cycle tracking through the FANY FIT app. You can record cycle information and view period and ovulation-related insights to better understand your personal cycle patterns.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_7hieFk": {
@@ -2193,7 +2198,8 @@
             "heading": "6. Does FANY Luna track blood oxygen and stress?",
             "icon": "none",
             "row_content": "<p>Yes, FANY Luna supports blood oxygen (SpO₂) and stress tracking using its built-in sensors. These wellness metrics can be viewed through the FANY FIT app to help you understand your daily activity, recovery, and overall wellness.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_CbXBqt": {
@@ -2202,7 +2208,8 @@
             "heading": "7. Is FANY waterproof?",
             "icon": "none",
             "row_content": "<p>FANY Luna features IP68 water resistance and is suitable for everyday use and swimming. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_et434w": {
@@ -2211,7 +2218,8 @@
             "heading": "8. How long does the FANY Luna smartwatch battery last?",
             "icon": "none",
             "row_content": "<p>FANY Luna offers up to 10 days of battery life on a single charge, depending on usage. It takes approximately 1.5 hours to fully charge using the included magnetic charger.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_eyGne4": {
@@ -2220,7 +2228,8 @@
             "heading": "9. Does FANY Luna support WhatsApp and other phone notifications?",
             "icon": "none",
             "row_content": "<p>Yes, FANY Luna can display notifications for incoming calls, messages, and supported apps such as WhatsApp and Instagram. You can choose which notifications appear on your smartwatch through the FANY FIT app.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_YpiDDn": {
@@ -2229,7 +2238,8 @@
             "heading": "10. Is FANY Luna compatible with iPhone and Android?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna works with compatible iOS and Android smartphones through the FANY FIT app. Connect your watch via Bluetooth to sync health and fitness data, receive notifications, and manage your smartwatch settings.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_rdVrU8": {
@@ -2238,7 +2248,8 @@
             "heading": "11. How do l connect my FANY Luna Smartwatch to my phone?",
             "icon": "none",
             "row_content": "<p>Download the FANY FIT app for your smartwatch, enable Bluetooth, open the app and follow on-screen instructions: select device, confirm pairing code, grant permissions.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_CEezCT": {
@@ -2247,7 +2258,8 @@
             "heading": "12. Is FANY Luna suitable for sensitive skin?",
             "icon": "none",
             "row_content": "<p>FANY Luna features a genuine leather strap and an aluminum bezel designed for comfortable everyday wear. If you have particularly sensitive skin, we recommend keeping the band clean and dry and choosing the strap material that feels most comfortable for you.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_WbmKRp": {
@@ -2256,7 +2268,8 @@
             "heading": "13. ls there a warranty on the watch?",
             "icon": "none",
             "row_content": "<p>Yes, FANY Luna comes with a two-year warranty that covers manufacturing defects and quality issues. </p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_feJQFR": {
@@ -2265,7 +2278,8 @@
             "heading": "14. What’s Included in the FANY Luna Box?",
             "icon": "none",
             "row_content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Charger<br/>* Instruction manual, Quick start guide</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         }
       },
@@ -2291,6 +2305,30 @@
       ],
       "name": "FAQ",
       "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
