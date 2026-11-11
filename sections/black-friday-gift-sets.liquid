@@ -8,7 +8,6 @@
   {% if section.settings.navigation_anchor != blank %}data-navigation-anchor="{{ section.settings.navigation_anchor | handleize | escape }}"{% endif %}
   data-cart-add-url="{{ routes.cart_add_url | escape }}"
   data-cart-url="{{ routes.cart_url | escape }}"
-  data-checkout-url="{{ routes.root_url | append: 'checkout' | escape }}"
   data-error-message="{{ 'sections.cart.cart_error' | t | escape }}"
   style="
     --bfgs-desktop-card-title-line-height: {{ section.settings.desktop_card_title_line_height | divided_by: 100.0 }};

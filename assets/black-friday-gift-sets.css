@@ -135,8 +135,7 @@
   margin: 0;
 }
 
-.black-friday-gift-sets .black-friday-gift-sets__contents a,
-.black-friday-gift-sets .black-friday-gift-sets__details {
+.black-friday-gift-sets .black-friday-gift-sets__contents a {
   color: inherit;
   text-decoration: underline;
 }
@@ -169,6 +168,7 @@
   background: transparent;
   font: 400 18px/1.5 Lato, var(--font-body-family, sans-serif);
   text-align: center;
+  text-decoration: none;
   overflow-wrap: anywhere;
   cursor: pointer;
   transition: opacity 160ms ease;
@@ -285,7 +285,8 @@
 }
 
 @media (hover: hover) {
-  .black-friday-gift-sets .black-friday-gift-sets__button:enabled:hover {
+  .black-friday-gift-sets .black-friday-gift-sets__button:enabled:hover,
+  .black-friday-gift-sets a.black-friday-gift-sets__button:hover {
     opacity: 0.8;
   }
 }

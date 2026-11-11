@@ -29,10 +29,15 @@ if (!customElements.get('black-friday-gift-sets')) {
       const card = select.closest('.black-friday-gift-sets__card');
       if (!option || !card) return;
       const available = option.dataset.available === 'true';
+      const productLink = card.querySelector('[data-bfgs-product-link]');
+      if (productLink) {
+        const url = new URL(productLink.dataset.productUrl, window.location.origin);
+        url.searchParams.set('variant', select.value);
+        productLink.href = url.pathname + url.search + url.hash;
+      }
       card.querySelectorAll('button[type="submit"]').forEach((button) => { button.disabled = !available; });
       const add = card.querySelector('[data-bfgs-add]');
       add.textContent = available ? add.dataset.label : add.dataset.unavailable;
-      card.querySelector('[data-bfgs-details]').hidden = available;
       card.querySelector('[role="alert"]').hidden = true;
     }
 
@@ -45,7 +50,6 @@ if (!customElements.get('black-friday-gift-sets')) {
       const originalDisabled = buttons.map((button) => button.disabled);
       const select = form.querySelector('select');
       const error = form.querySelector('[role="alert"]');
-      const checkout = submitter.hasAttribute('data-bfgs-checkout');
       const data = new FormData(form);
       data.delete('return_to');
       buttons.forEach((button) => { button.disabled = true; });
@@ -65,7 +69,7 @@ if (!customElements.get('black-friday-gift-sets')) {
         const result = await response.json();
         if (!response.ok || result.status) throw new Error(result.description || result.message || this.dataset.errorMessage);
         if (!this.isConnected || request.signal.aborted) return;
-        window.location.assign(checkout ? this.dataset.checkoutUrl : this.dataset.cartUrl);
+        window.location.assign(this.dataset.cartUrl);
       } catch (failure) {
         if (failure.name !== 'AbortError' && this.isConnected) {
           error.textContent = failure.message || this.dataset.errorMessage;

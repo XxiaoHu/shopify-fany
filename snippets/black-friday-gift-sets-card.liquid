@@ -79,6 +79,10 @@
   assign price_text = block.settings.price_text | strip
   assign compare_price_text = block.settings.compare_price_text | strip
   assign badge_amount = block.settings.badge_amount | strip
+  assign product_details_url = card_product.url
+  if variant.id != blank and invalid_variant == false
+    assign product_details_url = product_details_url | append: '?variant=' | append: variant.id
+  endif
   assign form_id = 'BlackFridayGiftSetsForm-' | append: section.id | append: '-' | append: block.id
   assign variant_select_id = form_id | append: '-variant'
   assign error_id = form_id | append: '-error'
@@ -177,9 +181,8 @@
           <button class="black-friday-gift-sets__button black-friday-gift-sets__button--add" type="submit" name="return_to" value="{{ routes.cart_url | escape }}" data-bfgs-add data-label="{{ section.settings.add_label | escape }}" data-unavailable="{{ 'products.product.unavailable' | t | escape }}" {% unless ready %}disabled{% endunless %}>
             {% if ready %}{{ section.settings.add_label | escape }}{% elsif variant.available == false and invalid_variant == false %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.unavailable' | t }}{% endif %}
           </button>
-          <button class="black-friday-gift-sets__button black-friday-gift-sets__button--buy" type="submit" name="return_to" value="{{ routes.root_url | append: 'checkout' | escape }}" data-bfgs-checkout {% unless ready %}disabled{% endunless %}>{{ section.settings.buy_label | escape }}</button>
+          <a class="black-friday-gift-sets__button black-friday-gift-sets__button--buy" href="{{ product_details_url | escape }}" data-bfgs-product-link data-product-url="{{ card_product.url | escape }}">{{ section.settings.buy_label | escape }}</a>
         </div>
-        <a class="black-friday-gift-sets__details" data-bfgs-details href="{{ card_product.url | escape }}"{% if ready %} hidden{% endif %}>{{ 'products.product.view_full_details' | t }}</a>
         <p id="{{ error_id }}" class="black-friday-gift-sets__error" role="alert" hidden></p>
       {%- endform -%}
     {%- elsif request.design_mode or variant_reference != blank -%}
