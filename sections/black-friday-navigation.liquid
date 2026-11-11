@@ -1,0 +1,291 @@
+{{ 'black-friday-navigation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'black-friday-navigation.js' | asset_url }}" defer="defer"></script>
+
+<black-friday-navigation
+  id="BlackFridayNavigation-{{ section.id }}"
+  class="black-friday-navigation"
+  style="
+    --bfn-background: {{ section.settings.background_color }};
+    --bfn-text: {{ section.settings.text_color }};
+    --bfn-hover-background: {{ section.settings.hover_background_color }};
+    --bfn-hover-text: {{ section.settings.hover_text_color }};
+    --bfn-active-background: {{ section.settings.active_background_color }};
+    --bfn-active-text: {{ section.settings.active_text_color }};
+    --bfn-divider: {{ section.settings.divider_color }};
+    --bfn-desktop-font-size: {{ section.settings.desktop_font_size }}px;
+    --bfn-desktop-height: {{ section.settings.desktop_height }}px;
+    --bfn-mobile-font-size: {{ section.settings.mobile_font_size }}px;
+    --bfn-mobile-height: {{ section.settings.mobile_height }}px;
+    --bfn-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --bfn-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --bfn-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --bfn-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <nav class="black-friday-navigation__nav" aria-label="{{ section.settings.navigation_label | default: 'Black Friday navigation' | escape }}">
+    <ul class="black-friday-navigation__list" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.text != blank -%}
+          {%- assign target_anchor = block.settings.target_anchor | handleize -%}
+          <li
+            id="BlackFridayNavigationItem-{{ section.id }}-{{ block.id }}"
+            class="black-friday-navigation__item"
+            style="--bfn-mobile-line-height: {{ block.settings.mobile_line_height | divided_by: 100.0 }};"
+            {{ block.shopify_attributes }}
+          >
+            {%- if target_anchor != blank -%}
+              <a class="black-friday-navigation__link" href="#{{ target_anchor | escape }}" data-bfn-target="{{ target_anchor | escape }}">
+                {{- block.settings.text | escape -}}
+              </a>
+            {%- else -%}
+              <span class="black-friday-navigation__link">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    {%- if request.design_mode -%}
+      {%- assign visible_blocks = section.blocks | map: 'settings' | map: 'text' | join: '' | strip -%}
+      {%- if visible_blocks == blank -%}
+        <p class="black-friday-navigation__empty">请添加导航项并填写文字与目标锚点</p>
+      {%- endif -%}
+    {%- endif -%}
+  </nav>
+</black-friday-navigation>
+
+{% schema %}
+{
+  "name": "黑五专属导航栏",
+  "tag": "section",
+  "class": "black-friday-navigation-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "内容"
+    },
+    {
+      "type": "text",
+      "id": "navigation_label",
+      "label": "无障碍导航名称",
+      "default": "Black Friday navigation"
+    },
+    {
+      "type": "paragraph",
+      "content": "默认配色对应黑五设计稿。调整颜色时请确保文字与背景有足够对比度。导航将吸附在主题页头下方。"
+    },
+    {
+      "type": "header",
+      "content": "颜色"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "默认文字颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "悬停背景颜色",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color",
+      "label": "悬停文字颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "active_background_color",
+      "label": "选中背景颜色",
+      "default": "#600012"
+    },
+    {
+      "type": "color",
+      "id": "active_text_color",
+      "label": "选中文字颜色",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "color_background",
+      "id": "divider_color",
+      "label": "分隔线颜色",
+      "default": "rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "type": "header",
+      "content": "桌面端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "文字大小",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 44,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "导航高度",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "移动端字号与尺寸"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "文字大小",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "导航高度",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "上下间距"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "桌面端下间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端上间距",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "移动端下间距",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "导航项",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "文字",
+          "default": "导航项"
+        },
+        {
+          "type": "text",
+          "id": "target_anchor",
+          "label": "目标锚点",
+          "info": "填写目标模块的 HTML ID 或导航锚点，例如 gift-sets；不含 #。请先在对应模块配置同名锚点。"
+        },
+        {
+          "type": "range",
+          "id": "mobile_line_height",
+          "label": "移动端行高",
+          "min": 100,
+          "max": 160,
+          "step": 10,
+          "unit": "%",
+          "default": 100
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "黑五专属导航栏",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Gift Sets",
+            "target_anchor": "gift-sets",
+            "mobile_line_height": 100
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Best Sellers",
+            "target_anchor": "best-sellers",
+            "mobile_line_height": 120
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Butterfly Bracelet Set",
+            "target_anchor": "butterfly-bracelet-set",
+            "mobile_line_height": 100
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "FAQ",
+            "target_anchor": "faq",
+            "mobile_line_height": 100
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
