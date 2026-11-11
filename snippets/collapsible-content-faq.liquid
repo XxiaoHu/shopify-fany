@@ -1,0 +1,76 @@
+{% comment %}Optional FAQ presentation. The calling section preserves its original layout when disabled.{% endcomment %}
+<div
+  id="CollapsibleFaq-{{ section.id }}"
+  class="collapsible-faq{% if section.settings.faq_heading_glow %} collapsible-faq--glow{% endif %}"
+  {% if section.settings.faq_navigation_anchor != blank %}data-navigation-anchor="{{ section.settings.faq_navigation_anchor | handleize | escape }}"{% endif %}
+  style="
+    --ccf-background: {{ section.settings.faq_background }};
+    --ccf-heading-color: {{ section.settings.faq_heading_color }};
+    --ccf-question-color: {{ section.settings.faq_question_color }};
+    --ccf-answer-color: {{ section.settings.faq_answer_color }};
+    --ccf-mobile-answer-color: {{ section.settings.faq_mobile_answer_color }};
+    --ccf-glow-color: {{ section.settings.faq_glow_color }};
+    --ccf-glow-inner-color: {{ section.settings.faq_glow_inner_color }};
+    --ccf-heading-align: {{ section.settings.heading_alignment }};
+    --ccf-heading-size: {{ section.settings.faq_heading_size }}px;
+    --ccf-mobile-heading-size: {{ section.settings.faq_mobile_heading_size }}px;
+    --ccf-question-size: {{ section.settings.question_title_font_size }}px;
+    --ccf-question-weight: {{ section.settings.question_title_font_weight }};
+    --ccf-answer-size: {{ section.settings.answer_font_size }}px;
+    --ccf-answer-weight: {{ section.settings.answer_font_weight }};
+    --ccf-mobile-question-size: {{ section.settings.mobile_question_title_font_size }}px;
+    --ccf-mobile-question-weight: {{ section.settings.mobile_question_title_font_weight }};
+    --ccf-mobile-answer-size: {{ section.settings.mobile_answer_font_size }}px;
+    --ccf-mobile-answer-weight: {{ section.settings.mobile_answer_font_weight }};
+    --ccf-question-line-height: {{ section.settings.faq_question_line_height | divided_by: 100.0 }};
+    --ccf-answer-line-height: {{ section.settings.faq_answer_line_height | divided_by: 100.0 }};
+    --ccf-heading-gap: {{ section.settings.faq_desktop_heading_gap }}px;
+    --ccf-mobile-heading-gap: {{ section.settings.faq_mobile_heading_gap }}px;
+    --ccf-item-gap: {{ section.settings.faq_desktop_item_gap }}px;
+    --ccf-mobile-item-gap: {{ section.settings.faq_mobile_item_gap }}px;
+    --ccf-answer-gap: {{ section.settings.faq_desktop_answer_gap }}px;
+    --ccf-mobile-answer-gap: {{ section.settings.faq_mobile_answer_gap }}px;
+    --ccf-desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --ccf-desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --ccf-mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --ccf-mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="collapsible-faq__inner">
+    {%- if section.settings.heading != blank or section.settings.caption != blank -%}
+      <header class="collapsible-faq__header">
+        {%- if section.settings.caption != blank -%}
+          <p class="collapsible-faq__caption">{{ section.settings.caption | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="collapsible-faq__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+    <div class="collapsible-faq__items">
+      {%- for block in section.blocks -%}
+        {%- assign question = block.settings.heading | default: block.settings.page.title -%}
+        {%- if question != blank or request.design_mode -%}
+          <details
+            class="collapsible-faq__item"
+            id="FaqDetails-{{ section.id }}-{{ block.id }}"
+            {% if block.settings.faq_open_by_default or section.settings.open_first_collapsible_row and forloop.first %}open{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <summary class="collapsible-faq__summary" id="FaqSummary-{{ section.id }}-{{ block.id }}">
+              <h3 class="collapsible-faq__question">{{ question | escape }}</h3>
+              <span class="collapsible-faq__icon collapsible-faq__icon--plus" aria-hidden="true"></span>
+              <span class="collapsible-faq__icon collapsible-faq__icon--minus" aria-hidden="true"></span>
+            </summary>
+            {%- if block.settings.row_content != blank or block.settings.page.content != blank -%}
+              <div class="collapsible-faq__answer rte" id="FaqAnswer-{{ section.id }}-{{ block.id }}" role="region" aria-labelledby="FaqSummary-{{ section.id }}-{{ block.id }}">
+                {{ block.settings.row_content }}
+                {{ block.settings.page.content }}
+              </div>
+            {%- endif -%}
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

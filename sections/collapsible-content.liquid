@@ -1,3 +1,7 @@
+{%- if section.settings.enable_black_friday_style -%}
+  {{ 'collapsible-content-faq.css' | asset_url | stylesheet_tag }}
+  {% render 'collapsible-content-faq', section: section %}
+{%- else -%}
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 
@@ -191,15 +195,229 @@
   </div>
 </div>
 
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.collapsible_content.name",
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": [
+      "header",
+      "footer"
+    ]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "可选：黑五 FAQ 样式"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_black_friday_style",
+      "label": "启用黑五 FAQ 样式",
+      "default": false,
+      "info": "仅影响当前分区。启用后使用独立问答布局，原布局、标题位置、图片、行首图标与分割线设置仅作用于默认样式；问答文字和问答字号继续共用。"
+    },
+    {
+      "type": "text",
+      "id": "faq_navigation_anchor",
+      "label": "新样式导航锚点",
+      "default": "faq"
+    },
+    {
+      "type": "color",
+      "id": "faq_background",
+      "label": "新样式背景色",
+      "default": "#221008"
+    },
+    {
+      "type": "color",
+      "id": "faq_heading_color",
+      "label": "新样式标题颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "faq_question_color",
+      "label": "新样式问题颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "faq_answer_color",
+      "label": "新样式 PC 回答颜色",
+      "default": "#d4d4d4"
+    },
+    {
+      "type": "color",
+      "id": "faq_mobile_answer_color",
+      "label": "新样式移动端回答颜色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_heading_glow",
+      "label": "新样式标题发光",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "faq_glow_color",
+      "label": "新样式外层发光颜色",
+      "default": "#ffb800"
+    },
+    {
+      "type": "color",
+      "id": "faq_glow_inner_color",
+      "label": "新样式内层发光颜色",
+      "default": "#fcc12b"
+    },
+    {
+      "type": "range",
+      "id": "faq_heading_size",
+      "label": "新样式 PC 标题字号",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "faq_mobile_heading_size",
+      "label": "新样式移动端标题字号",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "faq_question_line_height",
+      "label": "新样式问题行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "faq_answer_line_height",
+      "label": "新样式回答行高",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "faq_desktop_heading_gap",
+      "label": "新样式 PC 标题与问题间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "faq_mobile_heading_gap",
+      "label": "新样式移动端标题与问题间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "faq_desktop_item_gap",
+      "label": "新样式 PC 问题组间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "faq_mobile_item_gap",
+      "label": "新样式移动端问题组间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "faq_desktop_answer_gap",
+      "label": "新样式 PC 问题与回答间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "faq_mobile_answer_gap",
+      "label": "新样式移动端问题与回答间距",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "黑五 FAQ 上下间距（仅新样式）"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "新样式 PC 上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "新样式 PC 下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "新样式移动端上间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "新样式移动端下间距",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
     {
       "type": "text",
       "id": "caption",
@@ -326,7 +544,7 @@
     {
       "type": "header",
       "content": "t:sections.collapsible_content.settings.layout_header.content"
-    },    
+    },
     {
       "type": "select",
       "id": "layout",
@@ -352,7 +570,7 @@
       "id": "container_color_scheme",
       "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
       "default": "scheme-2"
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -414,10 +632,22 @@
       "id": "question_title_font_weight",
       "label": "问题标题字重",
       "options": [
-        { "value": "400", "label": "常规 400" },
-        { "value": "500", "label": "中等 500" },
-        { "value": "600", "label": "半粗 600" },
-        { "value": "700", "label": "粗体 700" }
+        {
+          "value": "400",
+          "label": "常规 400"
+        },
+        {
+          "value": "500",
+          "label": "中等 500"
+        },
+        {
+          "value": "600",
+          "label": "半粗 600"
+        },
+        {
+          "value": "700",
+          "label": "粗体 700"
+        }
       ],
       "default": "700"
     },
@@ -436,10 +666,22 @@
       "id": "answer_font_weight",
       "label": "回答内容字重",
       "options": [
-        { "value": "400", "label": "常规 400" },
-        { "value": "500", "label": "中等 500" },
-        { "value": "600", "label": "半粗 600" },
-        { "value": "700", "label": "粗体 700" }
+        {
+          "value": "400",
+          "label": "常规 400"
+        },
+        {
+          "value": "500",
+          "label": "中等 500"
+        },
+        {
+          "value": "600",
+          "label": "半粗 600"
+        },
+        {
+          "value": "700",
+          "label": "粗体 700"
+        }
       ],
       "default": "400"
     },
@@ -462,10 +704,22 @@
       "id": "mobile_question_title_font_weight",
       "label": "问题标题字重-移动端",
       "options": [
-        { "value": "400", "label": "常规 400" },
-        { "value": "500", "label": "中等 500" },
-        { "value": "600", "label": "半粗 600" },
-        { "value": "700", "label": "粗体 700" }
+        {
+          "value": "400",
+          "label": "常规 400"
+        },
+        {
+          "value": "500",
+          "label": "中等 500"
+        },
+        {
+          "value": "600",
+          "label": "半粗 600"
+        },
+        {
+          "value": "700",
+          "label": "粗体 700"
+        }
       ],
       "default": "700"
     },
@@ -484,10 +738,22 @@
       "id": "mobile_answer_font_weight",
       "label": "回答内容字重-移动端",
       "options": [
-        { "value": "400", "label": "常规 400" },
-        { "value": "500", "label": "中等 500" },
-        { "value": "600", "label": "半粗 600" },
-        { "value": "700", "label": "粗体 700" }
+        {
+          "value": "400",
+          "label": "常规 400"
+        },
+        {
+          "value": "500",
+          "label": "中等 500"
+        },
+        {
+          "value": "600",
+          "label": "半粗 600"
+        },
+        {
+          "value": "700",
+          "label": "粗体 700"
+        }
       ],
       "default": "400"
     },
@@ -765,6 +1031,13 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.page.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "faq_open_by_default",
+          "label": "黑五样式中默认展开此问题",
+          "default": false,
+          "info": "仅在新样式生效，允许同时展开多个问题；原“展开第一项”仍可使用。"
         }
       ]
     }
