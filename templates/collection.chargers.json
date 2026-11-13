@@ -111,7 +111,7 @@
       "name": "上下结构图文",
       "settings": {
         "header": "<p>FANY Luna Magnetic Fast Charger</p>",
-        "text": "<p>A 600 mm magnetic charging cable built for the FANY Luna. Snap it on, and the watch aligns itself—a full charge takes about 1.5 hours over USB-C, enough for up to 10 days of use.</p><h2>Why 600 mm Matters</h2><p>Long enough to reach from a bedside outlet, a desk USB-C port or a power bank, so the watch keeps charging while you keep wearing it. The connector seats itself the moment it gets close—no pins to line up, no fumbling in the dark.</p><h2>Compatibility</h2><p>Charges the FANY Luna smartwatch, with leather and silicone editions alike. The connector is shaped for Luna's back only—it does not work with iPhones, Apple Watches, Samsung Galaxy Watches, or any other third-party smartwatches.</p>",
+        "text": "<p>A 600 mm magnetic charging cable built for the FANY Luna. Snap it on, and the watch aligns itself—a full charge takes about 1.5 hours over USB-C, enough for up to 10 days of use.<br/><br/><strong>Why 600 mm Matters</strong><br/><br/>Long enough to reach from a bedside outlet, a desk USB-C port or a power bank, so the watch keeps charging while you keep wearing it. The connector seats itself the moment it gets close—no pins to line up, no fumbling in the dark.<br/><br/><strong>Compatibility</strong><br/><br/>Charges the FANY Luna smartwatch, with leather and silicone editions alike. The connector is shaped for Luna's back only—it does not work with iPhones, Apple Watches, Samsung Galaxy Watches, or any other third-party smartwatches.</p>",
         "img_first": true,
         "img_has_back": false,
         "text_alignment": "left",
@@ -123,7 +123,7 @@
         "padding_top": 0,
         "padding_bottom": 20,
         "mobile_header": "<p>FANY Magnetic Fast Charger</p>",
-        "mobile_text": "<p>One snap, one charge, one constant companion. Reliability, convenience, grace, consistency...<br/>Powered by effortless magnetic attraction, it automatically aligns and charges in a second—no fumbling, no misalignment. Slim design or fast charging—the harmony of elegance and efficiency keeps your rhythm steady. There’s always power to support you.</p>",
+        "mobile_text": "<p>A 600 mm magnetic charging cable built for the FANY Luna. Snap it on, and the watch aligns itself—a full charge takes about 1.5 hours over USB-C, enough for up to 10 days of use.<br/><br/><strong>Why 600 mm Matters</strong><br/><br/>Long enough to reach from a bedside outlet, a desk USB-C port or a power bank, so the watch keeps charging while you keep wearing it. The connector seats itself the moment it gets close—no pins to line up, no fumbling in the dark.<br/><br/><strong>Compatibility</strong><br/><br/>Charges the FANY Luna smartwatch, with leather and silicone editions alike. The connector is shaped for Luna's back only—it does not work with iPhones, Apple Watches, Samsung Galaxy Watches, or any other third-party smartwatches.</p>",
         "mobile_img_first": true,
         "mobile_img_has_back": false,
         "mobile_text_alignment": "left",
@@ -203,7 +203,8 @@
             "heading": "1. Is the magnetic charger compatible with iPhones or other devices?",
             "icon": "none",
             "row_content": "<p>No. The <strong>600 mm Magnetic Fast Charger to USB-C Cable</strong> is designed specifically for charging the FANY Luna smartwatch and is <strong>not compatible with iPhones or other devices</strong>. Please use it only with your FANY Luna smartwatch.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_bpEq4D": {
@@ -212,7 +213,8 @@
             "heading": "2. How long does it take to fully charge the FANY Luna smartwatch?",
             "icon": "none",
             "row_content": "<p>FANY Luna features a magnetic fast-charging design and takes approximately 1.5 hours to fully charge. Once fully charged, it can provide up to 10 days of battery life, depending on usage.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         }
       },
@@ -222,6 +224,30 @@
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
