@@ -388,7 +388,7 @@
         "product_card_NYz6RA": {
           "type": "product_card",
           "settings": {
-            "variant_id": "",
+            "variant_id": "https://fany.us/products/geometric-mother-of-pearl-leather-bracelet-watch-band",
             "title": "Geometric Mother of Pearl Leather Bracelet Watch Band",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -400,8 +400,8 @@
         "product_card_dpKNcA": {
           "type": "product_card",
           "settings": {
-            "variant_id": "",
-            "title": "16 mm Quick Release Leather Watch Band",
+            "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=48139086200986",
+            "title": "16 mm Quick Release Leather Band  Blush Rose",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
             "image_alt": "",
@@ -412,8 +412,8 @@
         "product_card_eqzkxm": {
           "type": "product_card",
           "settings": {
-            "variant_id": "",
-            "title": "16 mm Quick Release Leather Watch Band",
+            "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=45689640321178",
+            "title": "16 mm Quick Release Leather Band Burgundy Red",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
             "image_alt": "",
@@ -424,8 +424,8 @@
         "product_card_iMQzHJ": {
           "type": "product_card",
           "settings": {
-            "variant_id": "",
-            "title": "16 mm Quick Release Leather Watch Band",
+            "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=45689640288410",
+            "title": "16 mm Quick Release Leather Band  Mocha Brown",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
             "image_alt": "",
