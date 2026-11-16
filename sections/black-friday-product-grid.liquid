@@ -73,7 +73,7 @@
   </div>
   <div class="black-friday-product-grid__cards">
     {%- for block in section.blocks -%}
-      {%- if block.settings.variant_id != blank or request.design_mode -%}
+      {%- if block.settings.product != blank or block.settings.variant_id != blank or request.design_mode -%}
         {% render 'black-friday-gift-sets-card', block: block, section: section, card_layout: 'grid' %}
       {%- endif -%}
     {%- endfor -%}
@@ -696,8 +696,14 @@
         {
           "type": "text",
           "id": "variant_id",
-          "label": "颜色版本链接",
-          "info": "只粘贴选好颜色后的完整商品链接（含 ?variant=...），用于指定加购颜色。标题、售价、原价和优惠标识均由下方独立配置。"
+          "label": "颜色版本链接（可选）",
+          "info": "指定颜色时填写含 ?variant=... 的完整商品链接，优先使用链接中的商品。普通商品链接也可使用；不填则使用所选商品。"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "商品",
+          "info": "单规格商品直接选择即可；多规格商品未指定颜色时显示规格选择。标题、展示价格和优惠标识仍由独立配置控制。"
         },
         {
           "type": "text",

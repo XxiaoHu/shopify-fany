@@ -1,5 +1,6 @@
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{{ 'newsletter-custom.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   {%- if section.settings.background_image != blank -%}
@@ -10,11 +11,6 @@
       background-attachment: local;
     }
   {%- endif -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
   @media screen and (max-width: 749px) {
     {%- if section.settings.mobile_background_image != blank -%}
       .section-{{ section.id }}-padding.newsletter__wrapper {
@@ -33,94 +29,32 @@
     }
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-    .newsletter__wrapper {
-      height: 400px;
-      text-align:center;
-    }
-    .newsletter-form {
-        max-width: 57.4rem;
-    }
-  }
-  .newsletter__wrapper .newsletter-form__button:not(:hover):not(:focus-visible):not(.focused){
-    background-color: #794538;
-    color: #ffffff;
-  }
-  .newsletter__wrapper .newsletter-form__field-wrapper {
-    max-width: 57.4rem;
-  }
-  .newsletter__wrapper .field {
-    height: 55px;
-    align-items: stretch;
-    overflow: hidden;
-    border: 1px solid #794538;
-    border-radius: 8px;
-    background: transparent;
-  }
-  .newsletter__wrapper .field__input {
-    height: 100%;
-    margin: 0;
-    padding: 0 17rem 0 2rem;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-  .newsletter__wrapper .field__input:focus,
-  .newsletter__wrapper .field__input:not(:placeholder-shown),
-  .newsletter__wrapper .field__input:-webkit-autofill {
-    margin: 0;
-    padding: 0 17rem 0 2rem;
-  }
-  .newsletter__wrapper .field::before,
-  .newsletter__wrapper .field::after,
-  .newsletter__wrapper .field:hover::after {
-    box-shadow: none;
-    border: 0;
-  }
-  .newsletter__wrapper .field__input:focus,
-  .newsletter__wrapper .field__input:focus-visible {
-    border: 0;
-    box-shadow: none;
-    outline: 0;
-  }
-  .newsletter__wrapper .field__label {
-    display: none;
-  }
-  .newsletter__wrapper .field__input::placeholder {
-    opacity: 1;
-    color: #d0cecc;
-  }
-  .newsletter__wrapper .newsletter-form__button {
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 0;
-    background-color: #794538;
-    color: #ffffff;
-    box-shadow: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-  .newsletter__wrapper .newsletter-form__button:hover,
-  .newsletter__wrapper .newsletter-form__button:focus,
-  .newsletter__wrapper .newsletter-form__button:focus-visible {
-    background-color: #8a5448;
-    border-color: #8a5448;
-    color: #ffffff;
-    box-shadow: none;
-    outline: 0;
-  }
 {%- endstyle -%}
 
-<div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+<div class="newsletter newsletter-custom center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
+  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding"
+    style="
+      --nl-input-background: {{ section.settings.input_background | default: 'transparent' }};
+      --nl-input-text: {{ section.settings.input_text_color | default: 'transparent' }};
+      --nl-placeholder: {{ section.settings.input_placeholder_color | default: 'transparent' }};
+      --nl-border: {{ section.settings.input_border_color | default: 'transparent' }};
+      --nl-focus: {{ section.settings.input_focus_color | default: 'transparent' }};
+      --nl-button-text: {{ section.settings.button_text_color | default: 'transparent' }};
+      --nl-button-hover-background: {{ section.settings.button_hover_background | default: 'transparent' }};
+      --nl-button-hover-text: {{ section.settings.button_hover_text_color | default: 'transparent' }};
+      --nl-height: {{ section.settings.input_height }}px;
+      --nl-radius: {{ section.settings.input_radius }}px;
+      --nl-border-width: {{ section.settings.input_border_width }}px;
+      --nl-button-radius: {{ section.settings.button_radius }}px;
+      --nl-button-border: {{ section.settings.button_border_color }};
+      --nl-button-border-width: {{ section.settings.button_border_width }}px;
+      --nl-button-background: {% if section.settings.button_style == 'outline' %}transparent{% else %}{{ section.settings.button_background }}{% endif %};
+      --nl-desktop-top: {{ section.settings.padding_top }}px;
+      --nl-desktop-bottom: {{ section.settings.padding_bottom }}px;
+      --nl-mobile-top: {{ section.settings.mobile_padding_top }}px;
+      --nl-mobile-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    "
+  >
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -148,7 +82,28 @@
             {{ block.settings.text }}
           </div>
         {%- when 'email_form' -%}
-          <div {{ block.shopify_attributes }}>
+          <div
+            {{ block.shopify_attributes }}
+            {% if block.settings.override_form_style %}
+            style="
+              --nl-input-background: {{ block.settings.input_background | default: 'transparent' }};
+              --nl-input-text: {{ block.settings.input_text_color | default: 'transparent' }};
+              --nl-placeholder: {{ block.settings.input_placeholder_color | default: 'transparent' }};
+              --nl-border: {{ block.settings.input_border_color | default: 'transparent' }};
+              --nl-focus: {{ block.settings.input_focus_color | default: 'transparent' }};
+              --nl-button-text: {{ block.settings.button_text_color | default: 'transparent' }};
+              --nl-button-hover-background: {{ block.settings.button_hover_background | default: 'transparent' }};
+              --nl-button-hover-text: {{ block.settings.button_hover_text_color | default: 'transparent' }};
+              --nl-height: {{ block.settings.input_height }}px;
+              --nl-radius: {{ block.settings.input_radius }}px;
+              --nl-border-width: {{ block.settings.input_border_width }}px;
+              --nl-button-radius: {{ block.settings.button_radius }}px;
+              --nl-button-border: {{ block.settings.button_border_color }};
+              --nl-button-border-width: {{ block.settings.button_border_width }}px;
+              --nl-button-background: {% if block.settings.button_style == 'outline' %}transparent{% else %}{{ block.settings.button_background }}{% endif %};
+            "
+            {% endif %}
+          >
             {% form 'customer', class: 'newsletter-form' %}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div
@@ -164,7 +119,7 @@
                     type="email"
                     name="contact[email]"
                     class="field__input"
-                    value="{{ form.email }}"
+                    value="{{ form.email | escape }}"
                     aria-required="true"
                     autocorrect="off"
                     autocapitalize="off"
@@ -177,24 +132,24 @@
                       aria-describedby="Newsletter-success--{{ section.id }}"
                     {% endif %}
                     {% if section.settings.placeholder %}
-                      placeholder="{{ section.settings.placeholder }}"
+                      placeholder="{{ section.settings.placeholder | escape }}"
                     {% else %}
                       placeholder="{{ 'newsletter.label' | t }}"
                     {% endif %}
                     required
                   >
                   <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                    {% if section.settings.placeholder %}{{ section.settings.placeholder }}{% else %}{{ 'newsletter.label' | t }}{% endif %}
+                    {% if section.settings.placeholder %}{{ section.settings.placeholder | escape }}{% else %}{{ 'newsletter.label' | t }}{% endif %}
                   </label>
                   <button
                     type="submit"
                     class="newsletter-form__button field__button f-16"
                     name="commit"
-                    id="Subscribe"
+                    id="Subscribe-{{ section.id }}"
                     aria-label="{{ 'newsletter.button_label' | t }}"
                   >
                     <span class='btn-defult'>SIGN UP</span>
-                    <img class='btn-mobile' src="{{ 'sign-up.png' | asset_url }}" loading="lazy" alt="" width="31px" height="31px">
+                    <span class="btn-mobile newsletter-custom__arrow" aria-hidden="true"></span>
                   </button>
                 </div>
                 {%- if form.errors -%}
@@ -233,7 +188,9 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header"]
+    "groups": [
+      "header"
+    ]
   },
   "settings": [
     {
@@ -266,8 +223,146 @@
     {
       "type": "inline_richtext",
       "id": "placeholder",
-      "label": "t:sections.newsletter.settings.placeholder.label",
+      "label": "输入框提示文字",
       "default": "luna@example.com"
+    },
+    {
+      "type": "header",
+      "content": "输入框样式"
+    },
+    {
+      "type": "color",
+      "id": "input_background",
+      "label": "输入框背景颜色",
+      "info": "留空为透明背景。"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "输入文字颜色",
+      "default": "#58443D"
+    },
+    {
+      "type": "color",
+      "id": "input_placeholder_color",
+      "label": "提示文字颜色",
+      "default": "#D0CECC"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "边框颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_color",
+      "label": "选中时边框颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "range",
+      "id": "input_height",
+      "label": "输入框高度",
+      "min": 44,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "input_radius",
+      "label": "输入框圆角",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "input_border_width",
+      "label": "边框粗细",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "按钮样式"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "按钮样式",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "实心按钮"
+        },
+        {
+          "value": "outline",
+          "label": "描边按钮（透明背景）"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "按钮边框颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "按钮边框粗细",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "按钮圆角",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "按钮背景颜色",
+      "default": "#794538"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "按钮文字 / 箭头颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "悬停 / 聚焦背景颜色",
+      "default": "#8A5448"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "悬停 / 聚焦文字颜色",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "paragraph",
+      "content": "请为文字、背景和选中边框选择清晰可辨的对比颜色。"
     },
     {
       "type": "header",
@@ -280,7 +375,7 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "PC 上间距",
       "default": 116
     },
     {
@@ -290,8 +385,28 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "PC 下间距",
       "default": 96
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "移动端上间距",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 87
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "移动端下间距",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 72
     }
   ],
   "blocks": [
@@ -444,7 +559,158 @@
     {
       "type": "email_form",
       "name": "t:sections.newsletter.blocks.email_form.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "输入框和按钮样式可直接在上一级订阅模块的“输入框样式”和“按钮样式”中设置。"
+        },
+        {
+          "type": "checkbox",
+          "id": "override_form_style",
+          "label": "使用此子块的独立样式",
+          "default": false,
+          "info": "关闭时使用订阅模块中的样式；开启后使用下方设置。"
+        },
+        {
+          "type": "header",
+          "content": "输入框样式"
+        },
+        {
+          "type": "color",
+          "id": "input_background",
+          "label": "输入框背景颜色",
+          "info": "留空为透明背景。"
+        },
+        {
+          "type": "color",
+          "id": "input_text_color",
+          "label": "输入文字颜色",
+          "default": "#58443D"
+        },
+        {
+          "type": "color",
+          "id": "input_placeholder_color",
+          "label": "提示文字颜色",
+          "default": "#D0CECC"
+        },
+        {
+          "type": "color",
+          "id": "input_border_color",
+          "label": "边框颜色",
+          "default": "#794538"
+        },
+        {
+          "type": "color",
+          "id": "input_focus_color",
+          "label": "选中时边框颜色",
+          "default": "#794538"
+        },
+        {
+          "type": "range",
+          "id": "input_height",
+          "label": "输入框高度",
+          "min": 44,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "default": 55
+        },
+        {
+          "type": "range",
+          "id": "input_radius",
+          "label": "输入框圆角",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "input_border_width",
+          "label": "边框粗细",
+          "min": 0,
+          "max": 4,
+          "step": 1,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "header",
+          "content": "按钮样式"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "按钮样式",
+          "default": "solid",
+          "options": [
+            {
+              "value": "solid",
+              "label": "实心按钮"
+            },
+            {
+              "value": "outline",
+              "label": "描边按钮（透明背景）"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "button_border_color",
+          "label": "按钮边框颜色",
+          "default": "#794538"
+        },
+        {
+          "type": "range",
+          "id": "button_border_width",
+          "label": "按钮边框粗细",
+          "min": 0,
+          "max": 4,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "button_radius",
+          "label": "按钮圆角",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "按钮背景颜色",
+          "default": "#794538"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "按钮文字 / 箭头颜色",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_background",
+          "label": "悬停 / 聚焦背景颜色",
+          "default": "#8A5448"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_text_color",
+          "label": "悬停 / 聚焦文字颜色",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "paragraph",
+          "content": "请为文字、背景和选中边框选择清晰可辨的对比颜色。"
+        }
+      ]
     },
     {
       "type": "@app"

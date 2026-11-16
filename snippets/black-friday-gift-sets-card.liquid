@@ -17,10 +17,13 @@
   assign variant_is_locked = false
   assign invalid_variant = false
   assign reference_product_matches = true
-  if variant_reference != blank and card_product != blank
+  assign variant_parameter_count = 0
+  if variant_reference != blank
     assign variant_is_locked = true
-    assign invalid_variant = true
-    assign variant = nil
+    if lookup_path contains '/products/'
+      assign requested_variant_id = ''
+      assign variant_is_locked = false
+    endif
     if variant_reference contains '?'
       assign requested_variant_id = ''
       assign reference_without_fragment = variant_reference | split: '#' | first
@@ -33,13 +36,13 @@
         endif
       endif
       assign reference_parts = reference_without_fragment | split: '?'
-      assign variant_parameter_count = 0
       if reference_parts.size == 2
         assign reference_parameters = reference_parts[1] | replace: '&amp;', '&' | split: '&'
         for parameter in reference_parameters
           assign parameter_parts = parameter | split: '='
           assign parameter_name = parameter_parts | first | url_decode
           if parameter_name == 'variant'
+            assign variant_is_locked = true
             assign variant_parameter_count = variant_parameter_count | plus: 1
             if parameter_parts.size == 2
               assign requested_variant_id = parameter_parts[1] | url_decode | strip
@@ -51,21 +54,20 @@
         assign reference_product_matches = false
       endif
     endif
-    if reference_product_matches
-      for product_variant in card_product.variants
-        assign candidate_id = product_variant.id | append: ''
-        if candidate_id == requested_variant_id
-          assign variant = product_variant
-          assign invalid_variant = false
-          break
-        endif
-      endfor
+    if variant_is_locked
+      assign invalid_variant = true
+      assign variant = nil
+      if card_product != blank and reference_product_matches
+        for product_variant in card_product.variants
+          assign candidate_id = product_variant.id | append: ''
+          if candidate_id == requested_variant_id
+            assign variant = product_variant
+            assign invalid_variant = false
+            break
+          endif
+        endfor
+      endif
     endif
-  endif
-  if variant_reference != blank and card_product == blank
-    assign variant_is_locked = true
-    assign invalid_variant = true
-    assign variant = nil
   endif
   assign variant_image = nil
   if variant_is_locked and invalid_variant == false
@@ -199,7 +201,7 @@
       {%- form 'product', card_product, id: form_id, class: 'black-friday-gift-sets__form', data-bfgs-form: '', aria-describedby: error_id -%}
         {%- if request.design_mode and variant_is_locked and invalid_variant -%}
           <p class="black-friday-gift-sets__editor-note">
-            颜色版本链接无效或不属于所选商品，请选好颜色后重新复制完整链接。
+            指定的变体无效或不属于链接中的商品，请选好规格后重新复制完整链接。
           </p>
         {%- endif -%}
         {%- if card_product.has_only_default_variant or variant_is_locked -%}
@@ -238,9 +240,9 @@
       {%- if request.design_mode -%}
         <p class="black-friday-gift-sets__editor-note">
           {%- if variant_reference != blank -%}
-            无法识别颜色版本链接中的商品，请检查链接及商品是否已发布到在线商店。
+            无法识别链接中的商品，请检查链接及商品是否已发布到在线商店。
           {%- else -%}
-            填写颜色版本链接后启用购买功能。
+            选择商品或填写完整商品链接后启用购买功能。
           {%- endif -%}
         </p>
       {%- endif -%}
