@@ -72,7 +72,11 @@
     <div class="black-friday-gift-sets__cards">
       {%- for block in section.blocks -%}
         {%- if block.settings.product != blank or block.settings.variant_id != blank or request.design_mode -%}
-          {% render 'black-friday-gift-sets-card', block: block, section: section %}
+          {%- if block.settings.image_position == 'right' -%}
+            {% render 'black-friday-gift-sets-card', block: block, section: section, card_layout: 'image_right' %}
+          {%- else -%}
+            {% render 'black-friday-gift-sets-card', block: block, section: section %}
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     </div>
@@ -694,6 +698,17 @@
       "type": "product_card",
       "name": "商品卡片",
       "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "桌面图文模式",
+          "options": [
+            { "value": "left", "label": "左图右文（默认）" },
+            { "value": "right", "label": "左文右图" }
+          ],
+          "default": "left",
+          "info": "左文右图模式在 750px 及以上左右排列，文字、价格和购买按钮在左侧；手机端保持上图下文。"
+        },
         {
           "type": "text",
           "id": "variant_id",

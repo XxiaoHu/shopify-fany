@@ -409,3 +409,38 @@
     transition: none;
   }
 }
+
+@media screen and (min-width: 750px) {
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right {
+    grid-template-columns: minmax(0, 720fr) minmax(0, 800fr);
+  }
+
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right .black-friday-gift-sets__media {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 600px;
+    aspect-ratio: auto;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right .black-friday-gift-sets__copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right .black-friday-gift-sets__copy > * {
+    align-self: center;
+    width: min(100%, 454px);
+  }
+
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right .black-friday-gift-sets__badge {
+    right: auto;
+    left: 18px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1440px) {
+  .black-friday-gift-sets .black-friday-gift-sets__card--image-right:has(> .black-friday-gift-sets__badge) .black-friday-gift-sets__copy {
+    padding-top: 100px;
+  }
+}

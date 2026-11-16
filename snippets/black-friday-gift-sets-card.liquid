@@ -93,6 +93,9 @@
   assign error_id = form_id | append: '-error'
   assign card_image_sizes = '(max-width: 749px) calc(100vw - 32px), (max-width: 1068px) calc(100vw - 64px), (max-width: 1440px) calc(100vw - 400px), calc((100vw - 400px) * 0.5263)'
   assign card_mobile_sizes = 'calc(100vw - 32px)'
+  if card_layout == 'image_right'
+    assign card_image_sizes = '(max-width: 749px) calc(100vw - 32px), (max-width: 1068px) calc((100vw - 64px) * 0.5263), calc((100vw - 400px) * 0.5263)'
+  endif
   if card_layout == 'grid'
     assign mobile_gutters = section.settings.mobile_column_gap | plus: 32
     assign tablet_gutters = section.settings.desktop_column_gap | plus: 64
@@ -131,7 +134,7 @@
 -%}
 <article
   id="BlackFridayGiftSetsCard-{{ section.id }}-{{ block.id }}"
-  class="black-friday-gift-sets__card"
+  class="black-friday-gift-sets__card{% if card_layout == 'image_right' %} black-friday-gift-sets__card--image-right{% endif %}"
   style="--bfgs-desktop-object-position: {{ product_image.presentation.focal_point | default: 'center center' }}; --bfgs-mobile-object-position: {{ mobile_image.presentation.focal_point | default: product_image.presentation.focal_point | default: 'center center' }};"
   {{ block.shopify_attributes }}
 >
