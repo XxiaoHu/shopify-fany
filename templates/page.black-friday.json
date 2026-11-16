@@ -125,6 +125,7 @@
         "product_card_w9qPK9": {
           "type": "product_card",
           "settings": {
+            "image_position": "right",
             "variant_id": "",
             "product": "",
             "title": "The Ultimate Glam Gift Set",
@@ -139,6 +140,7 @@
         "product_card_pyxCHt": {
           "type": "product_card",
           "settings": {
+            "image_position": "left",
             "variant_id": "",
             "product": "",
             "title": "The Timeless Elegance Gift Set",
@@ -153,6 +155,7 @@
         "product_card_aLUYkV": {
           "type": "product_card",
           "settings": {
+            "image_position": "left",
             "variant_id": "",
             "product": "",
             "title": "The Chic Sparkle Gift Set",
@@ -245,6 +248,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=45721714360474",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Mocha Brown",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -257,6 +261,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=45984830652570",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Moonlight Gray",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -269,6 +274,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=47982156611738",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Blush Rose",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -281,6 +287,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=46713153487002",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Modern Silver",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -293,6 +300,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=46713046106266",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Passion Red",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -305,6 +313,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/luna?variant=47562245865626",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch for Women Rose Gold",
             "price_text": "$109.99",
             "compare_price_text": "$129.99",
@@ -317,6 +326,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women?variant=47823963685018",
+            "product": "",
             "title": "FANY Luna Silicone Smartwatch for Women Orchid Purple",
             "price_text": "$74.99",
             "compare_price_text": "$89.99",
@@ -329,6 +339,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women?variant=47823963717786",
+            "product": "",
             "title": "FANY Luna Silicone Smartwatch for Women Morning Pink",
             "price_text": "$74.99",
             "compare_price_text": "$89.99",
@@ -341,6 +352,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women?variant=47823963750554",
+            "product": "",
             "title": "FANY Luna Silicone Smartwatch for Women Cloud Cream",
             "price_text": "$74.99",
             "compare_price_text": "$89.99",
@@ -353,6 +365,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-stylish-silicone-smartwatch-for-women?variant=47827619971226",
+            "product": "",
             "title": "FANY Luna Silicone Smartwatch for Women Dream Purple",
             "price_text": "$74.99",
             "compare_price_text": "$89.99",
@@ -365,6 +378,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/meow-crystal-bracelet-watch-band",
+            "product": "",
             "title": "Meow Crystal Bracelet Watch Band",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -377,6 +391,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/stellar-crystal-bangle-watch-band",
+            "product": "",
             "title": "Stellar Crystal Bangle Watch Band",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -389,6 +404,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/geometric-mother-of-pearl-leather-bracelet-watch-band",
+            "product": "",
             "title": "Geometric Mother of Pearl Leather Bracelet Watch Band",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -401,6 +417,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=48139086200986",
+            "product": "",
             "title": "16 mm Quick Release Leather Band  Blush Rose",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -413,6 +430,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=45689640321178",
+            "product": "",
             "title": "16 mm Quick Release Leather Band Burgundy Red",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -425,6 +443,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/16-mm-quick-release-leather-watch-band?variant=45689640288410",
+            "product": "",
             "title": "16 mm Quick Release Leather Band  Mocha Brown",
             "price_text": "$34.99",
             "compare_price_text": "$39.99",
@@ -528,6 +547,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363307162",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Moonlight Gray",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
@@ -540,6 +560,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363176090",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Mocha Brown",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
@@ -552,6 +573,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363274394",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Passion Red",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
@@ -564,6 +586,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363241626",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Rose Gold",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
@@ -576,6 +599,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363208858",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Blush Rose",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
@@ -588,6 +612,7 @@
           "type": "product_card",
           "settings": {
             "variant_id": "https://fany.us/products/fany-luna-leather-smartwatch-butterfly-bracelet?variant=48688363339930",
+            "product": "",
             "title": "FANY Luna Leather Smartwatch & Butterfly Bracelet Gift Set Modern Silver",
             "price_text": "$99.99",
             "compare_price_text": "$169.99",
