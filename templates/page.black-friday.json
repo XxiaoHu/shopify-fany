@@ -15,8 +15,8 @@
         "slide_aGzWGV": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Black_Friday_Banner-PC.jpg",
-            "mobile_image": "shopify://shop_images/Black_Friday_Banner-Phone-768_x_1200.jpg",
+            "image": "shopify://shop_images/Black-Friday-3840x1400.webp",
+            "mobile_image": "shopify://shop_images/Black-Friday-2250x3580.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
@@ -117,6 +117,54 @@
         "desktop_padding_bottom": 0,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0
+      }
+    },
+    "slideshow_HHnnWV": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Mxrq3g": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Black-Friday-pc17.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday_Banner-Phone-768_x_1200.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_font_size": 40,
+            "mobile_heading_font_size": 32,
+            "heading_2": "",
+            "heading2_font_size": 22,
+            "mobile_heading2_font_size": 20,
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://products/luna",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "",
+            "mobile_box_align": "middle",
+            "mobile_color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_Mxrq3g"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_text_below": true,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "accessibility_info": ""
       }
     },
     "black_friday_gift_sets_DN9bQT": {
@@ -1463,6 +1511,7 @@
   "order": [
     "slideshow_R8g6Mr",
     "black_friday_navigation_FE93PA",
+    "slideshow_HHnnWV",
     "black_friday_gift_sets_DN9bQT",
     "black_friday_product_grid_a34dV3",
     "black_friday_bracelet_sets_bpt3FW",
