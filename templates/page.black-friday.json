@@ -126,7 +126,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Black-Friday-pc17.webp",
-            "mobile_image": "shopify://shop_images/Black_Friday_Banner-Phone-768_x_1200.jpg",
+            "mobile_image": "shopify://shop_images/Black-Friday-m17.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
