@@ -1245,18 +1245,16 @@
       "blocks": {
         "collapsible_row_9Wp6DL": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
-            "heading": "Who is FANY designed for, and why?",
+            "heading": "When does the Black Friday sale start and end?",
             "icon": "none",
-            "row_content": "<p>FANY Luna is designed for women —Women move through life with a natural rhythm, shifting between different roles and experiences. Many smartwatches provide basic tracking, but FANY goes further— it’s tailored for every moment, adapts to your energy shifts, and seamlessly integrates into every facet of your lifestyle. </p>",
+            "row_content": "<p>Our Early Black Friday Sale runs from November 18 to November 23, followed by our main Black Friday Sale from November 24 to December 2.</p>",
             "page": "",
             "faq_open_by_default": false
           }
         },
         "collapsible_row_cxPQFx": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
             "heading": "What about women-specific health features?",
             "icon": "none",
@@ -1267,7 +1265,6 @@
         },
         "collapsible_row_rdVrU8": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
             "heading": "How do l connect my FANY Luna Smartwatch to my phone?",
             "icon": "none",
@@ -1278,7 +1275,6 @@
         },
         "collapsible_row_7hieFk": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
             "heading": "How does the FANY Luna smartwatch measure stress and mood?",
             "icon": "none",
@@ -1289,7 +1285,6 @@
         },
         "collapsible_row_CEezCT": {
           "type": "collapsible_row",
-          "disabled": true,
           "settings": {
             "heading": "Do I need my phone nearby?",
             "icon": "none",
@@ -1393,7 +1388,7 @@
           "settings": {
             "heading": "ls FANY Smartwatch compatible with my phone?",
             "icon": "none",
-            "row_content": "<p>Yes, FANY Luna is compatible with Android™ and iOS devices. Android phones require Android 6.0+ or higher; iOS phones require iOS 9.0+,iPhone 5S).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download). </p>",
+            "row_content": "<p>Yes, FANY Luna is compatible with Android™ and iOS devices. Android phones require Android 6.0+ or higher; iOS phones require iOS 9.0+,iPhone 5S).<br/><br/>Android users are advised to download and install via Google Play, and iOS users via the App Store (scan the QR code on the packaging or in the instruction manual to download).&nbsp;</p>",
             "page": "",
             "faq_open_by_default": false
           }
