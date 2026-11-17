@@ -1268,7 +1268,7 @@
           "settings": {
             "heading": "Can I combine the Buy More, Save More offer with the free Butterfly Bracelet?",
             "icon": "none",
-            "row_content": "<p>Yes! You can enjoy both offers when purchasing an eligible leather-strap smartwatch. You'll receive the free Butterfly Bracelet while also enjoying your Buy More, Save More discount.</p>",
+            "row_content": "<p>Yes! You can enjoy both offers when purchasing a leather-strap smartwatch. You'll receive the free Butterfly Bracelet while also enjoying your Buy More, Save More discount.</p>",
             "page": "",
             "faq_open_by_default": false
           }
@@ -1286,9 +1286,9 @@
         "collapsible_row_CEezCT": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do I need my phone nearby?",
+            "heading": "Are the Gift Sets discounted?",
             "icon": "none",
-            "row_content": "<p>you do need to have your phone nearby and Bluetooth turned on. If you step away for a bit, your health data stays stored on the watch and will sync automatically once reconnected.&nbsp;</p>",
+            "row_content": "<p>Yes! Save up to $120 on selected Gift Sets this Black Friday! Discounted prices are already reflected on the product page.</p>",
             "page": "",
             "faq_open_by_default": false
           }
