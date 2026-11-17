@@ -221,6 +221,7 @@
         "product_card_pyxCHt",
         "product_card_aLUYkV"
       ],
+      "disabled": true,
       "name": "黑五礼盒商品模块",
       "settings": {
         "navigation_anchor": "gift-sets",
