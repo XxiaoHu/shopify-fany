@@ -34,6 +34,8 @@
 <div class="newsletter newsletter-custom center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding"
     style="
+      --nl-heading-color: {{ section.settings.heading_color | default: 'inherit' }};
+      --nl-content-color: {{ section.settings.content_color | default: 'inherit' }};
       --nl-input-background: {{ section.settings.input_background | default: 'transparent' }};
       --nl-input-text: {{ section.settings.input_text_color | default: 'transparent' }};
       --nl-placeholder: {{ section.settings.input_placeholder_color | default: 'transparent' }};
@@ -61,7 +63,7 @@
           {% render block %}
         {%- when 'heading' -%}
           <h2
-            class="inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="inline-richtext{% if section.settings.heading_color != blank %} newsletter-custom__heading--colored{% endif %} {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -72,7 +74,7 @@
           </h2>
         {%- when 'paragraph' -%}
           <div
-            class="newsletter__subheading rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {{ block.settings.text_style }}"
+            class="newsletter__subheading{% if section.settings.content_color != blank %} newsletter-custom__content--colored{% endif %} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {{ block.settings.text_style }}"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -225,6 +227,22 @@
       "id": "placeholder",
       "label": "输入框提示文字",
       "default": "luna@example.com"
+    },
+    {
+      "type": "header",
+      "content": "标题与正文颜色"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "标题颜色",
+      "info": "留空时保持当前配色方案的颜色。"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "正文颜色",
+      "info": "控制说明正文及其中的链接和加粗文字；留空时保持原有颜色。"
     },
     {
       "type": "header",

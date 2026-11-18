@@ -1,3 +1,17 @@
+.newsletter-custom.center {
+  margin-bottom: 0;
+}
+
+.newsletter-custom .newsletter-custom__heading--colored,
+.newsletter-custom .newsletter-custom__heading--colored * {
+  color: var(--nl-heading-color);
+}
+
+.newsletter-custom .newsletter-custom__content--colored,
+.newsletter-custom .newsletter-custom__content--colored * {
+  color: var(--nl-content-color);
+}
+
 .newsletter-custom .newsletter__wrapper {
   padding-top: var(--nl-mobile-top);
   padding-bottom: var(--nl-mobile-bottom);
