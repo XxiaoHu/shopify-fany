@@ -14,6 +14,8 @@
       "name": "面包屑导航",
       "settings": {
         "color_scheme": "",
+        "parent_label": "",
+        "parent_link": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
@@ -175,6 +177,8 @@
         "title": "",
         "heading_size": "h1",
         "text": "",
+        "heading_content_gap": 20,
+        "mobile_heading_content_gap": 20,
         "text_font_size": 20,
         "image_width": "full",
         "image_ratio": "adapt",
@@ -578,7 +582,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/110FitnessTrackingModes.png",
-            "text": "110 Fitness Tracking Modes"
+            "text": "120 Fitness Tracking Modes"
           }
         },
         "image_3FRBqk": {
@@ -592,7 +596,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/7-dayBatteryLife.png",
-            "text": "7-day Battery* Life"
+            "text": "10-day Battery* Life"
           }
         },
         "image_K8j74Y": {
@@ -634,7 +638,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/IP68WaterproofRating.png",
-            "text": "1 ATM Waterproof Rating"
+            "text": "IP68 Waterproof Rating"
           }
         }
       },
@@ -773,7 +777,25 @@
         },
         "email_form_xKVtTk": {
           "type": "email_form",
-          "settings": {}
+          "settings": {
+            "override_form_style": false,
+            "input_background": "",
+            "input_text_color": "#58443d",
+            "input_placeholder_color": "#d0cecc",
+            "input_border_color": "#794538",
+            "input_focus_color": "#794538",
+            "input_height": 55,
+            "input_radius": 8,
+            "input_border_width": 1,
+            "button_style": "solid",
+            "button_border_color": "#794538",
+            "button_border_width": 0,
+            "button_radius": 0,
+            "button_background": "#794538",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#8a5448",
+            "button_hover_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
@@ -786,8 +808,28 @@
         "color_scheme": "",
         "full_width": true,
         "placeholder": "luna@example.com",
+        "heading_color": "",
+        "content_color": "",
+        "input_background": "",
+        "input_text_color": "#58443d",
+        "input_placeholder_color": "#d0cecc",
+        "input_border_color": "#794538",
+        "input_focus_color": "#794538",
+        "input_height": 55,
+        "input_radius": 8,
+        "input_border_width": 1,
+        "button_style": "solid",
+        "button_border_color": "#794538",
+        "button_border_width": 0,
+        "button_radius": 0,
+        "button_background": "#794538",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#8a5448",
+        "button_hover_text_color": "#ffffff",
         "padding_top": 116,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "mobile_padding_top": 87,
+        "mobile_padding_bottom": 72
       }
     }
   },
