@@ -772,6 +772,110 @@
         "block_width": 800
       }
     },
+    "collapsible_content_KDMNgM": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_87M7aw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is FANY?",
+            "icon": "none",
+            "row_content": "<p>FANY is a smartwatch brand specializing in wearable technology designed for women. Its product line includes FANY Luna smartwatches and compatible accessories.</p>",
+            "page": "",
+            "faq_open_by_default": false
+          }
+        },
+        "collapsible_row_rRyLxi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where is FANY headquartered?",
+            "icon": "none",
+            "row_content": "<p>According to FANY's official brand information, the company is headquartered in Hong Kong.</p>",
+            "page": "",
+            "faq_open_by_default": false
+          }
+        },
+        "collapsible_row_rPktYQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When was FANY founded?",
+            "icon": "none",
+            "row_content": "<p>FANY states that the brand was founded in 2024.<br/></p>",
+            "page": "",
+            "faq_open_by_default": false
+          }
+        },
+        "collapsible_row_w9EGJV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What products does FANY sell?",
+            "icon": "none",
+            "row_content": "<p>FANY offers Luna smartwatches, interchangeable watch bands, chargers, and accessories.</p>",
+            "page": "",
+            "faq_open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_87M7aw",
+        "collapsible_row_rRyLxi",
+        "collapsible_row_rPktYQ",
+        "collapsible_row_w9EGJV"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_color": "#121212",
+        "heading_alignment": "center",
+        "heading_position": "inside",
+        "mobile_heading_size": 28,
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_question_dividers": false,
+        "questions_padding_top": 0,
+        "questions_padding_bottom": 0,
+        "question_title_font_size": 18,
+        "question_title_font_weight": "700",
+        "answer_font_size": 16,
+        "answer_font_weight": "400",
+        "mobile_question_title_font_size": 16,
+        "mobile_question_title_font_weight": "700",
+        "mobile_answer_font_size": 14,
+        "mobile_answer_font_weight": "400",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "fany_action_4wQHxC": {
       "type": "fany-action",
       "name": "社会责任",
@@ -1387,6 +1491,7 @@
     "main_banner_HEnWVX",
     "gift_sets_j6JtDL",
     "rich_text_j4mT38",
+    "collapsible_content_KDMNgM",
     "fany_action_4wQHxC",
     "image_banner_A4ELCm",
     "image_text_YeDiWq",
