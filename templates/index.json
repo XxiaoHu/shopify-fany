@@ -468,12 +468,11 @@
         },
         "slide_RPrdQz": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/HALLOWEEN-banner-PC.webp",
-            "mobile_image": "shopify://shop_images/HALLOWEEN-banner-M.webp",
+            "image": "shopify://shop_images/Black-Friday-3840x2000.webp",
+            "mobile_image": "shopify://shop_images/Black-Friday-2250x3580.webp",
             "image_overlay_opacity": 0,
-            "link": "https://fany.us/products/luna",
+            "link": "https://fany.us/pages/black-friday",
             "link_text": "",
             "link_target_blank": false,
             "desktop_layout_mode": "overlay",
@@ -2208,7 +2207,25 @@
         },
         "email_form_tAJVr3": {
           "type": "email_form",
-          "settings": {}
+          "settings": {
+            "override_form_style": false,
+            "input_background": "",
+            "input_text_color": "#58443d",
+            "input_placeholder_color": "#d0cecc",
+            "input_border_color": "#794538",
+            "input_focus_color": "#794538",
+            "input_height": 55,
+            "input_radius": 8,
+            "input_border_width": 1,
+            "button_style": "solid",
+            "button_border_color": "#794538",
+            "button_border_width": 0,
+            "button_radius": 0,
+            "button_background": "#794538",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#8a5448",
+            "button_hover_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
@@ -2221,8 +2238,28 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "placeholder": "luna@example.com",
+        "heading_color": "",
+        "content_color": "",
+        "input_background": "",
+        "input_text_color": "#58443d",
+        "input_placeholder_color": "#d0cecc",
+        "input_border_color": "#794538",
+        "input_focus_color": "#794538",
+        "input_height": 55,
+        "input_radius": 8,
+        "input_border_width": 1,
+        "button_style": "solid",
+        "button_border_color": "#794538",
+        "button_border_width": 0,
+        "button_radius": 0,
+        "button_background": "#794538",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#8a5448",
+        "button_hover_text_color": "#ffffff",
         "padding_top": 120,
-        "padding_bottom": 100
+        "padding_bottom": 100,
+        "mobile_padding_top": 87,
+        "mobile_padding_bottom": 72
       }
     }
   },
