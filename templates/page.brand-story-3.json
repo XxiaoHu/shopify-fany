@@ -737,6 +737,41 @@
         "mobile_padding_y": 80
       }
     },
+    "rich_text_j4mT38": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6rxa6g": {
+          "type": "heading",
+          "settings": {
+            "heading": "FANY's Journey: From an Idea to Award-Recognized Design",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_9YiUGC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At FANY, thoughtful design is central to our approach to wearable technology.</p><p>Our FANY Luna Smartwatch received a Gold Award in the Watches/Jewelry category at American Good Design, recognizing its product design.</p><p>This recognition reflects our commitment to combining wearable comfort, everyday functionality, and a distinctive style for women.</p><p>Learn more about the recognition on the <a href=\"https://www.american-good-design.com/award-winning-work/2170\">official American Good Design award page</a>.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_6rxa6g",
+        "text_9YiUGC"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "fany_action_4wQHxC": {
       "type": "fany-action",
       "name": "社会责任",
@@ -1283,7 +1318,25 @@
         },
         "email_form_xKVtTk": {
           "type": "email_form",
-          "settings": {}
+          "settings": {
+            "override_form_style": false,
+            "input_background": "",
+            "input_text_color": "#58443d",
+            "input_placeholder_color": "#d0cecc",
+            "input_border_color": "#794538",
+            "input_focus_color": "#794538",
+            "input_height": 55,
+            "input_radius": 8,
+            "input_border_width": 1,
+            "button_style": "solid",
+            "button_border_color": "#794538",
+            "button_border_width": 0,
+            "button_radius": 0,
+            "button_background": "#794538",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#8a5448",
+            "button_hover_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
@@ -1296,8 +1349,28 @@
         "color_scheme": "",
         "full_width": true,
         "placeholder": "luna@example.com",
+        "heading_color": "",
+        "content_color": "",
+        "input_background": "",
+        "input_text_color": "#58443d",
+        "input_placeholder_color": "#d0cecc",
+        "input_border_color": "#794538",
+        "input_focus_color": "#794538",
+        "input_height": 55,
+        "input_radius": 8,
+        "input_border_width": 1,
+        "button_style": "solid",
+        "button_border_color": "#794538",
+        "button_border_width": 0,
+        "button_radius": 0,
+        "button_background": "#794538",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#8a5448",
+        "button_hover_text_color": "#ffffff",
         "padding_top": 120,
-        "padding_bottom": 100
+        "padding_bottom": 100,
+        "mobile_padding_top": 87,
+        "mobile_padding_bottom": 72
       }
     }
   },
@@ -1313,6 +1386,7 @@
     "main_banner_ekiEzB",
     "main_banner_HEnWVX",
     "gift_sets_j6JtDL",
+    "rich_text_j4mT38",
     "fany_action_4wQHxC",
     "image_banner_A4ELCm",
     "image_text_YeDiWq",
