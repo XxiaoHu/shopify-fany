@@ -62,6 +62,7 @@
       "blocks": {
         "item_YqYQhR": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "text": "Gift Sets",
             "target_anchor": "gift-sets",
