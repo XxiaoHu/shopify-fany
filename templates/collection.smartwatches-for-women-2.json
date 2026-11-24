@@ -97,7 +97,7 @@
       "type": "image-text",
       "name": "上下结构图文",
       "settings": {
-        "header": "<p>Smart Watch for Women</p>",
+        "header": "<p>Smart Watches for Women</p>",
         "text": "<p>FANY smartwatches offer a graceful way to understand your body, track your wellness, and stay connected—without compromising your personal style. Designed for women, they combine timeless elegance with thoughtful technology to help you monitor sleep, heart rate, blood oxygen levels, stress, mood, menstrual cycles, steps, and daily activity. With 120+ fitness modes, smart notifications, and up to 10 days of battery life, FANY keeps you connected to your health and your everyday rhythm—beautifully, effortlessly, and on your terms.</p><p>Not Sure Which FANY Luna Is Right for You?<br/><br/>Leather or silicone? Both FANY Luna smartwatches offer the same core technology, but the right band depends on your style and lifestyle. Compare comfort, weight, materials, and everyday use to find the Luna that fits you best.<br/><br/><a href=\"https://fany.us/pages/fany-luna-leather-vs-silicone\" target=\"_blank\" title=\"https://fany.us/pages/fany-luna-leather-vs-silicone\">Compare FANY Luna Leather vs. Silicone</a></p>",
         "img_first": true,
         "img_has_back": false,
@@ -109,7 +109,7 @@
         "img_text_margin": 75,
         "padding_top": 0,
         "padding_bottom": 20,
-        "mobile_header": "<p>Smart Watch for Women</p>",
+        "mobile_header": "<p>Smart Watches for Women</p>",
         "mobile_text": "<p>FANY smartwatches offer a graceful way to understand your body, track your wellness, and stay connected—without compromising your personal style. Designed for women, they combine timeless elegance with thoughtful technology to help you monitor sleep, heart rate, blood oxygen levels, stress, mood, menstrual cycles, steps, and daily activity. With 120+ fitness modes, smart notifications, and up to 10 days of battery life, FANY keeps you connected to your health and your everyday rhythm—beautifully, effortlessly, and on your terms.</p><p>Not Sure Which FANY Luna Is Right for You?<br/><br/>Leather or silicone? Both FANY Luna smartwatches offer the same core technology, but the right band depends on your style and lifestyle. Compare comfort, weight, materials, and everyday use to find the Luna that fits you best.<br/><br/><a href=\"https://fany.us/pages/fany-luna-leather-vs-silicone\" target=\"_blank\" title=\"https://fany.us/pages/fany-luna-leather-vs-silicone\">Compare FANY Luna Leather vs. Silicone</a></p>",
         "mobile_img_first": true,
         "mobile_img_has_back": false,
@@ -239,7 +239,8 @@
             "heading": "1. Why Choose a FANY Smartwatch?",
             "icon": "none",
             "row_content": "<p>FANY smartwatches bring thoughtful wellness technology into an elegant, lightweight design made for women. Monitor your heart rate, sleep, blood oxygen, stress, mood, menstrual cycle, and daily activity, with 120+ fitness modes to support your active lifestyle. With up to 10 days of battery life, smart notifications, interchangeable bands, and IP68 water resistance, FANY keeps you connected and supported without compromising your personal style.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_V4UKmN": {
@@ -248,7 +249,8 @@
             "heading": "2. What wrist sizes does the FANY Luna fit?",
             "icon": "none",
             "row_content": "<p>FANY Luna measures 37.5 × 37.5 × 10.4 mm and fits wrists with a circumference of 144–202 mm, offering a comfortable fit for most women.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_bqwYY3": {
@@ -257,7 +259,8 @@
             "heading": "3. Can I easily change the FANY Luna watch bands?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna features 16 mm quick-release bands that can be easily changed without any tools. Simply release the band and switch to your favorite silicone or leather style.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_yAgNVc": {
@@ -266,7 +269,8 @@
             "heading": "4. Is the FANY Luna comfortable for sensitive skin?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna bands are made from carefully selected, skin-friendly materials that meet our high standards for safety and comfort. From genuine cowhide leather to soft silicone, each band is designed to feel smooth, breathable, and comfortable for everyday wear.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_Ayz8B9": {
@@ -275,7 +279,8 @@
             "heading": "5. Is the FANY Luna smartwatch waterproof?",
             "icon": "none",
             "row_content": "<p>Yes. FANY Luna features IP68 water resistance and is suitable for everyday wear. Avoid hot water, saunas, hot tubs, and high-pressure water to help protect the watch.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         }
       },
@@ -288,6 +293,30 @@
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
         "caption": "",
         "heading": "FAQ",
         "heading_size": "h2",
