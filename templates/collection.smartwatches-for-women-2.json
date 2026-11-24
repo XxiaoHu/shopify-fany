@@ -306,9 +306,9 @@
         "collapsible_row_f4cQeF": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "1. Why Choose a FANY Smartwatch?",
+            "heading": "1.  What is the best FANY smartwatch for women?",
             "icon": "none",
-            "row_content": "<p>FANY smartwatches bring thoughtful wellness technology into an elegant, lightweight design made for women. Monitor your heart rate, sleep, blood oxygen, stress, mood, menstrual cycle, and daily activity, with 120+ fitness modes to support your active lifestyle. With up to 10 days of battery life, smart notifications, interchangeable bands, and IP68 water resistance, FANY keeps you connected and supported without compromising your personal style.</p>",
+            "row_content": "<p>FANY Luna Leather is worth considering if you prefer a classic watch style, while FANY Luna Silicone is better suited to casual wear and active routines. Both offer the same core smartwatch platform.</p>",
             "page": "",
             "faq_open_by_default": false
           }
@@ -352,6 +352,16 @@
             "page": "",
             "faq_open_by_default": false
           }
+        },
+        "collapsible_row_e3ink9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "6. Is a leather or silicone smartwatch better for everyday wear?",
+            "icon": "none",
+            "row_content": "<p>Leather provides a traditional appearance for work and casual outfits. Silicone is generally easier to clean after exercise. Choose according to your daily activities and preferences.</p>",
+            "page": "",
+            "faq_open_by_default": false
+          }
         }
       },
       "block_order": [
@@ -359,7 +369,8 @@
         "collapsible_row_V4UKmN",
         "collapsible_row_bqwYY3",
         "collapsible_row_yAgNVc",
-        "collapsible_row_Ayz8B9"
+        "collapsible_row_Ayz8B9",
+        "collapsible_row_e3ink9"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
