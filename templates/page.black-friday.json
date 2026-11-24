@@ -15,8 +15,8 @@
         "slide_aGzWGV": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Black-Friday-3840x1400.webp",
-            "mobile_image": "shopify://shop_images/Black-Friday-2250x3580.webp",
+            "image": "shopify://shop_images/Black_Friday_banner2-pc.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday_banner2-M.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
@@ -175,11 +175,13 @@
           "settings": {
             "image_position": "right",
             "variant_id": "",
-            "product": "",
-            "title": "The Ultimate Glam Gift Set",
+            "product": "fany-luna-ultimate-glam-gift-set",
+            "title": "FANY Luna Ultimate Glam Gift Set",
             "price_text": "$169.99",
             "compare_price_text": "$289.99",
             "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Meow Crystal Bracelet Watch Band</li><li>1 × Stellar Crystal Bangle Watch Band</li><li>1 × Geometric Mother-of-Pearl Leather Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Mocha Brown</li></ul>",
+            "desktop_image": "shopify://shop_images/Black_Friday21.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday21.webp",
             "image_alt": "",
             "show_badge": true,
             "badge_amount": "$120"
@@ -190,11 +192,13 @@
           "settings": {
             "image_position": "left",
             "variant_id": "",
-            "product": "",
-            "title": "The Timeless Elegance Gift Set",
+            "product": "fany-luna-timeless-elegance-gift-set",
+            "title": "FANY Luna Timeless Elegance Gift Set",
             "price_text": "$149.99",
             "compare_price_text": "$249.99",
             "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Stellar Crystal Bangle Watch Band</li><li>1 × Geometric Mother-of-Pearl Leather Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Moonlight Gray</li></ul>",
+            "desktop_image": "shopify://shop_images/Black_Friday22.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday22.webp",
             "image_alt": "",
             "show_badge": true,
             "badge_amount": "$100"
@@ -206,10 +210,12 @@
             "image_position": "left",
             "variant_id": "",
             "product": "",
-            "title": "The Chic Sparkle Gift Set",
+            "title": "FANY Luna Chic Sparkle Gift Set",
             "price_text": "$129.99",
             "compare_price_text": "$209.99",
             "contents": "<p>What’s Included:</p><ul><li>1 × Mother-of-Pearl Butterfly Bracelet</li><li>1 × Meow Crystal Bracelet Watch Band</li><li>1 × FANY Luna Small Smartwatch for Women–Rose Gold</li></ul>",
+            "desktop_image": "shopify://shop_images/Black_Friday23.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday23.webp",
             "image_alt": "",
             "show_badge": true,
             "badge_amount": "$80"
