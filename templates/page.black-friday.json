@@ -125,8 +125,8 @@
         "slide_Mxrq3g": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Black-Friday-pc17.webp",
-            "mobile_image": "shopify://shop_images/Black-Friday-m17.webp",
+            "image": "shopify://shop_images/Black_Friday20-pc.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday20-M.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_font_size": 40,
