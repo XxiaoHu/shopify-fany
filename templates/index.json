@@ -469,8 +469,8 @@
         "slide_RPrdQz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Black_Friday_banner2-pc.webp",
-            "mobile_image": "shopify://shop_images/Black_Friday_banner2-M.webp",
+            "image": "shopify://shop_images/Black_Friday_banner1-pc.webp",
+            "mobile_image": "shopify://shop_images/Black_Friday_banner1-M.webp",
             "image_overlay_opacity": 0,
             "link": "https://fany.us/pages/black-friday",
             "link_text": "",
