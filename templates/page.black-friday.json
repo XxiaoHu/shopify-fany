@@ -190,7 +190,7 @@
         "product_card_pyxCHt": {
           "type": "product_card",
           "settings": {
-            "image_position": "left",
+            "image_position": "right",
             "variant_id": "",
             "product": "fany-luna-timeless-elegance-gift-set",
             "title": "FANY Luna Timeless Elegance Gift Set",
@@ -207,9 +207,9 @@
         "product_card_aLUYkV": {
           "type": "product_card",
           "settings": {
-            "image_position": "left",
+            "image_position": "right",
             "variant_id": "",
-            "product": "",
+            "product": "fany-luna-chic-sparkle-gift-set",
             "title": "FANY Luna Chic Sparkle Gift Set",
             "price_text": "$129.99",
             "compare_price_text": "$209.99",
