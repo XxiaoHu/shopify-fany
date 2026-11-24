@@ -230,6 +230,76 @@
       ],
       "settings": {}
     },
+    "rich_text_7mUy6c": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XVEwVK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Choose FANY Luna Smartwatches? &nbsp;",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_fXYj77": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Compact Design for Everyday Wear</h3><p>FANY Luna features a 37.5mm round case and a slim profile designed for an understated appearance. Its published wrist fit range is 144–202mm, so measuring your wrist before ordering is important.</p><h3>Everyday Wellness and Activity Tracking</h3><p>FANY Luna provides features such as heart rate monitoring, sleep tracking, step counting, and menstrual cycle tracking, helping users review everyday wellness and activity patterns.</p><p>These measurements are intended for general wellness reference, not medical diagnosis.</p><h3>Workout Modes for Different Activities</h3><p>Record supported activities such as walking, running, yoga, and cycling. Choose the activities you actually use rather than judging a smartwatch only by the total number of available modes.</p><h3>Smart Notifications and Everyday Convenience</h3><p>Receive supported smartphone notifications and use everyday tools such as alarms and timers. Availability depends on your phone, app permissions, and device settings.</p><h3>Interchangeable Watch Bands</h3><p>FANY Luna supports compatible 16mm quick-release bands, giving you options for everyday wear, exercise, and dressier occasions.</p><p>Explore our <a href=\"https://fany.us/collections/bands\">FANY smartwatch bands</a> for additional styles.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_XVEwVK",
+        "text_fXYj77"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
+    "rich_text_hJa8hj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E3pdTr": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Choose the Right Smartwatch for Women",
+            "heading_size": "h2",
+            "heading_width": 600
+          }
+        },
+        "text_UHcncP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When shopping for a women's smartwatch, start with the features and fit that matter most to your routine.</p><p><strong>Check the wrist size.</strong> A smaller case doesn't always mean a better fit. Compare your wrist circumference with the manufacturer's published band range.</p><p><strong>Consider your daily activities.</strong> If you exercise frequently, a silicone band may be more convenient. If you prefer classic everyday styling, leather could be a better match.</p><p><strong>Review smartphone compatibility.</strong> Confirm that the watch and companion app work with your phone and support the notifications you need.</p><p><strong>Look at the wellness features.</strong> Choose tracking functions you'll actually use, such as daily activity, heart rate, or sleep monitoring.</p><p><strong>Think about personalization.</strong> Interchangeable bands and customizable watch faces can make a smartwatch suitable for different occasions.</p><p>For more help choosing the right size, read our <a href=\"https://fany.us/blogs/wellness-fitness/best-smartwatch-for-small-wrists\">Smartwatch Guide for Small Wrists</a>.</p>",
+            "font_size": "f-18",
+            "text_width": 800
+          }
+        }
+      },
+      "block_order": [
+        "heading_E3pdTr",
+        "text_UHcncP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "block_width": 800
+      }
+    },
     "collapsible_content_jmKYAg": {
       "type": "collapsible-content",
       "blocks": {
@@ -355,6 +425,8 @@
     "collection_tabs_gVPgFn",
     "product-grid",
     "1788356255cfa79169",
+    "rich_text_7mUy6c",
+    "rich_text_hJa8hj",
     "collapsible_content_jmKYAg"
   ]
 }
