@@ -174,7 +174,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>FANY Luna leather style is a lightweight leather smartwatch for women, designed to bring everyday wellness, smart features, and refined style together. Weighing just 23.9 g, it features a compact 37.5 mm watch diameter and fits wrist circumferences from 144 to 202 mm for comfortable all-day wear.<br/><br/>A vivid 1.1-inch AMOLED display, 120+ workout modes, sleep and menstrual cycle tracking, smart notifications, and up to 10 days of battery life make Luna easy to wear from workdays and workouts to evenings out.</p>",
+            "content": "<p>Bring a little extra glamour to every day with this all-in-one gift set! Featuring the FANY Luna Small Smartwatch for Women in Mocha Brown, this set also includes a Mother-of-Pearl Butterfly Bracelet, a Meow Crystal Bracelet Watch Band, a Stellar Crystal Bangle Watch Band, and a Geometric Mother-of-Pearl Leather Watch Band. With a beautiful mix of jewelry-inspired accessories, she can enjoy more ways to style her smartwatch and elevate her everyday look.</p>",
             "page": ""
           }
         },
@@ -316,7 +316,7 @@
             "caret_size": 24,
             "show_icon": false,
             "icon": "check_mark",
-            "content": "<p>The FANY Luna box contains:<br/>* 1 × FANY Luna Smartwatch(watch band included)<br/>* 1 × Magnetic Charger(Full Charge in 1.5 Hours)<br/>* Instruction manual, Quick start guide</p>",
+            "content": "<p>FANY Luna Chic Sparkle Gift Set contains:<br/>* 1 × Mother-of-Pearl Butterfly Bracelet<br/>* 1 × Meow Crystal Bracelet Watch Band<br/>* 1 × Stellar Crystal Bangle Watch Band<br/>* 1 × Geometric Mother-of-Pearl Leather Watch Band<br/>* 1 × FANY Luna Small Smartwatch for Women–Mocha Brown</p>",
             "page": ""
           }
         },
@@ -408,10 +408,11 @@
     },
     "animated_floating_banner_Hn6FXT": {
       "type": "animated-floating-banner",
+      "disabled": true,
       "name": "浮层图片 Banner",
       "settings": {
         "heading": "Designed for Women: Shine in Your Rhythm",
-        "content": "<p>Every woman carries her own quiet transformation. FANY is your daily companion, aligned with your unique rhythm. It supports your wellbeing by tracking your sleep, menstrual cycles, heart rate, and mood. Like a butterfly taking wing, tune into your body and shine in your own light. Discover FANY Luna-Winner of the American Good Design Gold Award & French Design Gold Award. </p>",
+        "content": "<p>Every woman carries her own quiet transformation. FANY is your daily companion, aligned with your unique rhythm. It supports your wellbeing by tracking your sleep, menstrual cycles, heart rate, and mood. Like a butterfly taking wing, tune into your body and shine in your own light. Discover FANY Luna-Winner of the American Good Design Gold Award & French Design Gold Award.&nbsp;</p>",
         "text_max_width": 1000,
         "text_gap": 14,
         "heading_font_size": 40,
@@ -634,6 +635,7 @@
         "feature_6MmqfH",
         "feature_M8rPMw"
       ],
+      "disabled": true,
       "name": "Apple 风格产品查看器",
       "settings": {
         "heading": "Feel It. Power It. Read It. Love It.",
@@ -803,6 +805,7 @@
         "highlight_cGxtKQ",
         "highlight_zwtB9c"
       ],
+      "disabled": true,
       "name": "Highlights 图片轮播",
       "settings": {
         "heading": "Highlights: Nurture Your All-Around Health",
@@ -821,6 +824,7 @@
     },
     "sleep_insights_poster_Ydygpn": {
       "type": "sleep-insights-poster",
+      "disabled": true,
       "name": "睡眠数据海报",
       "settings": {
         "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_328c131a-40ed-48fe-8b3e-47174d4f0f08.webp",
@@ -859,6 +863,7 @@
     },
     "sleep_insights_poster_7QwUna": {
       "type": "sleep-insights-poster",
+      "disabled": true,
       "name": "经期数据海报",
       "settings": {
         "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-_-PC_92c6bd95-6b84-4143-b5a6-16d7c18dbcbb.webp",
@@ -928,6 +933,7 @@
         "state_ghjQpk",
         "state_Mi4QGy"
       ],
+      "disabled": true,
       "name": "情绪状态图片切换",
       "settings": {
         "title": "Manage Your Stress & Emotional Health",
@@ -955,6 +961,7 @@
     },
     "custom_watch_faces_kHgJ4m": {
       "type": "custom-watch-faces",
+      "disabled": true,
       "name": "自定义表盘",
       "settings": {
         "header": "<p>150+ Diverse Watch Faces & Custom DIY Designs</p>",
@@ -975,6 +982,7 @@
     },
     "sleep_insights_poster_4NBdB6": {
       "type": "sleep-insights-poster",
+      "disabled": true,
       "name": "使用场景海报",
       "settings": {
         "desktop_image": "shopify://shop_images/FANY_Luna_Leather_-PC.webp",
@@ -2135,6 +2143,7 @@
       "block_order": [
         "reelup_shoppable_videos_reels_reelup_playlist_qcfxkn"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -2299,6 +2308,7 @@
         "collapsible_row_WbmKRp",
         "collapsible_row_feJQFR"
       ],
+      "disabled": true,
       "custom_css": [
         ".accordion {border-top: 0.1rem solid #f1eae8; border-bottom: 0.1rem solid #f1eae8;}",
         ".collapsible-content__heading {color: #f2d0ad;}"
