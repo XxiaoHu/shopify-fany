@@ -84,6 +84,7 @@
         },
         "text_8Pieka": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "🔥Buy FANY Luna Leather Smartwatch, Get a <strong>FREE</strong> 14K Gold-Plated Butterfly Bracelet",
             "text_style": "body"
