@@ -62,7 +62,6 @@
       "blocks": {
         "item_YqYQhR": {
           "type": "item",
-          "disabled": true,
           "settings": {
             "text": "Gift Sets",
             "target_anchor": "gift-sets",
@@ -222,7 +221,6 @@
         "product_card_pyxCHt",
         "product_card_aLUYkV"
       ],
-      "disabled": true,
       "name": "黑五礼盒商品模块",
       "settings": {
         "navigation_anchor": "gift-sets",
