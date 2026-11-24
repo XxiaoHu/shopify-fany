@@ -84,8 +84,9 @@
         },
         "text_8Pieka": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "🔥Buy FANY Luna Leather Smartwatch, Get a <strong>FREE</strong> 14K Gold-Plated Butterfly Bracelet",
+            "text": "&nbsp;FANY Luna Chic Sparkle Gift Set contains:* 1 × Mother-of-Pearl Butterfly Bracelet* 1 × Meow Crystal Bracelet Watch Band* 1 × FANY Luna Small Smartwatch for Women–Rose Gold&nbsp;",
             "text_style": "body"
           }
         },
