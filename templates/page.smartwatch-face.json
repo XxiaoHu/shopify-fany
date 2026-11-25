@@ -270,6 +270,116 @@
         "product_card_pRbLNe": {
           "type": "product_card",
           "settings": {
+            "desktop_image": "shopify://shop_images/Halloween_Watch_Face1-4.webp",
+            "mobile_image": "shopify://shop_images/Halloween_Watch_Face1-4.webp",
+            "image_alt": "",
+            "heading": "Devil Stiletto",
+            "description": "The trident stiletto merges fashion allure and soft Halloween mystique. Be the powerful shining heroine of The Devil Wears FANY.",
+            "link": ""
+          }
+        },
+        "product_card_RTBJqB": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Halloween_Watch_Face2-2.webp",
+            "mobile_image": "shopify://shop_images/Halloween_Watch_Face2-2.webp",
+            "image_alt": "",
+            "heading": "Vampire Kiss",
+            "description": "Crimson vampire lips merge bold shadowy contrast and soft Halloween mystique. Be the standout glamorous queen of Halloween nights.",
+            "link": ""
+          }
+        },
+        "product_card_fqEYJR": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Halloween_Watch_Face3-2.webp",
+            "mobile_image": "shopify://shop_images/Halloween_Watch_Face3-2.webp",
+            "image_alt": "",
+            "heading": "Jack Glow",
+            "description": "A grinning pumpkin peers from dark, turning your wrist into a mischievous Halloween celebration. Unspool spooky charm and light up midnight magic.",
+            "link": ""
+          }
+        },
+        "product_card_dBiWYp": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Halloween_Watch_Face4-2.webp",
+            "mobile_image": "shopify://shop_images/Halloween_Watch_Face4-2.webp",
+            "image_alt": "",
+            "heading": "Witchy Paw",
+            "description": "Witchy cat silhouettes rise from warm fiery shadows. Embrace deep mysterious allure and quiet Halloween mystique.",
+            "link": ""
+          }
+        },
+        "product_card_kbtMMw": {
+          "type": "product_card",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Halloween_Watch_Face5-2.webp",
+            "mobile_image": "shopify://shop_images/Halloween_Watch_Face5-2.webp",
+            "image_alt": "",
+            "heading": "Midnight Cat",
+            "description": "Piercing crimson eyes peer through blue mist, capturing sleek Halloween magic. Midnight Cat delivers haunting playful charm for your October nights.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_pRbLNe",
+        "product_card_RTBJqB",
+        "product_card_fqEYJR",
+        "product_card_dBiWYp",
+        "product_card_kbtMMw"
+      ],
+      "name": "主视觉产品展示",
+      "settings": {
+        "heading": "&nbsp;Halloween Watch Face&nbsp;",
+        "description": "<p>Midnight Cat, Jack Glow, Vampire Kiss, and a touch of devilish glamour… Halloween is calling! Dress up your wrist with spooky-cute watch faces that bring a little fun, mystery, and festive flair.</p>",
+        "navigation_anchor": "Holiday Watch Faces",
+        "carousel_label": "节日产品",
+        "feature_desktop_image": "shopify://shop_images/dd439acbb1f60d33b25c19342be90372.webp",
+        "feature_mobile_image": "shopify://shop_images/1_1.webp",
+        "feature_image_alt": "",
+        "feature_link": "",
+        "desktop_columns": 3,
+        "mobile_columns": 2,
+        "background_color": "#ffffff",
+        "heading_color": "#1e0e06",
+        "description_color": "#686766",
+        "card_heading_color": "#1e0e06",
+        "card_description_color": "#686766",
+        "media_background_color": "#f7f7f7",
+        "desktop_heading_width": 496,
+        "desktop_description_width": 704,
+        "desktop_heading_size": 28,
+        "desktop_heading_line_height": 120,
+        "desktop_description_size": 16,
+        "desktop_description_line_height": 150,
+        "desktop_card_heading_size": 20,
+        "desktop_card_heading_line_height": 120,
+        "desktop_card_description_size": 16,
+        "desktop_card_description_line_height": 150,
+        "mobile_heading_width": 300,
+        "mobile_description_width": 356,
+        "mobile_heading_size": 24,
+        "mobile_heading_line_height": 120,
+        "mobile_description_size": 16,
+        "mobile_description_line_height": 150,
+        "mobile_card_heading_size": 16,
+        "mobile_card_heading_line_height": 120,
+        "mobile_card_description_size": 14,
+        "mobile_card_description_line_height": 150,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "featured_product_showcase_kPxPpJ": {
+      "type": "featured-product-showcase",
+      "blocks": {
+        "product_card_qTREcD": {
+          "type": "product_card",
+          "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor2-2.webp",
             "mobile_image": "shopify://shop_images/watchface-labor2-2.webp",
             "image_alt": "",
@@ -278,7 +388,7 @@
             "link": ""
           }
         },
-        "product_card_RTBJqB": {
+        "product_card_8QxxbN": {
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor4-2.webp",
@@ -289,7 +399,7 @@
             "link": ""
           }
         },
-        "product_card_fqEYJR": {
+        "product_card_Kk94Fx": {
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor3-2.webp",
@@ -300,7 +410,7 @@
             "link": ""
           }
         },
-        "product_card_dBiWYp": {
+        "product_card_kLd4Eq": {
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor1-2.webp",
@@ -311,7 +421,7 @@
             "link": ""
           }
         },
-        "product_card_kbtMMw": {
+        "product_card_Wcf69U": {
           "type": "product_card",
           "settings": {
             "desktop_image": "shopify://shop_images/watchface-labor5-2.webp",
@@ -324,11 +434,11 @@
         }
       },
       "block_order": [
-        "product_card_pRbLNe",
-        "product_card_RTBJqB",
-        "product_card_fqEYJR",
-        "product_card_dBiWYp",
-        "product_card_kbtMMw"
+        "product_card_qTREcD",
+        "product_card_8QxxbN",
+        "product_card_Kk94Fx",
+        "product_card_kLd4Eq",
+        "product_card_Wcf69U"
       ],
       "name": "主视觉产品展示",
       "settings": {
@@ -862,7 +972,8 @@
             "heading": "How can I download new watch faces?",
             "icon": "none",
             "row_content": "<p>You can easily download watch faces to suit your style. Follow these simple steps:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>Browse 150+ beautifully designed watch faces and download your favorites directly to your watch.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_rdVrU8": {
@@ -871,7 +982,8 @@
             "heading": "Are FANY watch faces free to download?",
             "icon": "none",
             "row_content": "<p>Yes. All watch faces in the FANY Fit App are free for FANY users. You can browse and download your favorites without additional fees or subscriptions.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_7hieFk": {
@@ -880,7 +992,8 @@
             "heading": "Can I use my own photo as a watch face?",
             "icon": "none",
             "row_content": "<p>Yes! You can personalize your FANY smartwatch with your own photos, whether it’s a favorite memory, a loved one, or an image that matches your style.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_cxPQFx": {
@@ -889,7 +1002,8 @@
             "heading": "How can I create a custom watch face with my own photo?",
             "icon": "none",
             "row_content": "<p>It’s easy to create a personalized watch face:<br/>1. Open the FANY Fit App on your phone.<br/>2. Tap on the Device icon.<br/>3. Select Watch Face Market.<br/>4. Scroll down and find Photo.<br/>5. Tap Photos and upload your favorite image.<br/>Follow the prompts to set your photo as your watch face.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_zzkb6r": {
@@ -898,7 +1012,8 @@
             "heading": "How many watch faces does FANY offer?",
             "icon": "none",
             "row_content": "<p>FANY offers 150+ beautifully designed watch faces, with styles ranging from elegant and minimalist to colorful, seasonal, and holiday-inspired designs. New designs are added regularly to keep your watch feeling fresh and personal.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_NbBki4": {
@@ -907,7 +1022,8 @@
             "heading": "Does FANY create special watch faces for holidays?",
             "icon": "none",
             "row_content": "<p>Yes. FANY creates special watch faces for holidays and seasonal moments, thoughtfully designed around the spirit of each occasion. From Labor Day to future celebrations, we’ll continue creating new designs as FANY grows—so there’s always something new to enjoy.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         },
         "collapsible_row_zcaimh": {
@@ -916,7 +1032,8 @@
             "heading": "Can I change my watch face whenever I want?",
             "icon": "none",
             "row_content": "<p>Absolutely. You can switch between downloaded watch faces and your custom photo whenever you like, allowing your FANY smartwatch to match your outfit, mood, activity, or the occasion.</p>",
-            "page": ""
+            "page": "",
+            "faq_open_by_default": false
           }
         }
       },
@@ -935,6 +1052,30 @@
       ],
       "name": "FAQ",
       "settings": {
+        "enable_black_friday_style": false,
+        "faq_navigation_anchor": "faq",
+        "faq_background": "#221008",
+        "faq_heading_color": "#ffffff",
+        "faq_question_color": "#ffffff",
+        "faq_answer_color": "#d4d4d4",
+        "faq_mobile_answer_color": "#ffffff",
+        "faq_heading_glow": true,
+        "faq_glow_color": "#ffb800",
+        "faq_glow_inner_color": "#fcc12b",
+        "faq_heading_size": 28,
+        "faq_mobile_heading_size": 24,
+        "faq_question_line_height": 120,
+        "faq_answer_line_height": 150,
+        "faq_desktop_heading_gap": 24,
+        "faq_mobile_heading_gap": 20,
+        "faq_desktop_item_gap": 40,
+        "faq_mobile_item_gap": 20,
+        "faq_desktop_answer_gap": 12,
+        "faq_mobile_answer_gap": 0,
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
         "caption": "",
         "heading": "",
         "heading_size": "f-28",
@@ -1369,6 +1510,7 @@
     "sticky_category_navigation_HdcFVx",
     "seasonal_product_carousel_rtTm8X",
     "featured_product_showcase_EhbU3F",
+    "featured_product_showcase_kPxPpJ",
     "featured_product_showcase_WgC6Gg",
     "featured_product_showcase_DKim7e",
     "seasonal_product_grid_7BVY8m",
